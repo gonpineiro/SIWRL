@@ -1,24 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route } from 'react-router-dom'
+
+import Users from './Users'
 
 function App() {
     return (
-        <div className="container">
-            <div className="row justify-content-center">
-                <div className="col-md-8">
-                    <div className="card">
-                        <div className="card-header">Esto es ejemplo</div>
-
-                        <div className="card-body">I'm an Esto component!</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <BrowserRouter>
+            <Route exact path="/users" component={Users} />
+            {/* <Route exact path="/user_form" component={UserForm} />
+            <Route exact path="/user_edit/:id" component={UserEdit} />
+            <Route exact path="/empresas" component={Empresas} /> */}
+      </BrowserRouter>
     );
-}
+  }
 
 export default App;
-
-if (document.getElementById('app')) {
-    ReactDOM.render(<App />, document.getElementById('app'));
-}
