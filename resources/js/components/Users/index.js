@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import Table from './Table'
+import Formulario from './Formulario'
 
 import * as usersActions from '../../actions/usersActions'
+import Spinner from '../General/Spinner';
 
 class Users extends Component {
 
@@ -17,22 +20,44 @@ class Users extends Component {
 
 	ponerContenido = () => {
 		if (this.props.loading) {
-			return 'Loading'
+			return <Spinner />
 		}
 
 		if (this.props.error) {
 			return 'Error'
 		}		
 
-		//return <Table />
+		return <Table />
+	}
+	ponerFormulario = () => {
+		
+		return <Formulario />
 	}
 
+	
+
 	render() {
-		console.log(this.props)
+		//console.log(this.props)
 		return (
-			<div>
-				<h1>Users</h1>
-				{this.ponerContenido()}
+			<div className="container">
+				<div className="row mt-2">
+					<div className="col col-md-8">					
+						<div>
+							<h1>Users</h1>
+							{this.ponerContenido()}
+						</div>
+					</div>
+					<div className="col col-md-4">					
+						<div>							
+							<div className="card">
+								<div className="card-header">Agregar Usuario</div>
+								<div className="card-body">
+									{this.ponerFormulario()}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		);
 	}
