@@ -14,9 +14,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/* Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth:api')->get('/user', 'UserController@index');
+Route::middleware('auth:api')->get('/user/{id}', 'UserController@edit');
+Route::middleware('auth:api')->put('/user/{id}', 'UserController@update');
+Route::middleware('auth:api')->post('/user', 'UserController@store');
+Route::middleware('auth:api')->delete('/user/{id}', 'UserController@destroy');
+
+/* 
+Route::group(['auth:api'], function () {
+    
+    Route::get('/user', );
+
+    Route::get('/user/{id}', 'UserController@edit');
+    Route::put('/user/{id}', 'UserController@update'); 
+    Route::post('/user', 'UserController@store'); 
+    Route::delete('/user/{id}', 'UserController@destroy');
+
 }); */
 
-Route::get('/user', 'UserController@index');
-Route::post('/user', 'UserController@store');
+
+    

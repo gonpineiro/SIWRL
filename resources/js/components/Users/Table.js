@@ -2,20 +2,30 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
+import * as usersActions from '../../actions/usersActions'
+
 const Table = (props) => {
+
+  console.log(props)
+
   const addRow = () => props.users.map((user, key) => (
     <tr key={key}>
       <td>{user.id}</td>
       <td>{user.name}</td>
       <td>{user.email}</td>
       <td>
-        <Link to={`/user/${user.id}`}>
-        <i className="material-icons">edit</i>
-        </Link>
-        </td>
+          <i 
+          className="material-icons"
+          onClick={() => props.traerUno(user.id)}
+          >edit</i>
+          <i 
+          onClick={() => props.traerUnoBorrar(user.id)}
+          className="material-icons"
+          >delete</i>
+      </td>
     </tr>
   ))
-  
+
   return (
     <div>
       <table className="table table-hover">
@@ -28,7 +38,7 @@ const Table = (props) => {
           </tr>
         </thead>
         <tbody>
-         {addRow()}
+          {addRow()}
         </tbody>
       </table>
     </div>
@@ -39,4 +49,4 @@ const mapStateToProps = (reducers) => {
   return reducers.usersReducer
 }
 
-export default connect(mapStateToProps)(Table);
+export default connect(mapStateToProps, usersActions)(Table);

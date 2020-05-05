@@ -21,10 +21,14 @@ Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', 'HomeController@index')->name('home');
-
     Route::get('/users', function(){
       return view('home');
     })->name('users');
+    
+    
+
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+
+

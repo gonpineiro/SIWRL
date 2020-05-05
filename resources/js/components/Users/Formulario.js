@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import Spinner from '../General/Spinner'
 
 import * as usersActions from '../../actions/usersActions'
 
@@ -18,60 +19,65 @@ class Formulario extends Component {
    };
 
    guardar = () => {
-		const { 
-            name,
-            email,
-            password,
-            agregar
-        } = this.props;
-
-		const nuevo_usuario = {
-			name: name,
-			email: email,
-			password: password
-        };
-
-        agregar(nuevo_usuario);
-        
-        /* if (usu_id && tar_id) {
-            const tarea = tareas[usu_id][tar_id]
-            const tarea_editada = {
-                ...nueva_tarea,
-                completed: tarea.completed,
-                id: tarea.id
-            }
-
-            editar(tarea_editada)
-
-        }else{
-           agregar(nuevo_usuario);
-      } */
+      const {
+         id,
+         name,
+         email,
+         password,
+         agregar,
+         editar,
+         state_form
+      } = this.props;
       
-      
-	};
-
-   render() {
       console.log(this.props)
+      const nuevo_usuario = {
+         id: id,
+         name: name,
+         email: email,
+         password: password
+      };
+      
+
+      if (state_form === 'crear') {
+         agregar(nuevo_usuario);         
+      }
+      if (state_form === 'editar') {
+         console.log(nuevo_usuario)
+         editar(nuevo_usuario, id)
+         console.log('Editando')         
+      }
+   };
+
+  
+   render() {
+      //console.log(this.props)
       return (
          <div>
             <div className="form-row">
                <div className="form-group col-md-12">
-                  <label>Nombre</label>
+                  <label>Nombre </label>
                   <input
                      type="text"
                      className="form-control"
-                     value={this.props.name}
+                     value={this.props.name }
                      onChange={this.cambioUsuarioName}
                   />
+                  {this.props.error_form.name && this.props.error_form.name.map((err, key) =>
+                     <small key={key} className="text-danger">{err}</small>
+                  )}
                </div>
                <div className="form-group col-md-12">
                   <label>Email</label>
                   <input
                      type="email"
                      className="form-control"
-                     value={this.props.email}
+                     value={this.props.email }
                      onChange={this.cambioUsuarioEmail}
                   />
+                  {this.props.error_form.email && this.props.error_form.email.map((err, key) =>
+                     <small key={key} className="text-danger">{err}</small>
+                  )}
+
                </div>
                <div className="form-group col-md-12">
                   <label>Password</label>
@@ -84,11 +90,25 @@ class Formulario extends Component {
                </div>
                <div className="form-group col-md-12">
                   <button
+                     id="guardar-btn"
                      className="btn btn-dark"
-                     onClick={ this.guardar }
+                     onClick={this.guardar}
+                     
                   >
                      Guardar
-                  </button>
+                  </button>                  
+                  
+
+                  { this.props.state_form === 'editar' 
+                  ? 
+                  <button
+                     className="btn btn-danger btn-cancelar"
+                     onClick={this.props.cancelar}
+                  >
+                     Cancelar
+                  </button> : '' }
+                  
+                  {this.props.loading ? <Spinner /> : ''}
                </div>
             </div>
          </div>
