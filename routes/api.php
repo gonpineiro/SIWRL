@@ -26,21 +26,24 @@ Route::middleware('auth:api')->put('/marca/{id}', 'MarcaController@update');
 Route::middleware('auth:api')->post('/marca', 'MarcaController@store');
 Route::middleware('auth:api')->delete('/marca/{id}', 'MarcaController@destroy');
 
-//Route::put('/marca/{id}', 'MarcaController@update'); 
+Route::get('/genetica', 'GeneticaController@index');
+Route::get('/genetica/{id}', 'GeneticaController@edit');
+Route::put('/genetica/{id}', 'GeneticaController@update');
+Route::post('/genetica', 'GeneticaController@store');
+Route::delete('/genetica/{id}', 'GeneticaController@destroy');
+
+
+//Route::put('/marca/{id}', 'MarcaController@update');
 
 //Route::get('/marca/{id}', 'MarcaController@edit');
-/* 
+/*
 Route::group(['auth:api'], function () {
-    
+
     Route::get('/user', );
 
     Route::get('/user/{id}', 'UserController@edit');
-    Route::put('/user/{id}', 'UserController@update'); 
-    Route::post('/user', 'UserController@store'); 
+    Route::put('/user/{id}', 'UserController@update');
+    Route::post('/user', 'UserController@store');
     Route::delete('/user/{id}', 'UserController@destroy');
 
 }); */
-
-
-
-    
