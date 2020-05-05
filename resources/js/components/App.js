@@ -1,17 +1,17 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom'
-
+import Layout from './Layout';
 import Users from './Users'
+import Marcas from './Marcas'
 
 function App() {
-    return (
-      <BrowserRouter>
-            <Route exact path="/users" component={Users} />
-            {/* <Route exact path="/user_form" component={UserForm} />
-            <Route exact path="/user_edit/:id" component={UserEdit} />
-            <Route exact path="/empresas" component={Empresas} /> */}
-      </BrowserRouter>
-    );
-  }
+  return (
+    <BrowserRouter>
+      <Layout />
+      <Route exact path="/users" component={Users} />
+      <Route exact path="/marcas" component={Marcas} />
+    </BrowserRouter>
+  );
+}
 
 export default App;

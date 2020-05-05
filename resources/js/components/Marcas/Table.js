@@ -1,23 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
 
-import * as usersActions from '../../actions/usersActions'
+import * as marcasActions from '../../actions/marcasActions'
 
 const Table = (props) => {
 
-  const addRow = () => props.users.map((user, key) => (
+  const addRow = () => props.marcas.map((marca, key) => (
     <tr key={key}>
-      <td>{user.id}</td>
-      <td>{user.name}</td>
-      <td>{user.email}</td>
+      <td>{marca.id}</td>
+      <td>{marca.name}</td>
       <td>
           <i 
           className="material-icons"
-          onClick={() => props.traerUno(user.id)}
+          onClick={() => props.traerUno(marca.id)}
           >edit</i>
           <i 
-          onClick={() => props.traerUnoBorrar(user.id)}
+          onClick={() => props.traerUnoBorrar(marca.id)}
           className="material-icons"
           >delete</i>
       </td>
@@ -31,7 +29,6 @@ const Table = (props) => {
           <tr>
             <th>ID</th>
             <th>Nombre</th>
-            <th>Email</th>
             <th>Accion</th>
           </tr>
         </thead>
@@ -44,7 +41,7 @@ const Table = (props) => {
 }
 
 const mapStateToProps = (reducers) => {
-  return reducers.usersReducer
+  return reducers.marcasReducer
 }
 
-export default connect(mapStateToProps, usersActions)(Table);
+export default connect(mapStateToProps, marcasActions)(Table);

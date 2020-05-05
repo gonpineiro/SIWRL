@@ -32,6 +32,19 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
+                <div class="container center">
+                    <div class="row">
+                        <div class="col-sm center">
+                        One of three columns
+                        </div>
+                        <div class="col-sm">
+                        One of three columns
+                        </div>
+                        <div class="col-sm">
+                        One of three columns
+                        </div>
+                    </div>
+                </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>

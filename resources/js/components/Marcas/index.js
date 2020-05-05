@@ -3,18 +3,17 @@ import { connect } from 'react-redux'
 import Table from './Table'
 import Formulario from './Formulario'
 
-import * as usersActions from '../../actions/usersActions'
-
+import * as marcasActions from '../../actions/marcasActions'
 import Spinner from '../General/Spinner';
 
-class Users extends Component {
+class Marcas extends Component {
 
 	async componentDidMount() {
 		const {
 			traerTodos,
 		} = this.props
 
-		if (!this.props.users.length) {
+		if (!this.props.marcas.length) {
 			traerTodos()
 		}
 	}
@@ -28,7 +27,7 @@ class Users extends Component {
 			traerTodos()
 		}
 
-		if (this.props.loading && !this.props.users.length) {
+		if (this.props.loading && !this.props.marcas.length) {
 			return <Spinner />
 		}
 
@@ -45,12 +44,13 @@ class Users extends Component {
 
 
 	render() {
+		
 		return (
 			<div className="container">
 				<div className="row mt-2">
 					<div className="col col-md-8">
 						<div>
-							<h4>Lista de usuarios</h4>
+							<h4>Lista de marcas</h4>
 							{this.ponerContenido()}
 						</div>
 					</div>
@@ -61,7 +61,7 @@ class Users extends Component {
 							{this.props.state_form === 'crear' ?
 								<div>
 									<div className="card-header center">
-										Agregar usuario
+										Agregar marca
 									</div>
 									{this.props.loading ? <Spinner /> :
 										<div className="card-body">
@@ -72,7 +72,7 @@ class Users extends Component {
 							{this.props.state_form === 'editar' ?
 								<div>
 									<div className="card-header center">
-										Modificando usuario: {this.props.user.id}
+										Modificando usuario: {this.props.marca.id}
 									</div>
 									{this.props.loading ? <Spinner /> :
 										<div className="card-body">
@@ -83,7 +83,7 @@ class Users extends Component {
 							{this.props.state_form === 'borrar' ?
 								<div>
 									<div className="card-header center">
-										Eliminar siguente usuario
+										Eliminar la siguente marca
 											</div>
 									{this.props.loading ? <Spinner /> :
 										<div className="card-body">
@@ -91,7 +91,7 @@ class Users extends Component {
 												<div className="form-group col-md-12">
 													<label>ID</label>
 													<input
-														value={this.props.user.id}
+														value={this.props.marca.id}
 														className="form-control"
 														disabled
 													/>
@@ -99,22 +99,14 @@ class Users extends Component {
 												<div className="form-group col-md-12">
 													<label>Nombre</label>
 													<input
-														value={this.props.user.name}
-														className="form-control"
-														disabled
-													/>
-												</div>
-												<div className="form-group col-md-12">
-													<label>Email</label>
-													<input
-														value={this.props.user.email}
+														value={this.props.marca.name}
 														className="form-control"
 														disabled
 													/>
 												</div>
 												<button
 													className="btn btn-dark"
-													onClick={() => this.props.borrar(this.props.user.id)}
+													onClick={() => this.props.borrar(this.props.marca.id)}
 												>
 													Eliminar
                   								</button>
@@ -138,7 +130,7 @@ class Users extends Component {
 }
 
 const mapStateToProps = (reducers) => {
-	return reducers.usersReducer
+	return reducers.marcasReducer
 }
 
-export default connect(mapStateToProps, usersActions)(Users);
+export default connect(mapStateToProps, marcasActions)(Marcas);

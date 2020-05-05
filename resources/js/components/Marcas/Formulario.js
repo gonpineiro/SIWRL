@@ -2,51 +2,40 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Spinner from '../General/Spinner'
 
-import * as usersActions from '../../actions/usersActions'
+import * as marcasActions from '../../actions/marcasActions'
 
 class Formulario extends Component {
 
-   cambioUsuarioName = (event) => {
-      this.props.cambioUsuarioName(event.target.value);
-   };
-
-   cambioUsuarioEmail = (event) => {
-      this.props.cambioUsuarioEmail(event.target.value);
-   };
-
-   cambioUsuarioPassword = (event) => {
-      this.props.cambioUsuarioPassword(event.target.value);
+   cambioMarcaName = (event) => {
+      this.props.cambioMarcaName(event.target.value);
    };
 
    guardar = () => {
       const {
          id,
          name,
-         email,
-         password,
          agregar,
          editar,
          state_form
       } = this.props;
 
-      const nuevo_usuario = {
+      const nueva_marca = {
          id: id,
-         name: name,
-         email: email,
-         password: password
+         name: name
       };
       
 
       if (state_form === 'crear') {
-         agregar(nuevo_usuario);         
+         agregar(nueva_marca);         
       }
       if (state_form === 'editar') {
-         editar(nuevo_usuario, id)    
+         editar(nueva_marca, id)    
       }
    };
 
   
    render() {
+      
       return (
          <div>
             <div className="form-row">
@@ -56,33 +45,11 @@ class Formulario extends Component {
                      type="text"
                      className="form-control"
                      value={this.props.name }
-                     onChange={this.cambioUsuarioName}
+                     onChange={this.cambioMarcaName}
                   />
                   {this.props.error_form.name && this.props.error_form.name.map((err, key) =>
                      <small key={key} className="text-danger">{err}</small>
                   )}
-               </div>
-               <div className="form-group col-md-12">
-                  <label>Email</label>
-                  <input
-                     type="email"
-                     className="form-control"
-                     value={this.props.email }
-                     onChange={this.cambioUsuarioEmail}
-                  />
-                  {this.props.error_form.email && this.props.error_form.email.map((err, key) =>
-                     <small key={key} className="text-danger">{err}</small>
-                  )}
-
-               </div>
-               <div className="form-group col-md-12">
-                  <label>Password</label>
-                  <input
-                     type="text"
-                     className="form-control"
-                     value={this.props.password}
-                     onChange={this.cambioUsuarioPassword}
-                  />
                </div>
                <div className="form-group col-md-12">
                   <button
@@ -113,7 +80,7 @@ class Formulario extends Component {
 }
 
 const mapStateToProps = (reducers) => {
-   return reducers.usersReducer
+   return reducers.marcasReducer
 }
 
-export default connect(mapStateToProps, usersActions)(Formulario);
+export default connect(mapStateToProps, marcasActions)(Formulario);

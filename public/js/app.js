@@ -6534,6 +6534,26 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/css/Layout.css":
+/*!*********************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/css/Layout.css ***!
+  \*********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+exports.push([module.i, "@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);", ""]);
+
+// module
+exports.push([module.i, ".fa-2x {\r\nfont-size: 2em;\r\n}\r\n.fa {\r\nposition: relative;\r\ndisplay: table-cell;\r\nwidth: 60px;\r\nheight: 36px;\r\ntext-align: center;\r\nvertical-align: middle;\r\nfont-size:20px;\r\n}\r\n\r\n\r\n.main-menu:hover,nav.main-menu.expanded {\r\nwidth:250px;\r\noverflow:visible;\r\n}\r\n\r\n.main-menu {\r\nbackground:#212121;\r\nborder-right:1px solid #e5e5e5;\r\nposition:absolute;\r\ntop:0;\r\nbottom:0;\r\nheight:100%;\r\nleft:0;\r\nwidth:60px;\r\noverflow:hidden;\r\ntransition:width .05s linear;\r\n-webkit-transform:translateZ(0) scale(1,1);\r\nz-index:1000;\r\n}\r\n\r\n.main-menu>ul {\r\nmargin:7px 0;\r\n}\r\n\r\n.main-menu li {\r\nposition:relative;\r\ndisplay:block;\r\nwidth:250px;\r\n}\r\n\r\n.main-menu li>a {\r\nposition:relative;\r\ndisplay:table;\r\nborder-collapse:collapse;\r\nborder-spacing:0;\r\ncolor:#999;\r\n font-family: arial;\r\nfont-size: 14px;\r\ntext-decoration:none;\r\n-webkit-transform:translateZ(0) scale(1,1);\r\ntransition:all .1s linear;\r\n  \r\n}\r\n\r\n.main-menu .nav-icon {\r\nposition:relative;\r\ndisplay:table-cell;\r\nwidth:60px;\r\nheight:36px;\r\ntext-align:center;\r\nvertical-align:middle;\r\nfont-size:18px;\r\n}\r\n\r\n.main-menu .nav-text {\r\nposition:relative;\r\ndisplay:table-cell;\r\nvertical-align:middle;\r\nwidth:190px;\r\n  font-family: 'Titillium Web', sans-serif;\r\n}\r\n\r\n.main-menu>ul.logout {\r\nposition:absolute;\r\nleft:0;\r\nbottom:0;\r\n}\r\n\r\n.no-touch .scrollable.hover {\r\noverflow-y:hidden;\r\n}\r\n\r\n.no-touch .scrollable.hover:hover {\r\noverflow-y:auto;\r\noverflow:visible;\r\n}\r\n\r\na:hover,a:focus {\r\ntext-decoration:none;\r\n}\r\n\r\nnav {\r\n-webkit-user-select:none;\r\n-moz-user-select:none;\r\n-ms-user-select:none;\r\n-o-user-select:none;\r\nuser-select:none;\r\n}\r\n\r\nnav ul,nav li {\r\noutline:0;\r\nmargin:0;\r\npadding:0;\r\n}\r\n.main-menu li:hover>a,nav.main-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {\r\ncolor:#fff;\r\nbackground-color:#5fa2db;\r\n}\r\n.area {\r\nfloat: left;\r\nbackground: #e2e2e2;\r\nwidth: 100%;\r\nheight: 100%;\r\n}\r\n@font-face {\r\n  font-family: 'Titillium Web';\r\n  font-style: normal;\r\n  font-weight: 300;\r\n  src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');\r\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/css/index.css":
 /*!********************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/css/index.css ***!
@@ -73707,6 +73727,341 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/js/actions/marcasActions.js":
+/*!***********************************************!*\
+  !*** ./resources/js/actions/marcasActions.js ***!
+  \***********************************************/
+/*! exports provided: traerTodos, traerUno, cambioMarcaName, agregar, editar, traerUnoBorrar, borrar, cancelar */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traerTodos", function() { return traerTodos; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traerUno", function() { return traerUno; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cambioMarcaName", function() { return cambioMarcaName; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "agregar", function() { return agregar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "editar", function() { return editar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traerUnoBorrar", function() { return traerUnoBorrar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "borrar", function() { return borrar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cancelar", function() { return cancelar; });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../types/marcaTypes */ "./resources/js/types/marcaTypes.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+var URL = 'http://192.168.0.238:901/api/';
+var traerTodos = function traerTodos() {
+  return /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(dispatch) {
+      var response;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              dispatch({
+                type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+              });
+              _context.prev = 1;
+              _context.next = 4;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL + 'marca');
+
+            case 4:
+              response = _context.sent;
+              dispatch({
+                type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_TODOS"],
+                payload: response.data
+              });
+              _context.next = 11;
+              break;
+
+            case 8:
+              _context.prev = 8;
+              _context.t0 = _context["catch"](1);
+              console.log(_context.t0);
+
+            case 11:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[1, 8]]);
+    }));
+
+    return function (_x) {
+      return _ref.apply(this, arguments);
+    };
+  }();
+};
+var traerUno = function traerUno(id) {
+  return /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(dispatch) {
+      var response;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              dispatch({
+                type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+              });
+              dispatch({
+                type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_MARCA_NAME"],
+                payload: ''
+              });
+              dispatch({
+                type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_ESTADO_FORM"],
+                payload: 'editar'
+              });
+              _context2.prev = 3;
+              _context2.next = 6;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL + 'marca/' + id);
+
+            case 6:
+              response = _context2.sent;
+              dispatch({
+                type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_UNO"],
+                payload: response.data
+              });
+              dispatch({
+                type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_MARCA_ID"],
+                payload: response.data.id
+              });
+              dispatch({
+                type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_MARCA_NAME"],
+                payload: response.data.name
+              });
+              _context2.next = 15;
+              break;
+
+            case 12:
+              _context2.prev = 12;
+              _context2.t0 = _context2["catch"](3);
+              console.log(_context2.t0);
+
+            case 15:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, null, [[3, 12]]);
+    }));
+
+    return function (_x2) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+};
+var cambioMarcaName = function cambioMarcaName(valor) {
+  return function (dispatch) {
+    dispatch({
+      type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_MARCA_NAME"],
+      payload: valor
+    });
+  };
+};
+var agregar = function agregar(nueva_marca) {
+  return /*#__PURE__*/function () {
+    var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(dispatch) {
+      var errors;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              dispatch({
+                type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+              });
+              _context3.prev = 1;
+              _context3.next = 4;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(URL + 'marca', nueva_marca);
+
+            case 4:
+              dispatch({
+                type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["GUARDAR"]
+              });
+              _context3.next = 11;
+              break;
+
+            case 7:
+              _context3.prev = 7;
+              _context3.t0 = _context3["catch"](1);
+              errors = _context3.t0.response.data.errors;
+              dispatch({
+                type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["ERROR_FORM"],
+                payload: errors
+              });
+
+            case 11:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3, null, [[1, 7]]);
+    }));
+
+    return function (_x3) {
+      return _ref3.apply(this, arguments);
+    };
+  }();
+};
+var editar = function editar(nueva_marca, id) {
+  return /*#__PURE__*/function () {
+    var _ref4 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4(dispatch) {
+      var errors;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
+        while (1) {
+          switch (_context4.prev = _context4.next) {
+            case 0:
+              dispatch({
+                type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+              });
+              _context4.prev = 1;
+              _context4.next = 4;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.put(URL + 'marca/' + id, nueva_marca);
+
+            case 4:
+              dispatch({
+                type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["GUARDAR"]
+              });
+              _context4.next = 11;
+              break;
+
+            case 7:
+              _context4.prev = 7;
+              _context4.t0 = _context4["catch"](1);
+              errors = _context4.t0.response.data.errors;
+              dispatch({
+                type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["ERROR_FORM"],
+                payload: errors
+              });
+
+            case 11:
+            case "end":
+              return _context4.stop();
+          }
+        }
+      }, _callee4, null, [[1, 7]]);
+    }));
+
+    return function (_x4) {
+      return _ref4.apply(this, arguments);
+    };
+  }();
+};
+var traerUnoBorrar = function traerUnoBorrar(id) {
+  return /*#__PURE__*/function () {
+    var _ref5 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5(dispatch) {
+      var response;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
+        while (1) {
+          switch (_context5.prev = _context5.next) {
+            case 0:
+              dispatch({
+                type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+              });
+              dispatch({
+                type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_ESTADO_FORM"],
+                payload: 'borrar'
+              });
+              _context5.prev = 2;
+              _context5.next = 5;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL + 'marca/' + id);
+
+            case 5:
+              response = _context5.sent;
+              dispatch({
+                type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_UNO"],
+                payload: response.data
+              });
+              dispatch({
+                type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_MARCA_ID"],
+                payload: response.data.id
+              });
+              dispatch({
+                type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_MARCA_NAME"],
+                payload: response.data.name
+              });
+              _context5.next = 14;
+              break;
+
+            case 11:
+              _context5.prev = 11;
+              _context5.t0 = _context5["catch"](2);
+              console.log(_context5.t0);
+
+            case 14:
+            case "end":
+              return _context5.stop();
+          }
+        }
+      }, _callee5, null, [[2, 11]]);
+    }));
+
+    return function (_x5) {
+      return _ref5.apply(this, arguments);
+    };
+  }();
+};
+var borrar = function borrar(id) {
+  return /*#__PURE__*/function () {
+    var _ref6 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee6(dispatch) {
+      var errors;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee6$(_context6) {
+        while (1) {
+          switch (_context6.prev = _context6.next) {
+            case 0:
+              dispatch({
+                type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+              });
+              _context6.prev = 1;
+              _context6.next = 4;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a["delete"](URL + 'marca/' + id);
+
+            case 4:
+              dispatch({
+                type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["GUARDAR"]
+              });
+              _context6.next = 11;
+              break;
+
+            case 7:
+              _context6.prev = 7;
+              _context6.t0 = _context6["catch"](1);
+              errors = _context6.t0.response.data.errors;
+              dispatch({
+                type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["ERROR_FORM"],
+                payload: errors
+              });
+
+            case 11:
+            case "end":
+              return _context6.stop();
+          }
+        }
+      }, _callee6, null, [[1, 7]]);
+    }));
+
+    return function (_x6) {
+      return _ref6.apply(this, arguments);
+    };
+  }();
+};
+var cancelar = function cancelar() {
+  return function (dispatch) {
+    dispatch({
+      type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["GUARDAR"]
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./resources/js/actions/usersActions.js":
 /*!**********************************************!*\
   !*** ./resources/js/actions/usersActions.js ***!
@@ -73757,7 +74112,6 @@ var traerTodos = function traerTodos() {
 
             case 4:
               response = _context.sent;
-              //console.log(response.data)
               dispatch({
                 type: _types_userTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_TODOS"],
                 payload: response.data
@@ -73816,7 +74170,6 @@ var traerUno = function traerUno(id) {
 
             case 8:
               response = _context2.sent;
-              //console.log(response.data.name)
               dispatch({
                 type: _types_userTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_UNO"],
                 payload: response.data
@@ -73897,26 +74250,24 @@ var agregar = function agregar(nuevo_usuario) {
               dispatch({
                 type: _types_userTypes__WEBPACK_IMPORTED_MODULE_2__["GUARDAR"]
               });
-              console.log('Enviado');
-              _context3.next = 12;
+              _context3.next = 11;
               break;
 
-            case 8:
-              _context3.prev = 8;
+            case 7:
+              _context3.prev = 7;
               _context3.t0 = _context3["catch"](1);
-              errors = _context3.t0.response.data.errors; //console.log(errors);
-
+              errors = _context3.t0.response.data.errors;
               dispatch({
                 type: _types_userTypes__WEBPACK_IMPORTED_MODULE_2__["ERROR_FORM"],
                 payload: errors
               });
 
-            case 12:
+            case 11:
             case "end":
               return _context3.stop();
           }
         }
-      }, _callee3, null, [[1, 8]]);
+      }, _callee3, null, [[1, 7]]);
     }));
 
     return function (_x3) {
@@ -73936,33 +74287,31 @@ var editar = function editar(nuevo_usuario, id) {
                 type: _types_userTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
               });
               _context4.prev = 1;
-              console.log(nuevo_usuario);
-              _context4.next = 5;
+              _context4.next = 4;
               return axios__WEBPACK_IMPORTED_MODULE_1___default.a.put(URL + 'user/' + id, nuevo_usuario);
 
-            case 5:
+            case 4:
               dispatch({
                 type: _types_userTypes__WEBPACK_IMPORTED_MODULE_2__["GUARDAR"]
               });
-              _context4.next = 12;
+              _context4.next = 11;
               break;
 
-            case 8:
-              _context4.prev = 8;
+            case 7:
+              _context4.prev = 7;
               _context4.t0 = _context4["catch"](1);
-              errors = _context4.t0.response.data.errors; //console.log(errors);
-
+              errors = _context4.t0.response.data.errors;
               dispatch({
                 type: _types_userTypes__WEBPACK_IMPORTED_MODULE_2__["ERROR_FORM"],
                 payload: errors
               });
 
-            case 12:
+            case 11:
             case "end":
               return _context4.stop();
           }
         }
-      }, _callee4, null, [[1, 8]]);
+      }, _callee4, null, [[1, 7]]);
     }));
 
     return function (_x4) {
@@ -74053,8 +74402,7 @@ var borrar = function borrar(id) {
             case 7:
               _context6.prev = 7;
               _context6.t0 = _context6["catch"](1);
-              errors = _context6.t0.response.data.errors; //console.log(errors);
-
+              errors = _context6.t0.response.data.errors;
               dispatch({
                 type: _types_userTypes__WEBPACK_IMPORTED_MODULE_2__["ERROR_FORM"],
                 payload: errors
@@ -74178,16 +74526,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _Users__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Users */ "./resources/js/components/Users/index.js");
+/* harmony import */ var _Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Layout */ "./resources/js/components/Layout.js");
+/* harmony import */ var _Users__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Users */ "./resources/js/components/Users/index.js");
+/* harmony import */ var _Marcas__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Marcas */ "./resources/js/components/Marcas/index.js");
+
+
 
 
 
 
 function App() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/users",
-    component: _Users__WEBPACK_IMPORTED_MODULE_2__["default"]
+    component: _Users__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    exact: true,
+    path: "/marcas",
+    component: _Marcas__WEBPACK_IMPORTED_MODULE_4__["default"]
   }));
 }
 
@@ -74220,6 +74576,450 @@ var Spinner = function Spinner() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Spinner);
+
+/***/ }),
+
+/***/ "./resources/js/components/Layout.js":
+/*!*******************************************!*\
+  !*** ./resources/js/components/Layout.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _css_Layout_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../css/Layout.css */ "./resources/js/css/Layout.css");
+/* harmony import */ var _css_Layout_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_css_Layout_css__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+
+function Layout(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+    className: "main-menu",
+    id: "main-menu"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/users"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-user fa-2x"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "nav-text"
+  }, "Usuarios"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "has-subnav"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/marcas"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-book fa-2x"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "nav-text"
+  }, "Marcas"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "has-subnav"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/clientes"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-list fa-2x"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "nav-text"
+  }, "Clientes"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: "has-subnav"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/logout",
+    method: "post"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-bar-chart-o fa-2x"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "nav-text"
+  }, "Tipo de documentos"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "#"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-folder-open fa-2x"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "nav-text"
+  }, "Documentos")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "logout"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "/logout"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-power-off fa-2x"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "nav-text"
+  }, "Logout"))))));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Layout);
+/*
+if (document.getElementById('main')) {
+    ReactDOM.render(<Layout />, document.getElementById('main'));
+}*/
+
+/***/ }),
+
+/***/ "./resources/js/components/Marcas/Formulario.js":
+/*!******************************************************!*\
+  !*** ./resources/js/components/Marcas/Formulario.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
+/* harmony import */ var _actions_marcasActions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/marcasActions */ "./resources/js/actions/marcasActions.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function () { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+var Formulario = /*#__PURE__*/function (_Component) {
+  _inherits(Formulario, _Component);
+
+  var _super = _createSuper(Formulario);
+
+  function Formulario() {
+    var _this;
+
+    _classCallCheck(this, Formulario);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _super.call.apply(_super, [this].concat(args));
+
+    _defineProperty(_assertThisInitialized(_this), "cambioMarcaName", function (event) {
+      _this.props.cambioMarcaName(event.target.value);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "guardar", function () {
+      var _this$props = _this.props,
+          id = _this$props.id,
+          name = _this$props.name,
+          agregar = _this$props.agregar,
+          editar = _this$props.editar,
+          state_form = _this$props.state_form;
+      var nueva_marca = {
+        id: id,
+        name: name
+      };
+
+      if (state_form === 'crear') {
+        agregar(nueva_marca);
+      }
+
+      if (state_form === 'editar') {
+        editar(nueva_marca, id);
+      }
+    });
+
+    return _this;
+  }
+
+  _createClass(Formulario, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-row"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-group col-md-12"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Nombre "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        className: "form-control",
+        value: this.props.name,
+        onChange: this.cambioMarcaName
+      }), this.props.error_form.name && this.props.error_form.name.map(function (err, key) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+          key: key,
+          className: "text-danger"
+        }, err);
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-group col-md-12"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        id: "guardar-btn",
+        className: "btn btn-dark",
+        onClick: this.guardar
+      }, "Guardar"), this.props.state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "btn btn-danger btn-cancelar",
+        onClick: this.props.cancelar
+      }, "Cancelar") : '', this.props.loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_2__["default"], null) : '')));
+    }
+  }]);
+
+  return Formulario;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+var mapStateToProps = function mapStateToProps(reducers) {
+  return reducers.marcasReducer;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_marcasActions__WEBPACK_IMPORTED_MODULE_3__)(Formulario));
+
+/***/ }),
+
+/***/ "./resources/js/components/Marcas/Table.js":
+/*!*************************************************!*\
+  !*** ./resources/js/components/Marcas/Table.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_marcasActions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/marcasActions */ "./resources/js/actions/marcasActions.js");
+
+
+
+
+var Table = function Table(props) {
+  var addRow = function addRow() {
+    return props.marcas.map(function (marca, key) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+        key: key
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, marca.id), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, marca.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "material-icons",
+        onClick: function onClick() {
+          return props.traerUno(marca.id);
+        }
+      }, "edit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        onClick: function onClick() {
+          return props.traerUnoBorrar(marca.id);
+        },
+        className: "material-icons"
+      }, "delete")));
+    });
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+    className: "table table-hover"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "ID"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Nombre"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Accion"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, addRow())));
+};
+
+var mapStateToProps = function mapStateToProps(reducers) {
+  return reducers.marcasReducer;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_marcasActions__WEBPACK_IMPORTED_MODULE_2__)(Table));
+
+/***/ }),
+
+/***/ "./resources/js/components/Marcas/index.js":
+/*!*************************************************!*\
+  !*** ./resources/js/components/Marcas/index.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _Table__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Table */ "./resources/js/components/Marcas/Table.js");
+/* harmony import */ var _Formulario__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Formulario */ "./resources/js/components/Marcas/Formulario.js");
+/* harmony import */ var _actions_marcasActions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/marcasActions */ "./resources/js/actions/marcasActions.js");
+/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
+
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function () { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+var Marcas = /*#__PURE__*/function (_Component) {
+  _inherits(Marcas, _Component);
+
+  var _super = _createSuper(Marcas);
+
+  function Marcas() {
+    var _this;
+
+    _classCallCheck(this, Marcas);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _super.call.apply(_super, [this].concat(args));
+
+    _defineProperty(_assertThisInitialized(_this), "ponerContenido", function () {
+      var traerTodos = _this.props.traerTodos;
+
+      if (_this.props.recargar_table) {
+        traerTodos();
+      }
+
+      if (_this.props.loading && !_this.props.marcas.length) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null);
+      }
+
+      if (_this.props.error) {
+        return 'Error';
+      }
+
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Table__WEBPACK_IMPORTED_MODULE_3__["default"], null);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "ponerFormulario", function () {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Formulario__WEBPACK_IMPORTED_MODULE_4__["default"], null);
+    });
+
+    return _this;
+  }
+
+  _createClass(Marcas, [{
+    key: "componentDidMount",
+    value: function () {
+      var _componentDidMount = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var traerTodos;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                traerTodos = this.props.traerTodos;
+
+                if (!this.props.marcas.length) {
+                  traerTodos();
+                }
+
+              case 2:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function componentDidMount() {
+        return _componentDidMount.apply(this, arguments);
+      }
+
+      return componentDidMount;
+    }()
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "row mt-2"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col col-md-8"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Lista de marcas"), this.ponerContenido())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col col-md-4"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card"
+      }, this.props.state_form === 'crear' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card-header center"
+      }, "Agregar marca"), this.props.loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card-body"
+      }, this.ponerFormulario())) : '', this.props.state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card-header center"
+      }, "Modificando usuario: ", this.props.marca.id), this.props.loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card-body"
+      }, this.ponerFormulario())) : '', this.props.state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card-header center"
+      }, "Eliminar la siguente marca"), this.props.loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card-body"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "form-row"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "form-group col-md-12"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", null, "ID"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+        value: this.props.marca.id,
+        className: "form-control",
+        disabled: true
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "form-group col-md-12"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", null, "Nombre"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+        value: this.props.marca.name,
+        className: "form-control",
+        disabled: true
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+        className: "btn btn-dark",
+        onClick: function onClick() {
+          return _this2.props.borrar(_this2.props.marca.id);
+        }
+      }, "Eliminar"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
+        className: "btn btn-danger btn-cancelar",
+        onClick: this.props.cancelar
+      }, "Cancelar")))) : ''))));
+    }
+  }]);
+
+  return Marcas;
+}(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
+
+var mapStateToProps = function mapStateToProps(reducers) {
+  return reducers.marcasReducer;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_marcasActions__WEBPACK_IMPORTED_MODULE_5__)(Marcas));
 
 /***/ }),
 
@@ -74303,7 +75103,6 @@ var Formulario = /*#__PURE__*/function (_Component) {
           agregar = _this$props.agregar,
           editar = _this$props.editar,
           state_form = _this$props.state_form;
-      console.log(_this.props);
       var nuevo_usuario = {
         id: id,
         name: name,
@@ -74316,9 +75115,7 @@ var Formulario = /*#__PURE__*/function (_Component) {
       }
 
       if (state_form === 'editar') {
-        console.log(nuevo_usuario);
         editar(nuevo_usuario, id);
-        console.log('Editando');
       }
     });
 
@@ -74328,7 +75125,6 @@ var Formulario = /*#__PURE__*/function (_Component) {
   _createClass(Formulario, [{
     key: "render",
     value: function render() {
-      //console.log(this.props)
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-row"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -74406,8 +75202,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Table = function Table(props) {
-  console.log(props);
-
   var addRow = function addRow() {
     return props.users.map(function (user, key) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
@@ -74569,7 +75363,6 @@ var Users = /*#__PURE__*/function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      console.log(this.props);
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -74632,6 +75425,36 @@ var mapStateToProps = function mapStateToProps(reducers) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_usersActions__WEBPACK_IMPORTED_MODULE_5__)(Users));
+
+/***/ }),
+
+/***/ "./resources/js/css/Layout.css":
+/*!*************************************!*\
+  !*** ./resources/js/css/Layout.css ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/postcss-loader/src??ref--6-2!./Layout.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/css/Layout.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
 
 /***/ }),
 
@@ -74741,11 +75564,114 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEB
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _usersReducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./usersReducer */ "./resources/js/reducers/usersReducer.js");
+/* harmony import */ var _marcasReducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./marcasReducer */ "./resources/js/reducers/marcasReducer.js");
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  usersReducer: _usersReducer__WEBPACK_IMPORTED_MODULE_1__["default"]
+  usersReducer: _usersReducer__WEBPACK_IMPORTED_MODULE_1__["default"],
+  marcasReducer: _marcasReducer__WEBPACK_IMPORTED_MODULE_2__["default"]
 }));
+
+/***/ }),
+
+/***/ "./resources/js/reducers/marcasReducer.js":
+/*!************************************************!*\
+  !*** ./resources/js/reducers/marcasReducer.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _types_marcaTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../types/marcaTypes */ "./resources/js/types/marcaTypes.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+var INITIAL_STATE = {
+  marcas: [],
+  marca: [],
+  id: '',
+  name: '',
+  loading: false,
+  error: '',
+  error_form: '',
+  recargar_table: false,
+  state_form: 'crear' //MODO GUARDAR 
+
+};
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : INITIAL_STATE;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case _types_marcaTypes__WEBPACK_IMPORTED_MODULE_0__["TRAER_TODOS"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        marcas: action.payload,
+        loading: false,
+        recargar_table: false,
+        error: ''
+      });
+
+    case _types_marcaTypes__WEBPACK_IMPORTED_MODULE_0__["TRAER_UNO"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        marca: action.payload,
+        loading: false,
+        error: ''
+      });
+
+    case _types_marcaTypes__WEBPACK_IMPORTED_MODULE_0__["LOADING"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        loading: true
+      });
+
+    case _types_marcaTypes__WEBPACK_IMPORTED_MODULE_0__["ERROR"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        error: action.payload,
+        loading: false
+      });
+
+    case _types_marcaTypes__WEBPACK_IMPORTED_MODULE_0__["ERROR_FORM"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        error_form: action.payload,
+        loading: false
+      });
+
+    case _types_marcaTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_MARCA_ID"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        id: action.payload
+      });
+
+    case _types_marcaTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_MARCA_NAME"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        name: action.payload
+      });
+
+    case _types_marcaTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_ESTADO_FORM"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        error_form: '',
+        state_form: action.payload
+      });
+
+    case _types_marcaTypes__WEBPACK_IMPORTED_MODULE_0__["GUARDAR"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        loading: false,
+        error: '',
+        error_form: '',
+        id: '',
+        name: '',
+        recargar_table: true,
+        state_form: 'crear'
+      });
+
+    default:
+      return state;
+  }
+});
 
 /***/ }),
 
@@ -74860,6 +75786,36 @@ var INITIAL_STATE = {
       return state;
   }
 });
+
+/***/ }),
+
+/***/ "./resources/js/types/marcaTypes.js":
+/*!******************************************!*\
+  !*** ./resources/js/types/marcaTypes.js ***!
+  \******************************************/
+/*! exports provided: TRAER_TODOS, TRAER_UNO, LOADING, ERROR, ERROR_FORM, CAMBIO_MARCA_NAME, CAMBIO_MARCA_ID, CAMBIO_ESTADO_FORM, GUARDAR */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TRAER_TODOS", function() { return TRAER_TODOS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TRAER_UNO", function() { return TRAER_UNO; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOADING", function() { return LOADING; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ERROR", function() { return ERROR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ERROR_FORM", function() { return ERROR_FORM; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_MARCA_NAME", function() { return CAMBIO_MARCA_NAME; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_MARCA_ID", function() { return CAMBIO_MARCA_ID; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_ESTADO_FORM", function() { return CAMBIO_ESTADO_FORM; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GUARDAR", function() { return GUARDAR; });
+var TRAER_TODOS = 'marcas_traer_todos';
+var TRAER_UNO = 'marcas_traer_uno';
+var LOADING = 'marcas_cargando';
+var ERROR = 'marcas_error';
+var ERROR_FORM = 'marcas_error_form';
+var CAMBIO_MARCA_NAME = 'marcas_cambio_marca_name';
+var CAMBIO_MARCA_ID = 'marcas_cambio_marca_id';
+var CAMBIO_ESTADO_FORM = 'marcas_cambio_estado_form';
+var GUARDAR = 'marcas_guardar_marca';
 
 /***/ }),
 

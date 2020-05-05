@@ -4,13 +4,11 @@ import {
     TRAER_UNO,
     LOADING,
     ERROR_FORM,
-    CAMBIO_USUARIO_ID,
-    CAMBIO_USUARIO_NAME,
-    CAMBIO_USUARIO_EMAIL,
-    CAMBIO_USUARIO_PASSWORD,
+    CAMBIO_MARCA_ID,
+    CAMBIO_MARCA_NAME,
     CAMBIO_ESTADO_FORM,
     GUARDAR
-} from '../types/userTypes'
+} from '../types/marcaTypes'
 
 const URL = 'http://192.168.0.238:901/api/'
 
@@ -20,7 +18,7 @@ export const traerTodos = () => async (dispatch) => {
     })
 
     try {
-        const response = await axios.get(URL + 'user')
+        const response = await axios.get(URL + 'marca')
 
         dispatch({
             type: TRAER_TODOS,
@@ -33,22 +31,13 @@ export const traerTodos = () => async (dispatch) => {
 }
 
 export const traerUno = (id) => async (dispatch) => {
+    
     dispatch({
         type: LOADING
     })
 
     dispatch({
-        type: CAMBIO_USUARIO_NAME,
-        payload: ''
-    })
-
-    dispatch({
-        type: CAMBIO_USUARIO_EMAIL,
-        payload: ''
-    })
-
-    dispatch({
-        type: CAMBIO_USUARIO_PASSWORD,
+        type: CAMBIO_MARCA_NAME,
         payload: ''
     })
 
@@ -59,7 +48,7 @@ export const traerUno = (id) => async (dispatch) => {
 
 
     try {
-        const response = await axios.get(URL + 'user/' + id)
+        const response = await axios.get(URL + 'marca/' + id)
 
         dispatch({
             type: TRAER_UNO,
@@ -67,63 +56,43 @@ export const traerUno = (id) => async (dispatch) => {
         })
 
         dispatch({
-            type: CAMBIO_USUARIO_ID,
+            type: CAMBIO_MARCA_ID,
             payload: response.data.id
         })
 
         dispatch({
-            type: CAMBIO_USUARIO_NAME,
+            type: CAMBIO_MARCA_NAME,
             payload: response.data.name
         })
-
-        dispatch({
-            type: CAMBIO_USUARIO_EMAIL,
-            payload: response.data.email
-        })
+        
 
     } catch (error) {
         console.log(error)
     }
 }
 
-export const cambioUsuarioName = (valor) => (dispatch) => {
+export const cambioMarcaName = (valor) => (dispatch) => {
+
     dispatch({
-        type: CAMBIO_USUARIO_NAME,
+        type: CAMBIO_MARCA_NAME,
         payload: valor
     })
 };
 
-export const cambioUsuarioEmail = (valor) => (dispatch) => {
-    dispatch({
-        type: CAMBIO_USUARIO_EMAIL,
-        payload: valor
-    })
-};
-
-export const cambioUsuarioPassword = (valor) => (dispatch) => {
-    dispatch({
-        type: CAMBIO_USUARIO_PASSWORD,
-        payload: valor
-    })
-};
-
-export const agregar = (nuevo_usuario) => async (dispatch) => {
-
+export const agregar = (nueva_marca) => async (dispatch) => {
     dispatch({
         type: LOADING
     });
-
     try {
-        await axios.post(URL + 'user', nuevo_usuario);
-
+        await axios.post(URL + 'marca', nueva_marca);
         dispatch({
             type: GUARDAR
         });
-
+        
     }
     catch (error) {
         const errors = error.response.data.errors
-        
+
         dispatch({
             type: ERROR_FORM,
             payload: errors
@@ -131,14 +100,13 @@ export const agregar = (nuevo_usuario) => async (dispatch) => {
     }
 };
 
-export const editar = (nuevo_usuario, id) => async (dispatch) => {
+export const editar = (nueva_marca, id) => async (dispatch) => {
     dispatch({
         type: LOADING
     })
 
     try {
-        await axios.put(URL + 'user/' + id, nuevo_usuario)
-
+        await axios.put(URL + 'marca/' + id, nueva_marca)
         dispatch({
             type: GUARDAR
         })
@@ -164,7 +132,7 @@ export const traerUnoBorrar = (id) => async (dispatch) => {
 
 
     try {
-        const response = await axios.get(URL + 'user/' + id)
+        const response = await axios.get(URL + 'marca/' + id)
 
         dispatch({
             type: TRAER_UNO,
@@ -172,18 +140,13 @@ export const traerUnoBorrar = (id) => async (dispatch) => {
         })
 
         dispatch({
-            type: CAMBIO_USUARIO_ID,
+            type: CAMBIO_MARCA_ID,
             payload: response.data.id
         })
 
         dispatch({
-            type: CAMBIO_USUARIO_NAME,
+            type: CAMBIO_MARCA_NAME,
             payload: response.data.name
-        })
-
-        dispatch({
-            type: CAMBIO_USUARIO_EMAIL,
-            payload: response.data.email
         })
 
     } catch (error) {
@@ -198,7 +161,7 @@ export const borrar = (id) => async (dispatch) => {
     })
 
     try {
-        await axios.delete(URL + 'user/' + id)
+        await axios.delete(URL + 'marca/' + id)
 
         dispatch({
             type: GUARDAR
@@ -206,7 +169,6 @@ export const borrar = (id) => async (dispatch) => {
 
     } catch (error) {
         const errors = error.response.data.errors
-
         dispatch({
             type: ERROR_FORM,
             payload: errors
@@ -219,4 +181,4 @@ export const cancelar = () => (dispatch) => {
         type: GUARDAR
     })
 }
-
+ 

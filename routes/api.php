@@ -20,6 +20,15 @@ Route::middleware('auth:api')->put('/user/{id}', 'UserController@update');
 Route::middleware('auth:api')->post('/user', 'UserController@store');
 Route::middleware('auth:api')->delete('/user/{id}', 'UserController@destroy');
 
+Route::middleware('auth:api')->get('/marca', 'MarcaController@index');
+Route::middleware('auth:api')->get('/marca/{id}', 'MarcaController@edit');
+Route::middleware('auth:api')->put('/marca/{id}', 'MarcaController@update');
+Route::middleware('auth:api')->post('/marca', 'MarcaController@store');
+Route::middleware('auth:api')->delete('/marca/{id}', 'MarcaController@destroy');
+
+//Route::put('/marca/{id}', 'MarcaController@update'); 
+
+//Route::get('/marca/{id}', 'MarcaController@edit');
 /* 
 Route::group(['auth:api'], function () {
     
@@ -31,6 +40,7 @@ Route::group(['auth:api'], function () {
     Route::delete('/user/{id}', 'UserController@destroy');
 
 }); */
+
 
 
     

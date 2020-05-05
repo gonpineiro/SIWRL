@@ -7,7 +7,6 @@ use App\Http\Requests\UsersRequest;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
-
 use App\User;
 
 class UserController extends Controller
@@ -32,7 +31,7 @@ class UserController extends Controller
         }
         $user->save();
         return response()->json($user, 200);
-  }
+    }
 
     public function store(UsersRequest $request){        
         $user = User::create([
