@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Table from './Table'
 import Formulario from './Formulario'
+import Delete from './Delete'
 
 import * as marcasActions from '../../actions/marcasActions'
 import Spinner from '../General/Spinner';
@@ -41,10 +42,7 @@ class Marcas extends Component {
 		return <Formulario />
 	}
 
-
-
-	render() {
-		
+	render() {		
 		return (
 			<div className="container">
 				<div className="row mt-2">
@@ -54,7 +52,6 @@ class Marcas extends Component {
 							{this.ponerContenido()}
 						</div>
 					</div>
-
 					<div className="col col-md-4">
 						<div className="card">
 
@@ -84,39 +81,10 @@ class Marcas extends Component {
 								<div>
 									<div className="card-header center">
 										Eliminar la siguente marca
-											</div>
+									</div>
 									{this.props.loading ? <Spinner /> :
-										<div className="card-body">
-											<div className="form-row">
-												<div className="form-group col-md-12">
-													<label>ID</label>
-													<input
-														value={this.props.marca.id}
-														className="form-control"
-														disabled
-													/>
-												</div>
-												<div className="form-group col-md-12">
-													<label>Nombre</label>
-													<input
-														value={this.props.marca.name}
-														className="form-control"
-														disabled
-													/>
-												</div>
-												<button
-													className="btn btn-dark"
-													onClick={() => this.props.borrar(this.props.marca.id)}
-												>
-													Eliminar
-                  								</button>
-												<button
-													className="btn btn-danger btn-cancelar"
-													onClick={this.props.cancelar}
-												>
-													Cancelar
-                  								</button>
-											</div>
+										<div className="card-body">												
+												<Delete />
 										</div>}
 								</div> : ''}
 

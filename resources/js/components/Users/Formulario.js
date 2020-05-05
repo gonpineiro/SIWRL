@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import Spinner from '../General/Spinner'
+
+/* import Spinner from '../General/Spinner'
+ */
 
 import * as usersActions from '../../actions/usersActions'
 
@@ -93,7 +95,6 @@ class Formulario extends Component {
                   >
                      Guardar
                   </button>                  
-                  
 
                   { this.props.state_form === 'editar' 
                   ? 
@@ -104,7 +105,6 @@ class Formulario extends Component {
                      Cancelar
                   </button> : '' }
                   
-                  {this.props.loading ? <Spinner /> : ''}
                </div>
             </div>
          </div>

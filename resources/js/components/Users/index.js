@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Table from './Table'
 import Formulario from './Formulario'
+import Delete from './Delete'
 
 import * as usersActions from '../../actions/usersActions'
 
@@ -87,44 +88,7 @@ class Users extends Component {
 											</div>
 									{this.props.loading ? <Spinner /> :
 										<div className="card-body">
-											<div className="form-row">
-												<div className="form-group col-md-12">
-													<label>ID</label>
-													<input
-														value={this.props.user.id}
-														className="form-control"
-														disabled
-													/>
-												</div>
-												<div className="form-group col-md-12">
-													<label>Nombre</label>
-													<input
-														value={this.props.user.name}
-														className="form-control"
-														disabled
-													/>
-												</div>
-												<div className="form-group col-md-12">
-													<label>Email</label>
-													<input
-														value={this.props.user.email}
-														className="form-control"
-														disabled
-													/>
-												</div>
-												<button
-													className="btn btn-dark"
-													onClick={() => this.props.borrar(this.props.user.id)}
-												>
-													Eliminar
-                  								</button>
-												<button
-													className="btn btn-danger btn-cancelar"
-													onClick={this.props.cancelar}
-												>
-													Cancelar
-                  								</button>
-											</div>
+												<Delete />
 										</div>}
 								</div> : ''}
 
