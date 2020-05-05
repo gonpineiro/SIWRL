@@ -85,6 +85,10 @@ class Formulario extends Component {
                      value={this.props.password}
                      onChange={this.cambioUsuarioPassword}
                   />
+                  {this.props.error_form.password && this.props.error_form.password.map((err, key) =>
+                     <small key={key} className="text-danger">{err}</small>
+                  )}
+
                </div>
                <div className="form-group col-md-12">
                   <button

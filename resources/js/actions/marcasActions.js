@@ -91,8 +91,8 @@ export const agregar = (nueva_marca) => async (dispatch) => {
         
     }
     catch (error) {
-        const errors = error.response.data.errors
-
+        const errors = error.response.data.errors   
+             
         dispatch({
             type: ERROR_FORM,
             payload: errors

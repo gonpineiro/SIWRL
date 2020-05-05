@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\MarcasRequest;
 
 use App\Marca;
 
@@ -18,7 +19,7 @@ class MarcaController extends Controller
         return response()->json($marca, 200);
     }
     
-    public function update($id, Request $request){
+    public function update($id, MarcasRequest $request){
 
         $marca = $this->findByIdMarca($id);
         $marca->name = $request->get('name');
@@ -26,7 +27,7 @@ class MarcaController extends Controller
         return response()->json($marca, 200);
     }
 
-    public function store(Request $request){        
+    public function store(MarcasRequest $request){        
         $marca = Marca::create([
             'name' => $request->input('name')
         ]);    

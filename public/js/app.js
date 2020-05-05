@@ -75327,6 +75327,11 @@ var Formulario = /*#__PURE__*/function (_Component) {
         className: "form-control",
         value: this.props.password,
         onChange: this.cambioUsuarioPassword
+      }), this.props.error_form.password && this.props.error_form.password.map(function (err, key) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+          key: key,
+          className: "text-danger"
+        }, err);
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group col-md-12"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {

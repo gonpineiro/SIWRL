@@ -25,10 +25,11 @@ class UsersRequest extends FormRequest
     public function rules()
     {
         $id = $this->request->get('id') ? ',' . $this->request->get('id') : '';
-        //dd($id);
+
         return [
-            'name' => 'required',
-            'email' => 'required|email|unique:users,email'.$id
+            'name' => 'required|min:3|max:20',
+            'password' => 'required',
+            'email' => 'required|email|max:100|unique:users,email'.$id
         ];
     }
 
@@ -36,9 +37,15 @@ class UsersRequest extends FormRequest
     {
         return [
             'name.required' => 'El nombre el requerido.',
+            'name.min' => 'El minimo es 3 caracteres.',
+            'name.max' => 'El maximo es 20 caracteres.',
+
+            'password.required' => 'El password el requerido.',
+
             'email.required' => 'El email es requerido.',
             'email.unique' => 'Ya existe un correo. ',
-            'email.email' => 'no corresponde el formato. '
+            'email.email' => 'No corresponde el formato.',
+            'email.max' => 'El maximo es 20 caracteres.'
         ];
     }
   
