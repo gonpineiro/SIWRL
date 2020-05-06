@@ -28,7 +28,11 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/marcas', function(){
       return view('home');
-    })->name('users');
+    })->name('marcas');
+
+    Route::get('/geneticas', function(){
+      return view('home');
+    })->name('geneticas');
     
     
 

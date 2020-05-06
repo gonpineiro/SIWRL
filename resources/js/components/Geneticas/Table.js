@@ -1,21 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux'
 
-import * as marcasActions from '../../actions/marcasActions'
+import * as geneticasActions from '../../actions/geneticasActions'
 
 const Table = (props) => {
-
-  const addRow = () => props.marcas.map((marca, key) => (
+  
+  const addRow = () => props.geneticas.map((genetica, key) => (
     <tr key={key}>
-      <td>{marca.id}</td>
-      <td>{marca.name}</td>
+      <td>{genetica.id}</td>
+      <td>{genetica.name}</td>
+      <td>{genetica.marca.name}</td>
       <td>
           <i 
           className="material-icons"
-          onClick={() => props.traerUno(marca.id)}
+          onClick={() => props.traerUno(genetica.id)}
           >edit</i>
           <i 
-          onClick={() => props.traerUnoBorrar(marca.id)}
+          onClick={() => props.traerUnoBorrar(genetica.id)}
           className="material-icons"
           >delete</i>
       </td>
@@ -29,6 +30,7 @@ const Table = (props) => {
           <tr>
             <th>ID</th>
             <th>Nombre</th>
+            <th>Marca</th>
             <th>Accion</th>
           </tr>
         </thead>
@@ -41,7 +43,7 @@ const Table = (props) => {
 }
 
 const mapStateToProps = (reducers) => {
-  return reducers.marcasReducer
+  return reducers.geneticasReducer
 }
 
-export default connect(mapStateToProps, marcasActions)(Table);
+export default connect(mapStateToProps, geneticasActions)(Table);

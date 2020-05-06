@@ -4,21 +4,23 @@ import {
     TRAER_UNO,
     LOADING,
     ERROR_FORM,
-    CAMBIO_MARCA_ID,
-    CAMBIO_MARCA_NAME,
+    CAMBIO_GENETICA_ID,
+    CAMBIO_GENETICA_MARCA_ID,
+    CAMBIO_GENETICA_NAME,
     CAMBIO_ESTADO_FORM,
     GUARDAR
-} from '../types/marcaTypes'
+} from '../types/geneticaTypes'
 
 const URL = 'http://192.168.0.238:901/api/'
 
 export const traerTodos = () => async (dispatch) => {
+    
     dispatch({
         type: LOADING
     })
 
     try {
-        const response = await axios.get(URL + 'marca')
+        const response = await axios.get(URL + 'genetica')
 
         dispatch({
             type: TRAER_TODOS,
@@ -26,6 +28,7 @@ export const traerTodos = () => async (dispatch) => {
         })
 
     } catch (error) {
+        
         console.log(error)
     }
 }
@@ -37,7 +40,17 @@ export const traerUno = (id) => async (dispatch) => {
     })
 
     dispatch({
-        type: CAMBIO_MARCA_NAME,
+        type: CAMBIO_GENETICA_ID,
+        payload: ''
+    })
+
+    dispatch({
+        type: CAMBIO_GENETICA_NAME,
+        payload: ''
+    })
+
+    dispatch({
+        type: CAMBIO_GENETICA_MARCA_ID,
         payload: ''
     })
 
@@ -48,43 +61,53 @@ export const traerUno = (id) => async (dispatch) => {
 
 
     try {
-        const response = await axios.get(URL + 'marca/' + id)
-
+        const response = await axios.get(URL + 'genetica/' + id)
         dispatch({
             type: TRAER_UNO,
             payload: response.data
         })
 
         dispatch({
-            type: CAMBIO_MARCA_ID,
+            type: CAMBIO_GENETICA_ID,
             payload: response.data.id
         })
 
         dispatch({
-            type: CAMBIO_MARCA_NAME,
+            type: CAMBIO_GENETICA_NAME,
             payload: response.data.name
         })
-        
+
+        dispatch({
+            type: CAMBIO_GENETICA_MARCA_ID,
+            payload: response.data.marca_id
+        })
 
     } catch (error) {
         console.log(error)
     }
 }
 
-export const cambioMarcaName = (valor) => (dispatch) => {
-
+export const cambioGeneticaName = (valor) => (dispatch) => {
     dispatch({
-        type: CAMBIO_MARCA_NAME,
+        type: CAMBIO_GENETICA_NAME,
         payload: valor
     })
 };
 
-export const agregar = (nueva_marca) => async (dispatch) => {
+export const cambioGeneticaMarca = (valor) => (dispatch) => {
+    dispatch({
+        type: CAMBIO_GENETICA_MARCA_ID,
+        payload: valor
+    })
+};
+
+export const agregar = (nueva_genetica) => async (dispatch) => {
     dispatch({
         type: LOADING
     });
+    
     try {
-        await axios.post(URL + 'marca', nueva_marca);
+        await axios.post(URL + 'genetica', nueva_genetica);
         dispatch({
             type: GUARDAR
         });
@@ -100,13 +123,13 @@ export const agregar = (nueva_marca) => async (dispatch) => {
     }
 };
 
-export const editar = (nueva_marca, id) => async (dispatch) => {
+export const editar = (nueva_genetica, id) => async (dispatch) => {
     dispatch({
         type: LOADING
     })
 
     try {
-        await axios.put(URL + 'marca/' + id, nueva_marca)
+        await axios.put(URL + 'genetica/' + id, nueva_genetica)
         dispatch({
             type: GUARDAR
         })
@@ -132,7 +155,7 @@ export const traerUnoBorrar = (id) => async (dispatch) => {
 
 
     try {
-        const response = await axios.get(URL + 'marca/' + id)
+        const response = await axios.get(URL + 'genetica/' + id)
 
         dispatch({
             type: TRAER_UNO,
@@ -140,13 +163,18 @@ export const traerUnoBorrar = (id) => async (dispatch) => {
         })
 
         dispatch({
-            type: CAMBIO_MARCA_ID,
+            type: CAMBIO_GENETICA_ID,
             payload: response.data.id
         })
 
         dispatch({
-            type: CAMBIO_MARCA_NAME,
+            type: CAMBIO_GENETICA_NAME,
             payload: response.data.name
+        })
+
+        dispatch({
+            type: CAMBIO_GENETICA_MARCA_ID,
+            payload: response.data.marca_id
         })
 
     } catch (error) {
@@ -155,12 +183,13 @@ export const traerUnoBorrar = (id) => async (dispatch) => {
 }
 
 export const borrar = (id) => async (dispatch) => {
-
+    
     dispatch({
         type: LOADING
     })
+    
     try {
-        await axios.delete(URL + 'marca/' + id)
+        await axios.delete(URL + 'genetica/' + id)
 
         dispatch({
             type: GUARDAR

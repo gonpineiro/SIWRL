@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
-import * as marcasActions from '../../actions/marcasActions'
+import * as geneticasActions from '../../actions/geneticasActions'
 
 
-class Delete extends Component {
-    render() {
+const Delete = (props) => {   
+        
         return (
             <div>
                 <div className="form-row">
                     <div className="form-group col-md-12">
                         <label>ID</label>
                         <input
-                            value={this.props.marca.id}
+                            value={props.genetica.id}
                             className="form-control"
                             disabled
                         />
@@ -20,31 +20,31 @@ class Delete extends Component {
                     <div className="form-group col-md-12">
                         <label>Nombre</label>
                         <input
-                            value={this.props.marca.name}
+                            value={props.genetica.name}
                             className="form-control"
                             disabled
                         />
                     </div>
                     <button
                         className="btn btn-dark"
-                        onClick={() => this.props.borrar(this.props.marca.id)}
+                        onClick={() => props.borrar(props.genetica.id)}
                     >
                         Eliminar
                     </button>
                     <button
                         className="btn btn-danger btn-cancelar"
-                        onClick={this.props.cancelar}
+                        onClick={props.cancelar}
                     >
                         Cancelar
                     </button>
                 </div>
             </div>
         );
-    }
+    
 }
 
 const mapStateToProps = (reducers) => {
-    return reducers.marcasReducer
+    return reducers.geneticasReducer
 }
 
-export default connect(mapStateToProps, marcasActions)(Delete);
+export default connect(mapStateToProps, geneticasActions)(Delete);

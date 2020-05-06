@@ -25,9 +25,9 @@ function Layout(props) {
 
                     </li>
                     <li className="has-subnav">
-                        <Link to="/clientes">
+                        <Link to="/geneticas">
                             <i className="fa fa-list fa-2x"></i>
-                            <span className="nav-text">Clientes</span>
+                            <span className="nav-text">Genéticas</span>
                         </Link>
 
                     </li>

@@ -6,6 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Genetica extends Model
 {    
+
+    public function marca(){
+        return $this->belongsTo('App\Marca');
+    }
+
+
     /**
      * The attributes that are mass assignable.
      *

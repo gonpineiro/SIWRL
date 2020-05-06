@@ -3,18 +3,18 @@ import { connect } from 'react-redux'
 import Table from './Table'
 import Formulario from './Formulario'
 import Delete from './Delete'
-
-import * as marcasActions from '../../actions/marcasActions'
 import Spinner from '../General/Spinner';
 
-class Marcas extends Component {
+import * as geneticasActions from '../../actions/geneticasActions'
+
+class Geneticas extends Component {
 
 	async componentDidMount() {
 		const {
 			traerTodos,
 		} = this.props
-
-		if (!this.props.marcas.length) {
+		
+		if (!this.props.geneticas.length) {			
 			traerTodos()
 		}
 	}
@@ -24,11 +24,11 @@ class Marcas extends Component {
 			traerTodos,
 		} = this.props
 
-		if (this.props.recargar_table) {
+		if (this.props.recargar_table) {			
 			traerTodos()
-		}
+		}		
 
-		if (this.props.loading && !this.props.marcas.length) {
+		if (this.props.loading && !this.props.geneticas.length) {
 			return <Spinner />
 		}
 
@@ -48,7 +48,7 @@ class Marcas extends Component {
 				<div className="row mt-2">
 					<div className="col col-md-8">
 						<div>
-							<h4>Lista de marcas</h4>
+							<h4>Lista de genéticas</h4>
 							{this.ponerContenido()}
 						</div>
 					</div>
@@ -58,7 +58,7 @@ class Marcas extends Component {
 							{this.props.state_form === 'crear' ?
 								<div>
 									<div className="card-header center">
-										Agregar marca
+										Agregar genética
 									</div>
 									{this.props.loading ? <Spinner /> :
 										<div className="card-body">
@@ -69,7 +69,7 @@ class Marcas extends Component {
 							{this.props.state_form === 'editar' ?
 								<div>
 									<div className="card-header center">
-										Modificando usuario: {this.props.marca.id}
+										Modificando genetica: {this.props.genetica.id}
 									</div>
 									{this.props.loading ? <Spinner /> :
 										<div className="card-body">
@@ -80,7 +80,7 @@ class Marcas extends Component {
 							{this.props.state_form === 'borrar' ?
 								<div>
 									<div className="card-header center">
-										Eliminar la siguente marca
+										Eliminar la siguente genética
 									</div>
 									{this.props.loading ? <Spinner /> :
 										<div className="card-body">												
@@ -97,8 +97,10 @@ class Marcas extends Component {
 	}
 }
 
-const mapStateToProps = (reducers) => {
-	return reducers.marcasReducer
-}
 
-export default connect(mapStateToProps, marcasActions)(Marcas);
+const mapStateToProps = (reducers) => {
+	return reducers.geneticasReducer;
+};
+
+
+export default connect(mapStateToProps, geneticasActions)(Geneticas);

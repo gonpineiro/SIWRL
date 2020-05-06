@@ -15,6 +15,7 @@ import {
 const URL = 'http://192.168.0.238:901/api/'
 
 export const traerTodos = () => async (dispatch) => {
+    
     dispatch({
         type: LOADING
     })
