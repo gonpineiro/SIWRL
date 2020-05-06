@@ -209,4 +209,23 @@ export const cancelar = () => (dispatch) => {
         type: GUARDAR
     })
 }
+
+export const ponerFormularioMarca = () => (dispatch) => {
+    dispatch({
+        type: CAMBIO_ESTADO_FORM,
+        payload: 'crear-marca'
+    })
+}
+
+export const retirarFormularioMarca = () => (dispatch) => {
+    
+    dispatch({
+        type: CAMBIO_ESTADO_FORM,
+        recargar_table: true,
+        payload: 'crear'
+    })
+
+   
+    
+}
  

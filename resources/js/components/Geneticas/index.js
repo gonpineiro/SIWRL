@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Table from './Table'
 import Formulario from './Formulario'
+import FormularioMarca from '../Marcas/Formulario'
 import Delete from './Delete'
 import Spinner from '../General/Spinner';
 
@@ -13,8 +14,8 @@ class Geneticas extends Component {
 		const {
 			traerTodos,
 		} = this.props
-		
-		if (!this.props.geneticas.length) {			
+
+		if (!this.props.geneticas.length) {
 			traerTodos()
 		}
 	}
@@ -24,9 +25,9 @@ class Geneticas extends Component {
 			traerTodos,
 		} = this.props
 
-		if (this.props.recargar_table) {			
+		if (this.props.recargar_table) {
 			traerTodos()
-		}		
+		}
 
 		if (this.props.loading && !this.props.geneticas.length) {
 			return <Spinner />
@@ -38,11 +39,16 @@ class Geneticas extends Component {
 
 		return <Table />
 	}
+
 	ponerFormulario = () => {
 		return <Formulario />
 	}
 
-	render() {		
+	ponerFormularioMarca = () => {
+		return <FormularioMarca />
+	}
+
+	render() {
 		return (
 			<div className="container">
 				<div className="row mt-2">
@@ -77,14 +83,25 @@ class Geneticas extends Component {
 										</div>}
 								</div> : ''}
 
+							{this.props.state_form === 'crear-marca' ?
+								<div>
+									<div className="card-header card-agregar">
+										Agregar marca
+									</div>
+									{this.props.loading ? <Spinner /> :
+										<div className="card-body">
+											{this.ponerFormularioMarca()}
+										</div>}
+								</div> : ''}
+
 							{this.props.state_form === 'borrar' ?
 								<div>
 									<div className="card-header card-eliminar">
 										Eliminar la siguente genética
 									</div>
 									{this.props.loading ? <Spinner /> :
-										<div className="card-body">												
-												<Delete />
+										<div className="card-body">
+											<Delete />
 										</div>}
 								</div> : ''}
 

@@ -8,6 +8,7 @@ const { traerTodos: marcasTraerTodos } = marcasActions;
 const {
    cambioGeneticaName,
    cambioGeneticaMarca,
+   ponerFormularioMarca,
    cancelar,
    agregar,
    editar } = geneticasActions;
@@ -58,6 +59,10 @@ class Formulario extends Component {
       }
    };
 
+   ponerFormularioMarca = () => {
+      this.props.ponerFormularioMarca()
+   }
+
 
    render() {
       return (
@@ -80,7 +85,7 @@ class Formulario extends Component {
                <div className="form-group col-md-12">
                   <label
                   className="link link-string"
-                  onClick={() => console.log('Click')}
+                  onClick={() => this.ponerFormularioMarca()}
                   >Marcas 
                   </label> 
                   
@@ -136,6 +141,7 @@ const mapDispatchToProps = {
    geneticasActions,
    cambioGeneticaName,
    cambioGeneticaMarca,
+   ponerFormularioMarca,
    agregar,
    editar,
    cancelar
