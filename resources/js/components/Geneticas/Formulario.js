@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import Spinner from '../General/Spinner'
 
 import * as geneticasActions from '../../actions/geneticasActions'
 import * as marcasActions from '../../actions/marcasActions';
 
 const { traerTodos: marcasTraerTodos } = marcasActions;
-const { 
-   traerTodos: geneticasTraerTodos, 
-   cambioGeneticaName, 
-   cambioGeneticaMarca, 
-   cancelar, 
-   agregar, 
+const {
+   cambioGeneticaName,
+   cambioGeneticaMarca,
+   cancelar,
+   agregar,
    editar } = geneticasActions;
 
 class Formulario extends Component {
@@ -80,19 +78,27 @@ class Formulario extends Component {
                </div>
 
                <div className="form-group col-md-12">
-                  <label>Marcas</label>
-                  <select
-                     className="form-control"
-                     onChange={this.cambioGeneticaMarca}
-                  >
-                     <option value="">Seleccione</option>
-                     {this.props.marcasReducer.marcas.map((marca) => (
-                        <option key={marca.id} value={marca.id}>{marca.name}</option>
-                     ))}
-                  </select>
-                  {this.props.geneticasReducer.error_form.marca_id && this.props.geneticasReducer.error_form.marca_id.map((err, key) =>
-                     <small key={key} className="text-danger">{err}</small>
-                  )}
+                  <label
+                  className="link link-string"
+                  onClick={() => console.log('Click')}
+                  >Marcas 
+                  </label> 
+                  
+                  <div className="form-row">
+                     <select
+                        className="form-control"
+                        onChange={this.cambioGeneticaMarca}
+                     >
+                        <option value="">Seleccione</option>
+                        {this.props.marcasReducer.marcas.map((marca) => (
+                           <option key={marca.id} value={marca.id}>{marca.name}</option>
+                        ))}
+                     </select>
+                     {this.props.geneticasReducer.error_form.marca_id && this.props.geneticasReducer.error_form.marca_id.map((err, key) =>
+                        <small key={key} className="text-danger">{err}</small>
+                     )}
+
+                  </div>
                </div>
 
                <div className="form-group col-md-12">
@@ -126,7 +132,6 @@ const mapStateToProps = ({ geneticasReducer, marcasReducer }) => {
 };
 
 const mapDispatchToProps = {
-   geneticasTraerTodos,
    marcasTraerTodos,
    geneticasActions,
    cambioGeneticaName,

@@ -1,26 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
-/* import Spinner from '../General/Spinner'
- */
-
 import * as usersActions from '../../actions/usersActions'
 
-class Formulario extends Component {
-
-   cambioUsuarioName = (event) => {
-      this.props.cambioUsuarioName(event.target.value);
+const Formulario = (props) => {
+   
+   const cambioUsuarioName = (event) => {
+      props.cambioUsuarioName(event.target.value);
    };
 
-   cambioUsuarioEmail = (event) => {
-      this.props.cambioUsuarioEmail(event.target.value);
+   const cambioUsuarioEmail = (event) => {
+      props.cambioUsuarioEmail(event.target.value);
    };
 
-   cambioUsuarioPassword = (event) => {
-      this.props.cambioUsuarioPassword(event.target.value);
+   const cambioUsuarioPassword = (event) => {
+      props.cambioUsuarioPassword(event.target.value);
    };
 
-   guardar = () => {
+   const guardar = () => {      
       const {
          id,
          name,
@@ -29,7 +26,7 @@ class Formulario extends Component {
          agregar,
          editar,
          state_form
-      } = this.props;
+      } = props;
 
       const nuevo_usuario = {
          id: id,
@@ -48,7 +45,7 @@ class Formulario extends Component {
    };
 
   
-   render() {
+   
       return (
          <div>
             <div className="form-row">
@@ -57,10 +54,10 @@ class Formulario extends Component {
                   <input
                      type="text"
                      className="form-control"
-                     value={this.props.name }
-                     onChange={this.cambioUsuarioName}
+                     value={props.name}
+                     onChange={cambioUsuarioName}
                   />
-                  {this.props.error_form.name && this.props.error_form.name.map((err, key) =>
+                  {props.error_form.name && props.error_form.name.map((err, key) =>
                      <small key={key} className="text-danger">{err}</small>
                   )}
                </div>
@@ -69,10 +66,10 @@ class Formulario extends Component {
                   <input
                      type="email"
                      className="form-control"
-                     value={this.props.email }
-                     onChange={this.cambioUsuarioEmail}
+                     value={props.email}
+                     onChange={cambioUsuarioEmail}
                   />
-                  {this.props.error_form.email && this.props.error_form.email.map((err, key) =>
+                  {props.error_form.email && props.error_form.email.map((err, key) =>
                      <small key={key} className="text-danger">{err}</small>
                   )}
 
@@ -82,10 +79,10 @@ class Formulario extends Component {
                   <input
                      type="text"
                      className="form-control"
-                     value={this.props.password}
-                     onChange={this.cambioUsuarioPassword}
+                     value={props.password}
+                     onChange={cambioUsuarioPassword}
                   />
-                  {this.props.error_form.password && this.props.error_form.password.map((err, key) =>
+                  {props.error_form.password && props.error_form.password.map((err, key) =>
                      <small key={key} className="text-danger">{err}</small>
                   )}
 
@@ -94,17 +91,17 @@ class Formulario extends Component {
                   <button
                      id="guardar-btn"
                      className="btn btn-dark"
-                     onClick={this.guardar}
+                     onClick={guardar}
                      
                   >
                      Guardar
                   </button>                  
 
-                  { this.props.state_form === 'editar' 
+                  {props.state_form === 'editar' 
                   ? 
                   <button
                      className="btn btn-danger btn-cancelar"
-                     onClick={this.props.cancelar}
+                     onClick={props.cancelar}
                   >
                      Cancelar
                   </button> : '' }
@@ -112,8 +109,7 @@ class Formulario extends Component {
                </div>
             </div>
          </div>
-      );
-   }
+      );   
 }
 
 const mapStateToProps = (reducers) => {

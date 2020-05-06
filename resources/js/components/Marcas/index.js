@@ -57,7 +57,7 @@ class Marcas extends Component {
 
 							{this.props.state_form === 'crear' ?
 								<div>
-									<div className="card-header center">
+									<div className="card-header card-agregar">
 										Agregar marca
 									</div>
 									{this.props.loading ? <Spinner /> :
@@ -68,7 +68,7 @@ class Marcas extends Component {
 
 							{this.props.state_form === 'editar' ?
 								<div>
-									<div className="card-header center">
+									<div className="card-header card-agregar">
 										Modificando usuario: {this.props.marca.id}
 									</div>
 									{this.props.loading ? <Spinner /> :
@@ -79,7 +79,7 @@ class Marcas extends Component {
 
 							{this.props.state_form === 'borrar' ?
 								<div>
-									<div className="card-header center">
+									<div className="card-header card-eliminar">
 										Eliminar la siguente marca
 									</div>
 									{this.props.loading ? <Spinner /> :

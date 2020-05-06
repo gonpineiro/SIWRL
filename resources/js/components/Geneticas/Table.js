@@ -12,12 +12,12 @@ const Table = (props) => {
       <td>{genetica.marca.name}</td>
       <td>
           <i 
-          className="material-icons"
+          className="material-icons link"
           onClick={() => props.traerUno(genetica.id)}
           >edit</i>
           <i 
           onClick={() => props.traerUnoBorrar(genetica.id)}
-          className="material-icons"
+          className="material-icons link"
           >delete</i>
       </td>
     </tr>

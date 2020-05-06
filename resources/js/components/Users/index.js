@@ -61,7 +61,7 @@ class Users extends Component {
 
 							{this.props.state_form === 'crear' ?
 								<div>
-									<div className="card-header center">
+									<div className="card-header card-agregar">
 										Agregar usuario
 									</div>
 									{this.props.loading ? <Spinner /> :
@@ -72,7 +72,7 @@ class Users extends Component {
 
 							{this.props.state_form === 'editar' ?
 								<div>
-									<div className="card-header center">
+									<div className="card-header card-agregar">
 										Modificando usuario: {this.props.user.id}
 									</div>
 									{this.props.loading ? <Spinner /> :
@@ -83,7 +83,7 @@ class Users extends Component {
 
 							{this.props.state_form === 'borrar' ?
 								<div>
-									<div className="card-header center">
+									<div className="card-header card-eliminar">
 										Eliminar siguente usuario
 											</div>
 									{this.props.loading ? <Spinner /> :

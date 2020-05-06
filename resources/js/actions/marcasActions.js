@@ -167,7 +167,7 @@ export const borrar = (id) => async (dispatch) => {
         })
 
     } catch (error) {
-        const errors = error.response.data.errors
+        const errors = error.response.data.message
         dispatch({
             type: ERROR_FORM,
             payload: errors

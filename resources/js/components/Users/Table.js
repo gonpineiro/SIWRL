@@ -13,12 +13,12 @@ const Table = (props) => {
       <td>{user.email}</td>
       <td>
           <i 
-          className="material-icons"
+          className="material-icons link"
           onClick={() => props.traerUno(user.id)}
           >edit</i>
           <i 
           onClick={() => props.traerUnoBorrar(user.id)}
-          className="material-icons"
+          className="material-icons link"
           >delete</i>
       </td>
     </tr>
