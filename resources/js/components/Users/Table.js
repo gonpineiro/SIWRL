@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
 
 import * as usersActions from '../../actions/usersActions'
 
 const Table = (props) => {
+  const { users, traerUno, traerUnoBorrar } = props
 
-  const addRow = () => props.users.map((user, key) => (
+  const addRow = () => users.map((user, key) => (
     <tr key={key}>
       <td>{user.id}</td>
       <td>{user.name}</td>
@@ -14,10 +14,10 @@ const Table = (props) => {
       <td>
           <i 
           className="material-icons link"
-          onClick={() => props.traerUno(user.id)}
+          onClick={() => traerUno(user.id)}
           >edit</i>
           <i 
-          onClick={() => props.traerUnoBorrar(user.id)}
+          onClick={() => traerUnoBorrar(user.id)}
           className="material-icons link"
           >delete</i>
       </td>

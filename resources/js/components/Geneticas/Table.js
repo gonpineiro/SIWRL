@@ -4,22 +4,23 @@ import { connect } from 'react-redux'
 import * as geneticasActions from '../../actions/geneticasActions'
 
 const Table = (props) => {
-  
-  const addRow = () => props.geneticas.map((genetica, key) => (
+  const { geneticas, traerUno, traerUnoBorrar } = props
+
+  const addRow = () => geneticas.map((genetica, key) => (
     <tr key={key}>
       <td>{genetica.id}</td>
       <td>{genetica.name}</td>
       <td>{genetica.marca.name}</td>
       <td>{genetica.thc}</td>
       <td>
-          <i 
+        <i
           className="material-icons link"
-          onClick={() => props.traerUno(genetica.id)}
-          >edit</i>
-          <i 
-          onClick={() => props.traerUnoBorrar(genetica.id)}
+          onClick={() => traerUno(genetica.id)}
+        >edit</i>
+        <i
+          onClick={() => traerUnoBorrar(genetica.id)}
           className="material-icons link"
-          >delete</i>
+        >delete</i>
       </td>
     </tr>
   ))

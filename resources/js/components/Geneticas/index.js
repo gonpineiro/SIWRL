@@ -11,44 +11,36 @@ import * as geneticasActions from '../../actions/geneticasActions'
 class Geneticas extends Component {
 
 	async componentDidMount() {
-		const {
-			traerTodos,
-		} = this.props
+		const { traerTodos, geneticas } = this.props
 
-		if (!this.props.geneticas.length) {
-			traerTodos()
-		}
+		if (!geneticas.length) traerTodos()
 	}
 
 	ponerContenido = () => {
 		const {
 			traerTodos,
+			recargar_table,
+			loading,
+			geneticas,
+			error
 		} = this.props
 
-		if (this.props.recargar_table) {
-			traerTodos()
-		}
+		if (recargar_table) traerTodos()
 
-		if (this.props.loading && !this.props.geneticas.length) {
-			return <Spinner />
-		}
+		if (loading && !geneticas.length) return <Spinner />
 
-		if (this.props.error) {
-			return 'Error'
-		}
+		if (error) return 'Error'
 
 		return <Table />
 	}
 
-	ponerFormulario = () => {
-		return <Formulario />
-	}
+	ponerFormulario = () => <Formulario />
 
-	ponerFormularioMarca = () => {
-		return <FormularioMarca />
-	}
+	ponerFormularioMarca = () => <FormularioMarca />
 
 	render() {
+		const { loading, state_form, genetica } = this.props
+
 		return (
 			<div className="container">
 				<div className="row mt-2">
@@ -61,45 +53,45 @@ class Geneticas extends Component {
 					<div className="col col-md-4">
 						<div className="card">
 
-							{this.props.state_form === 'crear' ?
+							{state_form === 'crear' ?
 								<div>
 									<div className="card-header card-agregar">
 										Agregar genética
 									</div>
-									{this.props.loading ? <Spinner /> :
+									{loading ? <Spinner /> :
 										<div className="card-body">
 											{this.ponerFormulario()}
 										</div>}
 								</div> : ''}
 
-							{this.props.state_form === 'editar' ?
+							{state_form === 'editar' ?
 								<div>
 									<div className="card-header card-agregar">
-										Modificando genetica: {this.props.genetica.id}
+										Modificando genetica: {genetica.id}
 									</div>
-									{this.props.loading ? <Spinner /> :
+									{loading ? <Spinner /> :
 										<div className="card-body">
 											{this.ponerFormulario()}
 										</div>}
 								</div> : ''}
 
-							{this.props.state_form === 'crear-marca' ?
+							{state_form === 'crear-marca' ?
 								<div>
 									<div className="card-header card-agregar">
 										Agregar marca
 									</div>
-									{this.props.loading ? <Spinner /> :
+									{loading ? <Spinner /> :
 										<div className="card-body">
 											{this.ponerFormularioMarca()}
 										</div>}
 								</div> : ''}
 
-							{this.props.state_form === 'borrar' ?
+							{state_form === 'borrar' ?
 								<div>
 									<div className="card-header card-eliminar">
 										Eliminar la siguente genética
 									</div>
-									{this.props.loading ? <Spinner /> :
+									{loading ? <Spinner /> :
 										<div className="card-body">
 											<Delete />
 										</div>}
@@ -114,10 +106,8 @@ class Geneticas extends Component {
 	}
 }
 
-
 const mapStateToProps = (reducers) => {
 	return reducers.geneticasReducer;
 };
-
 
 export default connect(mapStateToProps, geneticasActions)(Geneticas);

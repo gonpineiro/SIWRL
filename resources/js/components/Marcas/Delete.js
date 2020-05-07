@@ -1,17 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux'
 
 import * as marcasActions from '../../actions/marcasActions'
 
-
 const Delete = (props) => {
+    const { marca, borrar, cancelar, error_form } = props
+
     return (
         <div>
             <div className="form-row">
                 <div className="form-group col-md-12">
                     <label>ID</label>
                     <input
-                        value={props.marca.id}
+                        value={marca.id}
                         className="form-control"
                         disabled
                     />
@@ -19,21 +20,21 @@ const Delete = (props) => {
                 <div className="form-group col-md-12">
                     <label>Nombre</label>
                     <input
-                        value={props.marca.name}
+                        value={marca.name}
                         className="form-control"
                         disabled
                     />
-                {props.error_form && <small className="text-danger">Existe un registro vinculado.</small>}
+                    {error_form && <small className="text-danger">Existe un registro vinculado.</small>}
                 </div>
                 <button
                     className="btn btn-dark"
-                    onClick={() => props.borrar(props.marca.id)}
+                    onClick={() => borrar(marca.id)}
                 >
                     Eliminar
                     </button>
                 <button
                     className="btn btn-danger btn-cancelar"
-                    onClick={props.cancelar}
+                    onClick={cancelar}
                 >
                     Cancelar
                     </button>

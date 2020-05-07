@@ -19,34 +19,25 @@ class Formulario extends Component {
 
    async componentDidMount() {
       const {
-         marcasTraerTodos
+         marcasTraerTodos,
+         marcasReducer: { marcas },
       } = this.props
 
-
-      if (!this.props.marcasReducer.marcas.length) {
-         await marcasTraerTodos()
-      }
+      if (!marcas.length) await marcasTraerTodos()
    }
+   
+   ponerFormularioMarca = () => this.props.ponerFormularioMarca()
 
-   cambioGeneticaName = (event) => {
-      this.props.cambioGeneticaName(event.target.value);
-   };
+   handleCambioGeneticaName = (event) => this.props.cambioGeneticaName(event.target.value)
 
-   cambioGeneticaMarca = (event) => {
-      this.props.cambioGeneticaMarca(event.target.value);
-   }
+   handleCambioGeneticaMarca = (event) => this.props.cambioGeneticaMarca(event.target.value)   
 
    guardar = () => {
       const {
-         id,
-         name,
-         id_marca,
-         thc
-      } = this.props.geneticasReducer;
-
-      const {
-         state_form
-      } = this.props
+         geneticasReducer: { id, name, id_marca, thc, state_form },
+         agregar,
+         editar
+      } = this.props;
 
       const nueva_genetica = {
          id: id,
@@ -55,20 +46,19 @@ class Formulario extends Component {
          thc: thc
       };
 
-      if (this.props.geneticasReducer.state_form === 'crear') {         
-         this.props.agregar(nueva_genetica);
-      }
-      if (this.props.geneticasReducer.state_form === 'editar') {
-         this.props.editar(nueva_genetica, id)
-      }
-   };
+      if (state_form === 'crear') agregar(nueva_genetica);
 
-   ponerFormularioMarca = () => {
-      this.props.ponerFormularioMarca()
-   }
+      if (state_form === 'editar') editar(nueva_genetica, id)
 
+   };   
 
    render() {
+      const {
+         geneticasReducer: { name, error_form, state_form },
+         marcasReducer: { marcas },
+         cancelar
+      } = this.props
+
       return (
          <div>
             <div className="form-row">
@@ -78,11 +68,11 @@ class Formulario extends Component {
                   <input
                      type="text"
                      className="form-control"
-                     value={this.props.geneticasReducer.name}
-                     onChange={this.cambioGeneticaName}
+                     value={name}
+                     onChange={this.handleCambioGeneticaName}
                      pattern="[A-Z]"
                   />
-                  {this.props.geneticasReducer.error_form.name && this.props.geneticasReducer.error_form.name.map((err, key) =>
+                  {error_form.name && error_form.name.map((err, key) =>
                      <small key={key} className="text-danger">{err}</small>
                   )}
                </div>
@@ -97,10 +87,10 @@ class Formulario extends Component {
                   <div className="form-row">
                      <select
                         className="form-control"
-                        onChange={this.cambioGeneticaMarca}
+                        onChange={this.handleCambioGeneticaMarca}
                      >
                         <option value="">Seleccione</option>
-                        {this.props.marcasReducer.marcas.map((marca) => (
+                        {marcas.map((marca) => (
                            <option
                               key={marca.id}
                               value={marca.id}
@@ -109,7 +99,7 @@ class Formulario extends Component {
                            </option>
                         ))}
                      </select>
-                     {this.props.geneticasReducer.error_form.marca_id && this.props.geneticasReducer.error_form.marca_id.map((err, key) =>
+                     {error_form.marca_id && error_form.marca_id.map((err, key) =>
                         <small key={key} className="text-danger">{err}</small>
                      )}
 
@@ -119,7 +109,7 @@ class Formulario extends Component {
 
                <div className="form-group col-md-12">
                   <SliderThc />
-                  {this.props.geneticasReducer.error_form.thc && this.props.geneticasReducer.error_form.thc.map((err, key) =>
+                  {error_form.thc && error_form.thc.map((err, key) =>
                      <small key={key} className="text-danger">{err}</small>
                   )}
                </div>
@@ -134,11 +124,11 @@ class Formulario extends Component {
                      Guardar
                   </button>
 
-                  {this.props.geneticasReducer.state_form === 'editar'
+                  {state_form === 'editar'
                      ?
                      <button
                         className="btn btn-danger btn-cancelar"
-                        onClick={this.props.cancelar}
+                        onClick={cancelar}
                      >
                         Cancelar
                      </button> : ''}
@@ -152,16 +142,12 @@ class Formulario extends Component {
    }
 }
 
-
-
-
 const mapStateToProps = ({ geneticasReducer, marcasReducer }) => {
    return { geneticasReducer, marcasReducer };
 };
 
 const mapDispatchToProps = {
    marcasTraerTodos,
-   geneticasActions,
    cambioGeneticaName,
    cambioGeneticaMarca,
    ponerFormularioMarca,

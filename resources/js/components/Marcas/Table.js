@@ -4,20 +4,21 @@ import { connect } from 'react-redux'
 import * as marcasActions from '../../actions/marcasActions'
 
 const Table = (props) => {
+  const { marcas, traerUno, traerUnoBorrar } = props
 
-  const addRow = () => props.marcas.map((marca, key) => (
+  const addRow = () => marcas.map((marca, key) => (
     <tr key={key}>
       <td>{marca.id}</td>
       <td>{marca.name}</td>
       <td>
-          <i 
+        <i
           className="material-icons link"
-          onClick={() => props.traerUno(marca.id)}
-          >edit</i>
-          <i 
-          onClick={() => props.traerUnoBorrar(marca.id)}
+          onClick={() => traerUno(marca.id)}
+        >edit</i>
+        <i
+          onClick={() => traerUnoBorrar(marca.id)}
           className="material-icons link"
-          >delete</i>
+        >delete</i>
       </td>
     </tr>
   ))

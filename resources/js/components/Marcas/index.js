@@ -10,39 +10,27 @@ import Spinner from '../General/Spinner';
 class Marcas extends Component {
 
 	async componentDidMount() {
-		const {
-			traerTodos,
-		} = this.props
+		const { traerTodos, marcas } = this.props
 
-		if (!this.props.marcas.length) {
-			traerTodos()
-		}
+		if (!marcas.length) traerTodos()
 	}
 
 	ponerContenido = () => {
-		const {
-			traerTodos,
-		} = this.props
+		const { traerTodos, recargar_table, loading, marcas, error } = this.props
 
-		if (this.props.recargar_table) {
-			traerTodos()
-		}
+		if (recargar_table) traerTodos()
 
-		if (this.props.loading && !this.props.marcas.length) {
-			return <Spinner />
-		}
+		if (loading && !marcas.length) return <Spinner />
 
-		if (this.props.error) {
-			return 'Error'
-		}
+		if (error) return 'Error'
 
 		return <Table />
 	}
-	ponerFormulario = () => {
-		return <Formulario />
-	}
+	ponerFormulario = () => <Formulario />
 
-	render() {		
+	render() {
+		const { state_form, loading, marca } = this.props
+
 		return (
 			<div className="container">
 				<div className="row mt-2">
@@ -55,36 +43,36 @@ class Marcas extends Component {
 					<div className="col col-md-4">
 						<div className="card">
 
-							{this.props.state_form === 'crear' ?
+							{state_form === 'crear' ?
 								<div>
 									<div className="card-header card-agregar">
 										Agregar marca
 									</div>
-									{this.props.loading ? <Spinner /> :
+									{loading ? <Spinner /> :
 										<div className="card-body">
 											{this.ponerFormulario()}
 										</div>}
 								</div> : ''}
 
-							{this.props.state_form === 'editar' ?
+							{state_form === 'editar' ?
 								<div>
 									<div className="card-header card-agregar">
-										Modificando usuario: {this.props.marca.id}
+										Modificando usuario: {marca.id}
 									</div>
-									{this.props.loading ? <Spinner /> :
+									{loading ? <Spinner /> :
 										<div className="card-body">
 											{this.ponerFormulario()}
 										</div>}
 								</div> : ''}
 
-							{this.props.state_form === 'borrar' ?
+							{state_form === 'borrar' ?
 								<div>
 									<div className="card-header card-eliminar">
 										Eliminar la siguente marca
 									</div>
-									{this.props.loading ? <Spinner /> :
-										<div className="card-body">												
-												<Delete />
+									{loading ? <Spinner /> :
+										<div className="card-body">
+											<Delete />
 										</div>}
 								</div> : ''}
 

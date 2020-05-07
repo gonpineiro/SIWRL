@@ -20,15 +20,14 @@ const InputSlider = (props) => {
   const classes = useStyles();
   const [value, setValue] = React.useState(30);
 
+  const { cambioGeneticaThc, thc } = props
+
   const handleSliderChange = (event, newValue) => {
-
-    props.cambioGeneticaThc(newValue)
+    cambioGeneticaThc(newValue)
     setValue(newValue);
-
   };
 
   const handleInputChange = (event) => {
-    console.log(Number(event.target.value))
     setValue(event.target.value === '' ? '' : Number(event.target.value));
   };
 
@@ -47,7 +46,7 @@ const InputSlider = (props) => {
         <div className="form-group col-md-10">
           <label >THC</label>
           <Slider
-            value={typeof value === 'number' ? props.thc || value : 0}
+            value={typeof value === 'number' ? thc || value : 0}
             onChange={handleSliderChange}
           />
         </div>
@@ -55,7 +54,7 @@ const InputSlider = (props) => {
           <label ></label>
           <Input
             className={classes.input}
-            value={props.thc || value}
+            value={thc || value}
             margin="dense"
             onChange={handleInputChange}
             onBlur={handleBlur}

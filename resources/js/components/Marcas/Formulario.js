@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux'
 
 import * as marcasActions from '../../actions/marcasActions'
@@ -10,47 +10,38 @@ const { agregar, editar, cambioMarcaName, cancelar, traerTodos: marcasTraerTodos
 
 const Formulario = (props) => {
 
-   const cambioMarcaName = (event) => {
-      props.cambioMarcaName(event.target.value);
-   };
+   const {
+      marcasReducer: { id, name, state_form: state_form_marcas, error_form, loading },
+      geneticasReducer: { state_form: state_form_geneticas },
+      cambioMarcaName,
+      retirarFormularioMarca,
+      agregar,
+      editar,
+      marcasTraerTodos,
+   } = props;
+
+   const handleCambioMarcaName = (event) => cambioMarcaName(event.target.value);
 
    const guardar = () => {
-      const {
-         id,
-         name,
-         state_form
-      } = props.marcasReducer;
 
       const nueva_marca = {
          id: id,
          name: name
       };
 
+      if (state_form_marcas === 'crear') agregar(nueva_marca);
 
-      if (state_form === 'crear') {
-         props.agregar(nueva_marca);
-         /* if (props.geneticasReducer.state_form === 'crear-marca') {
-               console.log('Ejecuto')
-               
-
-         } */
-
-      }
-
-      if (state_form === 'editar') {
-         props.editar(nueva_marca, id)
-      }
+      if (state_form_marcas === 'editar') editar(nueva_marca, id)
 
    };
 
-   const retirarFormularioMarca = () => {
-      props.marcasTraerTodos()      
-      props.retirarFormularioMarca()
+   const handleRetirarFormularioMarca = () => {
+      marcasTraerTodos()
+      retirarFormularioMarca()
    }
 
    return (
       <div>
-
          <div className="form-row">
 
             <div className="form-group col-md-12">
@@ -58,10 +49,10 @@ const Formulario = (props) => {
                <input
                   type="text"
                   className="form-control"
-                  value={props.marcasReducer.name}
-                  onChange={cambioMarcaName}
+                  value={name}
+                  onChange={handleCambioMarcaName}
                />
-               {props.marcasReducer.error_form.name && props.marcasReducer.error_form.name.map((err, key) =>
+               {error_form.name && error_form.name.map((err, key) =>
                   <small key={key} className="text-danger">{err}</small>
                )}
 
@@ -77,12 +68,12 @@ const Formulario = (props) => {
                   Guardar
                   </button>
 
-               {props.geneticasReducer.state_form === 'crear-marca'
+               {state_form_geneticas === 'crear-marca'
                   ?
                   <button
                      className="btn btn-danger btn-cancelar"
-                     onClick={retirarFormularioMarca}
-                     hidden={props.marcasReducer.loading ? true : false}
+                     onClick={handleRetirarFormularioMarca}
+                     hidden={loading ? true : false}
                   >
                      Volver
                   </button> : ''}
