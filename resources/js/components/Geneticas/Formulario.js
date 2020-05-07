@@ -38,7 +38,7 @@ class Formulario extends Component {
             form: {
                id,
                name,
-               id_marca,
+               marca_id,
                thc
             },             
             state_form
@@ -50,7 +50,7 @@ class Formulario extends Component {
       const nueva_genetica = {
          id: id,
          name: name,
-         marca_id: id_marca,
+         marca_id: marca_id,
          thc: thc
       };
 
@@ -68,7 +68,7 @@ class Formulario extends Component {
       } = this.props
 
       return (
-         <div>
+         <form>
             <div className="form-row">
 
                <div className="form-group col-md-12">
@@ -142,10 +142,9 @@ class Formulario extends Component {
                      </button> : ''}
 
                </div>
-
-
+               
             </div>
-         </div>
+         </form>
       );
    }
 }

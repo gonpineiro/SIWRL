@@ -11,16 +11,17 @@ const { agregar, editar, cambioMarcaName, cancelar, traerTodos: marcasTraerTodos
 const Formulario = (props) => {
 
    const {
-      marcasReducer: { 
+      marcasReducer: {
          form: { id, name },
-         state_form: state_form_marcas, 
-         error_form, 
+         state_form: state_form_marcas,
+         error_form,
          loading },
       geneticasReducer: { state_form: state_form_geneticas },
       cambioMarcaName,
       retirarFormularioMarca,
       agregar,
       editar,
+      cancelar,
       marcasTraerTodos,
    } = props;
 
@@ -45,7 +46,7 @@ const Formulario = (props) => {
    }
 
    return (
-      <div>
+      <form>
          <div className="form-row">
 
             <div className="form-group col-md-12">
@@ -59,7 +60,6 @@ const Formulario = (props) => {
                {error_form.name && error_form.name.map((err, key) =>
                   <small key={key} className="text-danger">{err}</small>
                )}
-
             </div>
 
             <div className="form-group col-md-12">
@@ -70,7 +70,16 @@ const Formulario = (props) => {
 
                >
                   Guardar
-                  </button>
+               </button>
+
+               {state_form_marcas === 'editar'
+                  ?
+                  <button
+                     className="btn btn-danger btn-cancelar"
+                     onClick={cancelar}
+                  >
+                     Cancelar
+                  </button> : ''}
 
                {state_form_geneticas === 'crear-marca'
                   ?
@@ -81,10 +90,10 @@ const Formulario = (props) => {
                   >
                      Volver
                   </button> : ''}
-
             </div>
+            
          </div>
-      </div>
+      </form>
    );
 }
 

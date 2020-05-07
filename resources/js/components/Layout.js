@@ -32,7 +32,7 @@ function Layout(props) {
 
                     </li>
                     <li className="has-subnav">
-                        <a href="/logout" method="post">
+                        <a href="#" method="post">
                             <i className="fa fa-bar-chart-o fa-2x"></i>
                             <span className="nav-text">Tipo de documentos</span>
                         </a>
@@ -48,7 +48,7 @@ function Layout(props) {
 
                 <ul className="logout">
                     <li>                        
-                        <a href="/logout">
+                        <a href="/#">
                             <i className="fa fa-power-off fa-2x"></i>
                             <span className="nav-text">
                                 Logout

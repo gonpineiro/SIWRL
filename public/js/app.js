@@ -93475,7 +93475,7 @@ var Formulario = /*#__PURE__*/function (_Component) {
           _this$props$geneticas2 = _this$props$geneticas.form,
           id = _this$props$geneticas2.id,
           name = _this$props$geneticas2.name,
-          id_marca = _this$props$geneticas2.id_marca,
+          marca_id = _this$props$geneticas2.marca_id,
           thc = _this$props$geneticas2.thc,
           state_form = _this$props$geneticas.state_form,
           agregar = _this$props.agregar,
@@ -93483,7 +93483,7 @@ var Formulario = /*#__PURE__*/function (_Component) {
       var nueva_genetica = {
         id: id,
         name: name,
-        marca_id: id_marca,
+        marca_id: marca_id,
         thc: thc
       };
       if (state_form === 'crear') agregar(nueva_genetica);
@@ -93539,7 +93539,7 @@ var Formulario = /*#__PURE__*/function (_Component) {
           state_form = _this$props3$genetica.state_form,
           marcas = _this$props3.marcasReducer.marcas,
           cancelar = _this$props3.cancelar;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "form-row"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "form-group col-md-12"
@@ -93675,7 +93675,7 @@ var InputSlider = function InputSlider(props) {
       setValue = _React$useState2[1];
 
   var cambioGeneticaThc = props.cambioGeneticaThc,
-      thc = props.thc;
+      thc = props.form.thc;
 
   var handleSliderChange = function handleSliderChange(event, newValue) {
     cambioGeneticaThc(newValue);
@@ -94003,7 +94003,7 @@ function Layout(props) {
   }, "Gen\xE9ticas"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "has-subnav"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "/logout",
+    href: "#",
     method: "post"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "fa fa-bar-chart-o fa-2x"
@@ -94018,7 +94018,7 @@ function Layout(props) {
   }, "Documentos")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     className: "logout"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "/logout"
+    href: "/#"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "fa fa-power-off fa-2x"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -94129,6 +94129,7 @@ var Formulario = function Formulario(props) {
       retirarFormularioMarca = props.retirarFormularioMarca,
       agregar = props.agregar,
       editar = props.editar,
+      cancelar = props.cancelar,
       marcasTraerTodos = props.marcasTraerTodos;
 
   var handleCambioMarcaName = function handleCambioMarcaName(event) {
@@ -94149,7 +94150,7 @@ var Formulario = function Formulario(props) {
     retirarFormularioMarca();
   };
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-group col-md-12"
@@ -94169,7 +94170,10 @@ var Formulario = function Formulario(props) {
     id: "guardar-btn",
     className: "btn btn-dark",
     onClick: guardar
-  }, "Guardar"), state_form_geneticas === 'crear-marca' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  }, "Guardar"), state_form_marcas === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "btn btn-danger btn-cancelar",
+    onClick: cancelar
+  }, "Cancelar") : '', state_form_geneticas === 'crear-marca' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "btn btn-danger btn-cancelar",
     onClick: handleRetirarFormularioMarca,
     hidden: loading ? true : false
@@ -94529,7 +94533,7 @@ var Formulario = function Formulario(props) {
     if (state_form === 'editar') editar(nuevo_usuario, id);
   };
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-group col-md-12"
@@ -94952,7 +94956,7 @@ var INITIAL_STATE = {
   form: {
     id: '',
     name: '',
-    id_marca: '',
+    marca_id: '',
     thc: 21
   },
   loading: false,
@@ -95016,7 +95020,7 @@ var INITIAL_STATE = {
     case _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_GENETICA_MARCA_ID"]:
       return _objectSpread(_objectSpread({}, state), {}, {
         form: _objectSpread(_objectSpread({}, state.form), {}, {
-          id_marca: action.payload
+          marca_id: action.payload
         })
       });
 
@@ -95038,12 +95042,11 @@ var INITIAL_STATE = {
         loading: false,
         error: '',
         error_form: '',
-        form: {
+        form: _objectSpread(_objectSpread({}, state.form), {}, {
           id: '',
           name: '',
-          id_marca: '',
-          thc: ''
-        },
+          marca_id: ''
+        }),
         recargar_table: true,
         state_form: 'crear'
       });

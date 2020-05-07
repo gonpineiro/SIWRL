@@ -18,7 +18,7 @@ const INITIAL_STATE = {
   form: {
     id: '',
     name: '',
-    id_marca: '',
+    marca_id: '',
     thc: 21
   },
   loading: false,
@@ -75,7 +75,7 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         form: {
           ...state.form,
-          id_marca: action.payload
+          marca_id: action.payload
         }
       };
 
@@ -102,10 +102,10 @@ export default (state = INITIAL_STATE, action) => {
         error: '',
         error_form: '',
         form: {
+          ...state.form, 
           id: '',
           name: '',
-          id_marca: '',
-          thc: ''
+          marca_id: '',
         },
         recargar_table: true,
         state_form: 'crear'

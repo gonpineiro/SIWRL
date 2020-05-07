@@ -20,7 +20,7 @@ const InputSlider = (props) => {
   const classes = useStyles();
   const [value, setValue] = React.useState(30);
 
-  const { cambioGeneticaThc, thc } = props
+  const { cambioGeneticaThc, form: { thc } } = props
 
   const handleSliderChange = (event, newValue) => {
     cambioGeneticaThc(newValue)

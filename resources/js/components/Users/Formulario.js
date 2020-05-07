@@ -38,8 +38,9 @@ const Formulario = (props) => {
    };
 
    return (
-      <div>
+      <form>
          <div className="form-row">
+
             <div className="form-group col-md-12">
                <label>Nombre </label>
                <input
@@ -52,6 +53,7 @@ const Formulario = (props) => {
                   <small key={key} className="text-danger">{err}</small>
                )}
             </div>
+
             <div className="form-group col-md-12">
                <label>Email</label>
                <input
@@ -65,6 +67,7 @@ const Formulario = (props) => {
                )}
 
             </div>
+            
             <div className="form-group col-md-12">
                <label>Password</label>
                <input
@@ -98,7 +101,7 @@ const Formulario = (props) => {
 
             </div>
          </div>
-      </div>
+      </form>
    );
 }
 
