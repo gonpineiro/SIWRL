@@ -16,6 +16,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -30,5 +31,18 @@
         
     
         <div id="app"></div>
+        
+<script>$(document).ready(function() {
+
+const $valueSpan = $('.valueSpan');
+const $value = $('#slider11');
+$valueSpan.html($value.val());
+$value.on('input change', () => {
+
+  $valueSpan.html($value.val());
+});
+});</script>
+
+
 </body>
 </html>

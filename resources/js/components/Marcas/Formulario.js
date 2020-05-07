@@ -24,26 +24,33 @@ const Formulario = (props) => {
       const nueva_marca = {
          id: id,
          name: name
-      };     
-      
+      };
+
 
       if (state_form === 'crear') {
-         props.agregar(nueva_marca);     
-         if (props.geneticasReducer.state_form === 'crear-marca') {  
-            props.marcasTraerTodos()            
-         }    
+         props.agregar(nueva_marca);
+         /* if (props.geneticasReducer.state_form === 'crear-marca') {
+               console.log('Ejecuto')
+               
 
-      }     
+         } */
+
+      }
 
       if (state_form === 'editar') {
          props.editar(nueva_marca, id)
-      }      
-     
+      }
+
    };
+
+   const retirarFormularioMarca = () => {
+      props.marcasTraerTodos()      
+      props.retirarFormularioMarca()
+   }
 
    return (
       <div>
-         
+
          <div className="form-row">
 
             <div className="form-group col-md-12">
@@ -64,7 +71,7 @@ const Formulario = (props) => {
                <button
                   id="guardar-btn"
                   className="btn btn-dark"
-                  onClick={guardar} 
+                  onClick={guardar}
 
                >
                   Guardar
@@ -74,11 +81,12 @@ const Formulario = (props) => {
                   ?
                   <button
                      className="btn btn-danger btn-cancelar"
-                     onClick={props.retirarFormularioMarca}
+                     onClick={retirarFormularioMarca}
+                     hidden={props.marcasReducer.loading ? true : false}
                   >
                      Volver
                   </button> : ''}
-                     
+
             </div>
          </div>
       </div>
@@ -90,7 +98,6 @@ const mapStateToProps = ({ geneticasReducer, marcasReducer }) => {
 };
 
 const mapDispatchToProps = {
-   marcasActions,
    agregar,
    editar,
    cancelar,

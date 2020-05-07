@@ -7,6 +7,7 @@ import {
     CAMBIO_GENETICA_ID,
     CAMBIO_GENETICA_MARCA_ID,
     CAMBIO_GENETICA_NAME,
+    CAMBIO_GENETICA_THC,
     CAMBIO_ESTADO_FORM,
     GUARDAR
 } from '../types/geneticaTypes'
@@ -28,13 +29,13 @@ export const traerTodos = () => async (dispatch) => {
         })
 
     } catch (error) {
-        
+
         console.log(error)
     }
 }
 
 export const traerUno = (id) => async (dispatch) => {
-    
+
     dispatch({
         type: LOADING
     })
@@ -51,6 +52,11 @@ export const traerUno = (id) => async (dispatch) => {
 
     dispatch({
         type: CAMBIO_GENETICA_MARCA_ID,
+        payload: ''
+    })
+
+    dispatch({
+        type: CAMBIO_GENETICA_THC,
         payload: ''
     })
 
@@ -82,6 +88,11 @@ export const traerUno = (id) => async (dispatch) => {
             payload: response.data.marca_id
         })
 
+        dispatch({
+            type: CAMBIO_GENETICA_THC,
+            payload: response.data.thc
+        })
+
     } catch (error) {
         console.log(error)
     }
@@ -101,7 +112,15 @@ export const cambioGeneticaMarca = (valor) => (dispatch) => {
     })
 };
 
+export const cambioGeneticaThc = (valor) => (dispatch) => {
+    dispatch({
+        type: CAMBIO_GENETICA_THC,
+        payload: valor
+    })
+};
+
 export const agregar = (nueva_genetica) => async (dispatch) => {
+
     dispatch({
         type: LOADING
     });
@@ -111,11 +130,10 @@ export const agregar = (nueva_genetica) => async (dispatch) => {
         dispatch({
             type: GUARDAR
         });
-        
+
     }
     catch (error) {
-        const errors = error.response.data.errors   
-             
+        const errors = error.response.data.errors
         dispatch({
             type: ERROR_FORM,
             payload: errors
@@ -127,7 +145,7 @@ export const editar = (nueva_genetica, id) => async (dispatch) => {
     dispatch({
         type: LOADING
     })
-
+    
     try {
         await axios.put(URL + 'genetica/' + id, nueva_genetica)
         dispatch({
@@ -183,11 +201,11 @@ export const traerUnoBorrar = (id) => async (dispatch) => {
 }
 
 export const borrar = (id) => async (dispatch) => {
-    
+
     dispatch({
         type: LOADING
     })
-    
+
     try {
         await axios.delete(URL + 'genetica/' + id)
 
@@ -218,14 +236,14 @@ export const ponerFormularioMarca = () => (dispatch) => {
 }
 
 export const retirarFormularioMarca = () => (dispatch) => {
-    
+
     dispatch({
         type: CAMBIO_ESTADO_FORM,
         recargar_table: true,
         payload: 'crear'
     })
 
-   
-    
+
+
 }
- 
+

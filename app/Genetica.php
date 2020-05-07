@@ -18,6 +18,6 @@ class Genetica extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'marca_id'
+        'name', 'marca_id', 'thc'
     ];
 }

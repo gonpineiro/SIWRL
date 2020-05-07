@@ -10,6 +10,7 @@ const Table = (props) => {
       <td>{genetica.id}</td>
       <td>{genetica.name}</td>
       <td>{genetica.marca.name}</td>
+      <td>{genetica.thc}</td>
       <td>
           <i 
           className="material-icons link"
@@ -31,6 +32,7 @@ const Table = (props) => {
             <th>ID</th>
             <th>Nombre</th>
             <th>Marca</th>
+            <th>THC</th>
             <th>Accion</th>
           </tr>
         </thead>

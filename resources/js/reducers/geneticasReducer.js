@@ -8,6 +8,7 @@ import {
   CAMBIO_GENETICA_MARCA_ID,
   CAMBIO_GENETICA_NAME,
   CAMBIO_ESTADO_FORM,
+  CAMBIO_GENETICA_THC,
   GUARDAR
 } from '../types/geneticaTypes'
 
@@ -15,8 +16,9 @@ const INITIAL_STATE = {
   geneticas: [],
   genetica: [],
   id: '',
-  id_marca: '',
   name: '',
+  thc: 21,
+  id_marca: '',
   loading: false,
   error: '',
   error_form: '',
@@ -66,6 +68,12 @@ export default (state = INITIAL_STATE, action) => {
         id_marca: action.payload
       };
 
+    case CAMBIO_GENETICA_THC:
+      return {
+        ...state,
+        thc: action.payload
+      };
+
     case CAMBIO_ESTADO_FORM:
       return {
         ...state,
@@ -80,8 +88,8 @@ export default (state = INITIAL_STATE, action) => {
         error: '',
         error_form: '',
         id: '',
-        id_marca: '',
         name: '',
+        id_marca: '',
         recargar_table: true,
         state_form: 'crear'
       };

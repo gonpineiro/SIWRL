@@ -25,7 +25,8 @@ class GeneticasRequest extends FormRequest
     {
         return [
             'name' => 'required|min:3|max:15',
-            'marca_id' => 'required'
+            'marca_id' => 'required',
+            'thc' => 'required'
         ];
     }
 
@@ -36,7 +37,9 @@ class GeneticasRequest extends FormRequest
             'name.min' => 'El minimo es 3 caracteres.',
             'name.max' => 'El maximo es 15 caracteres.',
 
-            'marca_id.required' => 'La marca es requerida'
+            'marca_id.required' => 'La marca es requerida',
+
+            'thc.required' => 'El THC es requerida'
         ];
     }
 }

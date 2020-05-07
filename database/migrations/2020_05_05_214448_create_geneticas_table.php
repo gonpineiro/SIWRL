@@ -17,6 +17,7 @@ class CreateGeneticasTable extends Migration
             $table->id();
             $table->string('name', 20);
             $table->bigInteger('marca_id')->unsigned();
+            $table->integer('thc');
             $table->timestamps();
         });
 

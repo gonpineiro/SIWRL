@@ -29,15 +29,18 @@ class GeneticaController extends Controller
         $genetica = Genetica::where('id', $id)->firstOrFail();
         $genetica->name = $request->get('name');
         $genetica->marca_id = $request->get('marca_id');
+        $genetica->thc = $request->get('thc');
         $genetica->save();
         //dd($genetica);
         return response()->json($genetica, 200);
     }
 
-    public function store(GeneticasRequest $request){        
+    public function store(GeneticasRequest $request){      
+        
         $genetica = Genetica::create([
             'name' => $request->input('name'),
-            'marca_id' => $request->input('marca_id')
+            'marca_id' => $request->input('marca_id'),
+            'thc' => $request->input('thc')
         ]);    
     }
 

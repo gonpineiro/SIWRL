@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
+import SliderThc from './General/SliderThc'
+
 import * as geneticasActions from '../../actions/geneticasActions'
 import * as marcasActions from '../../actions/marcasActions';
 
@@ -22,7 +24,7 @@ class Formulario extends Component {
 
 
       if (!this.props.marcasReducer.marcas.length) {
-         marcasTraerTodos()
+         await marcasTraerTodos()
       }
    }
 
@@ -39,6 +41,7 @@ class Formulario extends Component {
          id,
          name,
          id_marca,
+         thc
       } = this.props.geneticasReducer;
 
       const {
@@ -48,10 +51,11 @@ class Formulario extends Component {
       const nueva_genetica = {
          id: id,
          name: name,
-         marca_id: id_marca
+         marca_id: id_marca,
+         thc: thc
       };
 
-      if (this.props.geneticasReducer.state_form === 'crear') {
+      if (this.props.geneticasReducer.state_form === 'crear') {         
          this.props.agregar(nueva_genetica);
       }
       if (this.props.geneticasReducer.state_form === 'editar') {
@@ -76,6 +80,7 @@ class Formulario extends Component {
                      className="form-control"
                      value={this.props.geneticasReducer.name}
                      onChange={this.cambioGeneticaName}
+                     pattern="[A-Z]"
                   />
                   {this.props.geneticasReducer.error_form.name && this.props.geneticasReducer.error_form.name.map((err, key) =>
                      <small key={key} className="text-danger">{err}</small>
@@ -84,11 +89,11 @@ class Formulario extends Component {
 
                <div className="form-group col-md-12">
                   <label
-                  className="link link-string"
-                  onClick={() => this.ponerFormularioMarca()}
-                  >Marcas 
-                  </label> 
-                  
+                     className="link link-string"
+                     onClick={() => this.ponerFormularioMarca()}
+                  >Marcas
+                  </label>
+
                   <div className="form-row">
                      <select
                         className="form-control"
@@ -96,7 +101,12 @@ class Formulario extends Component {
                      >
                         <option value="">Seleccione</option>
                         {this.props.marcasReducer.marcas.map((marca) => (
-                           <option key={marca.id} value={marca.id}>{marca.name}</option>
+                           <option
+                              key={marca.id}
+                              value={marca.id}
+                           >
+                              {marca.name}
+                           </option>
                         ))}
                      </select>
                      {this.props.geneticasReducer.error_form.marca_id && this.props.geneticasReducer.error_form.marca_id.map((err, key) =>
@@ -104,6 +114,14 @@ class Formulario extends Component {
                      )}
 
                   </div>
+
+               </div>
+
+               <div className="form-group col-md-12">
+                  <SliderThc />
+                  {this.props.geneticasReducer.error_form.thc && this.props.geneticasReducer.error_form.thc.map((err, key) =>
+                     <small key={key} className="text-danger">{err}</small>
+                  )}
                </div>
 
                <div className="form-group col-md-12">
@@ -126,11 +144,16 @@ class Formulario extends Component {
                      </button> : ''}
 
                </div>
+
+
             </div>
          </div>
       );
    }
 }
+
+
+
 
 const mapStateToProps = ({ geneticasReducer, marcasReducer }) => {
    return { geneticasReducer, marcasReducer };
