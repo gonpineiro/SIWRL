@@ -1,7 +1,7 @@
 {
-    "name": "SIWRL",
-    "version": "1.0.0",
-    "description": "SI3 Laravel React",
+    "name": "siwrl",
+    "version": "1.0.1",
+    "description": "S.I Web React Laravel",
     "main": "index.js",
     "private": true,
     "scripts": {

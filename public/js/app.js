@@ -93472,10 +93472,11 @@ var Formulario = /*#__PURE__*/function (_Component) {
     _defineProperty(_assertThisInitialized(_this), "guardar", function () {
       var _this$props = _this.props,
           _this$props$geneticas = _this$props.geneticasReducer,
-          id = _this$props$geneticas.id,
-          name = _this$props$geneticas.name,
-          id_marca = _this$props$geneticas.id_marca,
-          thc = _this$props$geneticas.thc,
+          _this$props$geneticas2 = _this$props$geneticas.form,
+          id = _this$props$geneticas2.id,
+          name = _this$props$geneticas2.name,
+          id_marca = _this$props$geneticas2.id_marca,
+          thc = _this$props$geneticas2.thc,
           state_form = _this$props$geneticas.state_form,
           agregar = _this$props.agregar,
           editar = _this$props.editar;
@@ -93533,7 +93534,7 @@ var Formulario = /*#__PURE__*/function (_Component) {
 
       var _this$props3 = this.props,
           _this$props3$genetica = _this$props3.geneticasReducer,
-          name = _this$props3$genetica.name,
+          name = _this$props3$genetica.form.name,
           error_form = _this$props3$genetica.error_form,
           state_form = _this$props3$genetica.state_form,
           marcas = _this$props3.marcasReducer.marcas,
@@ -94117,8 +94118,9 @@ var agregar = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_2__["agregar"],
 
 var Formulario = function Formulario(props) {
   var _props$marcasReducer = props.marcasReducer,
-      id = _props$marcasReducer.id,
-      name = _props$marcasReducer.name,
+      _props$marcasReducer$ = _props$marcasReducer.form,
+      id = _props$marcasReducer$.id,
+      name = _props$marcasReducer$.name,
       state_form_marcas = _props$marcasReducer.state_form,
       error_form = _props$marcasReducer.error_form,
       loading = _props$marcasReducer.loading,
@@ -94490,10 +94492,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Formulario = function Formulario(props) {
-  var id = props.id,
-      name = props.name,
-      email = props.email,
-      password = props.password,
+  var _props$form = props.form,
+      id = _props$form.id,
+      name = _props$form.name,
+      email = _props$form.email,
+      password = _props$form.password,
       agregar = props.agregar,
       editar = props.editar,
       cancelar = props.cancelar,
@@ -94946,10 +94949,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var INITIAL_STATE = {
   geneticas: [],
   genetica: [],
-  id: '',
-  name: '',
-  thc: 21,
-  id_marca: '',
+  form: {
+    id: '',
+    name: '',
+    id_marca: '',
+    thc: 21
+  },
   loading: false,
   error: '',
   error_form: '',
@@ -94996,22 +95001,30 @@ var INITIAL_STATE = {
 
     case _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_GENETICA_ID"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        id: action.payload
+        form: _objectSpread(_objectSpread({}, state.form), {}, {
+          id: action.payload
+        })
       });
 
     case _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_GENETICA_NAME"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        name: action.payload
+        form: _objectSpread(_objectSpread({}, state.form), {}, {
+          name: action.payload
+        })
       });
 
     case _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_GENETICA_MARCA_ID"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        id_marca: action.payload
+        form: _objectSpread(_objectSpread({}, state.form), {}, {
+          id_marca: action.payload
+        })
       });
 
     case _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_GENETICA_THC"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        thc: action.payload
+        form: _objectSpread(_objectSpread({}, state.form), {}, {
+          thc: action.payload
+        })
       });
 
     case _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_ESTADO_FORM"]:
@@ -95025,9 +95038,12 @@ var INITIAL_STATE = {
         loading: false,
         error: '',
         error_form: '',
-        id: '',
-        name: '',
-        id_marca: '',
+        form: {
+          id: '',
+          name: '',
+          id_marca: '',
+          thc: ''
+        },
         recargar_table: true,
         state_form: 'crear'
       });
@@ -95084,8 +95100,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var INITIAL_STATE = {
   marcas: [],
   marca: [],
-  id: '',
-  name: '',
+  form: {
+    id: '',
+    name: ''
+  },
   loading: false,
   error: '',
   error_form: '',
@@ -95132,12 +95150,16 @@ var INITIAL_STATE = {
 
     case _types_marcaTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_MARCA_ID"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        id: action.payload
+        form: _objectSpread(_objectSpread({}, state.form), {}, {
+          id: action.payload
+        })
       });
 
     case _types_marcaTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_MARCA_NAME"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        name: action.payload
+        form: _objectSpread(_objectSpread({}, state.form), {}, {
+          name: action.payload
+        })
       });
 
     case _types_marcaTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_ESTADO_FORM"]:
@@ -95148,11 +95170,13 @@ var INITIAL_STATE = {
 
     case _types_marcaTypes__WEBPACK_IMPORTED_MODULE_0__["GUARDAR"]:
       return _objectSpread(_objectSpread({}, state), {}, {
+        form: {
+          id: '',
+          name: ''
+        },
         loading: false,
         error: '',
         error_form: '',
-        id: '',
-        name: '',
         recargar_table: true,
         state_form: 'crear'
       });
@@ -95184,10 +95208,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var INITIAL_STATE = {
   users: [],
   user: [],
-  id: '',
-  name: '',
-  email: '',
-  password: '',
+  form: {
+    id: '',
+    name: '',
+    email: '',
+    password: ''
+  },
   loading: false,
   error: '',
   error_form: '',
@@ -95234,22 +95260,30 @@ var INITIAL_STATE = {
 
     case _types_userTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_USUARIO_ID"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        id: action.payload
+        form: _objectSpread(_objectSpread({}, state.form), {}, {
+          id: action.payload
+        })
       });
 
     case _types_userTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_USUARIO_NAME"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        name: action.payload
+        form: _objectSpread(_objectSpread({}, state.form), {}, {
+          name: action.payload
+        })
       });
 
     case _types_userTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_USUARIO_EMAIL"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        email: action.payload
+        form: _objectSpread(_objectSpread({}, state.form), {}, {
+          email: action.payload
+        })
       });
 
     case _types_userTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_USUARIO_PASSWORD"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        password: action.payload
+        form: _objectSpread(_objectSpread({}, state.form), {}, {
+          password: action.payload
+        })
       });
 
     case _types_userTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_ESTADO_FORM"]:
@@ -95260,14 +95294,16 @@ var INITIAL_STATE = {
 
     case _types_userTypes__WEBPACK_IMPORTED_MODULE_0__["GUARDAR"]:
       return _objectSpread(_objectSpread({}, state), {}, {
+        form: {
+          id: '',
+          name: '',
+          email: '',
+          password: ''
+        },
         loading: false,
         error: '',
         error_form: '',
-        id: '',
-        name: '',
         recargar_table: true,
-        email: '',
-        password: '',
         state_form: 'crear'
       });
 

@@ -6,10 +6,7 @@ import * as usersActions from '../../actions/usersActions'
 const Formulario = (props) => {
 
    const {
-      id,
-      name,
-      email,
-      password,
+      form: {id, name, email, password},
       agregar,
       editar,
       cancelar,
@@ -86,7 +83,6 @@ const Formulario = (props) => {
                   id="guardar-btn"
                   className="btn btn-dark"
                   onClick={guardar}
-
                >
                   Guardar
                   </button>

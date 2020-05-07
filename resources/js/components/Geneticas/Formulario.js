@@ -25,16 +25,24 @@ class Formulario extends Component {
 
       if (!marcas.length) await marcasTraerTodos()
    }
-   
+
    ponerFormularioMarca = () => this.props.ponerFormularioMarca()
 
    handleCambioGeneticaName = (event) => this.props.cambioGeneticaName(event.target.value)
 
-   handleCambioGeneticaMarca = (event) => this.props.cambioGeneticaMarca(event.target.value)   
+   handleCambioGeneticaMarca = (event) => this.props.cambioGeneticaMarca(event.target.value)
 
    guardar = () => {
       const {
-         geneticasReducer: { id, name, id_marca, thc, state_form },
+         geneticasReducer: {
+            form: {
+               id,
+               name,
+               id_marca,
+               thc
+            },             
+            state_form
+         },
          agregar,
          editar
       } = this.props;
@@ -50,11 +58,11 @@ class Formulario extends Component {
 
       if (state_form === 'editar') editar(nueva_genetica, id)
 
-   };   
+   };
 
    render() {
       const {
-         geneticasReducer: { name, error_form, state_form },
+         geneticasReducer: { form: { name }, error_form, state_form },
          marcasReducer: { marcas },
          cancelar
       } = this.props

@@ -13,8 +13,10 @@ import {
 const INITIAL_STATE = {
   marcas: [],
   marca: [],
-  id: '',
-  name: '',
+  form: {
+    id: '',
+    name: ''
+  },
   loading: false,
   error: '',
   error_form: '',
@@ -49,13 +51,19 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_MARCA_ID:
       return {
         ...state,
-        id: action.payload
+        form: {
+          ...state.form,
+          id: action.payload 
+        }
       };
 
     case CAMBIO_MARCA_NAME:
       return {
         ...state,
-        name: action.payload
+        form: {
+          ...state.form,
+          name: action.payload 
+        }
       };
 
     case CAMBIO_ESTADO_FORM:
@@ -68,11 +76,13 @@ export default (state = INITIAL_STATE, action) => {
     case GUARDAR:
       return {
         ...state,
+        form: {
+          id: '',
+          name: ''
+        },
         loading: false,
         error: '',
         error_form: '',
-        id: '',
-        name: '',
         recargar_table: true,
         state_form: 'crear'
       };

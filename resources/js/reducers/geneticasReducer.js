@@ -15,10 +15,12 @@ import {
 const INITIAL_STATE = {
   geneticas: [],
   genetica: [],
-  id: '',
-  name: '',
-  thc: 21,
-  id_marca: '',
+  form: {
+    id: '',
+    name: '',
+    id_marca: '',
+    thc: 21
+  },
   loading: false,
   error: '',
   error_form: '',
@@ -53,25 +55,37 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_GENETICA_ID:
       return {
         ...state,
-        id: action.payload
+        form: {
+          ...state.form,
+          id: action.payload
+        }
       };
 
     case CAMBIO_GENETICA_NAME:
       return {
         ...state,
-        name: action.payload
+        form: {
+          ...state.form,
+          name: action.payload
+        }
       };
 
     case CAMBIO_GENETICA_MARCA_ID:
       return {
         ...state,
-        id_marca: action.payload
+        form: {
+          ...state.form,
+          id_marca: action.payload
+        }
       };
 
     case CAMBIO_GENETICA_THC:
       return {
         ...state,
-        thc: action.payload
+        form: {
+          ...state.form,
+          thc: action.payload
+        }
       };
 
     case CAMBIO_ESTADO_FORM:
@@ -87,9 +101,12 @@ export default (state = INITIAL_STATE, action) => {
         loading: false,
         error: '',
         error_form: '',
-        id: '',
-        name: '',
-        id_marca: '',
+        form: {
+          id: '',
+          name: '',
+          id_marca: '',
+          thc: ''
+        },
         recargar_table: true,
         state_form: 'crear'
       };

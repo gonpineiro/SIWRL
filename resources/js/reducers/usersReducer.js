@@ -15,10 +15,12 @@ import {
 const INITIAL_STATE = {
   users: [],
   user: [],
-  id: '',
-  name: '',
-  email: '',
-  password: '',
+  form: {
+    id: '',
+    name: '',
+    email: '',
+    password: ''
+  },
   loading: false,
   error: '',
   error_form: '',
@@ -53,25 +55,37 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_USUARIO_ID:
       return {
         ...state,
-        id: action.payload
+        form: {
+          ...state.form,
+          id: action.payload 
+        }
       };
 
     case CAMBIO_USUARIO_NAME:
       return {
         ...state,
-        name: action.payload
+        form: {
+          ...state.form,
+          name: action.payload 
+        }
       };
 
     case CAMBIO_USUARIO_EMAIL:
       return {
         ...state,
-        email: action.payload
+        form: {
+          ...state.form,
+          email: action.payload 
+        }
       };
 
     case CAMBIO_USUARIO_PASSWORD:
       return {
         ...state,
-        password: action.payload
+        form: {
+          ...state.form,
+          password: action.payload 
+        }
       };
 
     case CAMBIO_ESTADO_FORM:
@@ -84,14 +98,16 @@ export default (state = INITIAL_STATE, action) => {
     case GUARDAR:
       return {
         ...state,
+        form: {
+          id: '',
+          name: '',
+          email: '',
+          password: ''
+        },
         loading: false,
         error: '',
         error_form: '',
-        id: '',
-        name: '',
         recargar_table: true,
-        email: '',
-        password: '',
         state_form: 'crear'
       };
 

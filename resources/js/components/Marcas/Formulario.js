@@ -11,7 +11,11 @@ const { agregar, editar, cambioMarcaName, cancelar, traerTodos: marcasTraerTodos
 const Formulario = (props) => {
 
    const {
-      marcasReducer: { id, name, state_form: state_form_marcas, error_form, loading },
+      marcasReducer: { 
+         form: { id, name },
+         state_form: state_form_marcas, 
+         error_form, 
+         loading },
       geneticasReducer: { state_form: state_form_geneticas },
       cambioMarcaName,
       retirarFormularioMarca,
