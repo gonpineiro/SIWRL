@@ -23,32 +23,35 @@ const {
    editar
 } = geneticasActions;
 
-class Formulario extends Component {
+const Formulario = (props) => {
+   const {      
+      marcasTraerTodos,
+      marcasReducer: { marcas },
+      geneticasReducer: {
+         form: { name, prod_int, prod_ext, tiempo_flora, sabores },
+         error_form,
+         state_form
+      },
+      cancelar
+   } = props
 
-   async componentDidMount() {
-      const {
-         marcasTraerTodos,
-         marcasReducer: { marcas },
-      } = this.props
+   if (!marcas.length) marcasTraerTodos()
 
-      if (!marcas.length) await marcasTraerTodos()
-   }
+   const ponerFormularioMarca = () => props.ponerFormularioMarca()
 
-   ponerFormularioMarca = () => this.props.ponerFormularioMarca()
+   const handleCambioGeneticaName = (event) => props.cambioGeneticaName(event.target.value)
 
-   handleCambioGeneticaName = (event) => this.props.cambioGeneticaName(event.target.value)
+   const handleCambioGeneticaMarca = (event) => props.cambioGeneticaMarca(event.target.value)
 
-   handleCambioGeneticaMarca = (event) => this.props.cambioGeneticaMarca(event.target.value)
+   const handleCambioGeneticaProdInt = (event) => props.cambioGeneticaProdInt(event.target.value)
 
-   handleCambioGeneticaProdInt = (event) => this.props.cambioGeneticaProdInt(event.target.value)
+   const handleCambioGeneticaProdExt = (event) => props.cambioGeneticaProdExt(event.target.value)
 
-   handleCambioGeneticaProdExt = (event) => this.props.cambioGeneticaProdExt(event.target.value)
+   const handleCambioGeneticaTiempoFlora = (event) => props.cambioGeneticaTiempoFlora(event.target.value)
 
-   handleCambioGeneticaTiempoFlora = (event) => this.props.cambioGeneticaTiempoFlora(event.target.value)
+   const handleCambioGeneticaSabores = (event) => props.cambioGeneticaSabores(event.target.value)
 
-   handleCambioGeneticaSabores = (event) => this.props.cambioGeneticaSabores(event.target.value)
-
-   guardar = () => {
+   const guardar = () => {
       const {
          geneticasReducer: {
             form: {
@@ -66,7 +69,7 @@ class Formulario extends Component {
          },
          agregar,
          editar
-      } = this.props;
+      } = props;
 
       const nueva_genetica = {
          id: id,
@@ -84,144 +87,132 @@ class Formulario extends Component {
 
       if (state_form === 'editar') editar(nueva_genetica, id)
 
-   };
+   };   
 
-   render() {
-      const {
-         geneticasReducer: {
-            form: { name, prod_int, prod_ext, tiempo_flora, sabores },
-            error_form,
-            state_form
-         },
-         marcasReducer: { marcas },
-         cancelar
-      } = this.props
+   return (
+      <div>
+         <div className="form-row">
 
-      return (
-         <div>
-            <div className="form-row">
+            <div className="form-group col-md-12">
+               <label>Nombre</label>
+               <input
+                  type="text"
+                  className="form-control"
+                  value={name}
+                  onChange={handleCambioGeneticaName}
+               />
+               {error_form.name && error_form.name.map((err, key) =>
+                  <small key={key} className="text-danger">{err}</small>
+               )}
+            </div>
 
-               <div className="form-group col-md-12">
-                  <label>Nombre</label>
-                  <input
-                     type="text"
-                     className="form-control"
-                     value={name}
-                     onChange={this.handleCambioGeneticaName}
-                  />
-                  {error_form.name && error_form.name.map((err, key) =>
-                     <small key={key} className="text-danger">{err}</small>
-                  )}
-               </div>
-
-               <div className="form-group col-md-12">
-                  <label
-                     className="link link-string"
-                     onClick={() => this.ponerFormularioMarca()}
-                  >Marcas
+            <div className="form-group col-md-12">
+               <label
+                  className="link link-string"
+                  onClick={() => ponerFormularioMarca()}
+               >Marcas
                   </label>
 
-                  <div className="form-row">
-                     <select
-                        className="form-control"
-                        onChange={this.handleCambioGeneticaMarca}
-                     >
-                        <option value="">Seleccione</option>
-                        {marcas.map((marca) => (
-                           <option
-                              key={marca.id}
-                              value={marca.id}
-                           >
-                              {marca.name}
-                           </option>
-                        ))}
-                     </select>
-                     {error_form.marca_id && error_form.marca_id.map((err, key) =>
-                        <small key={key} className="text-danger">{err}</small>
-                     )}
-
-                  </div>
-
-               </div>
-
-               <div className="form-group col-md-12">
-                  <SliderThc /> <SliderCbd />
-                  {error_form.thc && error_form.thc.map((err, key) =>
+               <div className="form-row">
+                  <select
+                     className="form-control"
+                     onChange={handleCambioGeneticaMarca}
+                  >
+                     <option value="">Seleccione</option>
+                     {marcas.map((marca) => (
+                        <option
+                           key={marca.id}
+                           value={marca.id}
+                        >
+                           {marca.name}
+                        </option>
+                     ))}
+                  </select>
+                  {error_form.marca_id && error_form.marca_id.map((err, key) =>
                      <small key={key} className="text-danger">{err}</small>
                   )}
-               </div>
-
-               <div className="form-row">
-
-                  <div className="form-group col-md-4">
-                     <label>Prod. Int<small>(m2)</small></label>
-                     <input
-                        type="number"
-                        className="form-control"
-                        value={prod_int}
-                        onChange={this.handleCambioGeneticaProdInt}
-                     />
-                  </div>
-
-                  <div className="form-group col-md-4">
-                     <label>Prod. Ext<small>(x planta)</small></label>
-                     <input
-                        type="number"
-                        className="form-control"
-                        value={prod_ext}
-                        onChange={this.handleCambioGeneticaProdExt}
-                     />
-                  </div>
-
-                  <div className="form-group col-md-4">
-                     <label>Tiempo</label>
-                     <input
-                        type="number"
-                        className="form-control"
-                        value={tiempo_flora}
-                        onChange={this.handleCambioGeneticaTiempoFlora}
-                     />
-                     {error_form.tiempo_flora && error_form.tiempo_flora.map((err, key) =>
-                        <small key={key} className="text-danger">{err}</small>
-                     )}
-                  </div>
-
-               </div>
-
-               <div className="form-group col-md-12">
-                  <label>Sabores</label>
-                  <input
-                     type="text"
-                     className="form-control"
-                     value={sabores}
-                     onChange={this.handleCambioGeneticaSabores}
-                  />
-               </div>
-
-               <div className="form-group col-md-12">
-                  <button
-                     id="guardar-btn"
-                     className="btn btn-dark"
-                     onClick={this.guardar}
-                  >
-                     Guardar
-                  </button>
-
-                  {state_form === 'editar'
-                     ?
-                     <button
-                        className="btn btn-danger btn-cancelar"
-                        onClick={cancelar}
-                     >
-                        Cancelar
-                     </button> : ''}
 
                </div>
 
             </div>
+
+            <div className="form-group col-md-12">
+               <SliderThc /> <SliderCbd />
+               {error_form.thc && error_form.thc.map((err, key) =>
+                  <small key={key} className="text-danger">{err}</small>
+               )}
+            </div>
+
+            <div className="form-row">
+
+               <div className="form-group col-md-4">
+                  <label>Prod. Int<small>(m2)</small></label>
+                  <input
+                     type="number"
+                     className="form-control"
+                     value={prod_int}
+                     onChange={handleCambioGeneticaProdInt}
+                  />
+               </div>
+
+               <div className="form-group col-md-4">
+                  <label>Prod. Ext<small>(x planta)</small></label>
+                  <input
+                     type="number"
+                     className="form-control"
+                     value={prod_ext}
+                     onChange={handleCambioGeneticaProdExt}
+                  />
+               </div>
+
+               <div className="form-group col-md-4">
+                  <label>Tiempo</label>
+                  <input
+                     type="number"
+                     className="form-control"
+                     value={tiempo_flora}
+                     onChange={handleCambioGeneticaTiempoFlora}
+                  />
+                  {error_form.tiempo_flora && error_form.tiempo_flora.map((err, key) =>
+                     <small key={key} className="text-danger">{err}</small>
+                  )}
+               </div>
+
+            </div>
+
+            <div className="form-group col-md-12">
+               <label>Sabores</label>
+               <input
+                  type="text"
+                  className="form-control"
+                  value={sabores}
+                  onChange={handleCambioGeneticaSabores}
+               />
+            </div>
+
+            <div className="form-group col-md-12">
+               <button
+                  id="guardar-btn"
+                  className="btn btn-dark"
+                  onClick={guardar}
+               >
+                  Guardar
+                  </button>
+
+               {state_form === 'editar'
+                  ?
+                  <button
+                     className="btn btn-danger btn-cancelar"
+                     onClick={cancelar}
+                  >
+                     Cancelar
+                     </button> : ''}
+
+            </div>
+
          </div>
-      );
-   }
+      </div>
+   );
 }
 
 const mapStateToProps = ({ geneticasReducer, marcasReducer }) => {
