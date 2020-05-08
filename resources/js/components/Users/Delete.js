@@ -1,50 +1,78 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux'
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
 
 import * as usersActions from '../../actions/usersActions'
 
 const Delete = (props) => {
     const { user, borrar, cancelar } = props
 
+    const useStyles = makeStyles((theme) => ({
+        root: {
+            '& .MuiTextField-root': {
+                margin: theme.spacing(2),
+                width: "95%",
+            },
+        },
+    }));
+
+    const classes = useStyles();
+
     return (
         <div>
             <div className="form-row">
+
                 <div className="form-group col-md-12">
-                    <label>ID</label>
-                    <input
+                    <TextField
+                        label="ID"
                         value={user.id}
                         className="form-control"
-                        disabled
+                        disabled={true}
                     />
                 </div>
+
                 <div className="form-group col-md-12">
-                    <label>Nombre</label>
-                    <input
+                    <TextField
+                        label="Nombre"
                         value={user.name}
                         className="form-control"
-                        disabled
+                        disabled={true}
                     />
                 </div>
+
                 <div className="form-group col-md-12">
-                    <label>Email</label>
-                    <input
+                    <TextField
+                        label="Email"
                         value={user.email}
                         className="form-control"
-                        disabled
+                        disabled={true}
                     />
                 </div>
-                <button
-                    className="btn btn-dark"
-                    onClick={() => borrar(user.id)}
-                >
-                    Eliminar
-                </button>
-                <button
-                    className="btn btn-danger btn-cancelar"
-                    onClick={cancelar}
-                >
-                    Cancelar
-                </button>
+
+                <div className="form-row margin-button">
+                    <div className="form-group col-md-6">
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            onClick={() => borrar(user.id)}
+                        >
+                            Eliminar
+                         </Button>
+                    </div >
+
+                    <div className="form-group col-md-6">
+                        <Button
+                            variant="contained"
+                            color="inherit"
+                            onClick={cancelar}
+                        >
+                            Cancelar
+                        </Button>
+                    </div >                    
+                </div>
+                
             </div>
         </div>
     );

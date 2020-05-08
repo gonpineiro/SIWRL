@@ -1,5 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
 
 import * as marcasActions from '../../actions/marcasActions'
 import * as geneticasActions from '../../actions/geneticasActions'
@@ -45,55 +48,73 @@ const Formulario = (props) => {
       retirarFormularioMarca()
    }
 
+   const useStyles = makeStyles((theme) => ({
+      root: {
+         '& .MuiTextField-root': {
+            margin: theme.spacing(2),
+            width: "95%",
+         },
+      },
+   }));
+
+   const classes = useStyles();
+
    return (
-      <div>
+      <form className={classes.root} noValidate autoComplete="off">
          <div className="form-row">
 
             <div className="form-group col-md-12">
-               <label>Nombre </label>
-               <input
+               <TextField
+                  id="standard-basic"
+                  label="Nombre"
                   type="text"
                   className="form-control"
                   value={name}
                   onChange={handleCambioMarcaName}
+                  helperText={error_form.name}
+                  error={!error_form.name ? false : true}
                />
-               {error_form.name && error_form.name.map((err, key) =>
-                  <small key={key} className="text-danger">{err}</small>
-               )}
             </div>
 
-            <div className="form-group col-md-12">
-               <button
-                  id="guardar-btn"
-                  className="btn btn-dark"
-                  onClick={guardar}
+            <div className="form-row margin-button">
 
-               >
-                  Guardar
-               </button>
-
-               {state_form_marcas === 'editar'
-                  ?
-                  <button
-                     className="btn btn-danger btn-cancelar"
-                     onClick={cancelar}
+               <div className="form-group col-md-6">
+                  <Button
+                     variant="contained"
+                     color="primary"
+                     onClick={guardar}
                   >
-                     Cancelar
-                  </button> : ''}
+                     Guardar
+                  </Button>
+               </div >
 
-               {state_form_geneticas === 'crear-marca'
-                  ?
-                  <button
-                     className="btn btn-danger btn-cancelar"
-                     onClick={handleRetirarFormularioMarca}
-                     hidden={loading ? true : false}
-                  >
-                     Volver
-                  </button> : ''}
+               <div className="form-group col-md-6">
+                  {state_form_marcas === 'editar'
+                     ?
+                     <Button
+                        variant="contained"
+                        color="inherit"
+                        onClick={cancelar}
+                     >
+                        Cancelar
+                     </Button> : ''}
+
+                  {state_form_geneticas === 'crear-marca'
+                     ?
+                     <Button
+                        variant="contained"
+                        color="inherit"
+                        onClick={handleRetirarFormularioMarca}
+                        hidden={loading ? true : false}
+                     >
+                        Volver
+                     </Button> : ''}
+               </div >
+               
             </div>
-            
+
          </div>
-      </div>
+      </form>
    );
 }
 

@@ -1,17 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux'
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
 
 import * as usersActions from '../../actions/usersActions'
 
 const Formulario = (props) => {
 
    const {
-      form: {id, name, email, password},
+      form: { id, name, email, password },
       agregar,
       editar,
       cancelar,
       state_form,
-      error_form, 
+      error_form,
       cambioUsuarioName,
       cambioUsuarioEmail,
       cambioUsuarioPassword,
@@ -33,75 +36,89 @@ const Formulario = (props) => {
       };
 
       if (state_form === 'crear') agregar(nuevo_usuario);
-      
+
       if (state_form === 'editar') editar(nuevo_usuario, id)
    };
 
+   const useStyles = makeStyles((theme) => ({
+      root: {
+         '& .MuiTextField-root': {
+            margin: theme.spacing(2),
+            width: "95%",
+         },
+      },
+   }));
+
+   const classes = useStyles();
+
    return (
-      <div>
+      <form className={classes.root} noValidate autoComplete="off">
          <div className="form-row">
 
             <div className="form-group col-md-12">
-               <label>Nombre </label>
-               <input
+               <TextField
+                  id="standard-basic"
+                  label="Nombre"
                   type="text"
                   className="form-control"
                   value={name}
                   onChange={handleCambioUsuarioName}
+                  helperText={error_form.name}
+                  error={!error_form.name ? false : true}
                />
-               {error_form.name && error_form.name.map((err, key) =>
-                  <small key={key} className="text-danger">{err}</small>
-               )}
             </div>
 
             <div className="form-group col-md-12">
-               <label>Email</label>
-               <input
+               <TextField
+                  label="Email"
                   type="email"
                   className="form-control"
                   value={email}
                   onChange={handleCambioUsuarioEmail}
+                  helperText={error_form.email}
+                  error={!error_form.email ? false : true}
                />
-               {error_form.email && error_form.email.map((err, key) =>
-                  <small key={key} className="text-danger">{err}</small>
-               )}
-
             </div>
-            
+
             <div className="form-group col-md-12">
-               <label>Password</label>
-               <input
+               <TextField
+                  id="standard-basic"
+                  label="Password"
                   type="text"
                   className="form-control"
                   value={password}
                   onChange={handleCambioUsuarioPassword}
+                  helperText={error_form.password}
+                  error={!error_form.password ? false : true}
                />
-               {error_form.password && error_form.password.map((err, key) =>
-                  <small key={key} className="text-danger">{err}</small>
-               )}
-
             </div>
-            <div className="form-group col-md-12">
-               <button
-                  id="guardar-btn"
-                  className="btn btn-dark"
-                  onClick={guardar}
-               >
-                  Guardar
-                  </button>
 
-               {state_form === 'editar'
-                  ?
-                  <button
-                     className="btn btn-danger btn-cancelar"
-                     onClick={cancelar}
+            <div className="form-row margin-button">
+               <div className="form-group col-md-6">
+                  <Button
+                     variant="contained"
+                     color="primary"
+                     onClick={guardar}
                   >
-                     Cancelar
-                  </button> : ''}
+                     Guardar
+                  </Button>
+               </div >
 
+               <div className="form-group col-md-6">
+                  {state_form === 'editar'
+                     ?
+                     <Button
+                        variant="contained"
+                        color="inherit"
+                        onClick={cancelar}
+                     >
+                        Cancelar
+                     </Button> : ''}
+               </div >
             </div>
+
          </div>
-      </div>
+      </form>
    );
 }
 

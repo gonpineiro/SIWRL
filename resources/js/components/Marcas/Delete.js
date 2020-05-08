@@ -1,5 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
 
 import * as marcasActions from '../../actions/marcasActions'
 
@@ -9,35 +12,50 @@ const Delete = (props) => {
     return (
         <div>
             <div className="form-row">
+
                 <div className="form-group col-md-12">
-                    <label>ID</label>
-                    <input
+                    <TextField
+                        label="ID"
                         value={marca.id}
                         className="form-control"
-                        disabled
+                        disabled={true}
                     />
                 </div>
+
                 <div className="form-group col-md-12">
-                    <label>Nombre</label>
-                    <input
+                    <TextField
+                        label="Nombre"
                         value={marca.name}
                         className="form-control"
-                        disabled
-                    />
-                    {error_form && <small className="text-danger">Existe un registro vinculado.</small>}
+                        disabled={true}
+                    />                    
                 </div>
-                <button
-                    className="btn btn-dark"
-                    onClick={() => borrar(marca.id)}
-                >
-                    Eliminar
-                    </button>
-                <button
-                    className="btn btn-danger btn-cancelar"
-                    onClick={cancelar}
-                >
-                    Cancelar
-                    </button>
+
+                <div className="form-row margin-button">
+                    <div className="form-group col-md-6">
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            onClick={() => borrar(marca.id)}
+                        >
+                            Eliminar
+                         </Button>
+                    </div >
+
+                    <div className="form-group col-md-6">
+                        <Button
+                            variant="contained"
+                            color="inherit"
+                            onClick={cancelar}
+                        >
+                            Cancelar
+                        </Button>
+                    </div >
+
+                </div>
+                
+                {error_form && <small className="text-danger">Existe un registro vinculado.</small>}
+                
             </div>
         </div>
     );
