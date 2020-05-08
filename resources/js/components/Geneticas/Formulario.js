@@ -2,18 +2,26 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
 import SliderThc from './General/SliderThc'
+import SliderCbd from './General/SliderCbd'
 
 import * as geneticasActions from '../../actions/geneticasActions'
 import * as marcasActions from '../../actions/marcasActions';
 
 const { traerTodos: marcasTraerTodos } = marcasActions;
+
 const {
    cambioGeneticaName,
    cambioGeneticaMarca,
+   cambioGeneticaProdInt,
+   cambioGeneticaProdExt,
+   cambioGeneticaTiempoFlora,
+   cambioGeneticaSabores,
+
    ponerFormularioMarca,
    cancelar,
    agregar,
-   editar } = geneticasActions;
+   editar
+} = geneticasActions;
 
 class Formulario extends Component {
 
@@ -32,6 +40,14 @@ class Formulario extends Component {
 
    handleCambioGeneticaMarca = (event) => this.props.cambioGeneticaMarca(event.target.value)
 
+   handleCambioGeneticaProdInt = (event) => this.props.cambioGeneticaProdInt(event.target.value)
+
+   handleCambioGeneticaProdExt = (event) => this.props.cambioGeneticaProdExt(event.target.value)
+
+   handleCambioGeneticaTiempoFlora = (event) => this.props.cambioGeneticaTiempoFlora(event.target.value)
+
+   handleCambioGeneticaSabores = (event) => this.props.cambioGeneticaSabores(event.target.value)
+
    guardar = () => {
       const {
          geneticasReducer: {
@@ -39,8 +55,13 @@ class Formulario extends Component {
                id,
                name,
                marca_id,
-               thc
-            },             
+               thc,
+               cbd,
+               prod_int,
+               prod_ext,
+               tiempo_flora,
+               sabores
+            },
             state_form
          },
          agregar,
@@ -51,7 +72,12 @@ class Formulario extends Component {
          id: id,
          name: name,
          marca_id: marca_id,
-         thc: thc
+         thc: thc,
+         cbd: cbd,
+         prod_int: prod_int,
+         prod_ext: prod_ext,
+         tiempo_flora: tiempo_flora,
+         sabores: sabores
       };
 
       if (state_form === 'crear') agregar(nueva_genetica);
@@ -62,13 +88,17 @@ class Formulario extends Component {
 
    render() {
       const {
-         geneticasReducer: { form: { name }, error_form, state_form },
+         geneticasReducer: {
+            form: { name, prod_int, prod_ext, tiempo_flora, sabores },
+            error_form,
+            state_form
+         },
          marcasReducer: { marcas },
          cancelar
       } = this.props
 
       return (
-         <form>
+         <div>
             <div className="form-row">
 
                <div className="form-group col-md-12">
@@ -78,7 +108,6 @@ class Formulario extends Component {
                      className="form-control"
                      value={name}
                      onChange={this.handleCambioGeneticaName}
-                     pattern="[A-Z]"
                   />
                   {error_form.name && error_form.name.map((err, key) =>
                      <small key={key} className="text-danger">{err}</small>
@@ -116,10 +145,57 @@ class Formulario extends Component {
                </div>
 
                <div className="form-group col-md-12">
-                  <SliderThc />
+                  <SliderThc /> <SliderCbd />
                   {error_form.thc && error_form.thc.map((err, key) =>
                      <small key={key} className="text-danger">{err}</small>
                   )}
+               </div>
+
+               <div className="form-row">
+
+                  <div className="form-group col-md-4">
+                     <label>Prod. Int<small>(m2)</small></label>
+                     <input
+                        type="number"
+                        className="form-control"
+                        value={prod_int}
+                        onChange={this.handleCambioGeneticaProdInt}
+                     />
+                  </div>
+
+                  <div className="form-group col-md-4">
+                     <label>Prod. Ext<small>(x planta)</small></label>
+                     <input
+                        type="number"
+                        className="form-control"
+                        value={prod_ext}
+                        onChange={this.handleCambioGeneticaProdExt}
+                     />
+                  </div>
+
+                  <div className="form-group col-md-4">
+                     <label>Tiempo</label>
+                     <input
+                        type="number"
+                        className="form-control"
+                        value={tiempo_flora}
+                        onChange={this.handleCambioGeneticaTiempoFlora}
+                     />
+                     {error_form.tiempo_flora && error_form.tiempo_flora.map((err, key) =>
+                        <small key={key} className="text-danger">{err}</small>
+                     )}
+                  </div>
+
+               </div>
+
+               <div className="form-group col-md-12">
+                  <label>Sabores</label>
+                  <input
+                     type="text"
+                     className="form-control"
+                     value={sabores}
+                     onChange={this.handleCambioGeneticaSabores}
+                  />
                </div>
 
                <div className="form-group col-md-12">
@@ -127,7 +203,6 @@ class Formulario extends Component {
                      id="guardar-btn"
                      className="btn btn-dark"
                      onClick={this.guardar}
-
                   >
                      Guardar
                   </button>
@@ -142,9 +217,9 @@ class Formulario extends Component {
                      </button> : ''}
 
                </div>
-               
+
             </div>
-         </form>
+         </div>
       );
    }
 }
@@ -155,9 +230,15 @@ const mapStateToProps = ({ geneticasReducer, marcasReducer }) => {
 
 const mapDispatchToProps = {
    marcasTraerTodos,
+
    cambioGeneticaName,
    cambioGeneticaMarca,
    ponerFormularioMarca,
+   cambioGeneticaProdInt,
+   cambioGeneticaProdExt,
+   cambioGeneticaTiempoFlora,
+   cambioGeneticaSabores,
+
    agregar,
    editar,
    cancelar

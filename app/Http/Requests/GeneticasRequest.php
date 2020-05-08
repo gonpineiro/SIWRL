@@ -26,20 +26,25 @@ class GeneticasRequest extends FormRequest
         return [
             'name' => 'required|min:3|max:15',
             'marca_id' => 'required',
-            'thc' => 'required'
+            'thc' => 'required',
+            'cbd' => 'required',
+            'tiempo_flora' => 'required'
         ];
     }
 
     public function messages()
     {
         return [
-            'name.required' => 'El nombre el requerido.',
+            'name.required' => 'Requerido.',
             'name.min' => 'El minimo es 3 caracteres.',
             'name.max' => 'El maximo es 15 caracteres.',
 
             'marca_id.required' => 'La marca es requerida',
 
-            'thc.required' => 'El THC es requerida'
+            'thc.required' => 'Requerido.',
+            'cbd.required' => 'Requerido.',
+
+            'tiempo_flora.required' => 'Requerido.',
         ];
     }
 }

@@ -38,7 +38,7 @@ const Formulario = (props) => {
    };
 
    return (
-      <form>
+      <div>
          <div className="form-row">
 
             <div className="form-group col-md-12">
@@ -101,7 +101,7 @@ const Formulario = (props) => {
 
             </div>
          </div>
-      </form>
+      </div>
    );
 }
 

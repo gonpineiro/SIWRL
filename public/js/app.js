@@ -92077,7 +92077,7 @@ module.exports = function(module) {
 /*!**************************************************!*\
   !*** ./resources/js/actions/geneticasActions.js ***!
   \**************************************************/
-/*! exports provided: traerTodos, traerUno, cambioGeneticaName, cambioGeneticaMarca, cambioGeneticaThc, agregar, editar, traerUnoBorrar, borrar, cancelar, ponerFormularioMarca, retirarFormularioMarca */
+/*! exports provided: traerTodos, traerUno, cambioGeneticaName, cambioGeneticaMarca, cambioGeneticaThc, cambioGeneticaCbd, cambioGeneticaProdInt, cambioGeneticaProdExt, cambioGeneticaTiempoFlora, cambioGeneticaSabores, agregar, editar, traerUnoBorrar, borrar, cancelar, ponerFormularioMarca, retirarFormularioMarca */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -92087,6 +92087,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cambioGeneticaName", function() { return cambioGeneticaName; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cambioGeneticaMarca", function() { return cambioGeneticaMarca; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cambioGeneticaThc", function() { return cambioGeneticaThc; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cambioGeneticaCbd", function() { return cambioGeneticaCbd; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cambioGeneticaProdInt", function() { return cambioGeneticaProdInt; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cambioGeneticaProdExt", function() { return cambioGeneticaProdExt; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cambioGeneticaTiempoFlora", function() { return cambioGeneticaTiempoFlora; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cambioGeneticaSabores", function() { return cambioGeneticaSabores; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "agregar", function() { return agregar; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "editar", function() { return editar; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traerUnoBorrar", function() { return traerUnoBorrar; });
@@ -92153,7 +92158,7 @@ var traerTodos = function traerTodos() {
 var traerUno = function traerUno(id) {
   return /*#__PURE__*/function () {
     var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(dispatch) {
-      var response;
+      var response, genetica;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
@@ -92178,49 +92183,90 @@ var traerUno = function traerUno(id) {
                 payload: ''
               });
               dispatch({
+                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_CBD"],
+                payload: ''
+              });
+              dispatch({
+                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_PROD_INT"],
+                payload: ''
+              });
+              dispatch({
+                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_PROD_EXT"],
+                payload: ''
+              });
+              dispatch({
+                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_TIEMPO_FLORA"],
+                payload: ''
+              });
+              dispatch({
+                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_SABORES"],
+                payload: ''
+              });
+              dispatch({
                 type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_ESTADO_FORM"],
                 payload: 'editar'
               });
-              _context2.prev = 6;
-              _context2.next = 9;
+              _context2.prev = 11;
+              _context2.next = 14;
               return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL + 'genetica/' + id);
 
-            case 9:
+            case 14:
               response = _context2.sent;
+              genetica = response.data[0];
               dispatch({
                 type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_UNO"],
-                payload: response.data
+                payload: genetica
               });
               dispatch({
                 type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_ID"],
-                payload: response.data.id
+                payload: genetica.id
               });
               dispatch({
                 type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_NAME"],
-                payload: response.data.name
+                payload: genetica.name
               });
               dispatch({
                 type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_MARCA_ID"],
-                payload: response.data.marca_id
+                payload: genetica.marca_id
               });
               dispatch({
                 type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_THC"],
-                payload: response.data.thc
+                payload: genetica.thc
               });
-              _context2.next = 20;
+              dispatch({
+                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_CBD"],
+                payload: genetica.cbd
+              });
+              dispatch({
+                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_PROD_INT"],
+                payload: genetica.prod_int
+              });
+              dispatch({
+                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_PROD_EXT"],
+                payload: genetica.prod_ext
+              });
+              dispatch({
+                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_TIEMPO_FLORA"],
+                payload: genetica.tiempo_flora
+              });
+              dispatch({
+                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_SABORES"],
+                payload: genetica.sabores
+              });
+              _context2.next = 31;
               break;
 
-            case 17:
-              _context2.prev = 17;
-              _context2.t0 = _context2["catch"](6);
+            case 28:
+              _context2.prev = 28;
+              _context2.t0 = _context2["catch"](11);
               console.log(_context2.t0);
 
-            case 20:
+            case 31:
             case "end":
               return _context2.stop();
           }
         }
-      }, _callee2, null, [[6, 17]]);
+      }, _callee2, null, [[11, 28]]);
     }));
 
     return function (_x2) {
@@ -92248,6 +92294,46 @@ var cambioGeneticaThc = function cambioGeneticaThc(valor) {
   return function (dispatch) {
     dispatch({
       type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_THC"],
+      payload: valor
+    });
+  };
+};
+var cambioGeneticaCbd = function cambioGeneticaCbd(valor) {
+  return function (dispatch) {
+    dispatch({
+      type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_CBD"],
+      payload: valor
+    });
+  };
+};
+var cambioGeneticaProdInt = function cambioGeneticaProdInt(valor) {
+  return function (dispatch) {
+    dispatch({
+      type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_PROD_INT"],
+      payload: valor
+    });
+  };
+};
+var cambioGeneticaProdExt = function cambioGeneticaProdExt(valor) {
+  return function (dispatch) {
+    dispatch({
+      type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_PROD_EXT"],
+      payload: valor
+    });
+  };
+};
+var cambioGeneticaTiempoFlora = function cambioGeneticaTiempoFlora(valor) {
+  return function (dispatch) {
+    dispatch({
+      type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_TIEMPO_FLORA"],
+      payload: valor
+    });
+  };
+};
+var cambioGeneticaSabores = function cambioGeneticaSabores(valor) {
+  return function (dispatch) {
+    dispatch({
+      type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_SABORES"],
       payload: valor
     });
   };
@@ -92365,32 +92451,20 @@ var traerUnoBorrar = function traerUnoBorrar(id) {
                 type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_UNO"],
                 payload: response.data
               });
-              dispatch({
-                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_ID"],
-                payload: response.data.id
-              });
-              dispatch({
-                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_NAME"],
-                payload: response.data.name
-              });
-              dispatch({
-                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_MARCA_ID"],
-                payload: response.data.marca_id
-              });
-              _context5.next = 15;
+              _context5.next = 12;
               break;
 
-            case 12:
-              _context5.prev = 12;
+            case 9:
+              _context5.prev = 9;
               _context5.t0 = _context5["catch"](2);
               console.log(_context5.t0);
 
-            case 15:
+            case 12:
             case "end":
               return _context5.stop();
           }
         }
-      }, _callee5, null, [[2, 12]]);
+      }, _callee5, null, [[2, 9]]);
     }));
 
     return function (_x5) {
@@ -93345,7 +93419,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Delete = function Delete(props) {
-  var genetica = props.genetica,
+  var genetica = props.genetica[0],
       borrar = props.borrar,
       cancelar = props.cancelar;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -93362,7 +93436,59 @@ var Delete = function Delete(props) {
     value: genetica.name,
     className: "form-control",
     disabled: true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group col-md-12"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Marca"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: genetica.marca.name,
+    className: "form-control",
+    disabled: true
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group col-md-12"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-row"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group col-md-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "THC"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: genetica.thc,
+    className: "form-control",
+    disabled: true
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group col-md-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "CBD"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: genetica.cbd,
+    className: "form-control",
+    disabled: true
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group col-md-12"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-row"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group col-md-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "THC"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: genetica.prod_int,
+    className: "form-control",
+    disabled: true
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group col-md-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "CBD"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: genetica.prod_ext,
+    className: "form-control",
+    disabled: true
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group col-md-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "CBD"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: genetica.tiempo_flora,
+    className: "form-control",
+    disabled: true
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group col-md-12"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Sabores"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    value: genetica.sabores,
+    className: "form-control",
+    disabled: true
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group col-md-12"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "btn btn-dark",
     onClick: function onClick() {
       return borrar(genetica.id);
@@ -93370,7 +93496,7 @@ var Delete = function Delete(props) {
   }, "Eliminar"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "btn btn-danger btn-cancelar",
     onClick: cancelar
-  }, "Cancelar")));
+  }, "Cancelar"))));
 };
 
 var mapStateToProps = function mapStateToProps(reducers) {
@@ -93396,8 +93522,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _General_SliderThc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./General/SliderThc */ "./resources/js/components/Geneticas/General/SliderThc.js");
-/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
-/* harmony import */ var _actions_marcasActions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/marcasActions */ "./resources/js/actions/marcasActions.js");
+/* harmony import */ var _General_SliderCbd__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./General/SliderCbd */ "./resources/js/components/Geneticas/General/SliderCbd.js");
+/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
+/* harmony import */ var _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/marcasActions */ "./resources/js/actions/marcasActions.js");
 
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -93433,13 +93560,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var marcasTraerTodos = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_5__["traerTodos"];
-var cambioGeneticaName = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_4__["cambioGeneticaName"],
-    cambioGeneticaMarca = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_4__["cambioGeneticaMarca"],
-    ponerFormularioMarca = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_4__["ponerFormularioMarca"],
-    cancelar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_4__["cancelar"],
-    agregar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_4__["agregar"],
-    editar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_4__["editar"];
+
+var marcasTraerTodos = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__["traerTodos"];
+var cambioGeneticaName = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_5__["cambioGeneticaName"],
+    cambioGeneticaMarca = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_5__["cambioGeneticaMarca"],
+    cambioGeneticaProdInt = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_5__["cambioGeneticaProdInt"],
+    cambioGeneticaProdExt = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_5__["cambioGeneticaProdExt"],
+    cambioGeneticaTiempoFlora = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_5__["cambioGeneticaTiempoFlora"],
+    cambioGeneticaSabores = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_5__["cambioGeneticaSabores"],
+    ponerFormularioMarca = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_5__["ponerFormularioMarca"],
+    cancelar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_5__["cancelar"],
+    agregar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_5__["agregar"],
+    editar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_5__["editar"];
 
 var Formulario = /*#__PURE__*/function (_Component) {
   _inherits(Formulario, _Component);
@@ -93469,6 +93601,22 @@ var Formulario = /*#__PURE__*/function (_Component) {
       return _this.props.cambioGeneticaMarca(event.target.value);
     });
 
+    _defineProperty(_assertThisInitialized(_this), "handleCambioGeneticaProdInt", function (event) {
+      return _this.props.cambioGeneticaProdInt(event.target.value);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleCambioGeneticaProdExt", function (event) {
+      return _this.props.cambioGeneticaProdExt(event.target.value);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleCambioGeneticaTiempoFlora", function (event) {
+      return _this.props.cambioGeneticaTiempoFlora(event.target.value);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleCambioGeneticaSabores", function (event) {
+      return _this.props.cambioGeneticaSabores(event.target.value);
+    });
+
     _defineProperty(_assertThisInitialized(_this), "guardar", function () {
       var _this$props = _this.props,
           _this$props$geneticas = _this$props.geneticasReducer,
@@ -93477,6 +93625,11 @@ var Formulario = /*#__PURE__*/function (_Component) {
           name = _this$props$geneticas2.name,
           marca_id = _this$props$geneticas2.marca_id,
           thc = _this$props$geneticas2.thc,
+          cbd = _this$props$geneticas2.cbd,
+          prod_int = _this$props$geneticas2.prod_int,
+          prod_ext = _this$props$geneticas2.prod_ext,
+          tiempo_flora = _this$props$geneticas2.tiempo_flora,
+          sabores = _this$props$geneticas2.sabores,
           state_form = _this$props$geneticas.state_form,
           agregar = _this$props.agregar,
           editar = _this$props.editar;
@@ -93484,7 +93637,12 @@ var Formulario = /*#__PURE__*/function (_Component) {
         id: id,
         name: name,
         marca_id: marca_id,
-        thc: thc
+        thc: thc,
+        cbd: cbd,
+        prod_int: prod_int,
+        prod_ext: prod_ext,
+        tiempo_flora: tiempo_flora,
+        sabores: sabores
       };
       if (state_form === 'crear') agregar(nueva_genetica);
       if (state_form === 'editar') editar(nueva_genetica, id);
@@ -93534,12 +93692,17 @@ var Formulario = /*#__PURE__*/function (_Component) {
 
       var _this$props3 = this.props,
           _this$props3$genetica = _this$props3.geneticasReducer,
-          name = _this$props3$genetica.form.name,
+          _this$props3$genetica2 = _this$props3$genetica.form,
+          name = _this$props3$genetica2.name,
+          prod_int = _this$props3$genetica2.prod_int,
+          prod_ext = _this$props3$genetica2.prod_ext,
+          tiempo_flora = _this$props3$genetica2.tiempo_flora,
+          sabores = _this$props3$genetica2.sabores,
           error_form = _this$props3$genetica.error_form,
           state_form = _this$props3$genetica.state_form,
           marcas = _this$props3.marcasReducer.marcas,
           cancelar = _this$props3.cancelar;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "form-row"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "form-group col-md-12"
@@ -93547,8 +93710,7 @@ var Formulario = /*#__PURE__*/function (_Component) {
         type: "text",
         className: "form-control",
         value: name,
-        onChange: this.handleCambioGeneticaName,
-        pattern: "[A-Z]"
+        onChange: this.handleCambioGeneticaName
       }), error_form.name && error_form.name.map(function (err, key) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("small", {
           key: key,
@@ -93580,11 +93742,46 @@ var Formulario = /*#__PURE__*/function (_Component) {
         }, err);
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "form-group col-md-12"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_SliderThc__WEBPACK_IMPORTED_MODULE_3__["default"], null), error_form.thc && error_form.thc.map(function (err, key) {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_SliderThc__WEBPACK_IMPORTED_MODULE_3__["default"], null), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_SliderCbd__WEBPACK_IMPORTED_MODULE_4__["default"], null), error_form.thc && error_form.thc.map(function (err, key) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("small", {
           key: key,
           className: "text-danger"
         }, err);
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "form-row"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "form-group col-md-4"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", null, "Prod. Int", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("small", null, "(m2)")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+        type: "number",
+        className: "form-control",
+        value: prod_int,
+        onChange: this.handleCambioGeneticaProdInt
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "form-group col-md-4"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", null, "Prod. Ext", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("small", null, "(x planta)")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+        type: "number",
+        className: "form-control",
+        value: prod_ext,
+        onChange: this.handleCambioGeneticaProdExt
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "form-group col-md-4"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", null, "Tiempo"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+        type: "number",
+        className: "form-control",
+        value: tiempo_flora,
+        onChange: this.handleCambioGeneticaTiempoFlora
+      }), error_form.tiempo_flora && error_form.tiempo_flora.map(function (err, key) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("small", {
+          key: key,
+          className: "text-danger"
+        }, err);
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "form-group col-md-12"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", null, "Sabores"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
+        type: "text",
+        className: "form-control",
+        value: sabores,
+        onChange: this.handleCambioGeneticaSabores
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "form-group col-md-12"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
@@ -93615,11 +93812,121 @@ var mapDispatchToProps = {
   cambioGeneticaName: cambioGeneticaName,
   cambioGeneticaMarca: cambioGeneticaMarca,
   ponerFormularioMarca: ponerFormularioMarca,
+  cambioGeneticaProdInt: cambioGeneticaProdInt,
+  cambioGeneticaProdExt: cambioGeneticaProdExt,
+  cambioGeneticaTiempoFlora: cambioGeneticaTiempoFlora,
+  cambioGeneticaSabores: cambioGeneticaSabores,
   agregar: agregar,
   editar: editar,
   cancelar: cancelar
 };
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, mapDispatchToProps)(Formulario));
+
+/***/ }),
+
+/***/ "./resources/js/components/Geneticas/General/SliderCbd.js":
+/*!****************************************************************!*\
+  !*** ./resources/js/components/Geneticas/General/SliderCbd.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
+/* harmony import */ var _material_ui_core_Slider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Slider */ "./node_modules/@material-ui/core/esm/Slider/index.js");
+/* harmony import */ var _material_ui_core_Input__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Input */ "./node_modules/@material-ui/core/esm/Input/index.js");
+/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["makeStyles"])({
+  root: {
+    width: "auto"
+  },
+  input: {
+    width: 40,
+    padding: "13px 0px"
+  }
+});
+
+var InputSlider = function InputSlider(props) {
+  var classes = useStyles();
+  var cambioGeneticaCbd = props.cambioGeneticaCbd,
+      cbd = props.form.cbd;
+
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(cbd),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      value = _React$useState2[0],
+      setValue = _React$useState2[1];
+
+  var handleSliderChange = function handleSliderChange(event, newValue) {
+    cambioGeneticaCbd(newValue);
+    setValue(newValue);
+  };
+
+  var handleInputChange = function handleInputChange(event) {
+    setValue(event.target.value === '' ? '' : Number(event.target.value));
+  };
+
+  var handleBlur = function handleBlur() {
+    if (value < 0) {
+      setValue(0);
+    } else if (value > 100) {
+      setValue(100);
+    }
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: classes.root
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-row"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group col-md-10"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "CBD"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Slider__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    value: typeof value === 'number' ? value : cbd || 0,
+    onChange: handleSliderChange
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group col-md-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    className: classes.input,
+    value: value,
+    margin: "dense",
+    onChange: handleInputChange,
+    onBlur: handleBlur,
+    inputProps: {
+      step: 5,
+      min: 0,
+      max: 100,
+      type: 'number',
+      'aria-labelledby': 'input-slider'
+    }
+  }))));
+};
+
+var mapStateToProps = function mapStateToProps(reducers) {
+  return reducers.geneticasReducer;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_5__)(InputSlider));
 
 /***/ }),
 
@@ -93659,23 +93966,24 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["makeStyles"])({
   root: {
-    width: 300
+    width: "auto"
   },
   input: {
-    width: 42
+    width: 40,
+    padding: "13px 0px"
   }
 });
 
 var InputSlider = function InputSlider(props) {
   var classes = useStyles();
+  var cambioGeneticaThc = props.cambioGeneticaThc,
+      thc = props.form.thc,
+      state_form = props.state_form;
 
-  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(30),
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(thc),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       value = _React$useState2[0],
       setValue = _React$useState2[1];
-
-  var cambioGeneticaThc = props.cambioGeneticaThc,
-      thc = props.form.thc;
 
   var handleSliderChange = function handleSliderChange(event, newValue) {
     cambioGeneticaThc(newValue);
@@ -93701,13 +94009,13 @@ var InputSlider = function InputSlider(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-group col-md-10"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "THC"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Slider__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    value: typeof value === 'number' ? thc || value : 0,
+    value: typeof value === 'number' ? value : thc || 0,
     onChange: handleSliderChange
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-group col-md-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
     className: classes.input,
-    value: thc || value,
+    value: value,
     margin: "dense",
     onChange: handleInputChange,
     onBlur: handleBlur,
@@ -93755,7 +94063,7 @@ var Table = function Table(props) {
     return geneticas.map(function (genetica, key) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
         key: key
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, genetica.id), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, genetica.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, genetica.marca.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, genetica.thc), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, genetica.id), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, genetica.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, genetica.marca.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, genetica.thc), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, genetica.cbd), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, genetica.prod_int), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, genetica.prod_ext), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, genetica.tiempo_flora), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, genetica.sabores), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "material-icons link",
         onClick: function onClick() {
           return traerUno(genetica.id);
@@ -93771,7 +94079,7 @@ var Table = function Table(props) {
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
     className: "table table-hover"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "ID"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Nombre"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Marca"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "THC"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Accion"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, addRow())));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "ID"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Nombre"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Marca"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "THC"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "CBD"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "P.Int"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "P.Ext"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "T.Flora"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Sabor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Acciones"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, addRow())));
 };
 
 var mapStateToProps = function mapStateToProps(reducers) {
@@ -93916,7 +94224,7 @@ var Geneticas = /*#__PURE__*/function (_Component) {
           state_form = _this$props3.state_form,
           genetica = _this$props3.genetica;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "container"
+        className: "container col-md-9"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "row mt-2"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -94150,7 +94458,7 @@ var Formulario = function Formulario(props) {
     retirarFormularioMarca();
   };
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-group col-md-12"
@@ -94382,7 +94690,7 @@ var Marcas = /*#__PURE__*/function (_Component) {
           loading = _this$props3.loading,
           marca = _this$props3.marca;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "container"
+        className: "container col-md-9"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "row mt-2"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -94533,7 +94841,7 @@ var Formulario = function Formulario(props) {
     if (state_form === 'editar') editar(nuevo_usuario, id);
   };
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-group col-md-12"
@@ -94772,7 +95080,7 @@ var Users = /*#__PURE__*/function (_Component) {
           state_form = _this$props3.state_form,
           loading = _this$props3.loading;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "container"
+        className: "container col-md-9"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "row mt-2"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -94957,7 +95265,12 @@ var INITIAL_STATE = {
     id: '',
     name: '',
     marca_id: '',
-    thc: 21
+    thc: 21,
+    cbd: 0,
+    prod_int: '',
+    prod_ext: '',
+    tiempo_flora: '',
+    sabores: ''
   },
   loading: false,
   error: '',
@@ -95031,6 +95344,41 @@ var INITIAL_STATE = {
         })
       });
 
+    case _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_GENETICA_CBD"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        form: _objectSpread(_objectSpread({}, state.form), {}, {
+          cbd: action.payload
+        })
+      });
+
+    case _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_GENETICA_PROD_INT"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        form: _objectSpread(_objectSpread({}, state.form), {}, {
+          prod_int: action.payload
+        })
+      });
+
+    case _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_GENETICA_PROD_EXT"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        form: _objectSpread(_objectSpread({}, state.form), {}, {
+          prod_ext: action.payload
+        })
+      });
+
+    case _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_GENETICA_TIEMPO_FLORA"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        form: _objectSpread(_objectSpread({}, state.form), {}, {
+          tiempo_flora: action.payload
+        })
+      });
+
+    case _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_GENETICA_SABORES"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        form: _objectSpread(_objectSpread({}, state.form), {}, {
+          sabores: action.payload
+        })
+      });
+
     case _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_ESTADO_FORM"]:
       return _objectSpread(_objectSpread({}, state), {}, {
         error_form: '',
@@ -95045,7 +95393,11 @@ var INITIAL_STATE = {
         form: _objectSpread(_objectSpread({}, state.form), {}, {
           id: '',
           name: '',
-          marca_id: ''
+          marca_id: '',
+          prod_int: '',
+          prod_ext: '',
+          tiempo_flora: '',
+          sabores: ''
         }),
         recargar_table: true,
         state_form: 'crear'
@@ -95321,7 +95673,7 @@ var INITIAL_STATE = {
 /*!*********************************************!*\
   !*** ./resources/js/types/geneticaTypes.js ***!
   \*********************************************/
-/*! exports provided: TRAER_TODOS, TRAER_UNO, LOADING, ERROR, ERROR_FORM, CAMBIO_GENETICA_ID, CAMBIO_GENETICA_MARCA_ID, CAMBIO_GENETICA_NAME, CAMBIO_GENETICA_THC, CAMBIO_ESTADO_FORM, GUARDAR */
+/*! exports provided: TRAER_TODOS, TRAER_UNO, LOADING, ERROR, ERROR_FORM, CAMBIO_ESTADO_FORM, CAMBIO_GENETICA_ID, CAMBIO_GENETICA_NAME, CAMBIO_GENETICA_MARCA_ID, CAMBIO_GENETICA_THC, CAMBIO_GENETICA_CBD, CAMBIO_GENETICA_PROD_INT, CAMBIO_GENETICA_PROD_EXT, CAMBIO_GENETICA_TIEMPO_FLORA, CAMBIO_GENETICA_SABORES, GUARDAR */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -95331,24 +95683,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOADING", function() { return LOADING; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ERROR", function() { return ERROR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ERROR_FORM", function() { return ERROR_FORM; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_GENETICA_ID", function() { return CAMBIO_GENETICA_ID; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_GENETICA_MARCA_ID", function() { return CAMBIO_GENETICA_MARCA_ID; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_GENETICA_NAME", function() { return CAMBIO_GENETICA_NAME; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_GENETICA_THC", function() { return CAMBIO_GENETICA_THC; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_ESTADO_FORM", function() { return CAMBIO_ESTADO_FORM; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_GENETICA_ID", function() { return CAMBIO_GENETICA_ID; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_GENETICA_NAME", function() { return CAMBIO_GENETICA_NAME; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_GENETICA_MARCA_ID", function() { return CAMBIO_GENETICA_MARCA_ID; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_GENETICA_THC", function() { return CAMBIO_GENETICA_THC; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_GENETICA_CBD", function() { return CAMBIO_GENETICA_CBD; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_GENETICA_PROD_INT", function() { return CAMBIO_GENETICA_PROD_INT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_GENETICA_PROD_EXT", function() { return CAMBIO_GENETICA_PROD_EXT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_GENETICA_TIEMPO_FLORA", function() { return CAMBIO_GENETICA_TIEMPO_FLORA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_GENETICA_SABORES", function() { return CAMBIO_GENETICA_SABORES; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GUARDAR", function() { return GUARDAR; });
 var TRAER_TODOS = 'geneticas_traer_todos';
 var TRAER_UNO = 'geneticas_traer_uno';
 var LOADING = 'geneticas_cargando';
 var ERROR = 'geneticas_error';
 var ERROR_FORM = 'geneticas_error_form';
-var CAMBIO_GENETICA_ID = 'geneticas_cambio_genetica_id';
-var CAMBIO_GENETICA_MARCA_ID = 'geneticas_cambio_genetica_marca_id';
-var CAMBIO_GENETICA_NAME = 'geneticas_cambio_genetica_name';
-var CAMBIO_GENETICA_THC = 'geneticas_cambio_genetica_thc';
 var CAMBIO_ESTADO_FORM = 'geneticas_cambio_estado_form';
+var CAMBIO_GENETICA_ID = 'geneticas_cambio_genetica_id';
+var CAMBIO_GENETICA_NAME = 'geneticas_cambio_genetica_name';
+var CAMBIO_GENETICA_MARCA_ID = 'geneticas_cambio_genetica_marca_id';
+var CAMBIO_GENETICA_THC = 'geneticas_cambio_genetica_thc';
+var CAMBIO_GENETICA_CBD = 'geneticas_cambio_genetica_cbd';
+var CAMBIO_GENETICA_PROD_INT = 'geneticas_cambio_genetica_prod_int';
+var CAMBIO_GENETICA_PROD_EXT = 'geneticas_cambio_genetica_prod_ext';
+var CAMBIO_GENETICA_TIEMPO_FLORA = 'geneticas_cambio_genetica_tiempo_flora';
+var CAMBIO_GENETICA_SABORES = 'geneticas_cambio_genetica_sabores';
 var GUARDAR = 'geneticas_guardar_marca';
-CAMBIO_GENETICA_THC;
 
 /***/ }),
 

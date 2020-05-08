@@ -18,6 +18,11 @@ class CreateGeneticasTable extends Migration
             $table->string('name', 20);
             $table->bigInteger('marca_id')->unsigned();
             $table->integer('thc');
+            $table->integer('cbd');
+            $table->integer('prod_int')->nullable();
+            $table->integer('prod_ext')->nullable();
+            $table->integer('tiempo_flora');
+            $table->string('sabores', 20)->nullable();
             $table->timestamps();
         });
 

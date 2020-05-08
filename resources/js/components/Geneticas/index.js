@@ -42,7 +42,7 @@ class Geneticas extends Component {
 		const { loading, state_form, genetica } = this.props
 
 		return (
-			<div className="container">
+			<div className="container col-md-9">
 				<div className="row mt-2">
 					<div className="col col-md-8">
 						<div>

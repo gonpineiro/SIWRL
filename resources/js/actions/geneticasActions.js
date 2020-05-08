@@ -4,32 +4,37 @@ import {
     TRAER_UNO,
     LOADING,
     ERROR_FORM,
-    CAMBIO_GENETICA_ID,
-    CAMBIO_GENETICA_MARCA_ID,
-    CAMBIO_GENETICA_NAME,
-    CAMBIO_GENETICA_THC,
     CAMBIO_ESTADO_FORM,
+
+    CAMBIO_GENETICA_ID,
+    CAMBIO_GENETICA_NAME,
+    CAMBIO_GENETICA_MARCA_ID,
+    CAMBIO_GENETICA_THC,
+    CAMBIO_GENETICA_CBD,
+    CAMBIO_GENETICA_PROD_INT,
+    CAMBIO_GENETICA_PROD_EXT,
+    CAMBIO_GENETICA_TIEMPO_FLORA,
+    CAMBIO_GENETICA_SABORES,
+
     GUARDAR
 } from '../types/geneticaTypes'
 
 const URL = 'http://192.168.0.238:901/api/'
 
 export const traerTodos = () => async (dispatch) => {
-    
+
     dispatch({
         type: LOADING
     })
 
     try {
         const response = await axios.get(URL + 'genetica')
-
         dispatch({
             type: TRAER_TODOS,
             payload: response.data
         })
 
     } catch (error) {
-
         console.log(error)
     }
 }
@@ -61,6 +66,31 @@ export const traerUno = (id) => async (dispatch) => {
     })
 
     dispatch({
+        type: CAMBIO_GENETICA_CBD,
+        payload: ''
+    })
+
+    dispatch({
+        type: CAMBIO_GENETICA_PROD_INT,
+        payload: ''
+    })
+
+    dispatch({
+        type: CAMBIO_GENETICA_PROD_EXT,
+        payload: ''
+    })
+
+    dispatch({
+        type: CAMBIO_GENETICA_TIEMPO_FLORA,
+        payload: ''
+    })
+
+    dispatch({
+        type: CAMBIO_GENETICA_SABORES,
+        payload: ''
+    })
+
+    dispatch({
         type: CAMBIO_ESTADO_FORM,
         payload: 'editar'
     })
@@ -68,29 +98,56 @@ export const traerUno = (id) => async (dispatch) => {
 
     try {
         const response = await axios.get(URL + 'genetica/' + id)
+        const { 0: genetica } = response.data
+        
         dispatch({
             type: TRAER_UNO,
-            payload: response.data
+            payload: genetica
         })
 
         dispatch({
             type: CAMBIO_GENETICA_ID,
-            payload: response.data.id
+            payload: genetica.id
         })
 
         dispatch({
             type: CAMBIO_GENETICA_NAME,
-            payload: response.data.name
+            payload: genetica.name
         })
 
         dispatch({
             type: CAMBIO_GENETICA_MARCA_ID,
-            payload: response.data.marca_id
+            payload: genetica.marca_id
         })
 
         dispatch({
             type: CAMBIO_GENETICA_THC,
-            payload: response.data.thc
+            payload: genetica.thc
+        })
+
+        dispatch({
+            type: CAMBIO_GENETICA_CBD,
+            payload: genetica.cbd
+        })
+
+        dispatch({
+            type: CAMBIO_GENETICA_PROD_INT,
+            payload: genetica.prod_int
+        })
+
+        dispatch({
+            type: CAMBIO_GENETICA_PROD_EXT,
+            payload: genetica.prod_ext
+        })
+
+        dispatch({
+            type: CAMBIO_GENETICA_TIEMPO_FLORA,
+            payload: genetica.tiempo_flora
+        })
+
+        dispatch({
+            type: CAMBIO_GENETICA_SABORES,
+            payload: genetica.sabores
         })
 
     } catch (error) {
@@ -119,12 +176,48 @@ export const cambioGeneticaThc = (valor) => (dispatch) => {
     })
 };
 
+export const cambioGeneticaCbd = (valor) => (dispatch) => {
+    dispatch({
+        type: CAMBIO_GENETICA_CBD,
+        payload: valor
+    })
+};
+
+export const cambioGeneticaProdInt = (valor) => (dispatch) => {
+    dispatch({
+        type: CAMBIO_GENETICA_PROD_INT,
+        payload: valor
+    })
+};
+
+export const cambioGeneticaProdExt = (valor) => (dispatch) => {
+    dispatch({
+        type: CAMBIO_GENETICA_PROD_EXT,
+        payload: valor
+    })
+};
+
+export const cambioGeneticaTiempoFlora = (valor) => (dispatch) => {
+    dispatch({
+        type: CAMBIO_GENETICA_TIEMPO_FLORA,
+        payload: valor
+    })
+};
+
+export const cambioGeneticaSabores = (valor) => (dispatch) => {
+    
+    dispatch({
+        type: CAMBIO_GENETICA_SABORES,
+        payload: valor
+    })
+};
+
 export const agregar = (nueva_genetica) => async (dispatch) => {
 
     dispatch({
         type: LOADING
     });
-    
+
     try {
         await axios.post(URL + 'genetica', nueva_genetica);
         dispatch({
@@ -178,21 +271,6 @@ export const traerUnoBorrar = (id) => async (dispatch) => {
         dispatch({
             type: TRAER_UNO,
             payload: response.data
-        })
-
-        dispatch({
-            type: CAMBIO_GENETICA_ID,
-            payload: response.data.id
-        })
-
-        dispatch({
-            type: CAMBIO_GENETICA_NAME,
-            payload: response.data.name
-        })
-
-        dispatch({
-            type: CAMBIO_GENETICA_MARCA_ID,
-            payload: response.data.marca_id
         })
 
     } catch (error) {

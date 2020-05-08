@@ -32,7 +32,7 @@ class Marcas extends Component {
 		const { state_form, loading, marca } = this.props
 
 		return (
-			<div className="container">
+			<div className="container col-md-9">
 				<div className="row mt-2">
 					<div className="col col-md-8">
 						<div>

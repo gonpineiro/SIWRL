@@ -19,12 +19,12 @@ const useStyles = makeStyles({
 
 const InputSlider = (props) => {
   const classes = useStyles();
-  const { cambioGeneticaThc, form: { thc }, state_form } = props
+  const { cambioGeneticaCbd, form: { cbd } } = props
 
-  const [value, setValue] = React.useState(thc);
+  const [value, setValue] = React.useState(cbd);
 
   const handleSliderChange = (event, newValue) => {
-    cambioGeneticaThc(newValue)
+    cambioGeneticaCbd(newValue)
     setValue(newValue);
   };
 
@@ -41,13 +41,13 @@ const InputSlider = (props) => {
   };
 
   return (
-    <div className={classes.root}>     
+    <div className={classes.root}>
 
       <div className="form-row">
         <div className="form-group col-md-10">
-          <label >THC</label>
+          <label >CBD</label>
           <Slider
-            value={typeof value === 'number' ? value : thc || 0}
+            value={typeof value === 'number' ? value : cbd || 0}
             onChange={handleSliderChange}
           />
         </div>
