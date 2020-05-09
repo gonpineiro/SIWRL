@@ -9,17 +9,19 @@ import * as geneticasActions from '../../../actions/geneticasActions'
 
 const useStyles = makeStyles({
   root: {
-    width: "auto",
+    width: "80%",    
+    marginLeft: 10,
+    height: 50
   },
   input: {
-    width: 40,
-    padding: "13px 0px"
+    width: "100%", 
+    marginLeft: 30,
   },
 });
 
 const InputSlider = (props) => {
   const classes = useStyles();
-  const { cambioGeneticaCbd, form: { cbd } } = props
+  const { cambioGeneticaCbd, form: { cbd }, state_form } = props
 
   const [value, setValue] = React.useState(cbd);
 
@@ -55,7 +57,7 @@ const InputSlider = (props) => {
           <label ></label>
           <Input
             className={classes.input}
-            value={value}
+            value={state_form ? cbd : value}
             margin="dense"
             onChange={handleInputChange}
             onBlur={handleBlur}

@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 
 import SliderThc from './General/SliderThc'
 import SliderCbd from './General/SliderCbd'
@@ -24,11 +32,11 @@ const {
 } = geneticasActions;
 
 const Formulario = (props) => {
-   const {      
+   const {
       marcasTraerTodos,
       marcasReducer: { marcas },
       geneticasReducer: {
-         form: { name, prod_int, prod_ext, tiempo_flora, sabores },
+         form: { name, marca_id, prod_int, prod_ext, tiempo_flora, sabores },
          error_form,
          state_form
       },
@@ -87,131 +95,136 @@ const Formulario = (props) => {
 
       if (state_form === 'editar') editar(nueva_genetica, id)
 
-   };   
+   };
+
+   const useStyles = makeStyles((theme) => ({
+
+      formControl: {
+         margin: theme.spacing(3),
+         width: "100%",
+      },
+   }));
+
+   const classes = useStyles();
 
    return (
-      <div>
+      <form noValidate autoComplete="on">
          <div className="form-row">
 
-            <div className="form-group col-md-12">
-               <label>Nombre</label>
-               <input
+            <FormControl className={classes.formControl}>
+               <TextField
+                  id="standard-basic"
+                  label="Nombre"
                   type="text"
                   className="form-control"
                   value={name}
                   onChange={handleCambioGeneticaName}
+                  helperText={error_form.name}
+                  error={!error_form.name ? false : true}
                />
-               {error_form.name && error_form.name.map((err, key) =>
-                  <small key={key} className="text-danger">{err}</small>
-               )}
-            </div>
+            </FormControl>
 
-            <div className="form-group col-md-12">
-               <label
-                  className="link link-string"
-                  onClick={() => ponerFormularioMarca()}
-               >Marcas
-                  </label>
-
-               <div className="form-row">
-                  <select
-                     className="form-control"
-                     onChange={handleCambioGeneticaMarca}
-                  >
-                     <option value="">Seleccione</option>
-                     {marcas.map((marca) => (
-                        <option
-                           key={marca.id}
-                           value={marca.id}
-                        >
-                           {marca.name}
-                        </option>
-                     ))}
-                  </select>
-                  {error_form.marca_id && error_form.marca_id.map((err, key) =>
-                     <small key={key} className="text-danger">{err}</small>
-                  )}
-
-               </div>
-
-            </div>
+            <FormControl className={classes.formControl}>
+               <InputLabel id="demo-simple-select-helper-label" error={!error_form.name ? false : true}>Marcas</InputLabel>
+               <Select
+                  labelId="demo-simple-select-helper-label"
+                  id="demo-simple-select-helper"
+                  value={marca_id}
+                  onChange={handleCambioGeneticaMarca}
+                  error={!error_form.name ? false : true}
+               >
+                  <MenuItem value=""><em className="link link-string" onClick={() => ponerFormularioMarca()}>Agregar</em></MenuItem>
+                  {marcas.map((marca) => (
+                     <MenuItem key={marca.id} value={marca.id}>{marca.name}</MenuItem>
+                  ))}
+               </Select>
+               <FormHelperText error={!error_form.name ? false : true}>{error_form.name}</FormHelperText>
+            </FormControl>
 
             <div className="form-group col-md-12">
                <SliderThc /> <SliderCbd />
+               {/* MONO PRUEBA */}
                {error_form.thc && error_form.thc.map((err, key) =>
                   <small key={key} className="text-danger">{err}</small>
                )}
+               {error_form.cbd && error_form.cbd.map((err, key) =>
+                  <small key={key} className="text-danger">{err}</small>
+               )}
+               {/* MONO PRUEBA */}
             </div>
 
-            <div className="form-row">
-
-               <div className="form-group col-md-4">
-                  <label>Prod. Int<small>(m2)</small></label>
-                  <input
-                     type="number"
-                     className="form-control"
-                     value={prod_int}
-                     onChange={handleCambioGeneticaProdInt}
-                  />
-               </div>
-
-               <div className="form-group col-md-4">
-                  <label>Prod. Ext<small>(x planta)</small></label>
-                  <input
-                     type="number"
-                     className="form-control"
-                     value={prod_ext}
-                     onChange={handleCambioGeneticaProdExt}
-                  />
-               </div>
-
-               <div className="form-group col-md-4">
-                  <label>Tiempo</label>
-                  <input
-                     type="number"
-                     className="form-control"
-                     value={tiempo_flora}
-                     onChange={handleCambioGeneticaTiempoFlora}
-                  />
-                  {error_form.tiempo_flora && error_form.tiempo_flora.map((err, key) =>
-                     <small key={key} className="text-danger">{err}</small>
-                  )}
-               </div>
-
-            </div>
-
-            <div className="form-group col-md-12">
-               <label>Sabores</label>
-               <input
+            <FormControl className={classes.formControl}>
+               <TextField
+                  id="standard-basic"
+                  label="Sabores"
                   type="text"
                   className="form-control"
                   value={sabores}
                   onChange={handleCambioGeneticaSabores}
                />
-            </div>
+            </FormControl>
 
-            <div className="form-group col-md-12">
-               <button
-                  id="guardar-btn"
-                  className="btn btn-dark"
-                  onClick={guardar}
-               >
-                  Guardar
-                  </button>
+            <FormControl className={classes.formControl}>
+               <TextField
+                  id="standard-basic"
+                  label="Interna"
+                  type="number"
+                  className="form-control"
+                  value={prod_int}
+                  onChange={handleCambioGeneticaProdInt}
+               />
+            </FormControl>
 
-               {state_form === 'editar'
-                  ?
-                  <button
-                     className="btn btn-danger btn-cancelar"
-                     onClick={cancelar}
+            <FormControl className={classes.formControl}>
+               <TextField
+                  id="standard-basic"
+                  label="Externa"
+                  type="number"
+                  className="form-control"
+                  value={prod_ext}
+                  onChange={handleCambioGeneticaProdExt}
+               />
+            </FormControl>
+
+            <FormControl className={classes.formControl}>
+               <TextField
+                  id="standard-basic"
+                  label="Tiempo"
+                  type="number"
+                  className="form-control"
+                  value={tiempo_flora}
+                  onChange={handleCambioGeneticaTiempoFlora}
+                  helperText={error_form.tiempo_flora}
+                  error={!error_form.tiempo_flora ? false : true}
+               />
+            </FormControl>
+
+            <div className="form-row margin-button">
+               <div className="form-group col-md-6">
+                  <Button
+                     variant="contained"
+                     color="primary"
+                     onClick={guardar}
                   >
-                     Cancelar
-                     </button> : ''}
+                     Guardar
+                  </Button>
+               </div >
 
+               <div className="form-group col-md-6">
+                  {state_form === 'editar'
+                     ?
+                     <Button
+                        variant="contained"
+                        color="inherit"
+                        onClick={cancelar}
+                     >
+                        Cancelar
+                     </Button> : ''}
+               </div >
             </div>
 
          </div>
-      </div>
+      </form>
    );
 }
 

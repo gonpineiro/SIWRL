@@ -9,11 +9,12 @@ import * as geneticasActions from '../../../actions/geneticasActions'
 
 const useStyles = makeStyles({
   root: {
-    width: "auto",
+    width: "80%",    
+    marginLeft: 10,
   },
   input: {
-    width: 40,
-    padding: "13px 0px"
+    width: "100%", 
+    marginLeft: 30,
   },
 });
 
@@ -55,7 +56,7 @@ const InputSlider = (props) => {
           <label ></label>
           <Input
             className={classes.input}
-            value={value}
+            value={state_form ? thc : value}
             margin="dense"
             onChange={handleInputChange}
             onBlur={handleBlur}
