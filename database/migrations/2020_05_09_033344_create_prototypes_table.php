@@ -19,10 +19,11 @@ class CreatePrototypesTable extends Migration
             $table->bigInteger('genetica_id')->unsigned();
             $table->bigInteger('ambiente_id')->unsigned()->nullable();
             $table->bigInteger('sensor_id')->unsigned()->nullable();;
-            $table->date('fecha_etapa_a');                  //implante
+            $table->date('fecha_etapa_a')->nullable();      //implante
             $table->date('fecha_etapa_b')->nullable();      //germi
             $table->date('fecha_etapa_c')->nullable();      //flori
             $table->date('fecha_etapa_d')->nullable();      //corte
+            $table->date('fecha_etapa_e')->nullable();      //final
             $table->integer('cantidad')->nullable();
             $table->timestamps();
         });

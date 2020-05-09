@@ -3,78 +3,117 @@ import { connect } from 'react-redux'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 
-import * as marcasActions from '../../actions/marcasActions'
+import * as protoypesActions from '../../actions/protoypesActions'
 import * as geneticasActions from '../../actions/geneticasActions'
 
-const { retirarFormularioMarca } = geneticasActions;
+const { traerTodos: geneticasTraerTodos } = geneticasActions;
 
-const { agregar, editar, cambioMarcaName, cancelar, traerTodos: marcasTraerTodos } = marcasActions;
+const {
+   cambioPrototypeName,
+   cambioPrototypeGenetica,
+   cambioPrototypeAmbiente,
+   cambioPrototypeSensor,
+   agregar,
+   editar,
+   cancelar } = protoypesActions;
 
 const Formulario = (props) => {
-
    const {
-      marcasReducer: {
-         form: { id, name },
-         state_form: state_form_marcas,
+      geneticasTraerTodos,
+      geneticasReducer: { geneticas },
+      prototypesReducer: {
+         form: { id, name, genetica_id, ambiente_id, sensor_id },
+         state_form,
          error_form,
          loading },
-      geneticasReducer: { state_form: state_form_geneticas },
-      cambioMarcaName,
-      retirarFormularioMarca,
       agregar,
       editar,
-      cancelar,
-      marcasTraerTodos,
+      cancelar
    } = props;
 
-   const handleCambioMarcaName = (event) => cambioMarcaName(event.target.value);
+   if (!geneticas.length) geneticasTraerTodos()
+
+   const handleCambioPrototypeName = (event) =>  props.cambioPrototypeName(event.target.value);   
+
+   const handleCambioPrototypeGenetica = (event) =>  props.cambioPrototypeGenetica(event.target.value);
+
+   const handleCambioPrototypeAmbiente = (event) =>  props.cambioPrototypeAmbiente(event.target.value);
+
+   const handleCambioPrototypeSensor = (event) =>  props.cambioPrototypeSensor(event.target.value);
 
    const guardar = () => {
 
-      const nueva_marca = {
-         id: id,
-         name: name
+      const nuevo_prototype = { 
+         id: id, 
+         name: name, 
+         genetica_id: genetica_id, 
+         ambiente_id: ambiente_id, 
+         sensor_id: sensor_id
       };
 
-      if (state_form_marcas === 'crear') agregar(nueva_marca);
+      if (state_form === 'crear') agregar(nuevo_prototype);
 
-      if (state_form_marcas === 'editar') editar(nueva_marca, id)
+      if (state_form === 'editar') editar(nuevo_prototype, id)
 
    };
 
-   const handleRetirarFormularioMarca = () => {
-      marcasTraerTodos()
-      retirarFormularioMarca()
-   }
+   /*   const handleRetirarFormularioMarca = () => {
+        marcasTraerTodos()
+        retirarFormularioMarca()
+     } */
 
-   const useStyles = makeStyles((theme) => ({
-      root: {
-         '& .MuiTextField-root': {
-            margin: theme.spacing(2),
-            width: "95%",
-         },
+     const useStyles = makeStyles((theme) => ({
+
+      formControl: {
+         margin: theme.spacing(1),
+         width: "100%",
       },
    }));
 
    const classes = useStyles();
 
    return (
-      <form className={classes.root} noValidate autoComplete="off">
+      <form noValidate autoComplete="on">
          <div className="form-row">
 
-            <div className="form-group col-md-12">
+            <FormControl className={classes.formControl}>
                <TextField
                   id="standard-basic"
                   label="Nombre"
                   type="text"
                   className="form-control"
                   value={name}
-                  onChange={handleCambioMarcaName}
+                  onChange={handleCambioPrototypeName}
                   helperText={error_form.name}
                   error={!error_form.name ? false : true}
                />
-            </div>
+            </FormControl>
+
+            <FormControl className={classes.formControl}>
+               <InputLabel id="demo-simple-select-helper-label" error={!error_form.marca_id ? false : true}>Geneticas</InputLabel>
+               <Select
+                  labelId="demo-simple-select-helper-label"
+                  id="demo-simple-select-helper"
+                  value={genetica_id}
+                  onChange={handleCambioPrototypeGenetica}
+                  error={!error_form.genetica_id ? false : true}
+               >
+                  {/* <MenuItem value=""><em className="link link-string" onClick={() => ponerFormularioMarca()}>Agregar</em></MenuItem> */}
+
+                  {geneticas.map((genetica) => (
+                     <MenuItem key={genetica.id} value={genetica.id}>{genetica.name}</MenuItem>
+                  ))}
+               </Select>
+               <FormHelperText error={!error_form.genetica_id ? false : true}>{error_form.genetica_id}</FormHelperText>
+            </FormControl>
+
+
 
             <div className="form-row margin-button">
 
@@ -89,7 +128,7 @@ const Formulario = (props) => {
                </div >
 
                <div className="form-group col-md-6">
-                  {state_form_marcas === 'editar'
+                  {state_form === 'editar'
                      ?
                      <Button
                         variant="contained"
@@ -98,19 +137,8 @@ const Formulario = (props) => {
                      >
                         Cancelar
                      </Button> : ''}
-
-                  {state_form_geneticas === 'crear-marca'
-                     ?
-                     <Button
-                        variant="contained"
-                        color="inherit"
-                        onClick={handleRetirarFormularioMarca}
-                        hidden={loading ? true : false}
-                     >
-                        Volver
-                     </Button> : ''}
                </div >
-               
+
             </div>
 
          </div>
@@ -118,18 +146,21 @@ const Formulario = (props) => {
    );
 }
 
-const mapStateToProps = ({ geneticasReducer, marcasReducer }) => {
-   return { geneticasReducer, marcasReducer };
+const mapStateToProps = ({ prototypesReducer, geneticasReducer }) => {
+   return { prototypesReducer, geneticasReducer };
 };
 
 const mapDispatchToProps = {
+   geneticasTraerTodos,
+
+   cambioPrototypeName,
+   cambioPrototypeGenetica,
+   cambioPrototypeAmbiente,
+   cambioPrototypeSensor,
+
    agregar,
    editar,
    cancelar,
-   retirarFormularioMarca,
-   cambioMarcaName,
-   marcasTraerTodos
-
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Formulario);

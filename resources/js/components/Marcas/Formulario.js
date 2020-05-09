@@ -60,7 +60,7 @@ const Formulario = (props) => {
    const classes = useStyles();
 
    return (
-      <form className={classes.root} noValidate autoComplete="off">
+      <form className={classes.root} noValidate autoComplete="on">
          <div className="form-row">
 
             <div className="form-group col-md-12">

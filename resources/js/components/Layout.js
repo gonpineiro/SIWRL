@@ -32,10 +32,10 @@ function Layout(props) {
 
                     </li>
                     <li className="has-subnav">
-                        <a href="#" method="post">
+                        <Link to="/prototipos">
                             <i className="fa fa-bar-chart-o fa-2x"></i>
-                            <span className="nav-text">Tipo de documentos</span>
-                        </a>
+                            <span className="nav-text">Prototipos</span>
+                        </Link>
 
                     </li>
                     <li>
@@ -47,7 +47,7 @@ function Layout(props) {
                 </ul>
 
                 <ul className="logout">
-                    <li>                        
+                    <li>
                         <a href="/#">
                             <i className="fa fa-power-off fa-2x"></i>
                             <span className="nav-text">

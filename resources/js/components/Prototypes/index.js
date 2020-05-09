@@ -4,23 +4,23 @@ import Table from './Table'
 import Formulario from './Formulario'
 import Delete from './Delete'
 
-import * as marcasActions from '../../actions/marcasActions'
+import * as prototypesActions from '../../actions/protoypesActions'
 import Spinner from '../General/Spinner';
 
-class Marcas extends Component {
+class Prototypes extends Component {
 
 	async componentDidMount() {
-		const { traerTodos, marcas } = this.props
+		const { traerTodos, prototypes } = this.props
 
-		if (!marcas.length) traerTodos()
+		if (!prototypes.length) traerTodos()
 	}
 
 	ponerContenido = () => {
-		const { traerTodos, recargar_table, loading, marcas, error } = this.props
+		const { traerTodos, recargar_table, loading, prototypes, error } = this.props
 
 		if (recargar_table) traerTodos()
 
-		if (loading && !marcas.length) return <Spinner />
+		if (loading && !prototypes.length) return <Spinner />
 
 		if (error) return 'Error'
 
@@ -29,14 +29,14 @@ class Marcas extends Component {
 	ponerFormulario = () => <Formulario />
 
 	render() {
-		const { state_form, loading, marca } = this.props
+		const { state_form, loading, prototype } = this.props
 
 		return (
 			<div className="container col-md-9">
 				<div className="row mt-2">
 					<div className="col col-md-8">
 						<div>
-							<h4>Lista de marcas</h4>
+							<h4>Lista de prototipos</h4>
 							{this.ponerContenido()}
 						</div>
 					</div>
@@ -46,7 +46,7 @@ class Marcas extends Component {
 							{state_form === 'crear' ?
 								<div>
 									<div className="card-header card-agregar">
-										Agregar marca
+										Agregar prototipo
 									</div>
 									{loading ? <Spinner /> :
 										<div className="card-body">
@@ -57,7 +57,7 @@ class Marcas extends Component {
 							{state_form === 'editar' ?
 								<div>
 									<div className="card-header card-agregar">
-										Modificando usuario: {marca.id}
+										Modificando prototipo: {prototype.id}
 									</div>
 									{loading ? <Spinner /> :
 										<div className="card-body">
@@ -68,7 +68,7 @@ class Marcas extends Component {
 							{state_form === 'borrar' ?
 								<div>
 									<div className="card-header card-eliminar">
-										Eliminar la siguente marca
+										Eliminar la siguente prototipo
 									</div>
 									{loading ? <Spinner /> :
 										<div className="card-body">
@@ -86,7 +86,7 @@ class Marcas extends Component {
 }
 
 const mapStateToProps = (reducers) => {
-	return reducers.marcasReducer
+	return reducers.prototypesReducer
 }
 
-export default connect(mapStateToProps, marcasActions)(Marcas);
+export default connect(mapStateToProps, prototypesActions)(Prototypes);

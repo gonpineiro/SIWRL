@@ -1,22 +1,26 @@
 import React from 'react';
 import { connect } from 'react-redux'
 
-import * as marcasActions from '../../actions/marcasActions'
+import * as protoypesActions from '../../actions/protoypesActions'
 
 const Table = (props) => {
-  const { marcas, traerUno, traerUnoBorrar } = props
+  const { prototypes, traerUno, traerUnoBorrar } = props
 
-  const addRow = () => marcas.map((marca, key) => (
+  const addRow = () => prototypes.map((prototype, key) => (
     <tr key={key}>
-      <td>{marca.id}</td>
-      <td>{marca.name}</td>
+      <td>{prototype.id}</td>
+      <td>{prototype.name}</td>
+      <td>{prototype.genetica.name}</td>
+      <td>{prototype.genetica.marca.name}</td>
+      <td>{prototype.ambiente ? prototype.ambiente.codigo : ''}</td>
+      <td>{prototype.sensor ? prototype.sensor.name : ''}</td>
       <td>
         <i
           className="material-icons link"
-          onClick={() => traerUno(marca.id)}
+          onClick={() => traerUno(prototype.id)}
         >edit</i>
         <i
-          onClick={() => traerUnoBorrar(marca.id)}
+          onClick={() => traerUnoBorrar(prototype.id)}
           className="material-icons link"
         >delete</i>
       </td>
@@ -30,6 +34,10 @@ const Table = (props) => {
           <tr>
             <th>ID</th>
             <th>Nombre</th>
+            <th>Genetica</th>
+            <th>Marca</th>
+            <th>Ambiente</th>
+            <th>Sensor</th>
             <th>Accion</th>
           </tr>
         </thead>
@@ -42,7 +50,7 @@ const Table = (props) => {
 }
 
 const mapStateToProps = (reducers) => {
-  return reducers.marcasReducer
+  return reducers.prototypesReducer
 }
 
-export default connect(mapStateToProps, marcasActions)(Table);
+export default connect(mapStateToProps, protoypesActions)(Table);

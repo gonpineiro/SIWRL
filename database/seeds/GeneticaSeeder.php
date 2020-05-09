@@ -57,7 +57,7 @@ class GeneticaSeeder extends Seeder
 
         
         DB::table('geneticas')->insert([
-            'name' => 'Cristal',
+            'name' => 'Saralina',
             'marca_id' => 5,
             'thc' => rand(0, 100),
             'cbd' => rand(0, 100),

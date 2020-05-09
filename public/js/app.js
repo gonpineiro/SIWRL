@@ -101211,6 +101211,479 @@ var cancelar = function cancelar() {
 
 /***/ }),
 
+/***/ "./resources/js/actions/protoypesActions.js":
+/*!**************************************************!*\
+  !*** ./resources/js/actions/protoypesActions.js ***!
+  \**************************************************/
+/*! exports provided: traerTodos, traerUno, cambioPrototypeName, cambioPrototypeGenetica, cambioPrototypeAmbiente, cambioPrototypeSensor, cambioPrototypeFechaA, cambioPrototypeFechaB, cambioPrototypeFechaC, cambioPrototypeFechaD, cambioPrototypeFechaE, agregar, editar, traerUnoBorrar, borrar, cancelar */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traerTodos", function() { return traerTodos; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traerUno", function() { return traerUno; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cambioPrototypeName", function() { return cambioPrototypeName; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cambioPrototypeGenetica", function() { return cambioPrototypeGenetica; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cambioPrototypeAmbiente", function() { return cambioPrototypeAmbiente; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cambioPrototypeSensor", function() { return cambioPrototypeSensor; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cambioPrototypeFechaA", function() { return cambioPrototypeFechaA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cambioPrototypeFechaB", function() { return cambioPrototypeFechaB; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cambioPrototypeFechaC", function() { return cambioPrototypeFechaC; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cambioPrototypeFechaD", function() { return cambioPrototypeFechaD; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cambioPrototypeFechaE", function() { return cambioPrototypeFechaE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "agregar", function() { return agregar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "editar", function() { return editar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traerUnoBorrar", function() { return traerUnoBorrar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "borrar", function() { return borrar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cancelar", function() { return cancelar; });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../types/prototypeTypes */ "./resources/js/types/prototypeTypes.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+var URL = 'http://192.168.0.238:901/api/';
+var traerTodos = function traerTodos() {
+  return /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(dispatch) {
+      var response;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+              });
+              _context.prev = 1;
+              _context.next = 4;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL + 'prototype');
+
+            case 4:
+              response = _context.sent;
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_TODOS"],
+                payload: response.data
+              });
+              _context.next = 11;
+              break;
+
+            case 8:
+              _context.prev = 8;
+              _context.t0 = _context["catch"](1);
+              console.log(_context.t0);
+
+            case 11:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[1, 8]]);
+    }));
+
+    return function (_x) {
+      return _ref.apply(this, arguments);
+    };
+  }();
+};
+var traerUno = function traerUno(id) {
+  return /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(dispatch) {
+      var response, prototype;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+              });
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_ID"],
+                payload: ''
+              });
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_NAME"],
+                payload: ''
+              });
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_GENETICA_ID"],
+                payload: ''
+              });
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_AMBIENTE_ID"],
+                payload: ''
+              });
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_SENSOR_ID"],
+                payload: ''
+              });
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_FECHA_ESTADO_A"],
+                payload: ''
+              });
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_FECHA_ESTADO_B"],
+                payload: ''
+              });
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_FECHA_ESTADO_C"],
+                payload: ''
+              });
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_FECHA_ESTADO_D"],
+                payload: ''
+              });
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_FECHA_ESTADO_E"],
+                payload: ''
+              });
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_CANTIDAD"],
+                payload: ''
+              });
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_ESTADO_FORM"],
+                payload: 'editar'
+              });
+              _context2.prev = 13;
+              _context2.next = 16;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL + 'prototype/' + id);
+
+            case 16:
+              response = _context2.sent;
+              prototype = response.data[0];
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_UNO"],
+                payload: prototype
+              });
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_ID"],
+                payload: prototype.id
+              });
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_NAME"],
+                payload: prototype.name
+              });
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_GENETICA_ID"],
+                payload: prototype.genetica_id
+              });
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_AMBIENTE_ID"],
+                payload: prototype.ambiente_id
+              });
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_SENSOR_ID"],
+                payload: prototype.sensor_id
+              });
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_FECHA_ESTADO_A"],
+                payload: prototype.fecha_etapa_a
+              });
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_FECHA_ESTADO_B"],
+                payload: prototype.fecha_etapa_b
+              });
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_FECHA_ESTADO_C"],
+                payload: prototype.fecha_etapa_c
+              });
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_FECHA_ESTADO_D"],
+                payload: prototype.fecha_etapa_d
+              });
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_FECHA_ESTADO_E"],
+                payload: prototype.fecha_etapa_e
+              });
+              _context2.next = 34;
+              break;
+
+            case 31:
+              _context2.prev = 31;
+              _context2.t0 = _context2["catch"](13);
+              console.log(_context2.t0);
+
+            case 34:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, null, [[13, 31]]);
+    }));
+
+    return function (_x2) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+};
+var cambioPrototypeName = function cambioPrototypeName(valor) {
+  return function (dispatch) {
+    dispatch({
+      type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_NAME"],
+      payload: valor
+    });
+  };
+};
+var cambioPrototypeGenetica = function cambioPrototypeGenetica(valor) {
+  return function (dispatch) {
+    dispatch({
+      type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_GENETICA_ID"],
+      payload: valor
+    });
+  };
+};
+var cambioPrototypeAmbiente = function cambioPrototypeAmbiente(valor) {
+  return function (dispatch) {
+    dispatch({
+      type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_AMBIENTE_ID"],
+      payload: valor
+    });
+  };
+};
+var cambioPrototypeSensor = function cambioPrototypeSensor(valor) {
+  return function (dispatch) {
+    dispatch({
+      type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_SENSOR_ID"],
+      payload: valor
+    });
+  };
+};
+var cambioPrototypeFechaA = function cambioPrototypeFechaA(valor) {
+  return function (dispatch) {
+    dispatch({
+      type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_FECHA_ESTADO_A"],
+      payload: valor
+    });
+  };
+};
+var cambioPrototypeFechaB = function cambioPrototypeFechaB(valor) {
+  return function (dispatch) {
+    dispatch({
+      type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_FECHA_ESTADO_B"],
+      payload: valor
+    });
+  };
+};
+var cambioPrototypeFechaC = function cambioPrototypeFechaC(valor) {
+  return function (dispatch) {
+    dispatch({
+      type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_FECHA_ESTADO_C"],
+      payload: valor
+    });
+  };
+};
+var cambioPrototypeFechaD = function cambioPrototypeFechaD(valor) {
+  return function (dispatch) {
+    dispatch({
+      type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_FECHA_ESTADO_D"],
+      payload: valor
+    });
+  };
+};
+var cambioPrototypeFechaE = function cambioPrototypeFechaE(valor) {
+  return function (dispatch) {
+    dispatch({
+      type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_FECHA_ESTADO_E"],
+      payload: valor
+    });
+  };
+};
+var agregar = function agregar(nuevo_prototype) {
+  return /*#__PURE__*/function () {
+    var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(dispatch) {
+      var errors;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+              });
+              _context3.prev = 1;
+              _context3.next = 4;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(URL + 'prototype', nuevo_prototype);
+
+            case 4:
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["GUARDAR"]
+              });
+              _context3.next = 11;
+              break;
+
+            case 7:
+              _context3.prev = 7;
+              _context3.t0 = _context3["catch"](1);
+              errors = _context3.t0.response.data.errors;
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["ERROR_FORM"],
+                payload: errors
+              });
+
+            case 11:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3, null, [[1, 7]]);
+    }));
+
+    return function (_x3) {
+      return _ref3.apply(this, arguments);
+    };
+  }();
+};
+var editar = function editar(nuevo_prototype, id) {
+  return /*#__PURE__*/function () {
+    var _ref4 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4(dispatch) {
+      var errors;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
+        while (1) {
+          switch (_context4.prev = _context4.next) {
+            case 0:
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+              });
+              _context4.prev = 1;
+              console.log(nuevo_prototype);
+              _context4.next = 5;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.put(URL + 'prototype/' + id, nuevo_prototype);
+
+            case 5:
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["GUARDAR"]
+              });
+              _context4.next = 12;
+              break;
+
+            case 8:
+              _context4.prev = 8;
+              _context4.t0 = _context4["catch"](1);
+              errors = _context4.t0.response.data.errors;
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["ERROR_FORM"],
+                payload: errors
+              });
+
+            case 12:
+            case "end":
+              return _context4.stop();
+          }
+        }
+      }, _callee4, null, [[1, 8]]);
+    }));
+
+    return function (_x4) {
+      return _ref4.apply(this, arguments);
+    };
+  }();
+};
+var traerUnoBorrar = function traerUnoBorrar(id) {
+  return /*#__PURE__*/function () {
+    var _ref5 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5(dispatch) {
+      var response;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
+        while (1) {
+          switch (_context5.prev = _context5.next) {
+            case 0:
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+              });
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_ESTADO_FORM"],
+                payload: 'borrar'
+              });
+              _context5.prev = 2;
+              _context5.next = 5;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL + 'prototype/' + id);
+
+            case 5:
+              response = _context5.sent;
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_UNO"],
+                payload: response.data
+              });
+              _context5.next = 12;
+              break;
+
+            case 9:
+              _context5.prev = 9;
+              _context5.t0 = _context5["catch"](2);
+              console.log(_context5.t0);
+
+            case 12:
+            case "end":
+              return _context5.stop();
+          }
+        }
+      }, _callee5, null, [[2, 9]]);
+    }));
+
+    return function (_x5) {
+      return _ref5.apply(this, arguments);
+    };
+  }();
+};
+var borrar = function borrar(id) {
+  return /*#__PURE__*/function () {
+    var _ref6 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee6(dispatch) {
+      var errors;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee6$(_context6) {
+        while (1) {
+          switch (_context6.prev = _context6.next) {
+            case 0:
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+              });
+              _context6.prev = 1;
+              _context6.next = 4;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a["delete"](URL + 'prototype/' + id);
+
+            case 4:
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["GUARDAR"]
+              });
+              _context6.next = 11;
+              break;
+
+            case 7:
+              _context6.prev = 7;
+              _context6.t0 = _context6["catch"](1);
+              errors = _context6.t0.response.data.errors;
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["ERROR_FORM"],
+                payload: errors
+              });
+
+            case 11:
+            case "end":
+              return _context6.stop();
+          }
+        }
+      }, _callee6, null, [[1, 7]]);
+    }));
+
+    return function (_x6) {
+      return _ref6.apply(this, arguments);
+    };
+  }();
+};
+var cancelar = function cancelar() {
+  return function (dispatch) {
+    dispatch({
+      type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["GUARDAR"]
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./resources/js/actions/usersActions.js":
 /*!**********************************************!*\
   !*** ./resources/js/actions/usersActions.js ***!
@@ -101679,6 +102152,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Users__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Users */ "./resources/js/components/Users/index.js");
 /* harmony import */ var _Marcas__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Marcas */ "./resources/js/components/Marcas/index.js");
 /* harmony import */ var _Geneticas__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Geneticas */ "./resources/js/components/Geneticas/index.js");
+/* harmony import */ var _Prototypes__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Prototypes */ "./resources/js/components/Prototypes/index.js");
+
 
 
 
@@ -101699,6 +102174,10 @@ function App() {
     exact: true,
     path: "/geneticas",
     component: _Geneticas__WEBPACK_IMPORTED_MODULE_5__["default"]
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    exact: true,
+    path: "/prototipos",
+    component: _Prototypes__WEBPACK_IMPORTED_MODULE_6__["default"]
   }));
 }
 
@@ -101986,7 +102465,7 @@ var Formulario = function Formulario(props) {
   var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__["makeStyles"])(function (theme) {
     return {
       formControl: {
-        margin: theme.spacing(3),
+        margin: theme.spacing(1),
         width: "100%"
       }
     };
@@ -102012,13 +102491,13 @@ var Formulario = function Formulario(props) {
     className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_InputLabel__WEBPACK_IMPORTED_MODULE_5__["default"], {
     id: "demo-simple-select-helper-label",
-    error: !error_form.name ? false : true
+    error: !error_form.marca_id ? false : true
   }, "Marcas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Select__WEBPACK_IMPORTED_MODULE_9__["default"], {
     labelId: "demo-simple-select-helper-label",
     id: "demo-simple-select-helper",
     value: marca_id,
     onChange: handleCambioGeneticaMarca,
-    error: !error_form.name ? false : true
+    error: !error_form.marca_id ? false : true
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_6__["default"], {
     value: ""
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("em", {
@@ -102032,8 +102511,8 @@ var Formulario = function Formulario(props) {
       value: marca.id
     }, marca.name);
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormHelperText__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    error: !error_form.name ? false : true
-  }, error_form.name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    error: !error_form.marca_id ? false : true
+  }, error_form.marca_id)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-group col-md-12"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_SliderThc__WEBPACK_IMPORTED_MODULE_10__["default"], null), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_SliderCbd__WEBPACK_IMPORTED_MODULE_11__["default"], null), error_form.thc && error_form.thc.map(function (err, key) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
@@ -102616,14 +103095,13 @@ function Layout(props) {
     className: "nav-text"
   }, "Gen\xE9ticas"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     className: "has-subnav"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "#",
-    method: "post"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/prototipos"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "fa fa-bar-chart-o fa-2x"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "nav-text"
-  }, "Tipo de documentos"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+  }, "Prototipos"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "#"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "fa fa-folder-open fa-2x"
@@ -102798,7 +103276,7 @@ var Formulario = function Formulario(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
     className: classes.root,
     noValidate: true,
-    autoComplete: "off"
+    autoComplete: "on"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -103069,6 +103547,471 @@ var mapStateToProps = function mapStateToProps(reducers) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__)(Marcas));
+
+/***/ }),
+
+/***/ "./resources/js/components/Prototypes/Delete.js":
+/*!******************************************************!*\
+  !*** ./resources/js/components/Prototypes/Delete.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/esm/TextField/index.js");
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
+/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
+
+
+
+
+
+
+var Delete = function Delete(props) {
+  var prototype = props.prototype[0],
+      borrar = props.borrar,
+      cancelar = props.cancelar,
+      error_form = props.error_form;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-row"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group col-md-12"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    label: "ID",
+    value: prototype.id,
+    className: "form-control",
+    disabled: true
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group col-md-12"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    label: "Nombre",
+    value: prototype.name,
+    className: "form-control",
+    disabled: true
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-row margin-button"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group col-md-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    variant: "contained",
+    color: "primary",
+    onClick: function onClick() {
+      return borrar(prototype.id);
+    }
+  }, "Eliminar")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group col-md-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    variant: "contained",
+    color: "inherit",
+    onClick: cancelar
+  }, "Cancelar"))), error_form && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+    className: "text-danger"
+  }, "Existe un registro vinculado.")));
+};
+
+var mapStateToProps = function mapStateToProps(reducers) {
+  return reducers.prototypesReducer;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_4__)(Delete));
+
+/***/ }),
+
+/***/ "./resources/js/components/Prototypes/Formulario.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/Prototypes/Formulario.js ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/esm/TextField/index.js");
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
+/* harmony import */ var _material_ui_core_InputLabel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/InputLabel */ "./node_modules/@material-ui/core/esm/InputLabel/index.js");
+/* harmony import */ var _material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/MenuItem */ "./node_modules/@material-ui/core/esm/MenuItem/index.js");
+/* harmony import */ var _material_ui_core_FormHelperText__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/FormHelperText */ "./node_modules/@material-ui/core/esm/FormHelperText/index.js");
+/* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
+/* harmony import */ var _material_ui_core_Select__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/Select */ "./node_modules/@material-ui/core/esm/Select/index.js");
+/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
+/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
+
+
+
+
+
+
+
+
+
+
+
+
+var geneticasTraerTodos = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_11__["traerTodos"];
+var cambioPrototypeName = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_10__["cambioPrototypeName"],
+    cambioPrototypeGenetica = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_10__["cambioPrototypeGenetica"],
+    cambioPrototypeAmbiente = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_10__["cambioPrototypeAmbiente"],
+    cambioPrototypeSensor = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_10__["cambioPrototypeSensor"],
+    agregar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_10__["agregar"],
+    editar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_10__["editar"],
+    cancelar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_10__["cancelar"];
+
+var Formulario = function Formulario(props) {
+  var geneticasTraerTodos = props.geneticasTraerTodos,
+      geneticas = props.geneticasReducer.geneticas,
+      _props$prototypesRedu = props.prototypesReducer,
+      _props$prototypesRedu2 = _props$prototypesRedu.form,
+      id = _props$prototypesRedu2.id,
+      name = _props$prototypesRedu2.name,
+      genetica_id = _props$prototypesRedu2.genetica_id,
+      ambiente_id = _props$prototypesRedu2.ambiente_id,
+      sensor_id = _props$prototypesRedu2.sensor_id,
+      state_form = _props$prototypesRedu.state_form,
+      error_form = _props$prototypesRedu.error_form,
+      loading = _props$prototypesRedu.loading,
+      agregar = props.agregar,
+      editar = props.editar,
+      cancelar = props.cancelar;
+  if (!geneticas.length) geneticasTraerTodos();
+
+  var handleCambioPrototypeName = function handleCambioPrototypeName(event) {
+    return props.cambioPrototypeName(event.target.value);
+  };
+
+  var handleCambioPrototypeGenetica = function handleCambioPrototypeGenetica(event) {
+    return props.cambioPrototypeGenetica(event.target.value);
+  };
+
+  var handleCambioPrototypeAmbiente = function handleCambioPrototypeAmbiente(event) {
+    return props.cambioPrototypeAmbiente(event.target.value);
+  };
+
+  var handleCambioPrototypeSensor = function handleCambioPrototypeSensor(event) {
+    return props.cambioPrototypeSensor(event.target.value);
+  };
+
+  var guardar = function guardar() {
+    var nuevo_prototype = {
+      id: id,
+      name: name,
+      genetica_id: genetica_id,
+      ambiente_id: ambiente_id,
+      sensor_id: sensor_id
+    };
+    if (state_form === 'crear') agregar(nuevo_prototype);
+    if (state_form === 'editar') editar(nuevo_prototype, id);
+  };
+  /*   const handleRetirarFormularioMarca = () => {
+       marcasTraerTodos()
+       retirarFormularioMarca()
+    } */
+
+
+  var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__["makeStyles"])(function (theme) {
+    return {
+      formControl: {
+        margin: theme.spacing(1),
+        width: "100%"
+      }
+    };
+  });
+  var classes = useStyles();
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    noValidate: true,
+    autoComplete: "on"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-row"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    className: classes.formControl
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    id: "standard-basic",
+    label: "Nombre",
+    type: "text",
+    className: "form-control",
+    value: name,
+    onChange: handleCambioPrototypeName,
+    helperText: error_form.name,
+    error: !error_form.name ? false : true
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    className: classes.formControl
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_InputLabel__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    id: "demo-simple-select-helper-label",
+    error: !error_form.marca_id ? false : true
+  }, "Geneticas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Select__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    labelId: "demo-simple-select-helper-label",
+    id: "demo-simple-select-helper",
+    value: genetica_id,
+    onChange: handleCambioPrototypeGenetica,
+    error: !error_form.genetica_id ? false : true
+  }, geneticas.map(function (genetica) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      key: genetica.id,
+      value: genetica.id
+    }, genetica.name);
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormHelperText__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    error: !error_form.genetica_id ? false : true
+  }, error_form.genetica_id)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-row margin-button"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group col-md-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    variant: "contained",
+    color: "primary",
+    onClick: guardar
+  }, "Guardar")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-group col-md-6"
+  }, state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    variant: "contained",
+    color: "inherit",
+    onClick: cancelar
+  }, "Cancelar") : ''))));
+};
+
+var mapStateToProps = function mapStateToProps(_ref) {
+  var prototypesReducer = _ref.prototypesReducer,
+      geneticasReducer = _ref.geneticasReducer;
+  return {
+    prototypesReducer: prototypesReducer,
+    geneticasReducer: geneticasReducer
+  };
+};
+
+var mapDispatchToProps = {
+  geneticasTraerTodos: geneticasTraerTodos,
+  cambioPrototypeName: cambioPrototypeName,
+  cambioPrototypeGenetica: cambioPrototypeGenetica,
+  cambioPrototypeAmbiente: cambioPrototypeAmbiente,
+  cambioPrototypeSensor: cambioPrototypeSensor,
+  agregar: agregar,
+  editar: editar,
+  cancelar: cancelar
+};
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(Formulario));
+
+/***/ }),
+
+/***/ "./resources/js/components/Prototypes/Table.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/Prototypes/Table.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
+
+
+
+
+var Table = function Table(props) {
+  var prototypes = props.prototypes,
+      traerUno = props.traerUno,
+      traerUnoBorrar = props.traerUnoBorrar;
+
+  var addRow = function addRow() {
+    return prototypes.map(function (prototype, key) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+        key: key
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, prototype.id), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, prototype.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, prototype.genetica.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, prototype.genetica.marca.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, prototype.ambiente ? prototype.ambiente.codigo : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, prototype.sensor ? prototype.sensor.name : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "material-icons link",
+        onClick: function onClick() {
+          return traerUno(prototype.id);
+        }
+      }, "edit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        onClick: function onClick() {
+          return traerUnoBorrar(prototype.id);
+        },
+        className: "material-icons link"
+      }, "delete")));
+    });
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+    className: "table table-hover"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "ID"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Nombre"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Genetica"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Marca"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Ambiente"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Sensor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Accion"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, addRow())));
+};
+
+var mapStateToProps = function mapStateToProps(reducers) {
+  return reducers.prototypesReducer;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_2__)(Table));
+
+/***/ }),
+
+/***/ "./resources/js/components/Prototypes/index.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/Prototypes/index.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _Table__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Table */ "./resources/js/components/Prototypes/Table.js");
+/* harmony import */ var _Formulario__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Formulario */ "./resources/js/components/Prototypes/Formulario.js");
+/* harmony import */ var _Delete__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Delete */ "./resources/js/components/Prototypes/Delete.js");
+/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
+/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
+
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function () { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+var Prototypes = /*#__PURE__*/function (_Component) {
+  _inherits(Prototypes, _Component);
+
+  var _super = _createSuper(Prototypes);
+
+  function Prototypes() {
+    var _this;
+
+    _classCallCheck(this, Prototypes);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _super.call.apply(_super, [this].concat(args));
+
+    _defineProperty(_assertThisInitialized(_this), "ponerContenido", function () {
+      var _this$props = _this.props,
+          traerTodos = _this$props.traerTodos,
+          recargar_table = _this$props.recargar_table,
+          loading = _this$props.loading,
+          prototypes = _this$props.prototypes,
+          error = _this$props.error;
+      if (recargar_table) traerTodos();
+      if (loading && !prototypes.length) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null);
+      if (error) return 'Error';
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Table__WEBPACK_IMPORTED_MODULE_3__["default"], null);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "ponerFormulario", function () {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Formulario__WEBPACK_IMPORTED_MODULE_4__["default"], null);
+    });
+
+    return _this;
+  }
+
+  _createClass(Prototypes, [{
+    key: "componentDidMount",
+    value: function () {
+      var _componentDidMount = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var _this$props2, traerTodos, prototypes;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _this$props2 = this.props, traerTodos = _this$props2.traerTodos, prototypes = _this$props2.prototypes;
+                if (!prototypes.length) traerTodos();
+
+              case 2:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function componentDidMount() {
+        return _componentDidMount.apply(this, arguments);
+      }
+
+      return componentDidMount;
+    }()
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props3 = this.props,
+          state_form = _this$props3.state_form,
+          loading = _this$props3.loading,
+          prototype = _this$props3.prototype;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "container col-md-9"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "row mt-2"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col col-md-8"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Lista de prototipos"), this.ponerContenido())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col col-md-4"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card"
+      }, state_form === 'crear' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card-header card-agregar"
+      }, "Agregar prototipo"), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card-body"
+      }, this.ponerFormulario())) : '', state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card-header card-agregar"
+      }, "Modificando prototipo: ", prototype.id), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card-body"
+      }, this.ponerFormulario())) : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card-header card-eliminar"
+      }, "Eliminar la siguente prototipo"), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card-body"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Delete__WEBPACK_IMPORTED_MODULE_5__["default"], null))) : ''))));
+    }
+  }]);
+
+  return Prototypes;
+}(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
+
+var mapStateToProps = function mapStateToProps(reducers) {
+  return reducers.prototypesReducer;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_6__)(Prototypes));
 
 /***/ }),
 
@@ -103819,6 +104762,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _usersReducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./usersReducer */ "./resources/js/reducers/usersReducer.js");
 /* harmony import */ var _marcasReducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./marcasReducer */ "./resources/js/reducers/marcasReducer.js");
 /* harmony import */ var _geneticasReducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./geneticasReducer */ "./resources/js/reducers/geneticasReducer.js");
+/* harmony import */ var _prototypesReducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./prototypesReducer */ "./resources/js/reducers/prototypesReducer.js");
+
 
 
 
@@ -103826,7 +104771,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   usersReducer: _usersReducer__WEBPACK_IMPORTED_MODULE_1__["default"],
   marcasReducer: _marcasReducer__WEBPACK_IMPORTED_MODULE_2__["default"],
-  geneticasReducer: _geneticasReducer__WEBPACK_IMPORTED_MODULE_3__["default"]
+  geneticasReducer: _geneticasReducer__WEBPACK_IMPORTED_MODULE_3__["default"],
+  prototypesReducer: _prototypesReducer__WEBPACK_IMPORTED_MODULE_4__["default"]
 }));
 
 /***/ }),
@@ -103928,6 +104874,195 @@ var INITIAL_STATE = {
         loading: false,
         error: '',
         error_form: '',
+        recargar_table: true,
+        state_form: 'crear'
+      });
+
+    default:
+      return state;
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/reducers/prototypesReducer.js":
+/*!****************************************************!*\
+  !*** ./resources/js/reducers/prototypesReducer.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../types/prototypeTypes */ "./resources/js/types/prototypeTypes.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+var INITIAL_STATE = {
+  prototypes: [],
+  prototype: [],
+  form: {
+    id: '',
+    name: '',
+    genetica_id: '',
+    ambiente_id: '',
+    sensor_id: '',
+    fecha_estapa_a: '',
+    fecha_estapa_b: '',
+    fecha_estapa_c: '',
+    fecha_estapa_d: '',
+    fecha_estapa_e: '',
+    cantidad: ''
+  },
+  loading: false,
+  error: '',
+  error_form: '',
+  recargar_table: false,
+  state_form: 'crear' //MODO GUARDAR 
+
+};
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : INITIAL_STATE;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["TRAER_TODOS"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        prototypes: action.payload,
+        loading: false,
+        recargar_table: false,
+        error: ''
+      });
+
+    case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["TRAER_UNO"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        prototype: action.payload,
+        loading: false,
+        error: ''
+      });
+
+    case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["LOADING"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        loading: true
+      });
+
+    case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["ERROR"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        error: action.payload,
+        loading: false
+      });
+
+    case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["ERROR_FORM"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        error_form: action.payload,
+        loading: false
+      });
+
+    case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_PROTOTYPE_ID"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        form: _objectSpread(_objectSpread({}, state.form), {}, {
+          id: action.payload
+        })
+      });
+
+    case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_PROTOTYPE_NAME"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        form: _objectSpread(_objectSpread({}, state.form), {}, {
+          name: action.payload
+        })
+      });
+
+    case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_PROTOTYPE_GENETICA_ID"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        form: _objectSpread(_objectSpread({}, state.form), {}, {
+          genetica_id: action.payload
+        })
+      });
+
+    case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_PROTOTYPE_AMBIENTE_ID"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        form: _objectSpread(_objectSpread({}, state.form), {}, {
+          ambiente_id: action.payload
+        })
+      });
+
+    case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_PROTOTYPE_SENSOR_ID"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        form: _objectSpread(_objectSpread({}, state.form), {}, {
+          sensor_id: action.payload
+        })
+      });
+
+    case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_PROTOTYPE_FECHA_ESTADO_A"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        form: _objectSpread(_objectSpread({}, state.form), {}, {
+          fecha_estapa_a: action.payload
+        })
+      });
+
+    case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_PROTOTYPE_FECHA_ESTADO_B"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        form: _objectSpread(_objectSpread({}, state.form), {}, {
+          fecha_estapa_b: action.payload
+        })
+      });
+
+    case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_PROTOTYPE_FECHA_ESTADO_C"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        form: _objectSpread(_objectSpread({}, state.form), {}, {
+          fecha_estapa_c: action.payload
+        })
+      });
+
+    case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_PROTOTYPE_FECHA_ESTADO_D"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        form: _objectSpread(_objectSpread({}, state.form), {}, {
+          fecha_estapa_d: action.payload
+        })
+      });
+
+    case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_PROTOTYPE_FECHA_ESTADO_E"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        form: _objectSpread(_objectSpread({}, state.form), {}, {
+          fecha_estapa_e: action.payload
+        })
+      });
+
+    case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_PROTOTYPE_CANTIDAD"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        form: _objectSpread(_objectSpread({}, state.form), {}, {
+          cantidad: action.payload
+        })
+      });
+
+    case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_ESTADO_FORM"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        error_form: '',
+        state_form: action.payload
+      });
+
+    case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["GUARDAR"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        loading: false,
+        error: '',
+        error_form: '',
+        form: _objectSpread(_objectSpread({}, state.form), {}, {
+          id: '',
+          name: '',
+          genetica_id: '',
+          ambiente_id: '',
+          sensor_id: '',
+          fecha_estapa_a: '',
+          fecha_estapa_b: '',
+          fecha_estapa_c: '',
+          fecha_estapa_d: '',
+          fecha_estapa_e: '',
+          cantidad: ''
+        }),
         recargar_table: true,
         state_form: 'crear'
       });
@@ -104105,7 +105240,7 @@ var CAMBIO_GENETICA_PROD_INT = 'geneticas_cambio_genetica_prod_int';
 var CAMBIO_GENETICA_PROD_EXT = 'geneticas_cambio_genetica_prod_ext';
 var CAMBIO_GENETICA_TIEMPO_FLORA = 'geneticas_cambio_genetica_tiempo_flora';
 var CAMBIO_GENETICA_SABORES = 'geneticas_cambio_genetica_sabores';
-var GUARDAR = 'geneticas_guardar_marca';
+var GUARDAR = 'geneticas_guardar_genetica';
 
 /***/ }),
 
@@ -104136,6 +105271,54 @@ var CAMBIO_MARCA_NAME = 'marcas_cambio_marca_name';
 var CAMBIO_MARCA_ID = 'marcas_cambio_marca_id';
 var CAMBIO_ESTADO_FORM = 'marcas_cambio_estado_form';
 var GUARDAR = 'marcas_guardar_marca';
+
+/***/ }),
+
+/***/ "./resources/js/types/prototypeTypes.js":
+/*!**********************************************!*\
+  !*** ./resources/js/types/prototypeTypes.js ***!
+  \**********************************************/
+/*! exports provided: TRAER_TODOS, TRAER_UNO, LOADING, ERROR, ERROR_FORM, CAMBIO_ESTADO_FORM, CAMBIO_PROTOTYPE_ID, CAMBIO_PROTOTYPE_NAME, CAMBIO_PROTOTYPE_GENETICA_ID, CAMBIO_PROTOTYPE_AMBIENTE_ID, CAMBIO_PROTOTYPE_SENSOR_ID, CAMBIO_PROTOTYPE_FECHA_ESTADO_A, CAMBIO_PROTOTYPE_FECHA_ESTADO_B, CAMBIO_PROTOTYPE_FECHA_ESTADO_C, CAMBIO_PROTOTYPE_FECHA_ESTADO_D, CAMBIO_PROTOTYPE_FECHA_ESTADO_E, CAMBIO_PROTOTYPE_CANTIDAD, GUARDAR */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TRAER_TODOS", function() { return TRAER_TODOS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TRAER_UNO", function() { return TRAER_UNO; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOADING", function() { return LOADING; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ERROR", function() { return ERROR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ERROR_FORM", function() { return ERROR_FORM; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_ESTADO_FORM", function() { return CAMBIO_ESTADO_FORM; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_PROTOTYPE_ID", function() { return CAMBIO_PROTOTYPE_ID; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_PROTOTYPE_NAME", function() { return CAMBIO_PROTOTYPE_NAME; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_PROTOTYPE_GENETICA_ID", function() { return CAMBIO_PROTOTYPE_GENETICA_ID; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_PROTOTYPE_AMBIENTE_ID", function() { return CAMBIO_PROTOTYPE_AMBIENTE_ID; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_PROTOTYPE_SENSOR_ID", function() { return CAMBIO_PROTOTYPE_SENSOR_ID; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_PROTOTYPE_FECHA_ESTADO_A", function() { return CAMBIO_PROTOTYPE_FECHA_ESTADO_A; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_PROTOTYPE_FECHA_ESTADO_B", function() { return CAMBIO_PROTOTYPE_FECHA_ESTADO_B; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_PROTOTYPE_FECHA_ESTADO_C", function() { return CAMBIO_PROTOTYPE_FECHA_ESTADO_C; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_PROTOTYPE_FECHA_ESTADO_D", function() { return CAMBIO_PROTOTYPE_FECHA_ESTADO_D; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_PROTOTYPE_FECHA_ESTADO_E", function() { return CAMBIO_PROTOTYPE_FECHA_ESTADO_E; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_PROTOTYPE_CANTIDAD", function() { return CAMBIO_PROTOTYPE_CANTIDAD; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GUARDAR", function() { return GUARDAR; });
+var TRAER_TODOS = 'prototypes_traer_todos';
+var TRAER_UNO = 'prototypes_traer_uno';
+var LOADING = 'prototypes_cargando';
+var ERROR = 'prototypes_error';
+var ERROR_FORM = 'prototypes_error_form';
+var CAMBIO_ESTADO_FORM = 'prototypes_cambio_estado_form';
+var CAMBIO_PROTOTYPE_ID = 'prototypes_cambio_prototype_id';
+var CAMBIO_PROTOTYPE_NAME = 'prototypes_cambio_prototype_name';
+var CAMBIO_PROTOTYPE_GENETICA_ID = 'prototypes_cambio_prototype_prototype_id';
+var CAMBIO_PROTOTYPE_AMBIENTE_ID = 'prototypes_cambio_prototype_amiente_id';
+var CAMBIO_PROTOTYPE_SENSOR_ID = 'prototypes_cambio_prototype_sensor_id';
+var CAMBIO_PROTOTYPE_FECHA_ESTADO_A = 'prototypes_cambio_prototype_fecha_estado_a';
+var CAMBIO_PROTOTYPE_FECHA_ESTADO_B = 'prototypes_cambio_prototype_fecha_estado_b';
+var CAMBIO_PROTOTYPE_FECHA_ESTADO_C = 'prototypes_cambio_prototype_fecha_estado_c';
+var CAMBIO_PROTOTYPE_FECHA_ESTADO_D = 'prototypes_cambio_prototype_fecha_estado_d';
+var CAMBIO_PROTOTYPE_FECHA_ESTADO_E = 'prototypes_cambio_prototype_fecha_estado_e';
+var CAMBIO_PROTOTYPE_CANTIDAD = 'prototypes_cambio_prototype_cantidad';
+var GUARDAR = 'prototypes_guardar_prototype';
 
 /***/ }),
 

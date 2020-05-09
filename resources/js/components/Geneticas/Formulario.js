@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -100,7 +100,7 @@ const Formulario = (props) => {
    const useStyles = makeStyles((theme) => ({
 
       formControl: {
-         margin: theme.spacing(3),
+         margin: theme.spacing(1),
          width: "100%",
       },
    }));
@@ -125,20 +125,20 @@ const Formulario = (props) => {
             </FormControl>
 
             <FormControl className={classes.formControl}>
-               <InputLabel id="demo-simple-select-helper-label" error={!error_form.name ? false : true}>Marcas</InputLabel>
+               <InputLabel id="demo-simple-select-helper-label" error={!error_form.marca_id ? false : true}>Marcas</InputLabel>
                <Select
                   labelId="demo-simple-select-helper-label"
                   id="demo-simple-select-helper"
                   value={marca_id}
                   onChange={handleCambioGeneticaMarca}
-                  error={!error_form.name ? false : true}
+                  error={!error_form.marca_id ? false : true}
                >
                   <MenuItem value=""><em className="link link-string" onClick={() => ponerFormularioMarca()}>Agregar</em></MenuItem>
                   {marcas.map((marca) => (
                      <MenuItem key={marca.id} value={marca.id}>{marca.name}</MenuItem>
                   ))}
                </Select>
-               <FormHelperText error={!error_form.name ? false : true}>{error_form.name}</FormHelperText>
+               <FormHelperText error={!error_form.marca_id ? false : true}>{error_form.marca_id}</FormHelperText>
             </FormControl>
 
             <div className="form-group col-md-12">

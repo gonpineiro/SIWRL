@@ -33,6 +33,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/geneticas', function(){
       return view('home');
     })->name('geneticas');
+
+    Route::get('/prototipos', function(){
+      return view('home');
+    })->name('prototipos');
     
     
 
