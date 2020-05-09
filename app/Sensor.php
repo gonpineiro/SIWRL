@@ -4,11 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Marca extends Model
-{  
-
+class Sensor extends Model
+{    
     protected $fillable = [
-        'name'
+        'name', 'ambiente_id'
     ];
-    
 }

@@ -32,6 +32,18 @@ Route::put('/genetica/{id}', 'GeneticaController@update');
 Route::post('/genetica', 'GeneticaController@store');
 Route::delete('/genetica/{id}', 'GeneticaController@destroy');
 
+Route::get('/ambiente', 'AmbienteController@index');
+Route::get('/ambiente/{id}', 'AmbienteController@edit');
+Route::put('/ambiente/{id}', 'AmbienteController@update');
+Route::post('/ambiente', 'AmbienteController@store');
+Route::delete('/ambiente/{id}', 'AmbienteController@destroy');
+
+Route::get('/prototype', 'PrototypeController@index');
+Route::get('/prototype/{id}', 'PrototypeController@edit');
+Route::put('/prototype/{id}', 'PrototypeController@update');
+Route::post('/prototype', 'PrototypeController@store');
+Route::delete('/prototype/{id}', 'PrototypeController@destroy');
+
 
 //Route::put('/marca/{id}', 'MarcaController@update');
 

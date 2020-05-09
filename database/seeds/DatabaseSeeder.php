@@ -14,5 +14,10 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(MarcaSeeder::class);
         $this->call(GeneticaSeeder::class);
+        $this->call(AmbientesSeeder::class);
+        $this->call(SensorsSeeder::class);
+        $this->call(PrototypeSeeder::class);
+        $this->call(MonitorSeeder::class);
+                
     }
 }
