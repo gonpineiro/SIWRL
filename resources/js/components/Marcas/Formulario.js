@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
+import FormControl from '@material-ui/core/FormControl';
 
 import * as marcasActions from '../../actions/marcasActions'
 import * as geneticasActions from '../../actions/geneticasActions'
@@ -49,21 +50,21 @@ const Formulario = (props) => {
    }
 
    const useStyles = makeStyles((theme) => ({
-      root: {
-         '& .MuiTextField-root': {
-            margin: theme.spacing(2),
-            width: "95%",
-         },
+
+      formControl: {
+         margin: theme.spacing(0),
+         marginBottom: 35,
+         width: "100%",
       },
    }));
 
    const classes = useStyles();
 
    return (
-      <form className={classes.root} noValidate autoComplete="on">
+      <FormControl >
          <div className="form-row">
 
-            <div className="form-group col-md-12">
+            <FormControl className={classes.formControl}>
                <TextField
                   id="standard-basic"
                   label="Nombre"
@@ -74,7 +75,8 @@ const Formulario = (props) => {
                   helperText={error_form.name}
                   error={!error_form.name ? false : true}
                />
-            </div>
+            </FormControl>
+            
 
             <div className="form-row margin-button">
 
@@ -110,11 +112,11 @@ const Formulario = (props) => {
                         Volver
                      </Button> : ''}
                </div >
-               
+
             </div>
 
          </div>
-      </form>
+      </FormControl>
    );
 }
 

@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
+import FormControl from '@material-ui/core/FormControl';
 
 import * as usersActions from '../../actions/usersActions'
 
@@ -41,21 +42,20 @@ const Formulario = (props) => {
    };
 
    const useStyles = makeStyles((theme) => ({
-      root: {
-         '& .MuiTextField-root': {
-            margin: theme.spacing(2),
-            width: "95%",
-         },
+      formControl: {
+         margin: theme.spacing(0),
+         marginBottom: 35,
+         width: "100%",
       },
    }));
 
    const classes = useStyles();
 
-   return (
-      <form className={classes.root} noValidate autoComplete="off">
+   return (      
+      <FormControl >
          <div className="form-row">
 
-            <div className="form-group col-md-12">
+         <FormControl className={classes.formControl}>
                <TextField
                   id="standard-basic"
                   label="Nombre"
@@ -66,9 +66,9 @@ const Formulario = (props) => {
                   helperText={error_form.name}
                   error={!error_form.name ? false : true}
                />
-            </div>
+            </FormControl>
 
-            <div className="form-group col-md-12">
+            <FormControl className={classes.formControl}>
                <TextField
                   label="Email"
                   type="email"
@@ -78,9 +78,9 @@ const Formulario = (props) => {
                   helperText={error_form.email}
                   error={!error_form.email ? false : true}
                />
-            </div>
+            </FormControl>
 
-            <div className="form-group col-md-12">
+            <FormControl className={classes.formControl}>
                <TextField
                   id="standard-basic"
                   label="Password"
@@ -91,7 +91,7 @@ const Formulario = (props) => {
                   helperText={error_form.password}
                   error={!error_form.password ? false : true}
                />
-            </div>
+            </FormControl>
 
             <div className="form-row margin-button">
                <div className="form-group col-md-6">
@@ -118,7 +118,7 @@ const Formulario = (props) => {
             </div>
 
          </div>
-      </form>
+      </FormControl>
    );
 }
 

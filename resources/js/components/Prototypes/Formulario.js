@@ -71,15 +71,16 @@ const Formulario = (props) => {
      const useStyles = makeStyles((theme) => ({
 
       formControl: {
-         margin: theme.spacing(1),
+         margin: theme.spacing(0),
+         marginBottom: 35,
          width: "100%",
       },
    }));
 
    const classes = useStyles();
 
-   return (
-      <form noValidate autoComplete="on">
+   return (      
+      <FormControl >
          <div className="form-row">
 
             <FormControl className={classes.formControl}>
@@ -96,7 +97,7 @@ const Formulario = (props) => {
             </FormControl>
 
             <FormControl className={classes.formControl}>
-               <InputLabel id="demo-simple-select-helper-label" error={!error_form.marca_id ? false : true}>Geneticas</InputLabel>
+               <InputLabel id="demo-simple-select-helper-label" error={!error_form.genetica_id ? false : true}>Genetica</InputLabel>
                <Select
                   labelId="demo-simple-select-helper-label"
                   id="demo-simple-select-helper"
@@ -142,7 +143,7 @@ const Formulario = (props) => {
             </div>
 
          </div>
-      </form>
+      </FormControl>
    );
 }
 

@@ -102465,7 +102465,8 @@ var Formulario = function Formulario(props) {
   var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__["makeStyles"])(function (theme) {
     return {
       formControl: {
-        margin: theme.spacing(1),
+        margin: theme.spacing(0),
+        marginBottom: 35,
         width: "100%"
       }
     };
@@ -102641,13 +102642,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["makeStyles"])({
   root: {
-    width: "80%",
-    marginLeft: 10,
+    width: "100%",
     height: 50
   },
   input: {
     width: "100%",
-    marginLeft: 30
+    marginLeft: 10
   }
 });
 
@@ -102750,12 +102750,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["makeStyles"])({
   root: {
-    width: "80%",
-    marginLeft: 10
+    width: "100%",
+    height: 70
   },
   input: {
     width: "100%",
-    marginLeft: 30
+    marginLeft: 10
   }
 });
 
@@ -103212,8 +103212,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/esm/TextField/index.js");
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
-/* harmony import */ var _actions_marcasActions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/marcasActions */ "./resources/js/actions/marcasActions.js");
-/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
+/* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
+/* harmony import */ var _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/marcasActions */ "./resources/js/actions/marcasActions.js");
+/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
 
 
 
@@ -103221,12 +103222,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var retirarFormularioMarca = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_6__["retirarFormularioMarca"];
-var agregar = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_5__["agregar"],
-    editar = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_5__["editar"],
-    cambioMarcaName = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_5__["cambioMarcaName"],
-    cancelar = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_5__["cancelar"],
-    marcasTraerTodos = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_5__["traerTodos"];
+
+var retirarFormularioMarca = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_7__["retirarFormularioMarca"];
+var agregar = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__["agregar"],
+    editar = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__["editar"],
+    cambioMarcaName = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__["cambioMarcaName"],
+    cancelar = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__["cancelar"],
+    marcasTraerTodos = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__["traerTodos"];
 
 var Formulario = function Formulario(props) {
   var _props$marcasReducer = props.marcasReducer,
@@ -103264,23 +103266,18 @@ var Formulario = function Formulario(props) {
 
   var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__["makeStyles"])(function (theme) {
     return {
-      root: {
-        '& .MuiTextField-root': {
-          margin: theme.spacing(2),
-          width: "95%"
-        }
+      formControl: {
+        margin: theme.spacing(0),
+        marginBottom: 35,
+        width: "100%"
       }
     };
   });
   var classes = useStyles();
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-    className: classes.root,
-    noValidate: true,
-    autoComplete: "on"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_5__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-row"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-12"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
     id: "standard-basic",
     label: "Nombre",
@@ -103718,16 +103715,14 @@ var Formulario = function Formulario(props) {
   var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__["makeStyles"])(function (theme) {
     return {
       formControl: {
-        margin: theme.spacing(1),
+        margin: theme.spacing(0),
+        marginBottom: 35,
         width: "100%"
       }
     };
   });
   var classes = useStyles();
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-    noValidate: true,
-    autoComplete: "on"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_8__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
     className: classes.formControl
@@ -103744,8 +103739,8 @@ var Formulario = function Formulario(props) {
     className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_InputLabel__WEBPACK_IMPORTED_MODULE_5__["default"], {
     id: "demo-simple-select-helper-label",
-    error: !error_form.marca_id ? false : true
-  }, "Geneticas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Select__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    error: !error_form.genetica_id ? false : true
+  }, "Genetica"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Select__WEBPACK_IMPORTED_MODULE_9__["default"], {
     labelId: "demo-simple-select-helper-label",
     id: "demo-simple-select-helper",
     value: genetica_id,
@@ -104118,7 +104113,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/esm/TextField/index.js");
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
-/* harmony import */ var _actions_usersActions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/usersActions */ "./resources/js/actions/usersActions.js");
+/* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
+/* harmony import */ var _actions_usersActions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/usersActions */ "./resources/js/actions/usersActions.js");
+
 
 
 
@@ -104166,23 +104163,18 @@ var Formulario = function Formulario(props) {
 
   var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__["makeStyles"])(function (theme) {
     return {
-      root: {
-        '& .MuiTextField-root': {
-          margin: theme.spacing(2),
-          width: "95%"
-        }
+      formControl: {
+        margin: theme.spacing(0),
+        marginBottom: 35,
+        width: "100%"
       }
     };
   });
   var classes = useStyles();
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-    className: classes.root,
-    noValidate: true,
-    autoComplete: "off"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_5__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-row"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-12"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
     id: "standard-basic",
     label: "Nombre",
@@ -104192,8 +104184,8 @@ var Formulario = function Formulario(props) {
     onChange: handleCambioUsuarioName,
     helperText: error_form.name,
     error: !error_form.name ? false : true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-12"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
     label: "Email",
     type: "email",
@@ -104202,8 +104194,8 @@ var Formulario = function Formulario(props) {
     onChange: handleCambioUsuarioEmail,
     helperText: error_form.email,
     error: !error_form.email ? false : true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-12"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
     id: "standard-basic",
     label: "Password",
@@ -104234,7 +104226,7 @@ var mapStateToProps = function mapStateToProps(reducers) {
   return reducers.usersReducer;
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_usersActions__WEBPACK_IMPORTED_MODULE_5__)(Formulario));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_usersActions__WEBPACK_IMPORTED_MODULE_6__)(Formulario));
 
 /***/ }),
 

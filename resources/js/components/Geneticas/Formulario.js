@@ -100,7 +100,8 @@ const Formulario = (props) => {
    const useStyles = makeStyles((theme) => ({
 
       formControl: {
-         margin: theme.spacing(1),
+         margin: theme.spacing(0),
+         marginBottom: 35,
          width: "100%",
       },
    }));
