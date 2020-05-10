@@ -40,7 +40,7 @@ const Formulario = (props) => {
       ambientesReducer: { ambientes },
       sensorsReducer: { sensors_ambiente },
       prototypesReducer: {
-         form: { id, name, genetica_id, ambiente_id, sensor_id },
+         prototype: { id, name, genetica_id, ambiente_id, sensor_id },
          state_form,
          error_form,
          loading
@@ -102,7 +102,7 @@ const Formulario = (props) => {
                   label="Nombre"
                   type="text"
                   className="form-control"
-                  value={name}
+                  value={name || ''}
                   onChange={handleCambioPrototypeName}
                   helperText={error_form.name}
                   error={!error_form.name ? false : true}
@@ -114,7 +114,7 @@ const Formulario = (props) => {
                <Select
                   labelId="demo-simple-select-helper-label"
                   id="demo-simple-select-helper"
-                  value={genetica_id}
+                  value={genetica_id || ''}
                   onChange={handleCambioPrototypeGenetica}
                   error={!error_form.genetica_id ? false : true}
                >
@@ -140,7 +140,7 @@ const Formulario = (props) => {
                <Select
                   labelId="demo-simple-select-helper-label"
                   id="demo-simple-select-helper"
-                  value={ambiente_id}
+                  value={ambiente_id || ''}
                   onChange={handleCambioPrototypeAmbiente}
                   error={!error_form.ambiente_id ? false : true}
                >
@@ -167,7 +167,7 @@ const Formulario = (props) => {
                <Select
                   labelId="demo-simple-select-helper-label"
                   id="demo-simple-select-helper"
-                  value={sensor_id}
+                  value={sensor_id || ''}
                   onChange={handleCambioPrototypeSensor}
                   error={!error_form.sensor_id ? false : true}
                   disabled={!ambiente_id}

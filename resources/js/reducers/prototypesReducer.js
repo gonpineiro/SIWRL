@@ -24,19 +24,6 @@ import {
 const INITIAL_STATE = {
   prototypes: [],
   prototype: [],
-  form: {
-    id: '',
-    name: '',
-    genetica_id: '',
-    ambiente_id: '',
-    sensor_id: '',
-    fecha_estapa_a: '',
-    fecha_estapa_b: '',
-    fecha_estapa_c: '',
-    fecha_estapa_d: '',
-    fecha_estapa_e: '',
-    cantidad: ''
-  },
   loading: false,
   error: '',
   error_form: '',
@@ -71,8 +58,8 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_PROTOTYPE_ID:
       return {
         ...state,
-        form: {
-          ...state.form,
+        prototype: {
+          ...state.prototype,
           id: action.payload
         }
       };
@@ -80,8 +67,8 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_PROTOTYPE_NAME:
       return {
         ...state,
-        form: {
-          ...state.form,
+        prototype: {
+          ...state.prototype,
           name: action.payload
         }
       };
@@ -89,8 +76,8 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_PROTOTYPE_GENETICA_ID:
       return {
         ...state,
-        form: {
-          ...state.form,
+        prototype: {
+          ...state.prototype,
           genetica_id: action.payload
         }
       };
@@ -98,8 +85,8 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_PROTOTYPE_AMBIENTE_ID:
       return {
         ...state,
-        form: {
-          ...state.form,
+        prototype: {
+          ...state.prototype,
           ambiente_id: action.payload
         }
       };
@@ -107,8 +94,8 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_PROTOTYPE_SENSOR_ID:
       return {
         ...state,
-        form: {
-          ...state.form,
+        prototype: {
+          ...state.prototype,
           sensor_id: action.payload
         }
       };
@@ -116,8 +103,8 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_PROTOTYPE_FECHA_ESTADO_A:
       return {
         ...state,
-        form: {
-          ...state.form,
+        prototype: {
+          ...state.prototype,
           fecha_estapa_a: action.payload
         }
       };
@@ -125,8 +112,8 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_PROTOTYPE_FECHA_ESTADO_B:
       return {
         ...state,
-        form: {
-          ...state.form,
+        prototype: {
+          ...state.prototype,
           fecha_estapa_b: action.payload
         }
       };
@@ -134,8 +121,8 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_PROTOTYPE_FECHA_ESTADO_C:
       return {
         ...state,
-        form: {
-          ...state.form,
+        prototype: {
+          ...state.prototype,
           fecha_estapa_c: action.payload
         }
       };
@@ -143,8 +130,8 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_PROTOTYPE_FECHA_ESTADO_D:
       return {
         ...state,
-        form: {
-          ...state.form,
+        prototype: {
+          ...state.prototype,
           fecha_estapa_d: action.payload
         }
       };
@@ -152,8 +139,8 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_PROTOTYPE_FECHA_ESTADO_E:
       return {
         ...state,
-        form: {
-          ...state.form,
+        prototype: {
+          ...state.prototype,
           fecha_estapa_e: action.payload
         }
       };
@@ -161,8 +148,8 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_PROTOTYPE_CANTIDAD:
       return {
         ...state,
-        form: {
-          ...state.form,
+        prototype: {
+          ...state.prototype,
           cantidad: action.payload
         }
       };
@@ -180,7 +167,7 @@ export default (state = INITIAL_STATE, action) => {
         loading: false,
         error: '',
         error_form: '',
-        form: {
+        prototype: {
           ...state.form,
           id: '',
           name: '',

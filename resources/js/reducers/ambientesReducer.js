@@ -17,12 +17,6 @@ import {
 const INITIAL_STATE = {
   ambientes: [],
   ambiente: [],
-  form: {
-    id: '',
-    codigo: '',
-    name: '',
-    inputs: '',
-  },
   loading: false,
   error: '',
   error_form: '',
@@ -57,8 +51,8 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_AMBIENTE_ID:
       return {
         ...state,
-        form: {
-          ...state.form,
+        ambiente: {
+          ...state.ambiente,
           id: action.payload
         }
       };
@@ -66,8 +60,8 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_AMBIENTE_CODIGO:
       return {
         ...state,
-        form: {
-          ...state.form,
+        ambiente: {
+          ...state.ambiente,
           codigo: action.payload
         }
       };
@@ -75,8 +69,8 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_AMBIENTE_NAME:
       return {
         ...state,
-        form: {
-          ...state.form,
+        ambiente: {
+          ...state.ambiente,
           name: action.payload
         }
       };
@@ -84,8 +78,8 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_AMBIENTE_INPUTS:
       return {
         ...state,
-        form: {
-          ...state.form,
+        ambiente: {
+          ...state.ambiente,
           inputs: action.payload
         }
       };
@@ -100,7 +94,7 @@ export default (state = INITIAL_STATE, action) => {
     case GUARDAR:
       return {
         ...state,
-        form: {
+        ambiente: {
           id: '',
           name: '',
           codigo: '',

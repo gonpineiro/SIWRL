@@ -36,7 +36,7 @@ const Formulario = (props) => {
       marcasTraerTodos,
       marcasReducer: { marcas },
       geneticasReducer: {
-         form: { name, marca_id, prod_int, prod_ext, tiempo_flora, sabores },
+         genetica: { name, marca_id, prod_int, prod_ext, tiempo_flora, sabores },
          error_form,
          state_form
       },
@@ -60,7 +60,7 @@ const Formulario = (props) => {
    const guardar = () => {
       const {
          geneticasReducer: {
-            form: {
+            genetica: {
                id,
                name,
                marca_id,
@@ -116,7 +116,7 @@ const Formulario = (props) => {
                   label="Nombre"
                   type="text"
                   className="form-control"
-                  value={name}
+                  value={name || ''}
                   onChange={handleCambioGeneticaName}
                   helperText={error_form.name}
                   error={!error_form.name ? false : true}
@@ -128,7 +128,7 @@ const Formulario = (props) => {
                <Select
                   labelId="demo-simple-select-helper-label"
                   id="demo-simple-select-helper"
-                  value={marca_id}
+                  value={marca_id || ''}
                   onChange={handleCambioGeneticaMarca}
                   error={!error_form.marca_id ? false : true}
                >
@@ -167,7 +167,7 @@ const Formulario = (props) => {
                   label="Sabores"
                   type="text"
                   className="form-control"
-                  value={sabores}
+                  value={sabores || ''}
                   onChange={handleCambioGeneticaSabores}
                />
             </FormControl>
@@ -178,7 +178,7 @@ const Formulario = (props) => {
                   label="Interna"
                   type="number"
                   className="form-control"
-                  value={prod_int}
+                  value={prod_int || ''}
                   onChange={handleCambioGeneticaProdInt}
                />
             </FormControl>
@@ -189,7 +189,7 @@ const Formulario = (props) => {
                   label="Externa"
                   type="number"
                   className="form-control"
-                  value={prod_ext}
+                  value={prod_ext || ''}
                   onChange={handleCambioGeneticaProdExt}
                />
             </FormControl>
@@ -200,7 +200,7 @@ const Formulario = (props) => {
                   label="Tiempo"
                   type="number"
                   className="form-control"
-                  value={tiempo_flora}
+                  value={tiempo_flora || ''}
                   onChange={handleCambioGeneticaTiempoFlora}
                   helperText={error_form.tiempo_flora}
                   error={!error_form.tiempo_flora ? false : true}

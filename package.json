@@ -5,7 +5,8 @@
     "main": "index.js",
     "private": true,
     "scripts": {
-        "reset": "php artisan migrate:reset && php artisan migrate && php artisan db:seed",
+        "reset-sd": "php artisan migrate:reset && php artisan migrate && php artisan db:seed",
+        "reset": "php artisan migrate:reset && php artisan migrate",
         "m": "php artisan migrate",
         "s": "php artisan db:seed",
         "ms": "php artisan migrate && php artisan db:seed",

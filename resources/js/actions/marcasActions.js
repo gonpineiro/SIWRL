@@ -41,11 +41,6 @@ export const traerUno = (id) => async (dispatch) => {
     })
 
     dispatch({
-        type: CAMBIO_MARCA_NAME,
-        payload: ''
-    })
-
-    dispatch({
         type: CAMBIO_ESTADO_FORM,
         payload: 'editar'
     })
@@ -57,18 +52,7 @@ export const traerUno = (id) => async (dispatch) => {
         dispatch({
             type: TRAER_UNO,
             payload: response.data
-        })
-
-        dispatch({
-            type: CAMBIO_MARCA_ID,
-            payload: response.data.id
-        })
-
-        dispatch({
-            type: CAMBIO_MARCA_NAME,
-            payload: response.data.name
-        })
-        
+        })        
 
     } catch (error) {
         console.log(error)
@@ -84,11 +68,14 @@ export const cambioMarcaName = (valor) => (dispatch) => {
 };
 
 export const agregar = (nueva_marca) => async (dispatch) => {
+
     dispatch({
         type: LOADING
     });
+
     try {
         await axios.post(URL + 'marca', nueva_marca);
+        
         dispatch({
             type: GUARDAR
         });

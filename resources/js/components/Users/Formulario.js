@@ -10,7 +10,7 @@ import * as usersActions from '../../actions/usersActions'
 const Formulario = (props) => {
 
    const {
-      form: { id, name, email, password },
+      user: { id, name, email, password },
       agregar,
       editar,
       cancelar,

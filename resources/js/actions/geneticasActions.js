@@ -46,51 +46,6 @@ export const traerUno = (id) => async (dispatch) => {
     })
 
     dispatch({
-        type: CAMBIO_GENETICA_ID,
-        payload: ''
-    })
-
-    dispatch({
-        type: CAMBIO_GENETICA_NAME,
-        payload: ''
-    })
-
-    dispatch({
-        type: CAMBIO_GENETICA_MARCA_ID,
-        payload: ''
-    })
-
-    dispatch({
-        type: CAMBIO_GENETICA_THC,
-        payload: ''
-    })
-
-    dispatch({
-        type: CAMBIO_GENETICA_CBD,
-        payload: ''
-    })
-
-    dispatch({
-        type: CAMBIO_GENETICA_PROD_INT,
-        payload: ''
-    })
-
-    dispatch({
-        type: CAMBIO_GENETICA_PROD_EXT,
-        payload: ''
-    })
-
-    dispatch({
-        type: CAMBIO_GENETICA_TIEMPO_FLORA,
-        payload: ''
-    })
-
-    dispatch({
-        type: CAMBIO_GENETICA_SABORES,
-        payload: ''
-    })
-
-    dispatch({
         type: CAMBIO_ESTADO_FORM,
         payload: 'editar'
     })
@@ -103,51 +58,6 @@ export const traerUno = (id) => async (dispatch) => {
         dispatch({
             type: TRAER_UNO,
             payload: genetica
-        })
-
-        dispatch({
-            type: CAMBIO_GENETICA_ID,
-            payload: genetica.id
-        })
-
-        dispatch({
-            type: CAMBIO_GENETICA_NAME,
-            payload: genetica.name
-        })
-
-        dispatch({
-            type: CAMBIO_GENETICA_MARCA_ID,
-            payload: genetica.marca_id
-        })
-
-        dispatch({
-            type: CAMBIO_GENETICA_THC,
-            payload: genetica.thc
-        })
-
-        dispatch({
-            type: CAMBIO_GENETICA_CBD,
-            payload: genetica.cbd
-        })
-
-        dispatch({
-            type: CAMBIO_GENETICA_PROD_INT,
-            payload: genetica.prod_int
-        })
-
-        dispatch({
-            type: CAMBIO_GENETICA_PROD_EXT,
-            payload: genetica.prod_ext
-        })
-
-        dispatch({
-            type: CAMBIO_GENETICA_TIEMPO_FLORA,
-            payload: genetica.tiempo_flora
-        })
-
-        dispatch({
-            type: CAMBIO_GENETICA_SABORES,
-            payload: genetica.sabores
         })
 
     } catch (error) {

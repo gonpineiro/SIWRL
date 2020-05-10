@@ -20,7 +20,7 @@ const useStyles = makeStyles({
 
 const InputSlider = (props) => {
   const classes = useStyles();
-  const { cambioGeneticaCbd, form: { cbd }, state_form } = props
+  const { cambioGeneticaCbd, genetica: { cbd }, state_form } = props
 
   const [value, setValue] = React.useState(cbd);
 
@@ -56,7 +56,7 @@ const InputSlider = (props) => {
           <label ></label>
           <Input
             className={classes.input}
-            value={state_form ? cbd : value}
+            value={state_form ? cbd : value || ''}
             margin="dense"
             onChange={handleInputChange}
             onBlur={handleBlur}

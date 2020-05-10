@@ -16,7 +16,8 @@ class Prototypes extends Component {
 		if (!prototypes.length) traerTodos()
 	}
 
-	ponerContenido = () => {
+	
+	 ponerContenido = () => {
 		const { traerTodos, recargar_table, loading, prototypes, error } = this.props
 
 		if (recargar_table) traerTodos()

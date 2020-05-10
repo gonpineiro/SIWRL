@@ -64,21 +64,6 @@ export const traerUno = (id) => async (dispatch) => {
     })
 
     dispatch({
-        type: CAMBIO_SENSOR_NAME,
-        payload: ''
-    })
-
-    dispatch({
-        type: CAMBIO_SENSOR_AMBIENTE_ID,
-        payload: ''
-    })
-
-    dispatch({
-        type: CAMBIO_SENSOR_OUTPUT,
-        payload: ''
-    })
-
-    dispatch({
         type: CAMBIO_ESTADO_FORM,
         payload: 'editar'
     })
@@ -90,26 +75,6 @@ export const traerUno = (id) => async (dispatch) => {
         dispatch({
             type: TRAER_UNO,
             payload: response.data
-        })
-
-        dispatch({
-            type: CAMBIO_SENSOR_ID,
-            payload: response.data.id
-        })
-
-        dispatch({
-            type: CAMBIO_SENSOR_NAME,
-            payload: response.data.name
-        })
-
-        dispatch({
-            type: CAMBIO_SENSOR_AMBIENTE_ID,
-            payload: response.data.ambiente_id
-        })
-
-        dispatch({
-            type: CAMBIO_SENSOR_OUTPUT,
-            payload: response.data.output
         })
 
 

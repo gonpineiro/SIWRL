@@ -20,12 +20,6 @@ const INITIAL_STATE = {
   sensors: [],
   sensor: [],
   sensors_ambiente: [],
-  form: {
-    id: '',
-    name: '',
-    ambiente_id: '',
-    output: ''
-  },
   loading: false,
   error: '',
   error_form: '',
@@ -70,8 +64,8 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_SENSOR_ID:
       return {
         ...state,
-        form: {
-          ...state.form,
+        sensor: {
+          ...state.sensor,
           id: action.payload
         }
       };
@@ -79,8 +73,8 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_SENSOR_NAME:
       return {
         ...state,
-        form: {
-          ...state.form,
+        sensor: {
+          ...state.sensor,
           name: action.payload
         }
       };
@@ -88,8 +82,8 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_SENSOR_AMBIENTE_ID:
       return {
         ...state,
-        form: {
-          ...state.form,
+        sensor: {
+          ...state.sensor,
           ambiente_id: action.payload
         }
       };
@@ -97,8 +91,8 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_SENSOR_OUTPUT:
       return {
         ...state,
-        form: {
-          ...state.form,
+        sensor: {
+          ...state.sensor,
           output: action.payload
         }
       };
@@ -113,7 +107,7 @@ export default (state = INITIAL_STATE, action) => {
     case GUARDAR:
       return {
         ...state,
-        form: {
+        sensor: {
           id: '',
           name: '',
           ambiente_id: '',

@@ -8,17 +8,13 @@ import {
 
   CAMBIO_MARCA_ID,
   CAMBIO_MARCA_NAME,
-  
+
   GUARDAR
 } from '../types/marcaTypes'
 
 const INITIAL_STATE = {
   marcas: [],
   marca: [],
-  form: {
-    id: '',
-    name: ''
-  },
   loading: false,
   error: '',
   error_form: '',
@@ -53,18 +49,18 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_MARCA_ID:
       return {
         ...state,
-        form: {
-          ...state.form,
-          id: action.payload 
+        marca: {
+          ...state.marca,
+          id: action.payload
         }
       };
 
     case CAMBIO_MARCA_NAME:
       return {
         ...state,
-        form: {
-          ...state.form,
-          name: action.payload 
+        marca: {
+          ...state.marca,
+          name: action.payload
         }
       };
 
@@ -78,7 +74,7 @@ export default (state = INITIAL_STATE, action) => {
     case GUARDAR:
       return {
         ...state,
-        form: {
+        marca: {
           id: '',
           name: ''
         },

@@ -13,7 +13,7 @@ const Formulario = (props) => {
 
    const {
       ambientesReducer: {
-         form: { id, name, codigo, inputs },
+         ambiente: { id, name, codigo, inputs },
          state_form,
          error_form,
       },
@@ -67,7 +67,7 @@ const Formulario = (props) => {
                   label="Nombre"
                   type="text"
                   className="form-control"
-                  value={name}
+                  value={name || ''}
                   onChange={handleCambioAmbienteName}
                   helperText={error_form.name}
                   error={!error_form.name ? false : true}
@@ -80,7 +80,7 @@ const Formulario = (props) => {
                   label="Código"
                   type="number"
                   className="form-control"
-                  value={codigo}
+                  value={codigo || ''}
                   onChange={handleCambioAmbienteCodigo}
                   helperText={error_form.codigo}
                   error={!error_form.codigo ? false : true}
@@ -93,7 +93,7 @@ const Formulario = (props) => {
                   label="Inputs"
                   type="number"
                   className="form-control"
-                  value={inputs}
+                  value={inputs || ''}
                   onChange={handleCambioAmbienteInputs}
                   helperText={error_form.inputs}
                   error={!error_form.inputs ? false : true}

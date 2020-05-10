@@ -43,26 +43,6 @@ export const traerUno = (id) => async (dispatch) => {
     })
 
     dispatch({
-        type: CAMBIO_AMBIENTE_ID,
-        payload: ''
-    })
-
-    dispatch({
-        type: CAMBIO_AMBIENTE_NAME,
-        payload: ''
-    })
-
-    dispatch({
-        type: CAMBIO_AMBIENTE_CODIGO,
-        payload: ''
-    })
-
-    dispatch({
-        type: CAMBIO_AMBIENTE_INPUTS,
-        payload: ''
-    })
-
-    dispatch({
         type: CAMBIO_ESTADO_FORM,
         payload: 'editar'
     })
@@ -75,26 +55,6 @@ export const traerUno = (id) => async (dispatch) => {
         dispatch({
             type: TRAER_UNO,
             payload: ambiente
-        })
-
-        dispatch({
-            type: CAMBIO_AMBIENTE_ID,
-            payload: ambiente.id
-        })
-
-        dispatch({
-            type: CAMBIO_AMBIENTE_NAME,
-            payload: ambiente.name
-        })
-
-        dispatch({
-            type: CAMBIO_AMBIENTE_CODIGO,
-            payload: ambiente.codigo
-        })
-
-        dispatch({
-            type: CAMBIO_AMBIENTE_INPUTS,
-            payload: ambiente.inputs
         })
 
 

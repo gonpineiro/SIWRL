@@ -13,7 +13,7 @@ const Formulario = (props) => {
    
    const {
       marcasReducer: {
-         form: { id, name },
+         marca: { id, name },
          state_form,
          error_form,
       },
@@ -60,7 +60,7 @@ const Formulario = (props) => {
                   label="Nombre"
                   type="text"
                   className="form-control"
-                  value={name}
+                  value={name || ''}
                   onChange={handleCambioMarcaName}
                   helperText={error_form.name}
                   error={!error_form.name ? false : true}

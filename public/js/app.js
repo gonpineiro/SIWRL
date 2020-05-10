@@ -100608,66 +100608,34 @@ var traerUno = function traerUno(id) {
                 type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
               });
               dispatch({
-                type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_AMBIENTE_ID"],
-                payload: ''
-              });
-              dispatch({
-                type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_AMBIENTE_NAME"],
-                payload: ''
-              });
-              dispatch({
-                type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_AMBIENTE_CODIGO"],
-                payload: ''
-              });
-              dispatch({
-                type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_AMBIENTE_INPUTS"],
-                payload: ''
-              });
-              dispatch({
                 type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_ESTADO_FORM"],
                 payload: 'editar'
               });
-              _context2.prev = 6;
-              _context2.next = 9;
+              _context2.prev = 2;
+              _context2.next = 5;
               return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL + 'ambiente/' + id);
 
-            case 9:
+            case 5:
               response = _context2.sent;
               ambiente = response.data[0];
               dispatch({
                 type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_UNO"],
                 payload: ambiente
               });
-              dispatch({
-                type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_AMBIENTE_ID"],
-                payload: ambiente.id
-              });
-              dispatch({
-                type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_AMBIENTE_NAME"],
-                payload: ambiente.name
-              });
-              dispatch({
-                type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_AMBIENTE_CODIGO"],
-                payload: ambiente.codigo
-              });
-              dispatch({
-                type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_AMBIENTE_INPUTS"],
-                payload: ambiente.inputs
-              });
-              _context2.next = 21;
+              _context2.next = 13;
               break;
 
-            case 18:
-              _context2.prev = 18;
-              _context2.t0 = _context2["catch"](6);
+            case 10:
+              _context2.prev = 10;
+              _context2.t0 = _context2["catch"](2);
               console.log(_context2.t0);
 
-            case 21:
+            case 13:
             case "end":
               return _context2.stop();
           }
         }
-      }, _callee2, null, [[6, 18]]);
+      }, _callee2, null, [[2, 10]]);
     }));
 
     return function (_x2) {
@@ -100980,106 +100948,34 @@ var traerUno = function traerUno(id) {
                 type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
               });
               dispatch({
-                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_ID"],
-                payload: ''
-              });
-              dispatch({
-                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_NAME"],
-                payload: ''
-              });
-              dispatch({
-                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_MARCA_ID"],
-                payload: ''
-              });
-              dispatch({
-                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_THC"],
-                payload: ''
-              });
-              dispatch({
-                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_CBD"],
-                payload: ''
-              });
-              dispatch({
-                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_PROD_INT"],
-                payload: ''
-              });
-              dispatch({
-                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_PROD_EXT"],
-                payload: ''
-              });
-              dispatch({
-                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_TIEMPO_FLORA"],
-                payload: ''
-              });
-              dispatch({
-                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_SABORES"],
-                payload: ''
-              });
-              dispatch({
                 type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_ESTADO_FORM"],
                 payload: 'editar'
               });
-              _context2.prev = 11;
-              _context2.next = 14;
+              _context2.prev = 2;
+              _context2.next = 5;
               return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL + 'genetica/' + id);
 
-            case 14:
+            case 5:
               response = _context2.sent;
               genetica = response.data[0];
               dispatch({
                 type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_UNO"],
                 payload: genetica
               });
-              dispatch({
-                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_ID"],
-                payload: genetica.id
-              });
-              dispatch({
-                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_NAME"],
-                payload: genetica.name
-              });
-              dispatch({
-                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_MARCA_ID"],
-                payload: genetica.marca_id
-              });
-              dispatch({
-                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_THC"],
-                payload: genetica.thc
-              });
-              dispatch({
-                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_CBD"],
-                payload: genetica.cbd
-              });
-              dispatch({
-                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_PROD_INT"],
-                payload: genetica.prod_int
-              });
-              dispatch({
-                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_PROD_EXT"],
-                payload: genetica.prod_ext
-              });
-              dispatch({
-                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_TIEMPO_FLORA"],
-                payload: genetica.tiempo_flora
-              });
-              dispatch({
-                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_GENETICA_SABORES"],
-                payload: genetica.sabores
-              });
-              _context2.next = 31;
+              _context2.next = 13;
               break;
 
-            case 28:
-              _context2.prev = 28;
-              _context2.t0 = _context2["catch"](11);
+            case 10:
+              _context2.prev = 10;
+              _context2.t0 = _context2["catch"](2);
               console.log(_context2.t0);
 
-            case 31:
+            case 13:
             case "end":
               return _context2.stop();
           }
         }
-      }, _callee2, null, [[11, 28]]);
+      }, _callee2, null, [[2, 10]]);
     }));
 
     return function (_x2) {
@@ -101424,45 +101320,33 @@ var traerUno = function traerUno(id) {
                 type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
               });
               dispatch({
-                type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_MARCA_NAME"],
-                payload: ''
-              });
-              dispatch({
                 type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_ESTADO_FORM"],
                 payload: 'editar'
               });
-              _context2.prev = 3;
-              _context2.next = 6;
+              _context2.prev = 2;
+              _context2.next = 5;
               return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL + 'marca/' + id);
 
-            case 6:
+            case 5:
               response = _context2.sent;
               dispatch({
                 type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_UNO"],
                 payload: response.data
               });
-              dispatch({
-                type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_MARCA_ID"],
-                payload: response.data.id
-              });
-              dispatch({
-                type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_MARCA_NAME"],
-                payload: response.data.name
-              });
-              _context2.next = 15;
+              _context2.next = 12;
               break;
 
-            case 12:
-              _context2.prev = 12;
-              _context2.t0 = _context2["catch"](3);
+            case 9:
+              _context2.prev = 9;
+              _context2.t0 = _context2["catch"](2);
               console.log(_context2.t0);
 
-            case 15:
+            case 12:
             case "end":
               return _context2.stop();
           }
         }
-      }, _callee2, null, [[3, 12]]);
+      }, _callee2, null, [[2, 9]]);
     }));
 
     return function (_x2) {
@@ -101759,118 +101643,34 @@ var traerUno = function traerUno(id) {
                 type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
               });
               dispatch({
-                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_ID"],
-                payload: ''
-              });
-              dispatch({
-                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_NAME"],
-                payload: ''
-              });
-              dispatch({
-                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_GENETICA_ID"],
-                payload: ''
-              });
-              dispatch({
-                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_AMBIENTE_ID"],
-                payload: ''
-              });
-              dispatch({
-                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_SENSOR_ID"],
-                payload: ''
-              });
-              dispatch({
-                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_FECHA_ESTADO_A"],
-                payload: ''
-              });
-              dispatch({
-                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_FECHA_ESTADO_B"],
-                payload: ''
-              });
-              dispatch({
-                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_FECHA_ESTADO_C"],
-                payload: ''
-              });
-              dispatch({
-                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_FECHA_ESTADO_D"],
-                payload: ''
-              });
-              dispatch({
-                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_FECHA_ESTADO_E"],
-                payload: ''
-              });
-              dispatch({
-                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_CANTIDAD"],
-                payload: ''
-              });
-              dispatch({
                 type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_ESTADO_FORM"],
                 payload: 'editar'
               });
-              _context2.prev = 13;
-              _context2.next = 16;
+              _context2.prev = 2;
+              _context2.next = 5;
               return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL + 'prototype/' + id);
 
-            case 16:
+            case 5:
               response = _context2.sent;
               prototype = response.data[0];
               dispatch({
                 type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_UNO"],
                 payload: prototype
               });
-              dispatch({
-                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_ID"],
-                payload: prototype.id
-              });
-              dispatch({
-                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_NAME"],
-                payload: prototype.name
-              });
-              dispatch({
-                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_GENETICA_ID"],
-                payload: prototype.genetica_id
-              });
-              dispatch({
-                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_AMBIENTE_ID"],
-                payload: prototype.ambiente_id
-              });
-              dispatch({
-                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_SENSOR_ID"],
-                payload: prototype.sensor_id
-              });
-              dispatch({
-                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_FECHA_ESTADO_A"],
-                payload: prototype.fecha_etapa_a
-              });
-              dispatch({
-                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_FECHA_ESTADO_B"],
-                payload: prototype.fecha_etapa_b
-              });
-              dispatch({
-                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_FECHA_ESTADO_C"],
-                payload: prototype.fecha_etapa_c
-              });
-              dispatch({
-                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_FECHA_ESTADO_D"],
-                payload: prototype.fecha_etapa_d
-              });
-              dispatch({
-                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_FECHA_ESTADO_E"],
-                payload: prototype.fecha_etapa_e
-              });
-              _context2.next = 34;
+              _context2.next = 13;
               break;
 
-            case 31:
-              _context2.prev = 31;
-              _context2.t0 = _context2["catch"](13);
+            case 10:
+              _context2.prev = 10;
+              _context2.t0 = _context2["catch"](2);
               console.log(_context2.t0);
 
-            case 34:
+            case 13:
             case "end":
               return _context2.stop();
           }
         }
-      }, _callee2, null, [[13, 31]]);
+      }, _callee2, null, [[2, 10]]);
     }));
 
     return function (_x2) {
@@ -102138,6 +101938,365 @@ var cancelar = function cancelar() {
 
 /***/ }),
 
+/***/ "./resources/js/actions/sensorsActions.js":
+/*!************************************************!*\
+  !*** ./resources/js/actions/sensorsActions.js ***!
+  \************************************************/
+/*! exports provided: traerTodos, traerTodosPorAmbiente, traerUno, cambioSensorName, agregar, editar, traerUnoBorrar, borrar, cancelar */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traerTodos", function() { return traerTodos; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traerTodosPorAmbiente", function() { return traerTodosPorAmbiente; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traerUno", function() { return traerUno; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cambioSensorName", function() { return cambioSensorName; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "agregar", function() { return agregar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "editar", function() { return editar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traerUnoBorrar", function() { return traerUnoBorrar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "borrar", function() { return borrar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cancelar", function() { return cancelar; });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../types/sensorTypes */ "./resources/js/types/sensorTypes.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+var URL = 'http://192.168.0.238:901/api/';
+var traerTodos = function traerTodos() {
+  return /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(dispatch) {
+      var response;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              dispatch({
+                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+              });
+              _context.prev = 1;
+              _context.next = 4;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL + 'sensor');
+
+            case 4:
+              response = _context.sent;
+              dispatch({
+                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_TODOS"],
+                payload: response.data
+              });
+              _context.next = 11;
+              break;
+
+            case 8:
+              _context.prev = 8;
+              _context.t0 = _context["catch"](1);
+              console.log(_context.t0);
+
+            case 11:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[1, 8]]);
+    }));
+
+    return function (_x) {
+      return _ref.apply(this, arguments);
+    };
+  }();
+};
+var traerTodosPorAmbiente = function traerTodosPorAmbiente(id) {
+  return /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(dispatch) {
+      var response;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              dispatch({
+                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+              });
+              _context2.prev = 1;
+              _context2.next = 4;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL + 'ambiente/sensors/' + id);
+
+            case 4:
+              response = _context2.sent;
+              console.log(response.data);
+              dispatch({
+                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_TODOS_POR_AMBIENTE"],
+                payload: response.data
+              });
+              _context2.next = 12;
+              break;
+
+            case 9:
+              _context2.prev = 9;
+              _context2.t0 = _context2["catch"](1);
+              console.log(_context2.t0);
+
+            case 12:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, null, [[1, 9]]);
+    }));
+
+    return function (_x2) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+};
+var traerUno = function traerUno(id) {
+  return /*#__PURE__*/function () {
+    var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(dispatch) {
+      var response;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              dispatch({
+                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+              });
+              dispatch({
+                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_ESTADO_FORM"],
+                payload: 'editar'
+              });
+              _context3.prev = 2;
+              _context3.next = 5;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL + 'sensor/' + id);
+
+            case 5:
+              response = _context3.sent;
+              dispatch({
+                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_UNO"],
+                payload: response.data
+              });
+              _context3.next = 12;
+              break;
+
+            case 9:
+              _context3.prev = 9;
+              _context3.t0 = _context3["catch"](2);
+              console.log(_context3.t0);
+
+            case 12:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3, null, [[2, 9]]);
+    }));
+
+    return function (_x3) {
+      return _ref3.apply(this, arguments);
+    };
+  }();
+};
+var cambioSensorName = function cambioSensorName(valor) {
+  return function (dispatch) {
+    dispatch({
+      type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_SENSOR_NAME"],
+      payload: valor
+    });
+  };
+};
+var agregar = function agregar(nuevo_sensor) {
+  return /*#__PURE__*/function () {
+    var _ref4 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4(dispatch) {
+      var errors;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
+        while (1) {
+          switch (_context4.prev = _context4.next) {
+            case 0:
+              dispatch({
+                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+              });
+              _context4.prev = 1;
+              _context4.next = 4;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(URL + 'sensor', nuevo_sensor);
+
+            case 4:
+              dispatch({
+                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["GUARDAR"]
+              });
+              _context4.next = 11;
+              break;
+
+            case 7:
+              _context4.prev = 7;
+              _context4.t0 = _context4["catch"](1);
+              errors = _context4.t0.response.data.errors;
+              dispatch({
+                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["ERROR_FORM"],
+                payload: errors
+              });
+
+            case 11:
+            case "end":
+              return _context4.stop();
+          }
+        }
+      }, _callee4, null, [[1, 7]]);
+    }));
+
+    return function (_x4) {
+      return _ref4.apply(this, arguments);
+    };
+  }();
+};
+var editar = function editar(nuevo_sensor, id) {
+  return /*#__PURE__*/function () {
+    var _ref5 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5(dispatch) {
+      var errors;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
+        while (1) {
+          switch (_context5.prev = _context5.next) {
+            case 0:
+              dispatch({
+                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+              });
+              _context5.prev = 1;
+              _context5.next = 4;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.put(URL + 'sensor/' + id, nuevo_sensor);
+
+            case 4:
+              dispatch({
+                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["GUARDAR"]
+              });
+              _context5.next = 11;
+              break;
+
+            case 7:
+              _context5.prev = 7;
+              _context5.t0 = _context5["catch"](1);
+              errors = _context5.t0.response.data.errors;
+              dispatch({
+                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["ERROR_FORM"],
+                payload: errors
+              });
+
+            case 11:
+            case "end":
+              return _context5.stop();
+          }
+        }
+      }, _callee5, null, [[1, 7]]);
+    }));
+
+    return function (_x5) {
+      return _ref5.apply(this, arguments);
+    };
+  }();
+};
+var traerUnoBorrar = function traerUnoBorrar(id) {
+  return /*#__PURE__*/function () {
+    var _ref6 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee6(dispatch) {
+      var response;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee6$(_context6) {
+        while (1) {
+          switch (_context6.prev = _context6.next) {
+            case 0:
+              dispatch({
+                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+              });
+              dispatch({
+                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_ESTADO_FORM"],
+                payload: 'borrar'
+              });
+              _context6.prev = 2;
+              _context6.next = 5;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL + 'sensor/' + id);
+
+            case 5:
+              response = _context6.sent;
+              dispatch({
+                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_UNO"],
+                payload: response.data
+              });
+              _context6.next = 12;
+              break;
+
+            case 9:
+              _context6.prev = 9;
+              _context6.t0 = _context6["catch"](2);
+              console.log(_context6.t0);
+
+            case 12:
+            case "end":
+              return _context6.stop();
+          }
+        }
+      }, _callee6, null, [[2, 9]]);
+    }));
+
+    return function (_x6) {
+      return _ref6.apply(this, arguments);
+    };
+  }();
+};
+var borrar = function borrar(id) {
+  return /*#__PURE__*/function () {
+    var _ref7 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee7(dispatch) {
+      var errors;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee7$(_context7) {
+        while (1) {
+          switch (_context7.prev = _context7.next) {
+            case 0:
+              dispatch({
+                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+              });
+              _context7.prev = 1;
+              _context7.next = 4;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a["delete"](URL + 'sensor/' + id);
+
+            case 4:
+              dispatch({
+                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["GUARDAR"]
+              });
+              _context7.next = 11;
+              break;
+
+            case 7:
+              _context7.prev = 7;
+              _context7.t0 = _context7["catch"](1);
+              errors = _context7.t0.response.data.message;
+              dispatch({
+                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["ERROR_FORM"],
+                payload: errors
+              });
+
+            case 11:
+            case "end":
+              return _context7.stop();
+          }
+        }
+      }, _callee7, null, [[1, 7]]);
+    }));
+
+    return function (_x7) {
+      return _ref7.apply(this, arguments);
+    };
+  }();
+};
+var cancelar = function cancelar() {
+  return function (dispatch) {
+    dispatch({
+      type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["GUARDAR"]
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./resources/js/actions/usersActions.js":
 /*!**********************************************!*\
   !*** ./resources/js/actions/usersActions.js ***!
@@ -102225,57 +102384,33 @@ var traerUno = function traerUno(id) {
                 type: _types_userTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
               });
               dispatch({
-                type: _types_userTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_USUARIO_NAME"],
-                payload: ''
-              });
-              dispatch({
-                type: _types_userTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_USUARIO_EMAIL"],
-                payload: ''
-              });
-              dispatch({
-                type: _types_userTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_USUARIO_PASSWORD"],
-                payload: ''
-              });
-              dispatch({
                 type: _types_userTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_ESTADO_FORM"],
                 payload: 'editar'
               });
-              _context2.prev = 5;
-              _context2.next = 8;
+              _context2.prev = 2;
+              _context2.next = 5;
               return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL + 'user/' + id);
 
-            case 8:
+            case 5:
               response = _context2.sent;
               dispatch({
                 type: _types_userTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_UNO"],
                 payload: response.data
               });
-              dispatch({
-                type: _types_userTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_USUARIO_ID"],
-                payload: response.data.id
-              });
-              dispatch({
-                type: _types_userTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_USUARIO_NAME"],
-                payload: response.data.name
-              });
-              dispatch({
-                type: _types_userTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_USUARIO_EMAIL"],
-                payload: response.data.email
-              });
-              _context2.next = 18;
+              _context2.next = 12;
               break;
 
-            case 15:
-              _context2.prev = 15;
-              _context2.t0 = _context2["catch"](5);
+            case 9:
+              _context2.prev = 9;
+              _context2.t0 = _context2["catch"](2);
               console.log(_context2.t0);
 
-            case 18:
+            case 12:
             case "end":
               return _context2.stop();
           }
         }
-      }, _callee2, null, [[5, 15]]);
+      }, _callee2, null, [[2, 9]]);
     }));
 
     return function (_x2) {
@@ -102420,32 +102555,20 @@ var traerUnoBorrar = function traerUnoBorrar(id) {
                 type: _types_userTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_UNO"],
                 payload: response.data
               });
-              dispatch({
-                type: _types_userTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_USUARIO_ID"],
-                payload: response.data.id
-              });
-              dispatch({
-                type: _types_userTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_USUARIO_NAME"],
-                payload: response.data.name
-              });
-              dispatch({
-                type: _types_userTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_USUARIO_EMAIL"],
-                payload: response.data.email
-              });
-              _context5.next = 15;
+              _context5.next = 12;
               break;
 
-            case 12:
-              _context5.prev = 12;
+            case 9:
+              _context5.prev = 9;
               _context5.t0 = _context5["catch"](2);
               console.log(_context5.t0);
 
-            case 15:
+            case 12:
             case "end":
               return _context5.stop();
           }
         }
-      }, _callee5, null, [[2, 12]]);
+      }, _callee5, null, [[2, 9]]);
     }));
 
     return function (_x5) {
@@ -102695,7 +102818,7 @@ var agregar = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_6__["agregar"],
 
 var Formulario = function Formulario(props) {
   var _props$ambientesReduc = props.ambientesReducer,
-      _props$ambientesReduc2 = _props$ambientesReduc.form,
+      _props$ambientesReduc2 = _props$ambientesReduc.ambiente,
       id = _props$ambientesReduc2.id,
       name = _props$ambientesReduc2.name,
       codigo = _props$ambientesReduc2.codigo,
@@ -102751,7 +102874,7 @@ var Formulario = function Formulario(props) {
     label: "Nombre",
     type: "text",
     className: "form-control",
-    value: name,
+    value: name || '',
     onChange: handleCambioAmbienteName,
     helperText: error_form.name,
     error: !error_form.name ? false : true
@@ -102762,7 +102885,7 @@ var Formulario = function Formulario(props) {
     label: "C\xF3digo",
     type: "number",
     className: "form-control",
-    value: codigo,
+    value: codigo || '',
     onChange: handleCambioAmbienteCodigo,
     helperText: error_form.codigo,
     error: !error_form.codigo ? false : true
@@ -102773,7 +102896,7 @@ var Formulario = function Formulario(props) {
     label: "Inputs",
     type: "number",
     className: "form-control",
-    value: inputs,
+    value: inputs || '',
     onChange: handleCambioAmbienteInputs,
     helperText: error_form.inputs,
     error: !error_form.inputs ? false : true
@@ -103318,7 +103441,7 @@ var Formulario = function Formulario(props) {
   var marcasTraerTodos = props.marcasTraerTodos,
       marcas = props.marcasReducer.marcas,
       _props$geneticasReduc = props.geneticasReducer,
-      _props$geneticasReduc2 = _props$geneticasReduc.form,
+      _props$geneticasReduc2 = _props$geneticasReduc.genetica,
       name = _props$geneticasReduc2.name,
       marca_id = _props$geneticasReduc2.marca_id,
       prod_int = _props$geneticasReduc2.prod_int,
@@ -103356,7 +103479,7 @@ var Formulario = function Formulario(props) {
 
   var guardar = function guardar() {
     var _props$geneticasReduc3 = props.geneticasReducer,
-        _props$geneticasReduc4 = _props$geneticasReduc3.form,
+        _props$geneticasReduc4 = _props$geneticasReduc3.genetica,
         id = _props$geneticasReduc4.id,
         name = _props$geneticasReduc4.name,
         marca_id = _props$geneticasReduc4.marca_id,
@@ -103406,7 +103529,7 @@ var Formulario = function Formulario(props) {
     label: "Nombre",
     type: "text",
     className: "form-control",
-    value: name,
+    value: name || '',
     onChange: handleCambioGeneticaName,
     helperText: error_form.name,
     error: !error_form.name ? false : true
@@ -103418,7 +103541,7 @@ var Formulario = function Formulario(props) {
   }, "Marcas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Select__WEBPACK_IMPORTED_MODULE_10__["default"], {
     labelId: "demo-simple-select-helper-label",
     id: "demo-simple-select-helper",
-    value: marca_id,
+    value: marca_id || '',
     onChange: handleCambioGeneticaMarca,
     error: !error_form.marca_id ? false : true
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -103453,7 +103576,7 @@ var Formulario = function Formulario(props) {
     label: "Sabores",
     type: "text",
     className: "form-control",
-    value: sabores,
+    value: sabores || '',
     onChange: handleCambioGeneticaSabores
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
     className: classes.formControl
@@ -103462,7 +103585,7 @@ var Formulario = function Formulario(props) {
     label: "Interna",
     type: "number",
     className: "form-control",
-    value: prod_int,
+    value: prod_int || '',
     onChange: handleCambioGeneticaProdInt
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
     className: classes.formControl
@@ -103471,7 +103594,7 @@ var Formulario = function Formulario(props) {
     label: "Externa",
     type: "number",
     className: "form-control",
-    value: prod_ext,
+    value: prod_ext || '',
     onChange: handleCambioGeneticaProdExt
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
     className: classes.formControl
@@ -103480,7 +103603,7 @@ var Formulario = function Formulario(props) {
     label: "Tiempo",
     type: "number",
     className: "form-control",
-    value: tiempo_flora,
+    value: tiempo_flora || '',
     onChange: handleCambioGeneticaTiempoFlora,
     helperText: error_form.tiempo_flora,
     error: !error_form.tiempo_flora ? false : true
@@ -103574,7 +103697,7 @@ var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["ma
 var InputSlider = function InputSlider(props) {
   var classes = useStyles();
   var cambioGeneticaCbd = props.cambioGeneticaCbd,
-      cbd = props.form.cbd,
+      cbd = props.genetica.cbd,
       state_form = props.state_form;
 
   var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(cbd),
@@ -103612,7 +103735,7 @@ var InputSlider = function InputSlider(props) {
     className: "form-group col-md-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
     className: classes.input,
-    value: state_form ? cbd : value,
+    value: state_form ? cbd : value || '',
     margin: "dense",
     onChange: handleInputChange,
     onBlur: handleBlur,
@@ -103682,7 +103805,7 @@ var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["ma
 var InputSlider = function InputSlider(props) {
   var classes = useStyles();
   var cambioGeneticaThc = props.cambioGeneticaThc,
-      thc = props.form.thc,
+      thc = props.genetica.thc,
       state_form = props.state_form;
 
   var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(thc),
@@ -103720,7 +103843,7 @@ var InputSlider = function InputSlider(props) {
     className: "form-group col-md-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
     className: classes.input,
-    value: state_form ? thc : value,
+    value: state_form ? thc : value || '',
     margin: "dense",
     onChange: handleInputChange,
     onBlur: handleBlur,
@@ -103813,10 +103936,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _Table__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Table */ "./resources/js/components/Geneticas/Table.js");
 /* harmony import */ var _Formulario__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Formulario */ "./resources/js/components/Geneticas/Formulario.js");
-/* harmony import */ var _Marcas_Formulario__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Marcas/Formulario */ "./resources/js/components/Marcas/Formulario.js");
-/* harmony import */ var _Delete__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Delete */ "./resources/js/components/Geneticas/Delete.js");
-/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
-/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
+/* harmony import */ var _Delete__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Delete */ "./resources/js/components/Geneticas/Delete.js");
+/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
+/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
 
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -103856,7 +103978,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-
 var Geneticas = /*#__PURE__*/function (_Component) {
   _inherits(Geneticas, _Component);
 
@@ -103881,17 +104002,13 @@ var Geneticas = /*#__PURE__*/function (_Component) {
           geneticas = _this$props.geneticas,
           error = _this$props.error;
       if (recargar_table) traerTodos();
-      if (loading && !geneticas.length) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_8__["default"], null);
+      if (loading && !geneticas.length) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null);
       if (error) return 'Error';
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Table__WEBPACK_IMPORTED_MODULE_4__["default"], null);
     });
 
     _defineProperty(_assertThisInitialized(_this), "ponerFormulario", function () {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Formulario__WEBPACK_IMPORTED_MODULE_5__["default"], null);
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "ponerFormularioMarca", function () {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Marcas_Formulario__WEBPACK_IMPORTED_MODULE_6__["default"], null);
     });
 
     return _this;
@@ -103932,6 +104049,7 @@ var Geneticas = /*#__PURE__*/function (_Component) {
           state_form = _this$props3.state_form,
           genetica = _this$props3.genetica,
           goBack = _this$props3.history.goBack;
+      console.log(this.props);
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "container col-md-9"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -103947,21 +104065,17 @@ var Geneticas = /*#__PURE__*/function (_Component) {
       }, "Agregar gen\xE9tica", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
         fontSize: "small",
         onClick: goBack
-      })), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_8__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      })), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
       }, this.ponerFormulario())) : '', state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-agregar"
-      }, "Modificando genetica: ", genetica.id), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_8__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, "Modificando genetica: ", genetica.id), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
-      }, this.ponerFormulario())) : '', state_form === 'crear-marca' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-header card-agregar"
-      }, "Agregar marca"), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_8__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-body"
-      }, this.ponerFormularioMarca())) : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, this.ponerFormulario())) : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-eliminar"
-      }, "Eliminar la siguente gen\xE9tica"), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_8__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, "Eliminar la siguente gen\xE9tica"), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Delete__WEBPACK_IMPORTED_MODULE_7__["default"], null))) : ''))));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Delete__WEBPACK_IMPORTED_MODULE_6__["default"], null))) : ''))));
     }
   }]);
 
@@ -103972,7 +104086,7 @@ var mapStateToProps = function mapStateToProps(reducers) {
   return reducers.geneticasReducer;
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_9__)(Geneticas));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_8__)(Geneticas));
 
 /***/ }),
 
@@ -104170,7 +104284,7 @@ var agregar = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__["agregar"],
 
 var Formulario = function Formulario(props) {
   var _props$marcasReducer = props.marcasReducer,
-      _props$marcasReducer$ = _props$marcasReducer.form,
+      _props$marcasReducer$ = _props$marcasReducer.marca,
       id = _props$marcasReducer$.id,
       name = _props$marcasReducer$.name,
       state_form = _props$marcasReducer.state_form,
@@ -104213,7 +104327,7 @@ var Formulario = function Formulario(props) {
     label: "Nombre",
     type: "text",
     className: "form-control",
-    value: name,
+    value: name || '',
     onChange: handleCambioMarcaName,
     helperText: error_form.name,
     error: !error_form.name ? false : true
@@ -104601,6 +104715,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
 /* harmony import */ var _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../actions/ambientesActions */ "./resources/js/actions/ambientesActions.js");
 /* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
+/* harmony import */ var _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../actions/sensorsActions */ "./resources/js/actions/sensorsActions.js");
+
 
 
 
@@ -104617,6 +104733,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var geneticasTraerTodos = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_13__["traerTodos"];
 var ambientesTraerTodos = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_12__["traerTodos"];
+var sensorsTraerTodosPorAmbiente = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_14__["traerTodosPorAmbiente"];
 var cambioPrototypeName = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["cambioPrototypeName"],
     cambioPrototypeGenetica = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["cambioPrototypeGenetica"],
     cambioPrototypeAmbiente = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["cambioPrototypeAmbiente"],
@@ -104628,10 +104745,12 @@ var cambioPrototypeName = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11_
 var Formulario = function Formulario(props) {
   var geneticasTraerTodos = props.geneticasTraerTodos,
       ambientesTraerTodos = props.ambientesTraerTodos,
+      sensorsTraerTodosPorAmbiente = props.sensorsTraerTodosPorAmbiente,
       geneticas = props.geneticasReducer.geneticas,
       ambientes = props.ambientesReducer.ambientes,
+      sensors_ambiente = props.sensorsReducer.sensors_ambiente,
       _props$prototypesRedu = props.prototypesReducer,
-      _props$prototypesRedu2 = _props$prototypesRedu.form,
+      _props$prototypesRedu2 = _props$prototypesRedu.prototype,
       id = _props$prototypesRedu2.id,
       name = _props$prototypesRedu2.name,
       genetica_id = _props$prototypesRedu2.genetica_id,
@@ -104655,7 +104774,8 @@ var Formulario = function Formulario(props) {
   };
 
   var handleCambioPrototypeAmbiente = function handleCambioPrototypeAmbiente(event) {
-    return props.cambioPrototypeAmbiente(event.target.value);
+    props.cambioPrototypeAmbiente(event.target.value);
+    sensorsTraerTodosPorAmbiente(event.target.value);
   };
 
   var handleCambioPrototypeSensor = function handleCambioPrototypeSensor(event) {
@@ -104693,7 +104813,7 @@ var Formulario = function Formulario(props) {
     label: "Nombre",
     type: "text",
     className: "form-control",
-    value: name,
+    value: name || '',
     onChange: handleCambioPrototypeName,
     helperText: error_form.name,
     error: !error_form.name ? false : true
@@ -104705,7 +104825,7 @@ var Formulario = function Formulario(props) {
   }, "Genetica"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Select__WEBPACK_IMPORTED_MODULE_10__["default"], {
     labelId: "demo-simple-select-helper-label",
     id: "demo-simple-select-helper",
-    value: genetica_id,
+    value: genetica_id || '',
     onChange: handleCambioPrototypeGenetica,
     error: !error_form.genetica_id ? false : true
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -104729,7 +104849,7 @@ var Formulario = function Formulario(props) {
   }, "Ambientes"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Select__WEBPACK_IMPORTED_MODULE_10__["default"], {
     labelId: "demo-simple-select-helper-label",
     id: "demo-simple-select-helper",
-    value: ambiente_id,
+    value: ambiente_id || '',
     onChange: handleCambioPrototypeAmbiente,
     error: !error_form.ambiente_id ? false : true
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -104738,14 +104858,47 @@ var Formulario = function Formulario(props) {
     value: ""
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("em", {
     className: "link link-string"
-  }, "Agregar"))), ambientes.map(function (ambiente) {
+  }, "Agregar"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    value: ""
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("em", {
+    className: "link link-string"
+  }, " Vacio "), " "), ambientes.map(function (ambiente) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_7__["default"], {
       key: ambiente.id,
       value: ambiente.id
     }, ambiente.name);
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormHelperText__WEBPACK_IMPORTED_MODULE_8__["default"], {
     error: !error_form.ambiente_id ? false : true
-  }, error_form.ambiente_id)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, error_form.ambiente_id)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    className: classes.formControl
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_InputLabel__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    id: "demo-simple-select-helper-label",
+    error: !error_form.sensor_id ? false : true
+  }, "Sensor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Select__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    labelId: "demo-simple-select-helper-label",
+    id: "demo-simple-select-helper",
+    value: sensor_id || '',
+    onChange: handleCambioPrototypeSensor,
+    error: !error_form.sensor_id ? false : true,
+    disabled: !ambiente_id
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: ""
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    value: ""
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("em", {
+    className: "link link-string"
+  }, "Agregar"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    value: ""
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("em", {
+    className: "link link-string"
+  }, " Vacio "), " "), sensors_ambiente.map(function (sensor) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      key: sensor.id,
+      value: sensor.id
+    }, sensor.name);
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormHelperText__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    error: !error_form.sensor_id ? false : true
+  }, error_form.sensor_id)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-row margin-button"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-group col-md-6"
@@ -104765,17 +104918,20 @@ var Formulario = function Formulario(props) {
 var mapStateToProps = function mapStateToProps(_ref) {
   var prototypesReducer = _ref.prototypesReducer,
       geneticasReducer = _ref.geneticasReducer,
-      ambientesReducer = _ref.ambientesReducer;
+      ambientesReducer = _ref.ambientesReducer,
+      sensorsReducer = _ref.sensorsReducer;
   return {
     prototypesReducer: prototypesReducer,
     geneticasReducer: geneticasReducer,
-    ambientesReducer: ambientesReducer
+    ambientesReducer: ambientesReducer,
+    sensorsReducer: sensorsReducer
   };
 };
 
 var mapDispatchToProps = {
   geneticasTraerTodos: geneticasTraerTodos,
   ambientesTraerTodos: ambientesTraerTodos,
+  sensorsTraerTodosPorAmbiente: sensorsTraerTodosPorAmbiente,
   cambioPrototypeName: cambioPrototypeName,
   cambioPrototypeGenetica: cambioPrototypeGenetica,
   cambioPrototypeAmbiente: cambioPrototypeAmbiente,
@@ -105127,11 +105283,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Formulario = function Formulario(props) {
-  var _props$form = props.form,
-      id = _props$form.id,
-      name = _props$form.name,
-      email = _props$form.email,
-      password = _props$form.password,
+  var _props$user = props.user,
+      id = _props$user.id,
+      name = _props$user.name,
+      email = _props$user.email,
+      password = _props$user.password,
       agregar = props.agregar,
       editar = props.editar,
       cancelar = props.cancelar,
@@ -105602,12 +105758,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var INITIAL_STATE = {
   ambientes: [],
   ambiente: [],
-  form: {
-    id: '',
-    codigo: '',
-    name: '',
-    inputs: ''
-  },
   loading: false,
   error: '',
   error_form: '',
@@ -105654,28 +105804,28 @@ var INITIAL_STATE = {
 
     case _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_AMBIENTE_ID"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        ambiente: _objectSpread(_objectSpread({}, state.ambiente), {}, {
           id: action.payload
         })
       });
 
     case _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_AMBIENTE_CODIGO"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        ambiente: _objectSpread(_objectSpread({}, state.ambiente), {}, {
           codigo: action.payload
         })
       });
 
     case _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_AMBIENTE_NAME"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        ambiente: _objectSpread(_objectSpread({}, state.ambiente), {}, {
           name: action.payload
         })
       });
 
     case _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_AMBIENTE_INPUTS"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        ambiente: _objectSpread(_objectSpread({}, state.ambiente), {}, {
           inputs: action.payload
         })
       });
@@ -105688,7 +105838,7 @@ var INITIAL_STATE = {
 
     case _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_0__["GUARDAR"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: {
+        ambiente: {
           id: '',
           name: '',
           codigo: '',
@@ -105728,17 +105878,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var INITIAL_STATE = {
   geneticas: [],
   genetica: [],
-  form: {
-    id: '',
-    name: '',
-    marca_id: '',
-    thc: 21,
-    cbd: 0,
-    prod_int: '',
-    prod_ext: '',
-    tiempo_flora: '',
-    sabores: ''
-  },
   loading: false,
   error: '',
   error_form: '',
@@ -105785,70 +105924,69 @@ var INITIAL_STATE = {
 
     case _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_GENETICA_ID"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        genetica: _objectSpread(_objectSpread({}, state.genetica), {}, {
           id: action.payload
         })
       });
 
     case _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_GENETICA_NAME"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        genetica: _objectSpread(_objectSpread({}, state.genetica), {}, {
           name: action.payload
         })
       });
 
     case _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_GENETICA_MARCA_ID"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        genetica: _objectSpread(_objectSpread({}, state.genetica), {}, {
           marca_id: action.payload
         })
       });
 
     case _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_GENETICA_THC"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        genetica: _objectSpread(_objectSpread({}, state.genetica), {}, {
           thc: action.payload
         })
       });
 
     case _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_GENETICA_CBD"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        genetica: _objectSpread(_objectSpread({}, state.genetica), {}, {
           cbd: action.payload
         })
       });
 
     case _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_GENETICA_PROD_INT"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        genetica: _objectSpread(_objectSpread({}, state.genetica), {}, {
           prod_int: action.payload
         })
       });
 
     case _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_GENETICA_PROD_EXT"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        genetica: _objectSpread(_objectSpread({}, state.genetica), {}, {
           prod_ext: action.payload
         })
       });
 
     case _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_GENETICA_TIEMPO_FLORA"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        genetica: _objectSpread(_objectSpread({}, state.genetica), {}, {
           tiempo_flora: action.payload
         })
       });
 
     case _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_GENETICA_SABORES"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        genetica: _objectSpread(_objectSpread({}, state.genetica), {}, {
           sabores: action.payload
         })
       });
 
     case _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_ESTADO_FORM"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        error_form: '',
         state_form: action.payload
       });
 
@@ -105857,7 +105995,7 @@ var INITIAL_STATE = {
         loading: false,
         error: '',
         error_form: '',
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        genetica: {
           id: '',
           name: '',
           marca_id: '',
@@ -105865,7 +106003,7 @@ var INITIAL_STATE = {
           prod_ext: '',
           tiempo_flora: '',
           sabores: ''
-        }),
+        },
         recargar_table: true,
         state_form: 'crear'
       });
@@ -105892,6 +106030,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _geneticasReducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./geneticasReducer */ "./resources/js/reducers/geneticasReducer.js");
 /* harmony import */ var _prototypesReducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./prototypesReducer */ "./resources/js/reducers/prototypesReducer.js");
 /* harmony import */ var _ambientesReducer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ambientesReducer */ "./resources/js/reducers/ambientesReducer.js");
+/* harmony import */ var _sensorsReducer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./sensorsReducer */ "./resources/js/reducers/sensorsReducer.js");
+
 
 
 
@@ -105903,7 +106043,8 @@ __webpack_require__.r(__webpack_exports__);
   marcasReducer: _marcasReducer__WEBPACK_IMPORTED_MODULE_2__["default"],
   geneticasReducer: _geneticasReducer__WEBPACK_IMPORTED_MODULE_3__["default"],
   prototypesReducer: _prototypesReducer__WEBPACK_IMPORTED_MODULE_4__["default"],
-  ambientesReducer: _ambientesReducer__WEBPACK_IMPORTED_MODULE_5__["default"]
+  ambientesReducer: _ambientesReducer__WEBPACK_IMPORTED_MODULE_5__["default"],
+  sensorsReducer: _sensorsReducer__WEBPACK_IMPORTED_MODULE_6__["default"]
 }));
 
 /***/ }),
@@ -105928,10 +106069,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var INITIAL_STATE = {
   marcas: [],
   marca: [],
-  form: {
-    id: '',
-    name: ''
-  },
   loading: false,
   error: '',
   error_form: '',
@@ -105978,14 +106115,14 @@ var INITIAL_STATE = {
 
     case _types_marcaTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_MARCA_ID"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        marca: _objectSpread(_objectSpread({}, state.marca), {}, {
           id: action.payload
         })
       });
 
     case _types_marcaTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_MARCA_NAME"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        marca: _objectSpread(_objectSpread({}, state.marca), {}, {
           name: action.payload
         })
       });
@@ -105998,7 +106135,7 @@ var INITIAL_STATE = {
 
     case _types_marcaTypes__WEBPACK_IMPORTED_MODULE_0__["GUARDAR"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: {
+        marca: {
           id: '',
           name: ''
         },
@@ -106036,19 +106173,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var INITIAL_STATE = {
   prototypes: [],
   prototype: [],
-  form: {
-    id: '',
-    name: '',
-    genetica_id: '',
-    ambiente_id: '',
-    sensor_id: '',
-    fecha_estapa_a: '',
-    fecha_estapa_b: '',
-    fecha_estapa_c: '',
-    fecha_estapa_d: '',
-    fecha_estapa_e: '',
-    cantidad: ''
-  },
   loading: false,
   error: '',
   error_form: '',
@@ -106095,77 +106219,77 @@ var INITIAL_STATE = {
 
     case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_PROTOTYPE_ID"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        prototype: _objectSpread(_objectSpread({}, state.prototype), {}, {
           id: action.payload
         })
       });
 
     case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_PROTOTYPE_NAME"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        prototype: _objectSpread(_objectSpread({}, state.prototype), {}, {
           name: action.payload
         })
       });
 
     case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_PROTOTYPE_GENETICA_ID"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        prototype: _objectSpread(_objectSpread({}, state.prototype), {}, {
           genetica_id: action.payload
         })
       });
 
     case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_PROTOTYPE_AMBIENTE_ID"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        prototype: _objectSpread(_objectSpread({}, state.prototype), {}, {
           ambiente_id: action.payload
         })
       });
 
     case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_PROTOTYPE_SENSOR_ID"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        prototype: _objectSpread(_objectSpread({}, state.prototype), {}, {
           sensor_id: action.payload
         })
       });
 
     case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_PROTOTYPE_FECHA_ESTADO_A"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        prototype: _objectSpread(_objectSpread({}, state.prototype), {}, {
           fecha_estapa_a: action.payload
         })
       });
 
     case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_PROTOTYPE_FECHA_ESTADO_B"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        prototype: _objectSpread(_objectSpread({}, state.prototype), {}, {
           fecha_estapa_b: action.payload
         })
       });
 
     case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_PROTOTYPE_FECHA_ESTADO_C"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        prototype: _objectSpread(_objectSpread({}, state.prototype), {}, {
           fecha_estapa_c: action.payload
         })
       });
 
     case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_PROTOTYPE_FECHA_ESTADO_D"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        prototype: _objectSpread(_objectSpread({}, state.prototype), {}, {
           fecha_estapa_d: action.payload
         })
       });
 
     case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_PROTOTYPE_FECHA_ESTADO_E"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        prototype: _objectSpread(_objectSpread({}, state.prototype), {}, {
           fecha_estapa_e: action.payload
         })
       });
 
     case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_PROTOTYPE_CANTIDAD"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        prototype: _objectSpread(_objectSpread({}, state.prototype), {}, {
           cantidad: action.payload
         })
       });
@@ -106181,7 +106305,7 @@ var INITIAL_STATE = {
         loading: false,
         error: '',
         error_form: '',
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        prototype: _objectSpread(_objectSpread({}, state.form), {}, {
           id: '',
           name: '',
           genetica_id: '',
@@ -106194,6 +106318,135 @@ var INITIAL_STATE = {
           fecha_estapa_e: '',
           cantidad: ''
         }),
+        recargar_table: true,
+        state_form: 'crear'
+      });
+
+    default:
+      return state;
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/reducers/sensorsReducer.js":
+/*!*************************************************!*\
+  !*** ./resources/js/reducers/sensorsReducer.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _types_sensorTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../types/sensorTypes */ "./resources/js/types/sensorTypes.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+var INITIAL_STATE = {
+  sensors: [],
+  sensor: [],
+  sensors_ambiente: [],
+  loading: false,
+  error: '',
+  error_form: '',
+  recargar_table: false,
+  state_form: 'crear' //MODO GUARDAR 
+
+};
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : INITIAL_STATE;
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case _types_sensorTypes__WEBPACK_IMPORTED_MODULE_0__["TRAER_TODOS"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        sensors: action.payload,
+        loading: false,
+        recargar_table: false,
+        error: ''
+      });
+
+    case _types_sensorTypes__WEBPACK_IMPORTED_MODULE_0__["TRAER_TODOS_POR_AMBIENTE"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        sensors_ambiente: action.payload,
+        loading: false,
+        recargar_table: false,
+        error: ''
+      });
+
+    case _types_sensorTypes__WEBPACK_IMPORTED_MODULE_0__["TRAER_UNO"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        sensor: action.payload,
+        loading: false,
+        error: ''
+      });
+
+    case _types_sensorTypes__WEBPACK_IMPORTED_MODULE_0__["LOADING"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        loading: true
+      });
+
+    case _types_sensorTypes__WEBPACK_IMPORTED_MODULE_0__["ERROR"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        error: action.payload,
+        loading: false
+      });
+
+    case _types_sensorTypes__WEBPACK_IMPORTED_MODULE_0__["ERROR_FORM"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        error_form: action.payload,
+        loading: false
+      });
+
+    case _types_sensorTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_SENSOR_ID"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        sensor: _objectSpread(_objectSpread({}, state.sensor), {}, {
+          id: action.payload
+        })
+      });
+
+    case _types_sensorTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_SENSOR_NAME"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        sensor: _objectSpread(_objectSpread({}, state.sensor), {}, {
+          name: action.payload
+        })
+      });
+
+    case _types_sensorTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_SENSOR_AMBIENTE_ID"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        sensor: _objectSpread(_objectSpread({}, state.sensor), {}, {
+          ambiente_id: action.payload
+        })
+      });
+
+    case _types_sensorTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_SENSOR_OUTPUT"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        sensor: _objectSpread(_objectSpread({}, state.sensor), {}, {
+          output: action.payload
+        })
+      });
+
+    case _types_sensorTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_ESTADO_FORM"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        error_form: '',
+        state_form: action.payload
+      });
+
+    case _types_sensorTypes__WEBPACK_IMPORTED_MODULE_0__["GUARDAR"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        sensor: {
+          id: '',
+          name: '',
+          ambiente_id: '',
+          output: ''
+        },
+        loading: false,
+        error: '',
+        error_form: '',
         recargar_table: true,
         state_form: 'crear'
       });
@@ -106225,12 +106478,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var INITIAL_STATE = {
   users: [],
   user: [],
-  form: {
-    id: '',
-    name: '',
-    email: '',
-    password: ''
-  },
   loading: false,
   error: '',
   error_form: '',
@@ -106277,41 +106524,40 @@ var INITIAL_STATE = {
 
     case _types_userTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_USUARIO_ID"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        user: _objectSpread(_objectSpread({}, state.user), {}, {
           id: action.payload
         })
       });
 
     case _types_userTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_USUARIO_NAME"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        user: _objectSpread(_objectSpread({}, state.user), {}, {
           name: action.payload
         })
       });
 
     case _types_userTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_USUARIO_EMAIL"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        user: _objectSpread(_objectSpread({}, state.user), {}, {
           email: action.payload
         })
       });
 
     case _types_userTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_USUARIO_PASSWORD"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: _objectSpread(_objectSpread({}, state.form), {}, {
+        user: _objectSpread(_objectSpread({}, state.user), {}, {
           password: action.payload
         })
       });
 
     case _types_userTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_ESTADO_FORM"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        error_form: '',
         state_form: action.payload
       });
 
     case _types_userTypes__WEBPACK_IMPORTED_MODULE_0__["GUARDAR"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        form: {
+        user: {
           id: '',
           name: '',
           email: '',
@@ -106335,7 +106581,7 @@ var INITIAL_STATE = {
 /*!*********************************************!*\
   !*** ./resources/js/types/ambienteTypes.js ***!
   \*********************************************/
-/*! exports provided: TRAER_TODOS, TRAER_UNO, LOADING, ERROR, ERROR_FORM, CAMBIO_AMBIENTE_ID, CAMBIO_AMBIENTE_CODIGO, CAMBIO_AMBIENTE_NAME, CAMBIO_AMBIENTE_INPUTS, CAMBIO_ESTADO_FORM, GUARDAR */
+/*! exports provided: TRAER_TODOS, TRAER_UNO, LOADING, ERROR, ERROR_FORM, CAMBIO_ESTADO_FORM, CAMBIO_AMBIENTE_ID, CAMBIO_AMBIENTE_CODIGO, CAMBIO_AMBIENTE_NAME, CAMBIO_AMBIENTE_INPUTS, GUARDAR */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -106345,22 +106591,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOADING", function() { return LOADING; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ERROR", function() { return ERROR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ERROR_FORM", function() { return ERROR_FORM; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_ESTADO_FORM", function() { return CAMBIO_ESTADO_FORM; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_AMBIENTE_ID", function() { return CAMBIO_AMBIENTE_ID; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_AMBIENTE_CODIGO", function() { return CAMBIO_AMBIENTE_CODIGO; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_AMBIENTE_NAME", function() { return CAMBIO_AMBIENTE_NAME; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_AMBIENTE_INPUTS", function() { return CAMBIO_AMBIENTE_INPUTS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_ESTADO_FORM", function() { return CAMBIO_ESTADO_FORM; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GUARDAR", function() { return GUARDAR; });
 var TRAER_TODOS = 'ambientes_traer_todos';
 var TRAER_UNO = 'ambientes_traer_uno';
 var LOADING = 'ambientes_cargando';
 var ERROR = 'ambientes_error';
 var ERROR_FORM = 'ambientes_error_form';
+var CAMBIO_ESTADO_FORM = 'ambientes_cambio_estado_form';
 var CAMBIO_AMBIENTE_ID = 'ambientes_cambio_ambiente_id';
 var CAMBIO_AMBIENTE_CODIGO = 'ambientes_cambio_ambiente_codigo';
 var CAMBIO_AMBIENTE_NAME = 'ambientes_cambio_ambiente_name';
 var CAMBIO_AMBIENTE_INPUTS = 'ambientes_cambio_ambiente_inputs';
-var CAMBIO_ESTADO_FORM = 'ambientes_cambio_estado_form';
 var GUARDAR = 'ambientes_guardar_ambiente';
 
 /***/ }),
@@ -106413,7 +106659,7 @@ var GUARDAR = 'geneticas_guardar_genetica';
 /*!******************************************!*\
   !*** ./resources/js/types/marcaTypes.js ***!
   \******************************************/
-/*! exports provided: TRAER_TODOS, TRAER_UNO, LOADING, ERROR, ERROR_FORM, CAMBIO_MARCA_NAME, CAMBIO_MARCA_ID, CAMBIO_ESTADO_FORM, GUARDAR */
+/*! exports provided: TRAER_TODOS, TRAER_UNO, LOADING, ERROR, ERROR_FORM, CAMBIO_ESTADO_FORM, CAMBIO_MARCA_ID, CAMBIO_MARCA_NAME, GUARDAR */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -106423,18 +106669,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOADING", function() { return LOADING; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ERROR", function() { return ERROR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ERROR_FORM", function() { return ERROR_FORM; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_MARCA_NAME", function() { return CAMBIO_MARCA_NAME; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_MARCA_ID", function() { return CAMBIO_MARCA_ID; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_ESTADO_FORM", function() { return CAMBIO_ESTADO_FORM; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_MARCA_ID", function() { return CAMBIO_MARCA_ID; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_MARCA_NAME", function() { return CAMBIO_MARCA_NAME; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GUARDAR", function() { return GUARDAR; });
 var TRAER_TODOS = 'marcas_traer_todos';
 var TRAER_UNO = 'marcas_traer_uno';
 var LOADING = 'marcas_cargando';
 var ERROR = 'marcas_error';
 var ERROR_FORM = 'marcas_error_form';
-var CAMBIO_MARCA_NAME = 'marcas_cambio_marca_name';
-var CAMBIO_MARCA_ID = 'marcas_cambio_marca_id';
 var CAMBIO_ESTADO_FORM = 'marcas_cambio_estado_form';
+var CAMBIO_MARCA_ID = 'marcas_cambio_marca_id';
+var CAMBIO_MARCA_NAME = 'marcas_cambio_marca_name';
 var GUARDAR = 'marcas_guardar_marca';
 
 /***/ }),
@@ -106487,11 +106733,11 @@ var GUARDAR = 'prototypes_guardar_prototype';
 
 /***/ }),
 
-/***/ "./resources/js/types/userTypes.js":
-/*!*****************************************!*\
-  !*** ./resources/js/types/userTypes.js ***!
-  \*****************************************/
-/*! exports provided: TRAER_TODOS, TRAER_UNO, LOADING, ERROR, ERROR_FORM, CAMBIO_USUARIO_NAME, CAMBIO_USUARIO_ID, CAMBIO_USUARIO_EMAIL, CAMBIO_USUARIO_PASSWORD, CAMBIO_ESTADO_FORM, GUARDAR */
+/***/ "./resources/js/types/sensorTypes.js":
+/*!*******************************************!*\
+  !*** ./resources/js/types/sensorTypes.js ***!
+  \*******************************************/
+/*! exports provided: TRAER_TODOS, TRAER_UNO, LOADING, ERROR, ERROR_FORM, CAMBIO_ESTADO_FORM, CAMBIO_SENSOR_ID, CAMBIO_SENSOR_NAME, CAMBIO_SENSOR_AMBIENTE_ID, CAMBIO_SENSOR_OUTPUT, TRAER_TODOS_POR_AMBIENTE, GUARDAR */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -106501,22 +106747,58 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOADING", function() { return LOADING; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ERROR", function() { return ERROR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ERROR_FORM", function() { return ERROR_FORM; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_USUARIO_NAME", function() { return CAMBIO_USUARIO_NAME; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_ESTADO_FORM", function() { return CAMBIO_ESTADO_FORM; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_SENSOR_ID", function() { return CAMBIO_SENSOR_ID; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_SENSOR_NAME", function() { return CAMBIO_SENSOR_NAME; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_SENSOR_AMBIENTE_ID", function() { return CAMBIO_SENSOR_AMBIENTE_ID; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_SENSOR_OUTPUT", function() { return CAMBIO_SENSOR_OUTPUT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TRAER_TODOS_POR_AMBIENTE", function() { return TRAER_TODOS_POR_AMBIENTE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GUARDAR", function() { return GUARDAR; });
+var TRAER_TODOS = 'sensors_traer_todos';
+var TRAER_UNO = 'sensors_traer_uno';
+var LOADING = 'sensors_cargando';
+var ERROR = 'sensors_error';
+var ERROR_FORM = 'sensors_error_form';
+var CAMBIO_ESTADO_FORM = 'sensors_cambio_estado_form';
+var CAMBIO_SENSOR_ID = 'sensors_cambio_sensor_id';
+var CAMBIO_SENSOR_NAME = 'sensors_cambio_sensor_name';
+var CAMBIO_SENSOR_AMBIENTE_ID = 'sensors_cambio_sensor_ambiente_id';
+var CAMBIO_SENSOR_OUTPUT = 'sensors_cambio_sensor_output';
+var TRAER_TODOS_POR_AMBIENTE = 'sensors_traer_sensors_por_ambiente';
+var GUARDAR = 'sensors_guardar_sensor';
+
+/***/ }),
+
+/***/ "./resources/js/types/userTypes.js":
+/*!*****************************************!*\
+  !*** ./resources/js/types/userTypes.js ***!
+  \*****************************************/
+/*! exports provided: TRAER_TODOS, TRAER_UNO, LOADING, ERROR, ERROR_FORM, CAMBIO_ESTADO_FORM, CAMBIO_USUARIO_ID, CAMBIO_USUARIO_NAME, CAMBIO_USUARIO_EMAIL, CAMBIO_USUARIO_PASSWORD, GUARDAR */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TRAER_TODOS", function() { return TRAER_TODOS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TRAER_UNO", function() { return TRAER_UNO; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOADING", function() { return LOADING; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ERROR", function() { return ERROR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ERROR_FORM", function() { return ERROR_FORM; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_ESTADO_FORM", function() { return CAMBIO_ESTADO_FORM; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_USUARIO_ID", function() { return CAMBIO_USUARIO_ID; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_USUARIO_NAME", function() { return CAMBIO_USUARIO_NAME; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_USUARIO_EMAIL", function() { return CAMBIO_USUARIO_EMAIL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_USUARIO_PASSWORD", function() { return CAMBIO_USUARIO_PASSWORD; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_ESTADO_FORM", function() { return CAMBIO_ESTADO_FORM; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GUARDAR", function() { return GUARDAR; });
 var TRAER_TODOS = 'users_traer_todos';
 var TRAER_UNO = 'users_traer_uno';
 var LOADING = 'users_cargando';
 var ERROR = 'users_error';
 var ERROR_FORM = 'users_error_form';
-var CAMBIO_USUARIO_NAME = 'users_cambio_user_name';
+var CAMBIO_ESTADO_FORM = 'users_cambio_estado_form';
 var CAMBIO_USUARIO_ID = 'users_cambio_user_id';
+var CAMBIO_USUARIO_NAME = 'users_cambio_user_name';
 var CAMBIO_USUARIO_EMAIL = 'users_cambio_user_email';
 var CAMBIO_USUARIO_PASSWORD = 'users_cambio_user_password';
-var CAMBIO_ESTADO_FORM = 'users_cambio_estado_form';
 var GUARDAR = 'users_guardar_user';
 
 /***/ }),

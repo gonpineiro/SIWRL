@@ -4,11 +4,13 @@ import {
     TRAER_UNO,
     LOADING,
     ERROR_FORM,
+
     CAMBIO_USUARIO_ID,
     CAMBIO_USUARIO_NAME,
     CAMBIO_USUARIO_EMAIL,
     CAMBIO_USUARIO_PASSWORD,
     CAMBIO_ESTADO_FORM,
+
     GUARDAR
 } from '../types/userTypes'
 
@@ -34,30 +36,15 @@ export const traerTodos = () => async (dispatch) => {
 }
 
 export const traerUno = (id) => async (dispatch) => {
+
     dispatch({
         type: LOADING
     })
 
     dispatch({
-        type: CAMBIO_USUARIO_NAME,
-        payload: ''
-    })
-
-    dispatch({
-        type: CAMBIO_USUARIO_EMAIL,
-        payload: ''
-    })
-
-    dispatch({
-        type: CAMBIO_USUARIO_PASSWORD,
-        payload: ''
-    })
-
-    dispatch({
         type: CAMBIO_ESTADO_FORM,
         payload: 'editar'
-    })
-
+    })    
 
     try {
         const response = await axios.get(URL + 'user/' + id)
@@ -65,21 +52,6 @@ export const traerUno = (id) => async (dispatch) => {
         dispatch({
             type: TRAER_UNO,
             payload: response.data
-        })
-
-        dispatch({
-            type: CAMBIO_USUARIO_ID,
-            payload: response.data.id
-        })
-
-        dispatch({
-            type: CAMBIO_USUARIO_NAME,
-            payload: response.data.name
-        })
-
-        dispatch({
-            type: CAMBIO_USUARIO_EMAIL,
-            payload: response.data.email
         })
 
     } catch (error) {
@@ -133,6 +105,7 @@ export const agregar = (nuevo_usuario) => async (dispatch) => {
 };
 
 export const editar = (nuevo_usuario, id) => async (dispatch) => {
+
     dispatch({
         type: LOADING
     })
@@ -170,21 +143,6 @@ export const traerUnoBorrar = (id) => async (dispatch) => {
         dispatch({
             type: TRAER_UNO,
             payload: response.data
-        })
-
-        dispatch({
-            type: CAMBIO_USUARIO_ID,
-            payload: response.data.id
-        })
-
-        dispatch({
-            type: CAMBIO_USUARIO_NAME,
-            payload: response.data.name
-        })
-
-        dispatch({
-            type: CAMBIO_USUARIO_EMAIL,
-            payload: response.data.email
         })
 
     } catch (error) {

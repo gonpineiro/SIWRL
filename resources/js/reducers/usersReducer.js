@@ -5,7 +5,7 @@ import {
   ERROR,
   ERROR_FORM,
   CAMBIO_ESTADO_FORM,
-  
+
   CAMBIO_USUARIO_ID,
   CAMBIO_USUARIO_NAME,
   CAMBIO_USUARIO_EMAIL,
@@ -17,12 +17,6 @@ import {
 const INITIAL_STATE = {
   users: [],
   user: [],
-  form: {
-    id: '',
-    name: '',
-    email: '',
-    password: ''
-  },
   loading: false,
   error: '',
   error_form: '',
@@ -57,50 +51,49 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_USUARIO_ID:
       return {
         ...state,
-        form: {
-          ...state.form,
-          id: action.payload 
+        user: {
+          ...state.user,
+          id: action.payload
         }
       };
 
     case CAMBIO_USUARIO_NAME:
       return {
         ...state,
-        form: {
-          ...state.form,
-          name: action.payload 
+        user: {
+          ...state.user,
+          name: action.payload
         }
       };
 
     case CAMBIO_USUARIO_EMAIL:
       return {
         ...state,
-        form: {
-          ...state.form,
-          email: action.payload 
+        user: {
+          ...state.user,
+          email: action.payload
         }
       };
 
     case CAMBIO_USUARIO_PASSWORD:
       return {
         ...state,
-        form: {
-          ...state.form,
-          password: action.payload 
+        user: {
+          ...state.user,
+          password: action.payload
         }
       };
 
     case CAMBIO_ESTADO_FORM:
       return {
         ...state,
-        error_form: '',
         state_form: action.payload
       };
 
     case GUARDAR:
       return {
         ...state,
-        form: {
+        user: {
           id: '',
           name: '',
           email: '',

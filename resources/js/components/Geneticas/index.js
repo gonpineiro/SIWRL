@@ -10,7 +10,7 @@ import * as geneticasActions from '../../actions/geneticasActions'
 
 class Geneticas extends Component {
 
-	componentDidMount() {
+	async componentDidMount() {
 		const { traerTodos, geneticas } = this.props
 
 		if (!geneticas.length) traerTodos()
@@ -37,7 +37,7 @@ class Geneticas extends Component {
 	ponerFormulario = () => <Formulario />
 
 	render() {
-		const { loading, state_form, genetica, history: { goBack } } = this.props
+		const { loading, state_form, genetica, history: { goBack } } = this.props	
 		console.log(this.props)
 		return (
 			<div className="container col-md-9">

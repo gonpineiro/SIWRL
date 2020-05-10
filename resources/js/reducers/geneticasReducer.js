@@ -22,17 +22,6 @@ import {
 const INITIAL_STATE = {
   geneticas: [],
   genetica: [],
-  form: {
-    id: '',
-    name: '',
-    marca_id: '',
-    thc: 21,
-    cbd: 0,
-    prod_int: '',
-    prod_ext: '',
-    tiempo_flora: '',
-    sabores: ''
-  },
   loading: false,
   error: '',
   error_form: '',
@@ -50,7 +39,7 @@ export default (state = INITIAL_STATE, action) => {
         recargar_table: false,
         error: ''
       }
-    case TRAER_UNO:      
+    case TRAER_UNO:
       return {
         ...state,
         genetica: action.payload,
@@ -67,8 +56,8 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_GENETICA_ID:
       return {
         ...state,
-        form: {
-          ...state.form,
+        genetica: {
+          ...state.genetica,
           id: action.payload
         }
       };
@@ -76,8 +65,8 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_GENETICA_NAME:
       return {
         ...state,
-        form: {
-          ...state.form,
+        genetica: {
+          ...state.genetica,
           name: action.payload
         }
       };
@@ -85,8 +74,8 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_GENETICA_MARCA_ID:
       return {
         ...state,
-        form: {
-          ...state.form,
+        genetica: {
+          ...state.genetica,
           marca_id: action.payload
         }
       };
@@ -94,8 +83,8 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_GENETICA_THC:
       return {
         ...state,
-        form: {
-          ...state.form,
+        genetica: {
+          ...state.genetica,
           thc: action.payload
         }
       };
@@ -103,8 +92,8 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_GENETICA_CBD:
       return {
         ...state,
-        form: {
-          ...state.form,
+        genetica: {
+          ...state.genetica,
           cbd: action.payload
         }
       };
@@ -112,8 +101,8 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_GENETICA_PROD_INT:
       return {
         ...state,
-        form: {
-          ...state.form,
+        genetica: {
+          ...state.genetica,
           prod_int: action.payload
         }
       };
@@ -121,8 +110,8 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_GENETICA_PROD_EXT:
       return {
         ...state,
-        form: {
-          ...state.form,
+        genetica: {
+          ...state.genetica,
           prod_ext: action.payload
         }
       };
@@ -130,8 +119,8 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_GENETICA_TIEMPO_FLORA:
       return {
         ...state,
-        form: {
-          ...state.form,
+        genetica: {
+          ...state.genetica,
           tiempo_flora: action.payload
         }
       };
@@ -139,8 +128,8 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_GENETICA_SABORES:
       return {
         ...state,
-        form: {
-          ...state.form,
+        genetica: {
+          ...state.genetica,
           sabores: action.payload
         }
       };
@@ -148,7 +137,6 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_ESTADO_FORM:
       return {
         ...state,
-        error_form: '',
         state_form: action.payload
       };
 
@@ -158,8 +146,7 @@ export default (state = INITIAL_STATE, action) => {
         loading: false,
         error: '',
         error_form: '',
-        form: {
-          ...state.form,
+        genetica: {
           id: '',
           name: '',
           marca_id: '',

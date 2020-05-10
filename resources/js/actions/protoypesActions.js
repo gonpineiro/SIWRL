@@ -49,61 +49,6 @@ export const traerUno = (id) => async (dispatch) => {
     })
 
     dispatch({
-        type: CAMBIO_PROTOTYPE_ID,
-        payload: ''
-    })
-
-    dispatch({
-        type: CAMBIO_PROTOTYPE_NAME,
-        payload: ''
-    })
-
-    dispatch({
-        type: CAMBIO_PROTOTYPE_GENETICA_ID,
-        payload: ''
-    })
-
-    dispatch({
-        type: CAMBIO_PROTOTYPE_AMBIENTE_ID,
-        payload: ''
-    })
-
-    dispatch({
-        type: CAMBIO_PROTOTYPE_SENSOR_ID,
-        payload: ''
-    })
-
-    dispatch({
-        type: CAMBIO_PROTOTYPE_FECHA_ESTADO_A,
-        payload: ''
-    })
-
-    dispatch({
-        type: CAMBIO_PROTOTYPE_FECHA_ESTADO_B,
-        payload: ''
-    })
-
-    dispatch({
-        type: CAMBIO_PROTOTYPE_FECHA_ESTADO_C,
-        payload: ''
-    })
-
-    dispatch({
-        type: CAMBIO_PROTOTYPE_FECHA_ESTADO_D,
-        payload: ''
-    })
-
-    dispatch({
-        type: CAMBIO_PROTOTYPE_FECHA_ESTADO_E,
-        payload: ''
-    })
-
-    dispatch({
-        type: CAMBIO_PROTOTYPE_CANTIDAD,
-        payload: ''
-    })
-
-    dispatch({
         type: CAMBIO_ESTADO_FORM,
         payload: 'editar'
     })
@@ -116,56 +61,6 @@ export const traerUno = (id) => async (dispatch) => {
         dispatch({
             type: TRAER_UNO,
             payload: prototype
-        })
-
-        dispatch({
-            type: CAMBIO_PROTOTYPE_ID,
-            payload: prototype.id
-        })
-
-        dispatch({
-            type: CAMBIO_PROTOTYPE_NAME,
-            payload: prototype.name
-        })
-
-        dispatch({
-            type: CAMBIO_PROTOTYPE_GENETICA_ID,
-            payload: prototype.genetica_id
-        })
-
-        dispatch({
-            type: CAMBIO_PROTOTYPE_AMBIENTE_ID,
-            payload: prototype.ambiente_id
-        })
-
-        dispatch({
-            type: CAMBIO_PROTOTYPE_SENSOR_ID,
-            payload: prototype.sensor_id
-        })
-
-        dispatch({
-            type: CAMBIO_PROTOTYPE_FECHA_ESTADO_A,
-            payload: prototype.fecha_etapa_a
-        })
-
-        dispatch({
-            type: CAMBIO_PROTOTYPE_FECHA_ESTADO_B,
-            payload: prototype.fecha_etapa_b
-        })
-
-        dispatch({
-            type: CAMBIO_PROTOTYPE_FECHA_ESTADO_C,
-            payload: prototype.fecha_etapa_c
-        })
-
-        dispatch({
-            type: CAMBIO_PROTOTYPE_FECHA_ESTADO_D,
-            payload: prototype.fecha_etapa_d
-        })
-
-        dispatch({
-            type: CAMBIO_PROTOTYPE_FECHA_ESTADO_E,
-            payload: prototype.fecha_etapa_e
         })
 
     } catch (error) {
