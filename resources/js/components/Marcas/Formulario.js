@@ -2,16 +2,15 @@ import React from 'react';
 import { connect } from 'react-redux'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import { makeStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
+import { makeStyles } from '@material-ui/core/styles';
 
 import * as marcasActions from '../../actions/marcasActions'
 
 const { agregar, editar, cambioMarcaName, cancelar, traerTodos } = marcasActions;
 
 const Formulario = (props) => {
-
-   console.log(props)
+   
    const {
       marcasReducer: {
          form: { id, name },

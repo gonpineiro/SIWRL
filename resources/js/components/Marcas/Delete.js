@@ -2,33 +2,46 @@ import React from 'react';
 import { connect } from 'react-redux'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import FormControl from '@material-ui/core/FormControl';
+import { makeStyles } from '@material-ui/core/styles';
 
 import * as marcasActions from '../../actions/marcasActions'
 
 const Delete = (props) => {
     const { marca, borrar, cancelar, error_form } = props
 
+    const useStyles = makeStyles((theme) => ({
+
+        formControl: {
+            margin: theme.spacing(0),
+            marginBottom: 35,
+            width: "100%",
+        },
+    }));
+
+    const classes = useStyles();
+
     return (
-        <div>
+        <FormControl >
             <div className="form-row">
 
-                <div className="form-group col-md-12">
+                <FormControl className={classes.formControl}>
                     <TextField
                         label="ID"
                         value={marca.id}
                         className="form-control"
                         disabled={true}
                     />
-                </div>
+                </FormControl>
 
-                <div className="form-group col-md-12">
+                <FormControl className={classes.formControl}>
                     <TextField
                         label="Nombre"
                         value={marca.name}
                         className="form-control"
                         disabled={true}
-                    />                    
-                </div>
+                    />
+                </FormControl>
 
                 <div className="form-row margin-button">
                     <div className="form-group col-md-6">
@@ -52,11 +65,11 @@ const Delete = (props) => {
                     </div >
 
                 </div>
-                
+
                 {error_form && <small className="text-danger">Existe un registro vinculado.</small>}
-                
+
             </div>
-        </div>
+        </FormControl>
     );
 }
 

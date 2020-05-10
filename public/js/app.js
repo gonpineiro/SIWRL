@@ -100754,33 +100754,32 @@ var editar = function editar(nuevo_ambiente, id) {
               dispatch({
                 type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
               });
-              console.log(nuevo_ambiente);
-              _context4.prev = 2;
-              _context4.next = 5;
+              _context4.prev = 1;
+              _context4.next = 4;
               return axios__WEBPACK_IMPORTED_MODULE_1___default.a.put(URL + 'ambiente/' + id, nuevo_ambiente);
 
-            case 5:
+            case 4:
               dispatch({
                 type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["GUARDAR"]
               });
-              _context4.next = 12;
+              _context4.next = 11;
               break;
 
-            case 8:
-              _context4.prev = 8;
-              _context4.t0 = _context4["catch"](2);
+            case 7:
+              _context4.prev = 7;
+              _context4.t0 = _context4["catch"](1);
               errors = _context4.t0.response.data.errors;
               dispatch({
                 type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["ERROR_FORM"],
                 payload: errors
               });
 
-            case 12:
+            case 11:
             case "end":
               return _context4.stop();
           }
         }
-      }, _callee4, null, [[2, 8]]);
+      }, _callee4, null, [[1, 7]]);
     }));
 
     return function (_x4) {
@@ -100791,7 +100790,7 @@ var editar = function editar(nuevo_ambiente, id) {
 var traerUnoBorrar = function traerUnoBorrar(id) {
   return /*#__PURE__*/function () {
     var _ref5 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5(dispatch) {
-      var response;
+      var response, ambiente;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
         while (1) {
           switch (_context5.prev = _context5.next) {
@@ -100805,44 +100804,29 @@ var traerUnoBorrar = function traerUnoBorrar(id) {
               });
               _context5.prev = 2;
               _context5.next = 5;
-              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL + 'marca/' + id);
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL + 'ambiente/' + id);
 
             case 5:
               response = _context5.sent;
+              ambiente = response.data[0];
               dispatch({
                 type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_UNO"],
-                payload: response.data
+                payload: ambiente
               });
-              dispatch({
-                type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_AMBIENTE_ID"],
-                payload: response.data.id
-              });
-              dispatch({
-                type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_AMBIENTE_NAME"],
-                payload: response.data.name
-              });
-              dispatch({
-                type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_AMBIENTE_CODIGO"],
-                payload: response.data.codigo
-              });
-              dispatch({
-                type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_AMBIENTE_INPUTS"],
-                payload: response.data.inputs
-              });
-              _context5.next = 16;
+              _context5.next = 13;
               break;
 
-            case 13:
-              _context5.prev = 13;
+            case 10:
+              _context5.prev = 10;
               _context5.t0 = _context5["catch"](2);
               console.log(_context5.t0);
 
-            case 16:
+            case 13:
             case "end":
               return _context5.stop();
           }
         }
-      }, _callee5, null, [[2, 13]]);
+      }, _callee5, null, [[2, 10]]);
     }));
 
     return function (_x5) {
@@ -100863,7 +100847,7 @@ var borrar = function borrar(id) {
               });
               _context6.prev = 1;
               _context6.next = 4;
-              return axios__WEBPACK_IMPORTED_MODULE_1___default.a["delete"](URL + 'marca/' + id);
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a["delete"](URL + 'ambiente/' + id);
 
             case 4:
               dispatch({
@@ -101326,7 +101310,7 @@ var borrar = function borrar(id) {
             case 7:
               _context6.prev = 7;
               _context6.t0 = _context6["catch"](1);
-              errors = _context6.t0.response.data.errors;
+              errors = _context6.t0.response.data.message;
               dispatch({
                 type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["ERROR_FORM"],
                 payload: errors
@@ -101607,28 +101591,20 @@ var traerUnoBorrar = function traerUnoBorrar(id) {
                 type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_UNO"],
                 payload: response.data
               });
-              dispatch({
-                type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_MARCA_ID"],
-                payload: response.data.id
-              });
-              dispatch({
-                type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_MARCA_NAME"],
-                payload: response.data.name
-              });
-              _context5.next = 14;
+              _context5.next = 12;
               break;
 
-            case 11:
-              _context5.prev = 11;
+            case 9:
+              _context5.prev = 9;
               _context5.t0 = _context5["catch"](2);
               console.log(_context5.t0);
 
-            case 14:
+            case 12:
             case "end":
               return _context5.stop();
           }
         }
-      }, _callee5, null, [[2, 11]]);
+      }, _callee5, null, [[2, 9]]);
     }));
 
     return function (_x5) {
@@ -102640,6 +102616,7 @@ var Delete = function Delete(props) {
       borrar = props.borrar,
       cancelar = props.cancelar,
       error_form = props.error_form;
+  console.log(props);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -103157,7 +103134,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/esm/TextField/index.js");
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
-/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
+/* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
+/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
+
+
 
 
 
@@ -103167,32 +103148,44 @@ __webpack_require__.r(__webpack_exports__);
 var Delete = function Delete(props) {
   var genetica = props.genetica[0],
       borrar = props.borrar,
-      cancelar = props.cancelar;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      cancelar = props.cancelar,
+      error_form = props.error_form;
+  console.log(props);
+  var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__["makeStyles"])(function (theme) {
+    return {
+      formControl: {
+        margin: theme.spacing(0),
+        marginBottom: 35,
+        width: "100%"
+      }
+    };
+  });
+  var classes = useStyles();
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-row"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-12"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
     label: "ID",
     value: genetica.id,
     className: "form-control",
     disabled: true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-12"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
     label: "Nombre",
     value: genetica.name,
     className: "form-control",
     disabled: true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-12"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
     label: "Nombre",
     value: genetica.marca.name,
     className: "form-control",
     disabled: true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-12"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -103209,15 +103202,15 @@ var Delete = function Delete(props) {
     value: genetica.cbd,
     className: "form-control",
     disabled: true
-  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-12"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
     label: "Sabores",
     value: genetica.sabores,
     className: "form-control",
     disabled: true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-12"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -103257,14 +103250,16 @@ var Delete = function Delete(props) {
     variant: "contained",
     color: "inherit",
     onClick: cancelar
-  }, "Cancelar")))));
+  }, "Cancelar"))), error_form && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+    className: "text-danger"
+  }, "Existe un registro vinculado.")));
 };
 
 var mapStateToProps = function mapStateToProps(reducers) {
   return reducers.geneticasReducer;
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_4__)(Delete));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_6__)(Delete));
 
 /***/ }),
 
@@ -104039,7 +104034,7 @@ function Layout(props) {
     className: "fa fa-folder-open fa-2x"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "nav-text"
-  }, "Documentos")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+  }, "Ambientes")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     className: "logout"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "/#"
@@ -104072,7 +104067,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/esm/TextField/index.js");
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
-/* harmony import */ var _actions_marcasActions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/marcasActions */ "./resources/js/actions/marcasActions.js");
+/* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
+/* harmony import */ var _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/marcasActions */ "./resources/js/actions/marcasActions.js");
+
+
 
 
 
@@ -104084,17 +104083,27 @@ var Delete = function Delete(props) {
       borrar = props.borrar,
       cancelar = props.cancelar,
       error_form = props.error_form;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__["makeStyles"])(function (theme) {
+    return {
+      formControl: {
+        margin: theme.spacing(0),
+        marginBottom: 35,
+        width: "100%"
+      }
+    };
+  });
+  var classes = useStyles();
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-row"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-12"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
     label: "ID",
     value: marca.id,
     className: "form-control",
     disabled: true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-12"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
     label: "Nombre",
     value: marca.name,
@@ -104125,7 +104134,7 @@ var mapStateToProps = function mapStateToProps(reducers) {
   return reducers.marcasReducer;
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_marcasActions__WEBPACK_IMPORTED_MODULE_4__)(Delete));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__)(Delete));
 
 /***/ }),
 
@@ -104143,8 +104152,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/esm/TextField/index.js");
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
-/* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
+/* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
 /* harmony import */ var _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/marcasActions */ "./resources/js/actions/marcasActions.js");
 
 
@@ -104160,7 +104169,6 @@ var agregar = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__["agregar"],
     traerTodos = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__["traerTodos"];
 
 var Formulario = function Formulario(props) {
-  console.log(props);
   var _props$marcasReducer = props.marcasReducer,
       _props$marcasReducer$ = _props$marcasReducer.form,
       id = _props$marcasReducer$.id,
@@ -104186,7 +104194,7 @@ var Formulario = function Formulario(props) {
     if (state_form === 'editar') editar(nueva_marca, id);
   };
 
-  var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__["makeStyles"])(function (theme) {
+  var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__["makeStyles"])(function (theme) {
     return {
       formControl: {
         margin: theme.spacing(0),
@@ -104196,9 +104204,9 @@ var Formulario = function Formulario(props) {
     };
   });
   var classes = useStyles();
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_5__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-row"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
     className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
     id: "standard-basic",
@@ -104484,7 +104492,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/esm/TextField/index.js");
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
-/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
+/* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
+/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
+
+
 
 
 
@@ -104496,20 +104508,44 @@ var Delete = function Delete(props) {
       borrar = props.borrar,
       cancelar = props.cancelar,
       error_form = props.error_form;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__["makeStyles"])(function (theme) {
+    return {
+      formControl: {
+        margin: theme.spacing(0),
+        marginBottom: 35,
+        width: "100%"
+      }
+    };
+  });
+  var classes = useStyles();
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-row"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-12"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
     label: "ID",
     value: prototype.id,
     className: "form-control",
     disabled: true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-12"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
     label: "Nombre",
     value: prototype.name,
+    className: "form-control",
+    disabled: true
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    className: classes.formControl
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    label: "Genetica",
+    value: prototype.genetica.name,
+    className: "form-control",
+    disabled: true
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    className: classes.formControl
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    label: "Ambiente",
+    value: prototype.ambiente.name,
     className: "form-control",
     disabled: true
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -104537,7 +104573,7 @@ var mapStateToProps = function mapStateToProps(reducers) {
   return reducers.prototypesReducer;
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_4__)(Delete));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_6__)(Delete));
 
 /***/ }),
 
@@ -104990,8 +105026,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/esm/TextField/index.js");
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
-/* harmony import */ var _actions_usersActions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/usersActions */ "./resources/js/actions/usersActions.js");
+/* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
+/* harmony import */ var _actions_usersActions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/usersActions */ "./resources/js/actions/usersActions.js");
+
 
 
 
@@ -105003,35 +105041,34 @@ var Delete = function Delete(props) {
   var user = props.user,
       borrar = props.borrar,
       cancelar = props.cancelar;
-  var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__["makeStyles"])(function (theme) {
+  var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__["makeStyles"])(function (theme) {
     return {
-      root: {
-        '& .MuiTextField-root': {
-          margin: theme.spacing(2),
-          width: "95%"
-        }
+      formControl: {
+        margin: theme.spacing(0),
+        marginBottom: 35,
+        width: "100%"
       }
     };
   });
   var classes = useStyles();
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-row"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-12"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
     label: "ID",
     value: user.id,
     className: "form-control",
     disabled: true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-12"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
     label: "Nombre",
     value: user.name,
     className: "form-control",
     disabled: true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-12"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
     label: "Email",
     value: user.email,
@@ -105060,7 +105097,7 @@ var mapStateToProps = function mapStateToProps(reducers) {
   return reducers.usersReducer;
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_usersActions__WEBPACK_IMPORTED_MODULE_5__)(Delete));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_usersActions__WEBPACK_IMPORTED_MODULE_6__)(Delete));
 
 /***/ }),
 
@@ -105593,7 +105630,7 @@ var INITIAL_STATE = {
 
     case _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_0__["TRAER_UNO"]:
       return _objectSpread(_objectSpread({}, state), {}, {
-        marca: action.payload,
+        ambiente: action.payload,
         loading: false,
         error: ''
       });

@@ -15,7 +15,7 @@ import {
 const URL = 'http://192.168.0.238:901/api/'
 
 export const traerTodos = () => async (dispatch) => {
-    
+
     dispatch({
         type: LOADING
     })
@@ -33,7 +33,7 @@ export const traerTodos = () => async (dispatch) => {
 }
 
 export const traerUno = (id) => async (dispatch) => {
-    
+
     dispatch({
         type: LOADING
     })
@@ -92,7 +92,7 @@ export const traerUno = (id) => async (dispatch) => {
             type: CAMBIO_AMBIENTE_INPUTS,
             payload: ambiente.inputs
         })
-        
+
 
     } catch (error) {
         console.log(error)
@@ -124,7 +124,7 @@ export const cambioAmbienteInputs = (valor) => (dispatch) => {
 };
 
 export const agregar = (nuevo_ambiente) => async (dispatch) => {
-    
+
     dispatch({
         type: LOADING
     });
@@ -134,11 +134,11 @@ export const agregar = (nuevo_ambiente) => async (dispatch) => {
         dispatch({
             type: GUARDAR
         });
-        
+
     }
     catch (error) {
-        const errors = error.response.data.errors   
-             
+        const errors = error.response.data.errors
+
         dispatch({
             type: ERROR_FORM,
             payload: errors
@@ -151,7 +151,7 @@ export const editar = (nuevo_ambiente, id) => async (dispatch) => {
     dispatch({
         type: LOADING
     })
-    console.log(nuevo_ambiente)
+    
     try {
         await axios.put(URL + 'ambiente/' + id, nuevo_ambiente)
         dispatch({
@@ -179,31 +179,12 @@ export const traerUnoBorrar = (id) => async (dispatch) => {
 
 
     try {
-        const response = await axios.get(URL + 'marca/' + id)
+        const response = await axios.get(URL + 'ambiente/' + id)
+        const { 0: ambiente } = response.data
 
         dispatch({
             type: TRAER_UNO,
-            payload: response.data
-        })
-
-        dispatch({
-            type: CAMBIO_AMBIENTE_ID,
-            payload: response.data.id
-        })
-
-        dispatch({
-            type: CAMBIO_AMBIENTE_NAME,
-            payload: response.data.name
-        })
-
-        dispatch({
-            type: CAMBIO_AMBIENTE_CODIGO,
-            payload: response.data.codigo
-        })
-
-        dispatch({
-            type: CAMBIO_AMBIENTE_INPUTS,
-            payload: response.data.inputs
+            payload: ambiente
         })
 
     } catch (error) {
@@ -216,8 +197,9 @@ export const borrar = (id) => async (dispatch) => {
     dispatch({
         type: LOADING
     })
+
     try {
-        await axios.delete(URL + 'marca/' + id)
+        await axios.delete(URL + 'ambiente/' + id)
 
         dispatch({
             type: GUARDAR
@@ -225,6 +207,7 @@ export const borrar = (id) => async (dispatch) => {
 
     } catch (error) {
         const errors = error.response.data.message
+
         dispatch({
             type: ERROR_FORM,
             payload: errors
@@ -237,4 +220,4 @@ export const cancelar = () => (dispatch) => {
         type: GUARDAR
     })
 }
- 
+

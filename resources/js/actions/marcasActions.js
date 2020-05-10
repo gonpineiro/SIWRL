@@ -140,16 +140,6 @@ export const traerUnoBorrar = (id) => async (dispatch) => {
             payload: response.data
         })
 
-        dispatch({
-            type: CAMBIO_MARCA_ID,
-            payload: response.data.id
-        })
-
-        dispatch({
-            type: CAMBIO_MARCA_NAME,
-            payload: response.data.name
-        })
-
     } catch (error) {
         console.log(error)
     }

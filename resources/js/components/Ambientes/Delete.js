@@ -7,7 +7,7 @@ import * as ambientesActions from '../../actions/ambientesActions'
 
 const Delete = (props) => {
     const { ambiente, borrar, cancelar, error_form } = props
-
+    console.log(props)
     return (
         <div>
             <div className="form-row">

@@ -43,7 +43,7 @@ export default (state = INITIAL_STATE, action) => {
     case TRAER_UNO:
       return {
         ...state,
-        marca: action.payload,
+        ambiente: action.payload,
         loading: false,
         error: ''
       }
