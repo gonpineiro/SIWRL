@@ -8,7 +8,6 @@ import Spinner from '../General/Spinner';
 
 import * as prototypesActions from '../../actions/protoypesActions'
 
-
 class Prototypes extends Component {
 
 	async componentDidMount() {

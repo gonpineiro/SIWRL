@@ -34,6 +34,10 @@ Route::group(['middleware' => 'auth'], function () {
       return view('home');
     })->name('geneticas');
 
+    Route::get('/ambientes', function(){
+      return view('home');
+    })->name('ambientes');
+
     Route::get('/prototipos', function(){
       return view('home');
     })->name('prototipos');

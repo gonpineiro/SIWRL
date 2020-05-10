@@ -6,21 +6,21 @@ import Formulario from './Formulario'
 import Delete from './Delete'
 import Spinner from '../General/Spinner';
 
-import * as marcasActions from '../../actions/marcasActions'
+import * as ambientesActions from '../../actions/ambientesActions'
 
-class Marcas extends Component {
+class Ambientes extends Component {
 
 	async componentDidMount() {
-		const { traerTodos, marcas } = this.props
-		if (!marcas.length) traerTodos()
+		const { traerTodos, ambientes } = this.props
+		if (!ambientes.length) traerTodos()
 	}
 
 	ponerContenido = () => {
-		const { traerTodos, recargar_table, loading, marcas, error } = this.props
+		const { traerTodos, recargar_table, loading, ambientes, error } = this.props
 
 		if (recargar_table) traerTodos()
 
-		if (loading && !marcas.length) return <Spinner />
+		if (loading && !ambientes.length) return <Spinner />
 
 		if (error) return 'Error'
 
@@ -29,13 +29,13 @@ class Marcas extends Component {
 	ponerFormulario = () => <Formulario  />
 
 	render() {
-		const { state_form, loading, marca, history: { goBack } } = this.props
+		const { state_form, loading, ambiente, history: { goBack } } = this.props
 		return (
 			<div className="container col-md-9">
 				<div className="row mt-2">
 					<div className="col col-md-8">
 						<div>
-							<h4>Lista de marcas</h4>
+							<h4>Lista de amientes</h4>
 							{this.ponerContenido()}
 						</div>
 					</div>
@@ -45,7 +45,7 @@ class Marcas extends Component {
 							{state_form === 'crear' ?
 								<div>
 									<div className="card-header card-agregar">
-										Agregar marca <KeyboardReturnIcon fontSize="small" onClick={ goBack }/>
+										Agregar ambiente <KeyboardReturnIcon fontSize="small" onClick={ goBack }/>
 									</div>
 									{loading ? <Spinner /> :
 										<div className="card-body">
@@ -56,7 +56,7 @@ class Marcas extends Component {
 							{state_form === 'editar' ?
 								<div>
 									<div className="card-header card-agregar">
-										Modificando usuario: {marca.id}
+										Modificando usuario: {ambiente.id}
 									</div>
 									{loading ? <Spinner /> :
 										<div className="card-body">
@@ -67,7 +67,7 @@ class Marcas extends Component {
 							{state_form === 'borrar' ?
 								<div>
 									<div className="card-header card-eliminar">
-										Eliminar la siguente marca
+										Eliminar el siguente ambiente
 									</div>
 									{loading ? <Spinner /> :
 										<div className="card-body">
@@ -85,7 +85,7 @@ class Marcas extends Component {
 }
 
 const mapStateToProps = (reducers) => {
-	return reducers.marcasReducer
+	return reducers.ambientesReducer
 }
 
-export default connect(mapStateToProps, marcasActions)(Marcas);
+export default connect(mapStateToProps, ambientesActions)(Ambientes);

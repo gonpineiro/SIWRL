@@ -39,10 +39,10 @@ function Layout(props) {
 
                     </li>
                     <li>
-                        <a href="#">
+                        <Link to="/ambientes">
                             <i className="fa fa-folder-open fa-2x"></i>
                             <span className="nav-text">Documentos</span>
-                        </a>
+                        </Link>
                     </li>
                 </ul>
 

@@ -1,22 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux'
 
-import * as marcasActions from '../../actions/marcasActions'
+import * as ambientesActions from '../../actions/ambientesActions'
 
 const Table = (props) => {
-  const { marcas, traerUno, traerUnoBorrar } = props
+  const { ambientes, traerUno, traerUnoBorrar } = props
 
-  const addRow = () => marcas.map((marca, key) => (
+  const addRow = () => ambientes.map((ambiente, key) => (
     <tr key={key}>
-      <td>{marca.id}</td>
-      <td>{marca.name}</td>
+      <td>{ambiente.id}</td>
+      <td>{ambiente.name}</td>
+      <td>{ambiente.codigo}</td>
+      <td>{ambiente.inputs}</td>
       <td>
         <i
           className="material-icons link"
-          onClick={() => traerUno(marca.id)}
+          onClick={() => traerUno(ambiente.id)}
         >edit</i>
         <i
-          onClick={() => traerUnoBorrar(marca.id)}
+          onClick={() => traerUnoBorrar(ambiente.id)}
           className="material-icons link"
         >delete</i>
       </td>
@@ -30,6 +32,8 @@ const Table = (props) => {
           <tr>
             <th>ID</th>
             <th>Nombre</th>
+            <th>Código</th>
+            <th>Sensores</th>
             <th>Accion</th>
           </tr>
         </thead>
@@ -42,7 +46,7 @@ const Table = (props) => {
 }
 
 const mapStateToProps = (reducers) => {
-  return reducers.marcasReducer
+  return reducers.ambientesReducer
 }
 
-export default connect(mapStateToProps, marcasActions)(Table);
+export default connect(mapStateToProps, ambientesActions)(Table);

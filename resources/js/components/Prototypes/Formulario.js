@@ -11,34 +11,45 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
 import * as protoypesActions from '../../actions/protoypesActions'
+
+
+import * as ambientesActions from '../../actions/ambientesActions'
 import * as geneticasActions from '../../actions/geneticasActions'
 
 const { traerTodos: geneticasTraerTodos } = geneticasActions;
+const { traerTodos: ambientesTraerTodos } = ambientesActions;
 
 const {
    cambioPrototypeName,
    cambioPrototypeGenetica,
    cambioPrototypeAmbiente,
    cambioPrototypeSensor,
+
    agregar,
    editar,
-   cancelar } = protoypesActions;
+   cancelar
+} = protoypesActions;
 
 const Formulario = (props) => {
    const {
       geneticasTraerTodos,
+      ambientesTraerTodos,
       geneticasReducer: { geneticas },
+      ambientesReducer: { ambientes },
       prototypesReducer: {
          form: { id, name, genetica_id, ambiente_id, sensor_id },
          state_form,
          error_form,
-         loading },
+         loading
+      },
       agregar,
       editar,
       cancelar
    } = props;
 
    if (!geneticas.length) geneticasTraerTodos()
+
+   if (!ambientes.length) ambientesTraerTodos()
 
    const handleCambioPrototypeName = (event) => props.cambioPrototypeName(event.target.value);
 
@@ -63,11 +74,6 @@ const Formulario = (props) => {
       if (state_form === 'editar') editar(nuevo_prototype, id)
 
    };
-
-   /*   const handleRetirarFormularioMarca = () => {
-        marcasTraerTodos()
-        retirarFormularioMarca()
-     } */
 
    const useStyles = makeStyles((theme) => ({
 
@@ -106,21 +112,47 @@ const Formulario = (props) => {
                   onChange={handleCambioPrototypeGenetica}
                   error={!error_form.genetica_id ? false : true}
                >
-                  <MenuItem value="">
-                     <Link to="/geneticas">
+                  <Link to="/geneticas">
+                     <MenuItem value="">
                         <em
                            className="link link-string"
                         >
                            Agregar
                         </em>
-                     </Link>
-                  </MenuItem>
+                     </MenuItem>
+                  </Link>
 
                   {geneticas.map((genetica) => (
                      <MenuItem key={genetica.id} value={genetica.id}>{genetica.name}</MenuItem>
                   ))}
                </Select>
                <FormHelperText error={!error_form.genetica_id ? false : true}>{error_form.genetica_id}</FormHelperText>
+            </FormControl>
+
+            <FormControl className={classes.formControl}>
+               <InputLabel id="demo-simple-select-helper-label" error={!error_form.ambiente_id ? false : true}>Ambientes</InputLabel>
+               <Select
+                  labelId="demo-simple-select-helper-label"
+                  id="demo-simple-select-helper"
+                  value={ambiente_id}
+                  onChange={handleCambioPrototypeAmbiente}
+                  error={!error_form.ambiente_id ? false : true}
+               >
+                  <Link to="/ambientes">
+                     <MenuItem value="">
+                        <em
+                           className="link link-string"
+                        >
+                           Agregar
+                        </em>
+                     </MenuItem>
+                  </Link>
+
+                  {ambientes.map((ambiente) => (
+                     <MenuItem key={ambiente.id} value={ambiente.id}>{ambiente.name}</MenuItem>
+                  ))}
+               </Select>
+               <FormHelperText error={!error_form.ambiente_id ? false : true}>{error_form.ambiente_id}</FormHelperText>
             </FormControl>
 
 
@@ -156,12 +188,13 @@ const Formulario = (props) => {
    );
 }
 
-const mapStateToProps = ({ prototypesReducer, geneticasReducer }) => {
-   return { prototypesReducer, geneticasReducer };
+const mapStateToProps = ({ prototypesReducer, geneticasReducer, ambientesReducer }) => {
+   return { prototypesReducer, geneticasReducer, ambientesReducer };
 };
 
 const mapDispatchToProps = {
    geneticasTraerTodos,
+   ambientesTraerTodos,
 
    cambioPrototypeName,
    cambioPrototypeGenetica,

@@ -3,10 +3,10 @@ import { connect } from 'react-redux'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-import * as marcasActions from '../../actions/marcasActions'
+import * as ambientesActions from '../../actions/ambientesActions'
 
 const Delete = (props) => {
-    const { marca, borrar, cancelar, error_form } = props
+    const { ambiente, borrar, cancelar, error_form } = props
 
     return (
         <div>
@@ -15,7 +15,7 @@ const Delete = (props) => {
                 <div className="form-group col-md-12">
                     <TextField
                         label="ID"
-                        value={marca.id}
+                        value={ambiente.id}
                         className="form-control"
                         disabled={true}
                     />
@@ -24,7 +24,7 @@ const Delete = (props) => {
                 <div className="form-group col-md-12">
                     <TextField
                         label="Nombre"
-                        value={marca.name}
+                        value={ambiente.name}
                         className="form-control"
                         disabled={true}
                     />                    
@@ -35,7 +35,7 @@ const Delete = (props) => {
                         <Button
                             variant="contained"
                             color="primary"
-                            onClick={() => borrar(marca.id)}
+                            onClick={() => borrar(ambiente.id)}
                         >
                             Eliminar
                          </Button>
@@ -61,7 +61,7 @@ const Delete = (props) => {
 }
 
 const mapStateToProps = (reducers) => {
-    return reducers.marcasReducer
+    return reducers.ambientesReducer
 }
 
-export default connect(mapStateToProps, marcasActions)(Delete);
+export default connect(mapStateToProps, ambientesActions)(Delete);

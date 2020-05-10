@@ -187,6 +187,7 @@ export const cambioPrototypeGenetica = (valor) => (dispatch) => {
 };
 
 export const cambioPrototypeAmbiente = (valor) => (dispatch) => {
+    
     dispatch({
         type: CAMBIO_PROTOTYPE_AMBIENTE_ID,
         payload: valor
@@ -265,7 +266,7 @@ export const editar = (nuevo_prototype, id) => async (dispatch) => {
     })
     
     try {
-        console.log(nuevo_prototype)
+
         await axios.put(URL + 'prototype/' + id, nuevo_prototype)
         dispatch({
             type: GUARDAR

@@ -46,6 +46,7 @@ class PrototypeController extends Controller
         $data = Prototype::create([
             'name' => $request->input('name'),
             'genetica_id' => $request->get('genetica_id'),
+            'ambiente_id' => $request->get('ambiente_id'),
         ]);    
     }
 

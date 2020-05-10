@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\AmbientesRequest;
 
 use App\Ambiente;
 
@@ -18,19 +19,23 @@ class AmbienteController extends Controller
         return response()->json($ambiente, 200);
     }
     
-    public function update($id, Request $request){
+    public function update($id, AmbientesRequest $request){
         $ambiente = Ambiente::where('id', $id)->firstOrFail();
         
         $ambiente->name = $request->get('name');
         $ambiente->codigo = $request->get('codigo');
+        $ambiente->inputs = $request->get('inputs');
         $ambiente->save();
+
         return response()->json($ambiente, 200);
     }
 
-    public function store(Request $request){        
+    public function store(AmbientesRequest $request){    
+
         $ambiente = Ambiente::create([
             'name' => $request->input('name'),
-            'codigo' => $request->input('codigo')
+            'codigo' => $request->input('codigo'),
+            'inputs' => $request->input('inputs')
         ]);    
     }
 

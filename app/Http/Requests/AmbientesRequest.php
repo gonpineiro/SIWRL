@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PrototypesRequest extends FormRequest
+class AmbientesRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,7 +25,8 @@ class PrototypesRequest extends FormRequest
     {
         return [
             'name' => 'required|min:3|max:15',
-            'genetica_id' => 'required'
+            'codigo' => 'required',
+            'inputs' => 'required'
         ];
     }
 
@@ -36,7 +37,9 @@ class PrototypesRequest extends FormRequest
             'name.min' => 'El minimo es 3 caracteres.',
             'name.max' => 'El maximo es 15 caracteres.',
 
-            'genetica_id.required' => 'Requerido.',
+            'codigo.required' => 'Requerido.',
+
+            'inputs.required' => 'Requerido.',
         ];
     }
 }

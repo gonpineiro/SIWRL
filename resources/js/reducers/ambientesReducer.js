@@ -6,18 +6,22 @@ import {
   ERROR_FORM,
   CAMBIO_ESTADO_FORM,
 
-  CAMBIO_MARCA_ID,
-  CAMBIO_MARCA_NAME,
-  
+  CAMBIO_AMBIENTE_ID,
+  CAMBIO_AMBIENTE_CODIGO,
+  CAMBIO_AMBIENTE_NAME,
+  CAMBIO_AMBIENTE_INPUTS,
+
   GUARDAR
-} from '../types/marcaTypes'
+} from '../types/ambienteTypes'
 
 const INITIAL_STATE = {
-  marcas: [],
-  marca: [],
+  ambientes: [],
+  ambiente: [],
   form: {
     id: '',
-    name: ''
+    codigo: '',
+    name: '',
+    inputs: '',
   },
   loading: false,
   error: '',
@@ -31,7 +35,7 @@ export default (state = INITIAL_STATE, action) => {
     case TRAER_TODOS:
       return {
         ...state,
-        marcas: action.payload,
+        ambientes: action.payload,
         loading: false,
         recargar_table: false,
         error: ''
@@ -50,21 +54,39 @@ export default (state = INITIAL_STATE, action) => {
     case ERROR_FORM:
       return { ...state, error_form: action.payload, loading: false }
 
-    case CAMBIO_MARCA_ID:
+    case CAMBIO_AMBIENTE_ID:
       return {
         ...state,
         form: {
           ...state.form,
-          id: action.payload 
+          id: action.payload
         }
       };
 
-    case CAMBIO_MARCA_NAME:
+    case CAMBIO_AMBIENTE_CODIGO:
       return {
         ...state,
         form: {
           ...state.form,
-          name: action.payload 
+          codigo: action.payload
+        }
+      };
+
+    case CAMBIO_AMBIENTE_NAME:
+      return {
+        ...state,
+        form: {
+          ...state.form,
+          name: action.payload
+        }
+      };
+
+    case CAMBIO_AMBIENTE_INPUTS:
+      return {
+        ...state,
+        form: {
+          ...state.form,
+          inputs: action.payload
         }
       };
 
@@ -80,7 +102,9 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         form: {
           id: '',
-          name: ''
+          name: '',
+          codigo: '',
+          inputs: '',
         },
         loading: false,
         error: '',

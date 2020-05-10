@@ -19,6 +19,6 @@ class Ambiente extends Model
     
 
     protected $fillable = [
-        'name', 'codigo', 'temp', 'hume', 'luz', 'etapa'
+        'name', 'codigo', 'temp', 'hume', 'luz', 'etapa', 'inputs'
     ];
 }

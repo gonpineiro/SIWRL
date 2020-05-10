@@ -3,10 +3,12 @@ import usersReducer from './usersReducer'
 import marcasReducer from './marcasReducer'
 import geneticasReducer from './geneticasReducer'
 import prototypesReducer from './prototypesReducer'
+import ambientesReducer from './ambientesReducer'
 
 export default combineReducers({
     usersReducer,
     marcasReducer,
     geneticasReducer,
-    prototypesReducer
+    prototypesReducer,
+    ambientesReducer
 })
