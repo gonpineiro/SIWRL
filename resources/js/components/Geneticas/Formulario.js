@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -13,9 +14,6 @@ import SliderThc from './General/SliderThc'
 import SliderCbd from './General/SliderCbd'
 
 import * as geneticasActions from '../../actions/geneticasActions'
-import * as marcasActions from '../../actions/marcasActions';
-
-const { traerTodos: marcasTraerTodos } = marcasActions;
 
 const {
    cambioGeneticaName,
@@ -25,7 +23,6 @@ const {
    cambioGeneticaTiempoFlora,
    cambioGeneticaSabores,
 
-   ponerFormularioMarca,
    cancelar,
    agregar,
    editar
@@ -33,7 +30,6 @@ const {
 
 const Formulario = (props) => {
    const {
-      marcasTraerTodos,
       marcasReducer: { marcas },
       geneticasReducer: {
          form: { name, marca_id, prod_int, prod_ext, tiempo_flora, sabores },
@@ -42,10 +38,6 @@ const Formulario = (props) => {
       },
       cancelar
    } = props
-
-   if (!marcas.length) marcasTraerTodos()
-
-   const ponerFormularioMarca = () => props.ponerFormularioMarca()
 
    const handleCambioGeneticaName = (event) => props.cambioGeneticaName(event.target.value)
 
@@ -134,7 +126,17 @@ const Formulario = (props) => {
                   onChange={handleCambioGeneticaMarca}
                   error={!error_form.marca_id ? false : true}
                >
-                  <MenuItem value=""><em className="link link-string" onClick={() => ponerFormularioMarca()}>Agregar</em></MenuItem>
+                  <MenuItem value="">
+                     <Link to="/marcas">
+                        <em
+                           className="link link-string"
+                           /* onClick={() => ponerFormularioMarca()} */
+                        >
+                           Agregar
+                        </em>
+                     </Link>
+                  </MenuItem>
+
                   {marcas.map((marca) => (
                      <MenuItem key={marca.id} value={marca.id}>{marca.name}</MenuItem>
                   ))}
@@ -234,11 +236,8 @@ const mapStateToProps = ({ geneticasReducer, marcasReducer }) => {
 };
 
 const mapDispatchToProps = {
-   marcasTraerTodos,
-
    cambioGeneticaName,
    cambioGeneticaMarca,
-   ponerFormularioMarca,
    cambioGeneticaProdInt,
    cambioGeneticaProdExt,
    cambioGeneticaTiempoFlora,

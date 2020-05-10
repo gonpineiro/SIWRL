@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
 import Table from './Table'
 import Formulario from './Formulario'
 import Delete from './Delete'
+import Spinner from '../General/Spinner';
 
 import * as marcasActions from '../../actions/marcasActions'
-import Spinner from '../General/Spinner';
 
 class Marcas extends Component {
 
 	async componentDidMount() {
 		const { traerTodos, marcas } = this.props
-
 		if (!marcas.length) traerTodos()
 	}
 
@@ -26,11 +26,10 @@ class Marcas extends Component {
 
 		return <Table />
 	}
-	ponerFormulario = () => <Formulario />
+	ponerFormulario = () => <Formulario  />
 
 	render() {
-		const { state_form, loading, marca } = this.props
-
+		const { state_form, loading, marca, history: { goBack } } = this.props
 		return (
 			<div className="container col-md-9">
 				<div className="row mt-2">
@@ -46,7 +45,7 @@ class Marcas extends Component {
 							{state_form === 'crear' ?
 								<div>
 									<div className="card-header card-agregar">
-										Agregar marca
+										Agregar marca <KeyboardReturnIcon fontSize="small" onClick={ goBack }/>
 									</div>
 									{loading ? <Spinner /> :
 										<div className="card-body">

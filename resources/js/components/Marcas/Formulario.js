@@ -6,27 +6,23 @@ import { makeStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
 
 import * as marcasActions from '../../actions/marcasActions'
-import * as geneticasActions from '../../actions/geneticasActions'
 
-const { retirarFormularioMarca } = geneticasActions;
-
-const { agregar, editar, cambioMarcaName, cancelar, traerTodos: marcasTraerTodos } = marcasActions;
+const { agregar, editar, cambioMarcaName, cancelar, traerTodos } = marcasActions;
 
 const Formulario = (props) => {
 
+   console.log(props)
    const {
       marcasReducer: {
          form: { id, name },
-         state_form: state_form_marcas,
+         state_form,
          error_form,
-         loading },
-      geneticasReducer: { state_form: state_form_geneticas },
+      },
       cambioMarcaName,
-      retirarFormularioMarca,
       agregar,
       editar,
       cancelar,
-      marcasTraerTodos,
+      traerTodos,
    } = props;
 
    const handleCambioMarcaName = (event) => cambioMarcaName(event.target.value);
@@ -38,16 +34,11 @@ const Formulario = (props) => {
          name: name
       };
 
-      if (state_form_marcas === 'crear') agregar(nueva_marca);
+      if (state_form === 'crear') agregar(nueva_marca);
 
-      if (state_form_marcas === 'editar') editar(nueva_marca, id)
+      if (state_form === 'editar') editar(nueva_marca, id)
 
    };
-
-   const handleRetirarFormularioMarca = () => {
-      marcasTraerTodos()
-      retirarFormularioMarca()
-   }
 
    const useStyles = makeStyles((theme) => ({
 
@@ -58,7 +49,7 @@ const Formulario = (props) => {
       },
    }));
 
-   const classes = useStyles();
+   const classes = useStyles();   
 
    return (
       <FormControl >
@@ -76,7 +67,7 @@ const Formulario = (props) => {
                   error={!error_form.name ? false : true}
                />
             </FormControl>
-            
+
 
             <div className="form-row margin-button">
 
@@ -91,7 +82,7 @@ const Formulario = (props) => {
                </div >
 
                <div className="form-group col-md-6">
-                  {state_form_marcas === 'editar'
+                  {state_form === 'editar'
                      ?
                      <Button
                         variant="contained"
@@ -99,17 +90,6 @@ const Formulario = (props) => {
                         onClick={cancelar}
                      >
                         Cancelar
-                     </Button> : ''}
-
-                  {state_form_geneticas === 'crear-marca'
-                     ?
-                     <Button
-                        variant="contained"
-                        color="inherit"
-                        onClick={handleRetirarFormularioMarca}
-                        hidden={loading ? true : false}
-                     >
-                        Volver
                      </Button> : ''}
                </div >
 
@@ -125,12 +105,13 @@ const mapStateToProps = ({ geneticasReducer, marcasReducer }) => {
 };
 
 const mapDispatchToProps = {
+   traerTodos,
+
+   cambioMarcaName,
+
    agregar,
    editar,
-   cancelar,
-   retirarFormularioMarca,
-   cambioMarcaName,
-   marcasTraerTodos
+   cancelar
 
 };
 

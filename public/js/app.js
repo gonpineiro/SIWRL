@@ -529,6 +529,35 @@ function _unsupportedIterableToArray(o, minLen) {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/extends.js":
+/*!********************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/extends.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _extends() {
+  module.exports = _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+module.exports = _extends;
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/inheritsLoose.js":
 /*!**************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/inheritsLoose.js ***!
@@ -543,6 +572,23 @@ function _inheritsLoose(subClass, superClass) {
 }
 
 module.exports = _inheritsLoose;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/interopRequireDefault.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+module.exports = _interopRequireDefault;
 
 /***/ }),
 
@@ -15750,6 +15796,75 @@ function useIsFocusVisible() {
     onBlurVisible: handleBlurVisible,
     ref: ref
   };
+}
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/icons/KeyboardReturn.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/@material-ui/icons/KeyboardReturn.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
+
+var _default = (0, _createSvgIcon.default)(_react.default.createElement("path", {
+  d: "M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.41L5.83 13H21V7z"
+}), 'KeyboardReturn');
+
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/icons/utils/createSvgIcon.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@material-ui/icons/utils/createSvgIcon.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = createSvgIcon;
+
+var _extends2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/extends.js"));
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _SvgIcon = _interopRequireDefault(__webpack_require__(/*! @material-ui/core/SvgIcon */ "./node_modules/@material-ui/core/esm/SvgIcon/index.js"));
+
+function createSvgIcon(path, displayName) {
+  var Component = _react.default.memo(_react.default.forwardRef(function (props, ref) {
+    return _react.default.createElement(_SvgIcon.default, (0, _extends2.default)({
+      ref: ref
+    }, props), path);
+  }));
+
+  if (true) {
+    Component.displayName = "".concat(displayName, "Icon");
+  }
+
+  Component.muiName = _SvgIcon.default.muiName;
+  return Component;
 }
 
 /***/ }),
@@ -100410,7 +100525,7 @@ module.exports = function(module) {
 /*!**************************************************!*\
   !*** ./resources/js/actions/geneticasActions.js ***!
   \**************************************************/
-/*! exports provided: traerTodos, traerUno, cambioGeneticaName, cambioGeneticaMarca, cambioGeneticaThc, cambioGeneticaCbd, cambioGeneticaProdInt, cambioGeneticaProdExt, cambioGeneticaTiempoFlora, cambioGeneticaSabores, agregar, editar, traerUnoBorrar, borrar, cancelar, ponerFormularioMarca, retirarFormularioMarca */
+/*! exports provided: traerTodos, traerUno, cambioGeneticaName, cambioGeneticaMarca, cambioGeneticaThc, cambioGeneticaCbd, cambioGeneticaProdInt, cambioGeneticaProdExt, cambioGeneticaTiempoFlora, cambioGeneticaSabores, agregar, editar, traerUnoBorrar, borrar, cancelar */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -100430,8 +100545,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traerUnoBorrar", function() { return traerUnoBorrar; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "borrar", function() { return borrar; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cancelar", function() { return cancelar; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ponerFormularioMarca", function() { return ponerFormularioMarca; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "retirarFormularioMarca", function() { return retirarFormularioMarca; });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
@@ -100853,23 +100966,6 @@ var cancelar = function cancelar() {
   return function (dispatch) {
     dispatch({
       type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["GUARDAR"]
-    });
-  };
-};
-var ponerFormularioMarca = function ponerFormularioMarca() {
-  return function (dispatch) {
-    dispatch({
-      type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_ESTADO_FORM"],
-      payload: 'crear-marca'
-    });
-  };
-};
-var retirarFormularioMarca = function retirarFormularioMarca() {
-  return function (dispatch) {
-    dispatch({
-      type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_ESTADO_FORM"],
-      recargar_table: true,
-      payload: 'crear'
     });
   };
 };
@@ -102349,19 +102445,19 @@ var mapStateToProps = function mapStateToProps(reducers) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/esm/TextField/index.js");
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
-/* harmony import */ var _material_ui_core_InputLabel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/InputLabel */ "./node_modules/@material-ui/core/esm/InputLabel/index.js");
-/* harmony import */ var _material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/MenuItem */ "./node_modules/@material-ui/core/esm/MenuItem/index.js");
-/* harmony import */ var _material_ui_core_FormHelperText__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/FormHelperText */ "./node_modules/@material-ui/core/esm/FormHelperText/index.js");
-/* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
-/* harmony import */ var _material_ui_core_Select__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/Select */ "./node_modules/@material-ui/core/esm/Select/index.js");
-/* harmony import */ var _General_SliderThc__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./General/SliderThc */ "./resources/js/components/Geneticas/General/SliderThc.js");
-/* harmony import */ var _General_SliderCbd__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./General/SliderCbd */ "./resources/js/components/Geneticas/General/SliderCbd.js");
-/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
-/* harmony import */ var _actions_marcasActions__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../actions/marcasActions */ "./resources/js/actions/marcasActions.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/esm/TextField/index.js");
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
+/* harmony import */ var _material_ui_core_InputLabel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/InputLabel */ "./node_modules/@material-ui/core/esm/InputLabel/index.js");
+/* harmony import */ var _material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/MenuItem */ "./node_modules/@material-ui/core/esm/MenuItem/index.js");
+/* harmony import */ var _material_ui_core_FormHelperText__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/FormHelperText */ "./node_modules/@material-ui/core/esm/FormHelperText/index.js");
+/* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
+/* harmony import */ var _material_ui_core_Select__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Select */ "./node_modules/@material-ui/core/esm/Select/index.js");
+/* harmony import */ var _General_SliderThc__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./General/SliderThc */ "./resources/js/components/Geneticas/General/SliderThc.js");
+/* harmony import */ var _General_SliderCbd__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./General/SliderCbd */ "./resources/js/components/Geneticas/General/SliderCbd.js");
+/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
 
 
 
@@ -102376,21 +102472,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var marcasTraerTodos = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_13__["traerTodos"];
-var cambioGeneticaName = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["cambioGeneticaName"],
-    cambioGeneticaMarca = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["cambioGeneticaMarca"],
-    cambioGeneticaProdInt = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["cambioGeneticaProdInt"],
-    cambioGeneticaProdExt = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["cambioGeneticaProdExt"],
-    cambioGeneticaTiempoFlora = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["cambioGeneticaTiempoFlora"],
-    cambioGeneticaSabores = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["cambioGeneticaSabores"],
-    ponerFormularioMarca = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["ponerFormularioMarca"],
-    cancelar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["cancelar"],
-    agregar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["agregar"],
-    editar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["editar"];
+var cambioGeneticaName = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_13__["cambioGeneticaName"],
+    cambioGeneticaMarca = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_13__["cambioGeneticaMarca"],
+    cambioGeneticaProdInt = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_13__["cambioGeneticaProdInt"],
+    cambioGeneticaProdExt = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_13__["cambioGeneticaProdExt"],
+    cambioGeneticaTiempoFlora = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_13__["cambioGeneticaTiempoFlora"],
+    cambioGeneticaSabores = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_13__["cambioGeneticaSabores"],
+    cancelar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_13__["cancelar"],
+    agregar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_13__["agregar"],
+    editar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_13__["editar"];
 
 var Formulario = function Formulario(props) {
-  var marcasTraerTodos = props.marcasTraerTodos,
-      marcas = props.marcasReducer.marcas,
+  var marcas = props.marcasReducer.marcas,
       _props$geneticasReduc = props.geneticasReducer,
       _props$geneticasReduc2 = _props$geneticasReduc.form,
       name = _props$geneticasReduc2.name,
@@ -102402,11 +102495,6 @@ var Formulario = function Formulario(props) {
       error_form = _props$geneticasReduc.error_form,
       state_form = _props$geneticasReduc.state_form,
       cancelar = props.cancelar;
-  if (!marcas.length) marcasTraerTodos();
-
-  var ponerFormularioMarca = function ponerFormularioMarca() {
-    return props.ponerFormularioMarca();
-  };
 
   var handleCambioGeneticaName = function handleCambioGeneticaName(event) {
     return props.cambioGeneticaName(event.target.value);
@@ -102462,7 +102550,7 @@ var Formulario = function Formulario(props) {
     if (state_form === 'editar') editar(nueva_genetica, id);
   };
 
-  var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__["makeStyles"])(function (theme) {
+  var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__["makeStyles"])(function (theme) {
     return {
       formControl: {
         margin: theme.spacing(0),
@@ -102477,9 +102565,9 @@ var Formulario = function Formulario(props) {
     autoComplete: "on"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-row"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
     className: classes.formControl
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3__["default"], {
     id: "standard-basic",
     label: "Nombre",
     type: "text",
@@ -102488,34 +102576,35 @@ var Formulario = function Formulario(props) {
     onChange: handleCambioGeneticaName,
     helperText: error_form.name,
     error: !error_form.name ? false : true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
     className: classes.formControl
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_InputLabel__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_InputLabel__WEBPACK_IMPORTED_MODULE_6__["default"], {
     id: "demo-simple-select-helper-label",
     error: !error_form.marca_id ? false : true
-  }, "Marcas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Select__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }, "Marcas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Select__WEBPACK_IMPORTED_MODULE_10__["default"], {
     labelId: "demo-simple-select-helper-label",
     id: "demo-simple-select-helper",
     value: marca_id,
     onChange: handleCambioGeneticaMarca,
     error: !error_form.marca_id ? false : true
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_7__["default"], {
     value: ""
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/marcas"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("em", {
-    className: "link link-string",
-    onClick: function onClick() {
-      return ponerFormularioMarca();
-    }
-  }, "Agregar")), marcas.map(function (marca) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    className: "link link-string"
+    /* onClick={() => ponerFormularioMarca()} */
+
+  }, "Agregar"))), marcas.map(function (marca) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_7__["default"], {
       key: marca.id,
       value: marca.id
     }, marca.name);
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormHelperText__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormHelperText__WEBPACK_IMPORTED_MODULE_8__["default"], {
     error: !error_form.marca_id ? false : true
   }, error_form.marca_id)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-group col-md-12"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_SliderThc__WEBPACK_IMPORTED_MODULE_10__["default"], null), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_SliderCbd__WEBPACK_IMPORTED_MODULE_11__["default"], null), error_form.thc && error_form.thc.map(function (err, key) {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_SliderThc__WEBPACK_IMPORTED_MODULE_11__["default"], null), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_SliderCbd__WEBPACK_IMPORTED_MODULE_12__["default"], null), error_form.thc && error_form.thc.map(function (err, key) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
       key: key,
       className: "text-danger"
@@ -102525,36 +102614,36 @@ var Formulario = function Formulario(props) {
       key: key,
       className: "text-danger"
     }, err);
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
     className: classes.formControl
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3__["default"], {
     id: "standard-basic",
     label: "Sabores",
     type: "text",
     className: "form-control",
     value: sabores,
     onChange: handleCambioGeneticaSabores
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
     className: classes.formControl
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3__["default"], {
     id: "standard-basic",
     label: "Interna",
     type: "number",
     className: "form-control",
     value: prod_int,
     onChange: handleCambioGeneticaProdInt
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
     className: classes.formControl
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3__["default"], {
     id: "standard-basic",
     label: "Externa",
     type: "number",
     className: "form-control",
     value: prod_ext,
     onChange: handleCambioGeneticaProdExt
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
     className: classes.formControl
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3__["default"], {
     id: "standard-basic",
     label: "Tiempo",
     type: "number",
@@ -102567,13 +102656,13 @@ var Formulario = function Formulario(props) {
     className: "form-row margin-button"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-group col-md-6"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     variant: "contained",
     color: "primary",
     onClick: guardar
   }, "Guardar")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-group col-md-6"
-  }, state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     variant: "contained",
     color: "inherit",
     onClick: cancelar
@@ -102590,10 +102679,8 @@ var mapStateToProps = function mapStateToProps(_ref) {
 };
 
 var mapDispatchToProps = {
-  marcasTraerTodos: marcasTraerTodos,
   cambioGeneticaName: cambioGeneticaName,
   cambioGeneticaMarca: cambioGeneticaMarca,
-  ponerFormularioMarca: ponerFormularioMarca,
   cambioGeneticaProdInt: cambioGeneticaProdInt,
   cambioGeneticaProdExt: cambioGeneticaProdExt,
   cambioGeneticaTiempoFlora: cambioGeneticaTiempoFlora,
@@ -102602,7 +102689,7 @@ var mapDispatchToProps = {
   editar: editar,
   cancelar: cancelar
 };
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(Formulario));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, mapDispatchToProps)(Formulario));
 
 /***/ }),
 
@@ -102889,12 +102976,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _Table__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Table */ "./resources/js/components/Geneticas/Table.js");
-/* harmony import */ var _Formulario__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Formulario */ "./resources/js/components/Geneticas/Formulario.js");
-/* harmony import */ var _Marcas_Formulario__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Marcas/Formulario */ "./resources/js/components/Marcas/Formulario.js");
-/* harmony import */ var _Delete__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Delete */ "./resources/js/components/Geneticas/Delete.js");
-/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
-/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
+/* harmony import */ var _material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/icons/KeyboardReturn */ "./node_modules/@material-ui/icons/KeyboardReturn.js");
+/* harmony import */ var _material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _Table__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Table */ "./resources/js/components/Geneticas/Table.js");
+/* harmony import */ var _Formulario__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Formulario */ "./resources/js/components/Geneticas/Formulario.js");
+/* harmony import */ var _Marcas_Formulario__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Marcas/Formulario */ "./resources/js/components/Marcas/Formulario.js");
+/* harmony import */ var _Delete__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Delete */ "./resources/js/components/Geneticas/Delete.js");
+/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
+/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
 
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -102934,6 +103023,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var Geneticas = /*#__PURE__*/function (_Component) {
   _inherits(Geneticas, _Component);
 
@@ -102958,17 +103048,17 @@ var Geneticas = /*#__PURE__*/function (_Component) {
           geneticas = _this$props.geneticas,
           error = _this$props.error;
       if (recargar_table) traerTodos();
-      if (loading && !geneticas.length) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null);
+      if (loading && !geneticas.length) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_8__["default"], null);
       if (error) return 'Error';
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Table__WEBPACK_IMPORTED_MODULE_3__["default"], null);
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Table__WEBPACK_IMPORTED_MODULE_4__["default"], null);
     });
 
     _defineProperty(_assertThisInitialized(_this), "ponerFormulario", function () {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Formulario__WEBPACK_IMPORTED_MODULE_4__["default"], null);
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Formulario__WEBPACK_IMPORTED_MODULE_5__["default"], null);
     });
 
     _defineProperty(_assertThisInitialized(_this), "ponerFormularioMarca", function () {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Marcas_Formulario__WEBPACK_IMPORTED_MODULE_5__["default"], null);
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Marcas_Formulario__WEBPACK_IMPORTED_MODULE_6__["default"], null);
     });
 
     return _this;
@@ -103007,7 +103097,8 @@ var Geneticas = /*#__PURE__*/function (_Component) {
       var _this$props3 = this.props,
           loading = _this$props3.loading,
           state_form = _this$props3.state_form,
-          genetica = _this$props3.genetica;
+          genetica = _this$props3.genetica,
+          goBack = _this$props3.history.goBack;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "container col-md-9"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -103020,21 +103111,24 @@ var Geneticas = /*#__PURE__*/function (_Component) {
         className: "card"
       }, state_form === 'crear' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-agregar"
-      }, "Agregar gen\xE9tica"), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, "Agregar gen\xE9tica", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        fontSize: "small",
+        onClick: goBack
+      })), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_8__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
       }, this.ponerFormulario())) : '', state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-agregar"
-      }, "Modificando genetica: ", genetica.id), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, "Modificando genetica: ", genetica.id), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_8__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
       }, this.ponerFormulario())) : '', state_form === 'crear-marca' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-agregar"
-      }, "Agregar marca"), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, "Agregar marca"), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_8__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
       }, this.ponerFormularioMarca())) : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-eliminar"
-      }, "Eliminar la siguente gen\xE9tica"), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, "Eliminar la siguente gen\xE9tica"), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_8__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Delete__WEBPACK_IMPORTED_MODULE_6__["default"], null))) : ''))));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Delete__WEBPACK_IMPORTED_MODULE_7__["default"], null))) : ''))));
     }
   }]);
 
@@ -103045,7 +103139,7 @@ var mapStateToProps = function mapStateToProps(reducers) {
   return reducers.geneticasReducer;
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_8__)(Geneticas));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_9__)(Geneticas));
 
 /***/ }),
 
@@ -103214,7 +103308,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
 /* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
 /* harmony import */ var _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/marcasActions */ "./resources/js/actions/marcasActions.js");
-/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
 
 
 
@@ -103222,29 +103315,25 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-var retirarFormularioMarca = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_7__["retirarFormularioMarca"];
 var agregar = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__["agregar"],
     editar = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__["editar"],
     cambioMarcaName = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__["cambioMarcaName"],
     cancelar = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__["cancelar"],
-    marcasTraerTodos = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__["traerTodos"];
+    traerTodos = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__["traerTodos"];
 
 var Formulario = function Formulario(props) {
+  console.log(props);
   var _props$marcasReducer = props.marcasReducer,
       _props$marcasReducer$ = _props$marcasReducer.form,
       id = _props$marcasReducer$.id,
       name = _props$marcasReducer$.name,
-      state_form_marcas = _props$marcasReducer.state_form,
+      state_form = _props$marcasReducer.state_form,
       error_form = _props$marcasReducer.error_form,
-      loading = _props$marcasReducer.loading,
-      state_form_geneticas = props.geneticasReducer.state_form,
       cambioMarcaName = props.cambioMarcaName,
-      retirarFormularioMarca = props.retirarFormularioMarca,
       agregar = props.agregar,
       editar = props.editar,
       cancelar = props.cancelar,
-      marcasTraerTodos = props.marcasTraerTodos;
+      traerTodos = props.traerTodos;
 
   var handleCambioMarcaName = function handleCambioMarcaName(event) {
     return cambioMarcaName(event.target.value);
@@ -103255,13 +103344,8 @@ var Formulario = function Formulario(props) {
       id: id,
       name: name
     };
-    if (state_form_marcas === 'crear') agregar(nueva_marca);
-    if (state_form_marcas === 'editar') editar(nueva_marca, id);
-  };
-
-  var handleRetirarFormularioMarca = function handleRetirarFormularioMarca() {
-    marcasTraerTodos();
-    retirarFormularioMarca();
+    if (state_form === 'crear') agregar(nueva_marca);
+    if (state_form === 'editar') editar(nueva_marca, id);
   };
 
   var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__["makeStyles"])(function (theme) {
@@ -103297,16 +103381,11 @@ var Formulario = function Formulario(props) {
     onClick: guardar
   }, "Guardar")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-group col-md-6"
-  }, state_form_marcas === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     variant: "contained",
     color: "inherit",
     onClick: cancelar
-  }, "Cancelar") : '', state_form_geneticas === 'crear-marca' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    variant: "contained",
-    color: "inherit",
-    onClick: handleRetirarFormularioMarca,
-    hidden: loading ? true : false
-  }, "Volver") : ''))));
+  }, "Cancelar") : ''))));
 };
 
 var mapStateToProps = function mapStateToProps(_ref) {
@@ -103319,12 +103398,11 @@ var mapStateToProps = function mapStateToProps(_ref) {
 };
 
 var mapDispatchToProps = {
+  traerTodos: traerTodos,
+  cambioMarcaName: cambioMarcaName,
   agregar: agregar,
   editar: editar,
-  cancelar: cancelar,
-  retirarFormularioMarca: retirarFormularioMarca,
-  cambioMarcaName: cambioMarcaName,
-  marcasTraerTodos: marcasTraerTodos
+  cancelar: cancelar
 };
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(Formulario));
 
@@ -103397,11 +103475,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _Table__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Table */ "./resources/js/components/Marcas/Table.js");
-/* harmony import */ var _Formulario__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Formulario */ "./resources/js/components/Marcas/Formulario.js");
-/* harmony import */ var _Delete__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Delete */ "./resources/js/components/Marcas/Delete.js");
-/* harmony import */ var _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/marcasActions */ "./resources/js/actions/marcasActions.js");
+/* harmony import */ var _material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/icons/KeyboardReturn */ "./node_modules/@material-ui/icons/KeyboardReturn.js");
+/* harmony import */ var _material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _Table__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Table */ "./resources/js/components/Marcas/Table.js");
+/* harmony import */ var _Formulario__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Formulario */ "./resources/js/components/Marcas/Formulario.js");
+/* harmony import */ var _Delete__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Delete */ "./resources/js/components/Marcas/Delete.js");
 /* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
+/* harmony import */ var _actions_marcasActions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../actions/marcasActions */ "./resources/js/actions/marcasActions.js");
 
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -103440,6 +103520,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var Marcas = /*#__PURE__*/function (_Component) {
   _inherits(Marcas, _Component);
 
@@ -103466,11 +103547,11 @@ var Marcas = /*#__PURE__*/function (_Component) {
       if (recargar_table) traerTodos();
       if (loading && !marcas.length) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null);
       if (error) return 'Error';
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Table__WEBPACK_IMPORTED_MODULE_3__["default"], null);
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Table__WEBPACK_IMPORTED_MODULE_4__["default"], null);
     });
 
     _defineProperty(_assertThisInitialized(_this), "ponerFormulario", function () {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Formulario__WEBPACK_IMPORTED_MODULE_4__["default"], null);
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Formulario__WEBPACK_IMPORTED_MODULE_5__["default"], null);
     });
 
     return _this;
@@ -103509,7 +103590,8 @@ var Marcas = /*#__PURE__*/function (_Component) {
       var _this$props3 = this.props,
           state_form = _this$props3.state_form,
           loading = _this$props3.loading,
-          marca = _this$props3.marca;
+          marca = _this$props3.marca,
+          goBack = _this$props3.history.goBack;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "container col-md-9"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -103522,7 +103604,10 @@ var Marcas = /*#__PURE__*/function (_Component) {
         className: "card"
       }, state_form === 'crear' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-agregar"
-      }, "Agregar marca"), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, "Agregar marca ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        fontSize: "small",
+        onClick: goBack
+      })), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
       }, this.ponerFormulario())) : '', state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-agregar"
@@ -103532,7 +103617,7 @@ var Marcas = /*#__PURE__*/function (_Component) {
         className: "card-header card-eliminar"
       }, "Eliminar la siguente marca"), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Delete__WEBPACK_IMPORTED_MODULE_5__["default"], null))) : ''))));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Delete__WEBPACK_IMPORTED_MODULE_6__["default"], null))) : ''))));
     }
   }]);
 
@@ -103543,7 +103628,7 @@ var mapStateToProps = function mapStateToProps(reducers) {
   return reducers.marcasReducer;
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__)(Marcas));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_marcasActions__WEBPACK_IMPORTED_MODULE_8__)(Marcas));
 
 /***/ }),
 
@@ -103629,17 +103714,18 @@ var mapStateToProps = function mapStateToProps(reducers) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/esm/TextField/index.js");
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
-/* harmony import */ var _material_ui_core_InputLabel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/InputLabel */ "./node_modules/@material-ui/core/esm/InputLabel/index.js");
-/* harmony import */ var _material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/MenuItem */ "./node_modules/@material-ui/core/esm/MenuItem/index.js");
-/* harmony import */ var _material_ui_core_FormHelperText__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/FormHelperText */ "./node_modules/@material-ui/core/esm/FormHelperText/index.js");
-/* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
-/* harmony import */ var _material_ui_core_Select__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/Select */ "./node_modules/@material-ui/core/esm/Select/index.js");
-/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
-/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/esm/TextField/index.js");
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
+/* harmony import */ var _material_ui_core_InputLabel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/InputLabel */ "./node_modules/@material-ui/core/esm/InputLabel/index.js");
+/* harmony import */ var _material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/MenuItem */ "./node_modules/@material-ui/core/esm/MenuItem/index.js");
+/* harmony import */ var _material_ui_core_FormHelperText__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/FormHelperText */ "./node_modules/@material-ui/core/esm/FormHelperText/index.js");
+/* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
+/* harmony import */ var _material_ui_core_Select__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Select */ "./node_modules/@material-ui/core/esm/Select/index.js");
+/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
+/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
 
 
 
@@ -103652,14 +103738,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var geneticasTraerTodos = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_11__["traerTodos"];
-var cambioPrototypeName = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_10__["cambioPrototypeName"],
-    cambioPrototypeGenetica = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_10__["cambioPrototypeGenetica"],
-    cambioPrototypeAmbiente = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_10__["cambioPrototypeAmbiente"],
-    cambioPrototypeSensor = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_10__["cambioPrototypeSensor"],
-    agregar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_10__["agregar"],
-    editar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_10__["editar"],
-    cancelar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_10__["cancelar"];
+
+var geneticasTraerTodos = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["traerTodos"];
+var cambioPrototypeName = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["cambioPrototypeName"],
+    cambioPrototypeGenetica = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["cambioPrototypeGenetica"],
+    cambioPrototypeAmbiente = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["cambioPrototypeAmbiente"],
+    cambioPrototypeSensor = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["cambioPrototypeSensor"],
+    agregar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["agregar"],
+    editar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["editar"],
+    cancelar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["cancelar"];
 
 var Formulario = function Formulario(props) {
   var geneticasTraerTodos = props.geneticasTraerTodos,
@@ -103712,7 +103799,7 @@ var Formulario = function Formulario(props) {
     } */
 
 
-  var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__["makeStyles"])(function (theme) {
+  var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__["makeStyles"])(function (theme) {
     return {
       formControl: {
         margin: theme.spacing(0),
@@ -103722,11 +103809,11 @@ var Formulario = function Formulario(props) {
     };
   });
   var classes = useStyles();
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_8__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-row"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
     className: classes.formControl
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3__["default"], {
     id: "standard-basic",
     label: "Nombre",
     type: "text",
@@ -103735,35 +103822,41 @@ var Formulario = function Formulario(props) {
     onChange: handleCambioPrototypeName,
     helperText: error_form.name,
     error: !error_form.name ? false : true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
     className: classes.formControl
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_InputLabel__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_InputLabel__WEBPACK_IMPORTED_MODULE_6__["default"], {
     id: "demo-simple-select-helper-label",
     error: !error_form.genetica_id ? false : true
-  }, "Genetica"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Select__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }, "Genetica"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Select__WEBPACK_IMPORTED_MODULE_10__["default"], {
     labelId: "demo-simple-select-helper-label",
     id: "demo-simple-select-helper",
     value: genetica_id,
     onChange: handleCambioPrototypeGenetica,
     error: !error_form.genetica_id ? false : true
-  }, geneticas.map(function (genetica) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    value: ""
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/geneticas"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("em", {
+    className: "link link-string"
+  }, "Agregar"))), geneticas.map(function (genetica) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_7__["default"], {
       key: genetica.id,
       value: genetica.id
     }, genetica.name);
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormHelperText__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormHelperText__WEBPACK_IMPORTED_MODULE_8__["default"], {
     error: !error_form.genetica_id ? false : true
   }, error_form.genetica_id)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-row margin-button"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-group col-md-6"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     variant: "contained",
     color: "primary",
     onClick: guardar
   }, "Guardar")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-group col-md-6"
-  }, state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     variant: "contained",
     color: "inherit",
     onClick: cancelar
@@ -103789,7 +103882,7 @@ var mapDispatchToProps = {
   editar: editar,
   cancelar: cancelar
 };
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(Formulario));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, mapDispatchToProps)(Formulario));
 
 /***/ }),
 
@@ -103860,11 +103953,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _Table__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Table */ "./resources/js/components/Prototypes/Table.js");
-/* harmony import */ var _Formulario__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Formulario */ "./resources/js/components/Prototypes/Formulario.js");
-/* harmony import */ var _Delete__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Delete */ "./resources/js/components/Prototypes/Delete.js");
-/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
+/* harmony import */ var _material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/icons/KeyboardReturn */ "./node_modules/@material-ui/icons/KeyboardReturn.js");
+/* harmony import */ var _material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _Table__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Table */ "./resources/js/components/Prototypes/Table.js");
+/* harmony import */ var _Formulario__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Formulario */ "./resources/js/components/Prototypes/Formulario.js");
+/* harmony import */ var _Delete__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Delete */ "./resources/js/components/Prototypes/Delete.js");
 /* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
+/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
 
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -103903,6 +103998,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var Prototypes = /*#__PURE__*/function (_Component) {
   _inherits(Prototypes, _Component);
 
@@ -103929,11 +104025,11 @@ var Prototypes = /*#__PURE__*/function (_Component) {
       if (recargar_table) traerTodos();
       if (loading && !prototypes.length) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null);
       if (error) return 'Error';
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Table__WEBPACK_IMPORTED_MODULE_3__["default"], null);
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Table__WEBPACK_IMPORTED_MODULE_4__["default"], null);
     });
 
     _defineProperty(_assertThisInitialized(_this), "ponerFormulario", function () {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Formulario__WEBPACK_IMPORTED_MODULE_4__["default"], null);
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Formulario__WEBPACK_IMPORTED_MODULE_5__["default"], null);
     });
 
     return _this;
@@ -103972,7 +104068,8 @@ var Prototypes = /*#__PURE__*/function (_Component) {
       var _this$props3 = this.props,
           state_form = _this$props3.state_form,
           loading = _this$props3.loading,
-          prototype = _this$props3.prototype;
+          prototype = _this$props3.prototype,
+          goBack = _this$props3.history.goBack;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "container col-md-9"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -103985,7 +104082,10 @@ var Prototypes = /*#__PURE__*/function (_Component) {
         className: "card"
       }, state_form === 'crear' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-agregar"
-      }, "Agregar prototipo"), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, "Agregar prototipo ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        fontSize: "small",
+        onClick: goBack
+      })), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
       }, this.ponerFormulario())) : '', state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-agregar"
@@ -103995,7 +104095,7 @@ var Prototypes = /*#__PURE__*/function (_Component) {
         className: "card-header card-eliminar"
       }, "Eliminar la siguente prototipo"), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Delete__WEBPACK_IMPORTED_MODULE_5__["default"], null))) : ''))));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Delete__WEBPACK_IMPORTED_MODULE_6__["default"], null))) : ''))));
     }
   }]);
 
@@ -104006,7 +104106,7 @@ var mapStateToProps = function mapStateToProps(reducers) {
   return reducers.prototypesReducer;
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_6__)(Prototypes));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_8__)(Prototypes));
 
 /***/ }),
 
@@ -104297,11 +104397,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _Table__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Table */ "./resources/js/components/Users/Table.js");
-/* harmony import */ var _Formulario__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Formulario */ "./resources/js/components/Users/Formulario.js");
-/* harmony import */ var _Delete__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Delete */ "./resources/js/components/Users/Delete.js");
-/* harmony import */ var _actions_usersActions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/usersActions */ "./resources/js/actions/usersActions.js");
+/* harmony import */ var _material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/icons/KeyboardReturn */ "./node_modules/@material-ui/icons/KeyboardReturn.js");
+/* harmony import */ var _material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _Table__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Table */ "./resources/js/components/Users/Table.js");
+/* harmony import */ var _Formulario__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Formulario */ "./resources/js/components/Users/Formulario.js");
+/* harmony import */ var _Delete__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Delete */ "./resources/js/components/Users/Delete.js");
 /* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
+/* harmony import */ var _actions_usersActions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../actions/usersActions */ "./resources/js/actions/usersActions.js");
 
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -104340,6 +104442,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var Users = /*#__PURE__*/function (_Component) {
   _inherits(Users, _Component);
 
@@ -104366,11 +104469,11 @@ var Users = /*#__PURE__*/function (_Component) {
       if (recargar_table) traerTodos();
       if (loading && !users.length) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null);
       if (error) return 'Error';
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Table__WEBPACK_IMPORTED_MODULE_3__["default"], null);
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Table__WEBPACK_IMPORTED_MODULE_4__["default"], null);
     });
 
     _defineProperty(_assertThisInitialized(_this), "ponerFormulario", function () {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Formulario__WEBPACK_IMPORTED_MODULE_4__["default"], null);
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Formulario__WEBPACK_IMPORTED_MODULE_5__["default"], null);
     });
 
     return _this;
@@ -104407,9 +104510,10 @@ var Users = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       var _this$props3 = this.props,
-          user = _this$props3.user,
           state_form = _this$props3.state_form,
-          loading = _this$props3.loading;
+          loading = _this$props3.loading,
+          user = _this$props3.user,
+          goBack = _this$props3.history.goBack;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "container col-md-9"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -104422,7 +104526,10 @@ var Users = /*#__PURE__*/function (_Component) {
         className: "card"
       }, state_form === 'crear' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-agregar"
-      }, "Agregar usuario"), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, "Agregar usuario ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        fontSize: "small",
+        onClick: goBack
+      })), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
       }, this.ponerFormulario())) : '', state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-agregar"
@@ -104432,7 +104539,7 @@ var Users = /*#__PURE__*/function (_Component) {
         className: "card-header card-eliminar"
       }, "Eliminar siguente usuario"), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Delete__WEBPACK_IMPORTED_MODULE_5__["default"], null))) : ''))));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Delete__WEBPACK_IMPORTED_MODULE_6__["default"], null))) : ''))));
     }
   }]);
 
@@ -104443,7 +104550,7 @@ var mapStateToProps = function mapStateToProps(reducers) {
   return reducers.usersReducer;
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_usersActions__WEBPACK_IMPORTED_MODULE_6__)(Users));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_usersActions__WEBPACK_IMPORTED_MODULE_8__)(Users));
 
 /***/ }),
 

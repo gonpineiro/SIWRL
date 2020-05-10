@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
 import Table from './Table'
 import Formulario from './Formulario'
 import Delete from './Delete'
+import Spinner from '../General/Spinner';
 
 import * as usersActions from '../../actions/usersActions'
 
-import Spinner from '../General/Spinner';
 
 class Users extends Component {
 
@@ -30,7 +31,7 @@ class Users extends Component {
 	ponerFormulario = () => <Formulario />
 
 	render() {
-		const { user, state_form, loading } = this.props
+		const { state_form, loading, user, history: { goBack }  } = this.props
 
 		return (
 			<div className="container col-md-9">
@@ -48,7 +49,7 @@ class Users extends Component {
 							{state_form === 'crear' ?
 								<div>
 									<div className="card-header card-agregar">
-										Agregar usuario
+										Agregar usuario <KeyboardReturnIcon fontSize="small" onClick={ goBack }/>
 									</div>
 									{loading ? <Spinner /> :
 										<div className="card-body">

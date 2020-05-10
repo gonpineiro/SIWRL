@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
 import Table from './Table'
 import Formulario from './Formulario'
 import Delete from './Delete'
+import Spinner from '../General/Spinner';
 
 import * as prototypesActions from '../../actions/protoypesActions'
-import Spinner from '../General/Spinner';
+
 
 class Prototypes extends Component {
 
@@ -29,7 +31,7 @@ class Prototypes extends Component {
 	ponerFormulario = () => <Formulario />
 
 	render() {
-		const { state_form, loading, prototype } = this.props
+		const { state_form, loading, prototype, history: { goBack } } = this.props
 
 		return (
 			<div className="container col-md-9">
@@ -46,7 +48,7 @@ class Prototypes extends Component {
 							{state_form === 'crear' ?
 								<div>
 									<div className="card-header card-agregar">
-										Agregar prototipo
+										Agregar prototipo <KeyboardReturnIcon fontSize="small" onClick={ goBack }/>
 									</div>
 									{loading ? <Spinner /> :
 										<div className="card-body">

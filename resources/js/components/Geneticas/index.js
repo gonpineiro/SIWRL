@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
 import Table from './Table'
 import Formulario from './Formulario'
 import FormularioMarca from '../Marcas/Formulario'
@@ -39,7 +40,7 @@ class Geneticas extends Component {
 	ponerFormularioMarca = () => <FormularioMarca />
 
 	render() {
-		const { loading, state_form, genetica } = this.props
+		const { loading, state_form, genetica, history: { goBack } } = this.props
 
 		return (
 			<div className="container col-md-9">
@@ -56,7 +57,7 @@ class Geneticas extends Component {
 							{state_form === 'crear' ?
 								<div>
 									<div className="card-header card-agregar">
-										Agregar genética
+										Agregar genética<KeyboardReturnIcon fontSize="small" onClick={ goBack }/>
 									</div>
 									{loading ? <Spinner /> :
 										<div className="card-body">

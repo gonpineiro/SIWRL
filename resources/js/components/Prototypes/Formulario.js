@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -39,21 +40,21 @@ const Formulario = (props) => {
 
    if (!geneticas.length) geneticasTraerTodos()
 
-   const handleCambioPrototypeName = (event) =>  props.cambioPrototypeName(event.target.value);   
+   const handleCambioPrototypeName = (event) => props.cambioPrototypeName(event.target.value);
 
-   const handleCambioPrototypeGenetica = (event) =>  props.cambioPrototypeGenetica(event.target.value);
+   const handleCambioPrototypeGenetica = (event) => props.cambioPrototypeGenetica(event.target.value);
 
-   const handleCambioPrototypeAmbiente = (event) =>  props.cambioPrototypeAmbiente(event.target.value);
+   const handleCambioPrototypeAmbiente = (event) => props.cambioPrototypeAmbiente(event.target.value);
 
-   const handleCambioPrototypeSensor = (event) =>  props.cambioPrototypeSensor(event.target.value);
+   const handleCambioPrototypeSensor = (event) => props.cambioPrototypeSensor(event.target.value);
 
    const guardar = () => {
 
-      const nuevo_prototype = { 
-         id: id, 
-         name: name, 
-         genetica_id: genetica_id, 
-         ambiente_id: ambiente_id, 
+      const nuevo_prototype = {
+         id: id,
+         name: name,
+         genetica_id: genetica_id,
+         ambiente_id: ambiente_id,
          sensor_id: sensor_id
       };
 
@@ -68,7 +69,7 @@ const Formulario = (props) => {
         retirarFormularioMarca()
      } */
 
-     const useStyles = makeStyles((theme) => ({
+   const useStyles = makeStyles((theme) => ({
 
       formControl: {
          margin: theme.spacing(0),
@@ -79,7 +80,7 @@ const Formulario = (props) => {
 
    const classes = useStyles();
 
-   return (      
+   return (
       <FormControl >
          <div className="form-row">
 
@@ -105,7 +106,15 @@ const Formulario = (props) => {
                   onChange={handleCambioPrototypeGenetica}
                   error={!error_form.genetica_id ? false : true}
                >
-                  {/* <MenuItem value=""><em className="link link-string" onClick={() => ponerFormularioMarca()}>Agregar</em></MenuItem> */}
+                  <MenuItem value="">
+                     <Link to="/geneticas">
+                        <em
+                           className="link link-string"
+                        >
+                           Agregar
+                        </em>
+                     </Link>
+                  </MenuItem>
 
                   {geneticas.map((genetica) => (
                      <MenuItem key={genetica.id} value={genetica.id}>{genetica.name}</MenuItem>
