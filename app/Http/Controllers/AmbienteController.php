@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\AmbientesRequest;
 
 use App\Ambiente;
+use App\Sensor;
 
 class AmbienteController extends Controller
 {
@@ -43,6 +44,11 @@ class AmbienteController extends Controller
         $ambiente = Ambiente::where('id', $id)->firstOrFail();
         $ambiente->delete();
     } 
+
+    public function indexSensors($ambiente_id){
+        $sensors = Sensor::where('ambiente_id', $ambiente_id)->get();
+        return response()->json($sensors, 200);
+    }
 
   
 }

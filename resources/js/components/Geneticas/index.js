@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
 import Table from './Table'
 import Formulario from './Formulario'
-import FormularioMarca from '../Marcas/Formulario'
 import Delete from './Delete'
 import Spinner from '../General/Spinner';
 
@@ -11,7 +10,7 @@ import * as geneticasActions from '../../actions/geneticasActions'
 
 class Geneticas extends Component {
 
-	async componentDidMount() {
+	componentDidMount() {
 		const { traerTodos, geneticas } = this.props
 
 		if (!geneticas.length) traerTodos()
@@ -37,11 +36,9 @@ class Geneticas extends Component {
 
 	ponerFormulario = () => <Formulario />
 
-	ponerFormularioMarca = () => <FormularioMarca />
-
 	render() {
 		const { loading, state_form, genetica, history: { goBack } } = this.props
-
+		console.log(this.props)
 		return (
 			<div className="container col-md-9">
 				<div className="row mt-2">
@@ -73,17 +70,6 @@ class Geneticas extends Component {
 									{loading ? <Spinner /> :
 										<div className="card-body">
 											{this.ponerFormulario()}
-										</div>}
-								</div> : ''}
-
-							{state_form === 'crear-marca' ?
-								<div>
-									<div className="card-header card-agregar">
-										Agregar marca
-									</div>
-									{loading ? <Spinner /> :
-										<div className="card-body">
-											{this.ponerFormularioMarca()}
 										</div>}
 								</div> : ''}
 

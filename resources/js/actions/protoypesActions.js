@@ -3,6 +3,7 @@ import {
     TRAER_TODOS,
     TRAER_UNO,
     LOADING,
+    ERROR,
     ERROR_FORM,
     CAMBIO_ESTADO_FORM,
 
@@ -111,7 +112,7 @@ export const traerUno = (id) => async (dispatch) => {
     try {
         const response = await axios.get(URL + 'prototype/' + id)
         const { 0: prototype } = response.data
-        
+
         dispatch({
             type: TRAER_UNO,
             payload: prototype
@@ -187,7 +188,7 @@ export const cambioPrototypeGenetica = (valor) => (dispatch) => {
 };
 
 export const cambioPrototypeAmbiente = (valor) => (dispatch) => {
-    
+
     dispatch({
         type: CAMBIO_PROTOTYPE_AMBIENTE_ID,
         payload: valor
@@ -223,7 +224,7 @@ export const cambioPrototypeFechaC = (valor) => (dispatch) => {
 };
 
 export const cambioPrototypeFechaD = (valor) => (dispatch) => {
-    
+
     dispatch({
         type: CAMBIO_PROTOTYPE_FECHA_ESTADO_D,
         payload: valor
@@ -231,7 +232,7 @@ export const cambioPrototypeFechaD = (valor) => (dispatch) => {
 };
 
 export const cambioPrototypeFechaE = (valor) => (dispatch) => {
-    
+
     dispatch({
         type: CAMBIO_PROTOTYPE_FECHA_ESTADO_E,
         payload: valor
@@ -244,7 +245,7 @@ export const agregar = (nuevo_prototype) => async (dispatch) => {
         type: LOADING
     });
 
-    try {        
+    try {
         await axios.post(URL + 'prototype', nuevo_prototype);
         dispatch({
             type: GUARDAR
@@ -264,7 +265,7 @@ export const editar = (nuevo_prototype, id) => async (dispatch) => {
     dispatch({
         type: LOADING
     })
-    
+
     try {
 
         await axios.put(URL + 'prototype/' + id, nuevo_prototype)

@@ -3,17 +3,20 @@ import {
     TRAER_TODOS,
     TRAER_UNO,
     LOADING,
+    ERROR,
     ERROR_FORM,
+    CAMBIO_ESTADO_FORM,
+
     CAMBIO_MARCA_ID,
     CAMBIO_MARCA_NAME,
-    CAMBIO_ESTADO_FORM,
+
     GUARDAR
 } from '../types/marcaTypes'
 
 const URL = 'http://192.168.0.238:901/api/'
 
 export const traerTodos = () => async (dispatch) => {
-    
+
     dispatch({
         type: LOADING
     })

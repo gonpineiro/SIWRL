@@ -12,12 +12,13 @@ import Select from '@material-ui/core/Select';
 
 import * as protoypesActions from '../../actions/protoypesActions'
 
-
 import * as ambientesActions from '../../actions/ambientesActions'
 import * as geneticasActions from '../../actions/geneticasActions'
+import * as sensorsActions from '../../actions/sensorsActions'
 
 const { traerTodos: geneticasTraerTodos } = geneticasActions;
 const { traerTodos: ambientesTraerTodos } = ambientesActions;
+const { traerTodosPorAmbiente: sensorsTraerTodosPorAmbiente } = sensorsActions;
 
 const {
    cambioPrototypeName,
@@ -34,8 +35,10 @@ const Formulario = (props) => {
    const {
       geneticasTraerTodos,
       ambientesTraerTodos,
+      sensorsTraerTodosPorAmbiente,
       geneticasReducer: { geneticas },
       ambientesReducer: { ambientes },
+      sensorsReducer: { sensors_ambiente },
       prototypesReducer: {
          form: { id, name, genetica_id, ambiente_id, sensor_id },
          state_form,
@@ -47,7 +50,7 @@ const Formulario = (props) => {
       cancelar
    } = props;
 
-   if (!geneticas.length) geneticasTraerTodos()
+   if (!geneticas.length) geneticasTraerTodos() 
 
    if (!ambientes.length) ambientesTraerTodos()
 
@@ -55,7 +58,10 @@ const Formulario = (props) => {
 
    const handleCambioPrototypeGenetica = (event) => props.cambioPrototypeGenetica(event.target.value);
 
-   const handleCambioPrototypeAmbiente = (event) => props.cambioPrototypeAmbiente(event.target.value);
+   const handleCambioPrototypeAmbiente = (event) => {
+      props.cambioPrototypeAmbiente(event.target.value);
+      sensorsTraerTodosPorAmbiente(event.target.value)
+   }
 
    const handleCambioPrototypeSensor = (event) => props.cambioPrototypeSensor(event.target.value);
 
@@ -147,12 +153,41 @@ const Formulario = (props) => {
                         </em>
                      </MenuItem>
                   </Link>
+                  <MenuItem value=""><em className="link link-string" > Vacio </em> </MenuItem>
 
                   {ambientes.map((ambiente) => (
                      <MenuItem key={ambiente.id} value={ambiente.id}>{ambiente.name}</MenuItem>
                   ))}
                </Select>
                <FormHelperText error={!error_form.ambiente_id ? false : true}>{error_form.ambiente_id}</FormHelperText>
+            </FormControl>
+
+            <FormControl className={classes.formControl}>
+               <InputLabel id="demo-simple-select-helper-label" error={!error_form.sensor_id ? false : true}>Sensor</InputLabel>
+               <Select
+                  labelId="demo-simple-select-helper-label"
+                  id="demo-simple-select-helper"
+                  value={sensor_id}
+                  onChange={handleCambioPrototypeSensor}
+                  error={!error_form.sensor_id ? false : true}
+                  disabled={!ambiente_id}
+               >
+                  <Link to="">
+                     <MenuItem value="">
+                        <em
+                           className="link link-string"
+                        >
+                           Agregar
+                        </em>
+                     </MenuItem>
+                  </Link>
+                  <MenuItem value=""><em className="link link-string" > Vacio </em> </MenuItem>
+
+                  {sensors_ambiente.map((sensor) => (
+                     <MenuItem key={sensor.id} value={sensor.id}>{sensor.name}</MenuItem>
+                  ))}
+               </Select>
+               <FormHelperText error={!error_form.sensor_id ? false : true}>{error_form.sensor_id}</FormHelperText>
             </FormControl>
 
 
@@ -188,13 +223,14 @@ const Formulario = (props) => {
    );
 }
 
-const mapStateToProps = ({ prototypesReducer, geneticasReducer, ambientesReducer }) => {
-   return { prototypesReducer, geneticasReducer, ambientesReducer };
+const mapStateToProps = ({ prototypesReducer, geneticasReducer, ambientesReducer, sensorsReducer }) => {
+   return { prototypesReducer, geneticasReducer, ambientesReducer, sensorsReducer };
 };
 
 const mapDispatchToProps = {
    geneticasTraerTodos,
    ambientesTraerTodos,
+   sensorsTraerTodosPorAmbiente,
 
    cambioPrototypeName,
    cambioPrototypeGenetica,

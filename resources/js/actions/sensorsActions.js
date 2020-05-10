@@ -1,33 +1,54 @@
 import axios from 'axios'
 import {
     TRAER_TODOS,
+    TRAER_TODOS_POR_AMBIENTE,
     TRAER_UNO,
     LOADING,
     ERROR,
     ERROR_FORM,
     CAMBIO_ESTADO_FORM,
 
-    CAMBIO_AMBIENTE_ID,
-    CAMBIO_AMBIENTE_CODIGO,
-    CAMBIO_AMBIENTE_NAME,
-    CAMBIO_AMBIENTE_INPUTS,
+    CAMBIO_SENSOR_ID,
+    CAMBIO_SENSOR_AMBIENTE_ID,
+    CAMBIO_SENSOR_NAME,
+    CAMBIO_SENSOR_OUTPUT,
 
     GUARDAR
-} from '../types/ambienteTypes'
+} from '../types/sensorTypes'
 
 const URL = 'http://192.168.0.238:901/api/'
 
 export const traerTodos = () => async (dispatch) => {
+
+    dispatch({
+        type: LOADING
+    })
+
+    try {
+        const response = await axios.get(URL + 'sensor')
+
+        dispatch({
+            type: TRAER_TODOS,
+            payload: response.data
+        })
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const traerTodosPorAmbiente = (id) => async (dispatch) => {
     
     dispatch({
         type: LOADING
-    })    
+    })
 
-    try {        
-        const response = await axios.get(URL + 'ambiente')
-        
+    try {
+        const response = await axios.get(URL + 'ambiente/sensors/' + id)
+        console.log(response.data)
+
         dispatch({
-            type: TRAER_TODOS,
+            type: TRAER_TODOS_POR_AMBIENTE,
             payload: response.data
         })
 
@@ -43,22 +64,17 @@ export const traerUno = (id) => async (dispatch) => {
     })
 
     dispatch({
-        type: CAMBIO_AMBIENTE_ID,
+        type: CAMBIO_SENSOR_NAME,
         payload: ''
     })
 
     dispatch({
-        type: CAMBIO_AMBIENTE_NAME,
+        type: CAMBIO_SENSOR_AMBIENTE_ID,
         payload: ''
     })
 
     dispatch({
-        type: CAMBIO_AMBIENTE_CODIGO,
-        payload: ''
-    })
-
-    dispatch({
-        type: CAMBIO_AMBIENTE_INPUTS,
+        type: CAMBIO_SENSOR_OUTPUT,
         payload: ''
     })
 
@@ -69,32 +85,31 @@ export const traerUno = (id) => async (dispatch) => {
 
 
     try {
-        const response = await axios.get(URL + 'ambiente/' + id)
-        const { 0: ambiente } = response.data
+        const response = await axios.get(URL + 'sensor/' + id)
 
         dispatch({
             type: TRAER_UNO,
-            payload: ambiente
+            payload: response.data
         })
 
         dispatch({
-            type: CAMBIO_AMBIENTE_ID,
-            payload: ambiente.id
+            type: CAMBIO_SENSOR_ID,
+            payload: response.data.id
         })
 
         dispatch({
-            type: CAMBIO_AMBIENTE_NAME,
-            payload: ambiente.name
+            type: CAMBIO_SENSOR_NAME,
+            payload: response.data.name
         })
 
         dispatch({
-            type: CAMBIO_AMBIENTE_CODIGO,
-            payload: ambiente.codigo
+            type: CAMBIO_SENSOR_AMBIENTE_ID,
+            payload: response.data.ambiente_id
         })
 
         dispatch({
-            type: CAMBIO_AMBIENTE_INPUTS,
-            payload: ambiente.inputs
+            type: CAMBIO_SENSOR_OUTPUT,
+            payload: response.data.output
         })
 
 
@@ -103,38 +118,20 @@ export const traerUno = (id) => async (dispatch) => {
     }
 }
 
-export const cambioAmbienteName = (valor) => (dispatch) => {
+export const cambioSensorName = (valor) => (dispatch) => {
 
     dispatch({
-        type: CAMBIO_AMBIENTE_NAME,
+        type: CAMBIO_SENSOR_NAME,
         payload: valor
     })
 };
 
-export const cambioAmbienteCodigo = (valor) => (dispatch) => {
-
-    dispatch({
-        type: CAMBIO_AMBIENTE_CODIGO,
-        payload: valor
-    })
-};
-
-export const cambioAmbienteInputs = (valor) => (dispatch) => {
-
-    dispatch({
-        type: CAMBIO_AMBIENTE_INPUTS,
-        payload: valor
-    })
-};
-
-export const agregar = (nuevo_ambiente) => async (dispatch) => {
-
+export const agregar = (nuevo_sensor) => async (dispatch) => {
     dispatch({
         type: LOADING
     });
-
     try {
-        await axios.post(URL + 'ambiente', nuevo_ambiente);
+        await axios.post(URL + 'sensor', nuevo_sensor);
         dispatch({
             type: GUARDAR
         });
@@ -150,14 +147,13 @@ export const agregar = (nuevo_ambiente) => async (dispatch) => {
     }
 };
 
-export const editar = (nuevo_ambiente, id) => async (dispatch) => {
-
+export const editar = (nuevo_sensor, id) => async (dispatch) => {
     dispatch({
         type: LOADING
     })
-    
+
     try {
-        await axios.put(URL + 'ambiente/' + id, nuevo_ambiente)
+        await axios.put(URL + 'sensor/' + id, nuevo_sensor)
         dispatch({
             type: GUARDAR
         })
@@ -183,12 +179,11 @@ export const traerUnoBorrar = (id) => async (dispatch) => {
 
 
     try {
-        const response = await axios.get(URL + 'ambiente/' + id)
-        const { 0: ambiente } = response.data
+        const response = await axios.get(URL + 'sensor/' + id)
 
         dispatch({
             type: TRAER_UNO,
-            payload: ambiente
+            payload: response.data
         })
 
     } catch (error) {
@@ -201,9 +196,8 @@ export const borrar = (id) => async (dispatch) => {
     dispatch({
         type: LOADING
     })
-
     try {
-        await axios.delete(URL + 'ambiente/' + id)
+        await axios.delete(URL + 'sensor/' + id)
 
         dispatch({
             type: GUARDAR
@@ -211,7 +205,6 @@ export const borrar = (id) => async (dispatch) => {
 
     } catch (error) {
         const errors = error.response.data.message
-
         dispatch({
             type: ERROR_FORM,
             payload: errors

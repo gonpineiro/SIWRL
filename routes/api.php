@@ -37,6 +37,7 @@ Route::get('/ambiente/{id}', 'AmbienteController@edit');
 Route::put('/ambiente/{id}', 'AmbienteController@update');
 Route::post('/ambiente', 'AmbienteController@store');
 Route::delete('/ambiente/{id}', 'AmbienteController@destroy');
+Route::get('/ambiente/sensors/{id}', 'AmbienteController@indexSensors');
 
 Route::get('/prototype', 'PrototypeController@index');
 Route::get('/prototype/{id}', 'PrototypeController@edit');
