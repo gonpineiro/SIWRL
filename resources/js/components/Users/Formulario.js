@@ -13,6 +13,7 @@ const Formulario = (props) => {
       user: { id, name, email, password },
       agregar,
       editar,
+      borrar,
       cancelar,
       state_form,
       error_form,
@@ -51,20 +52,21 @@ const Formulario = (props) => {
 
    const classes = useStyles();
 
-   return (      
+   return (
       <FormControl >
          <div className="form-row">
 
-         <FormControl className={classes.formControl}>
+            <FormControl className={classes.formControl}>
                <TextField
                   id="standard-basic"
                   label="Nombre"
                   type="text"
                   className="form-control"
-                  value={name}
+                  value={name || ''}
                   onChange={handleCambioUsuarioName}
                   helperText={error_form.name}
                   error={!error_form.name ? false : true}
+                  disabled={state_form === 'borrar' ? true : false}
                />
             </FormControl>
 
@@ -73,10 +75,11 @@ const Formulario = (props) => {
                   label="Email"
                   type="email"
                   className="form-control"
-                  value={email}
+                  value={email || ''}
                   onChange={handleCambioUsuarioEmail}
                   helperText={error_form.email}
                   error={!error_form.email ? false : true}
+                  disabled={state_form === 'borrar' ? true : false}
                />
             </FormControl>
 
@@ -86,26 +89,42 @@ const Formulario = (props) => {
                   label="Password"
                   type="text"
                   className="form-control"
-                  value={password}
+                  value={password || ''}
                   onChange={handleCambioUsuarioPassword}
                   helperText={error_form.password}
                   error={!error_form.password ? false : true}
+                  disabled={state_form === 'borrar' ? true : false}
                />
             </FormControl>
 
             <div className="form-row margin-button">
                <div className="form-group col-md-6">
-                  <Button
-                     variant="contained"
-                     color="primary"
-                     onClick={guardar}
-                  >
-                     Guardar
-                  </Button>
+                  {state_form === 'crear' || state_form === 'editar'
+                     ?
+                     <Button
+                        variant="contained"
+                        color="primary"
+                        onClick={guardar}
+                     >
+                        Guardar
+                     </Button> : ''}
+                  {state_form === 'borrar'
+                     ?
+                     <div>
+                        <Button
+                           variant="contained"
+                           color="primary"
+                           onClick={() => borrar(id)}
+                        >
+                           Borrar
+                        </Button>
+                        {error_form && <small className="text-danger">Existe un registro vinculado.</small>}
+                     </div>
+                     : ''}
                </div >
 
                <div className="form-group col-md-6">
-                  {state_form === 'editar'
+                  {state_form === 'editar' || state_form === 'borrar'
                      ?
                      <Button
                         variant="contained"

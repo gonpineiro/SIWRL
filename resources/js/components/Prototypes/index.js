@@ -3,24 +3,51 @@ import { connect } from 'react-redux'
 import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
 import Table from './Table'
 import Formulario from './Formulario'
-import Delete from './Delete'
 import Spinner from '../General/Spinner';
 
 import * as prototypesActions from '../../actions/protoypesActions'
 
+import * as ambientesActions from '../../actions/ambientesActions'
+import * as geneticasActions from '../../actions/geneticasActions'
+
+const { traerTodos: geneticasTraerTodos } = geneticasActions;
+const { traerTodos: ambientesTraerTodos } = ambientesActions;
+const { traerTodos: prototypesTraerTodos } = prototypesActions
+
 class Prototypes extends Component {
 
 	async componentDidMount() {
-		const { traerTodos, prototypes } = this.props
+		const {
+			geneticasReducer: { geneticas },
+			prototypesReducer: { prototypes },
+			ambientesReducer: { ambientes },
+			sensorsReducer: { sensor_ambiente },
+			geneticasTraerTodos,
+			prototypesTraerTodos,
+			ambientesTraerTodos,
 
-		if (!prototypes.length) traerTodos()
+		} = this.props
+
+		if (!prototypes.length) prototypesTraerTodos()
+
+		if (!geneticas.length) geneticasTraerTodos()
+
+		if (!ambientes.length) ambientesTraerTodos()
 	}
 
-	
-	 ponerContenido = () => {
-		const { traerTodos, recargar_table, loading, prototypes, error } = this.props
 
-		if (recargar_table) traerTodos()
+	ponerContenido = () => {
+		const {
+			prototypesTraerTodos,
+			prototypesReducer: {
+				recargar_table,
+				loading,
+				prototypes,
+				error
+			}
+		} = this.props
+
+		if (recargar_table) prototypesTraerTodos()
 
 		if (loading && !prototypes.length) return <Spinner />
 
@@ -31,7 +58,13 @@ class Prototypes extends Component {
 	ponerFormulario = () => <Formulario />
 
 	render() {
-		const { state_form, loading, prototype, history: { goBack } } = this.props
+		const {
+			prototypesReducer: {
+				state_form,
+				loading,
+			},
+			prototype, history: { goBack }
+		} = this.props
 
 		return (
 			<div className="container col-md-9">
@@ -45,38 +78,15 @@ class Prototypes extends Component {
 					<div className="col col-md-4">
 						<div className="card">
 
-							{state_form === 'crear' ?
-								<div>
-									<div className="card-header card-agregar">
-										Agregar prototipo <KeyboardReturnIcon fontSize="small" onClick={ goBack }/>
-									</div>
-									{loading ? <Spinner /> :
-										<div className="card-body">
-											{this.ponerFormulario()}
-										</div>}
-								</div> : ''}
-
-							{state_form === 'editar' ?
-								<div>
-									<div className="card-header card-agregar">
-										Modificando prototipo: {prototype.id}
-									</div>
-									{loading ? <Spinner /> :
-										<div className="card-body">
-											{this.ponerFormulario()}
-										</div>}
-								</div> : ''}
-
-							{state_form === 'borrar' ?
-								<div>
-									<div className="card-header card-eliminar">
-										Eliminar la siguente prototipo
-									</div>
-									{loading ? <Spinner /> :
-										<div className="card-body">
-											<Delete />
-										</div>}
-								</div> : ''}
+							<div>
+								<div className="card-header card-agregar">
+									Agregar prototipo <KeyboardReturnIcon fontSize="small" onClick={goBack} />
+								</div>
+								{loading ? <Spinner /> :
+									<div className="card-body">
+										{this.ponerFormulario()}
+									</div>}
+							</div>
 
 						</div>
 					</div>
@@ -87,8 +97,14 @@ class Prototypes extends Component {
 	}
 }
 
-const mapStateToProps = (reducers) => {
-	return reducers.prototypesReducer
-}
+const mapStateToProps = ({ prototypesReducer, geneticasReducer, ambientesReducer, sensorsReducer }) => {
+	return { prototypesReducer, geneticasReducer, ambientesReducer, sensorsReducer };
+};
 
-export default connect(mapStateToProps, prototypesActions)(Prototypes);
+const mapDispatchToProps = {
+	geneticasTraerTodos,
+	ambientesTraerTodos,
+	prototypesTraerTodos
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Prototypes);

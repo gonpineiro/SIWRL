@@ -9,6 +9,8 @@ import {
   CAMBIO_MARCA_ID,
   CAMBIO_MARCA_NAME,
 
+  RECARGA,
+  CANCELAR,
   GUARDAR
 } from '../types/marcaTypes'
 
@@ -84,6 +86,26 @@ export default (state = INITIAL_STATE, action) => {
         recargar_table: true,
         state_form: 'crear'
       };
+
+      case CANCELAR:
+        return {
+          ...state,
+          loading: false,
+          error: '',
+          error_form: '',
+          marca: {
+            id: '',
+            name: ''
+          },
+          state_form: 'crear'
+        };
+  
+      case RECARGA:
+        return {
+          ...state,
+          loading: true,
+          recargar_table: false,
+        };
 
     default: return state
   }

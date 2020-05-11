@@ -7,7 +7,7 @@ import FormControl from '@material-ui/core/FormControl';
 
 import * as ambientesActions from '../../actions/ambientesActions'
 
-const { agregar, editar, cambioAmbienteName, cambioAmbienteCodigo, cambioAmbienteInputs, cancelar } = ambientesActions;
+const { agregar, editar, borrar, cambioAmbienteName, cambioAmbienteCodigo, cambioAmbienteInputs, cancelar } = ambientesActions;
 
 const Formulario = (props) => {
 
@@ -20,6 +20,7 @@ const Formulario = (props) => {
       cambioAmbienteName,
       cambioAmbienteCodigo,
       cambioAmbienteInputs,
+      borrar,
       agregar,
       editar,
       cancelar,
@@ -55,7 +56,7 @@ const Formulario = (props) => {
       },
    }));
 
-   const classes = useStyles();   
+   const classes = useStyles();
 
    return (
       <FormControl >
@@ -71,6 +72,7 @@ const Formulario = (props) => {
                   onChange={handleCambioAmbienteName}
                   helperText={error_form.name}
                   error={!error_form.name ? false : true}
+                  disabled={state_form === 'borrar' ? true : false}
                />
             </FormControl>
 
@@ -84,6 +86,7 @@ const Formulario = (props) => {
                   onChange={handleCambioAmbienteCodigo}
                   helperText={error_form.codigo}
                   error={!error_form.codigo ? false : true}
+                  disabled={state_form === 'borrar' ? true : false}
                />
             </FormControl>
 
@@ -97,24 +100,39 @@ const Formulario = (props) => {
                   onChange={handleCambioAmbienteInputs}
                   helperText={error_form.inputs}
                   error={!error_form.inputs ? false : true}
+                  disabled={state_form === 'borrar' ? true : false}
                />
             </FormControl>
 
-
             <div className="form-row margin-button">
-
                <div className="form-group col-md-6">
-                  <Button
-                     variant="contained"
-                     color="primary"
-                     onClick={guardar}
-                  >
-                     Guardar
-                  </Button>
+                  {state_form === 'crear' || state_form === 'editar'
+                     ?
+                     <Button
+                        variant="contained"
+                        color="primary"
+                        onClick={guardar}
+                     >
+                        Guardar
+                     </Button> : ''}
+                  {state_form === 'borrar'
+                     ?
+                     <div>
+                        <Button
+                           variant="contained"
+                           color="primary"
+                           onClick={() => borrar(id)}
+                        >
+                           Borrar
+                        </Button>
+                        {error_form && <small className="text-danger">Existe un registro vinculado.</small>}
+                     </div>
+                     : ''}
+
                </div >
 
                <div className="form-group col-md-6">
-                  {state_form === 'editar'
+                  {state_form === 'editar' || state_form === 'borrar'
                      ?
                      <Button
                         variant="contained"
@@ -124,7 +142,6 @@ const Formulario = (props) => {
                         Cancelar
                      </Button> : ''}
                </div >
-
             </div>
 
          </div>
@@ -141,6 +158,7 @@ const mapDispatchToProps = {
    cambioAmbienteCodigo,
    cambioAmbienteInputs,
 
+   borrar,
    agregar,
    editar,
    cancelar

@@ -11,6 +11,8 @@ import {
   CAMBIO_AMBIENTE_NAME,
   CAMBIO_AMBIENTE_INPUTS,
 
+  RECARGA,
+  CANCELAR,
   GUARDAR
 } from '../types/ambienteTypes'
 
@@ -106,6 +108,28 @@ export default (state = INITIAL_STATE, action) => {
         recargar_table: true,
         state_form: 'crear'
       };
+
+      case CANCELAR:
+        return {
+          ...state,
+          loading: false,
+          error: '',
+          error_form: '',
+          ambiente: {
+            id: '',
+            name: '',
+            codigo: '',
+            inputs: '',
+          },
+          state_form: 'crear'
+        };
+  
+      case RECARGA:
+        return {
+          ...state,
+          loading: true,
+          recargar_table: false,
+        };
 
     default: return state
   }

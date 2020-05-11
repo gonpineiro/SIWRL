@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
 import Table from './Table'
 import Formulario from './Formulario'
-import Delete from './Delete'
 import Spinner from '../General/Spinner';
 
 import * as usersActions from '../../actions/usersActions'
@@ -12,13 +11,13 @@ import * as usersActions from '../../actions/usersActions'
 class Users extends Component {
 
 	async componentDidMount() {
-		const { traerTodos, users} = this.props
+		const { traerTodos, users } = this.props
 
 		if (!users.length) traerTodos()
 	}
 
 	ponerContenido = () => {
-		const { traerTodos, recargar_table, loading, users, error} = this.props
+		const { traerTodos, recargar_table, loading, users, error } = this.props
 
 		if (recargar_table) traerTodos()
 
@@ -31,7 +30,7 @@ class Users extends Component {
 	ponerFormulario = () => <Formulario />
 
 	render() {
-		const { state_form, loading, user, history: { goBack }  } = this.props
+		const { state_form, loading, user, history: { goBack } } = this.props
 
 		return (
 			<div className="container col-md-9">
@@ -46,38 +45,15 @@ class Users extends Component {
 					<div className="col col-md-4">
 
 						<div className="card">
-							{state_form === 'crear' ?
-								<div>
-									<div className="card-header card-agregar">
-										Agregar usuario <KeyboardReturnIcon fontSize="small" onClick={ goBack }/>
-									</div>
-									{loading ? <Spinner /> :
-										<div className="card-body">
-											{this.ponerFormulario()}
-										</div>}
-								</div> : ''}
-
-							{state_form === 'editar' ?
-								<div>
-									<div className="card-header card-agregar">
-										Modificando usuario: {user.id}
-									</div>
-									{loading ? <Spinner /> :
-										<div className="card-body">
-											{this.ponerFormulario()}
-										</div>}
-								</div> : ''}
-
-							{state_form === 'borrar' ?
-								<div>
-									<div className="card-header card-eliminar">
-										Eliminar siguente usuario
-											</div>
-									{loading ? <Spinner /> :
-										<div className="card-body">
-											<Delete />
-										</div>}
-								</div> : ''}
+							<div>
+								<div className="card-header card-agregar">
+									Agregar usuario <KeyboardReturnIcon fontSize="small" onClick={goBack} />
+								</div>
+								{loading ? <Spinner /> :
+									<div className="card-body">
+										{this.ponerFormulario()}
+									</div>}
+							</div>
 
 						</div>
 					</div>

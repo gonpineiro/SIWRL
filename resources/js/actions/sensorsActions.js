@@ -12,7 +12,9 @@ import {
     CAMBIO_SENSOR_AMBIENTE_ID,
     CAMBIO_SENSOR_NAME,
     CAMBIO_SENSOR_OUTPUT,
-
+    
+    CANCELAR,
+    RECARGA,
     GUARDAR
 } from '../types/sensorTypes'
 
@@ -21,7 +23,7 @@ const URL = 'http://192.168.0.238:901/api/'
 export const traerTodos = () => async (dispatch) => {
 
     dispatch({
-        type: LOADING
+        type: RECARGA
     })
 
     try {
@@ -179,7 +181,7 @@ export const borrar = (id) => async (dispatch) => {
 
 export const cancelar = () => (dispatch) => {
     dispatch({
-        type: GUARDAR
+        type: CANCELAR
     })
 }
 

@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
 import Table from './Table'
 import Formulario from './Formulario'
-import Delete from './Delete'
 import Spinner from '../General/Spinner';
 
 import * as marcasActions from '../../actions/marcasActions'
@@ -19,14 +18,14 @@ class Marcas extends Component {
 		const { traerTodos, recargar_table, loading, marcas, error } = this.props
 
 		if (recargar_table) traerTodos()
-
+		
 		if (loading && !marcas.length) return <Spinner />
 
 		if (error) return 'Error'
 
 		return <Table />
 	}
-	ponerFormulario = () => <Formulario  />
+	ponerFormulario = () => <Formulario />
 
 	render() {
 		const { state_form, loading, marca, history: { goBack } } = this.props
@@ -41,39 +40,15 @@ class Marcas extends Component {
 					</div>
 					<div className="col col-md-4">
 						<div className="card">
-
-							{state_form === 'crear' ?
-								<div>
-									<div className="card-header card-agregar">
-										Agregar marca <KeyboardReturnIcon fontSize="small" onClick={ goBack }/>
-									</div>
-									{loading ? <Spinner /> :
-										<div className="card-body">
-											{this.ponerFormulario()}
-										</div>}
-								</div> : ''}
-
-							{state_form === 'editar' ?
-								<div>
-									<div className="card-header card-agregar">
-										Modificando usuario: {marca.id}
-									</div>
-									{loading ? <Spinner /> :
-										<div className="card-body">
-											{this.ponerFormulario()}
-										</div>}
-								</div> : ''}
-
-							{state_form === 'borrar' ?
-								<div>
-									<div className="card-header card-eliminar">
-										Eliminar la siguente marca
-									</div>
-									{loading ? <Spinner /> :
-										<div className="card-body">
-											<Delete />
-										</div>}
-								</div> : ''}
+							<div>
+								<div className="card-header card-agregar">
+									Agregar marca <KeyboardReturnIcon fontSize="small" onClick={goBack} />
+								</div>
+								{loading ? <Spinner /> :
+									<div className="card-body">
+										{this.ponerFormulario()}
+									</div>}
+							</div>
 
 						</div>
 					</div>

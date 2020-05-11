@@ -3,29 +3,40 @@ import { connect } from 'react-redux'
 import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
 import Table from './Table'
 import Formulario from './Formulario'
-import Delete from './Delete'
 import Spinner from '../General/Spinner';
 
 import * as geneticasActions from '../../actions/geneticasActions'
+import * as marcasActions from '../../actions/marcasActions'
+
+const { traerTodos: marcasTraerTodos } = marcasActions
+const { traerTodos: genericasTraerTodos } = geneticasActions
 
 class Geneticas extends Component {
 
 	async componentDidMount() {
-		const { traerTodos, geneticas } = this.props
+		const {
+			geneticasReducer: { geneticas, recargar_table },
+			marcasReducer: { marcas },
+			genericasTraerTodos,
+			marcasTraerTodos,
+		} = this.props
 
-		if (!geneticas.length) traerTodos()
+		if (!geneticas.length) genericasTraerTodos()
+		if (!marcas.length) marcasTraerTodos()
 	}
 
 	ponerContenido = () => {
 		const {
-			traerTodos,
-			recargar_table,
-			loading,
-			geneticas,
-			error
+			genericasTraerTodos,
+			geneticasReducer: {
+				recargar_table,
+				loading,
+				geneticas,
+				error
+			}
 		} = this.props
 
-		if (recargar_table) traerTodos()
+		if (recargar_table) genericasTraerTodos()
 
 		if (loading && !geneticas.length) return <Spinner />
 
@@ -37,8 +48,15 @@ class Geneticas extends Component {
 	ponerFormulario = () => <Formulario />
 
 	render() {
-		const { loading, state_form, genetica, history: { goBack } } = this.props	
-		console.log(this.props)
+		const {
+			geneticasReducer: {
+				loading,
+				state_form,
+				genetica,
+			},
+			history: { goBack }
+		} = this.props
+
 		return (
 			<div className="container col-md-9">
 				<div className="row mt-2">
@@ -50,40 +68,16 @@ class Geneticas extends Component {
 					</div>
 					<div className="col col-md-4">
 						<div className="card">
+							<div>
 
-							{state_form === 'crear' ?
-								<div>
-									<div className="card-header card-agregar">
-										Agregar genética<KeyboardReturnIcon fontSize="small" onClick={ goBack }/>
-									</div>
-									{loading ? <Spinner /> :
-										<div className="card-body">
-											{this.ponerFormulario()}
-										</div>}
-								</div> : ''}
-
-							{state_form === 'editar' ?
-								<div>
-									<div className="card-header card-agregar">
-										Modificando genetica: {genetica.id}
-									</div>
-									{loading ? <Spinner /> :
-										<div className="card-body">
-											{this.ponerFormulario()}
-										</div>}
-								</div> : ''}
-
-							{state_form === 'borrar' ?
-								<div>
-									<div className="card-header card-eliminar">
-										Eliminar la siguente genética
-									</div>
-									{loading ? <Spinner /> :
-										<div className="card-body">
-											<Delete />
-										</div>}
-								</div> : ''}
-
+								<div className="card-header card-agregar">
+									Agregar genética<KeyboardReturnIcon fontSize="small" onClick={goBack} />
+								</div>
+								{loading ? <Spinner /> :
+									<div className="card-body">
+										{this.ponerFormulario()}
+									</div>}
+							</div>
 						</div>
 					</div>
 
@@ -93,8 +87,15 @@ class Geneticas extends Component {
 	}
 }
 
-const mapStateToProps = (reducers) => {
-	return reducers.geneticasReducer;
+const mapStateToProps = ({ geneticasReducer, marcasReducer }) => {
+	return { geneticasReducer, marcasReducer };
 };
 
-export default connect(mapStateToProps, geneticasActions)(Geneticas);
+const mapDispatchToProps = {
+	geneticasActions,
+	marcasTraerTodos,
+	genericasTraerTodos
+
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Geneticas);

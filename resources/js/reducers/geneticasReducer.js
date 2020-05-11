@@ -16,6 +16,8 @@ import {
   CAMBIO_GENETICA_TIEMPO_FLORA,
   CAMBIO_GENETICA_SABORES,
 
+  RECARGA,
+  CANCELAR,
   GUARDAR
 } from '../types/geneticaTypes'
 
@@ -137,6 +139,7 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_ESTADO_FORM:
       return {
         ...state,
+        error_form: '',
         state_form: action.payload
       };
 
@@ -158,6 +161,32 @@ export default (state = INITIAL_STATE, action) => {
         recargar_table: true,
         state_form: 'crear'
       };
+
+    case CANCELAR:
+      return {
+        ...state,
+        loading: false,
+        error: '',
+        error_form: '',
+        genetica: {
+          id: '',
+          name: '',
+          marca_id: '',
+          prod_int: '',
+          prod_ext: '',
+          tiempo_flora: '',
+          sabores: '',
+        },
+        state_form: 'crear'
+      };
+
+    case RECARGA:
+      return {
+        ...state,
+        loading: true,
+        recargar_table: false,
+      };
+
 
     default: return state
   }

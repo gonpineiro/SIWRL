@@ -10,7 +10,9 @@ import {
     CAMBIO_USUARIO_EMAIL,
     CAMBIO_USUARIO_PASSWORD,
     CAMBIO_ESTADO_FORM,
-
+    
+    CANCELAR,
+    RECARGA,
     GUARDAR
 } from '../types/userTypes'
 
@@ -19,7 +21,7 @@ const URL = 'http://192.168.0.238:901/api/'
 export const traerTodos = () => async (dispatch) => {
     
     dispatch({
-        type: LOADING
+        type: RECARGA
     })
 
     try {
@@ -175,7 +177,7 @@ export const borrar = (id) => async (dispatch) => {
 
 export const cancelar = () => (dispatch) => {
     dispatch({
-        type: GUARDAR
+        type: CANCELAR
     })
 }
 

@@ -1,5 +1,5 @@
 # SIWRL - S.I Web React Laravel
-S.I Web React Laravel: Version 1.0.1 - Estable.
+S.I Web React Laravel: Version 1.0.2 - Estable.
 
 ### 1° Paso: Instalar Laravel
 

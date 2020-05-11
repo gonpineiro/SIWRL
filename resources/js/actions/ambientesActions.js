@@ -12,6 +12,8 @@ import {
     CAMBIO_AMBIENTE_NAME,
     CAMBIO_AMBIENTE_INPUTS,
 
+    RECARGA,
+    CANCELAR,
     GUARDAR
 } from '../types/ambienteTypes'
 
@@ -20,8 +22,8 @@ const URL = 'http://192.168.0.238:901/api/'
 export const traerTodos = () => async (dispatch) => {
     
     dispatch({
-        type: LOADING
-    })    
+        type: RECARGA
+    })  
 
     try {        
         const response = await axios.get(URL + 'ambiente')
@@ -181,7 +183,7 @@ export const borrar = (id) => async (dispatch) => {
 
 export const cancelar = () => (dispatch) => {
     dispatch({
-        type: GUARDAR
+        type: CANCELAR
     })
 }
 

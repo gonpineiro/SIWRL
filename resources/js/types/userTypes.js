@@ -10,4 +10,6 @@ export const CAMBIO_USUARIO_NAME = 'users_cambio_user_name'
 export const CAMBIO_USUARIO_EMAIL = 'users_cambio_user_email'
 export const CAMBIO_USUARIO_PASSWORD = 'users_cambio_user_password'
 
+export const RECARGA = 'users_recarga_users'
+export const CANCELAR = 'users_cancelar_users'
 export const GUARDAR = 'users_guardar_user'

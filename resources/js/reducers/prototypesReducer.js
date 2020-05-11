@@ -18,6 +18,8 @@ import {
   CAMBIO_PROTOTYPE_FECHA_ESTADO_E,
   CAMBIO_PROTOTYPE_CANTIDAD,
 
+  RECARGA,
+  CANCELAR,
   GUARDAR
 } from '../types/prototypeTypes'
 
@@ -179,10 +181,42 @@ export default (state = INITIAL_STATE, action) => {
           fecha_estapa_c: '',
           fecha_estapa_d: '',
           fecha_estapa_e: '',
-          cantidad: ''
+          cantidad: '',
+          sensor: ''
         },
         recargar_table: true,
         state_form: 'crear'
+      };
+
+    case CANCELAR:
+      return {
+        ...state,
+        loading: false,
+        error: '',
+        error_form: '',
+        prototype: {
+          ...state.form,
+          id: '',
+          name: '',
+          genetica_id: '',
+          ambiente_id: '',
+          sensor_id: '',
+          fecha_estapa_a: '',
+          fecha_estapa_b: '',
+          fecha_estapa_c: '',
+          fecha_estapa_d: '',
+          fecha_estapa_e: '',
+          cantidad: '',
+          sensor: ''
+        },
+        state_form: 'crear'
+      };
+
+    case RECARGA:
+      return {
+        ...state,
+        loading: true,
+        recargar_table: false,
       };
 
     default: return state

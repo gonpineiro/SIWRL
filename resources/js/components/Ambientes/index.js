@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
 import Table from './Table'
 import Formulario from './Formulario'
-import Delete from './Delete'
 import Spinner from '../General/Spinner';
 
 import * as ambientesActions from '../../actions/ambientesActions'
@@ -26,7 +25,7 @@ class Ambientes extends Component {
 
 		return <Table />
 	}
-	ponerFormulario = () => <Formulario  />
+	ponerFormulario = () => <Formulario />
 
 	render() {
 		const { state_form, loading, ambiente, history: { goBack } } = this.props
@@ -41,39 +40,15 @@ class Ambientes extends Component {
 					</div>
 					<div className="col col-md-4">
 						<div className="card">
-
-							{state_form === 'crear' ?
-								<div>
-									<div className="card-header card-agregar">
-										Agregar ambiente <KeyboardReturnIcon fontSize="small" onClick={ goBack }/>
-									</div>
-									{loading ? <Spinner /> :
-										<div className="card-body">
-											{this.ponerFormulario()}
-										</div>}
-								</div> : ''}
-
-							{state_form === 'editar' ?
-								<div>
-									<div className="card-header card-agregar">
-										Modificando usuario: {ambiente.id}
-									</div>
-									{loading ? <Spinner /> :
-										<div className="card-body">
-											{this.ponerFormulario()}
-										</div>}
-								</div> : ''}
-
-							{state_form === 'borrar' ?
-								<div>
-									<div className="card-header card-eliminar">
-										Eliminar el siguente ambiente
-									</div>
-									{loading ? <Spinner /> :
-										<div className="card-body">
-											<Delete />
-										</div>}
-								</div> : ''}
+							<div>
+								<div className="card-header card-agregar">
+									Agregar ambiente <KeyboardReturnIcon fontSize="small" onClick={goBack} />
+								</div>
+								{loading ? <Spinner /> :
+									<div className="card-body">
+										{this.ponerFormulario()}
+									</div>}
+							</div>
 
 						</div>
 					</div>

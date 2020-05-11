@@ -10,4 +10,6 @@ export const CAMBIO_AMBIENTE_CODIGO = 'ambientes_cambio_ambiente_codigo'
 export const CAMBIO_AMBIENTE_NAME = 'ambientes_cambio_ambiente_name'
 export const CAMBIO_AMBIENTE_INPUTS = 'ambientes_cambio_ambiente_inputs'
 
+export const RECARGA = 'ambientes_recarga_ambientes'
+export const CANCELAR = 'ambientes_cancelar_ambientes'
 export const GUARDAR = 'ambientes_guardar_ambiente'

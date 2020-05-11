@@ -8,4 +8,6 @@ export const CAMBIO_ESTADO_FORM = 'marcas_cambio_estado_form'
 export const CAMBIO_MARCA_ID = 'marcas_cambio_marca_id'
 export const CAMBIO_MARCA_NAME = 'marcas_cambio_marca_name'
 
+export const RECARGA = 'marcas_recarga_marcas'
+export const CANCELAR = 'marcas_cancelar_marcas'
 export const GUARDAR = 'marcas_guardar_marca'

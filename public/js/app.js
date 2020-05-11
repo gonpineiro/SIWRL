@@ -10744,1228 +10744,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/@material-ui/core/esm/Slider/Slider.js":
-/*!*************************************************************!*\
-  !*** ./node_modules/@material-ui/core/esm/Slider/Slider.js ***!
-  \*************************************************************/
-/*! exports provided: styles, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "styles", function() { return styles; });
-/* harmony import */ var _babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/slicedToArray */ "./node_modules/@babel/runtime/helpers/esm/slicedToArray.js");
-/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
-/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var _babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
-/* harmony import */ var _material_ui_utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/utils */ "./node_modules/@material-ui/utils/esm/index.js");
-/* harmony import */ var _styles_withStyles__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../styles/withStyles */ "./node_modules/@material-ui/core/esm/styles/withStyles.js");
-/* harmony import */ var _styles_useTheme__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../styles/useTheme */ "./node_modules/@material-ui/core/esm/styles/useTheme.js");
-/* harmony import */ var _styles_colorManipulator__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../styles/colorManipulator */ "./node_modules/@material-ui/core/esm/styles/colorManipulator.js");
-/* harmony import */ var _utils_useIsFocusVisible__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../utils/useIsFocusVisible */ "./node_modules/@material-ui/core/esm/utils/useIsFocusVisible.js");
-/* harmony import */ var _utils_ownerDocument__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../utils/ownerDocument */ "./node_modules/@material-ui/core/esm/utils/ownerDocument.js");
-/* harmony import */ var _utils_useEventCallback__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../utils/useEventCallback */ "./node_modules/@material-ui/core/esm/utils/useEventCallback.js");
-/* harmony import */ var _utils_useForkRef__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../utils/useForkRef */ "./node_modules/@material-ui/core/esm/utils/useForkRef.js");
-/* harmony import */ var _utils_capitalize__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../utils/capitalize */ "./node_modules/@material-ui/core/esm/utils/capitalize.js");
-/* harmony import */ var _utils_useControlled__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../utils/useControlled */ "./node_modules/@material-ui/core/esm/utils/useControlled.js");
-/* harmony import */ var _ValueLabel__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./ValueLabel */ "./node_modules/@material-ui/core/esm/Slider/ValueLabel.js");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function asc(a, b) {
-  return a - b;
-}
-
-function clamp(value, min, max) {
-  return Math.min(Math.max(min, value), max);
-}
-
-function findClosest(values, currentValue) {
-  var _values$reduce = values.reduce(function (acc, value, index) {
-    var distance = Math.abs(currentValue - value);
-
-    if (acc === null || distance < acc.distance || distance === acc.distance) {
-      return {
-        distance: distance,
-        index: index
-      };
-    }
-
-    return acc;
-  }, null),
-      closestIndex = _values$reduce.index;
-
-  return closestIndex;
-}
-
-function trackFinger(event, touchId) {
-  if (touchId.current !== undefined && event.changedTouches) {
-    for (var i = 0; i < event.changedTouches.length; i += 1) {
-      var touch = event.changedTouches[i];
-
-      if (touch.identifier === touchId.current) {
-        return {
-          x: touch.clientX,
-          y: touch.clientY
-        };
-      }
-    }
-
-    return false;
-  }
-
-  return {
-    x: event.clientX,
-    y: event.clientY
-  };
-}
-
-function valueToPercent(value, min, max) {
-  return (value - min) * 100 / (max - min);
-}
-
-function percentToValue(percent, min, max) {
-  return (max - min) * percent + min;
-}
-
-function getDecimalPrecision(num) {
-  // This handles the case when num is very small (0.00000001), js will turn this into 1e-8.
-  // When num is bigger than 1 or less than -1 it won't get converted to this notation so it's fine.
-  if (Math.abs(num) < 1) {
-    var parts = num.toExponential().split('e-');
-    var matissaDecimalPart = parts[0].split('.')[1];
-    return (matissaDecimalPart ? matissaDecimalPart.length : 0) + parseInt(parts[1], 10);
-  }
-
-  var decimalPart = num.toString().split('.')[1];
-  return decimalPart ? decimalPart.length : 0;
-}
-
-function roundValueToStep(value, step, min) {
-  var nearest = Math.round((value - min) / step) * step + min;
-  return Number(nearest.toFixed(getDecimalPrecision(step)));
-}
-
-function setValueIndex(_ref) {
-  var values = _ref.values,
-      source = _ref.source,
-      newValue = _ref.newValue,
-      index = _ref.index;
-
-  // Performance shortcut
-  if (values[index] === newValue) {
-    return source;
-  }
-
-  var output = Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_3__["default"])(values);
-
-  output[index] = newValue;
-  return output;
-}
-
-function focusThumb(_ref2) {
-  var sliderRef = _ref2.sliderRef,
-      activeIndex = _ref2.activeIndex,
-      setActive = _ref2.setActive;
-
-  if (!sliderRef.current.contains(document.activeElement) || Number(document.activeElement.getAttribute('data-index')) !== activeIndex) {
-    sliderRef.current.querySelector("[role=\"slider\"][data-index=\"".concat(activeIndex, "\"]")).focus();
-  }
-
-  if (setActive) {
-    setActive(activeIndex);
-  }
-}
-
-var axisProps = {
-  horizontal: {
-    offset: function offset(percent) {
-      return {
-        left: "".concat(percent, "%")
-      };
-    },
-    leap: function leap(percent) {
-      return {
-        width: "".concat(percent, "%")
-      };
-    }
-  },
-  'horizontal-reverse': {
-    offset: function offset(percent) {
-      return {
-        right: "".concat(percent, "%")
-      };
-    },
-    leap: function leap(percent) {
-      return {
-        width: "".concat(percent, "%")
-      };
-    }
-  },
-  vertical: {
-    offset: function offset(percent) {
-      return {
-        bottom: "".concat(percent, "%")
-      };
-    },
-    leap: function leap(percent) {
-      return {
-        height: "".concat(percent, "%")
-      };
-    }
-  }
-};
-
-var Identity = function Identity(x) {
-  return x;
-};
-
-var styles = function styles(theme) {
-  return {
-    /* Styles applied to the root element. */
-    root: {
-      height: 2,
-      width: '100%',
-      boxSizing: 'content-box',
-      padding: '13px 0',
-      display: 'inline-block',
-      position: 'relative',
-      cursor: 'pointer',
-      touchAction: 'none',
-      color: theme.palette.primary.main,
-      WebkitTapHighlightColor: 'transparent',
-      '&$disabled': {
-        pointerEvents: 'none',
-        cursor: 'default',
-        color: theme.palette.grey[400]
-      },
-      '&$vertical': {
-        width: 2,
-        height: '100%',
-        padding: '0 13px'
-      },
-      // The primary input mechanism of the device includes a pointing device of limited accuracy.
-      '@media (pointer: coarse)': {
-        // Reach 42px touch target, about ~8mm on screen.
-        padding: '20px 0',
-        '&$vertical': {
-          padding: '0 20px'
-        }
-      },
-      '@media print': {
-        colorAdjust: 'exact'
-      }
-    },
-
-    /* Styles applied to the root element if `color="primary"`. */
-    colorPrimary: {// TODO v5: move the style here
-    },
-
-    /* Styles applied to the root element if `color="secondary"`. */
-    colorSecondary: {
-      color: theme.palette.secondary.main
-    },
-
-    /* Styles applied to the root element if `marks` is provided with at least one label. */
-    marked: {
-      marginBottom: 20,
-      '&$vertical': {
-        marginBottom: 'auto',
-        marginRight: 20
-      }
-    },
-
-    /* Pseudo-class applied to the root element if `orientation="vertical"`. */
-    vertical: {},
-
-    /* Pseudo-class applied to the root and thumb element if `disabled={true}`. */
-    disabled: {},
-
-    /* Styles applied to the rail element. */
-    rail: {
-      display: 'block',
-      position: 'absolute',
-      width: '100%',
-      height: 2,
-      borderRadius: 1,
-      backgroundColor: 'currentColor',
-      opacity: 0.38,
-      '$vertical &': {
-        height: '100%',
-        width: 2
-      }
-    },
-
-    /* Styles applied to the track element. */
-    track: {
-      display: 'block',
-      position: 'absolute',
-      height: 2,
-      borderRadius: 1,
-      backgroundColor: 'currentColor',
-      '$vertical &': {
-        width: 2
-      }
-    },
-
-    /* Styles applied to the track element if `track={false}`. */
-    trackFalse: {
-      '& $track': {
-        display: 'none'
-      }
-    },
-
-    /* Styles applied to the track element if `track="inverted"`. */
-    trackInverted: {
-      '& $track': {
-        backgroundColor: // Same logic as the LinearProgress track color
-        theme.palette.type === 'light' ? Object(_styles_colorManipulator__WEBPACK_IMPORTED_MODULE_10__["lighten"])(theme.palette.primary.main, 0.62) : Object(_styles_colorManipulator__WEBPACK_IMPORTED_MODULE_10__["darken"])(theme.palette.primary.main, 0.5)
-      },
-      '& $rail': {
-        opacity: 1
-      }
-    },
-
-    /* Styles applied to the thumb element. */
-    thumb: {
-      position: 'absolute',
-      width: 12,
-      height: 12,
-      marginLeft: -6,
-      marginTop: -5,
-      boxSizing: 'border-box',
-      borderRadius: '50%',
-      outline: 0,
-      backgroundColor: 'currentColor',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      transition: theme.transitions.create(['box-shadow'], {
-        duration: theme.transitions.duration.shortest
-      }),
-      '&::after': {
-        position: 'absolute',
-        content: '""',
-        borderRadius: '50%',
-        // reach 42px hit target (2 * 15 + thumb diameter)
-        left: -15,
-        top: -15,
-        right: -15,
-        bottom: -15
-      },
-      '&$focusVisible,&:hover': {
-        boxShadow: "0px 0px 0px 8px ".concat(Object(_styles_colorManipulator__WEBPACK_IMPORTED_MODULE_10__["fade"])(theme.palette.primary.main, 0.16)),
-        '@media (hover: none)': {
-          boxShadow: 'none'
-        }
-      },
-      '&$active': {
-        boxShadow: "0px 0px 0px 14px ".concat(Object(_styles_colorManipulator__WEBPACK_IMPORTED_MODULE_10__["fade"])(theme.palette.primary.main, 0.16))
-      },
-      '&$disabled': {
-        width: 8,
-        height: 8,
-        marginLeft: -4,
-        marginTop: -3,
-        '&:hover': {
-          boxShadow: 'none'
-        }
-      },
-      '$vertical &': {
-        marginLeft: -5,
-        marginBottom: -6
-      },
-      '$vertical &$disabled': {
-        marginLeft: -3,
-        marginBottom: -4
-      }
-    },
-
-    /* Styles applied to the thumb element if `color="primary"`. */
-    thumbColorPrimary: {// TODO v5: move the style here
-    },
-
-    /* Styles applied to the thumb element if `color="secondary"`. */
-    thumbColorSecondary: {
-      '&$focusVisible,&:hover': {
-        boxShadow: "0px 0px 0px 8px ".concat(Object(_styles_colorManipulator__WEBPACK_IMPORTED_MODULE_10__["fade"])(theme.palette.secondary.main, 0.16))
-      },
-      '&$active': {
-        boxShadow: "0px 0px 0px 14px ".concat(Object(_styles_colorManipulator__WEBPACK_IMPORTED_MODULE_10__["fade"])(theme.palette.secondary.main, 0.16))
-      }
-    },
-
-    /* Pseudo-class applied to the thumb element if it's active. */
-    active: {},
-
-    /* Pseudo-class applied to the thumb element if keyboard focused. */
-    focusVisible: {},
-
-    /* Styles applied to the thumb label element. */
-    valueLabel: {},
-
-    /* Styles applied to the mark element. */
-    mark: {
-      position: 'absolute',
-      width: 2,
-      height: 2,
-      borderRadius: 1,
-      backgroundColor: 'currentColor'
-    },
-
-    /* Styles applied to the mark element if active (depending on the value). */
-    markActive: {
-      backgroundColor: theme.palette.background.paper,
-      opacity: 0.8
-    },
-
-    /* Styles applied to the mark label element. */
-    markLabel: Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])(Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, theme.typography.body2), {}, {
-      color: theme.palette.text.secondary,
-      position: 'absolute',
-      top: 26,
-      transform: 'translateX(-50%)',
-      whiteSpace: 'nowrap',
-      '$vertical &': {
-        top: 'auto',
-        left: 26,
-        transform: 'translateY(50%)'
-      },
-      '@media (pointer: coarse)': {
-        top: 40,
-        '$vertical &': {
-          left: 31
-        }
-      }
-    }),
-
-    /* Styles applied to the mark label element if active (depending on the value). */
-    markLabelActive: {
-      color: theme.palette.text.primary
-    }
-  };
-};
-var Slider = react__WEBPACK_IMPORTED_MODULE_4__["forwardRef"](function Slider(props, ref) {
-  var ariaLabel = props['aria-label'],
-      ariaLabelledby = props['aria-labelledby'],
-      ariaValuetext = props['aria-valuetext'],
-      classes = props.classes,
-      className = props.className,
-      _props$color = props.color,
-      color = _props$color === void 0 ? 'primary' : _props$color,
-      _props$component = props.component,
-      Component = _props$component === void 0 ? 'span' : _props$component,
-      defaultValue = props.defaultValue,
-      _props$disabled = props.disabled,
-      disabled = _props$disabled === void 0 ? false : _props$disabled,
-      getAriaLabel = props.getAriaLabel,
-      getAriaValueText = props.getAriaValueText,
-      _props$marks = props.marks,
-      marksProp = _props$marks === void 0 ? false : _props$marks,
-      _props$max = props.max,
-      max = _props$max === void 0 ? 100 : _props$max,
-      _props$min = props.min,
-      min = _props$min === void 0 ? 0 : _props$min,
-      name = props.name,
-      onChange = props.onChange,
-      onChangeCommitted = props.onChangeCommitted,
-      onMouseDown = props.onMouseDown,
-      _props$orientation = props.orientation,
-      orientation = _props$orientation === void 0 ? 'horizontal' : _props$orientation,
-      _props$scale = props.scale,
-      scale = _props$scale === void 0 ? Identity : _props$scale,
-      _props$step = props.step,
-      step = _props$step === void 0 ? 1 : _props$step,
-      _props$ThumbComponent = props.ThumbComponent,
-      ThumbComponent = _props$ThumbComponent === void 0 ? 'span' : _props$ThumbComponent,
-      _props$track = props.track,
-      track = _props$track === void 0 ? 'normal' : _props$track,
-      valueProp = props.value,
-      _props$ValueLabelComp = props.ValueLabelComponent,
-      ValueLabelComponent = _props$ValueLabelComp === void 0 ? _ValueLabel__WEBPACK_IMPORTED_MODULE_17__["default"] : _props$ValueLabelComp,
-      _props$valueLabelDisp = props.valueLabelDisplay,
-      valueLabelDisplay = _props$valueLabelDisp === void 0 ? 'off' : _props$valueLabelDisp,
-      _props$valueLabelForm = props.valueLabelFormat,
-      valueLabelFormat = _props$valueLabelForm === void 0 ? Identity : _props$valueLabelForm,
-      other = Object(_babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__["default"])(props, ["aria-label", "aria-labelledby", "aria-valuetext", "classes", "className", "color", "component", "defaultValue", "disabled", "getAriaLabel", "getAriaValueText", "marks", "max", "min", "name", "onChange", "onChangeCommitted", "onMouseDown", "orientation", "scale", "step", "ThumbComponent", "track", "value", "ValueLabelComponent", "valueLabelDisplay", "valueLabelFormat"]);
-
-  var theme = Object(_styles_useTheme__WEBPACK_IMPORTED_MODULE_9__["default"])();
-  var touchId = react__WEBPACK_IMPORTED_MODULE_4__["useRef"](); // We can't use the :active browser pseudo-classes.
-  // - The active state isn't triggered when clicking on the rail.
-  // - The active state isn't transfered when inversing a range slider.
-
-  var _React$useState = react__WEBPACK_IMPORTED_MODULE_4__["useState"](-1),
-      active = _React$useState[0],
-      setActive = _React$useState[1];
-
-  var _React$useState2 = react__WEBPACK_IMPORTED_MODULE_4__["useState"](-1),
-      open = _React$useState2[0],
-      setOpen = _React$useState2[1];
-
-  var _useControlled = Object(_utils_useControlled__WEBPACK_IMPORTED_MODULE_16__["default"])({
-    controlled: valueProp,
-    default: defaultValue,
-    name: 'Slider'
-  }),
-      _useControlled2 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useControlled, 2),
-      valueDerived = _useControlled2[0],
-      setValueState = _useControlled2[1];
-
-  var range = Array.isArray(valueDerived);
-  var instanceRef = react__WEBPACK_IMPORTED_MODULE_4__["useRef"]();
-  var values = range ? Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_3__["default"])(valueDerived).sort(asc) : [valueDerived];
-  values = values.map(function (value) {
-    return clamp(value, min, max);
-  });
-  var marks = marksProp === true && step !== null ? Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_3__["default"])(Array(Math.floor((max - min) / step) + 1)).map(function (_, index) {
-    return {
-      value: min + step * index
-    };
-  }) : marksProp || [];
-  instanceRef.current = {
-    source: valueDerived // Keep track of the input value to leverage immutable state comparison.
-
-  };
-
-  var _useIsFocusVisible = Object(_utils_useIsFocusVisible__WEBPACK_IMPORTED_MODULE_11__["default"])(),
-      isFocusVisible = _useIsFocusVisible.isFocusVisible,
-      onBlurVisible = _useIsFocusVisible.onBlurVisible,
-      focusVisibleRef = _useIsFocusVisible.ref;
-
-  var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_4__["useState"](-1),
-      focusVisible = _React$useState3[0],
-      setFocusVisible = _React$useState3[1];
-
-  var sliderRef = react__WEBPACK_IMPORTED_MODULE_4__["useRef"]();
-  var handleFocusRef = Object(_utils_useForkRef__WEBPACK_IMPORTED_MODULE_14__["default"])(focusVisibleRef, sliderRef);
-  var handleRef = Object(_utils_useForkRef__WEBPACK_IMPORTED_MODULE_14__["default"])(ref, handleFocusRef);
-  var handleFocus = Object(_utils_useEventCallback__WEBPACK_IMPORTED_MODULE_13__["default"])(function (event) {
-    var index = Number(event.currentTarget.getAttribute('data-index'));
-
-    if (isFocusVisible(event)) {
-      setFocusVisible(index);
-    }
-
-    setOpen(index);
-  });
-  var handleBlur = Object(_utils_useEventCallback__WEBPACK_IMPORTED_MODULE_13__["default"])(function () {
-    if (focusVisible !== -1) {
-      setFocusVisible(-1);
-      onBlurVisible();
-    }
-
-    setOpen(-1);
-  });
-  var handleMouseOver = Object(_utils_useEventCallback__WEBPACK_IMPORTED_MODULE_13__["default"])(function (event) {
-    var index = Number(event.currentTarget.getAttribute('data-index'));
-    setOpen(index);
-  });
-  var handleMouseLeave = Object(_utils_useEventCallback__WEBPACK_IMPORTED_MODULE_13__["default"])(function () {
-    setOpen(-1);
-  });
-  var isRtl = theme.direction === 'rtl';
-  var handleKeyDown = Object(_utils_useEventCallback__WEBPACK_IMPORTED_MODULE_13__["default"])(function (event) {
-    var index = Number(event.currentTarget.getAttribute('data-index'));
-    var value = values[index];
-    var tenPercents = (max - min) / 10;
-    var marksValues = marks.map(function (mark) {
-      return mark.value;
-    });
-    var marksIndex = marksValues.indexOf(value);
-    var newValue;
-    var increaseKey = isRtl ? 'ArrowLeft' : 'ArrowRight';
-    var decreaseKey = isRtl ? 'ArrowRight' : 'ArrowLeft';
-
-    switch (event.key) {
-      case 'Home':
-        newValue = min;
-        break;
-
-      case 'End':
-        newValue = max;
-        break;
-
-      case 'PageUp':
-        if (step) {
-          newValue = value + tenPercents;
-        }
-
-        break;
-
-      case 'PageDown':
-        if (step) {
-          newValue = value - tenPercents;
-        }
-
-        break;
-
-      case increaseKey:
-      case 'ArrowUp':
-        if (step) {
-          newValue = value + step;
-        } else {
-          newValue = marksValues[marksIndex + 1] || marksValues[marksValues.length - 1];
-        }
-
-        break;
-
-      case decreaseKey:
-      case 'ArrowDown':
-        if (step) {
-          newValue = value - step;
-        } else {
-          newValue = marksValues[marksIndex - 1] || marksValues[0];
-        }
-
-        break;
-
-      default:
-        return;
-    } // Prevent scroll of the page
-
-
-    event.preventDefault();
-
-    if (step) {
-      newValue = roundValueToStep(newValue, step, min);
-    }
-
-    newValue = clamp(newValue, min, max);
-
-    if (range) {
-      var previousValue = newValue;
-      newValue = setValueIndex({
-        values: values,
-        source: valueDerived,
-        newValue: newValue,
-        index: index
-      }).sort(asc);
-      focusThumb({
-        sliderRef: sliderRef,
-        activeIndex: newValue.indexOf(previousValue)
-      });
-    }
-
-    setValueState(newValue);
-    setFocusVisible(index);
-
-    if (onChange) {
-      onChange(event, newValue);
-    }
-
-    if (onChangeCommitted) {
-      onChangeCommitted(event, newValue);
-    }
-  });
-  var previousIndex = react__WEBPACK_IMPORTED_MODULE_4__["useRef"]();
-  var axis = orientation;
-
-  if (isRtl && orientation !== "vertical") {
-    axis += '-reverse';
-  }
-
-  var getFingerNewValue = function getFingerNewValue(_ref3) {
-    var finger = _ref3.finger,
-        _ref3$move = _ref3.move,
-        move = _ref3$move === void 0 ? false : _ref3$move,
-        values2 = _ref3.values,
-        source = _ref3.source;
-    var slider = sliderRef.current;
-
-    var _slider$getBoundingCl = slider.getBoundingClientRect(),
-        width = _slider$getBoundingCl.width,
-        height = _slider$getBoundingCl.height,
-        bottom = _slider$getBoundingCl.bottom,
-        left = _slider$getBoundingCl.left;
-
-    var percent;
-
-    if (axis.indexOf('vertical') === 0) {
-      percent = (bottom - finger.y) / height;
-    } else {
-      percent = (finger.x - left) / width;
-    }
-
-    if (axis.indexOf('-reverse') !== -1) {
-      percent = 1 - percent;
-    }
-
-    var newValue;
-    newValue = percentToValue(percent, min, max);
-
-    if (step) {
-      newValue = roundValueToStep(newValue, step, min);
-    } else {
-      var marksValues = marks.map(function (mark) {
-        return mark.value;
-      });
-      var closestIndex = findClosest(marksValues, newValue);
-      newValue = marksValues[closestIndex];
-    }
-
-    newValue = clamp(newValue, min, max);
-    var activeIndex = 0;
-
-    if (range) {
-      if (!move) {
-        activeIndex = findClosest(values2, newValue);
-      } else {
-        activeIndex = previousIndex.current;
-      }
-
-      var previousValue = newValue;
-      newValue = setValueIndex({
-        values: values2,
-        source: source,
-        newValue: newValue,
-        index: activeIndex
-      }).sort(asc);
-      activeIndex = newValue.indexOf(previousValue);
-      previousIndex.current = activeIndex;
-    }
-
-    return {
-      newValue: newValue,
-      activeIndex: activeIndex
-    };
-  };
-
-  var handleTouchMove = Object(_utils_useEventCallback__WEBPACK_IMPORTED_MODULE_13__["default"])(function (event) {
-    var finger = trackFinger(event, touchId);
-
-    if (!finger) {
-      return;
-    }
-
-    var _getFingerNewValue = getFingerNewValue({
-      finger: finger,
-      move: true,
-      values: values,
-      source: valueDerived
-    }),
-        newValue = _getFingerNewValue.newValue,
-        activeIndex = _getFingerNewValue.activeIndex;
-
-    focusThumb({
-      sliderRef: sliderRef,
-      activeIndex: activeIndex,
-      setActive: setActive
-    });
-    setValueState(newValue);
-
-    if (onChange) {
-      onChange(event, newValue);
-    }
-  });
-  var handleTouchEnd = Object(_utils_useEventCallback__WEBPACK_IMPORTED_MODULE_13__["default"])(function (event) {
-    var finger = trackFinger(event, touchId);
-
-    if (!finger) {
-      return;
-    }
-
-    var _getFingerNewValue2 = getFingerNewValue({
-      finger: finger,
-      values: values,
-      source: valueDerived
-    }),
-        newValue = _getFingerNewValue2.newValue;
-
-    setActive(-1);
-
-    if (event.type === 'touchend') {
-      setOpen(-1);
-    }
-
-    if (onChangeCommitted) {
-      onChangeCommitted(event, newValue);
-    }
-
-    touchId.current = undefined;
-    var doc = Object(_utils_ownerDocument__WEBPACK_IMPORTED_MODULE_12__["default"])(sliderRef.current);
-    doc.removeEventListener('mousemove', handleTouchMove);
-    doc.removeEventListener('mouseup', handleTouchEnd);
-    doc.removeEventListener('touchmove', handleTouchMove);
-    doc.removeEventListener('touchend', handleTouchEnd);
-  });
-  var handleTouchStart = Object(_utils_useEventCallback__WEBPACK_IMPORTED_MODULE_13__["default"])(function (event) {
-    // Workaround as Safari has partial support for touchAction: 'none'.
-    event.preventDefault();
-    var touch = event.changedTouches[0];
-
-    if (touch != null) {
-      // A number that uniquely identifies the current finger in the touch session.
-      touchId.current = touch.identifier;
-    }
-
-    var finger = trackFinger(event, touchId);
-
-    var _getFingerNewValue3 = getFingerNewValue({
-      finger: finger,
-      values: values,
-      source: valueDerived
-    }),
-        newValue = _getFingerNewValue3.newValue,
-        activeIndex = _getFingerNewValue3.activeIndex;
-
-    focusThumb({
-      sliderRef: sliderRef,
-      activeIndex: activeIndex,
-      setActive: setActive
-    });
-    setValueState(newValue);
-
-    if (onChange) {
-      onChange(event, newValue);
-    }
-
-    var doc = Object(_utils_ownerDocument__WEBPACK_IMPORTED_MODULE_12__["default"])(sliderRef.current);
-    doc.addEventListener('touchmove', handleTouchMove);
-    doc.addEventListener('touchend', handleTouchEnd);
-  });
-  react__WEBPACK_IMPORTED_MODULE_4__["useEffect"](function () {
-    var slider = sliderRef.current;
-    slider.addEventListener('touchstart', handleTouchStart);
-    var doc = Object(_utils_ownerDocument__WEBPACK_IMPORTED_MODULE_12__["default"])(slider);
-    return function () {
-      slider.removeEventListener('touchstart', handleTouchStart);
-      doc.removeEventListener('mousemove', handleTouchMove);
-      doc.removeEventListener('mouseup', handleTouchEnd);
-      doc.removeEventListener('touchmove', handleTouchMove);
-      doc.removeEventListener('touchend', handleTouchEnd);
-    };
-  }, [handleTouchEnd, handleTouchMove, handleTouchStart]);
-  var handleMouseDown = Object(_utils_useEventCallback__WEBPACK_IMPORTED_MODULE_13__["default"])(function (event) {
-    if (onMouseDown) {
-      onMouseDown(event);
-    }
-
-    event.preventDefault();
-    var finger = trackFinger(event, touchId);
-
-    var _getFingerNewValue4 = getFingerNewValue({
-      finger: finger,
-      values: values,
-      source: valueDerived
-    }),
-        newValue = _getFingerNewValue4.newValue,
-        activeIndex = _getFingerNewValue4.activeIndex;
-
-    focusThumb({
-      sliderRef: sliderRef,
-      activeIndex: activeIndex,
-      setActive: setActive
-    });
-    setValueState(newValue);
-
-    if (onChange) {
-      onChange(event, newValue);
-    }
-
-    var doc = Object(_utils_ownerDocument__WEBPACK_IMPORTED_MODULE_12__["default"])(sliderRef.current);
-    doc.addEventListener('mousemove', handleTouchMove);
-    doc.addEventListener('mouseup', handleTouchEnd);
-  });
-  var trackOffset = valueToPercent(range ? values[0] : min, min, max);
-  var trackLeap = valueToPercent(values[values.length - 1], min, max) - trackOffset;
-
-  var trackStyle = Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])(Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, axisProps[axis].offset(trackOffset)), axisProps[axis].leap(trackLeap));
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4__["createElement"](Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({
-    ref: handleRef,
-    className: Object(clsx__WEBPACK_IMPORTED_MODULE_6__["default"])(classes.root, classes["color".concat(Object(_utils_capitalize__WEBPACK_IMPORTED_MODULE_15__["default"])(color))], className, disabled && classes.disabled, marks.length > 0 && marks.some(function (mark) {
-      return mark.label;
-    }) && classes.marked, track === false && classes.trackFalse, orientation === 'vertical' && classes.vertical, track === 'inverted' && classes.trackInverted),
-    onMouseDown: handleMouseDown
-  }, other), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4__["createElement"]("span", {
-    className: classes.rail
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4__["createElement"]("span", {
-    className: classes.track,
-    style: trackStyle
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4__["createElement"]("input", {
-    value: values.join(','),
-    name: name,
-    type: "hidden"
-  }), marks.map(function (mark, index) {
-    var percent = valueToPercent(mark.value, min, max);
-    var style = axisProps[axis].offset(percent);
-    var markActive;
-
-    if (track === false) {
-      markActive = values.indexOf(mark.value) !== -1;
-    } else {
-      markActive = track === 'normal' && (range ? mark.value >= values[0] && mark.value <= values[values.length - 1] : mark.value <= values[0]) || track === 'inverted' && (range ? mark.value <= values[0] || mark.value >= values[values.length - 1] : mark.value >= values[0]);
-    }
-
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4__["createElement"](react__WEBPACK_IMPORTED_MODULE_4__["Fragment"], {
-      key: mark.value
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4__["createElement"]("span", {
-      style: style,
-      "data-index": index,
-      className: Object(clsx__WEBPACK_IMPORTED_MODULE_6__["default"])(classes.mark, markActive && classes.markActive)
-    }), mark.label != null ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4__["createElement"]("span", {
-      "aria-hidden": true,
-      "data-index": index,
-      style: style,
-      className: Object(clsx__WEBPACK_IMPORTED_MODULE_6__["default"])(classes.markLabel, markActive && classes.markLabelActive)
-    }, mark.label) : null);
-  }), values.map(function (value, index) {
-    var percent = valueToPercent(value, min, max);
-    var style = axisProps[axis].offset(percent);
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4__["createElement"](ValueLabelComponent, {
-      key: index,
-      valueLabelFormat: valueLabelFormat,
-      valueLabelDisplay: valueLabelDisplay,
-      className: classes.valueLabel,
-      value: typeof valueLabelFormat === 'function' ? valueLabelFormat(scale(value), index) : valueLabelFormat,
-      index: index,
-      open: open === index || active === index || valueLabelDisplay === 'on',
-      disabled: disabled
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_4__["createElement"](ThumbComponent, {
-      className: Object(clsx__WEBPACK_IMPORTED_MODULE_6__["default"])(classes.thumb, classes["thumbColor".concat(Object(_utils_capitalize__WEBPACK_IMPORTED_MODULE_15__["default"])(color))], active === index && classes.active, disabled && classes.disabled, focusVisible === index && classes.focusVisible),
-      tabIndex: disabled ? null : 0,
-      role: "slider",
-      style: style,
-      "data-index": index,
-      "aria-label": getAriaLabel ? getAriaLabel(index) : ariaLabel,
-      "aria-labelledby": ariaLabelledby,
-      "aria-orientation": orientation,
-      "aria-valuemax": scale(max),
-      "aria-valuemin": scale(min),
-      "aria-valuenow": scale(value),
-      "aria-valuetext": getAriaValueText ? getAriaValueText(scale(value), index) : ariaValuetext,
-      onKeyDown: handleKeyDown,
-      onFocus: handleFocus,
-      onBlur: handleBlur,
-      onMouseOver: handleMouseOver,
-      onMouseLeave: handleMouseLeave
-    }));
-  }));
-});
- true ? Slider.propTypes = {
-  /**
-   * The label of the slider.
-   */
-  'aria-label': Object(_material_ui_utils__WEBPACK_IMPORTED_MODULE_7__["chainPropTypes"])(prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.string, function (props) {
-    var range = Array.isArray(props.value || props.defaultValue);
-
-    if (range && props['aria-label'] != null) {
-      return new Error('Material-UI: You need to use the `getAriaLabel` prop instead of `aria-label` when using a range slider.');
-    }
-
-    return null;
-  }),
-
-  /**
-   * The id of the element containing a label for the slider.
-   */
-  'aria-labelledby': prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.string,
-
-  /**
-   * A string value that provides a user-friendly name for the current value of the slider.
-   */
-  'aria-valuetext': Object(_material_ui_utils__WEBPACK_IMPORTED_MODULE_7__["chainPropTypes"])(prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.string, function (props) {
-    var range = Array.isArray(props.value || props.defaultValue);
-
-    if (range && props['aria-valuetext'] != null) {
-      return new Error('Material-UI: You need to use the `getAriaValueText` prop instead of `aria-valuetext` when using a range slider.');
-    }
-
-    return null;
-  }),
-
-  /**
-   * Override or extend the styles applied to the component.
-   * See [CSS API](#css) below for more details.
-   */
-  classes: prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.object.isRequired,
-
-  /**
-   * @ignore
-   */
-  className: prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.string,
-
-  /**
-   * The color of the component. It supports those theme colors that make sense for this component.
-   */
-  color: prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.oneOf(['primary', 'secondary']),
-
-  /**
-   * The component used for the root node.
-   * Either a string to use a HTML element or a component.
-   */
-  component: prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.elementType,
-
-  /**
-   * The default element value. Use when the component is not controlled.
-   */
-  defaultValue: prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.number, prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.number)]),
-
-  /**
-   * If `true`, the slider will be disabled.
-   */
-  disabled: prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.bool,
-
-  /**
-   * Accepts a function which returns a string value that provides a user-friendly name for the thumb labels of the slider.
-   *
-   * @param {number} index The thumb label's index to format.
-   * @returns {string}
-   */
-  getAriaLabel: prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.func,
-
-  /**
-   * Accepts a function which returns a string value that provides a user-friendly name for the current value of the slider.
-   *
-   * @param {number} value The thumb label's value to format.
-   * @param {number} index The thumb label's index to format.
-   * @returns {string}
-   */
-  getAriaValueText: prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.func,
-
-  /**
-   * Marks indicate predetermined values to which the user can move the slider.
-   * If `true` the marks will be spaced according the value of the `step` prop.
-   * If an array, it should contain objects with `value` and an optional `label` keys.
-   */
-  marks: prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.bool, prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.array]),
-
-  /**
-   * The maximum allowed value of the slider.
-   * Should not be equal to min.
-   */
-  max: prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.number,
-
-  /**
-   * The minimum allowed value of the slider.
-   * Should not be equal to max.
-   */
-  min: prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.number,
-
-  /**
-   * Name attribute of the hidden `input` element.
-   */
-  name: prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.string,
-
-  /**
-   * Callback function that is fired when the slider's value changed.
-   *
-   * @param {object} event The event source of the callback.
-   * @param {number | number[]} value The new value.
-   */
-  onChange: prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.func,
-
-  /**
-   * Callback function that is fired when the `mouseup` is triggered.
-   *
-   * @param {object} event The event source of the callback.
-   * @param {number | number[]} value The new value.
-   */
-  onChangeCommitted: prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.func,
-
-  /**
-   * @ignore
-   */
-  onMouseDown: prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.func,
-
-  /**
-   * The slider orientation.
-   */
-  orientation: prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.oneOf(['horizontal', 'vertical']),
-
-  /**
-   * A transformation function, to change the scale of the slider.
-   */
-  scale: prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.func,
-
-  /**
-   * The granularity with which the slider can step through values. (A "discrete" slider.)
-   * The `min` prop serves as the origin for the valid values.
-   * We recommend (max - min) to be evenly divisible by the step.
-   *
-   * When step is `null`, the thumb can only be slid onto marks provided with the `marks` prop.
-   */
-  step: prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.number,
-
-  /**
-   * The component used to display the value label.
-   */
-  ThumbComponent: prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.elementType,
-
-  /**
-   * The track presentation:
-   *
-   * - `normal` the track will render a bar representing the slider value.
-   * - `inverted` the track will render a bar representing the remaining slider value.
-   * - `false` the track will render without a bar.
-   */
-  track: prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.oneOf(['normal', false, 'inverted']),
-
-  /**
-   * The value of the slider.
-   * For ranged sliders, provide an array with two values.
-   */
-  value: prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.number, prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.number)]),
-
-  /**
-   * The value label component.
-   */
-  ValueLabelComponent: prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.elementType,
-
-  /**
-   * Controls when the value label is displayed:
-   *
-   * - `auto` the value label will display when the thumb is hovered or focused.
-   * - `on` will display persistently.
-   * - `off` will never display.
-   */
-  valueLabelDisplay: prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.oneOf(['on', 'auto', 'off']),
-
-  /**
-   * The format function the value label's value.
-   *
-   * When a function is provided, it should have the following signature:
-   *
-   * - {number} value The value label's value to format
-   * - {number} index The value label's index to format
-   */
-  valueLabelFormat: prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.string, prop_types__WEBPACK_IMPORTED_MODULE_5___default.a.func])
-} : undefined;
-/* harmony default export */ __webpack_exports__["default"] = (Object(_styles_withStyles__WEBPACK_IMPORTED_MODULE_8__["default"])(styles, {
-  name: 'MuiSlider'
-})(Slider));
-
-/***/ }),
-
-/***/ "./node_modules/@material-ui/core/esm/Slider/ValueLabel.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/@material-ui/core/esm/Slider/ValueLabel.js ***!
-  \*****************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
-/* harmony import */ var _styles_withStyles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/withStyles */ "./node_modules/@material-ui/core/esm/styles/withStyles.js");
-
-
-
-
-
-var styles = function styles(theme) {
-  return {
-    thumb: {
-      '&$open': {
-        '& $offset': {
-          transform: 'scale(1) translateY(-10px)'
-        }
-      }
-    },
-    open: {},
-    offset: Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])(Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
-      zIndex: 1
-    }, theme.typography.body2), {}, {
-      fontSize: theme.typography.pxToRem(12),
-      lineHeight: 1.2,
-      transition: theme.transitions.create(['transform'], {
-        duration: theme.transitions.duration.shortest
-      }),
-      top: -34,
-      transformOrigin: 'bottom center',
-      transform: 'scale(0)',
-      position: 'absolute'
-    }),
-    circle: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      width: 32,
-      height: 32,
-      borderRadius: '50% 50% 50% 0',
-      backgroundColor: 'currentColor',
-      transform: 'rotate(-45deg)'
-    },
-    label: {
-      color: theme.palette.primary.contrastText,
-      transform: 'rotate(45deg)'
-    }
-  };
-};
-/**
- * @ignore - internal component.
- */
-
-
-function ValueLabel(props) {
-  var children = props.children,
-      classes = props.classes,
-      className = props.className,
-      open = props.open,
-      value = props.value,
-      valueLabelDisplay = props.valueLabelDisplay;
-
-  if (valueLabelDisplay === 'off') {
-    return children;
-  }
-
-  return react__WEBPACK_IMPORTED_MODULE_1__["cloneElement"](children, {
-    className: Object(clsx__WEBPACK_IMPORTED_MODULE_2__["default"])(children.props.className, (open || valueLabelDisplay === 'on') && classes.open, classes.thumb)
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("span", {
-    className: Object(clsx__WEBPACK_IMPORTED_MODULE_2__["default"])(classes.offset, className)
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("span", {
-    className: classes.circle
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("span", {
-    className: classes.label
-  }, value))));
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(_styles_withStyles__WEBPACK_IMPORTED_MODULE_3__["default"])(styles, {
-  name: 'PrivateValueLabel'
-})(ValueLabel));
-
-/***/ }),
-
-/***/ "./node_modules/@material-ui/core/esm/Slider/index.js":
-/*!************************************************************!*\
-  !*** ./node_modules/@material-ui/core/esm/Slider/index.js ***!
-  \************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Slider */ "./node_modules/@material-ui/core/esm/Slider/Slider.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _Slider__WEBPACK_IMPORTED_MODULE_0__["default"]; });
-
-
-
-/***/ }),
-
 /***/ "./node_modules/@material-ui/core/esm/SvgIcon/SvgIcon.js":
 /*!***************************************************************!*\
   !*** ./node_modules/@material-ui/core/esm/SvgIcon/SvgIcon.js ***!
@@ -100563,7 +99341,7 @@ var traerTodos = function traerTodos() {
           switch (_context.prev = _context.next) {
             case 0:
               dispatch({
-                type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+                type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["RECARGA"]
               });
               _context.prev = 1;
               _context.next = 4;
@@ -100849,7 +99627,7 @@ var borrar = function borrar(id) {
 var cancelar = function cancelar() {
   return function (dispatch) {
     dispatch({
-      type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["GUARDAR"]
+      type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["CANCELAR"]
     });
   };
 };
@@ -100903,7 +99681,7 @@ var traerTodos = function traerTodos() {
           switch (_context.prev = _context.next) {
             case 0:
               dispatch({
-                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+                type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["RECARGA"]
               });
               _context.prev = 1;
               _context.next = 4;
@@ -101138,7 +99916,7 @@ var editar = function editar(nueva_genetica, id) {
 var traerUnoBorrar = function traerUnoBorrar(id) {
   return /*#__PURE__*/function () {
     var _ref5 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5(dispatch) {
-      var response;
+      var response, genetica;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
         while (1) {
           switch (_context5.prev = _context5.next) {
@@ -101156,24 +99934,25 @@ var traerUnoBorrar = function traerUnoBorrar(id) {
 
             case 5:
               response = _context5.sent;
+              genetica = response.data[0];
               dispatch({
                 type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_UNO"],
-                payload: response.data
+                payload: genetica
               });
-              _context5.next = 12;
+              _context5.next = 13;
               break;
 
-            case 9:
-              _context5.prev = 9;
+            case 10:
+              _context5.prev = 10;
               _context5.t0 = _context5["catch"](2);
               console.log(_context5.t0);
 
-            case 12:
+            case 13:
             case "end":
               return _context5.stop();
           }
         }
-      }, _callee5, null, [[2, 9]]);
+      }, _callee5, null, [[2, 10]]);
     }));
 
     return function (_x5) {
@@ -101228,7 +100007,7 @@ var borrar = function borrar(id) {
 var cancelar = function cancelar() {
   return function (dispatch) {
     dispatch({
-      type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["GUARDAR"]
+      type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CANCELAR"]
     });
   };
 };
@@ -101275,7 +100054,7 @@ var traerTodos = function traerTodos() {
           switch (_context.prev = _context.next) {
             case 0:
               dispatch({
-                type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+                type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["RECARGA"]
               });
               _context.prev = 1;
               _context.next = 4;
@@ -101543,7 +100322,7 @@ var borrar = function borrar(id) {
 var cancelar = function cancelar() {
   return function (dispatch) {
     dispatch({
-      type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["GUARDAR"]
+      type: _types_marcaTypes__WEBPACK_IMPORTED_MODULE_2__["CANCELAR"]
     });
   };
 };
@@ -101598,7 +100377,7 @@ var traerTodos = function traerTodos() {
           switch (_context.prev = _context.next) {
             case 0:
               dispatch({
-                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["RECARGA"]
               });
               _context.prev = 1;
               _context.next = 4;
@@ -101841,7 +100620,7 @@ var editar = function editar(nuevo_prototype, id) {
 var traerUnoBorrar = function traerUnoBorrar(id) {
   return /*#__PURE__*/function () {
     var _ref5 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5(dispatch) {
-      var response;
+      var response, prototype;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
         while (1) {
           switch (_context5.prev = _context5.next) {
@@ -101859,24 +100638,25 @@ var traerUnoBorrar = function traerUnoBorrar(id) {
 
             case 5:
               response = _context5.sent;
+              prototype = response.data[0];
               dispatch({
                 type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_UNO"],
-                payload: response.data
+                payload: prototype
               });
-              _context5.next = 12;
+              _context5.next = 13;
               break;
 
-            case 9:
-              _context5.prev = 9;
+            case 10:
+              _context5.prev = 10;
               _context5.t0 = _context5["catch"](2);
               console.log(_context5.t0);
 
-            case 12:
+            case 13:
             case "end":
               return _context5.stop();
           }
         }
-      }, _callee5, null, [[2, 9]]);
+      }, _callee5, null, [[2, 10]]);
     }));
 
     return function (_x5) {
@@ -101931,7 +100711,7 @@ var borrar = function borrar(id) {
 var cancelar = function cancelar() {
   return function (dispatch) {
     dispatch({
-      type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["GUARDAR"]
+      type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CANCELAR"]
     });
   };
 };
@@ -101979,7 +100759,7 @@ var traerTodos = function traerTodos() {
           switch (_context.prev = _context.next) {
             case 0:
               dispatch({
-                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["RECARGA"]
               });
               _context.prev = 1;
               _context.next = 4;
@@ -102290,7 +101070,7 @@ var borrar = function borrar(id) {
 var cancelar = function cancelar() {
   return function (dispatch) {
     dispatch({
-      type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["GUARDAR"]
+      type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["CANCELAR"]
     });
   };
 };
@@ -102339,7 +101119,7 @@ var traerTodos = function traerTodos() {
           switch (_context.prev = _context.next) {
             case 0:
               dispatch({
-                type: _types_userTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+                type: _types_userTypes__WEBPACK_IMPORTED_MODULE_2__["RECARGA"]
               });
               _context.prev = 1;
               _context.next = 4;
@@ -102623,7 +101403,7 @@ var borrar = function borrar(id) {
 var cancelar = function cancelar() {
   return function (dispatch) {
     dispatch({
-      type: _types_userTypes__WEBPACK_IMPORTED_MODULE_2__["GUARDAR"]
+      type: _types_userTypes__WEBPACK_IMPORTED_MODULE_2__["CANCELAR"]
     });
   };
 };
@@ -102713,78 +101493,6 @@ if (api_token) {
 
 /***/ }),
 
-/***/ "./resources/js/components/Ambientes/Delete.js":
-/*!*****************************************************!*\
-  !*** ./resources/js/components/Ambientes/Delete.js ***!
-  \*****************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/esm/TextField/index.js");
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
-/* harmony import */ var _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/ambientesActions */ "./resources/js/actions/ambientesActions.js");
-
-
-
-
-
-
-var Delete = function Delete(props) {
-  var ambiente = props.ambiente,
-      borrar = props.borrar,
-      cancelar = props.cancelar,
-      error_form = props.error_form;
-  console.log(props);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-row"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-12"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    label: "ID",
-    value: ambiente.id,
-    className: "form-control",
-    disabled: true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-12"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    label: "Nombre",
-    value: ambiente.name,
-    className: "form-control",
-    disabled: true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-row margin-button"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-6"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    variant: "contained",
-    color: "primary",
-    onClick: function onClick() {
-      return borrar(ambiente.id);
-    }
-  }, "Eliminar")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-6"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    variant: "contained",
-    color: "inherit",
-    onClick: cancelar
-  }, "Cancelar"))), error_form && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
-    className: "text-danger"
-  }, "Existe un registro vinculado.")));
-};
-
-var mapStateToProps = function mapStateToProps(reducers) {
-  return reducers.ambientesReducer;
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_4__)(Delete));
-
-/***/ }),
-
 /***/ "./resources/js/components/Ambientes/Formulario.js":
 /*!*********************************************************!*\
   !*** ./resources/js/components/Ambientes/Formulario.js ***!
@@ -102811,6 +101519,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var agregar = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_6__["agregar"],
     editar = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_6__["editar"],
+    borrar = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_6__["borrar"],
     cambioAmbienteName = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_6__["cambioAmbienteName"],
     cambioAmbienteCodigo = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_6__["cambioAmbienteCodigo"],
     cambioAmbienteInputs = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_6__["cambioAmbienteInputs"],
@@ -102828,6 +101537,7 @@ var Formulario = function Formulario(props) {
       cambioAmbienteName = props.cambioAmbienteName,
       cambioAmbienteCodigo = props.cambioAmbienteCodigo,
       cambioAmbienteInputs = props.cambioAmbienteInputs,
+      borrar = props.borrar,
       agregar = props.agregar,
       editar = props.editar,
       cancelar = props.cancelar;
@@ -102877,7 +101587,8 @@ var Formulario = function Formulario(props) {
     value: name || '',
     onChange: handleCambioAmbienteName,
     helperText: error_form.name,
-    error: !error_form.name ? false : true
+    error: !error_form.name ? false : true,
+    disabled: state_form === 'borrar' ? true : false
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
     className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -102888,7 +101599,8 @@ var Formulario = function Formulario(props) {
     value: codigo || '',
     onChange: handleCambioAmbienteCodigo,
     helperText: error_form.codigo,
-    error: !error_form.codigo ? false : true
+    error: !error_form.codigo ? false : true,
+    disabled: state_form === 'borrar' ? true : false
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
     className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -102899,18 +101611,27 @@ var Formulario = function Formulario(props) {
     value: inputs || '',
     onChange: handleCambioAmbienteInputs,
     helperText: error_form.inputs,
-    error: !error_form.inputs ? false : true
+    error: !error_form.inputs ? false : true,
+    disabled: state_form === 'borrar' ? true : false
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-row margin-button"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-group col-md-6"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, state_form === 'crear' || state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     variant: "contained",
     color: "primary",
     onClick: guardar
-  }, "Guardar")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Guardar") : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    variant: "contained",
+    color: "primary",
+    onClick: function onClick() {
+      return borrar(id);
+    }
+  }, "Borrar"), error_form && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+    className: "text-danger"
+  }, "Existe un registro vinculado.")) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-group col-md-6"
-  }, state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, state_form === 'editar' || state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     variant: "contained",
     color: "inherit",
     onClick: cancelar
@@ -102928,6 +101649,7 @@ var mapDispatchToProps = {
   cambioAmbienteName: cambioAmbienteName,
   cambioAmbienteCodigo: cambioAmbienteCodigo,
   cambioAmbienteInputs: cambioAmbienteInputs,
+  borrar: borrar,
   agregar: agregar,
   editar: editar,
   cancelar: cancelar
@@ -103007,9 +101729,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _Table__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Table */ "./resources/js/components/Ambientes/Table.js");
 /* harmony import */ var _Formulario__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Formulario */ "./resources/js/components/Ambientes/Formulario.js");
-/* harmony import */ var _Delete__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Delete */ "./resources/js/components/Ambientes/Delete.js");
-/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
-/* harmony import */ var _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../actions/ambientesActions */ "./resources/js/actions/ambientesActions.js");
+/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
+/* harmony import */ var _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../actions/ambientesActions */ "./resources/js/actions/ambientesActions.js");
 
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -103048,7 +101769,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-
 var Ambientes = /*#__PURE__*/function (_Component) {
   _inherits(Ambientes, _Component);
 
@@ -103073,7 +101793,7 @@ var Ambientes = /*#__PURE__*/function (_Component) {
           ambientes = _this$props.ambientes,
           error = _this$props.error;
       if (recargar_table) traerTodos();
-      if (loading && !ambientes.length) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null);
+      if (loading && !ambientes.length) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null);
       if (error) return 'Error';
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Table__WEBPACK_IMPORTED_MODULE_4__["default"], null);
     });
@@ -103130,22 +101850,14 @@ var Ambientes = /*#__PURE__*/function (_Component) {
         className: "col col-md-4"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card"
-      }, state_form === 'crear' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-agregar"
       }, "Agregar ambiente ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
         fontSize: "small",
         onClick: goBack
-      })), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      })), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
-      }, this.ponerFormulario())) : '', state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-header card-agregar"
-      }, "Modificando usuario: ", ambiente.id), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-body"
-      }, this.ponerFormulario())) : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-header card-eliminar"
-      }, "Eliminar el siguente ambiente"), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-body"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Delete__WEBPACK_IMPORTED_MODULE_6__["default"], null))) : ''))));
+      }, this.ponerFormulario()))))));
     }
   }]);
 
@@ -103156,7 +101868,7 @@ var mapStateToProps = function mapStateToProps(reducers) {
   return reducers.ambientesReducer;
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_8__)(Ambientes));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_7__)(Ambientes));
 
 /***/ }),
 
@@ -103243,149 +101955,6 @@ var Spinner = function Spinner() {
 
 /***/ }),
 
-/***/ "./resources/js/components/Geneticas/Delete.js":
-/*!*****************************************************!*\
-  !*** ./resources/js/components/Geneticas/Delete.js ***!
-  \*****************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/esm/TextField/index.js");
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
-/* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
-/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
-
-
-
-
-
-
-
-
-var Delete = function Delete(props) {
-  var genetica = props.genetica[0],
-      borrar = props.borrar,
-      cancelar = props.cancelar,
-      error_form = props.error_form;
-  console.log(props);
-  var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__["makeStyles"])(function (theme) {
-    return {
-      formControl: {
-        margin: theme.spacing(0),
-        marginBottom: 35,
-        width: "100%"
-      }
-    };
-  });
-  var classes = useStyles();
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-row"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    className: classes.formControl
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    label: "ID",
-    value: genetica.id,
-    className: "form-control",
-    disabled: true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    className: classes.formControl
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    label: "Nombre",
-    value: genetica.name,
-    className: "form-control",
-    disabled: true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    className: classes.formControl
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    label: "Nombre",
-    value: genetica.marca.name,
-    className: "form-control",
-    disabled: true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    className: classes.formControl
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-row"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-6"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    label: "THC",
-    value: genetica.thc,
-    className: "form-control",
-    disabled: true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-6"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    label: "CBD",
-    value: genetica.cbd,
-    className: "form-control",
-    disabled: true
-  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    className: classes.formControl
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    label: "Sabores",
-    value: genetica.sabores,
-    className: "form-control",
-    disabled: true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    className: classes.formControl
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-row"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-4"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    label: "Interna",
-    value: genetica.prod_int,
-    className: "form-control",
-    disabled: true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-4"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    label: "Externa",
-    value: genetica.prod_ext,
-    className: "form-control",
-    disabled: true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-4"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    label: "Tiempo",
-    value: genetica.tiempo_flora,
-    className: "form-control",
-    disabled: true
-  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-row margin-button"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-6"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    variant: "contained",
-    color: "primary",
-    onClick: function onClick() {
-      return borrar(genetica.id);
-    }
-  }, "Eliminar")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-6"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    variant: "contained",
-    color: "inherit",
-    onClick: cancelar
-  }, "Cancelar"))), error_form && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
-    className: "text-danger"
-  }, "Existe un registro vinculado.")));
-};
-
-var mapStateToProps = function mapStateToProps(reducers) {
-  return reducers.geneticasReducer;
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_6__)(Delete));
-
-/***/ }),
-
 /***/ "./resources/js/components/Geneticas/Formulario.js":
 /*!*********************************************************!*\
   !*** ./resources/js/components/Geneticas/Formulario.js ***!
@@ -103407,10 +101976,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_FormHelperText__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/FormHelperText */ "./node_modules/@material-ui/core/esm/FormHelperText/index.js");
 /* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
 /* harmony import */ var _material_ui_core_Select__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Select */ "./node_modules/@material-ui/core/esm/Select/index.js");
-/* harmony import */ var _General_SliderThc__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./General/SliderThc */ "./resources/js/components/Geneticas/General/SliderThc.js");
-/* harmony import */ var _General_SliderCbd__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./General/SliderCbd */ "./resources/js/components/Geneticas/General/SliderCbd.js");
-/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
-/* harmony import */ var _actions_marcasActions__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../actions/marcasActions */ "./resources/js/actions/marcasActions.js");
+/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
 
 
 
@@ -103423,35 +101989,36 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
-var marcasTraerTodos = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_14__["traerTodos"];
-var cambioGeneticaName = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_13__["cambioGeneticaName"],
-    cambioGeneticaMarca = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_13__["cambioGeneticaMarca"],
-    cambioGeneticaProdInt = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_13__["cambioGeneticaProdInt"],
-    cambioGeneticaProdExt = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_13__["cambioGeneticaProdExt"],
-    cambioGeneticaTiempoFlora = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_13__["cambioGeneticaTiempoFlora"],
-    cambioGeneticaSabores = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_13__["cambioGeneticaSabores"],
-    cancelar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_13__["cancelar"],
-    agregar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_13__["agregar"],
-    editar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_13__["editar"];
+var cambioGeneticaName = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_11__["cambioGeneticaName"],
+    cambioGeneticaMarca = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_11__["cambioGeneticaMarca"],
+    cambioGeneticaThc = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_11__["cambioGeneticaThc"],
+    cambioGeneticaCbd = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_11__["cambioGeneticaCbd"],
+    cambioGeneticaProdInt = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_11__["cambioGeneticaProdInt"],
+    cambioGeneticaProdExt = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_11__["cambioGeneticaProdExt"],
+    cambioGeneticaTiempoFlora = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_11__["cambioGeneticaTiempoFlora"],
+    cambioGeneticaSabores = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_11__["cambioGeneticaSabores"],
+    borrar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_11__["borrar"],
+    cancelar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_11__["cancelar"],
+    agregar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_11__["agregar"],
+    editar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_11__["editar"];
 
 var Formulario = function Formulario(props) {
-  var marcasTraerTodos = props.marcasTraerTodos,
-      marcas = props.marcasReducer.marcas,
+  var marcas = props.marcasReducer.marcas,
       _props$geneticasReduc = props.geneticasReducer,
       _props$geneticasReduc2 = _props$geneticasReduc.genetica,
       name = _props$geneticasReduc2.name,
+      id = _props$geneticasReduc2.id,
       marca_id = _props$geneticasReduc2.marca_id,
+      thc = _props$geneticasReduc2.thc,
+      cbd = _props$geneticasReduc2.cbd,
       prod_int = _props$geneticasReduc2.prod_int,
       prod_ext = _props$geneticasReduc2.prod_ext,
       tiempo_flora = _props$geneticasReduc2.tiempo_flora,
       sabores = _props$geneticasReduc2.sabores,
       error_form = _props$geneticasReduc.error_form,
       state_form = _props$geneticasReduc.state_form,
+      borrar = props.borrar,
       cancelar = props.cancelar;
-  if (!marcas.length) marcasTraerTodos();
 
   var handleCambioGeneticaName = function handleCambioGeneticaName(event) {
     return props.cambioGeneticaName(event.target.value);
@@ -103459,6 +102026,14 @@ var Formulario = function Formulario(props) {
 
   var handleCambioGeneticaMarca = function handleCambioGeneticaMarca(event) {
     return props.cambioGeneticaMarca(event.target.value);
+  };
+
+  var handleCambioGeneticaThc = function handleCambioGeneticaThc(event) {
+    return props.cambioGeneticaThc(event.target.value);
+  };
+
+  var handleCambioGeneticaCbd = function handleCambioGeneticaCbd(event) {
+    return props.cambioGeneticaCbd(event.target.value);
   };
 
   var handleCambioGeneticaProdInt = function handleCambioGeneticaProdInt(event) {
@@ -103532,7 +102107,8 @@ var Formulario = function Formulario(props) {
     value: name || '',
     onChange: handleCambioGeneticaName,
     helperText: error_form.name,
-    error: !error_form.name ? false : true
+    error: !error_form.name ? false : true,
+    disabled: state_form === 'borrar' ? true : false
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
     className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_InputLabel__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -103543,7 +102119,8 @@ var Formulario = function Formulario(props) {
     id: "demo-simple-select-helper",
     value: marca_id || '',
     onChange: handleCambioGeneticaMarca,
-    error: !error_form.marca_id ? false : true
+    error: !error_form.marca_id ? false : true,
+    disabled: state_form === 'borrar' ? true : false
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/marcas"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -103557,18 +102134,26 @@ var Formulario = function Formulario(props) {
     }, marca.name);
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormHelperText__WEBPACK_IMPORTED_MODULE_8__["default"], {
     error: !error_form.marca_id ? false : true
-  }, error_form.marca_id)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-12"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_SliderThc__WEBPACK_IMPORTED_MODULE_11__["default"], null), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_SliderCbd__WEBPACK_IMPORTED_MODULE_12__["default"], null), error_form.thc && error_form.thc.map(function (err, key) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
-      key: key,
-      className: "text-danger"
-    }, err);
-  }), error_form.cbd && error_form.cbd.map(function (err, key) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
-      key: key,
-      className: "text-danger"
-    }, err);
+  }, error_form.marca_id)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    className: classes.formControl
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    id: "standard-basic",
+    label: "THC",
+    type: "number",
+    className: "form-control",
+    value: thc || '',
+    onChange: handleCambioGeneticaThc,
+    disabled: state_form === 'borrar' ? true : false
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    className: classes.formControl
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    id: "standard-basic",
+    label: "CBD",
+    type: "number",
+    className: "form-control",
+    value: cbd || '',
+    onChange: handleCambioGeneticaCbd,
+    disabled: state_form === 'borrar' ? true : false
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
     className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -103577,7 +102162,8 @@ var Formulario = function Formulario(props) {
     type: "text",
     className: "form-control",
     value: sabores || '',
-    onChange: handleCambioGeneticaSabores
+    onChange: handleCambioGeneticaSabores,
+    disabled: state_form === 'borrar' ? true : false
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
     className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -103586,7 +102172,8 @@ var Formulario = function Formulario(props) {
     type: "number",
     className: "form-control",
     value: prod_int || '',
-    onChange: handleCambioGeneticaProdInt
+    onChange: handleCambioGeneticaProdInt,
+    disabled: state_form === 'borrar' ? true : false
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
     className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -103595,7 +102182,8 @@ var Formulario = function Formulario(props) {
     type: "number",
     className: "form-control",
     value: prod_ext || '',
-    onChange: handleCambioGeneticaProdExt
+    onChange: handleCambioGeneticaProdExt,
+    disabled: state_form === 'borrar' ? true : false
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
     className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -103606,18 +102194,27 @@ var Formulario = function Formulario(props) {
     value: tiempo_flora || '',
     onChange: handleCambioGeneticaTiempoFlora,
     helperText: error_form.tiempo_flora,
-    error: !error_form.tiempo_flora ? false : true
+    error: !error_form.tiempo_flora ? false : true,
+    disabled: state_form === 'borrar' ? true : false
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-row margin-button"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-group col-md-6"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, state_form === 'crear' || state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     variant: "contained",
     color: "primary",
     onClick: guardar
-  }, "Guardar")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Guardar") : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    variant: "contained",
+    color: "primary",
+    onClick: function onClick() {
+      return borrar(id);
+    }
+  }, "Borrar"), error_form && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+    className: "text-danger"
+  }, "Existe un registro vinculado.")) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-group col-md-6"
-  }, state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, state_form === 'editar' || state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     variant: "contained",
     color: "inherit",
     onClick: cancelar
@@ -103634,234 +102231,20 @@ var mapStateToProps = function mapStateToProps(_ref) {
 };
 
 var mapDispatchToProps = {
-  marcasTraerTodos: marcasTraerTodos,
   cambioGeneticaName: cambioGeneticaName,
   cambioGeneticaMarca: cambioGeneticaMarca,
+  cambioGeneticaThc: cambioGeneticaThc,
+  cambioGeneticaCbd: cambioGeneticaCbd,
   cambioGeneticaProdInt: cambioGeneticaProdInt,
   cambioGeneticaProdExt: cambioGeneticaProdExt,
   cambioGeneticaTiempoFlora: cambioGeneticaTiempoFlora,
   cambioGeneticaSabores: cambioGeneticaSabores,
+  borrar: borrar,
   agregar: agregar,
   editar: editar,
   cancelar: cancelar
 };
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, mapDispatchToProps)(Formulario));
-
-/***/ }),
-
-/***/ "./resources/js/components/Geneticas/General/SliderCbd.js":
-/*!****************************************************************!*\
-  !*** ./resources/js/components/Geneticas/General/SliderCbd.js ***!
-  \****************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
-/* harmony import */ var _material_ui_core_Slider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Slider */ "./node_modules/@material-ui/core/esm/Slider/index.js");
-/* harmony import */ var _material_ui_core_Input__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Input */ "./node_modules/@material-ui/core/esm/Input/index.js");
-/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-
-
-
-
-
-var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["makeStyles"])({
-  root: {
-    width: "100%",
-    height: 50
-  },
-  input: {
-    width: "100%",
-    marginLeft: 10
-  }
-});
-
-var InputSlider = function InputSlider(props) {
-  var classes = useStyles();
-  var cambioGeneticaCbd = props.cambioGeneticaCbd,
-      cbd = props.genetica.cbd,
-      state_form = props.state_form;
-
-  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(cbd),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      value = _React$useState2[0],
-      setValue = _React$useState2[1];
-
-  var handleSliderChange = function handleSliderChange(event, newValue) {
-    cambioGeneticaCbd(newValue);
-    setValue(newValue);
-  };
-
-  var handleInputChange = function handleInputChange(event) {
-    setValue(event.target.value === '' ? '' : Number(event.target.value));
-  };
-
-  var handleBlur = function handleBlur() {
-    if (value < 0) {
-      setValue(0);
-    } else if (value > 100) {
-      setValue(100);
-    }
-  };
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: classes.root
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-row"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-10"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "CBD"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Slider__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    value: typeof value === 'number' ? value : cbd || 0,
-    onChange: handleSliderChange
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-2"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    className: classes.input,
-    value: state_form ? cbd : value || '',
-    margin: "dense",
-    onChange: handleInputChange,
-    onBlur: handleBlur,
-    inputProps: {
-      step: 5,
-      min: 0,
-      max: 100,
-      type: 'number',
-      'aria-labelledby': 'input-slider'
-    }
-  }))));
-};
-
-var mapStateToProps = function mapStateToProps(reducers) {
-  return reducers.geneticasReducer;
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_5__)(InputSlider));
-
-/***/ }),
-
-/***/ "./resources/js/components/Geneticas/General/SliderThc.js":
-/*!****************************************************************!*\
-  !*** ./resources/js/components/Geneticas/General/SliderThc.js ***!
-  \****************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
-/* harmony import */ var _material_ui_core_Slider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Slider */ "./node_modules/@material-ui/core/esm/Slider/index.js");
-/* harmony import */ var _material_ui_core_Input__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Input */ "./node_modules/@material-ui/core/esm/Input/index.js");
-/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-
-
-
-
-
-var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["makeStyles"])({
-  root: {
-    width: "100%",
-    height: 70
-  },
-  input: {
-    width: "100%",
-    marginLeft: 10
-  }
-});
-
-var InputSlider = function InputSlider(props) {
-  var classes = useStyles();
-  var cambioGeneticaThc = props.cambioGeneticaThc,
-      thc = props.genetica.thc,
-      state_form = props.state_form;
-
-  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(thc),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      value = _React$useState2[0],
-      setValue = _React$useState2[1];
-
-  var handleSliderChange = function handleSliderChange(event, newValue) {
-    cambioGeneticaThc(newValue);
-    setValue(newValue);
-  };
-
-  var handleInputChange = function handleInputChange(event) {
-    setValue(event.target.value === '' ? '' : Number(event.target.value));
-  };
-
-  var handleBlur = function handleBlur() {
-    if (value < 0) {
-      setValue(0);
-    } else if (value > 100) {
-      setValue(100);
-    }
-  };
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: classes.root
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-row"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-10"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "THC"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Slider__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    value: typeof value === 'number' ? value : thc || 0,
-    onChange: handleSliderChange
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-2"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    className: classes.input,
-    value: state_form ? thc : value || '',
-    margin: "dense",
-    onChange: handleInputChange,
-    onBlur: handleBlur,
-    inputProps: {
-      step: 5,
-      min: 0,
-      max: 100,
-      type: 'number',
-      'aria-labelledby': 'input-slider'
-    }
-  }))));
-};
-
-var mapStateToProps = function mapStateToProps(reducers) {
-  return reducers.geneticasReducer;
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_5__)(InputSlider));
 
 /***/ }),
 
@@ -103936,9 +102319,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _Table__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Table */ "./resources/js/components/Geneticas/Table.js");
 /* harmony import */ var _Formulario__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Formulario */ "./resources/js/components/Geneticas/Formulario.js");
-/* harmony import */ var _Delete__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Delete */ "./resources/js/components/Geneticas/Delete.js");
-/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
-/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
+/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
+/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
+/* harmony import */ var _actions_marcasActions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../actions/marcasActions */ "./resources/js/actions/marcasActions.js");
 
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -103977,6 +102360,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+var marcasTraerTodos = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_8__["traerTodos"];
+var genericasTraerTodos = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_7__["traerTodos"];
 
 var Geneticas = /*#__PURE__*/function (_Component) {
   _inherits(Geneticas, _Component);
@@ -103996,13 +102381,14 @@ var Geneticas = /*#__PURE__*/function (_Component) {
 
     _defineProperty(_assertThisInitialized(_this), "ponerContenido", function () {
       var _this$props = _this.props,
-          traerTodos = _this$props.traerTodos,
-          recargar_table = _this$props.recargar_table,
-          loading = _this$props.loading,
-          geneticas = _this$props.geneticas,
-          error = _this$props.error;
-      if (recargar_table) traerTodos();
-      if (loading && !geneticas.length) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null);
+          genericasTraerTodos = _this$props.genericasTraerTodos,
+          _this$props$geneticas = _this$props.geneticasReducer,
+          recargar_table = _this$props$geneticas.recargar_table,
+          loading = _this$props$geneticas.loading,
+          geneticas = _this$props$geneticas.geneticas,
+          error = _this$props$geneticas.error;
+      if (recargar_table) genericasTraerTodos();
+      if (loading && !geneticas.length) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null);
       if (error) return 'Error';
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Table__WEBPACK_IMPORTED_MODULE_4__["default"], null);
     });
@@ -104018,16 +102404,17 @@ var Geneticas = /*#__PURE__*/function (_Component) {
     key: "componentDidMount",
     value: function () {
       var _componentDidMount = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var _this$props2, traerTodos, geneticas;
+        var _this$props2, _this$props2$genetica, geneticas, recargar_table, marcas, genericasTraerTodos, marcasTraerTodos;
 
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _this$props2 = this.props, traerTodos = _this$props2.traerTodos, geneticas = _this$props2.geneticas;
-                if (!geneticas.length) traerTodos();
+                _this$props2 = this.props, _this$props2$genetica = _this$props2.geneticasReducer, geneticas = _this$props2$genetica.geneticas, recargar_table = _this$props2$genetica.recargar_table, marcas = _this$props2.marcasReducer.marcas, genericasTraerTodos = _this$props2.genericasTraerTodos, marcasTraerTodos = _this$props2.marcasTraerTodos;
+                if (!geneticas.length) genericasTraerTodos();
+                if (!marcas.length) marcasTraerTodos();
 
-              case 2:
+              case 3:
               case "end":
                 return _context.stop();
             }
@@ -104045,11 +102432,11 @@ var Geneticas = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       var _this$props3 = this.props,
-          loading = _this$props3.loading,
-          state_form = _this$props3.state_form,
-          genetica = _this$props3.genetica,
+          _this$props3$genetica = _this$props3.geneticasReducer,
+          loading = _this$props3$genetica.loading,
+          state_form = _this$props3$genetica.state_form,
+          genetica = _this$props3$genetica.genetica,
           goBack = _this$props3.history.goBack;
-      console.log(this.props);
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "container col-md-9"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -104060,33 +102447,35 @@ var Geneticas = /*#__PURE__*/function (_Component) {
         className: "col col-md-4"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card"
-      }, state_form === 'crear' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-agregar"
       }, "Agregar gen\xE9tica", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
         fontSize: "small",
         onClick: goBack
-      })), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      })), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
-      }, this.ponerFormulario())) : '', state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-header card-agregar"
-      }, "Modificando genetica: ", genetica.id), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-body"
-      }, this.ponerFormulario())) : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-header card-eliminar"
-      }, "Eliminar la siguente gen\xE9tica"), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-body"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Delete__WEBPACK_IMPORTED_MODULE_6__["default"], null))) : ''))));
+      }, this.ponerFormulario()))))));
     }
   }]);
 
   return Geneticas;
 }(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
 
-var mapStateToProps = function mapStateToProps(reducers) {
-  return reducers.geneticasReducer;
+var mapStateToProps = function mapStateToProps(_ref) {
+  var geneticasReducer = _ref.geneticasReducer,
+      marcasReducer = _ref.marcasReducer;
+  return {
+    geneticasReducer: geneticasReducer,
+    marcasReducer: marcasReducer
+  };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_8__)(Geneticas));
+var mapDispatchToProps = {
+  geneticasActions: _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_7__,
+  marcasTraerTodos: marcasTraerTodos,
+  genericasTraerTodos: genericasTraerTodos
+};
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, mapDispatchToProps)(Geneticas));
 
 /***/ }),
 
@@ -104167,91 +102556,6 @@ if (document.getElementById('main')) {
 
 /***/ }),
 
-/***/ "./resources/js/components/Marcas/Delete.js":
-/*!**************************************************!*\
-  !*** ./resources/js/components/Marcas/Delete.js ***!
-  \**************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/esm/TextField/index.js");
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
-/* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
-/* harmony import */ var _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/marcasActions */ "./resources/js/actions/marcasActions.js");
-
-
-
-
-
-
-
-
-var Delete = function Delete(props) {
-  var marca = props.marca,
-      borrar = props.borrar,
-      cancelar = props.cancelar,
-      error_form = props.error_form;
-  var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__["makeStyles"])(function (theme) {
-    return {
-      formControl: {
-        margin: theme.spacing(0),
-        marginBottom: 35,
-        width: "100%"
-      }
-    };
-  });
-  var classes = useStyles();
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-row"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    className: classes.formControl
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    label: "ID",
-    value: marca.id,
-    className: "form-control",
-    disabled: true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    className: classes.formControl
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    label: "Nombre",
-    value: marca.name,
-    className: "form-control",
-    disabled: true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-row margin-button"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-6"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    variant: "contained",
-    color: "primary",
-    onClick: function onClick() {
-      return borrar(marca.id);
-    }
-  }, "Eliminar")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-6"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    variant: "contained",
-    color: "inherit",
-    onClick: cancelar
-  }, "Cancelar"))), error_form && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
-    className: "text-danger"
-  }, "Existe un registro vinculado.")));
-};
-
-var mapStateToProps = function mapStateToProps(reducers) {
-  return reducers.marcasReducer;
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__)(Delete));
-
-/***/ }),
-
 /***/ "./resources/js/components/Marcas/Formulario.js":
 /*!******************************************************!*\
   !*** ./resources/js/components/Marcas/Formulario.js ***!
@@ -104278,6 +102582,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var agregar = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__["agregar"],
     editar = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__["editar"],
+    borrar = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__["borrar"],
     cambioMarcaName = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__["cambioMarcaName"],
     cancelar = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__["cancelar"],
     traerTodos = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_6__["traerTodos"];
@@ -104293,7 +102598,7 @@ var Formulario = function Formulario(props) {
       agregar = props.agregar,
       editar = props.editar,
       cancelar = props.cancelar,
-      traerTodos = props.traerTodos;
+      borrar = props.borrar;
 
   var handleCambioMarcaName = function handleCambioMarcaName(event) {
     return cambioMarcaName(event.target.value);
@@ -104330,18 +102635,27 @@ var Formulario = function Formulario(props) {
     value: name || '',
     onChange: handleCambioMarcaName,
     helperText: error_form.name,
-    error: !error_form.name ? false : true
+    error: !error_form.name ? false : true,
+    disabled: state_form === 'borrar' ? true : false
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-row margin-button"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-group col-md-6"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, state_form === 'crear' || state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     variant: "contained",
     color: "primary",
     onClick: guardar
-  }, "Guardar")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Guardar") : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    variant: "contained",
+    color: "primary",
+    onClick: function onClick() {
+      return borrar(id);
+    }
+  }, "Borrar"), error_form && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+    className: "text-danger"
+  }, "Existe un registro vinculado.")) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-group col-md-6"
-  }, state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, state_form === 'editar' || state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     variant: "contained",
     color: "inherit",
     onClick: cancelar
@@ -104360,6 +102674,7 @@ var mapStateToProps = function mapStateToProps(_ref) {
 var mapDispatchToProps = {
   traerTodos: traerTodos,
   cambioMarcaName: cambioMarcaName,
+  borrar: borrar,
   agregar: agregar,
   editar: editar,
   cancelar: cancelar
@@ -104439,9 +102754,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _Table__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Table */ "./resources/js/components/Marcas/Table.js");
 /* harmony import */ var _Formulario__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Formulario */ "./resources/js/components/Marcas/Formulario.js");
-/* harmony import */ var _Delete__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Delete */ "./resources/js/components/Marcas/Delete.js");
-/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
-/* harmony import */ var _actions_marcasActions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../actions/marcasActions */ "./resources/js/actions/marcasActions.js");
+/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
+/* harmony import */ var _actions_marcasActions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../actions/marcasActions */ "./resources/js/actions/marcasActions.js");
 
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -104480,7 +102794,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-
 var Marcas = /*#__PURE__*/function (_Component) {
   _inherits(Marcas, _Component);
 
@@ -104505,7 +102818,7 @@ var Marcas = /*#__PURE__*/function (_Component) {
           marcas = _this$props.marcas,
           error = _this$props.error;
       if (recargar_table) traerTodos();
-      if (loading && !marcas.length) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null);
+      if (loading && !marcas.length) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null);
       if (error) return 'Error';
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Table__WEBPACK_IMPORTED_MODULE_4__["default"], null);
     });
@@ -104562,22 +102875,14 @@ var Marcas = /*#__PURE__*/function (_Component) {
         className: "col col-md-4"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card"
-      }, state_form === 'crear' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-agregar"
       }, "Agregar marca ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
         fontSize: "small",
         onClick: goBack
-      })), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      })), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
-      }, this.ponerFormulario())) : '', state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-header card-agregar"
-      }, "Modificando usuario: ", marca.id), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-body"
-      }, this.ponerFormulario())) : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-header card-eliminar"
-      }, "Eliminar la siguente marca"), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-body"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Delete__WEBPACK_IMPORTED_MODULE_6__["default"], null))) : ''))));
+      }, this.ponerFormulario()))))));
     }
   }]);
 
@@ -104588,106 +102893,7 @@ var mapStateToProps = function mapStateToProps(reducers) {
   return reducers.marcasReducer;
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_marcasActions__WEBPACK_IMPORTED_MODULE_8__)(Marcas));
-
-/***/ }),
-
-/***/ "./resources/js/components/Prototypes/Delete.js":
-/*!******************************************************!*\
-  !*** ./resources/js/components/Prototypes/Delete.js ***!
-  \******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/esm/TextField/index.js");
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
-/* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
-/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
-
-
-
-
-
-
-
-
-var Delete = function Delete(props) {
-  var prototype = props.prototype[0],
-      borrar = props.borrar,
-      cancelar = props.cancelar,
-      error_form = props.error_form;
-  var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__["makeStyles"])(function (theme) {
-    return {
-      formControl: {
-        margin: theme.spacing(0),
-        marginBottom: 35,
-        width: "100%"
-      }
-    };
-  });
-  var classes = useStyles();
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-row"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    className: classes.formControl
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    label: "ID",
-    value: prototype.id,
-    className: "form-control",
-    disabled: true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    className: classes.formControl
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    label: "Nombre",
-    value: prototype.name,
-    className: "form-control",
-    disabled: true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    className: classes.formControl
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    label: "Genetica",
-    value: prototype.genetica.name,
-    className: "form-control",
-    disabled: true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    className: classes.formControl
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    label: "Ambiente",
-    value: prototype.ambiente.name,
-    className: "form-control",
-    disabled: true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-row margin-button"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-6"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    variant: "contained",
-    color: "primary",
-    onClick: function onClick() {
-      return borrar(prototype.id);
-    }
-  }, "Eliminar")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-6"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    variant: "contained",
-    color: "inherit",
-    onClick: cancelar
-  }, "Cancelar"))), error_form && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
-    className: "text-danger"
-  }, "Existe un registro vinculado.")));
-};
-
-var mapStateToProps = function mapStateToProps(reducers) {
-  return reducers.prototypesReducer;
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_6__)(Delete));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_marcasActions__WEBPACK_IMPORTED_MODULE_7__)(Marcas));
 
 /***/ }),
 
@@ -104713,9 +102919,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
 /* harmony import */ var _material_ui_core_Select__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Select */ "./node_modules/@material-ui/core/esm/Select/index.js");
 /* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
-/* harmony import */ var _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../actions/ambientesActions */ "./resources/js/actions/ambientesActions.js");
-/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
-/* harmony import */ var _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../actions/sensorsActions */ "./resources/js/actions/sensorsActions.js");
+/* harmony import */ var _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../actions/sensorsActions */ "./resources/js/actions/sensorsActions.js");
 
 
 
@@ -104729,11 +102933,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-var geneticasTraerTodos = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_13__["traerTodos"];
-var ambientesTraerTodos = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_12__["traerTodos"];
-var sensorsTraerTodosPorAmbiente = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_14__["traerTodosPorAmbiente"];
+var sensorsTraerTodosPorAmbiente = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_12__["traerTodosPorAmbiente"];
 var cambioPrototypeName = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["cambioPrototypeName"],
     cambioPrototypeGenetica = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["cambioPrototypeGenetica"],
     cambioPrototypeAmbiente = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["cambioPrototypeAmbiente"],
@@ -104743,9 +102943,7 @@ var cambioPrototypeName = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11_
     cancelar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["cancelar"];
 
 var Formulario = function Formulario(props) {
-  var geneticasTraerTodos = props.geneticasTraerTodos,
-      ambientesTraerTodos = props.ambientesTraerTodos,
-      sensorsTraerTodosPorAmbiente = props.sensorsTraerTodosPorAmbiente,
+  var sensorsTraerTodosPorAmbiente = props.sensorsTraerTodosPorAmbiente,
       geneticas = props.geneticasReducer.geneticas,
       ambientes = props.ambientesReducer.ambientes,
       sensors_ambiente = props.sensorsReducer.sensors_ambiente,
@@ -104756,14 +102954,14 @@ var Formulario = function Formulario(props) {
       genetica_id = _props$prototypesRedu2.genetica_id,
       ambiente_id = _props$prototypesRedu2.ambiente_id,
       sensor_id = _props$prototypesRedu2.sensor_id,
+      sensor = _props$prototypesRedu2.sensor,
       state_form = _props$prototypesRedu.state_form,
       error_form = _props$prototypesRedu.error_form,
       loading = _props$prototypesRedu.loading,
+      borrar = props.borrar,
       agregar = props.agregar,
       editar = props.editar,
       cancelar = props.cancelar;
-  if (!geneticas.length) geneticasTraerTodos();
-  if (!ambientes.length) ambientesTraerTodos();
 
   var handleCambioPrototypeName = function handleCambioPrototypeName(event) {
     return props.cambioPrototypeName(event.target.value);
@@ -104816,7 +103014,8 @@ var Formulario = function Formulario(props) {
     value: name || '',
     onChange: handleCambioPrototypeName,
     helperText: error_form.name,
-    error: !error_form.name ? false : true
+    error: !error_form.name ? false : true,
+    disabled: state_form === 'borrar' ? true : false
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
     className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_InputLabel__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -104827,7 +103026,8 @@ var Formulario = function Formulario(props) {
     id: "demo-simple-select-helper",
     value: genetica_id || '',
     onChange: handleCambioPrototypeGenetica,
-    error: !error_form.genetica_id ? false : true
+    error: !error_form.genetica_id ? false : true,
+    disabled: state_form === 'borrar' ? true : false
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/geneticas"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -104851,7 +103051,8 @@ var Formulario = function Formulario(props) {
     id: "demo-simple-select-helper",
     value: ambiente_id || '',
     onChange: handleCambioPrototypeAmbiente,
-    error: !error_form.ambiente_id ? false : true
+    error: !error_form.ambiente_id ? false : true,
+    disabled: state_form === 'borrar' ? true : false
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/ambientes"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -104880,7 +103081,7 @@ var Formulario = function Formulario(props) {
     value: sensor_id || '',
     onChange: handleCambioPrototypeSensor,
     error: !error_form.sensor_id ? false : true,
-    disabled: !ambiente_id
+    disabled: !ambiente_id || state_form === 'borrar'
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: ""
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -104902,13 +103103,21 @@ var Formulario = function Formulario(props) {
     className: "form-row margin-button"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-group col-md-6"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, state_form === 'crear' || state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     variant: "contained",
     color: "primary",
     onClick: guardar
-  }, "Guardar")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Guardar") : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    variant: "contained",
+    color: "primary",
+    onClick: function onClick() {
+      return borrar(id);
+    }
+  }, "Borrar"), error_form && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+    className: "text-danger"
+  }, "Existe un registro vinculado.")) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-group col-md-6"
-  }, state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, state_form === 'editar' || state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     variant: "contained",
     color: "inherit",
     onClick: cancelar
@@ -104929,8 +103138,6 @@ var mapStateToProps = function mapStateToProps(_ref) {
 };
 
 var mapDispatchToProps = {
-  geneticasTraerTodos: geneticasTraerTodos,
-  ambientesTraerTodos: ambientesTraerTodos,
   sensorsTraerTodosPorAmbiente: sensorsTraerTodosPorAmbiente,
   cambioPrototypeName: cambioPrototypeName,
   cambioPrototypeGenetica: cambioPrototypeGenetica,
@@ -105015,9 +103222,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _Table__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Table */ "./resources/js/components/Prototypes/Table.js");
 /* harmony import */ var _Formulario__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Formulario */ "./resources/js/components/Prototypes/Formulario.js");
-/* harmony import */ var _Delete__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Delete */ "./resources/js/components/Prototypes/Delete.js");
-/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
-/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
+/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
+/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
+/* harmony import */ var _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../actions/ambientesActions */ "./resources/js/actions/ambientesActions.js");
+/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
 
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -105057,6 +103265,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+var geneticasTraerTodos = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_9__["traerTodos"];
+var ambientesTraerTodos = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_8__["traerTodos"];
+var prototypesTraerTodos = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_7__["traerTodos"];
+
 var Prototypes = /*#__PURE__*/function (_Component) {
   _inherits(Prototypes, _Component);
 
@@ -105075,13 +103287,14 @@ var Prototypes = /*#__PURE__*/function (_Component) {
 
     _defineProperty(_assertThisInitialized(_this), "ponerContenido", function () {
       var _this$props = _this.props,
-          traerTodos = _this$props.traerTodos,
-          recargar_table = _this$props.recargar_table,
-          loading = _this$props.loading,
-          prototypes = _this$props.prototypes,
-          error = _this$props.error;
-      if (recargar_table) traerTodos();
-      if (loading && !prototypes.length) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null);
+          prototypesTraerTodos = _this$props.prototypesTraerTodos,
+          _this$props$prototype = _this$props.prototypesReducer,
+          recargar_table = _this$props$prototype.recargar_table,
+          loading = _this$props$prototype.loading,
+          prototypes = _this$props$prototype.prototypes,
+          error = _this$props$prototype.error;
+      if (recargar_table) prototypesTraerTodos();
+      if (loading && !prototypes.length) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null);
       if (error) return 'Error';
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Table__WEBPACK_IMPORTED_MODULE_4__["default"], null);
     });
@@ -105097,16 +103310,18 @@ var Prototypes = /*#__PURE__*/function (_Component) {
     key: "componentDidMount",
     value: function () {
       var _componentDidMount = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var _this$props2, traerTodos, prototypes;
+        var _this$props2, geneticas, prototypes, ambientes, sensor_ambiente, geneticasTraerTodos, prototypesTraerTodos, ambientesTraerTodos;
 
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _this$props2 = this.props, traerTodos = _this$props2.traerTodos, prototypes = _this$props2.prototypes;
-                if (!prototypes.length) traerTodos();
+                _this$props2 = this.props, geneticas = _this$props2.geneticasReducer.geneticas, prototypes = _this$props2.prototypesReducer.prototypes, ambientes = _this$props2.ambientesReducer.ambientes, sensor_ambiente = _this$props2.sensorsReducer.sensor_ambiente, geneticasTraerTodos = _this$props2.geneticasTraerTodos, prototypesTraerTodos = _this$props2.prototypesTraerTodos, ambientesTraerTodos = _this$props2.ambientesTraerTodos;
+                if (!prototypes.length) prototypesTraerTodos();
+                if (!geneticas.length) geneticasTraerTodos();
+                if (!ambientes.length) ambientesTraerTodos();
 
-              case 2:
+              case 4:
               case "end":
                 return _context.stop();
             }
@@ -105124,8 +103339,9 @@ var Prototypes = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       var _this$props3 = this.props,
-          state_form = _this$props3.state_form,
-          loading = _this$props3.loading,
+          _this$props3$prototyp = _this$props3.prototypesReducer,
+          state_form = _this$props3$prototyp.state_form,
+          loading = _this$props3$prototyp.loading,
           prototype = _this$props3.prototype,
           goBack = _this$props3.history.goBack;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -105138,122 +103354,39 @@ var Prototypes = /*#__PURE__*/function (_Component) {
         className: "col col-md-4"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card"
-      }, state_form === 'crear' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-agregar"
       }, "Agregar prototipo ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
         fontSize: "small",
         onClick: goBack
-      })), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      })), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
-      }, this.ponerFormulario())) : '', state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-header card-agregar"
-      }, "Modificando prototipo: ", prototype.id), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-body"
-      }, this.ponerFormulario())) : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-header card-eliminar"
-      }, "Eliminar la siguente prototipo"), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-body"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Delete__WEBPACK_IMPORTED_MODULE_6__["default"], null))) : ''))));
+      }, this.ponerFormulario()))))));
     }
   }]);
 
   return Prototypes;
 }(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
 
-var mapStateToProps = function mapStateToProps(reducers) {
-  return reducers.prototypesReducer;
+var mapStateToProps = function mapStateToProps(_ref) {
+  var prototypesReducer = _ref.prototypesReducer,
+      geneticasReducer = _ref.geneticasReducer,
+      ambientesReducer = _ref.ambientesReducer,
+      sensorsReducer = _ref.sensorsReducer;
+  return {
+    prototypesReducer: prototypesReducer,
+    geneticasReducer: geneticasReducer,
+    ambientesReducer: ambientesReducer,
+    sensorsReducer: sensorsReducer
+  };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_8__)(Prototypes));
-
-/***/ }),
-
-/***/ "./resources/js/components/Users/Delete.js":
-/*!*************************************************!*\
-  !*** ./resources/js/components/Users/Delete.js ***!
-  \*************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/esm/TextField/index.js");
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
-/* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
-/* harmony import */ var _actions_usersActions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/usersActions */ "./resources/js/actions/usersActions.js");
-
-
-
-
-
-
-
-
-var Delete = function Delete(props) {
-  var user = props.user,
-      borrar = props.borrar,
-      cancelar = props.cancelar;
-  var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__["makeStyles"])(function (theme) {
-    return {
-      formControl: {
-        margin: theme.spacing(0),
-        marginBottom: 35,
-        width: "100%"
-      }
-    };
-  });
-  var classes = useStyles();
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-row"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    className: classes.formControl
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    label: "ID",
-    value: user.id,
-    className: "form-control",
-    disabled: true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    className: classes.formControl
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    label: "Nombre",
-    value: user.name,
-    className: "form-control",
-    disabled: true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    className: classes.formControl
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    label: "Email",
-    value: user.email,
-    className: "form-control",
-    disabled: true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-row margin-button"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-6"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    variant: "contained",
-    color: "primary",
-    onClick: function onClick() {
-      return borrar(user.id);
-    }
-  }, "Eliminar")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-6"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    variant: "contained",
-    color: "inherit",
-    onClick: cancelar
-  }, "Cancelar")))));
+var mapDispatchToProps = {
+  geneticasTraerTodos: geneticasTraerTodos,
+  ambientesTraerTodos: ambientesTraerTodos,
+  prototypesTraerTodos: prototypesTraerTodos
 };
-
-var mapStateToProps = function mapStateToProps(reducers) {
-  return reducers.usersReducer;
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_usersActions__WEBPACK_IMPORTED_MODULE_6__)(Delete));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, mapDispatchToProps)(Prototypes));
 
 /***/ }),
 
@@ -105290,6 +103423,7 @@ var Formulario = function Formulario(props) {
       password = _props$user.password,
       agregar = props.agregar,
       editar = props.editar,
+      borrar = props.borrar,
       cancelar = props.cancelar,
       state_form = props.state_form,
       error_form = props.error_form,
@@ -105339,20 +103473,22 @@ var Formulario = function Formulario(props) {
     label: "Nombre",
     type: "text",
     className: "form-control",
-    value: name,
+    value: name || '',
     onChange: handleCambioUsuarioName,
     helperText: error_form.name,
-    error: !error_form.name ? false : true
+    error: !error_form.name ? false : true,
+    disabled: state_form === 'borrar' ? true : false
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
     className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
     label: "Email",
     type: "email",
     className: "form-control",
-    value: email,
+    value: email || '',
     onChange: handleCambioUsuarioEmail,
     helperText: error_form.email,
-    error: !error_form.email ? false : true
+    error: !error_form.email ? false : true,
+    disabled: state_form === 'borrar' ? true : false
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
     className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -105360,21 +103496,30 @@ var Formulario = function Formulario(props) {
     label: "Password",
     type: "text",
     className: "form-control",
-    value: password,
+    value: password || '',
     onChange: handleCambioUsuarioPassword,
     helperText: error_form.password,
-    error: !error_form.password ? false : true
+    error: !error_form.password ? false : true,
+    disabled: state_form === 'borrar' ? true : false
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-row margin-button"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-group col-md-6"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, state_form === 'crear' || state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     variant: "contained",
     color: "primary",
     onClick: guardar
-  }, "Guardar")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Guardar") : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    variant: "contained",
+    color: "primary",
+    onClick: function onClick() {
+      return borrar(id);
+    }
+  }, "Borrar"), error_form && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+    className: "text-danger"
+  }, "Existe un registro vinculado.")) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-group col-md-6"
-  }, state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, state_form === 'editar' || state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     variant: "contained",
     color: "inherit",
     onClick: cancelar
@@ -105460,9 +103605,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _Table__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Table */ "./resources/js/components/Users/Table.js");
 /* harmony import */ var _Formulario__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Formulario */ "./resources/js/components/Users/Formulario.js");
-/* harmony import */ var _Delete__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Delete */ "./resources/js/components/Users/Delete.js");
-/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
-/* harmony import */ var _actions_usersActions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../actions/usersActions */ "./resources/js/actions/usersActions.js");
+/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
+/* harmony import */ var _actions_usersActions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../actions/usersActions */ "./resources/js/actions/usersActions.js");
 
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -105501,7 +103645,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-
 var Users = /*#__PURE__*/function (_Component) {
   _inherits(Users, _Component);
 
@@ -105526,7 +103669,7 @@ var Users = /*#__PURE__*/function (_Component) {
           users = _this$props.users,
           error = _this$props.error;
       if (recargar_table) traerTodos();
-      if (loading && !users.length) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null);
+      if (loading && !users.length) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null);
       if (error) return 'Error';
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Table__WEBPACK_IMPORTED_MODULE_4__["default"], null);
     });
@@ -105583,22 +103726,14 @@ var Users = /*#__PURE__*/function (_Component) {
         className: "col col-md-4"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card"
-      }, state_form === 'crear' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-agregar"
       }, "Agregar usuario ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
         fontSize: "small",
         onClick: goBack
-      })), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      })), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
-      }, this.ponerFormulario())) : '', state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-header card-agregar"
-      }, "Modificando usuario: ", user.id), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-body"
-      }, this.ponerFormulario())) : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-header card-eliminar"
-      }, "Eliminar siguente usuario"), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-body"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Delete__WEBPACK_IMPORTED_MODULE_6__["default"], null))) : ''))));
+      }, this.ponerFormulario()))))));
     }
   }]);
 
@@ -105609,7 +103744,7 @@ var mapStateToProps = function mapStateToProps(reducers) {
   return reducers.usersReducer;
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_usersActions__WEBPACK_IMPORTED_MODULE_8__)(Users));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, _actions_usersActions__WEBPACK_IMPORTED_MODULE_7__)(Users));
 
 /***/ }),
 
@@ -105851,6 +103986,26 @@ var INITIAL_STATE = {
         state_form: 'crear'
       });
 
+    case _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_0__["CANCELAR"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        loading: false,
+        error: '',
+        error_form: '',
+        ambiente: {
+          id: '',
+          name: '',
+          codigo: '',
+          inputs: ''
+        },
+        state_form: 'crear'
+      });
+
+    case _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_0__["RECARGA"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        loading: true,
+        recargar_table: false
+      });
+
     default:
       return state;
   }
@@ -105987,6 +104142,7 @@ var INITIAL_STATE = {
 
     case _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_ESTADO_FORM"]:
       return _objectSpread(_objectSpread({}, state), {}, {
+        error_form: '',
         state_form: action.payload
       });
 
@@ -106006,6 +104162,29 @@ var INITIAL_STATE = {
         },
         recargar_table: true,
         state_form: 'crear'
+      });
+
+    case _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_0__["CANCELAR"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        loading: false,
+        error: '',
+        error_form: '',
+        genetica: {
+          id: '',
+          name: '',
+          marca_id: '',
+          prod_int: '',
+          prod_ext: '',
+          tiempo_flora: '',
+          sabores: ''
+        },
+        state_form: 'crear'
+      });
+
+    case _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_0__["RECARGA"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        loading: true,
+        recargar_table: false
       });
 
     default:
@@ -106144,6 +104323,24 @@ var INITIAL_STATE = {
         error_form: '',
         recargar_table: true,
         state_form: 'crear'
+      });
+
+    case _types_marcaTypes__WEBPACK_IMPORTED_MODULE_0__["CANCELAR"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        loading: false,
+        error: '',
+        error_form: '',
+        marca: {
+          id: '',
+          name: ''
+        },
+        state_form: 'crear'
+      });
+
+    case _types_marcaTypes__WEBPACK_IMPORTED_MODULE_0__["RECARGA"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        loading: true,
+        recargar_table: false
       });
 
     default:
@@ -106316,10 +104513,39 @@ var INITIAL_STATE = {
           fecha_estapa_c: '',
           fecha_estapa_d: '',
           fecha_estapa_e: '',
-          cantidad: ''
+          cantidad: '',
+          sensor: ''
         }),
         recargar_table: true,
         state_form: 'crear'
+      });
+
+    case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["CANCELAR"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        loading: false,
+        error: '',
+        error_form: '',
+        prototype: _objectSpread(_objectSpread({}, state.form), {}, {
+          id: '',
+          name: '',
+          genetica_id: '',
+          ambiente_id: '',
+          sensor_id: '',
+          fecha_estapa_a: '',
+          fecha_estapa_b: '',
+          fecha_estapa_c: '',
+          fecha_estapa_d: '',
+          fecha_estapa_e: '',
+          cantidad: '',
+          sensor: ''
+        }),
+        state_form: 'crear'
+      });
+
+    case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["RECARGA"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        loading: true,
+        recargar_table: false
       });
 
     default:
@@ -106451,6 +104677,26 @@ var INITIAL_STATE = {
         state_form: 'crear'
       });
 
+    case _types_sensorTypes__WEBPACK_IMPORTED_MODULE_0__["CANCELAR"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        loading: false,
+        error: '',
+        error_form: '',
+        sensor: {
+          id: '',
+          name: '',
+          ambiente_id: '',
+          output: ''
+        },
+        state_form: 'crear'
+      });
+
+    case _types_sensorTypes__WEBPACK_IMPORTED_MODULE_0__["RECARGA"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        loading: true,
+        recargar_table: false
+      });
+
     default:
       return state;
   }
@@ -106570,6 +104816,26 @@ var INITIAL_STATE = {
         state_form: 'crear'
       });
 
+    case _types_userTypes__WEBPACK_IMPORTED_MODULE_0__["CANCELAR"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        loading: false,
+        error: '',
+        error_form: '',
+        user: {
+          id: '',
+          name: '',
+          email: '',
+          password: ''
+        },
+        state_form: 'crear'
+      });
+
+    case _types_userTypes__WEBPACK_IMPORTED_MODULE_0__["RECARGA"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        loading: true,
+        recargar_table: false
+      });
+
     default:
       return state;
   }
@@ -106581,7 +104847,7 @@ var INITIAL_STATE = {
 /*!*********************************************!*\
   !*** ./resources/js/types/ambienteTypes.js ***!
   \*********************************************/
-/*! exports provided: TRAER_TODOS, TRAER_UNO, LOADING, ERROR, ERROR_FORM, CAMBIO_ESTADO_FORM, CAMBIO_AMBIENTE_ID, CAMBIO_AMBIENTE_CODIGO, CAMBIO_AMBIENTE_NAME, CAMBIO_AMBIENTE_INPUTS, GUARDAR */
+/*! exports provided: TRAER_TODOS, TRAER_UNO, LOADING, ERROR, ERROR_FORM, CAMBIO_ESTADO_FORM, CAMBIO_AMBIENTE_ID, CAMBIO_AMBIENTE_CODIGO, CAMBIO_AMBIENTE_NAME, CAMBIO_AMBIENTE_INPUTS, RECARGA, CANCELAR, GUARDAR */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -106596,6 +104862,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_AMBIENTE_CODIGO", function() { return CAMBIO_AMBIENTE_CODIGO; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_AMBIENTE_NAME", function() { return CAMBIO_AMBIENTE_NAME; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_AMBIENTE_INPUTS", function() { return CAMBIO_AMBIENTE_INPUTS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECARGA", function() { return RECARGA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CANCELAR", function() { return CANCELAR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GUARDAR", function() { return GUARDAR; });
 var TRAER_TODOS = 'ambientes_traer_todos';
 var TRAER_UNO = 'ambientes_traer_uno';
@@ -106607,6 +104875,8 @@ var CAMBIO_AMBIENTE_ID = 'ambientes_cambio_ambiente_id';
 var CAMBIO_AMBIENTE_CODIGO = 'ambientes_cambio_ambiente_codigo';
 var CAMBIO_AMBIENTE_NAME = 'ambientes_cambio_ambiente_name';
 var CAMBIO_AMBIENTE_INPUTS = 'ambientes_cambio_ambiente_inputs';
+var RECARGA = 'ambientes_recarga_ambientes';
+var CANCELAR = 'ambientes_cancelar_ambientes';
 var GUARDAR = 'ambientes_guardar_ambiente';
 
 /***/ }),
@@ -106615,7 +104885,7 @@ var GUARDAR = 'ambientes_guardar_ambiente';
 /*!*********************************************!*\
   !*** ./resources/js/types/geneticaTypes.js ***!
   \*********************************************/
-/*! exports provided: TRAER_TODOS, TRAER_UNO, LOADING, ERROR, ERROR_FORM, CAMBIO_ESTADO_FORM, CAMBIO_GENETICA_ID, CAMBIO_GENETICA_NAME, CAMBIO_GENETICA_MARCA_ID, CAMBIO_GENETICA_THC, CAMBIO_GENETICA_CBD, CAMBIO_GENETICA_PROD_INT, CAMBIO_GENETICA_PROD_EXT, CAMBIO_GENETICA_TIEMPO_FLORA, CAMBIO_GENETICA_SABORES, GUARDAR */
+/*! exports provided: TRAER_TODOS, TRAER_UNO, LOADING, ERROR, ERROR_FORM, CAMBIO_ESTADO_FORM, CAMBIO_GENETICA_ID, CAMBIO_GENETICA_NAME, CAMBIO_GENETICA_MARCA_ID, CAMBIO_GENETICA_THC, CAMBIO_GENETICA_CBD, CAMBIO_GENETICA_PROD_INT, CAMBIO_GENETICA_PROD_EXT, CAMBIO_GENETICA_TIEMPO_FLORA, CAMBIO_GENETICA_SABORES, RECARGA, CANCELAR, GUARDAR */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -106635,6 +104905,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_GENETICA_PROD_EXT", function() { return CAMBIO_GENETICA_PROD_EXT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_GENETICA_TIEMPO_FLORA", function() { return CAMBIO_GENETICA_TIEMPO_FLORA; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_GENETICA_SABORES", function() { return CAMBIO_GENETICA_SABORES; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECARGA", function() { return RECARGA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CANCELAR", function() { return CANCELAR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GUARDAR", function() { return GUARDAR; });
 var TRAER_TODOS = 'geneticas_traer_todos';
 var TRAER_UNO = 'geneticas_traer_uno';
@@ -106651,6 +104923,8 @@ var CAMBIO_GENETICA_PROD_INT = 'geneticas_cambio_genetica_prod_int';
 var CAMBIO_GENETICA_PROD_EXT = 'geneticas_cambio_genetica_prod_ext';
 var CAMBIO_GENETICA_TIEMPO_FLORA = 'geneticas_cambio_genetica_tiempo_flora';
 var CAMBIO_GENETICA_SABORES = 'geneticas_cambio_genetica_sabores';
+var RECARGA = 'geneticas_recarga_genetica';
+var CANCELAR = 'geneticas_cancelar_genetica';
 var GUARDAR = 'geneticas_guardar_genetica';
 
 /***/ }),
@@ -106659,7 +104933,7 @@ var GUARDAR = 'geneticas_guardar_genetica';
 /*!******************************************!*\
   !*** ./resources/js/types/marcaTypes.js ***!
   \******************************************/
-/*! exports provided: TRAER_TODOS, TRAER_UNO, LOADING, ERROR, ERROR_FORM, CAMBIO_ESTADO_FORM, CAMBIO_MARCA_ID, CAMBIO_MARCA_NAME, GUARDAR */
+/*! exports provided: TRAER_TODOS, TRAER_UNO, LOADING, ERROR, ERROR_FORM, CAMBIO_ESTADO_FORM, CAMBIO_MARCA_ID, CAMBIO_MARCA_NAME, RECARGA, CANCELAR, GUARDAR */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -106672,6 +104946,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_ESTADO_FORM", function() { return CAMBIO_ESTADO_FORM; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_MARCA_ID", function() { return CAMBIO_MARCA_ID; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_MARCA_NAME", function() { return CAMBIO_MARCA_NAME; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECARGA", function() { return RECARGA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CANCELAR", function() { return CANCELAR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GUARDAR", function() { return GUARDAR; });
 var TRAER_TODOS = 'marcas_traer_todos';
 var TRAER_UNO = 'marcas_traer_uno';
@@ -106681,6 +104957,8 @@ var ERROR_FORM = 'marcas_error_form';
 var CAMBIO_ESTADO_FORM = 'marcas_cambio_estado_form';
 var CAMBIO_MARCA_ID = 'marcas_cambio_marca_id';
 var CAMBIO_MARCA_NAME = 'marcas_cambio_marca_name';
+var RECARGA = 'marcas_recarga_marcas';
+var CANCELAR = 'marcas_cancelar_marcas';
 var GUARDAR = 'marcas_guardar_marca';
 
 /***/ }),
@@ -106689,7 +104967,7 @@ var GUARDAR = 'marcas_guardar_marca';
 /*!**********************************************!*\
   !*** ./resources/js/types/prototypeTypes.js ***!
   \**********************************************/
-/*! exports provided: TRAER_TODOS, TRAER_UNO, LOADING, ERROR, ERROR_FORM, CAMBIO_ESTADO_FORM, CAMBIO_PROTOTYPE_ID, CAMBIO_PROTOTYPE_NAME, CAMBIO_PROTOTYPE_GENETICA_ID, CAMBIO_PROTOTYPE_AMBIENTE_ID, CAMBIO_PROTOTYPE_SENSOR_ID, CAMBIO_PROTOTYPE_FECHA_ESTADO_A, CAMBIO_PROTOTYPE_FECHA_ESTADO_B, CAMBIO_PROTOTYPE_FECHA_ESTADO_C, CAMBIO_PROTOTYPE_FECHA_ESTADO_D, CAMBIO_PROTOTYPE_FECHA_ESTADO_E, CAMBIO_PROTOTYPE_CANTIDAD, GUARDAR */
+/*! exports provided: TRAER_TODOS, TRAER_UNO, LOADING, ERROR, ERROR_FORM, CAMBIO_ESTADO_FORM, CAMBIO_PROTOTYPE_ID, CAMBIO_PROTOTYPE_NAME, CAMBIO_PROTOTYPE_GENETICA_ID, CAMBIO_PROTOTYPE_AMBIENTE_ID, CAMBIO_PROTOTYPE_SENSOR_ID, CAMBIO_PROTOTYPE_FECHA_ESTADO_A, CAMBIO_PROTOTYPE_FECHA_ESTADO_B, CAMBIO_PROTOTYPE_FECHA_ESTADO_C, CAMBIO_PROTOTYPE_FECHA_ESTADO_D, CAMBIO_PROTOTYPE_FECHA_ESTADO_E, CAMBIO_PROTOTYPE_CANTIDAD, RECARGA, CANCELAR, GUARDAR */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -106711,6 +104989,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_PROTOTYPE_FECHA_ESTADO_D", function() { return CAMBIO_PROTOTYPE_FECHA_ESTADO_D; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_PROTOTYPE_FECHA_ESTADO_E", function() { return CAMBIO_PROTOTYPE_FECHA_ESTADO_E; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_PROTOTYPE_CANTIDAD", function() { return CAMBIO_PROTOTYPE_CANTIDAD; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECARGA", function() { return RECARGA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CANCELAR", function() { return CANCELAR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GUARDAR", function() { return GUARDAR; });
 var TRAER_TODOS = 'prototypes_traer_todos';
 var TRAER_UNO = 'prototypes_traer_uno';
@@ -106729,6 +105009,8 @@ var CAMBIO_PROTOTYPE_FECHA_ESTADO_C = 'prototypes_cambio_prototype_fecha_estado_
 var CAMBIO_PROTOTYPE_FECHA_ESTADO_D = 'prototypes_cambio_prototype_fecha_estado_d';
 var CAMBIO_PROTOTYPE_FECHA_ESTADO_E = 'prototypes_cambio_prototype_fecha_estado_e';
 var CAMBIO_PROTOTYPE_CANTIDAD = 'prototypes_cambio_prototype_cantidad';
+var RECARGA = 'prototypes_recarga_prototypes';
+var CANCELAR = 'prototypes_cancelar_prototypes';
 var GUARDAR = 'prototypes_guardar_prototype';
 
 /***/ }),
@@ -106737,7 +105019,7 @@ var GUARDAR = 'prototypes_guardar_prototype';
 /*!*******************************************!*\
   !*** ./resources/js/types/sensorTypes.js ***!
   \*******************************************/
-/*! exports provided: TRAER_TODOS, TRAER_UNO, LOADING, ERROR, ERROR_FORM, CAMBIO_ESTADO_FORM, CAMBIO_SENSOR_ID, CAMBIO_SENSOR_NAME, CAMBIO_SENSOR_AMBIENTE_ID, CAMBIO_SENSOR_OUTPUT, TRAER_TODOS_POR_AMBIENTE, GUARDAR */
+/*! exports provided: TRAER_TODOS, TRAER_UNO, LOADING, ERROR, ERROR_FORM, CAMBIO_ESTADO_FORM, CAMBIO_SENSOR_ID, CAMBIO_SENSOR_NAME, CAMBIO_SENSOR_AMBIENTE_ID, CAMBIO_SENSOR_OUTPUT, TRAER_TODOS_POR_AMBIENTE, RECARGA, CANCELAR, GUARDAR */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -106753,6 +105035,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_SENSOR_AMBIENTE_ID", function() { return CAMBIO_SENSOR_AMBIENTE_ID; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_SENSOR_OUTPUT", function() { return CAMBIO_SENSOR_OUTPUT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TRAER_TODOS_POR_AMBIENTE", function() { return TRAER_TODOS_POR_AMBIENTE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECARGA", function() { return RECARGA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CANCELAR", function() { return CANCELAR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GUARDAR", function() { return GUARDAR; });
 var TRAER_TODOS = 'sensors_traer_todos';
 var TRAER_UNO = 'sensors_traer_uno';
@@ -106765,6 +105049,8 @@ var CAMBIO_SENSOR_NAME = 'sensors_cambio_sensor_name';
 var CAMBIO_SENSOR_AMBIENTE_ID = 'sensors_cambio_sensor_ambiente_id';
 var CAMBIO_SENSOR_OUTPUT = 'sensors_cambio_sensor_output';
 var TRAER_TODOS_POR_AMBIENTE = 'sensors_traer_sensors_por_ambiente';
+var RECARGA = 'sensors_recarga_sensors';
+var CANCELAR = 'sensors_cancelar_sensors';
 var GUARDAR = 'sensors_guardar_sensor';
 
 /***/ }),
@@ -106773,7 +105059,7 @@ var GUARDAR = 'sensors_guardar_sensor';
 /*!*****************************************!*\
   !*** ./resources/js/types/userTypes.js ***!
   \*****************************************/
-/*! exports provided: TRAER_TODOS, TRAER_UNO, LOADING, ERROR, ERROR_FORM, CAMBIO_ESTADO_FORM, CAMBIO_USUARIO_ID, CAMBIO_USUARIO_NAME, CAMBIO_USUARIO_EMAIL, CAMBIO_USUARIO_PASSWORD, GUARDAR */
+/*! exports provided: TRAER_TODOS, TRAER_UNO, LOADING, ERROR, ERROR_FORM, CAMBIO_ESTADO_FORM, CAMBIO_USUARIO_ID, CAMBIO_USUARIO_NAME, CAMBIO_USUARIO_EMAIL, CAMBIO_USUARIO_PASSWORD, RECARGA, CANCELAR, GUARDAR */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -106788,6 +105074,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_USUARIO_NAME", function() { return CAMBIO_USUARIO_NAME; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_USUARIO_EMAIL", function() { return CAMBIO_USUARIO_EMAIL; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_USUARIO_PASSWORD", function() { return CAMBIO_USUARIO_PASSWORD; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECARGA", function() { return RECARGA; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CANCELAR", function() { return CANCELAR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GUARDAR", function() { return GUARDAR; });
 var TRAER_TODOS = 'users_traer_todos';
 var TRAER_UNO = 'users_traer_uno';
@@ -106799,6 +105087,8 @@ var CAMBIO_USUARIO_ID = 'users_cambio_user_id';
 var CAMBIO_USUARIO_NAME = 'users_cambio_user_name';
 var CAMBIO_USUARIO_EMAIL = 'users_cambio_user_email';
 var CAMBIO_USUARIO_PASSWORD = 'users_cambio_user_password';
+var RECARGA = 'users_recarga_users';
+var CANCELAR = 'users_cancelar_users';
 var GUARDAR = 'users_guardar_user';
 
 /***/ }),

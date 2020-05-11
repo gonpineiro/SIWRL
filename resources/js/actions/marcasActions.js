@@ -9,7 +9,9 @@ import {
 
     CAMBIO_MARCA_ID,
     CAMBIO_MARCA_NAME,
-
+    
+    CANCELAR,
+    RECARGA,
     GUARDAR
 } from '../types/marcaTypes'
 
@@ -18,7 +20,7 @@ const URL = 'http://192.168.0.238:901/api/'
 export const traerTodos = () => async (dispatch) => {
 
     dispatch({
-        type: LOADING
+        type: RECARGA
     })
 
     try {
@@ -35,7 +37,7 @@ export const traerTodos = () => async (dispatch) => {
 }
 
 export const traerUno = (id) => async (dispatch) => {
-    
+
     dispatch({
         type: LOADING
     })
@@ -52,7 +54,7 @@ export const traerUno = (id) => async (dispatch) => {
         dispatch({
             type: TRAER_UNO,
             payload: response.data
-        })        
+        })
 
     } catch (error) {
         console.log(error)
@@ -75,15 +77,15 @@ export const agregar = (nueva_marca) => async (dispatch) => {
 
     try {
         await axios.post(URL + 'marca', nueva_marca);
-        
+
         dispatch({
             type: GUARDAR
         });
-        
+
     }
     catch (error) {
-        const errors = error.response.data.errors   
-             
+        const errors = error.response.data.errors
+
         dispatch({
             type: ERROR_FORM,
             payload: errors
@@ -92,6 +94,7 @@ export const agregar = (nueva_marca) => async (dispatch) => {
 };
 
 export const editar = (nueva_marca, id) => async (dispatch) => {
+
     dispatch({
         type: LOADING
     })
@@ -112,6 +115,7 @@ export const editar = (nueva_marca, id) => async (dispatch) => {
 }
 
 export const traerUnoBorrar = (id) => async (dispatch) => {
+
     dispatch({
         type: LOADING
     })
@@ -120,7 +124,6 @@ export const traerUnoBorrar = (id) => async (dispatch) => {
         type: CAMBIO_ESTADO_FORM,
         payload: 'borrar'
     })
-
 
     try {
         const response = await axios.get(URL + 'marca/' + id)
@@ -157,8 +160,9 @@ export const borrar = (id) => async (dispatch) => {
 }
 
 export const cancelar = () => (dispatch) => {
+    
     dispatch({
-        type: GUARDAR
+        type: CANCELAR
     })
 }
- 
+

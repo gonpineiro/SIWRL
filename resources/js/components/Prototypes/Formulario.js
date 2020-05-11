@@ -12,12 +12,8 @@ import Select from '@material-ui/core/Select';
 
 import * as protoypesActions from '../../actions/protoypesActions'
 
-import * as ambientesActions from '../../actions/ambientesActions'
-import * as geneticasActions from '../../actions/geneticasActions'
 import * as sensorsActions from '../../actions/sensorsActions'
 
-const { traerTodos: geneticasTraerTodos } = geneticasActions;
-const { traerTodos: ambientesTraerTodos } = ambientesActions;
 const { traerTodosPorAmbiente: sensorsTraerTodosPorAmbiente } = sensorsActions;
 
 const {
@@ -33,26 +29,22 @@ const {
 
 const Formulario = (props) => {
    const {
-      geneticasTraerTodos,
-      ambientesTraerTodos,
       sensorsTraerTodosPorAmbiente,
       geneticasReducer: { geneticas },
       ambientesReducer: { ambientes },
       sensorsReducer: { sensors_ambiente },
       prototypesReducer: {
-         prototype: { id, name, genetica_id, ambiente_id, sensor_id },
+         prototype: { id, name, genetica_id, ambiente_id, sensor_id, sensor },
          state_form,
          error_form,
          loading
       },
+      borrar,
       agregar,
       editar,
       cancelar
    } = props;
-
-   if (!geneticas.length) geneticasTraerTodos() 
-
-   if (!ambientes.length) ambientesTraerTodos()
+   
 
    const handleCambioPrototypeName = (event) => props.cambioPrototypeName(event.target.value);
 
@@ -106,6 +98,7 @@ const Formulario = (props) => {
                   onChange={handleCambioPrototypeName}
                   helperText={error_form.name}
                   error={!error_form.name ? false : true}
+                  disabled={state_form === 'borrar' ? true : false}
                />
             </FormControl>
 
@@ -117,6 +110,7 @@ const Formulario = (props) => {
                   value={genetica_id || ''}
                   onChange={handleCambioPrototypeGenetica}
                   error={!error_form.genetica_id ? false : true}
+                  disabled={state_form === 'borrar' ? true : false}
                >
                   <Link to="/geneticas">
                      <MenuItem value="">
@@ -143,6 +137,7 @@ const Formulario = (props) => {
                   value={ambiente_id || ''}
                   onChange={handleCambioPrototypeAmbiente}
                   error={!error_form.ambiente_id ? false : true}
+                  disabled={state_form === 'borrar' ? true : false}
                >
                   <Link to="/ambientes">
                      <MenuItem value="">
@@ -170,7 +165,7 @@ const Formulario = (props) => {
                   value={sensor_id || ''}
                   onChange={handleCambioPrototypeSensor}
                   error={!error_form.sensor_id ? false : true}
-                  disabled={!ambiente_id}
+                  disabled={!ambiente_id || state_form === 'borrar'}
                >
                   <Link to="">
                      <MenuItem value="">
@@ -181,7 +176,7 @@ const Formulario = (props) => {
                         </em>
                      </MenuItem>
                   </Link>
-                  <MenuItem value=""><em className="link link-string" > Vacio </em> </MenuItem>
+                  <MenuItem value=""><em className="link link-string" > Vacio </em> </MenuItem>                 
 
                   {sensors_ambiente.map((sensor) => (
                      <MenuItem key={sensor.id} value={sensor.id}>{sensor.name}</MenuItem>
@@ -190,22 +185,35 @@ const Formulario = (props) => {
                <FormHelperText error={!error_form.sensor_id ? false : true}>{error_form.sensor_id}</FormHelperText>
             </FormControl>
 
-
-
             <div className="form-row margin-button">
-
                <div className="form-group col-md-6">
-                  <Button
-                     variant="contained"
-                     color="primary"
-                     onClick={guardar}
-                  >
-                     Guardar
-                  </Button>
+                  {state_form === 'crear' || state_form === 'editar'
+                     ?
+                     <Button
+                        variant="contained"
+                        color="primary"
+                        onClick={guardar}
+                     >
+                        Guardar
+                     </Button> : ''}
+                  {state_form === 'borrar'
+                     ?
+                     <div>
+                        <Button
+                           variant="contained"
+                           color="primary"
+                           onClick={() => borrar(id)}
+                        >
+                           Borrar
+                        </Button>
+                        {error_form && <small className="text-danger">Existe un registro vinculado.</small>}
+                     </div>
+                     : ''}
+
                </div >
 
                <div className="form-group col-md-6">
-                  {state_form === 'editar'
+                  {state_form === 'editar' || state_form === 'borrar'
                      ?
                      <Button
                         variant="contained"
@@ -215,7 +223,6 @@ const Formulario = (props) => {
                         Cancelar
                      </Button> : ''}
                </div >
-
             </div>
 
          </div>
@@ -228,8 +235,6 @@ const mapStateToProps = ({ prototypesReducer, geneticasReducer, ambientesReducer
 };
 
 const mapDispatchToProps = {
-   geneticasTraerTodos,
-   ambientesTraerTodos,
    sensorsTraerTodosPorAmbiente,
 
    cambioPrototypeName,

@@ -18,7 +18,9 @@ import {
     CAMBIO_PROTOTYPE_FECHA_ESTADO_D,
     CAMBIO_PROTOTYPE_FECHA_ESTADO_E,
     CAMBIO_PROTOTYPE_CANTIDAD,
-
+    
+    CANCELAR,
+    RECARGA,
     GUARDAR
 } from '../types/prototypeTypes'
 
@@ -27,7 +29,7 @@ const URL = 'http://192.168.0.238:901/api/'
 export const traerTodos = () => async (dispatch) => {
 
     dispatch({
-        type: LOADING
+        type: RECARGA
     })
 
     try {
@@ -189,11 +191,12 @@ export const traerUnoBorrar = (id) => async (dispatch) => {
 
 
     try {
-        const response = await axios.get(URL + 'prototype/' + id)
+        const response = await axios.get(URL + 'prototype/' + id)        
+        const { 0: prototype } = response.data
 
         dispatch({
             type: TRAER_UNO,
-            payload: response.data
+            payload: prototype
         })
 
     } catch (error) {
@@ -225,7 +228,7 @@ export const borrar = (id) => async (dispatch) => {
 
 export const cancelar = () => (dispatch) => {
     dispatch({
-        type: GUARDAR
+        type: CANCELAR
     })
 }
 

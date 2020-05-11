@@ -10,22 +10,19 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
-import SliderThc from './General/SliderThc'
-import SliderCbd from './General/SliderCbd'
-
 import * as geneticasActions from '../../actions/geneticasActions'
-import * as marcasActions from '../../actions/marcasActions'
-
-const { traerTodos: marcasTraerTodos } = marcasActions
 
 const {
    cambioGeneticaName,
    cambioGeneticaMarca,
+   cambioGeneticaThc,
+   cambioGeneticaCbd,
    cambioGeneticaProdInt,
    cambioGeneticaProdExt,
    cambioGeneticaTiempoFlora,
    cambioGeneticaSabores,
 
+   borrar,
    cancelar,
    agregar,
    editar
@@ -33,21 +30,24 @@ const {
 
 const Formulario = (props) => {
    const {
-      marcasTraerTodos,
       marcasReducer: { marcas },
       geneticasReducer: {
-         genetica: { name, marca_id, prod_int, prod_ext, tiempo_flora, sabores },
+         genetica: { name, id, marca_id, thc, cbd, prod_int, prod_ext, tiempo_flora, sabores },
          error_form,
-         state_form
+         state_form,
+         
       },
+      borrar,
       cancelar
    } = props
-
-   if (!marcas.length) marcasTraerTodos()
 
    const handleCambioGeneticaName = (event) => props.cambioGeneticaName(event.target.value)
 
    const handleCambioGeneticaMarca = (event) => props.cambioGeneticaMarca(event.target.value)
+
+   const handleCambioGeneticaThc = (event) => props.cambioGeneticaThc(event.target.value)
+
+   const handleCambioGeneticaCbd = (event) => props.cambioGeneticaCbd(event.target.value)
 
    const handleCambioGeneticaProdInt = (event) => props.cambioGeneticaProdInt(event.target.value)
 
@@ -105,11 +105,11 @@ const Formulario = (props) => {
    }));
 
    const classes = useStyles();
-
+   
    return (
       <form noValidate autoComplete="on">
          <div className="form-row">
-
+            
             <FormControl className={classes.formControl}>
                <TextField
                   id="standard-basic"
@@ -120,6 +120,7 @@ const Formulario = (props) => {
                   onChange={handleCambioGeneticaName}
                   helperText={error_form.name}
                   error={!error_form.name ? false : true}
+                  disabled={state_form === 'borrar' ? true : false}
                />
             </FormControl>
 
@@ -131,6 +132,7 @@ const Formulario = (props) => {
                   value={marca_id || ''}
                   onChange={handleCambioGeneticaMarca}
                   error={!error_form.marca_id ? false : true}
+                  disabled={state_form === 'borrar' ? true : false}
                >
                   <Link to="/marcas">
                      <MenuItem value="">
@@ -149,17 +151,28 @@ const Formulario = (props) => {
                <FormHelperText error={!error_form.marca_id ? false : true}>{error_form.marca_id}</FormHelperText>
             </FormControl>
 
-            <div className="form-group col-md-12">
-               <SliderThc /> <SliderCbd />
-               {/* MONO PRUEBA */}
-               {error_form.thc && error_form.thc.map((err, key) =>
-                  <small key={key} className="text-danger">{err}</small>
-               )}
-               {error_form.cbd && error_form.cbd.map((err, key) =>
-                  <small key={key} className="text-danger">{err}</small>
-               )}
-               {/* MONO PRUEBA */}
-            </div>
+            <FormControl className={classes.formControl}>
+               <TextField
+                  id="standard-basic"
+                  label="THC"
+                  type="number"
+                  className="form-control"
+                  value={thc || ''}
+                  onChange={handleCambioGeneticaThc}
+                  disabled={state_form === 'borrar' ? true : false}
+               />
+            </FormControl>
+            <FormControl className={classes.formControl}>
+               <TextField
+                  id="standard-basic"
+                  label="CBD"
+                  type="number"
+                  className="form-control"
+                  value={cbd || ''}
+                  onChange={handleCambioGeneticaCbd}
+                  disabled={state_form === 'borrar' ? true : false}
+               />
+            </FormControl>
 
             <FormControl className={classes.formControl}>
                <TextField
@@ -169,6 +182,7 @@ const Formulario = (props) => {
                   className="form-control"
                   value={sabores || ''}
                   onChange={handleCambioGeneticaSabores}
+                  disabled={state_form === 'borrar' ? true : false}
                />
             </FormControl>
 
@@ -180,6 +194,7 @@ const Formulario = (props) => {
                   className="form-control"
                   value={prod_int || ''}
                   onChange={handleCambioGeneticaProdInt}
+                  disabled={state_form === 'borrar' ? true : false}
                />
             </FormControl>
 
@@ -191,6 +206,7 @@ const Formulario = (props) => {
                   className="form-control"
                   value={prod_ext || ''}
                   onChange={handleCambioGeneticaProdExt}
+                  disabled={state_form === 'borrar' ? true : false}
                />
             </FormControl>
 
@@ -204,22 +220,39 @@ const Formulario = (props) => {
                   onChange={handleCambioGeneticaTiempoFlora}
                   helperText={error_form.tiempo_flora}
                   error={!error_form.tiempo_flora ? false : true}
+                  disabled={state_form === 'borrar' ? true : false}
                />
             </FormControl>
 
             <div className="form-row margin-button">
                <div className="form-group col-md-6">
-                  <Button
-                     variant="contained"
-                     color="primary"
-                     onClick={guardar}
-                  >
-                     Guardar
+                  {state_form === 'crear' || state_form === 'editar'
+                     ?
+                     <Button
+                        variant="contained"
+                        color="primary"
+                        onClick={guardar}
+                     >
+                        Guardar
+                  </Button> : ''}
+                  {state_form === 'borrar'
+                     ?
+                     <div>
+                     <Button
+                        variant="contained"
+                        color="primary"
+                        onClick={() => borrar(id)}
+                     >
+                        Borrar
                   </Button>
+                  {error_form && <small className="text-danger">Existe un registro vinculado.</small>} 
+                  </div>
+                   : ''}
+                  
                </div >
 
                <div className="form-group col-md-6">
-                  {state_form === 'editar'
+                  {state_form === 'editar' || state_form === 'borrar'
                      ?
                      <Button
                         variant="contained"
@@ -230,7 +263,7 @@ const Formulario = (props) => {
                      </Button> : ''}
                </div >
             </div>
-
+                    
          </div>
       </form>
    );
@@ -241,15 +274,16 @@ const mapStateToProps = ({ geneticasReducer, marcasReducer }) => {
 };
 
 const mapDispatchToProps = {
-   marcasTraerTodos,
-
    cambioGeneticaName,
    cambioGeneticaMarca,
+   cambioGeneticaThc,
+   cambioGeneticaCbd,
    cambioGeneticaProdInt,
    cambioGeneticaProdExt,
    cambioGeneticaTiempoFlora,
    cambioGeneticaSabores,
 
+   borrar,
    agregar,
    editar,
    cancelar

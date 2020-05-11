@@ -17,5 +17,7 @@ export const CAMBIO_PROTOTYPE_FECHA_ESTADO_D = 'prototypes_cambio_prototype_fech
 export const CAMBIO_PROTOTYPE_FECHA_ESTADO_E = 'prototypes_cambio_prototype_fecha_estado_e'
 export const CAMBIO_PROTOTYPE_CANTIDAD = 'prototypes_cambio_prototype_cantidad'
 
+export const RECARGA = 'prototypes_recarga_prototypes'
+export const CANCELAR = 'prototypes_cancelar_prototypes'
 export const GUARDAR = 'prototypes_guardar_prototype'
 

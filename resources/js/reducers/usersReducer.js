@@ -11,6 +11,8 @@ import {
   CAMBIO_USUARIO_EMAIL,
   CAMBIO_USUARIO_PASSWORD,
 
+  RECARGA,
+  CANCELAR,
   GUARDAR
 } from '../types/userTypes'
 
@@ -105,6 +107,28 @@ export default (state = INITIAL_STATE, action) => {
         recargar_table: true,
         state_form: 'crear'
       };
+
+      case CANCELAR:
+        return {
+          ...state,
+          loading: false,
+          error: '',
+          error_form: '',
+          user: {
+            id: '',
+            name: '',
+            email: '',
+            password: ''
+          },
+          state_form: 'crear'
+        };
+  
+      case RECARGA:
+        return {
+          ...state,
+          loading: true,
+          recargar_table: false,
+        };
 
     default: return state
   }

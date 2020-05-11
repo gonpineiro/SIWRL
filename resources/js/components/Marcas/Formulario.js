@@ -7,10 +7,10 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import * as marcasActions from '../../actions/marcasActions'
 
-const { agregar, editar, cambioMarcaName, cancelar, traerTodos } = marcasActions;
+const { agregar, editar, borrar, cambioMarcaName, cancelar, traerTodos } = marcasActions;
 
 const Formulario = (props) => {
-   
+
    const {
       marcasReducer: {
          marca: { id, name },
@@ -21,7 +21,7 @@ const Formulario = (props) => {
       agregar,
       editar,
       cancelar,
-      traerTodos,
+      borrar,
    } = props;
 
    const handleCambioMarcaName = (event) => cambioMarcaName(event.target.value);
@@ -48,7 +48,7 @@ const Formulario = (props) => {
       },
    }));
 
-   const classes = useStyles();   
+   const classes = useStyles();
 
    return (
       <FormControl >
@@ -64,24 +64,38 @@ const Formulario = (props) => {
                   onChange={handleCambioMarcaName}
                   helperText={error_form.name}
                   error={!error_form.name ? false : true}
+                  disabled={state_form === 'borrar' ? true : false}
                />
             </FormControl>
 
-
             <div className="form-row margin-button">
-
                <div className="form-group col-md-6">
-                  <Button
-                     variant="contained"
-                     color="primary"
-                     onClick={guardar}
-                  >
-                     Guardar
+                  {state_form === 'crear' || state_form === 'editar'
+                     ?
+                     <Button
+                        variant="contained"
+                        color="primary"
+                        onClick={guardar}
+                     >
+                        Guardar
+                  </Button> : ''}
+                  {state_form === 'borrar'
+                     ?
+                     <div>
+                        <Button
+                           variant="contained"
+                           color="primary"
+                           onClick={() => borrar(id)}
+                        >
+                           Borrar
                   </Button>
+                        {error_form && <small className="text-danger">Existe un registro vinculado.</small>}
+                     </div>
+                     : ''}
                </div >
 
                <div className="form-group col-md-6">
-                  {state_form === 'editar'
+                  {state_form === 'editar' || state_form === 'borrar'
                      ?
                      <Button
                         variant="contained"
@@ -91,11 +105,10 @@ const Formulario = (props) => {
                         Cancelar
                      </Button> : ''}
                </div >
-
             </div>
 
          </div>
-      </FormControl>
+      </FormControl >
    );
 }
 
@@ -108,10 +121,10 @@ const mapDispatchToProps = {
 
    cambioMarcaName,
 
+   borrar,
    agregar,
    editar,
    cancelar
-
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Formulario);

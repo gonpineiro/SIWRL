@@ -4,6 +4,7 @@ import {
   TRAER_UNO,
   LOADING,
   ERROR_FORM,
+  CAMBIO_ESTADO_FORM,
   ERROR,
 
   CAMBIO_SENSOR_ID,
@@ -11,8 +12,9 @@ import {
   CAMBIO_SENSOR_NAME,
   CAMBIO_SENSOR_OUTPUT,
 
-  CAMBIO_ESTADO_FORM,
 
+  RECARGA,
+  CANCELAR,
   GUARDAR
 } from '../types/sensorTypes'
 
@@ -119,6 +121,28 @@ export default (state = INITIAL_STATE, action) => {
         recargar_table: true,
         state_form: 'crear'
       };
+
+      case CANCELAR:
+        return {
+          ...state,
+          loading: false,
+          error: '',
+          error_form: '',
+          sensor: {
+            id: '',
+            name: '',
+            ambiente_id: '',
+            output: ''
+          },
+          state_form: 'crear'
+        };
+  
+      case RECARGA:
+        return {
+          ...state,
+          loading: true,
+          recargar_table: false,
+        };
 
     default: return state
   }

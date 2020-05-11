@@ -16,6 +16,8 @@ import {
     CAMBIO_GENETICA_TIEMPO_FLORA,
     CAMBIO_GENETICA_SABORES,
 
+    RECARGA,
+    CANCELAR,
     GUARDAR
 } from '../types/geneticaTypes'
 
@@ -24,11 +26,12 @@ const URL = 'http://192.168.0.238:901/api/'
 export const traerTodos = () => async (dispatch) => {
 
     dispatch({
-        type: LOADING
+        type: RECARGA
     })
 
     try {
         const response = await axios.get(URL + 'genetica')
+
         dispatch({
             type: TRAER_TODOS,
             payload: response.data
@@ -54,7 +57,7 @@ export const traerUno = (id) => async (dispatch) => {
     try {
         const response = await axios.get(URL + 'genetica/' + id)
         const { 0: genetica } = response.data
-        
+
         dispatch({
             type: TRAER_UNO,
             payload: genetica
@@ -115,7 +118,7 @@ export const cambioGeneticaTiempoFlora = (valor) => (dispatch) => {
 };
 
 export const cambioGeneticaSabores = (valor) => (dispatch) => {
-    
+
     dispatch({
         type: CAMBIO_GENETICA_SABORES,
         payload: valor
@@ -145,12 +148,14 @@ export const agregar = (nueva_genetica) => async (dispatch) => {
 };
 
 export const editar = (nueva_genetica, id) => async (dispatch) => {
+
     dispatch({
         type: LOADING
     })
-    
+
     try {
         await axios.put(URL + 'genetica/' + id, nueva_genetica)
+
         dispatch({
             type: GUARDAR
         })
@@ -165,6 +170,7 @@ export const editar = (nueva_genetica, id) => async (dispatch) => {
 }
 
 export const traerUnoBorrar = (id) => async (dispatch) => {
+
     dispatch({
         type: LOADING
     })
@@ -177,10 +183,11 @@ export const traerUnoBorrar = (id) => async (dispatch) => {
 
     try {
         const response = await axios.get(URL + 'genetica/' + id)
+        const { 0: genetica } = response.data
 
         dispatch({
             type: TRAER_UNO,
-            payload: response.data
+            payload: genetica
         })
 
     } catch (error) {
@@ -212,7 +219,8 @@ export const borrar = (id) => async (dispatch) => {
 }
 
 export const cancelar = () => (dispatch) => {
+
     dispatch({
-        type: GUARDAR
+        type: CANCELAR
     })
 }

@@ -15,5 +15,7 @@ export const CAMBIO_GENETICA_PROD_EXT = 'geneticas_cambio_genetica_prod_ext'
 export const CAMBIO_GENETICA_TIEMPO_FLORA = 'geneticas_cambio_genetica_tiempo_flora'
 export const CAMBIO_GENETICA_SABORES = 'geneticas_cambio_genetica_sabores'
 
+export const RECARGA = 'geneticas_recarga_genetica'
+export const CANCELAR = 'geneticas_cancelar_genetica'
 export const GUARDAR = 'geneticas_guardar_genetica'
 

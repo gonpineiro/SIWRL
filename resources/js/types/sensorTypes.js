@@ -12,4 +12,6 @@ export const CAMBIO_SENSOR_OUTPUT = 'sensors_cambio_sensor_output'
 
 export const TRAER_TODOS_POR_AMBIENTE = 'sensors_traer_sensors_por_ambiente'
 
+export const RECARGA = 'sensors_recarga_sensors'
+export const CANCELAR = 'sensors_cancelar_sensors'
 export const GUARDAR = 'sensors_guardar_sensor'
