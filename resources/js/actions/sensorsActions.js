@@ -12,7 +12,7 @@ import {
     CAMBIO_SENSOR_AMBIENTE_ID,
     CAMBIO_SENSOR_NAME,
     CAMBIO_SENSOR_OUTPUT,
-    
+   
     CANCELAR,
     RECARGA,
     GUARDAR
@@ -35,6 +35,7 @@ export const traerTodos = () => async (dispatch) => {
         })
 
     } catch (error) {
+        console.log(error.response)
         console.log(error)
     }
 }
@@ -42,7 +43,7 @@ export const traerTodos = () => async (dispatch) => {
 export const traerTodosPorAmbiente = (id) => async (dispatch) => {
     
     dispatch({
-        type: LOADING
+        type: RECARGA
     })
 
     try {
@@ -54,6 +55,7 @@ export const traerTodosPorAmbiente = (id) => async (dispatch) => {
         })
 
     } catch (error) {
+        console.log(error.response)
         console.log(error)
     }
 }
@@ -80,6 +82,7 @@ export const traerUno = (id) => async (dispatch) => {
 
 
     } catch (error) {
+        console.log(error.response)
         console.log(error)
     }
 }
@@ -92,11 +95,30 @@ export const cambioSensorName = (valor) => (dispatch) => {
     })
 };
 
+export const cambioSensorAmbiente = (valor) => (dispatch) => {
+
+    dispatch({
+        type: CAMBIO_SENSOR_AMBIENTE_ID,
+        payload: valor
+    })
+};
+
+export const cambioSensorOutput = (valor) => (dispatch) => {
+
+    dispatch({
+        type: CAMBIO_SENSOR_OUTPUT,
+        payload: valor
+    })
+};
+
 export const agregar = (nuevo_sensor) => async (dispatch) => {
+
     dispatch({
         type: LOADING
     });
+
     try {
+
         await axios.post(URL + 'sensor', nuevo_sensor);
         dispatch({
             type: GUARDAR
@@ -105,7 +127,7 @@ export const agregar = (nuevo_sensor) => async (dispatch) => {
     }
     catch (error) {
         const errors = error.response.data.errors
-
+        console.log(error.response)
         dispatch({
             type: ERROR_FORM,
             payload: errors
@@ -114,10 +136,11 @@ export const agregar = (nuevo_sensor) => async (dispatch) => {
 };
 
 export const editar = (nuevo_sensor, id) => async (dispatch) => {
+
     dispatch({
         type: LOADING
     })
-
+    
     try {
         await axios.put(URL + 'sensor/' + id, nuevo_sensor)
         dispatch({
@@ -126,6 +149,7 @@ export const editar = (nuevo_sensor, id) => async (dispatch) => {
 
     } catch (error) {
         const errors = error.response.data.errors
+        console.log(error.response)
         dispatch({
             type: ERROR_FORM,
             payload: errors

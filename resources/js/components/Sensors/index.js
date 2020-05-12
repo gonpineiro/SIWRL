@@ -6,36 +6,75 @@ import Formulario from './Formulario'
 import Delete from './Delete'
 import Spinner from '../General/Spinner';
 
-import * as marcasActions from '../../actions/marcasActions'
+import * as sensorsActions from '../../actions/sensorsActions'
 
-class Marcas extends Component {
+import * as ambientesActions from '../../actions/ambientesActions'
+
+const { traerTodos: ambientesTraerTodos } = ambientesActions;
+const { traerTodosPorAmbiente: sensorstraerTodosPorAmbiente } = sensorsActions;
+
+class Sensors extends Component {
 
 	async componentDidMount() {
-		const { traerTodos, marcas } = this.props
-		if (!marcas.length) traerTodos()
+		const {
+			sensorsReducer: { sensors_ambiente },
+			ambientesReducer: { ambientes },
+			match: { params: { id: ambiente_id } },
+			sensorstraerTodosPorAmbiente,
+			ambientesTraerTodos
+		} = this.props
+
+		if (!sensors_ambiente.length) sensorstraerTodosPorAmbiente(ambiente_id)
+
+		if (!ambientes.length) ambientesTraerTodos()
 	}
 
 	ponerContenido = () => {
-		const { traerTodos, recargar_table, loading, marcas, error } = this.props
+		const {
+			sensorstraerTodosPorAmbiente,
+			sensorsReducer: {
+				sensor: { ambiente_id },
+				recargar_table,
+				loading,
+				sensors,
+				error
+			},
+			match: { params: { id: getId } }
+		} = this.props
 
-		if (recargar_table) traerTodos()
+		if (recargar_table) {
+			if (ambiente_id) {
+				sensorstraerTodosPorAmbiente(ambiente_id)
+			} else {
+				sensorstraerTodosPorAmbiente(getId)
+			}
+		}
 
-		if (loading && !marcas.length) return <Spinner />
+		if (loading && !sensors.length) return <Spinner />
 
 		if (error) return 'Error'
 
 		return <Table />
 	}
-	ponerFormulario = () => <Formulario />
+	ponerFormulario = () => <Formulario getId={this.props.match.params.id} />
 
 	render() {
-		const { state_form, loading, sensor, history: { goBack } } = this.props
+		const {
+			sensorsReducer: { loading, state_form },
+			history: { goBack } } = this.props
 		return (
 			<div className="container col-md-9">
 				<div className="row mt-2">
 					<div className="col col-md-8">
 						<div>
-							<h4>Lista de sensores  <KeyboardReturnIcon fontSize="large" onClick={goBack} /></h4>
+							<div className="row mt-2">
+								<div className="col col-md-6">
+									<h4 className="title-table">Lista de sensores</h4>
+								</div>
+								<div className="col col-md-6 text-derecha">
+									<KeyboardReturnIcon fontSize="large" onClick={goBack} />
+								</div>
+							</div>
 							{this.ponerContenido()}
 						</div>
 					</div>
@@ -45,8 +84,8 @@ class Marcas extends Component {
 								{loading ? <Spinner /> :
 									<div>
 										{state_form === 'crear' ? <div className="card-header card-agregar">Agregar sensor</div> : ''}
-										{state_form === 'editar' ? <div className="card-header card-agregar">Modificando sensor: {sensor.id}</div> : ''}
-										{state_form === 'borrar' ? <div className="card-header card-agregar">Eliminar sensor: {sensor.id}</div> : ''}
+										{state_form === 'editar' ? <div className="card-header card-agregar">Modificando sensor</div> : ''}
+										{state_form === 'borrar' ? <div className="card-header card-agregar">Eliminar sensor</div> : ''}
 										<div className="card-body">
 											{this.ponerFormulario()}
 										</div>
@@ -63,8 +102,13 @@ class Marcas extends Component {
 	}
 }
 
-const mapStateToProps = (reducers) => {
-	return reducers.marcasReducer
+const mapStateToProps = ({ sensorsReducer, ambientesReducer }) => {
+	return { sensorsReducer, ambientesReducer };
 }
 
-export default connect(mapStateToProps, marcasActions)(Marcas);
+const mapDispatchToProps = {
+	ambientesTraerTodos,
+	sensorstraerTodosPorAmbiente
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Sensors);

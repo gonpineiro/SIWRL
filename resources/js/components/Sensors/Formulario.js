@@ -2,40 +2,58 @@ import React from 'react';
 import { connect } from 'react-redux'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import FormControl from '@material-ui/core/FormControl';
 import { makeStyles } from '@material-ui/core/styles';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 
-import * as marcasActions from '../../actions/marcasActions'
+import * as sensorsActions from '../../actions/sensorsActions'
 
-const { agregar, editar, cambioMarcaName, cancelar, traerTodos } = marcasActions;
+const { agregar, editar, borrar, cambioSensorName, cambioSensorOutput, cambioSensorAmbiente, traerTodosPorAmbiente, cancelar } = sensorsActions;
 
 const Formulario = (props) => {
    
    const {
-      marcasReducer: {
-         form: { id, name },
+      ambientesReducer: { ambientes },
+      sensorsReducer: {
+         sensor: { id, name, ambiente_id, output },
          state_form,
          error_form,
       },
-      cambioMarcaName,
+      traerTodosPorAmbiente,
+      cambioSensorName,
+      cambioSensorOutput,
+      cambioSensorAmbiente,
+      getId,
+      borrar,
       agregar,
       editar,
       cancelar,
-      traerTodos,
    } = props;
 
-   const handleCambioMarcaName = (event) => cambioMarcaName(event.target.value);
+   const handleCambioSensorName = (event) => cambioSensorName(event.target.value);
+
+   const handleCambioSensorOutput = (event) => cambioSensorOutput(event.target.value);
+
+   const handleCambioAmbiente = (event) => {
+      traerTodosPorAmbiente(event.target.value)
+      cambioSensorAmbiente(event.target.value)
+   };
 
    const guardar = () => {
 
-      const nueva_marca = {
+      const nuevo_sensor = {
          id: id,
-         name: name
+         name: name,
+         ambiente_id: ambiente_id || getId,
+         output: output,
       };
 
-      if (state_form === 'crear') agregar(nueva_marca);
+      if (state_form === 'crear') agregar(nuevo_sensor);
 
-      if (state_form === 'editar') editar(nueva_marca, id)
+      if (state_form === 'editar') editar(nuevo_sensor, id)
 
    };
 
@@ -48,11 +66,28 @@ const Formulario = (props) => {
       },
    }));
 
-   const classes = useStyles();   
+   const classes = useStyles();
 
    return (
       <FormControl >
          <div className="form-row">
+
+            <FormControl className={classes.formControl}>
+               <InputLabel id="demo-simple-select-helper-label" error={!error_form.ambiente_id ? false : true}>Ambientes</InputLabel>
+               <Select
+                  labelId="demo-simple-select-helper-label"
+                  id="demo-simple-select-helper"
+                  value={ambiente_id || getId}
+                  onChange={handleCambioAmbiente}
+                  error={!error_form.ambiente_id ? false : true}
+                  disabled={state_form === 'borrar' ? true : false}
+               >
+                  {ambientes.map((ambiente) => (
+                     <MenuItem key={ambiente.id} value={ambiente.id}>{ambiente.name}</MenuItem>
+                  ))}
+               </Select>
+               <FormHelperText error={!error_form.ambiente_id ? false : true}>{error_form.ambiente_id}</FormHelperText>
+            </FormControl>
 
             <FormControl className={classes.formControl}>
                <TextField
@@ -60,28 +95,56 @@ const Formulario = (props) => {
                   label="Nombre"
                   type="text"
                   className="form-control"
-                  value={name}
-                  onChange={handleCambioMarcaName}
+                  value={name || ''}
+                  onChange={handleCambioSensorName}
                   helperText={error_form.name}
                   error={!error_form.name ? false : true}
+                  disabled={state_form === 'borrar' ? true : false}
                />
             </FormControl>
 
+            <FormControl className={classes.formControl}>
+               <TextField
+                  id="standard-basic"
+                  label="Input"
+                  type="number"
+                  className="form-control"
+                  value={output || ''}
+                  onChange={handleCambioSensorOutput}
+                  helperText={error_form.output}
+                  error={!error_form.name ? false : true}
+                  disabled={state_form === 'borrar' ? true : false}
+               />
+            </FormControl>
 
             <div className="form-row margin-button">
-
                <div className="form-group col-md-6">
-                  <Button
-                     variant="contained"
-                     color="primary"
-                     onClick={guardar}
-                  >
-                     Guardar
-                  </Button>
+                  {state_form === 'crear' || state_form === 'editar'
+                     ?
+                     <Button
+                        variant="contained"
+                        color="primary"
+                        onClick={guardar}
+                     >
+                        Guardar
+                     </Button> : ''}
+                  {state_form === 'borrar'
+                     ?
+                     <div>
+                        <Button
+                           variant="contained"
+                           color="primary"
+                           onClick={() => borrar(id)}
+                        >
+                           Borrar
+                        </Button>
+                     </div>
+                     : ''}
+                     {error_form && <small className="text-danger">Existe un registro vinculado.</small>}
                </div >
 
                <div className="form-group col-md-6">
-                  {state_form === 'editar'
+                  {state_form === 'editar' || state_form === 'borrar'
                      ?
                      <Button
                         variant="contained"
@@ -91,7 +154,6 @@ const Formulario = (props) => {
                         Cancelar
                      </Button> : ''}
                </div >
-
             </div>
 
          </div>
@@ -99,19 +161,20 @@ const Formulario = (props) => {
    );
 }
 
-const mapStateToProps = ({ geneticasReducer, marcasReducer }) => {
-   return { geneticasReducer, marcasReducer };
+const mapStateToProps = ({ sensorsReducer, ambientesReducer }) => {
+   return { sensorsReducer, ambientesReducer };
 };
 
 const mapDispatchToProps = {
-   traerTodos,
-
-   cambioMarcaName,
+   cambioSensorName,
+   cambioSensorOutput,
+   cambioSensorAmbiente,
+   traerTodosPorAmbiente,
 
    agregar,
    editar,
-   cancelar
-
+   cancelar,
+   borrar,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Formulario);

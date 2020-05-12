@@ -1,22 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux'
 
-import * as marcasActions from '../../actions/marcasActions'
+import * as sensorsActions from '../../actions/sensorsActions'
 
 const Table = (props) => {
-  const { marcas, traerUno, traerUnoBorrar } = props
+  const { sensors_ambiente, traerUno, traerUnoBorrar } = props
 
-  const addRow = () => marcas.map((marca, key) => (
+  const addRow = () => sensors_ambiente.map((sensor, key) => (
     <tr key={key}>
-      <td>{marca.id}</td>
-      <td>{marca.name}</td>
+      <td>{sensor.id}</td>
+      <td>{sensor.name}</td>
+      <td>{sensor.output}</td>
       <td>
         <i
           className="material-icons link"
-          onClick={() => traerUno(marca.id)}
+          onClick={() => traerUno(sensor.id)}
         >edit</i>
         <i
-          onClick={() => traerUnoBorrar(marca.id)}
+          onClick={() => traerUnoBorrar(sensor.id)}
           className="material-icons link"
         >delete</i>
       </td>
@@ -30,6 +31,7 @@ const Table = (props) => {
           <tr>
             <th>ID</th>
             <th>Nombre</th>
+            <th>Output</th>
             <th>Accion</th>
           </tr>
         </thead>
@@ -42,7 +44,7 @@ const Table = (props) => {
 }
 
 const mapStateToProps = (reducers) => {
-  return reducers.marcasReducer
+  return reducers.sensorsReducer
 }
 
-export default connect(mapStateToProps, marcasActions)(Table);
+export default connect(mapStateToProps, sensorsActions)(Table);

@@ -11,8 +11,7 @@ import {
   CAMBIO_SENSOR_AMBIENTE_ID,
   CAMBIO_SENSOR_NAME,
   CAMBIO_SENSOR_OUTPUT,
-
-
+  
   RECARGA,
   CANCELAR,
   GUARDAR
@@ -110,9 +109,9 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         sensor: {
+          ...state.sensor,
           id: '',
           name: '',
-          ambiente_id: '',
           output: ''
         },
         loading: false,
@@ -129,9 +128,9 @@ export default (state = INITIAL_STATE, action) => {
           error: '',
           error_form: '',
           sensor: {
+            ...state.sensor,
             id: '',
             name: '',
-            ambiente_id: '',
             output: ''
           },
           state_form: 'crear'

@@ -41,6 +41,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/prototipos', function(){
       return view('home');
     })->name('prototipos');
+
+    Route::get('//ambientes/sensor/{id}', function(){
+      return view('home');
+    })->name('sensors-ambiente');
     
     
 

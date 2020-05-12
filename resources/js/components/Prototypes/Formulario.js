@@ -13,8 +13,10 @@ import Select from '@material-ui/core/Select';
 import * as protoypesActions from '../../actions/protoypesActions'
 
 import * as ambientesActions from '../../actions/ambientesActions'
+import * as sensorsActions from '../../actions/sensorsActions'
 
 const { traerUno: ambientesTraerUno, cancelar: ambientesCancelar } = ambientesActions;
+const { traerTodosPorAmbiente: traerTodosPorAmbienteSensor, cancelar: sensorsCancelar } = sensorsActions;
 
 const {
    cambioPrototypeName,
@@ -32,9 +34,10 @@ const Formulario = (props) => {
    const {
       ambientesTraerUno,
       ambientesCancelar,
+      sensorsCancelar,
+      traerTodosPorAmbienteSensor,
       geneticasReducer: { geneticas },
       ambientesReducer: { ambientes, ambiente },
-      sensorsReducer: { sensors_ambiente },
       prototypesReducer: {
          prototype: { id, name, genetica_id, ambiente_id, sensor_id, sensor },
          state_form,
@@ -53,8 +56,8 @@ const Formulario = (props) => {
 
    const handleCambioPrototypeAmbiente = (event) => {
       props.cambioPrototypeAmbiente(event.target.value);
-      if(event.target.value) ambientesTraerUno(event.target.value)
-      
+      if (event.target.value) ambientesTraerUno(event.target.value)
+
    }
 
    const handleCambioPrototypeSensor = (event) => props.cambioPrototypeSensor(event.target.value);
@@ -76,7 +79,12 @@ const Formulario = (props) => {
    };
 
    const cancelarAmbientes = () => {
-     ambientesCancelar()     
+      ambientesCancelar()
+   }
+
+   const cancelarSensors = () => {
+      traerTodosPorAmbienteSensor(ambiente_id)
+      sensorsCancelar()
    }
 
    const useStyles = makeStyles((theme) => ({
@@ -88,8 +96,8 @@ const Formulario = (props) => {
       },
    }));
 
-   const classes = useStyles(); 
-   
+   const classes = useStyles();
+
    return (
       <FormControl >
          <div className="form-row">
@@ -173,8 +181,8 @@ const Formulario = (props) => {
                   error={!error_form.sensor_id ? false : true}
                   disabled={!ambiente_id || state_form === 'borrar'}
                >
-                  <Link to="">
-                     <MenuItem value="">
+                  <Link to={`/ambientes/sensor/${ambiente_id}`}>
+                     <MenuItem value="" onClick={() => cancelarSensors()}>
                         <em
                            className="link link-string"
                         >
@@ -212,9 +220,9 @@ const Formulario = (props) => {
                         >
                            Borrar
                         </Button>
-                        {error_form && <small className="text-danger">Existe un registro vinculado.</small>}
                      </div>
                      : ''}
+                     {error_form && <small className="text-danger">Existe un registro vinculado.</small>}
 
                </div >
 
@@ -243,6 +251,8 @@ const mapStateToProps = ({ prototypesReducer, geneticasReducer, ambientesReducer
 const mapDispatchToProps = {
    ambientesTraerUno,
    ambientesCancelar,
+   traerTodosPorAmbienteSensor,
+   sensorsCancelar,
 
    cambioPrototypeName,
    cambioPrototypeGenetica,

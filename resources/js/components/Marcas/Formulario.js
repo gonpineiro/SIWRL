@@ -89,9 +89,9 @@ const Formulario = (props) => {
                         >
                            Borrar
                   </Button>
-                        {error_form && <small className="text-danger">Existe un registro vinculado.</small>}
                      </div>
                      : ''}
+                     {error_form && <small className="text-danger">Existe un registro vinculado.</small>}
                </div >
 
                <div className="form-group col-md-6">

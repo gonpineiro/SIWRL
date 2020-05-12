@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class GeneticasRequest extends FormRequest
+class SensorRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,10 +25,7 @@ class GeneticasRequest extends FormRequest
     {
         return [
             'name' => 'required|min:3|max:15',
-            'marca_id' => 'required',
-            'thc' => 'required',
-            'cbd' => 'required',
-            'tiempo_flora' => 'required'
+            'output' => 'required|min:1|max:1'
         ];
     }
 
@@ -37,14 +34,11 @@ class GeneticasRequest extends FormRequest
         return [
             'name.required' => 'Requerido.',
             'name.min' => 'El minimo es 3 caracteres.',
-            'name.max' => 'El maximo es 15 caracteres.',
-
-            'marca_id.required' => 'Requerido',
-
-            'thc.required' => 'Requerido.',
-            'cbd.required' => 'Requerido.',
-
-            'tiempo_flora.required' => 'Requerido.',
+            'name.max' => 'El maximo es 15 caracteres.',            
+            
+            'output.required' => 'Requerido.',
+            'output.min' => 'Requiere un único digitos.',
+            'output.max' => 'Requiere un único digitos.',  
         ];
     }
 }

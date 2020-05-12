@@ -12,6 +12,7 @@ class Ambientes extends Component {
 	async componentDidMount() {
 		
 		const { traerTodos, ambientes } = this.props
+		
 		if (!ambientes.length) traerTodos()
 	}
 
