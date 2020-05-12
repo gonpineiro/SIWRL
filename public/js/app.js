@@ -26357,7 +26357,7 @@ exports.push([module.i, "@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);", ""]);
 
 // module
-exports.push([module.i, ".fa-2x {\r\nfont-size: 2em;\r\n}\r\n.fa {\r\nposition: relative;\r\ndisplay: table-cell;\r\nwidth: 60px;\r\nheight: 36px;\r\ntext-align: center;\r\nvertical-align: middle;\r\nfont-size:20px;\r\n}\r\n\r\n\r\n.main-menu:hover,nav.main-menu.expanded {\r\nwidth:250px;\r\noverflow:visible;\r\n}\r\n\r\n.main-menu {\r\nbackground:#212121;\r\nborder-right:1px solid #e5e5e5;\r\nposition:absolute;\r\ntop:0;\r\nbottom:0;\r\nheight:100%;\r\nleft:0;\r\nwidth:60px;\r\noverflow:hidden;\r\ntransition:width .05s linear;\r\n-webkit-transform:translateZ(0) scale(1,1);\r\nz-index:1000;\r\n}\r\n\r\n.main-menu>ul {\r\nmargin:7px 0;\r\n}\r\n\r\n.main-menu li {\r\nposition:relative;\r\ndisplay:block;\r\nwidth:250px;\r\n}\r\n\r\n.main-menu li>a {\r\nposition:relative;\r\ndisplay:table;\r\nborder-collapse:collapse;\r\nborder-spacing:0;\r\ncolor:#999;\r\n font-family: arial;\r\nfont-size: 14px;\r\ntext-decoration:none;\r\n-webkit-transform:translateZ(0) scale(1,1);\r\ntransition:all .1s linear;\r\n  \r\n}\r\n\r\n.main-menu .nav-icon {\r\nposition:relative;\r\ndisplay:table-cell;\r\nwidth:60px;\r\nheight:36px;\r\ntext-align:center;\r\nvertical-align:middle;\r\nfont-size:18px;\r\n}\r\n\r\n.main-menu .nav-text {\r\nposition:relative;\r\ndisplay:table-cell;\r\nvertical-align:middle;\r\nwidth:190px;\r\n  font-family: 'Titillium Web', sans-serif;\r\n}\r\n\r\n.main-menu>ul.logout {\r\nposition:absolute;\r\nleft:0;\r\nbottom:0;\r\n}\r\n\r\n.no-touch .scrollable.hover {\r\noverflow-y:hidden;\r\n}\r\n\r\n.no-touch .scrollable.hover:hover {\r\noverflow-y:auto;\r\noverflow:visible;\r\n}\r\n\r\na:hover,a:focus {\r\ntext-decoration:none;\r\n}\r\n\r\nnav {\r\n-webkit-user-select:none;\r\n-moz-user-select:none;\r\n-ms-user-select:none;\r\n-o-user-select:none;\r\nuser-select:none;\r\n}\r\n\r\nnav ul,nav li {\r\noutline:0;\r\nmargin:0;\r\npadding:0;\r\n}\r\n.main-menu li:hover>a,nav.main-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {\r\ncolor:#fff;\r\nbackground-color:#5fa2db;\r\n}\r\n.area {\r\nfloat: left;\r\nbackground: #e2e2e2;\r\nwidth: 100%;\r\nheight: 100%;\r\n}\r\n@font-face {\r\n  font-family: 'Titillium Web';\r\n  font-style: normal;\r\n  font-weight: 300;\r\n  src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');\r\n}", ""]);
+exports.push([module.i, ".fa-2x {\r\nfont-size: 2em;\r\n}\r\n.fa {\r\nposition: relative;\r\ndisplay: table-cell;\r\nwidth: 60px;\r\nheight: 36px;\r\ntext-align: center;\r\nvertical-align: middle;\r\nfont-size:20px;\r\n}\r\n\r\n\r\n.main-menu:hover,nav.main-menu.expanded {\r\nwidth:150px;\r\noverflow:visible;\r\n}\r\n\r\n.main-menu {\r\nbackground:#212121;\r\nborder-right:1px solid #e5e5e5;\r\nposition:absolute;\r\ntop:0;\r\nbottom:0;\r\nheight:100%;\r\nleft:0;\r\nwidth:60px;\r\noverflow:hidden;\r\ntransition:width .05s linear;\r\n-webkit-transform:translateZ(0) scale(1,1);\r\nz-index:1000;\r\n}\r\n\r\n.main-menu>ul {\r\nmargin:7px 0;\r\n}\r\n\r\n.main-menu li {\r\nposition:relative;\r\ndisplay:block;\r\nwidth:150px;\r\n}\r\n\r\n.main-menu li>a {\r\nposition:relative;\r\ndisplay:table;\r\nborder-collapse:collapse;\r\nborder-spacing:0;\r\ncolor:#999;\r\n font-family: arial;\r\nfont-size: 14px;\r\ntext-decoration:none;\r\n-webkit-transform:translateZ(0) scale(1,1);\r\ntransition:all .1s linear;\r\n  \r\n}\r\n\r\n.main-menu .nav-icon {\r\nposition:relative;\r\ndisplay:table-cell;\r\nwidth:60px;\r\nheight:36px;\r\ntext-align:center;\r\nvertical-align:middle;\r\nfont-size:18px;\r\n}\r\n\r\n.main-menu .nav-text {\r\nposition:relative;\r\ndisplay:table-cell;\r\nvertical-align:middle;\r\nwidth:190px;\r\n  font-family: 'Titillium Web', sans-serif;\r\n}\r\n\r\n.main-menu>ul.logout {\r\nposition:absolute;\r\nleft:0;\r\nbottom:0;\r\n}\r\n\r\n.no-touch .scrollable.hover {\r\noverflow-y:hidden;\r\n}\r\n\r\n.no-touch .scrollable.hover:hover {\r\noverflow-y:auto;\r\noverflow:visible;\r\n}\r\n\r\na:hover,a:focus {\r\ntext-decoration:none;\r\n}\r\n\r\nnav {\r\n-webkit-user-select:none;\r\n-moz-user-select:none;\r\n-ms-user-select:none;\r\n-o-user-select:none;\r\nuser-select:none;\r\n}\r\n\r\nnav ul,nav li {\r\noutline:0;\r\nmargin:0;\r\npadding:0;\r\n}\r\n.main-menu li:hover>a,nav.main-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {\r\ncolor:#fff;\r\nbackground-color:#5fa2db;\r\n}\r\n.area {\r\nfloat: left;\r\nbackground: #e2e2e2;\r\nwidth: 100%;\r\nheight: 100%;\r\n}\r\n@font-face {\r\n  font-family: 'Titillium Web';\r\n  font-style: normal;\r\n  font-weight: 300;\r\n  src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');\r\n}", ""]);
 
 // exports
 
@@ -26376,7 +26376,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".center.MuiTabs-flexContainer {\r\n\ttext-align: center;\r\n}\r\n\r\ntable {\r\n\tfont-size: 0.785rem;\r\n}\r\n\r\n.table td {\r\n\tpadding: 0.30rem;\r\n\tjustify-content: center;\r\n}\r\n.material-icons {\r\n\twidth: 0.30rem;\r\n\theight: 0.30rem;\r\n}\r\n\r\n.alert{\r\n\tfont-size: 10px;\r\n}\r\n\r\n.btn {\r\n\tmargin-right: 15px;\r\n}\r\n.btn-cancelar {\r\n\tbackground-color: #5e2129;\r\n\tborder-color: #5e2129;\r\n}\r\n\r\n.material-icons {\r\n\tfont-family: 'Material Icons';\r\n\tfont-weight: normal;\r\n\tfont-style: normal;\r\n\tfont-size: 20px;  /* Preferred icon size */\r\n\tdisplay: inline-block;\r\n\tline-height: 1;\r\n\ttext-transform: none;\r\n\tletter-spacing: normal;\r\n\tword-wrap: normal;\r\n\twhite-space: nowrap;\r\n\tdirection: ltr;\r\n\r\n\t/* Agregador por gon.pineiro */\r\n\tmargin-left: 10px;\r\n\tmargin-right: 10px;\r\n  \r\n\t/* Support for all WebKit browsers. */\r\n\t-webkit-font-smoothing: antialiased;\r\n\t/* Support for Safari and Chrome. */\r\n\ttext-rendering: optimizeLegibility;\r\n  \r\n\t/* Support for Firefox. */\r\n\t-moz-osx-font-smoothing: grayscale;\r\n  \r\n\t/* Support for IE. */\r\n\tfont-feature-settings: 'liga';\r\n  }\r\n\r\n  .link {\r\n\tcursor: pointer;\r\n  } \r\n\r\n  .link-string {\r\n\t  color: #3e5f8a;\r\n\t  font-weight: bold;\r\n  }  \r\n\r\n  .card-agregar {\r\n\tcolor: #3e5f8a;\r\n\tfont-weight: bold;\r\n\ttext-align: center;\r\n}\r\n\r\n.card-eliminar {\r\n\tcolor: #5e2129;\r\n\tfont-weight: bold;\r\n\ttext-align: center;\r\n}\r\n\r\n.slidecontainer {\r\n\twidth: 100%;\r\n  }\r\n  \r\n  .slider {\r\n\t-webkit-appearance: none;\r\n\twidth: 100%;\r\n\theight: 25px;\r\n\tbackground: #d3d3d3;\r\n\toutline: none;\r\n\topacity: 0.7;\r\n\ttransition: opacity .2s;\r\n  }\r\n  \r\n  .slider:hover {\r\n\topacity: 1;\r\n  }\r\n  \r\n  .slider::-webkit-slider-thumb {\r\n\t-webkit-appearance: none;\r\n\tappearance: none;\r\n\twidth: 25px;\r\n\theight: 25px;\r\n\tbackground: #4CAF50;\r\n\tcursor: pointer;\r\n  }\r\n  \r\n  .slider::-moz-range-thumb {\r\n\twidth: 25px;\r\n\theight: 25px;\r\n\tbackground: #4CAF50;\r\n\tcursor: pointer;\r\n  }\r\n\r\n  .margin-button {\r\n\t  margin-top: 15px;\r\n\t  margin-left: 15px;\r\n\t  margin-right: 15px;\r\n  }\r\n  .container {\r\n\t  margin-top: 50px;\r\n  }\r\n  \r\n\r\n", ""]);
+exports.push([module.i, ".center {\r\n\ttext-align: center;\r\n}\r\n\r\ntable {\r\n\tfont-size: 0.785rem;\r\n}\r\n\r\n.table td {\r\n\tpadding: 0.30rem;\r\n\tjustify-content: center;\r\n}\r\n.material-icons {\r\n\twidth: 0.30rem;\r\n\theight: 0.30rem;\r\n}\r\n\r\n.alert{\r\n\tfont-size: 10px;\r\n}\r\n\r\n.btn {\r\n\tmargin-right: 15px;\r\n}\r\n.btn-cancelar {\r\n\tbackground-color: #5e2129;\r\n\tborder-color: #5e2129;\r\n}\r\n\r\n.material-icons {\r\n\tfont-family: 'Material Icons';\r\n\tfont-weight: normal;\r\n\tfont-style: normal;\r\n\tfont-size: 20px;  /* Preferred icon size */\r\n\tdisplay: inline-block;\r\n\tline-height: 1;\r\n\ttext-transform: none;\r\n\tletter-spacing: normal;\r\n\tword-wrap: normal;\r\n\twhite-space: nowrap;\r\n\tdirection: ltr;\r\n\r\n\t/* Agregador por gon.pineiro */\r\n\tmargin-left: 10px;\r\n\tmargin-right: 10px;\r\n  \r\n\t/* Support for all WebKit browsers. */\r\n\t-webkit-font-smoothing: antialiased;\r\n\t/* Support for Safari and Chrome. */\r\n\ttext-rendering: optimizeLegibility;\r\n  \r\n\t/* Support for Firefox. */\r\n\t-moz-osx-font-smoothing: grayscale;\r\n  \r\n\t/* Support for IE. */\r\n\tfont-feature-settings: 'liga';\r\n  }\r\n\r\n  .link {\r\n\tcursor: pointer;\r\n  } \r\n\r\n  .link-string {\r\n\t  color: #3e5f8a;\r\n\t  font-weight: bold;\r\n  }  \r\n\r\n  .card-agregar {\r\n\tcolor: #3e5f8a;\r\n\tfont-weight: bold;\r\n\ttext-align: center;\r\n}\r\n\r\n.card-eliminar {\r\n\tcolor: #5e2129;\r\n\tfont-weight: bold;\r\n\ttext-align: center;\r\n}\r\n\r\n\r\n  .margin-button {\r\n\t  margin-top: 15px;\r\n\t  margin-left: 15px;\r\n\t  margin-right: 15px;\r\n  }\r\n  .container {\r\n\t  margin-top: 50px;\r\n  }\r\n  .text-derecha {\r\n\ttext-align: right;\r\n  } \r\n  \r\n\r\n", ""]);
 
 // exports
 
@@ -100426,30 +100426,31 @@ var traerUno = function traerUno(id) {
                 payload: 'editar'
               });
               _context2.prev = 2;
-              _context2.next = 5;
+              console.log(id);
+              _context2.next = 6;
               return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL + 'prototype/' + id);
 
-            case 5:
+            case 6:
               response = _context2.sent;
               prototype = response.data[0];
               dispatch({
                 type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_UNO"],
                 payload: prototype
               });
-              _context2.next = 13;
+              _context2.next = 14;
               break;
 
-            case 10:
-              _context2.prev = 10;
+            case 11:
+              _context2.prev = 11;
               _context2.t0 = _context2["catch"](2);
               console.log(_context2.t0);
 
-            case 13:
+            case 14:
             case "end":
               return _context2.stop();
           }
         }
-      }, _callee2, null, [[2, 10]]);
+      }, _callee2, null, [[2, 11]]);
     }));
 
     return function (_x2) {
@@ -101847,10 +101848,16 @@ var Ambientes = /*#__PURE__*/function (_Component) {
         className: "row mt-2"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col col-md-8"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Lista de amientes", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "row mt-2"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col col-md-6"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Lista de ambientes")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col col-md-6 text-derecha"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
         fontSize: "large",
         onClick: goBack
-      })), this.ponerContenido())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }))), this.ponerContenido())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col col-md-4"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card"
@@ -102448,10 +102455,16 @@ var Geneticas = /*#__PURE__*/function (_Component) {
         className: "row mt-2"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col col-md-8"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Lista de gen\xE9ticas", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "row mt-2"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col col-md-6"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Lista de gen\xE9ticas")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col col-md-6 text-derecha"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
         fontSize: "large",
         onClick: goBack
-      })), this.ponerContenido())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }))), this.ponerContenido())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col col-md-4"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card"
@@ -102880,10 +102893,16 @@ var Marcas = /*#__PURE__*/function (_Component) {
         className: "row mt-2"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col col-md-8"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Lista de marcas ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "row mt-2"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col col-md-6"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Lista de marcas")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col col-md-6 text-derecha"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
         fontSize: "large",
         onClick: goBack
-      })), this.ponerContenido())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }))), this.ponerContenido())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col col-md-4"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card"
@@ -103357,7 +103376,7 @@ var Prototypes = /*#__PURE__*/function (_Component) {
           _this$props3$prototyp = _this$props3.prototypesReducer,
           state_form = _this$props3$prototyp.state_form,
           loading = _this$props3$prototyp.loading,
-          prototype = _this$props3.prototype,
+          prototype = _this$props3$prototyp.prototype,
           goBack = _this$props3.history.goBack;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "container col-md-9"
@@ -103365,10 +103384,16 @@ var Prototypes = /*#__PURE__*/function (_Component) {
         className: "row mt-2"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col col-md-8"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Lista de prototipos", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "row mt-2"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col col-md-6"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Lista de prototipos")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col col-md-6 text-derecha"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
         fontSize: "large",
         onClick: goBack
-      })), this.ponerContenido())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }))), this.ponerContenido())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col col-md-4"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card"
@@ -103741,7 +103766,18 @@ var Users = /*#__PURE__*/function (_Component) {
         className: "row mt-2"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col col-md-8"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Lista de usuarios"), this.ponerContenido())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "row mt-2"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col col-md-6"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", {
+        className: "title-table"
+      }, "Lista de usuarios")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col col-md-6 text-derecha"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        fontSize: "large",
+        onClick: goBack
+      }))), this.ponerContenido())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col col-md-4"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card"

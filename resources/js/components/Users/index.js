@@ -37,13 +37,19 @@ class Users extends Component {
 				<div className="row mt-2">
 					<div className="col col-md-8">
 						<div>
-							<h4>Lista de usuarios</h4>
+							<div className="row mt-2">
+								<div className="col col-md-6">
+									<h4 className="title-table">Lista de usuarios</h4>
+								</div>
+								<div className="col col-md-6 text-derecha">
+									<KeyboardReturnIcon fontSize="large" onClick={goBack} />
+								</div>
+							</div>
 							{this.ponerContenido()}
 						</div>
 					</div>
 
 					<div className="col col-md-4">
-
 						<div className="card">
 							<div>
 								<div className="card-header card-agregar">

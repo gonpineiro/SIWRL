@@ -57,6 +57,7 @@ export const traerUno = (id) => async (dispatch) => {
 
 
     try {
+        console.log(id)
         const response = await axios.get(URL + 'prototype/' + id)
         const { 0: prototype } = response.data
 
