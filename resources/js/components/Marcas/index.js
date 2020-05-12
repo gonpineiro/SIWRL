@@ -18,7 +18,7 @@ class Marcas extends Component {
 		const { traerTodos, recargar_table, loading, marcas, error } = this.props
 
 		if (recargar_table) traerTodos()
-		
+
 		if (loading && !marcas.length) return <Spinner />
 
 		if (error) return 'Error'
@@ -34,20 +34,23 @@ class Marcas extends Component {
 				<div className="row mt-2">
 					<div className="col col-md-8">
 						<div>
-							<h4>Lista de marcas</h4>
+							<h4>Lista de marcas <KeyboardReturnIcon fontSize="large" onClick={goBack} /></h4>
 							{this.ponerContenido()}
 						</div>
 					</div>
 					<div className="col col-md-4">
 						<div className="card">
 							<div>
-								<div className="card-header card-agregar">
-									Agregar marca <KeyboardReturnIcon fontSize="small" onClick={goBack} />
-								</div>
 								{loading ? <Spinner /> :
-									<div className="card-body">
-										{this.ponerFormulario()}
+									<div>
+										{state_form === 'crear' ? <div className="card-header card-agregar">Agregar marca</div> : ''}
+										{state_form === 'editar' ? <div className="card-header card-agregar">Modificando marca: {marca.id}</div> : ''}
+										{state_form === 'borrar' ? <div className="card-header card-agregar">Eliminar marca: {marca.id}</div> : ''}
+										<div className="card-body">
+											{this.ponerFormulario()}
+										</div>
 									</div>}
+
 							</div>
 
 						</div>

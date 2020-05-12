@@ -26,54 +26,33 @@ class Marcas extends Component {
 
 		return <Table />
 	}
-	ponerFormulario = () => <Formulario  />
+	ponerFormulario = () => <Formulario />
 
 	render() {
-		const { state_form, loading, marca, history: { goBack } } = this.props
+		const { state_form, loading, sensor, history: { goBack } } = this.props
 		return (
 			<div className="container col-md-9">
 				<div className="row mt-2">
 					<div className="col col-md-8">
 						<div>
-							<h4>Lista de marcas</h4>
+							<h4>Lista de sensores  <KeyboardReturnIcon fontSize="large" onClick={goBack} /></h4>
 							{this.ponerContenido()}
 						</div>
 					</div>
 					<div className="col col-md-4">
 						<div className="card">
-
-							{state_form === 'crear' ?
-								<div>
-									<div className="card-header card-agregar">
-										Agregar marca <KeyboardReturnIcon fontSize="small" onClick={ goBack }/>
-									</div>
-									{loading ? <Spinner /> :
+							<div>
+								{loading ? <Spinner /> :
+									<div>
+										{state_form === 'crear' ? <div className="card-header card-agregar">Agregar sensor</div> : ''}
+										{state_form === 'editar' ? <div className="card-header card-agregar">Modificando sensor: {sensor.id}</div> : ''}
+										{state_form === 'borrar' ? <div className="card-header card-agregar">Eliminar sensor: {sensor.id}</div> : ''}
 										<div className="card-body">
 											{this.ponerFormulario()}
-										</div>}
-								</div> : ''}
+										</div>
+									</div>}
 
-							{state_form === 'editar' ?
-								<div>
-									<div className="card-header card-agregar">
-										Modificando usuario: {marca.id}
-									</div>
-									{loading ? <Spinner /> :
-										<div className="card-body">
-											{this.ponerFormulario()}
-										</div>}
-								</div> : ''}
-
-							{state_form === 'borrar' ?
-								<div>
-									<div className="card-header card-eliminar">
-										Eliminar la siguente marca
-									</div>
-									{loading ? <Spinner /> :
-										<div className="card-body">
-											<Delete />
-										</div>}
-								</div> : ''}
+							</div>
 
 						</div>
 					</div>

@@ -26376,7 +26376,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".center {\r\n\ttext-align: center;\r\n}\r\n\r\ntable {\r\n\tfont-size: 0.785rem;\r\n}\r\n\r\n.table td {\r\n\tpadding: 0.30rem;\r\n\tjustify-content: center;\r\n}\r\n.material-icons {\r\n\twidth: 0.30rem;\r\n\theight: 0.30rem;\r\n}\r\n\r\n.alert{\r\n\tfont-size: 10px;\r\n}\r\n\r\n.btn {\r\n\tmargin-right: 15px;\r\n}\r\n.btn-cancelar {\r\n\tbackground-color: #5e2129;\r\n\tborder-color: #5e2129;\r\n}\r\n\r\n.material-icons {\r\n\tfont-family: 'Material Icons';\r\n\tfont-weight: normal;\r\n\tfont-style: normal;\r\n\tfont-size: 20px;  /* Preferred icon size */\r\n\tdisplay: inline-block;\r\n\tline-height: 1;\r\n\ttext-transform: none;\r\n\tletter-spacing: normal;\r\n\tword-wrap: normal;\r\n\twhite-space: nowrap;\r\n\tdirection: ltr;\r\n\r\n\t/* Agregador por gon.pineiro */\r\n\tmargin-left: 10px;\r\n\tmargin-right: 10px;\r\n  \r\n\t/* Support for all WebKit browsers. */\r\n\t-webkit-font-smoothing: antialiased;\r\n\t/* Support for Safari and Chrome. */\r\n\ttext-rendering: optimizeLegibility;\r\n  \r\n\t/* Support for Firefox. */\r\n\t-moz-osx-font-smoothing: grayscale;\r\n  \r\n\t/* Support for IE. */\r\n\tfont-feature-settings: 'liga';\r\n  }\r\n\r\n  .link {\r\n\tcursor: pointer;\r\n  } \r\n\r\n  .link-string {\r\n\t  color: #3e5f8a;\r\n\t  font-weight: bold;\r\n  }  \r\n\r\n  .card-agregar {\r\n\tcolor: #3e5f8a;\r\n\tfont-weight: bold;\r\n\ttext-align: center;\r\n}\r\n\r\n.card-eliminar {\r\n\tcolor: #5e2129;\r\n\tfont-weight: bold;\r\n\ttext-align: center;\r\n}\r\n\r\n.slidecontainer {\r\n\twidth: 100%;\r\n  }\r\n  \r\n  .slider {\r\n\t-webkit-appearance: none;\r\n\twidth: 100%;\r\n\theight: 25px;\r\n\tbackground: #d3d3d3;\r\n\toutline: none;\r\n\topacity: 0.7;\r\n\ttransition: opacity .2s;\r\n  }\r\n  \r\n  .slider:hover {\r\n\topacity: 1;\r\n  }\r\n  \r\n  .slider::-webkit-slider-thumb {\r\n\t-webkit-appearance: none;\r\n\tappearance: none;\r\n\twidth: 25px;\r\n\theight: 25px;\r\n\tbackground: #4CAF50;\r\n\tcursor: pointer;\r\n  }\r\n  \r\n  .slider::-moz-range-thumb {\r\n\twidth: 25px;\r\n\theight: 25px;\r\n\tbackground: #4CAF50;\r\n\tcursor: pointer;\r\n  }\r\n\r\n  .margin-button {\r\n\t  margin-top: 15px;\r\n\t  margin-left: 15px;\r\n\t  margin-right: 15px;\r\n  }\r\n  \r\n\r\n", ""]);
+exports.push([module.i, ".center.MuiTabs-flexContainer {\r\n\ttext-align: center;\r\n}\r\n\r\ntable {\r\n\tfont-size: 0.785rem;\r\n}\r\n\r\n.table td {\r\n\tpadding: 0.30rem;\r\n\tjustify-content: center;\r\n}\r\n.material-icons {\r\n\twidth: 0.30rem;\r\n\theight: 0.30rem;\r\n}\r\n\r\n.alert{\r\n\tfont-size: 10px;\r\n}\r\n\r\n.btn {\r\n\tmargin-right: 15px;\r\n}\r\n.btn-cancelar {\r\n\tbackground-color: #5e2129;\r\n\tborder-color: #5e2129;\r\n}\r\n\r\n.material-icons {\r\n\tfont-family: 'Material Icons';\r\n\tfont-weight: normal;\r\n\tfont-style: normal;\r\n\tfont-size: 20px;  /* Preferred icon size */\r\n\tdisplay: inline-block;\r\n\tline-height: 1;\r\n\ttext-transform: none;\r\n\tletter-spacing: normal;\r\n\tword-wrap: normal;\r\n\twhite-space: nowrap;\r\n\tdirection: ltr;\r\n\r\n\t/* Agregador por gon.pineiro */\r\n\tmargin-left: 10px;\r\n\tmargin-right: 10px;\r\n  \r\n\t/* Support for all WebKit browsers. */\r\n\t-webkit-font-smoothing: antialiased;\r\n\t/* Support for Safari and Chrome. */\r\n\ttext-rendering: optimizeLegibility;\r\n  \r\n\t/* Support for Firefox. */\r\n\t-moz-osx-font-smoothing: grayscale;\r\n  \r\n\t/* Support for IE. */\r\n\tfont-feature-settings: 'liga';\r\n  }\r\n\r\n  .link {\r\n\tcursor: pointer;\r\n  } \r\n\r\n  .link-string {\r\n\t  color: #3e5f8a;\r\n\t  font-weight: bold;\r\n  }  \r\n\r\n  .card-agregar {\r\n\tcolor: #3e5f8a;\r\n\tfont-weight: bold;\r\n\ttext-align: center;\r\n}\r\n\r\n.card-eliminar {\r\n\tcolor: #5e2129;\r\n\tfont-weight: bold;\r\n\ttext-align: center;\r\n}\r\n\r\n.slidecontainer {\r\n\twidth: 100%;\r\n  }\r\n  \r\n  .slider {\r\n\t-webkit-appearance: none;\r\n\twidth: 100%;\r\n\theight: 25px;\r\n\tbackground: #d3d3d3;\r\n\toutline: none;\r\n\topacity: 0.7;\r\n\ttransition: opacity .2s;\r\n  }\r\n  \r\n  .slider:hover {\r\n\topacity: 1;\r\n  }\r\n  \r\n  .slider::-webkit-slider-thumb {\r\n\t-webkit-appearance: none;\r\n\tappearance: none;\r\n\twidth: 25px;\r\n\theight: 25px;\r\n\tbackground: #4CAF50;\r\n\tcursor: pointer;\r\n  }\r\n  \r\n  .slider::-moz-range-thumb {\r\n\twidth: 25px;\r\n\theight: 25px;\r\n\tbackground: #4CAF50;\r\n\tcursor: pointer;\r\n  }\r\n\r\n  .margin-button {\r\n\t  margin-top: 15px;\r\n\t  margin-left: 15px;\r\n\t  margin-right: 15px;\r\n  }\r\n  .container {\r\n\t  margin-top: 50px;\r\n  }\r\n  \r\n\r\n", ""]);
 
 // exports
 
@@ -101847,18 +101847,22 @@ var Ambientes = /*#__PURE__*/function (_Component) {
         className: "row mt-2"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col col-md-8"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Lista de amientes"), this.ponerContenido())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Lista de amientes", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        fontSize: "large",
+        onClick: goBack
+      })), this.ponerContenido())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col col-md-4"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, state_form === 'crear' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-agregar"
-      }, "Agregar ambiente ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
-        fontSize: "small",
-        onClick: goBack
-      })), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, "Agregar ambiente") : '', state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card-header card-agregar"
+      }, "Modificando ambiente: ", ambiente.id) : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card-header card-agregar"
+      }, "Eliminar ambiente: ", ambiente.id) : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
-      }, this.ponerFormulario()))))));
+      }, this.ponerFormulario())))))));
     }
   }]);
 
@@ -102444,18 +102448,22 @@ var Geneticas = /*#__PURE__*/function (_Component) {
         className: "row mt-2"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col col-md-8"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Lista de gen\xE9ticas"), this.ponerContenido())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Lista de gen\xE9ticas", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        fontSize: "large",
+        onClick: goBack
+      })), this.ponerContenido())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col col-md-4"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, state_form === 'crear' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-agregar"
-      }, "Agregar gen\xE9tica", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
-        fontSize: "small",
-        onClick: goBack
-      })), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, "Agregar gen\xE9tica") : '', state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card-header card-agregar"
+      }, "Modificando gen\xE9tica: ", genetica.id) : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card-header card-agregar"
+      }, "Eliminar gen\xE9tica: ", genetica.id) : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
-      }, this.ponerFormulario()))))));
+      }, this.ponerFormulario())))))));
     }
   }]);
 
@@ -102872,18 +102880,22 @@ var Marcas = /*#__PURE__*/function (_Component) {
         className: "row mt-2"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col col-md-8"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Lista de marcas"), this.ponerContenido())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Lista de marcas ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        fontSize: "large",
+        onClick: goBack
+      })), this.ponerContenido())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col col-md-4"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, state_form === 'crear' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-agregar"
-      }, "Agregar marca ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
-        fontSize: "small",
-        onClick: goBack
-      })), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, "Agregar marca") : '', state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card-header card-agregar"
+      }, "Modificando marca: ", marca.id) : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card-header card-agregar"
+      }, "Eliminar marca: ", marca.id) : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
-      }, this.ponerFormulario()))))));
+      }, this.ponerFormulario())))))));
     }
   }]);
 
@@ -103353,18 +103365,22 @@ var Prototypes = /*#__PURE__*/function (_Component) {
         className: "row mt-2"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col col-md-8"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Lista de prototipos"), this.ponerContenido())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Lista de prototipos", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        fontSize: "large",
+        onClick: goBack
+      })), this.ponerContenido())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col col-md-4"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, state_form === 'crear' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-agregar"
-      }, "Agregar prototipo ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
-        fontSize: "small",
-        onClick: goBack
-      })), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, "Agregar prototipo") : '', state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card-header card-agregar"
+      }, "Modificando prototipo: ", prototype.id) : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card-header card-agregar"
+      }, "Eliminar prototipo: ", prototype.id) : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
-      }, this.ponerFormulario()))))));
+      }, this.ponerFormulario())))))));
     }
   }]);
 

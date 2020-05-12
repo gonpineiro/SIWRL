@@ -62,22 +62,25 @@ class Geneticas extends Component {
 				<div className="row mt-2">
 					<div className="col col-md-8">
 						<div>
-							<h4>Lista de genéticas</h4>
+							<h4>Lista de genéticas<KeyboardReturnIcon fontSize="large" onClick={goBack} /></h4>
 							{this.ponerContenido()}
 						</div>
 					</div>
 					<div className="col col-md-4">
 						<div className="card">
 							<div>
-
-								<div className="card-header card-agregar">
-									Agregar genética<KeyboardReturnIcon fontSize="small" onClick={goBack} />
-								</div>
 								{loading ? <Spinner /> :
-									<div className="card-body">
-										{this.ponerFormulario()}
+									<div>
+										{state_form === 'crear' ? <div className="card-header card-agregar">Agregar genética</div> : ''}
+										{state_form === 'editar' ? <div className="card-header card-agregar">Modificando genética: {genetica.id}</div> : ''}
+										{state_form === 'borrar' ? <div className="card-header card-agregar">Eliminar genética: {genetica.id}</div> : ''}
+										<div className="card-body">
+											{this.ponerFormulario()}
+										</div>
 									</div>}
+
 							</div>
+
 						</div>
 					</div>
 
