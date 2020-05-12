@@ -47,7 +47,6 @@ export const traerTodosPorAmbiente = (id) => async (dispatch) => {
 
     try {
         const response = await axios.get(URL + 'ambiente/sensors/' + id)
-        console.log(response.data)
 
         dispatch({
             type: TRAER_TODOS_POR_AMBIENTE,

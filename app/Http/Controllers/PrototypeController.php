@@ -47,7 +47,9 @@ class PrototypeController extends Controller
             'name' => $request->input('name'),
             'genetica_id' => $request->get('genetica_id'),
             'ambiente_id' => $request->get('ambiente_id'),
+            'sensor_id' => $request->get('sensor_id'),
         ]);    
+        return response()->json($data, 200);
     }
 
     public function destroy($id) {

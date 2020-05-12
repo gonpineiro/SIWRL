@@ -22,6 +22,7 @@ const {
    cambioPrototypeAmbiente,
    cambioPrototypeSensor,
 
+   borrar,
    agregar,
    editar,
    cancelar
@@ -45,7 +46,6 @@ const Formulario = (props) => {
       cancelar
    } = props;
    
-
    const handleCambioPrototypeName = (event) => props.cambioPrototypeName(event.target.value);
 
    const handleCambioPrototypeGenetica = (event) => props.cambioPrototypeGenetica(event.target.value);
@@ -65,7 +65,8 @@ const Formulario = (props) => {
          genetica_id: genetica_id,
          ambiente_id: ambiente_id,
          sensor_id: sensor_id
-      };
+      };     
+
 
       if (state_form === 'crear') agregar(nuevo_prototype);
 
@@ -148,7 +149,7 @@ const Formulario = (props) => {
                         </em>
                      </MenuItem>
                   </Link>
-                  <MenuItem value=""><em className="link link-string" > Vacio </em> </MenuItem>
+                  <MenuItem value={null}><em className="link link-string" > Vacio </em> </MenuItem>
 
                   {ambientes.map((ambiente) => (
                      <MenuItem key={ambiente.id} value={ambiente.id}>{ambiente.name}</MenuItem>
@@ -242,6 +243,7 @@ const mapDispatchToProps = {
    cambioPrototypeAmbiente,
    cambioPrototypeSensor,
 
+   borrar,
    agregar,
    editar,
    cancelar,

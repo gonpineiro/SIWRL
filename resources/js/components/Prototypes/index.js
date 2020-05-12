@@ -65,14 +65,14 @@ class Prototypes extends Component {
 			},
 			prototype, history: { goBack }
 		} = this.props
-
+		
 		return (
 			<div className="container col-md-9">
 				<div className="row mt-2">
 					<div className="col col-md-8">
 						<div>
 							<h4>Lista de prototipos</h4>
-							{this.ponerContenido()}
+							{this.ponerContenido()}	
 						</div>
 					</div>
 					<div className="col col-md-4">

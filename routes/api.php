@@ -45,18 +45,8 @@ Route::put('/prototype/{id}', 'PrototypeController@update');
 Route::post('/prototype', 'PrototypeController@store');
 Route::delete('/prototype/{id}', 'PrototypeController@destroy');
 
-
-//Route::put('/marca/{id}', 'MarcaController@update');
-
-//Route::get('/marca/{id}', 'MarcaController@edit');
-/*
-Route::group(['auth:api'], function () {
-
-    Route::get('/user', );
-
-    Route::get('/user/{id}', 'UserController@edit');
-    Route::put('/user/{id}', 'UserController@update');
-    Route::post('/user', 'UserController@store');
-    Route::delete('/user/{id}', 'UserController@destroy');
-
-}); */
+Route::get('/sensor', 'SensorController@index');
+Route::get('/sensor/{id}', 'SensorController@edit');
+Route::put('/sensor/{id}', 'SensorController@update');
+Route::post('/sensor', 'SensorController@store');
+Route::delete('/sensor/{id}', 'SensorController@destroy');

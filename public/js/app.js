@@ -100548,19 +100548,20 @@ var agregar = function agregar(nuevo_prototype) {
               dispatch({
                 type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["GUARDAR"]
               });
-              _context3.next = 11;
+              _context3.next = 12;
               break;
 
             case 7:
               _context3.prev = 7;
               _context3.t0 = _context3["catch"](1);
               errors = _context3.t0.response.data.errors;
+              console.log(_context3.t0.response);
               dispatch({
                 type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["ERROR_FORM"],
                 payload: errors
               });
 
-            case 11:
+            case 12:
             case "end":
               return _context3.stop();
           }
@@ -100592,19 +100593,20 @@ var editar = function editar(nuevo_prototype, id) {
               dispatch({
                 type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["GUARDAR"]
               });
-              _context4.next = 11;
+              _context4.next = 12;
               break;
 
             case 7:
               _context4.prev = 7;
               _context4.t0 = _context4["catch"](1);
               errors = _context4.t0.response.data.errors;
+              console.log(_context4.t0.response);
               dispatch({
                 type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["ERROR_FORM"],
                 payload: errors
               });
 
-            case 11:
+            case 12:
             case "end":
               return _context4.stop();
           }
@@ -100809,25 +100811,24 @@ var traerTodosPorAmbiente = function traerTodosPorAmbiente(id) {
 
             case 4:
               response = _context2.sent;
-              console.log(response.data);
               dispatch({
                 type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_TODOS_POR_AMBIENTE"],
                 payload: response.data
               });
-              _context2.next = 12;
+              _context2.next = 11;
               break;
 
-            case 9:
-              _context2.prev = 9;
+            case 8:
+              _context2.prev = 8;
               _context2.t0 = _context2["catch"](1);
               console.log(_context2.t0);
 
-            case 12:
+            case 11:
             case "end":
               return _context2.stop();
           }
         }
-      }, _callee2, null, [[1, 9]]);
+      }, _callee2, null, [[1, 8]]);
     }));
 
     return function (_x2) {
@@ -102938,6 +102939,7 @@ var cambioPrototypeName = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11_
     cambioPrototypeGenetica = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["cambioPrototypeGenetica"],
     cambioPrototypeAmbiente = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["cambioPrototypeAmbiente"],
     cambioPrototypeSensor = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["cambioPrototypeSensor"],
+    borrar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["borrar"],
     agregar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["agregar"],
     editar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["editar"],
     cancelar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["cancelar"];
@@ -103060,7 +103062,7 @@ var Formulario = function Formulario(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("em", {
     className: "link link-string"
   }, "Agregar"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    value: ""
+    value: null
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("em", {
     className: "link link-string"
   }, " Vacio "), " "), ambientes.map(function (ambiente) {
@@ -103143,6 +103145,7 @@ var mapDispatchToProps = {
   cambioPrototypeGenetica: cambioPrototypeGenetica,
   cambioPrototypeAmbiente: cambioPrototypeAmbiente,
   cambioPrototypeSensor: cambioPrototypeSensor,
+  borrar: borrar,
   agregar: agregar,
   editar: editar,
   cancelar: cancelar

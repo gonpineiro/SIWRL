@@ -151,6 +151,7 @@ export const agregar = (nuevo_prototype) => async (dispatch) => {
     }
     catch (error) {
         const errors = error.response.data.errors
+        console.log(error.response)
         dispatch({
             type: ERROR_FORM,
             payload: errors
@@ -172,6 +173,7 @@ export const editar = (nuevo_prototype, id) => async (dispatch) => {
 
     } catch (error) {
         const errors = error.response.data.errors
+        console.log(error.response)
         dispatch({
             type: ERROR_FORM,
             payload: errors

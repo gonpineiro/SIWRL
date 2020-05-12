@@ -23,9 +23,13 @@ class PrototypesRequest extends FormRequest
      */
     public function rules()
     {
+        $id = $this->request->get('id') ? ',' . $this->request->get('id') : '';
+
         return [
             'name' => 'required|min:3|max:15',
-            'genetica_id' => 'required'
+            'genetica_id' => 'required',
+            'ambiente_id' => 'required',
+            'sensor_id' => 'required|unique:prototypes,sensor_id'.$id
         ];
     }
 
@@ -37,6 +41,12 @@ class PrototypesRequest extends FormRequest
             'name.max' => 'El maximo es 15 caracteres.',
 
             'genetica_id.required' => 'Requerido.',
+
+            'ambiente_id.required' => 'Requerido.',
+
+            'sensor_id.required' => 'Requerido.',
+            'sensor_id.unique' => 'Ya se encuentra vinvulado este sensor.'
+            
         ];
     }
 }
