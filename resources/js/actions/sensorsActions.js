@@ -74,10 +74,10 @@ export const traerUno = (id) => async (dispatch) => {
 
     try {
         const response = await axios.get(URL + 'sensor/' + id)
-
+        const { 0: sensor } = response.data
         dispatch({
             type: TRAER_UNO,
-            payload: response.data
+            payload: sensor
         })
 
 
@@ -167,13 +167,13 @@ export const traerUnoBorrar = (id) => async (dispatch) => {
         payload: 'borrar'
     })
 
-
     try {
         const response = await axios.get(URL + 'sensor/' + id)
-
+        const { 0: sensor } = response.data
+        
         dispatch({
             type: TRAER_UNO,
-            payload: response.data
+            payload: sensor
         })
 
     } catch (error) {
@@ -186,6 +186,7 @@ export const borrar = (id) => async (dispatch) => {
     dispatch({
         type: LOADING
     })
+
     try {
         await axios.delete(URL + 'sensor/' + id)
 

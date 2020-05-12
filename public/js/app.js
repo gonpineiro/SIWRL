@@ -100887,7 +100887,7 @@ var traerTodosPorAmbiente = function traerTodosPorAmbiente(id) {
 var traerUno = function traerUno(id) {
   return /*#__PURE__*/function () {
     var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(dispatch) {
-      var response;
+      var response, sensor;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
         while (1) {
           switch (_context3.prev = _context3.next) {
@@ -100905,25 +100905,26 @@ var traerUno = function traerUno(id) {
 
             case 5:
               response = _context3.sent;
+              sensor = response.data[0];
               dispatch({
                 type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_UNO"],
-                payload: response.data
+                payload: sensor
               });
-              _context3.next = 13;
+              _context3.next = 14;
               break;
 
-            case 9:
-              _context3.prev = 9;
+            case 10:
+              _context3.prev = 10;
               _context3.t0 = _context3["catch"](2);
               console.log(_context3.t0.response);
               console.log(_context3.t0);
 
-            case 13:
+            case 14:
             case "end":
               return _context3.stop();
           }
         }
-      }, _callee3, null, [[2, 9]]);
+      }, _callee3, null, [[2, 10]]);
     }));
 
     return function (_x3) {
@@ -101048,7 +101049,7 @@ var editar = function editar(nuevo_sensor, id) {
 var traerUnoBorrar = function traerUnoBorrar(id) {
   return /*#__PURE__*/function () {
     var _ref6 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee6(dispatch) {
-      var response;
+      var response, sensor;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee6$(_context6) {
         while (1) {
           switch (_context6.prev = _context6.next) {
@@ -101066,24 +101067,25 @@ var traerUnoBorrar = function traerUnoBorrar(id) {
 
             case 5:
               response = _context6.sent;
+              sensor = response.data[0];
               dispatch({
                 type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_UNO"],
-                payload: response.data
+                payload: sensor
               });
-              _context6.next = 12;
+              _context6.next = 13;
               break;
 
-            case 9:
-              _context6.prev = 9;
+            case 10:
+              _context6.prev = 10;
               _context6.t0 = _context6["catch"](2);
               console.log(_context6.t0);
 
-            case 12:
+            case 13:
             case "end":
               return _context6.stop();
           }
         }
-      }, _callee6, null, [[2, 9]]);
+      }, _callee6, null, [[2, 10]]);
     }));
 
     return function (_x6) {
@@ -103662,6 +103664,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
 /* harmony import */ var _material_ui_core_Select__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/Select */ "./node_modules/@material-ui/core/esm/Select/index.js");
 /* harmony import */ var _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../actions/sensorsActions */ "./resources/js/actions/sensorsActions.js");
+/* harmony import */ var _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../actions/ambientesActions */ "./resources/js/actions/ambientesActions.js");
+
 
 
 
@@ -103681,17 +103685,22 @@ var agregar = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_10__["agregar"],
     cambioSensorAmbiente = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_10__["cambioSensorAmbiente"],
     traerTodosPorAmbiente = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_10__["traerTodosPorAmbiente"],
     cancelar = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_10__["cancelar"];
+var ambienteTraerUno = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_11__["traerUno"];
 
 var Formulario = function Formulario(props) {
-  var ambientes = props.ambientesReducer.ambientes,
+  var _props$ambientesReduc = props.ambientesReducer,
+      ambientes = _props$ambientesReduc.ambientes,
+      ambiente = _props$ambientesReduc.ambiente,
       _props$sensorsReducer = props.sensorsReducer,
       _props$sensorsReducer2 = _props$sensorsReducer.sensor,
       id = _props$sensorsReducer2.id,
       name = _props$sensorsReducer2.name,
       ambiente_id = _props$sensorsReducer2.ambiente_id,
       output = _props$sensorsReducer2.output,
+      sensors_ambiente = _props$sensorsReducer.sensors_ambiente,
       state_form = _props$sensorsReducer.state_form,
       error_form = _props$sensorsReducer.error_form,
+      ambienteTraerUno = props.ambienteTraerUno,
       traerTodosPorAmbiente = props.traerTodosPorAmbiente,
       cambioSensorName = props.cambioSensorName,
       cambioSensorOutput = props.cambioSensorOutput,
@@ -103711,6 +103720,7 @@ var Formulario = function Formulario(props) {
   };
 
   var handleCambioAmbiente = function handleCambioAmbiente(event) {
+    ambienteTraerUno(event.target.value);
     traerTodosPorAmbiente(event.target.value);
     cambioSensorAmbiente(event.target.value);
   };
@@ -103746,7 +103756,7 @@ var Formulario = function Formulario(props) {
   }, "Ambientes"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Select__WEBPACK_IMPORTED_MODULE_9__["default"], {
     labelId: "demo-simple-select-helper-label",
     id: "demo-simple-select-helper",
-    value: ambiente_id || getId,
+    value: ambiente ? ambiente.id || '' : getId || ambiente_id || getId,
     onChange: handleCambioAmbiente,
     error: !error_form.ambiente_id ? false : true,
     disabled: state_form === 'borrar' ? true : false
@@ -103788,7 +103798,8 @@ var Formulario = function Formulario(props) {
   }, state_form === 'crear' || state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     variant: "contained",
     color: "primary",
-    onClick: guardar
+    onClick: guardar,
+    disabled: sensors_ambiente.length >= ambiente.inputs ? true : false
   }, "Guardar") : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     variant: "contained",
     color: "primary",
@@ -103820,6 +103831,7 @@ var mapDispatchToProps = {
   cambioSensorOutput: cambioSensorOutput,
   cambioSensorAmbiente: cambioSensorAmbiente,
   traerTodosPorAmbiente: traerTodosPorAmbiente,
+  ambienteTraerUno: ambienteTraerUno,
   agregar: agregar,
   editar: editar,
   cancelar: cancelar,
@@ -103943,7 +103955,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var ambientesTraerTodos = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_9__["traerTodos"];
+var ambientesTraerTodos = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_9__["traerTodos"],
+    ambientesTraerUno = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_9__["traerUno"];
 var sensorstraerTodosPorAmbiente = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_8__["traerTodosPorAmbiente"];
 
 var Sensors = /*#__PURE__*/function (_Component) {
@@ -103965,11 +103978,12 @@ var Sensors = /*#__PURE__*/function (_Component) {
     _defineProperty(_assertThisInitialized(_this), "ponerContenido", function () {
       var _this$props = _this.props,
           sensorstraerTodosPorAmbiente = _this$props.sensorstraerTodosPorAmbiente,
+          ambiente = _this$props.ambientesReducer.ambiente,
           _this$props$sensorsRe = _this$props.sensorsReducer,
           ambiente_id = _this$props$sensorsRe.sensor.ambiente_id,
           recargar_table = _this$props$sensorsRe.recargar_table,
           loading = _this$props$sensorsRe.loading,
-          sensors = _this$props$sensorsRe.sensors,
+          sensors_ambiente = _this$props$sensorsRe.sensors_ambiente,
           error = _this$props$sensorsRe.error,
           getId = _this$props.match.params.id;
 
@@ -103981,7 +103995,7 @@ var Sensors = /*#__PURE__*/function (_Component) {
         }
       }
 
-      if (loading && !sensors.length) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null);
+      if (loading && !sensors_ambiente.length) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null);
       if (error) return 'Error';
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Table__WEBPACK_IMPORTED_MODULE_4__["default"], null);
     });
@@ -103999,17 +104013,18 @@ var Sensors = /*#__PURE__*/function (_Component) {
     key: "componentDidMount",
     value: function () {
       var _componentDidMount = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var _this$props2, sensors_ambiente, ambientes, ambiente_id, sensorstraerTodosPorAmbiente, ambientesTraerTodos;
+        var _this$props2, sensors_ambiente, _this$props2$ambiente, ambientes, ambiente, ambiente_id, ambientesTraerUno, sensorstraerTodosPorAmbiente, ambientesTraerTodos;
 
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _this$props2 = this.props, sensors_ambiente = _this$props2.sensorsReducer.sensors_ambiente, ambientes = _this$props2.ambientesReducer.ambientes, ambiente_id = _this$props2.match.params.id, sensorstraerTodosPorAmbiente = _this$props2.sensorstraerTodosPorAmbiente, ambientesTraerTodos = _this$props2.ambientesTraerTodos;
+                _this$props2 = this.props, sensors_ambiente = _this$props2.sensorsReducer.sensors_ambiente, _this$props2$ambiente = _this$props2.ambientesReducer, ambientes = _this$props2$ambiente.ambientes, ambiente = _this$props2$ambiente.ambiente, ambiente_id = _this$props2.match.params.id, ambientesTraerUno = _this$props2.ambientesTraerUno, sensorstraerTodosPorAmbiente = _this$props2.sensorstraerTodosPorAmbiente, ambientesTraerTodos = _this$props2.ambientesTraerTodos;
                 if (!sensors_ambiente.length) sensorstraerTodosPorAmbiente(ambiente_id);
                 if (!ambientes.length) ambientesTraerTodos();
+                if (!ambiente.length) ambientesTraerUno(ambiente_id);
 
-              case 3:
+              case 4:
               case "end":
                 return _context.stop();
             }
@@ -104027,9 +104042,11 @@ var Sensors = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       var _this$props3 = this.props,
+          ambiente = _this$props3.ambientesReducer.ambiente,
           _this$props3$sensorsR = _this$props3.sensorsReducer,
           loading = _this$props3$sensorsR.loading,
           state_form = _this$props3$sensorsR.state_form,
+          sensors_ambiente = _this$props3$sensorsR.sensors_ambiente,
           goBack = _this$props3.history.goBack;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "container col-md-9"
@@ -104043,7 +104060,7 @@ var Sensors = /*#__PURE__*/function (_Component) {
         className: "col col-md-6"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", {
         className: "title-table"
-      }, "Lista de sensores")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, "Lista de sensores en: ", ambiente.name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col col-md-6 text-derecha"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
         fontSize: "large",
@@ -104052,9 +104069,9 @@ var Sensors = /*#__PURE__*/function (_Component) {
         className: "col col-md-4"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, state_form === 'crear' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, loading || !ambiente.inputs ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, state_form === 'crear' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-agregar"
-      }, "Agregar sensor") : '', state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, "Agregar sensor", sensors_ambiente ? sensors_ambiente.length + " / " + ambiente.inputs : '') : '', state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-agregar"
       }, "Modificando sensor") : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-agregar"
@@ -104077,6 +104094,7 @@ var mapStateToProps = function mapStateToProps(_ref) {
 };
 
 var mapDispatchToProps = {
+  ambientesTraerUno: ambientesTraerUno,
   ambientesTraerTodos: ambientesTraerTodos,
   sensorstraerTodosPorAmbiente: sensorstraerTodosPorAmbiente
 };

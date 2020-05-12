@@ -14,7 +14,7 @@ class SensorController extends Controller
     }
 
     public function edit($id){
-        $data = Sensor::where('id', $id)->firstOrFail();
+        $data = Sensor::where('id', $id)->with('ambiente')->get();
         return response()->json($data, 200);
     }
 
@@ -30,7 +30,7 @@ class SensorController extends Controller
         return response()->json($data, 200);
     }
 
-    public function store(SensorRequest $request){        
+    public function store(Request $request){        
         $data = Sensor::create([
             'name' => $request->input('name'),
             'ambiente_id' => $request->input('ambiente_id'),

@@ -10,18 +10,22 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
 import * as sensorsActions from '../../actions/sensorsActions'
+import * as ambientesActions from '../../actions/ambientesActions'
 
 const { agregar, editar, borrar, cambioSensorName, cambioSensorOutput, cambioSensorAmbiente, traerTodosPorAmbiente, cancelar } = sensorsActions;
+const { traerUno: ambienteTraerUno } = ambientesActions;
 
 const Formulario = (props) => {
    
    const {
-      ambientesReducer: { ambientes },
+      ambientesReducer: { ambientes, ambiente },
       sensorsReducer: {
          sensor: { id, name, ambiente_id, output },
+         sensors_ambiente,
          state_form,
          error_form,
       },
+      ambienteTraerUno,
       traerTodosPorAmbiente,
       cambioSensorName,
       cambioSensorOutput,
@@ -38,6 +42,7 @@ const Formulario = (props) => {
    const handleCambioSensorOutput = (event) => cambioSensorOutput(event.target.value);
 
    const handleCambioAmbiente = (event) => {
+      ambienteTraerUno(event.target.value)
       traerTodosPorAmbiente(event.target.value)
       cambioSensorAmbiente(event.target.value)
    };
@@ -77,7 +82,7 @@ const Formulario = (props) => {
                <Select
                   labelId="demo-simple-select-helper-label"
                   id="demo-simple-select-helper"
-                  value={ambiente_id || getId}
+                  value={ambiente ? (ambiente.id || '') : getId || (ambiente_id || getId)}
                   onChange={handleCambioAmbiente}
                   error={!error_form.ambiente_id ? false : true}
                   disabled={state_form === 'borrar' ? true : false}
@@ -125,6 +130,7 @@ const Formulario = (props) => {
                         variant="contained"
                         color="primary"
                         onClick={guardar}
+                        disabled={(sensors_ambiente.length >= ambiente.inputs) ? true : false}
                      >
                         Guardar
                      </Button> : ''}
@@ -170,6 +176,7 @@ const mapDispatchToProps = {
    cambioSensorOutput,
    cambioSensorAmbiente,
    traerTodosPorAmbiente,
+   ambienteTraerUno,
 
    agregar,
    editar,
