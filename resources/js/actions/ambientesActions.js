@@ -27,7 +27,7 @@ export const traerTodos = () => async (dispatch) => {
 
     try {        
         const response = await axios.get(URL + 'ambiente')
-        
+
         dispatch({
             type: TRAER_TODOS,
             payload: response.data
@@ -49,7 +49,27 @@ export const traerUno = (id) => async (dispatch) => {
         payload: 'editar'
     })
 
+    try {
+        const response = await axios.get(URL + 'ambiente/' + id)
+        const { 0: ambiente } = response.data
 
+        dispatch({
+            type: TRAER_UNO,
+            payload: ambiente
+        })
+
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const traerUnoFormPrototype = (id) => async (dispatch) => {
+
+    dispatch({
+        type: LOADING
+    })
+    
     try {
         const response = await axios.get(URL + 'ambiente/' + id)
         const { 0: ambiente } = response.data
@@ -182,6 +202,7 @@ export const borrar = (id) => async (dispatch) => {
 }
 
 export const cancelar = () => (dispatch) => {
+
     dispatch({
         type: CANCELAR
     })

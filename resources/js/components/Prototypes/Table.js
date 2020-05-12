@@ -2,9 +2,28 @@ import React from 'react';
 import { connect } from 'react-redux'
 
 import * as protoypesActions from '../../actions/protoypesActions'
+import * as ambientesActions from '../../actions/ambientesActions'
+
+const { traerUno: ambientesTraerUno } = ambientesActions;
+const { traerUno: prototypesTraerUno, traerUnoBorrar } = protoypesActions;
 
 const Table = (props) => {
-  const { prototypes, traerUno, traerUnoBorrar } = props
+  const { 
+    ambientesTraerUno,
+    prototypesReducer: { prototypes }, 
+    traerUnoBorrar,
+    prototypesTraerUno
+  } = props
+
+  const traerUnoEditar = (prototype) => {
+    ambientesTraerUno(prototype.ambiente.id)
+    prototypesTraerUno(prototype.id)
+  }
+
+  const traerUnoEliminar = (prototype) => {
+    ambientesTraerUno(prototype.ambiente.id)
+    traerUnoBorrar(prototype.id)
+  }
 
   const addRow = () => prototypes.map((prototype, key) => (
     <tr key={key}>
@@ -17,10 +36,10 @@ const Table = (props) => {
       <td>
         <i
           className="material-icons link"
-          onClick={() => traerUno(prototype.id)}
+          onClick={() => traerUnoEditar(prototype)}
         >edit</i>
         <i
-          onClick={() => traerUnoBorrar(prototype.id)}
+          onClick={() => traerUnoEliminar(prototype)}
           className="material-icons link"
         >delete</i>
       </td>
@@ -49,8 +68,15 @@ const Table = (props) => {
   );
 }
 
-const mapStateToProps = (reducers) => {
-  return reducers.prototypesReducer
-}
 
-export default connect(mapStateToProps, protoypesActions)(Table);
+const mapStateToProps = ({ prototypesReducer, ambientesReducer }) => {
+	return { prototypesReducer, ambientesReducer };
+};
+
+const mapDispatchToProps = {
+	ambientesTraerUno,
+  prototypesTraerUno,
+  traerUnoBorrar
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Table);

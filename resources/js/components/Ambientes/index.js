@@ -10,6 +10,7 @@ import * as ambientesActions from '../../actions/ambientesActions'
 class Ambientes extends Component {
 
 	async componentDidMount() {
+		
 		const { traerTodos, ambientes } = this.props
 		if (!ambientes.length) traerTodos()
 	}
@@ -26,9 +27,9 @@ class Ambientes extends Component {
 		return <Table />
 	}
 	ponerFormulario = () => <Formulario />
-
+	
 	render() {
-		const { state_form, loading, ambiente, history: { goBack } } = this.props
+		const { state_form, loading, history: { goBack } } = this.props
 		return (
 			<div className="container col-md-9">
 				<div className="row mt-2">
@@ -51,8 +52,8 @@ class Ambientes extends Component {
 								{loading ? <Spinner /> :
 									<div>
 										{state_form === 'crear' ? <div className="card-header card-agregar">Agregar ambiente</div> : ''}
-										{state_form === 'editar' ? <div className="card-header card-agregar">Modificando ambiente: {ambiente.id}</div> : ''}
-										{state_form === 'borrar' ? <div className="card-header card-agregar">Eliminar ambiente: {ambiente.id}</div> : ''}
+										{state_form === 'editar' ? <div className="card-header card-agregar">Modificando ambiente </div> : ''}
+										{state_form === 'borrar' ? <div className="card-header card-agregar">Eliminar ambiente </div> : ''}
 										<div className="card-body">
 											{this.ponerFormulario()}
 										</div>

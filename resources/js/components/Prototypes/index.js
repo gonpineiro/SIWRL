@@ -21,7 +21,6 @@ class Prototypes extends Component {
 			geneticasReducer: { geneticas },
 			prototypesReducer: { prototypes },
 			ambientesReducer: { ambientes },
-			sensorsReducer: { sensor_ambiente },
 			geneticasTraerTodos,
 			prototypesTraerTodos,
 			ambientesTraerTodos,
@@ -34,7 +33,6 @@ class Prototypes extends Component {
 
 		if (!ambientes.length) ambientesTraerTodos()
 	}
-
 
 	ponerContenido = () => {
 		const {
@@ -89,8 +87,8 @@ class Prototypes extends Component {
 								{loading ? <Spinner /> :
 									<div>
 										{state_form === 'crear' ? <div className="card-header card-agregar">Agregar prototipo</div> : ''}
-										{state_form === 'editar' ? <div className="card-header card-agregar">Modificando prototipo: {prototype.id}</div> : ''}
-										{state_form === 'borrar' ? <div className="card-header card-agregar">Eliminar prototipo: {prototype.id}</div> : ''}
+										{state_form === 'editar' ? <div className="card-header card-agregar">Modificando prototipo</div> : ''}
+										{state_form === 'borrar' ? <div className="card-header card-agregar">Eliminar prototipo</div> : ''}
 										<div className="card-body">
 											{this.ponerFormulario()}
 										</div>

@@ -99303,13 +99303,14 @@ module.exports = function(module) {
 /*!**************************************************!*\
   !*** ./resources/js/actions/ambientesActions.js ***!
   \**************************************************/
-/*! exports provided: traerTodos, traerUno, cambioAmbienteName, cambioAmbienteCodigo, cambioAmbienteInputs, agregar, editar, traerUnoBorrar, borrar, cancelar */
+/*! exports provided: traerTodos, traerUno, traerUnoFormPrototype, cambioAmbienteName, cambioAmbienteCodigo, cambioAmbienteInputs, agregar, editar, traerUnoBorrar, borrar, cancelar */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traerTodos", function() { return traerTodos; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traerUno", function() { return traerUno; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traerUnoFormPrototype", function() { return traerUnoFormPrototype; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cambioAmbienteName", function() { return cambioAmbienteName; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cambioAmbienteCodigo", function() { return cambioAmbienteCodigo; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cambioAmbienteInputs", function() { return cambioAmbienteInputs; });
@@ -99421,6 +99422,49 @@ var traerUno = function traerUno(id) {
     };
   }();
 };
+var traerUnoFormPrototype = function traerUnoFormPrototype(id) {
+  return /*#__PURE__*/function () {
+    var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(dispatch) {
+      var response, ambiente;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              dispatch({
+                type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+              });
+              _context3.prev = 1;
+              _context3.next = 4;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL + 'ambiente/' + id);
+
+            case 4:
+              response = _context3.sent;
+              ambiente = response.data[0];
+              dispatch({
+                type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_UNO"],
+                payload: ambiente
+              });
+              _context3.next = 12;
+              break;
+
+            case 9:
+              _context3.prev = 9;
+              _context3.t0 = _context3["catch"](1);
+              console.log(_context3.t0);
+
+            case 12:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3, null, [[1, 9]]);
+    }));
+
+    return function (_x3) {
+      return _ref3.apply(this, arguments);
+    };
+  }();
+};
 var cambioAmbienteName = function cambioAmbienteName(valor) {
   return function (dispatch) {
     dispatch({
@@ -99447,50 +99491,6 @@ var cambioAmbienteInputs = function cambioAmbienteInputs(valor) {
 };
 var agregar = function agregar(nuevo_ambiente) {
   return /*#__PURE__*/function () {
-    var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(dispatch) {
-      var errors;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
-        while (1) {
-          switch (_context3.prev = _context3.next) {
-            case 0:
-              dispatch({
-                type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
-              });
-              _context3.prev = 1;
-              _context3.next = 4;
-              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(URL + 'ambiente', nuevo_ambiente);
-
-            case 4:
-              dispatch({
-                type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["GUARDAR"]
-              });
-              _context3.next = 11;
-              break;
-
-            case 7:
-              _context3.prev = 7;
-              _context3.t0 = _context3["catch"](1);
-              errors = _context3.t0.response.data.errors;
-              dispatch({
-                type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["ERROR_FORM"],
-                payload: errors
-              });
-
-            case 11:
-            case "end":
-              return _context3.stop();
-          }
-        }
-      }, _callee3, null, [[1, 7]]);
-    }));
-
-    return function (_x3) {
-      return _ref3.apply(this, arguments);
-    };
-  }();
-};
-var editar = function editar(nuevo_ambiente, id) {
-  return /*#__PURE__*/function () {
     var _ref4 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4(dispatch) {
       var errors;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
@@ -99502,7 +99502,7 @@ var editar = function editar(nuevo_ambiente, id) {
               });
               _context4.prev = 1;
               _context4.next = 4;
-              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.put(URL + 'ambiente/' + id, nuevo_ambiente);
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(URL + 'ambiente', nuevo_ambiente);
 
             case 4:
               dispatch({
@@ -99533,13 +99533,57 @@ var editar = function editar(nuevo_ambiente, id) {
     };
   }();
 };
-var traerUnoBorrar = function traerUnoBorrar(id) {
+var editar = function editar(nuevo_ambiente, id) {
   return /*#__PURE__*/function () {
     var _ref5 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5(dispatch) {
-      var response, ambiente;
+      var errors;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
         while (1) {
           switch (_context5.prev = _context5.next) {
+            case 0:
+              dispatch({
+                type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
+              });
+              _context5.prev = 1;
+              _context5.next = 4;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.put(URL + 'ambiente/' + id, nuevo_ambiente);
+
+            case 4:
+              dispatch({
+                type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["GUARDAR"]
+              });
+              _context5.next = 11;
+              break;
+
+            case 7:
+              _context5.prev = 7;
+              _context5.t0 = _context5["catch"](1);
+              errors = _context5.t0.response.data.errors;
+              dispatch({
+                type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["ERROR_FORM"],
+                payload: errors
+              });
+
+            case 11:
+            case "end":
+              return _context5.stop();
+          }
+        }
+      }, _callee5, null, [[1, 7]]);
+    }));
+
+    return function (_x5) {
+      return _ref5.apply(this, arguments);
+    };
+  }();
+};
+var traerUnoBorrar = function traerUnoBorrar(id) {
+  return /*#__PURE__*/function () {
+    var _ref6 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee6(dispatch) {
+      var response, ambiente;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee6$(_context6) {
+        while (1) {
+          switch (_context6.prev = _context6.next) {
             case 0:
               dispatch({
                 type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
@@ -99548,64 +99592,64 @@ var traerUnoBorrar = function traerUnoBorrar(id) {
                 type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_ESTADO_FORM"],
                 payload: 'borrar'
               });
-              _context5.prev = 2;
-              _context5.next = 5;
+              _context6.prev = 2;
+              _context6.next = 5;
               return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL + 'ambiente/' + id);
 
             case 5:
-              response = _context5.sent;
+              response = _context6.sent;
               ambiente = response.data[0];
               dispatch({
                 type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_UNO"],
                 payload: ambiente
               });
-              _context5.next = 13;
+              _context6.next = 13;
               break;
 
             case 10:
-              _context5.prev = 10;
-              _context5.t0 = _context5["catch"](2);
-              console.log(_context5.t0);
+              _context6.prev = 10;
+              _context6.t0 = _context6["catch"](2);
+              console.log(_context6.t0);
 
             case 13:
             case "end":
-              return _context5.stop();
+              return _context6.stop();
           }
         }
-      }, _callee5, null, [[2, 10]]);
+      }, _callee6, null, [[2, 10]]);
     }));
 
-    return function (_x5) {
-      return _ref5.apply(this, arguments);
+    return function (_x6) {
+      return _ref6.apply(this, arguments);
     };
   }();
 };
 var borrar = function borrar(id) {
   return /*#__PURE__*/function () {
-    var _ref6 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee6(dispatch) {
+    var _ref7 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee7(dispatch) {
       var errors;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee6$(_context6) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee7$(_context7) {
         while (1) {
-          switch (_context6.prev = _context6.next) {
+          switch (_context7.prev = _context7.next) {
             case 0:
               dispatch({
                 type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
               });
-              _context6.prev = 1;
-              _context6.next = 4;
+              _context7.prev = 1;
+              _context7.next = 4;
               return axios__WEBPACK_IMPORTED_MODULE_1___default.a["delete"](URL + 'ambiente/' + id);
 
             case 4:
               dispatch({
                 type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["GUARDAR"]
               });
-              _context6.next = 11;
+              _context7.next = 11;
               break;
 
             case 7:
-              _context6.prev = 7;
-              _context6.t0 = _context6["catch"](1);
-              errors = _context6.t0.response.data.message;
+              _context7.prev = 7;
+              _context7.t0 = _context7["catch"](1);
+              errors = _context7.t0.response.data.message;
               dispatch({
                 type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["ERROR_FORM"],
                 payload: errors
@@ -99613,14 +99657,14 @@ var borrar = function borrar(id) {
 
             case 11:
             case "end":
-              return _context6.stop();
+              return _context7.stop();
           }
         }
-      }, _callee6, null, [[1, 7]]);
+      }, _callee7, null, [[1, 7]]);
     }));
 
-    return function (_x6) {
-      return _ref6.apply(this, arguments);
+    return function (_x7) {
+      return _ref7.apply(this, arguments);
     };
   }();
 };
@@ -100426,31 +100470,30 @@ var traerUno = function traerUno(id) {
                 payload: 'editar'
               });
               _context2.prev = 2;
-              console.log(id);
-              _context2.next = 6;
+              _context2.next = 5;
               return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL + 'prototype/' + id);
 
-            case 6:
+            case 5:
               response = _context2.sent;
               prototype = response.data[0];
               dispatch({
                 type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_UNO"],
                 payload: prototype
               });
-              _context2.next = 14;
+              _context2.next = 13;
               break;
 
-            case 11:
-              _context2.prev = 11;
+            case 10:
+              _context2.prev = 10;
               _context2.t0 = _context2["catch"](2);
               console.log(_context2.t0);
 
-            case 14:
+            case 13:
             case "end":
               return _context2.stop();
           }
         }
-      }, _callee2, null, [[2, 11]]);
+      }, _callee2, null, [[2, 10]]);
     }));
 
     return function (_x2) {
@@ -100715,364 +100758,6 @@ var cancelar = function cancelar() {
   return function (dispatch) {
     dispatch({
       type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CANCELAR"]
-    });
-  };
-};
-
-/***/ }),
-
-/***/ "./resources/js/actions/sensorsActions.js":
-/*!************************************************!*\
-  !*** ./resources/js/actions/sensorsActions.js ***!
-  \************************************************/
-/*! exports provided: traerTodos, traerTodosPorAmbiente, traerUno, cambioSensorName, agregar, editar, traerUnoBorrar, borrar, cancelar */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traerTodos", function() { return traerTodos; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traerTodosPorAmbiente", function() { return traerTodosPorAmbiente; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traerUno", function() { return traerUno; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cambioSensorName", function() { return cambioSensorName; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "agregar", function() { return agregar; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "editar", function() { return editar; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traerUnoBorrar", function() { return traerUnoBorrar; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "borrar", function() { return borrar; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cancelar", function() { return cancelar; });
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../types/sensorTypes */ "./resources/js/types/sensorTypes.js");
-
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-
-
-var URL = 'http://192.168.0.238:901/api/';
-var traerTodos = function traerTodos() {
-  return /*#__PURE__*/function () {
-    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(dispatch) {
-      var response;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              dispatch({
-                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["RECARGA"]
-              });
-              _context.prev = 1;
-              _context.next = 4;
-              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL + 'sensor');
-
-            case 4:
-              response = _context.sent;
-              dispatch({
-                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_TODOS"],
-                payload: response.data
-              });
-              _context.next = 11;
-              break;
-
-            case 8:
-              _context.prev = 8;
-              _context.t0 = _context["catch"](1);
-              console.log(_context.t0);
-
-            case 11:
-            case "end":
-              return _context.stop();
-          }
-        }
-      }, _callee, null, [[1, 8]]);
-    }));
-
-    return function (_x) {
-      return _ref.apply(this, arguments);
-    };
-  }();
-};
-var traerTodosPorAmbiente = function traerTodosPorAmbiente(id) {
-  return /*#__PURE__*/function () {
-    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(dispatch) {
-      var response;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
-        while (1) {
-          switch (_context2.prev = _context2.next) {
-            case 0:
-              dispatch({
-                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
-              });
-              _context2.prev = 1;
-              _context2.next = 4;
-              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL + 'ambiente/sensors/' + id);
-
-            case 4:
-              response = _context2.sent;
-              dispatch({
-                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_TODOS_POR_AMBIENTE"],
-                payload: response.data
-              });
-              _context2.next = 11;
-              break;
-
-            case 8:
-              _context2.prev = 8;
-              _context2.t0 = _context2["catch"](1);
-              console.log(_context2.t0);
-
-            case 11:
-            case "end":
-              return _context2.stop();
-          }
-        }
-      }, _callee2, null, [[1, 8]]);
-    }));
-
-    return function (_x2) {
-      return _ref2.apply(this, arguments);
-    };
-  }();
-};
-var traerUno = function traerUno(id) {
-  return /*#__PURE__*/function () {
-    var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(dispatch) {
-      var response;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
-        while (1) {
-          switch (_context3.prev = _context3.next) {
-            case 0:
-              dispatch({
-                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
-              });
-              dispatch({
-                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_ESTADO_FORM"],
-                payload: 'editar'
-              });
-              _context3.prev = 2;
-              _context3.next = 5;
-              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL + 'sensor/' + id);
-
-            case 5:
-              response = _context3.sent;
-              dispatch({
-                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_UNO"],
-                payload: response.data
-              });
-              _context3.next = 12;
-              break;
-
-            case 9:
-              _context3.prev = 9;
-              _context3.t0 = _context3["catch"](2);
-              console.log(_context3.t0);
-
-            case 12:
-            case "end":
-              return _context3.stop();
-          }
-        }
-      }, _callee3, null, [[2, 9]]);
-    }));
-
-    return function (_x3) {
-      return _ref3.apply(this, arguments);
-    };
-  }();
-};
-var cambioSensorName = function cambioSensorName(valor) {
-  return function (dispatch) {
-    dispatch({
-      type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_SENSOR_NAME"],
-      payload: valor
-    });
-  };
-};
-var agregar = function agregar(nuevo_sensor) {
-  return /*#__PURE__*/function () {
-    var _ref4 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4(dispatch) {
-      var errors;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
-        while (1) {
-          switch (_context4.prev = _context4.next) {
-            case 0:
-              dispatch({
-                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
-              });
-              _context4.prev = 1;
-              _context4.next = 4;
-              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(URL + 'sensor', nuevo_sensor);
-
-            case 4:
-              dispatch({
-                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["GUARDAR"]
-              });
-              _context4.next = 11;
-              break;
-
-            case 7:
-              _context4.prev = 7;
-              _context4.t0 = _context4["catch"](1);
-              errors = _context4.t0.response.data.errors;
-              dispatch({
-                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["ERROR_FORM"],
-                payload: errors
-              });
-
-            case 11:
-            case "end":
-              return _context4.stop();
-          }
-        }
-      }, _callee4, null, [[1, 7]]);
-    }));
-
-    return function (_x4) {
-      return _ref4.apply(this, arguments);
-    };
-  }();
-};
-var editar = function editar(nuevo_sensor, id) {
-  return /*#__PURE__*/function () {
-    var _ref5 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5(dispatch) {
-      var errors;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
-        while (1) {
-          switch (_context5.prev = _context5.next) {
-            case 0:
-              dispatch({
-                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
-              });
-              _context5.prev = 1;
-              _context5.next = 4;
-              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.put(URL + 'sensor/' + id, nuevo_sensor);
-
-            case 4:
-              dispatch({
-                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["GUARDAR"]
-              });
-              _context5.next = 11;
-              break;
-
-            case 7:
-              _context5.prev = 7;
-              _context5.t0 = _context5["catch"](1);
-              errors = _context5.t0.response.data.errors;
-              dispatch({
-                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["ERROR_FORM"],
-                payload: errors
-              });
-
-            case 11:
-            case "end":
-              return _context5.stop();
-          }
-        }
-      }, _callee5, null, [[1, 7]]);
-    }));
-
-    return function (_x5) {
-      return _ref5.apply(this, arguments);
-    };
-  }();
-};
-var traerUnoBorrar = function traerUnoBorrar(id) {
-  return /*#__PURE__*/function () {
-    var _ref6 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee6(dispatch) {
-      var response;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee6$(_context6) {
-        while (1) {
-          switch (_context6.prev = _context6.next) {
-            case 0:
-              dispatch({
-                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
-              });
-              dispatch({
-                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_ESTADO_FORM"],
-                payload: 'borrar'
-              });
-              _context6.prev = 2;
-              _context6.next = 5;
-              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL + 'sensor/' + id);
-
-            case 5:
-              response = _context6.sent;
-              dispatch({
-                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_UNO"],
-                payload: response.data
-              });
-              _context6.next = 12;
-              break;
-
-            case 9:
-              _context6.prev = 9;
-              _context6.t0 = _context6["catch"](2);
-              console.log(_context6.t0);
-
-            case 12:
-            case "end":
-              return _context6.stop();
-          }
-        }
-      }, _callee6, null, [[2, 9]]);
-    }));
-
-    return function (_x6) {
-      return _ref6.apply(this, arguments);
-    };
-  }();
-};
-var borrar = function borrar(id) {
-  return /*#__PURE__*/function () {
-    var _ref7 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee7(dispatch) {
-      var errors;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee7$(_context7) {
-        while (1) {
-          switch (_context7.prev = _context7.next) {
-            case 0:
-              dispatch({
-                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
-              });
-              _context7.prev = 1;
-              _context7.next = 4;
-              return axios__WEBPACK_IMPORTED_MODULE_1___default.a["delete"](URL + 'sensor/' + id);
-
-            case 4:
-              dispatch({
-                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["GUARDAR"]
-              });
-              _context7.next = 11;
-              break;
-
-            case 7:
-              _context7.prev = 7;
-              _context7.t0 = _context7["catch"](1);
-              errors = _context7.t0.response.data.message;
-              dispatch({
-                type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["ERROR_FORM"],
-                payload: errors
-              });
-
-            case 11:
-            case "end":
-              return _context7.stop();
-          }
-        }
-      }, _callee7, null, [[1, 7]]);
-    }));
-
-    return function (_x7) {
-      return _ref7.apply(this, arguments);
-    };
-  }();
-};
-var cancelar = function cancelar() {
-  return function (dispatch) {
-    dispatch({
-      type: _types_sensorTypes__WEBPACK_IMPORTED_MODULE_2__["CANCELAR"]
     });
   };
 };
@@ -101840,7 +101525,6 @@ var Ambientes = /*#__PURE__*/function (_Component) {
       var _this$props3 = this.props,
           state_form = _this$props3.state_form,
           loading = _this$props3.loading,
-          ambiente = _this$props3.ambiente,
           goBack = _this$props3.history.goBack;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "container col-md-9"
@@ -101865,9 +101549,9 @@ var Ambientes = /*#__PURE__*/function (_Component) {
         className: "card-header card-agregar"
       }, "Agregar ambiente") : '', state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-agregar"
-      }, "Modificando ambiente: ", ambiente.id) : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, "Modificando ambiente ") : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-agregar"
-      }, "Eliminar ambiente: ", ambiente.id) : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, "Eliminar ambiente ") : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
       }, this.ponerFormulario())))))));
     }
@@ -102447,7 +102131,6 @@ var Geneticas = /*#__PURE__*/function (_Component) {
           _this$props3$genetica = _this$props3.geneticasReducer,
           loading = _this$props3$genetica.loading,
           state_form = _this$props3$genetica.state_form,
-          genetica = _this$props3$genetica.genetica,
           goBack = _this$props3.history.goBack;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "container col-md-9"
@@ -102472,9 +102155,9 @@ var Geneticas = /*#__PURE__*/function (_Component) {
         className: "card-header card-agregar"
       }, "Agregar gen\xE9tica") : '', state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-agregar"
-      }, "Modificando gen\xE9tica: ", genetica.id) : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, "Modificando gen\xE9tica") : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-agregar"
-      }, "Eliminar gen\xE9tica: ", genetica.id) : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, "Eliminar gen\xE9tica") : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
       }, this.ponerFormulario())))))));
     }
@@ -102885,7 +102568,6 @@ var Marcas = /*#__PURE__*/function (_Component) {
       var _this$props3 = this.props,
           state_form = _this$props3.state_form,
           loading = _this$props3.loading,
-          marca = _this$props3.marca,
           goBack = _this$props3.history.goBack;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "container col-md-9"
@@ -102910,9 +102592,9 @@ var Marcas = /*#__PURE__*/function (_Component) {
         className: "card-header card-agregar"
       }, "Agregar marca") : '', state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-agregar"
-      }, "Modificando marca: ", marca.id) : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, "Modificando marca") : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-agregar"
-      }, "Eliminar marca: ", marca.id) : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, "Eliminar marca") : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
       }, this.ponerFormulario())))))));
     }
@@ -102951,7 +102633,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
 /* harmony import */ var _material_ui_core_Select__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Select */ "./node_modules/@material-ui/core/esm/Select/index.js");
 /* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
-/* harmony import */ var _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../actions/sensorsActions */ "./resources/js/actions/sensorsActions.js");
+/* harmony import */ var _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../actions/ambientesActions */ "./resources/js/actions/ambientesActions.js");
 
 
 
@@ -102965,7 +102647,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var sensorsTraerTodosPorAmbiente = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_12__["traerTodosPorAmbiente"];
+var ambientesTraerUno = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_12__["traerUno"],
+    ambientesCancelar = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_12__["cancelar"];
 var cambioPrototypeName = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["cambioPrototypeName"],
     cambioPrototypeGenetica = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["cambioPrototypeGenetica"],
     cambioPrototypeAmbiente = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["cambioPrototypeAmbiente"],
@@ -102976,9 +102659,12 @@ var cambioPrototypeName = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11_
     cancelar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["cancelar"];
 
 var Formulario = function Formulario(props) {
-  var sensorsTraerTodosPorAmbiente = props.sensorsTraerTodosPorAmbiente,
+  var ambientesTraerUno = props.ambientesTraerUno,
+      ambientesCancelar = props.ambientesCancelar,
       geneticas = props.geneticasReducer.geneticas,
-      ambientes = props.ambientesReducer.ambientes,
+      _props$ambientesReduc = props.ambientesReducer,
+      ambientes = _props$ambientesReduc.ambientes,
+      ambiente = _props$ambientesReduc.ambiente,
       sensors_ambiente = props.sensorsReducer.sensors_ambiente,
       _props$prototypesRedu = props.prototypesReducer,
       _props$prototypesRedu2 = _props$prototypesRedu.prototype,
@@ -103006,7 +102692,7 @@ var Formulario = function Formulario(props) {
 
   var handleCambioPrototypeAmbiente = function handleCambioPrototypeAmbiente(event) {
     props.cambioPrototypeAmbiente(event.target.value);
-    sensorsTraerTodosPorAmbiente(event.target.value);
+    if (event.target.value) ambientesTraerUno(event.target.value);
   };
 
   var handleCambioPrototypeSensor = function handleCambioPrototypeSensor(event) {
@@ -103023,6 +102709,10 @@ var Formulario = function Formulario(props) {
     };
     if (state_form === 'crear') agregar(nuevo_prototype);
     if (state_form === 'editar') editar(nuevo_prototype, id);
+  };
+
+  var cancelarAmbientes = function cancelarAmbientes() {
+    ambientesCancelar();
   };
 
   var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__["makeStyles"])(function (theme) {
@@ -103089,7 +102779,10 @@ var Formulario = function Formulario(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/ambientes"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    value: ""
+    value: "",
+    onClick: function onClick() {
+      return cancelarAmbientes();
+    }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("em", {
     className: "link link-string"
   }, "Agregar"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -103111,7 +102804,7 @@ var Formulario = function Formulario(props) {
   }, "Sensor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Select__WEBPACK_IMPORTED_MODULE_10__["default"], {
     labelId: "demo-simple-select-helper-label",
     id: "demo-simple-select-helper",
-    value: sensor_id || '',
+    value: ambiente.sensors ? sensor_id || '' : '',
     onChange: handleCambioPrototypeSensor,
     error: !error_form.sensor_id ? false : true,
     disabled: !ambiente_id || state_form === 'borrar'
@@ -103125,12 +102818,12 @@ var Formulario = function Formulario(props) {
     value: ""
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("em", {
     className: "link link-string"
-  }, " Vacio "), " "), sensors_ambiente.map(function (sensor) {
+  }, " Vacio "), " "), ambiente && ambiente.sensors ? ambiente.sensors.map(function (sensor) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_7__["default"], {
       key: sensor.id,
       value: sensor.id
     }, sensor.name);
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormHelperText__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormHelperText__WEBPACK_IMPORTED_MODULE_8__["default"], {
     error: !error_form.sensor_id ? false : true
   }, error_form.sensor_id)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-row margin-button"
@@ -103171,7 +102864,8 @@ var mapStateToProps = function mapStateToProps(_ref) {
 };
 
 var mapDispatchToProps = {
-  sensorsTraerTodosPorAmbiente: sensorsTraerTodosPorAmbiente,
+  ambientesTraerUno: ambientesTraerUno,
+  ambientesCancelar: ambientesCancelar,
   cambioPrototypeName: cambioPrototypeName,
   cambioPrototypeGenetica: cambioPrototypeGenetica,
   cambioPrototypeAmbiente: cambioPrototypeAmbiente,
@@ -103198,14 +102892,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
+/* harmony import */ var _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/ambientesActions */ "./resources/js/actions/ambientesActions.js");
 
 
 
+
+var ambientesTraerUno = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_3__["traerUno"];
+var prototypesTraerUno = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_2__["traerUno"],
+    traerUnoBorrar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_2__["traerUnoBorrar"];
 
 var Table = function Table(props) {
-  var prototypes = props.prototypes,
-      traerUno = props.traerUno,
-      traerUnoBorrar = props.traerUnoBorrar;
+  var ambientesTraerUno = props.ambientesTraerUno,
+      prototypes = props.prototypesReducer.prototypes,
+      traerUnoBorrar = props.traerUnoBorrar,
+      prototypesTraerUno = props.prototypesTraerUno;
+
+  var traerUnoEditar = function traerUnoEditar(prototype) {
+    ambientesTraerUno(prototype.ambiente.id);
+    prototypesTraerUno(prototype.id);
+  };
+
+  var traerUnoEliminar = function traerUnoEliminar(prototype) {
+    ambientesTraerUno(prototype.ambiente.id);
+    traerUnoBorrar(prototype.id);
+  };
 
   var addRow = function addRow() {
     return prototypes.map(function (prototype, key) {
@@ -103214,11 +102924,11 @@ var Table = function Table(props) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, prototype.id), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, prototype.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, prototype.genetica.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, prototype.genetica.marca.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, prototype.ambiente ? prototype.ambiente.codigo : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, prototype.sensor ? prototype.sensor.name : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "material-icons link",
         onClick: function onClick() {
-          return traerUno(prototype.id);
+          return traerUnoEditar(prototype);
         }
       }, "edit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         onClick: function onClick() {
-          return traerUnoBorrar(prototype.id);
+          return traerUnoEliminar(prototype);
         },
         className: "material-icons link"
       }, "delete")));
@@ -103230,11 +102940,21 @@ var Table = function Table(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "ID"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Nombre"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Genetica"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Marca"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Ambiente"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Sensor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Accion"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, addRow())));
 };
 
-var mapStateToProps = function mapStateToProps(reducers) {
-  return reducers.prototypesReducer;
+var mapStateToProps = function mapStateToProps(_ref) {
+  var prototypesReducer = _ref.prototypesReducer,
+      ambientesReducer = _ref.ambientesReducer;
+  return {
+    prototypesReducer: prototypesReducer,
+    ambientesReducer: ambientesReducer
+  };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_2__)(Table));
+var mapDispatchToProps = {
+  ambientesTraerUno: ambientesTraerUno,
+  prototypesTraerUno: prototypesTraerUno,
+  traerUnoBorrar: traerUnoBorrar
+};
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(Table));
 
 /***/ }),
 
@@ -103344,13 +103064,13 @@ var Prototypes = /*#__PURE__*/function (_Component) {
     key: "componentDidMount",
     value: function () {
       var _componentDidMount = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var _this$props2, geneticas, prototypes, ambientes, sensor_ambiente, geneticasTraerTodos, prototypesTraerTodos, ambientesTraerTodos;
+        var _this$props2, geneticas, prototypes, ambientes, geneticasTraerTodos, prototypesTraerTodos, ambientesTraerTodos;
 
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _this$props2 = this.props, geneticas = _this$props2.geneticasReducer.geneticas, prototypes = _this$props2.prototypesReducer.prototypes, ambientes = _this$props2.ambientesReducer.ambientes, sensor_ambiente = _this$props2.sensorsReducer.sensor_ambiente, geneticasTraerTodos = _this$props2.geneticasTraerTodos, prototypesTraerTodos = _this$props2.prototypesTraerTodos, ambientesTraerTodos = _this$props2.ambientesTraerTodos;
+                _this$props2 = this.props, geneticas = _this$props2.geneticasReducer.geneticas, prototypes = _this$props2.prototypesReducer.prototypes, ambientes = _this$props2.ambientesReducer.ambientes, geneticasTraerTodos = _this$props2.geneticasTraerTodos, prototypesTraerTodos = _this$props2.prototypesTraerTodos, ambientesTraerTodos = _this$props2.ambientesTraerTodos;
                 if (!prototypes.length) prototypesTraerTodos();
                 if (!geneticas.length) geneticasTraerTodos();
                 if (!ambientes.length) ambientesTraerTodos();
@@ -103401,9 +103121,9 @@ var Prototypes = /*#__PURE__*/function (_Component) {
         className: "card-header card-agregar"
       }, "Agregar prototipo") : '', state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-agregar"
-      }, "Modificando prototipo: ", prototype.id) : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, "Modificando prototipo") : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header card-agregar"
-      }, "Eliminar prototipo: ", prototype.id) : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, "Eliminar prototipo") : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
       }, this.ponerFormulario())))))));
     }

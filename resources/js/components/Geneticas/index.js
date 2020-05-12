@@ -52,7 +52,6 @@ class Geneticas extends Component {
 			geneticasReducer: {
 				loading,
 				state_form,
-				genetica,
 			},
 			history: { goBack }
 		} = this.props
@@ -79,8 +78,8 @@ class Geneticas extends Component {
 								{loading ? <Spinner /> :
 									<div>
 										{state_form === 'crear' ? <div className="card-header card-agregar">Agregar genética</div> : ''}
-										{state_form === 'editar' ? <div className="card-header card-agregar">Modificando genética: {genetica.id}</div> : ''}
-										{state_form === 'borrar' ? <div className="card-header card-agregar">Eliminar genética: {genetica.id}</div> : ''}
+										{state_form === 'editar' ? <div className="card-header card-agregar">Modificando genética</div> : ''}
+										{state_form === 'borrar' ? <div className="card-header card-agregar">Eliminar genética</div> : ''}
 										<div className="card-body">
 											{this.ponerFormulario()}
 										</div>
