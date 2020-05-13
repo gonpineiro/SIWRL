@@ -35,7 +35,7 @@ class Sensors extends Component {
 	ponerContenido = () => {
 		const {
 			sensorstraerTodosPorAmbiente,
-			ambientesReducer: { 
+			ambientesReducer: {
 				ambiente
 			},
 			sensorsReducer: {
@@ -54,7 +54,7 @@ class Sensors extends Component {
 			} else {
 				sensorstraerTodosPorAmbiente(getId)
 			}
-		}		
+		}
 
 		if (loading && !sensors_ambiente.length) return <Spinner />
 
@@ -66,16 +66,17 @@ class Sensors extends Component {
 
 	render() {
 		const {
-			ambientesReducer: { 
+			ambientesReducer: {
 				ambiente
 			},
-			sensorsReducer: { 
-				loading, 
-				state_form, 
-				sensors_ambiente 
+			sensorsReducer: {
+				loading,
+				state_form,
+				sensors_ambiente
 			},
-			history: { goBack } } = this.props
-			
+			history: { goBack }
+		} = this.props
+
 		return (
 			<div className="container col-md-9">
 				<div className="row mt-2">
@@ -97,11 +98,21 @@ class Sensors extends Component {
 							<div>
 								{loading || !ambiente.inputs ? <Spinner /> :
 									<div>
-										{state_form === 'crear' ? <div className="card-header card-agregar">Agregar sensor 
-										{sensors_ambiente ? sensors_ambiente.length + " / " + ambiente.inputs : ''}</div> : ''}
-
-										{state_form === 'editar' ? <div className="card-header card-agregar">Modificando sensor</div> : ''}
-										{state_form === 'borrar' ? <div className="card-header card-agregar">Eliminar sensor</div> : ''}
+										<div className="card-header">
+											<div className="row mt-2">
+												<div className="col col-md-6 card-agregar" >
+													{state_form === 'crear' ? 'AGREGAR SENSOR' : ''}
+													{state_form === 'editar' ? 'MODIFICAR SENSOR' : ''}
+													{state_form === 'borrar' ? 'ELIMINAR SENSOR' : ''}
+												</div>
+												<div
+													className={(ambiente.sensors.length >= ambiente.inputs) ? 
+														"col col-md-6 center color-alert" : "col col-md-6 center"}
+												>
+													{sensors_ambiente ? sensors_ambiente.length + " / " + ambiente.inputs : ''}
+												</div>
+											</div>
+										</div>
 										<div className="card-body">
 											{this.ponerFormulario()}
 										</div>

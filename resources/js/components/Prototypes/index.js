@@ -86,14 +86,22 @@ class Prototypes extends Component {
 							<div>
 								{loading ? <Spinner /> :
 									<div>
-										{state_form === 'crear' ? <div className="card-header card-agregar">Agregar prototipo</div> : ''}
-										{state_form === 'editar' ? <div className="card-header card-agregar">Modificando prototipo</div> : ''}
-										{state_form === 'borrar' ? <div className="card-header card-agregar">Eliminar prototipo</div> : ''}
+										<div className="card-header">
+											<div className="row mt-2">
+												<div className="col col-md-6 card-agregar" >
+													{state_form === 'crear' ? 'AGREGAR PROTOTIPO' : ''}
+													{state_form === 'editar' ? 'MODIFICAR PROTOTIPO' : ''}
+													{state_form === 'borrar' ? 'ELIMINAR PROTOTIPO' : ''}
+												</div>
+												<div className="col col-md-6 center">
+
+												</div>
+											</div>
+										</div>
 										<div className="card-body">
 											{this.ponerFormulario()}
 										</div>
 									</div>}
-
 							</div>
 
 						</div>

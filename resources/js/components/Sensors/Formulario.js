@@ -13,7 +13,7 @@ import * as sensorsActions from '../../actions/sensorsActions'
 import * as ambientesActions from '../../actions/ambientesActions'
 
 const { agregar, editar, borrar, cambioSensorName, cambioSensorOutput, cambioSensorAmbiente, traerTodosPorAmbiente, cancelar } = sensorsActions;
-const { traerUno: ambienteTraerUno } = ambientesActions;
+const { traerUno: ambienteTraerUno, traerTodos: ambientesTraerTodos } = ambientesActions;
 
 const Formulario = (props) => {
    
@@ -25,6 +25,7 @@ const Formulario = (props) => {
          state_form,
          error_form,
       },
+      ambientesTraerTodos,
       ambienteTraerUno,
       traerTodosPorAmbiente,
       cambioSensorName,
@@ -60,7 +61,13 @@ const Formulario = (props) => {
 
       if (state_form === 'editar') editar(nuevo_sensor, id)
 
-   };
+      ambientesTraerTodos()
+   };   
+
+   const eliminar = () => {
+      borrar(id)
+      ambientesTraerTodos()
+   }
 
    const useStyles = makeStyles((theme) => ({
 
@@ -130,7 +137,7 @@ const Formulario = (props) => {
                         variant="contained"
                         color="primary"
                         onClick={guardar}
-                        disabled={(sensors_ambiente.length >= ambiente.inputs) ? true : false}
+                        disabled={(sensors_ambiente.length >= ambiente.inputs) && state_form == 'crear' ? true : false}
                      >
                         Guardar
                      </Button> : ''}
@@ -140,7 +147,7 @@ const Formulario = (props) => {
                         <Button
                            variant="contained"
                            color="primary"
-                           onClick={() => borrar(id)}
+                           onClick={eliminar}
                         >
                            Borrar
                         </Button>
@@ -172,6 +179,7 @@ const mapStateToProps = ({ sensorsReducer, ambientesReducer }) => {
 };
 
 const mapDispatchToProps = {
+   ambientesTraerTodos,
    cambioSensorName,
    cambioSensorOutput,
    cambioSensorAmbiente,

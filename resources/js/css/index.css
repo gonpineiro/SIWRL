@@ -1,93 +1,101 @@
 .center {
-	text-align: center;
+    text-align: center;
 }
 
 table {
-	font-size: 0.785rem;
+    font-size: 0.785rem;
 }
 
 .table td {
-	padding: 0.30rem;
-	justify-content: center;
-}
-.material-icons {
-	width: 0.30rem;
-	height: 0.30rem;
+    padding: 0.30rem;
+    justify-content: center;
 }
 
-.alert{
-	font-size: 10px;
+.material-icons {
+    width: 0.30rem;
+    height: 0.30rem;
+}
+
+.alert {
+    font-size: 10px;
 }
 
 .btn {
-	margin-right: 15px;
+    margin-right: 15px;
 }
+
 .btn-cancelar {
-	background-color: #5e2129;
-	border-color: #5e2129;
+    background-color: #5e2129;
+    border-color: #5e2129;
 }
 
 .material-icons {
-	font-family: 'Material Icons';
-	font-weight: normal;
-	font-style: normal;
-	font-size: 20px;  /* Preferred icon size */
-	display: inline-block;
-	line-height: 1;
-	text-transform: none;
-	letter-spacing: normal;
-	word-wrap: normal;
-	white-space: nowrap;
-	direction: ltr;
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 20px;
+    /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
 
-	/* Agregador por gon.pineiro */
-	margin-left: 10px;
-	margin-right: 10px;
-  
-	/* Support for all WebKit browsers. */
-	-webkit-font-smoothing: antialiased;
-	/* Support for Safari and Chrome. */
-	text-rendering: optimizeLegibility;
-  
-	/* Support for Firefox. */
-	-moz-osx-font-smoothing: grayscale;
-  
-	/* Support for IE. */
-	font-feature-settings: 'liga';
-  }
+    /* Agregador por gon.pineiro */
+    margin-left: 10px;
+    margin-right: 10px;
 
-  .link {
-	cursor: pointer;
-  } 
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
 
-  .link-string {
-	  color: #3e5f8a;
-	  font-weight: bold;
-  }  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
 
-  .card-agregar {
-	color: #3e5f8a;
-	font-weight: bold;
-	text-align: center;
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+.link {
+    cursor: pointer;
+}
+
+.link-string {
+    color: #3e5f8a;
+    font-weight: bold;
+}
+
+.card-agregar {
+    color: black;
+    font-weight: bold;
+    text-align: left;
 }
 
 .card-eliminar {
-	color: #5e2129;
-	font-weight: bold;
-	text-align: center;
+    color: #5e2129;
+    font-weight: bold;
+    text-align: left;
 }
 
 
-  .margin-button {
-	  margin-top: 15px;
-	  margin-left: 15px;
-	  margin-right: 15px;
-  }
-  .container {
-	  margin-top: 50px;
-  }
-  .text-derecha {
-	text-align: right;
-  } 
-  
+.margin-button {
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.container {
+    margin-top: 25px;
+}
+
+.text-derecha {
+    text-align: right;
+}
+
+.color-alert {
+    color: #5e2129;
+}
 

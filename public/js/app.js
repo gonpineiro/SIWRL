@@ -26376,7 +26376,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".center {\r\n\ttext-align: center;\r\n}\r\n\r\ntable {\r\n\tfont-size: 0.785rem;\r\n}\r\n\r\n.table td {\r\n\tpadding: 0.30rem;\r\n\tjustify-content: center;\r\n}\r\n.material-icons {\r\n\twidth: 0.30rem;\r\n\theight: 0.30rem;\r\n}\r\n\r\n.alert{\r\n\tfont-size: 10px;\r\n}\r\n\r\n.btn {\r\n\tmargin-right: 15px;\r\n}\r\n.btn-cancelar {\r\n\tbackground-color: #5e2129;\r\n\tborder-color: #5e2129;\r\n}\r\n\r\n.material-icons {\r\n\tfont-family: 'Material Icons';\r\n\tfont-weight: normal;\r\n\tfont-style: normal;\r\n\tfont-size: 20px;  /* Preferred icon size */\r\n\tdisplay: inline-block;\r\n\tline-height: 1;\r\n\ttext-transform: none;\r\n\tletter-spacing: normal;\r\n\tword-wrap: normal;\r\n\twhite-space: nowrap;\r\n\tdirection: ltr;\r\n\r\n\t/* Agregador por gon.pineiro */\r\n\tmargin-left: 10px;\r\n\tmargin-right: 10px;\r\n  \r\n\t/* Support for all WebKit browsers. */\r\n\t-webkit-font-smoothing: antialiased;\r\n\t/* Support for Safari and Chrome. */\r\n\ttext-rendering: optimizeLegibility;\r\n  \r\n\t/* Support for Firefox. */\r\n\t-moz-osx-font-smoothing: grayscale;\r\n  \r\n\t/* Support for IE. */\r\n\tfont-feature-settings: 'liga';\r\n  }\r\n\r\n  .link {\r\n\tcursor: pointer;\r\n  } \r\n\r\n  .link-string {\r\n\t  color: #3e5f8a;\r\n\t  font-weight: bold;\r\n  }  \r\n\r\n  .card-agregar {\r\n\tcolor: #3e5f8a;\r\n\tfont-weight: bold;\r\n\ttext-align: center;\r\n}\r\n\r\n.card-eliminar {\r\n\tcolor: #5e2129;\r\n\tfont-weight: bold;\r\n\ttext-align: center;\r\n}\r\n\r\n\r\n  .margin-button {\r\n\t  margin-top: 15px;\r\n\t  margin-left: 15px;\r\n\t  margin-right: 15px;\r\n  }\r\n  .container {\r\n\t  margin-top: 50px;\r\n  }\r\n  .text-derecha {\r\n\ttext-align: right;\r\n  } \r\n  \r\n\r\n", ""]);
+exports.push([module.i, ".center {\r\n    text-align: center;\r\n}\r\n\r\ntable {\r\n    font-size: 0.785rem;\r\n}\r\n\r\n.table td {\r\n    padding: 0.30rem;\r\n    justify-content: center;\r\n}\r\n\r\n.material-icons {\r\n    width: 0.30rem;\r\n    height: 0.30rem;\r\n}\r\n\r\n.alert {\r\n    font-size: 10px;\r\n}\r\n\r\n.btn {\r\n    margin-right: 15px;\r\n}\r\n\r\n.btn-cancelar {\r\n    background-color: #5e2129;\r\n    border-color: #5e2129;\r\n}\r\n\r\n.material-icons {\r\n    font-family: 'Material Icons';\r\n    font-weight: normal;\r\n    font-style: normal;\r\n    font-size: 20px;\r\n    /* Preferred icon size */\r\n    display: inline-block;\r\n    line-height: 1;\r\n    text-transform: none;\r\n    letter-spacing: normal;\r\n    word-wrap: normal;\r\n    white-space: nowrap;\r\n    direction: ltr;\r\n\r\n    /* Agregador por gon.pineiro */\r\n    margin-left: 10px;\r\n    margin-right: 10px;\r\n\r\n    /* Support for all WebKit browsers. */\r\n    -webkit-font-smoothing: antialiased;\r\n    /* Support for Safari and Chrome. */\r\n    text-rendering: optimizeLegibility;\r\n\r\n    /* Support for Firefox. */\r\n    -moz-osx-font-smoothing: grayscale;\r\n\r\n    /* Support for IE. */\r\n    font-feature-settings: 'liga';\r\n}\r\n\r\n.link {\r\n    cursor: pointer;\r\n}\r\n\r\n.link-string {\r\n    color: #3e5f8a;\r\n    font-weight: bold;\r\n}\r\n\r\n.card-agregar {\r\n    color: black;\r\n    font-weight: bold;\r\n    text-align: left;\r\n}\r\n\r\n.card-eliminar {\r\n    color: #5e2129;\r\n    font-weight: bold;\r\n    text-align: left;\r\n}\r\n\r\n\r\n.margin-button {\r\n    margin-top: 15px;\r\n    margin-left: 15px;\r\n    margin-right: 15px;\r\n}\r\n\r\n.container {\r\n    margin-top: 25px;\r\n}\r\n\r\n.text-derecha {\r\n    text-align: right;\r\n}\r\n\r\n.color-alert {\r\n    color: #5e2129;\r\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -101697,9 +101697,9 @@ var Formulario = function Formulario(props) {
     onClick: function onClick() {
       return borrar(id);
     }
-  }, "Borrar"), error_form && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+  }, "Borrar")) : '', error_form && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
     className: "text-danger"
-  }, "Existe un registro vinculado.")) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Existe un registro vinculado.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-group col-md-6"
   }, state_form === 'editar' || state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     variant: "contained",
@@ -101739,14 +101739,22 @@ var mapDispatchToProps = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/ambientesActions */ "./resources/js/actions/ambientesActions.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/ambientesActions */ "./resources/js/actions/ambientesActions.js");
+/* harmony import */ var _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/sensorsActions */ "./resources/js/actions/sensorsActions.js");
 
 
 
+
+
+var traerUno = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_3__["traerUno"],
+    traerUnoBorrar = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_3__["traerUnoBorrar"];
+var traerTodosPorAmbiente = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_4__["traerTodosPorAmbiente"];
 
 var Table = function Table(props) {
-  var ambientes = props.ambientes,
+  var ambientes = props.ambientesReducer.ambientes,
+      traerTodosPorAmbiente = props.traerTodosPorAmbiente,
       traerUno = props.traerUno,
       traerUnoBorrar = props.traerUnoBorrar;
 
@@ -101754,7 +101762,13 @@ var Table = function Table(props) {
     return ambientes.map(function (ambiente, key) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
         key: key
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, ambiente.id), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, ambiente.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, ambiente.codigo), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, ambiente.inputs), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, ambiente.id), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, ambiente.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, ambiente.codigo), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/ambientes/sensor/".concat(ambiente.id),
+        onClick: function onClick() {
+          return traerTodosPorAmbiente(ambiente.id);
+        },
+        className: ambiente.sensors.length >= ambiente.inputs ? "color-alert" : ''
+      }, ambiente.sensors.length, " / ", ambiente.inputs)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "material-icons link",
         onClick: function onClick() {
           return traerUno(ambiente.id);
@@ -101773,11 +101787,21 @@ var Table = function Table(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "ID"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Nombre"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "C\xF3digo"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Sensores"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Accion"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, addRow())));
 };
 
-var mapStateToProps = function mapStateToProps(reducers) {
-  return reducers.ambientesReducer;
+var mapStateToProps = function mapStateToProps(_ref) {
+  var sensorsReducer = _ref.sensorsReducer,
+      ambientesReducer = _ref.ambientesReducer;
+  return {
+    sensorsReducer: sensorsReducer,
+    ambientesReducer: ambientesReducer
+  };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_2__)(Table));
+var mapDispatchToProps = {
+  traerTodosPorAmbiente: traerTodosPorAmbiente,
+  traerUno: traerUno,
+  traerUnoBorrar: traerUnoBorrar
+};
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps, mapDispatchToProps)(Table));
 
 /***/ }),
 
@@ -101928,13 +101952,15 @@ var Ambientes = /*#__PURE__*/function (_Component) {
         className: "col col-md-4"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, state_form === 'crear' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-header card-agregar"
-      }, "Agregar ambiente") : '', state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-header card-agregar"
-      }, "Modificando ambiente ") : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-header card-agregar"
-      }, "Eliminar ambiente ") : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card-header"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "row mt-2"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col col-md-6 card-agregar"
+      }, state_form === 'crear' ? 'AGREGAR AMBIENTE' : '', state_form === 'editar' ? 'MODIFICAR AMBIENTE' : '', state_form === 'borrar' ? 'ELIMINAR AMBIENTE' : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col col-md-6 center"
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
       }, this.ponerFormulario())))))));
     }
@@ -102540,13 +102566,15 @@ var Geneticas = /*#__PURE__*/function (_Component) {
         className: "col col-md-4"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, state_form === 'crear' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-header card-agregar"
-      }, "Agregar gen\xE9tica") : '', state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-header card-agregar"
-      }, "Modificando gen\xE9tica") : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-header card-agregar"
-      }, "Eliminar gen\xE9tica") : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card-header"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "row mt-2"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col col-md-6 card-agregar"
+      }, state_form === 'crear' ? 'AGREGAR GENÉTICA' : '', state_form === 'editar' ? 'MODIFICAR GENÉTICA' : '', state_form === 'borrar' ? 'ELIMINAR GENÉTICA' : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col col-md-6 center"
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
       }, this.ponerFormulario())))))));
     }
@@ -102977,13 +103005,15 @@ var Marcas = /*#__PURE__*/function (_Component) {
         className: "col col-md-4"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, state_form === 'crear' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-header card-agregar"
-      }, "Agregar marca") : '', state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-header card-agregar"
-      }, "Modificando marca") : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-header card-agregar"
-      }, "Eliminar marca") : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card-header"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "row mt-2"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col col-md-6 card-agregar"
+      }, state_form === 'crear' ? 'AGREGAR MARCA' : '', state_form === 'editar' ? 'MODIFICAR MARCA' : '', state_form === 'borrar' ? 'ELIMINAR MARCA' : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col col-md-6 center"
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
       }, this.ponerFormulario())))))));
     }
@@ -103521,13 +103551,15 @@ var Prototypes = /*#__PURE__*/function (_Component) {
         className: "col col-md-4"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, state_form === 'crear' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-header card-agregar"
-      }, "Agregar prototipo") : '', state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-header card-agregar"
-      }, "Modificando prototipo") : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-header card-agregar"
-      }, "Eliminar prototipo") : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card-header"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "row mt-2"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col col-md-6 card-agregar"
+      }, state_form === 'crear' ? 'AGREGAR PROTOTIPO' : '', state_form === 'editar' ? 'MODIFICAR PROTOTIPO' : '', state_form === 'borrar' ? 'ELIMINAR PROTOTIPO' : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col col-md-6 center"
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
       }, this.ponerFormulario())))))));
     }
@@ -103685,7 +103717,8 @@ var agregar = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_10__["agregar"],
     cambioSensorAmbiente = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_10__["cambioSensorAmbiente"],
     traerTodosPorAmbiente = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_10__["traerTodosPorAmbiente"],
     cancelar = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_10__["cancelar"];
-var ambienteTraerUno = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_11__["traerUno"];
+var ambienteTraerUno = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_11__["traerUno"],
+    ambientesTraerTodos = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_11__["traerTodos"];
 
 var Formulario = function Formulario(props) {
   var _props$ambientesReduc = props.ambientesReducer,
@@ -103700,6 +103733,7 @@ var Formulario = function Formulario(props) {
       sensors_ambiente = _props$sensorsReducer.sensors_ambiente,
       state_form = _props$sensorsReducer.state_form,
       error_form = _props$sensorsReducer.error_form,
+      ambientesTraerTodos = props.ambientesTraerTodos,
       ambienteTraerUno = props.ambienteTraerUno,
       traerTodosPorAmbiente = props.traerTodosPorAmbiente,
       cambioSensorName = props.cambioSensorName,
@@ -103734,6 +103768,12 @@ var Formulario = function Formulario(props) {
     };
     if (state_form === 'crear') agregar(nuevo_sensor);
     if (state_form === 'editar') editar(nuevo_sensor, id);
+    ambientesTraerTodos();
+  };
+
+  var eliminar = function eliminar() {
+    borrar(id);
+    ambientesTraerTodos();
   };
 
   var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__["makeStyles"])(function (theme) {
@@ -103799,13 +103839,11 @@ var Formulario = function Formulario(props) {
     variant: "contained",
     color: "primary",
     onClick: guardar,
-    disabled: sensors_ambiente.length >= ambiente.inputs ? true : false
+    disabled: sensors_ambiente.length >= ambiente.inputs && state_form == 'crear' ? true : false
   }, "Guardar") : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     variant: "contained",
     color: "primary",
-    onClick: function onClick() {
-      return borrar(id);
-    }
+    onClick: eliminar
   }, "Borrar")) : '', error_form && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
     className: "text-danger"
   }, "Existe un registro vinculado.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -103827,6 +103865,7 @@ var mapStateToProps = function mapStateToProps(_ref) {
 };
 
 var mapDispatchToProps = {
+  ambientesTraerTodos: ambientesTraerTodos,
   cambioSensorName: cambioSensorName,
   cambioSensorOutput: cambioSensorOutput,
   cambioSensorAmbiente: cambioSensorAmbiente,
@@ -103853,7 +103892,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/sensorsActions */ "./resources/js/actions/sensorsActions.js");
+/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
+/* harmony import */ var _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/sensorsActions */ "./resources/js/actions/sensorsActions.js");
+
 
 
 
@@ -103861,7 +103902,8 @@ __webpack_require__.r(__webpack_exports__);
 var Table = function Table(props) {
   var sensors_ambiente = props.sensors_ambiente,
       traerUno = props.traerUno,
-      traerUnoBorrar = props.traerUnoBorrar;
+      traerUnoBorrar = props.traerUnoBorrar,
+      loading = props.loading;
 
   var addRow = function addRow() {
     return sensors_ambiente.map(function (sensor, key) {
@@ -103881,6 +103923,7 @@ var Table = function Table(props) {
     });
   };
 
+  if (loading) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_2__["default"], null);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
     className: "table table-hover"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "ID"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Nombre"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Output"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Accion"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, addRow())));
@@ -103890,7 +103933,7 @@ var mapStateToProps = function mapStateToProps(reducers) {
   return reducers.sensorsReducer;
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_2__)(Table));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_3__)(Table));
 
 /***/ }),
 
@@ -104069,13 +104112,15 @@ var Sensors = /*#__PURE__*/function (_Component) {
         className: "col col-md-4"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, loading || !ambiente.inputs ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, state_form === 'crear' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-header card-agregar"
-      }, "Agregar sensor", sensors_ambiente ? sensors_ambiente.length + " / " + ambiente.inputs : '') : '', state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-header card-agregar"
-      }, "Modificando sensor") : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-header card-agregar"
-      }, "Eliminar sensor") : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, loading || !ambiente.inputs ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card-header"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "row mt-2"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col col-md-6 card-agregar"
+      }, state_form === 'crear' ? 'AGREGAR SENSOR' : '', state_form === 'editar' ? 'MODIFICAR SENSOR' : '', state_form === 'borrar' ? 'ELIMINAR SENSOR' : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: ambiente.sensors.length >= ambiente.inputs ? "col col-md-6 center color-alert" : "col col-md-6 center"
+      }, sensors_ambiente ? sensors_ambiente.length + " / " + ambiente.inputs : ''))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
       }, this.ponerFormulario())))))));
     }
@@ -104450,11 +104495,14 @@ var Users = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-header card-agregar"
-      }, "Agregar usuario ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
-        fontSize: "small",
-        onClick: goBack
-      })), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "card-header"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "row mt-2"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col col-md-6 card-agregar"
+      }, state_form === 'crear' ? 'AGREGAR USUARIO' : '', state_form === 'editar' ? 'MODIFICAR USUARIO' : '', state_form === 'borrar' ? 'ELIMINAR USUARIO' : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col col-md-6 center"
+      }))), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
       }, this.ponerFormulario()))))));
     }

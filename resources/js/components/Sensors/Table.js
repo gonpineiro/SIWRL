@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import Spinner from '../General/Spinner';
 
 import * as sensorsActions from '../../actions/sensorsActions'
 
 const Table = (props) => {
-  const { sensors_ambiente, traerUno, traerUnoBorrar } = props
+  const { sensors_ambiente, traerUno, traerUnoBorrar, loading } = props
 
   const addRow = () => sensors_ambiente.map((sensor, key) => (
     <tr key={key}>
@@ -23,6 +24,8 @@ const Table = (props) => {
       </td>
     </tr>
   ))
+  
+  if (loading) return <Spinner />
 
   return (
     <div>

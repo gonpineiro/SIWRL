@@ -32,7 +32,7 @@ class Marcas extends Component {
 		return (
 			<div className="container col-md-9">
 				<div className="row mt-2">
-				<div className="col col-md-8">
+					<div className="col col-md-8">
 						<div>
 							<div className="row mt-2">
 								<div className="col col-md-6">
@@ -50,9 +50,18 @@ class Marcas extends Component {
 							<div>
 								{loading ? <Spinner /> :
 									<div>
-										{state_form === 'crear' ? <div className="card-header card-agregar">Agregar marca</div> : ''}
-										{state_form === 'editar' ? <div className="card-header card-agregar">Modificando marca</div> : ''}
-										{state_form === 'borrar' ? <div className="card-header card-agregar">Eliminar marca</div> : ''}
+										<div className="card-header">
+											<div className="row mt-2">
+												<div className="col col-md-6 card-agregar" >
+													{state_form === 'crear' ? 'AGREGAR MARCA' : ''}
+													{state_form === 'editar' ? 'MODIFICAR MARCA' : ''}
+													{state_form === 'borrar' ? 'ELIMINAR MARCA' : ''}
+												</div>
+												<div className="col col-md-6 center">
+
+												</div>
+											</div>
+										</div>
 										<div className="card-body">
 											{this.ponerFormulario()}
 										</div>

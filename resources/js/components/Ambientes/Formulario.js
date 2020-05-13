@@ -10,7 +10,7 @@ import * as ambientesActions from '../../actions/ambientesActions'
 const { agregar, editar, borrar, cambioAmbienteName, cambioAmbienteCodigo, cambioAmbienteInputs, cancelar } = ambientesActions;
 
 const Formulario = (props) => {
-   
+
    const {
       ambientesReducer: {
          ambiente: { id, name, codigo, inputs },
@@ -57,8 +57,8 @@ const Formulario = (props) => {
    }));
 
    const classes = useStyles();
-    
-   
+
+
    return (
       <FormControl >
          <div className="form-row">
@@ -126,9 +126,9 @@ const Formulario = (props) => {
                         >
                            Borrar
                         </Button>
-                        {error_form && <small className="text-danger">Existe un registro vinculado.</small>}
                      </div>
                      : ''}
+                  {error_form && <small className="text-danger">Existe un registro vinculado.</small>}
 
                </div >
 

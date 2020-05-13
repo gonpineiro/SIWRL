@@ -23,11 +23,11 @@ export const traerTodos = () => async (dispatch) => {
     
     dispatch({
         type: RECARGA
-    })  
+    })
 
     try {        
         const response = await axios.get(URL + 'ambiente')
-
+        
         dispatch({
             type: TRAER_TODOS,
             payload: response.data

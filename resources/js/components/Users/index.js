@@ -52,8 +52,17 @@ class Users extends Component {
 					<div className="col col-md-4">
 						<div className="card">
 							<div>
-								<div className="card-header card-agregar">
-									Agregar usuario <KeyboardReturnIcon fontSize="small" onClick={goBack} />
+								<div className="card-header">
+									<div className="row mt-2">
+										<div className="col col-md-6 card-agregar" >
+											{state_form === 'crear' ? 'AGREGAR USUARIO' : ''}
+											{state_form === 'editar' ? 'MODIFICAR USUARIO' : ''}
+											{state_form === 'borrar' ? 'ELIMINAR USUARIO' : ''}
+										</div>
+										<div className="col col-md-6 center">
+
+										</div>
+									</div>
 								</div>
 								{loading ? <Spinner /> :
 									<div className="card-body">
