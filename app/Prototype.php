@@ -12,7 +12,7 @@ class Prototype extends Model
     }
 
     public function ambiente(){
-        return $this->belongsTo('App\Ambiente');
+        return $this->belongsTo('App\Ambiente')->with('monitors');;
     }
 
     public function sensor(){

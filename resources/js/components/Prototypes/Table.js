@@ -10,10 +10,17 @@ const { traerUno: prototypesTraerUno, traerUnoBorrar } = protoypesActions;
 const Table = (props) => {
   const { 
     ambientesTraerUno,
-    prototypesReducer: { prototypes }, 
+    prototypesReducer: { 
+      prototypes: { ambiente }, 
+      prototypes 
+    }, 
     traerUnoBorrar,
     prototypesTraerUno
   } = props
+
+  const traerUnoDetalle = (prototype) => {
+    console.log(prototype)
+  }
 
   const traerUnoEditar = (prototype) => {
     ambientesTraerUno(prototype.ambiente.id)
@@ -25,14 +32,23 @@ const Table = (props) => {
     traerUnoBorrar(prototype.id)
   }
 
-  const addRow = () => prototypes.map((prototype, key) => (
-    <tr key={key}>
+  const traerValorSensor = (prototype) => {
+    const output_sensor = prototype.sensor.output
+    const monitor = prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1]
+    return monitor['s' + output_sensor]
+  }
+
+  const addRow = () => prototypes.map((prototype, key) => (    
+    <tr key={key} onClick={() => traerUnoDetalle(prototype)}>
       <td>{prototype.id}</td>
       <td>{prototype.name}</td>
       <td>{prototype.genetica.name}</td>
       <td>{prototype.genetica.marca.name}</td>
       <td>{prototype.ambiente ? prototype.ambiente.codigo : ''}</td>
+      <td>{prototype.ambiente.monitors ? prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1].temp : ''} C°</td>
+      <td>{prototype.ambiente.monitors ? prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1].hume : ''} %</td>
       <td>{prototype.sensor ? prototype.sensor.name : ''}</td>
+      <td>{prototype.ambiente.monitors && prototype.sensor ? traerValorSensor(prototype) : ''} %</td>
       <td>
         <i
           className="material-icons link"
@@ -56,11 +72,15 @@ const Table = (props) => {
             <th>Genetica</th>
             <th>Marca</th>
             <th>Ambiente</th>
+            <th>Temp</th>
+            <th>Hume</th>
             <th>Sensor</th>
+            <th>Hume T.</th>
             <th>Accion</th>
           </tr>
         </thead>
         <tbody>
+          
           {addRow()}
         </tbody>
       </table>

@@ -11,7 +11,7 @@ use App\Sensor;
 class AmbienteController extends Controller
 {
     public function index(){
-        $ambientes = Ambiente::with('sensors')->get();
+        $ambientes = Ambiente::with('sensors')->with('monitors')->get();
         return response()->json($ambientes, 200);
     }
 
