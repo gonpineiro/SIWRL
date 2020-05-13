@@ -4,6 +4,7 @@ export const LOADING = 'prototypes_cargando'
 export const ERROR = 'prototypes_error'
 export const ERROR_FORM = 'prototypes_error_form'
 export const CAMBIO_ESTADO_FORM = 'prototypes_cambio_estado_form'
+export const CAMBIAR_ESTADO_DETALLE = 'prototypes_cambio_estado_detalle'
 
 export const CAMBIO_PROTOTYPE_ID = 'prototypes_cambio_prototype_id'
 export const CAMBIO_PROTOTYPE_NAME = 'prototypes_cambio_prototype_name'

@@ -5,6 +5,7 @@ import {
   ERROR,
   ERROR_FORM,
   CAMBIO_ESTADO_FORM,
+  CAMBIAR_ESTADO_DETALLE,
 
   CAMBIO_PROTOTYPE_ID,
   CAMBIO_PROTOTYPE_NAME,
@@ -217,6 +218,13 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         loading: true,
         recargar_table: false,
+      };
+
+    case CAMBIAR_ESTADO_DETALLE:
+      return {
+        ...state,
+        loading: true,
+        state_form: 'detalle',
       };
 
     default: return state

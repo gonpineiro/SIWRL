@@ -5,10 +5,11 @@ import * as protoypesActions from '../../actions/protoypesActions'
 import * as ambientesActions from '../../actions/ambientesActions'
 
 const { traerUno: ambientesTraerUno } = ambientesActions;
-const { traerUno: prototypesTraerUno, traerUnoBorrar } = protoypesActions;
+const { traerUno: prototypesTraerUno, traerUnoBorrar, traerDetalle } = protoypesActions;
 
 const Table = (props) => {
   const { 
+    traerDetalle,
     ambientesTraerUno,
     prototypesReducer: { 
       prototypes: { ambiente }, 
@@ -19,7 +20,7 @@ const Table = (props) => {
   } = props
 
   const traerUnoDetalle = (prototype) => {
-    console.log(prototype)
+    traerDetalle(prototype.id)
   }
 
   const traerUnoEditar = (prototype) => {
@@ -45,10 +46,10 @@ const Table = (props) => {
       <td>{prototype.genetica.name}</td>
       <td>{prototype.genetica.marca.name}</td>
       <td>{prototype.ambiente ? prototype.ambiente.codigo : ''}</td>
-      <td>{prototype.ambiente.monitors ? prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1].temp : ''} C°</td>
-      <td>{prototype.ambiente.monitors ? prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1].hume : ''} %</td>
+      <td>{prototype.ambiente.monitors.length ? prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1].temp + 'C°': ''} </td>
+      <td>{prototype.ambiente.monitors.length ? prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1].hume + '%': ''} </td>
       <td>{prototype.sensor ? prototype.sensor.name : ''}</td>
-      <td>{prototype.ambiente.monitors && prototype.sensor ? traerValorSensor(prototype) : ''} %</td>
+      <td>{prototype.ambiente.monitors.length && prototype.sensor ? traerValorSensor(prototype) + '%': ''}</td>
       <td>
         <i
           className="material-icons link"
@@ -94,6 +95,7 @@ const mapStateToProps = ({ prototypesReducer, ambientesReducer }) => {
 };
 
 const mapDispatchToProps = {
+  traerDetalle,
 	ambientesTraerUno,
   prototypesTraerUno,
   traerUnoBorrar

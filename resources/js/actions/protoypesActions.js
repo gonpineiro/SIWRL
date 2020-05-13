@@ -6,6 +6,7 @@ import {
     ERROR,
     ERROR_FORM,
     CAMBIO_ESTADO_FORM,
+    CAMBIAR_ESTADO_DETALLE,
 
     CAMBIO_PROTOTYPE_ID,
     CAMBIO_PROTOTYPE_NAME,
@@ -18,7 +19,7 @@ import {
     CAMBIO_PROTOTYPE_FECHA_ESTADO_D,
     CAMBIO_PROTOTYPE_FECHA_ESTADO_E,
     CAMBIO_PROTOTYPE_CANTIDAD,
-    
+
     CANCELAR,
     RECARGA,
     GUARDAR
@@ -56,7 +57,7 @@ export const traerUno = (id) => async (dispatch) => {
     })
 
 
-    try {       
+    try {
         const response = await axios.get(URL + 'prototype/' + id)
         const { 0: prototype } = response.data
 
@@ -193,7 +194,7 @@ export const traerUnoBorrar = (id) => async (dispatch) => {
 
 
     try {
-        const response = await axios.get(URL + 'prototype/' + id)        
+        const response = await axios.get(URL + 'prototype/' + id)
         const { 0: prototype } = response.data
 
         dispatch({
@@ -232,6 +233,34 @@ export const cancelar = () => (dispatch) => {
     dispatch({
         type: CANCELAR
     })
+}
+
+export const traerTabla = () => (dispatch) => {
+    dispatch({
+        type: CAMBIO_ESTADO_FORM,
+        payload: 'crear'
+    })
+}
+
+export const traerDetalle = (id) => async (dispatch) => {
+
+    dispatch({
+        type: CAMBIAR_ESTADO_DETALLE
+    })
+
+    try {
+        const response = await axios.get(URL + 'prototype/' + id)
+        const { 0: prototype } = response.data
+        console.log(prototype)
+        dispatch({
+            type: TRAER_UNO,
+            payload: prototype
+        })
+
+    } catch (error) {
+        console.log(error)
+    }
+
 }
 
 

@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
 import Table from './Table'
 import Formulario from './Formulario'
+import Detalle from './Detalle'
 import Spinner from '../General/Spinner';
 
 import * as prototypesActions from '../../actions/protoypesActions'
@@ -55,7 +56,24 @@ class Prototypes extends Component {
 	}
 	ponerFormulario = () => <Formulario />
 
+	detallePrototype = () => <Detalle />	
+
 	render() {
+		const {
+			prototypesReducer: {
+				state_form,
+				loading,
+				prototype,
+			},
+			history: { goBack }
+		} = this.props
+
+		if (state_form != 'detalle') return this.index()
+		if (state_form == 'detalle') return this.detallePrototype()
+
+	}
+
+	index = () => {
 		const {
 			prototypesReducer: {
 				state_form,
@@ -109,8 +127,9 @@ class Prototypes extends Component {
 
 				</div>
 			</div>
-		);
+		)
 	}
+
 }
 
 const mapStateToProps = ({ prototypesReducer, geneticasReducer, ambientesReducer, sensorsReducer }) => {
