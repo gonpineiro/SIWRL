@@ -1,26 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import MenuRow from '../General/MenuRow';
 
 import * as usersActions from '../../actions/usersActions'
 
 const Table = (props) => {
-  const { users, traerUno, traerUnoBorrar } = props
+  const { users } = props
 
   const addRow = () => users.map((user, key) => (
     <tr key={key}>
       <td>{user.id}</td>
-      <td>{user.name}</td>
-      <td>{user.email}</td>
-      <td>
-          <i 
-          className="material-icons link"
-          onClick={() => traerUno(user.id)}
-          >edit</i>
-          <i 
-          onClick={() => traerUnoBorrar(user.id)}
-          className="material-icons link"
-          >delete</i>
+      <td>{
+        <MenuRow
+          props={props}
+          data={user}
+        />
+      }
       </td>
+      <td>{user.email}</td>
     </tr>
   ))
 
@@ -32,7 +29,6 @@ const Table = (props) => {
             <th>ID</th>
             <th>Nombre</th>
             <th>Email</th>
-            <th>Accion</th>
           </tr>
         </thead>
         <tbody>

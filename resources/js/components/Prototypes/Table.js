@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import MenuRow from './General/MenuRow';
 
 import * as protoypesActions from '../../actions/protoypesActions'
 import * as ambientesActions from '../../actions/ambientesActions'
@@ -40,26 +41,24 @@ const Table = (props) => {
   }
 
   const addRow = () => prototypes.map((prototype, key) => (    
-    <tr key={key} onClick={() => traerUnoDetalle(prototype)}>
+    <tr key={key} >
       <td>{prototype.id}</td>
-      <td>{prototype.name}</td>
+      <td>{
+        <MenuRow
+          data={prototype}
+          traerUnoDetalle={traerUnoDetalle}
+          traerUnoEditar={traerUnoEditar}
+          traerUnoEliminar={traerUnoEliminar}
+        />
+      }
+      </td>
       <td>{prototype.genetica.name}</td>
       <td>{prototype.genetica.marca.name}</td>
-      <td>{prototype.ambiente ? prototype.ambiente.codigo : ''}</td>
+      {/* <td>{prototype.ambiente ? prototype.ambiente.codigo : ''}</td> */}
       <td>{prototype.ambiente.monitors.length ? prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1].temp + 'C°': ''} </td>
       <td>{prototype.ambiente.monitors.length ? prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1].hume + '%': ''} </td>
-      <td>{prototype.sensor ? prototype.sensor.name : ''}</td>
+      {/* <td>{prototype.sensor ? prototype.sensor.name : ''}</td> */}
       <td>{prototype.ambiente.monitors.length && prototype.sensor ? traerValorSensor(prototype) + '%': ''}</td>
-      <td>
-        <i
-          className="material-icons link"
-          onClick={() => traerUnoEditar(prototype)}
-        >edit</i>
-        <i
-          onClick={() => traerUnoEliminar(prototype)}
-          className="material-icons link"
-        >delete</i>
-      </td>
     </tr>
   ))
 
@@ -72,12 +71,11 @@ const Table = (props) => {
             <th>Nombre</th>
             <th>Genetica</th>
             <th>Marca</th>
-            <th>Ambiente</th>
+            {/* <th>Ambiente</th> */}
             <th>Temp</th>
             <th>Hume</th>
-            <th>Sensor</th>
+            {/* <th>Sensor</th> */}
             <th>Hume T.</th>
-            <th>Accion</th>
           </tr>
         </thead>
         <tbody>

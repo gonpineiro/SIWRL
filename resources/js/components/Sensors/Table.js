@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import Spinner from '../General/Spinner';
+import MenuRow from '../General/MenuRow';
 
 import * as sensorsActions from '../../actions/sensorsActions'
 
@@ -10,18 +11,14 @@ const Table = (props) => {
   const addRow = () => sensors_ambiente.map((sensor, key) => (
     <tr key={key}>
       <td>{sensor.id}</td>
-      <td>{sensor.name}</td>
-      <td>{sensor.output}</td>
-      <td>
-        <i
-          className="material-icons link"
-          onClick={() => traerUno(sensor.id)}
-        >edit</i>
-        <i
-          onClick={() => traerUnoBorrar(sensor.id)}
-          className="material-icons link"
-        >delete</i>
+      <td>{
+        <MenuRow
+          props={props}
+          data={sensor}
+        />
+      }
       </td>
+      <td>{sensor.output}</td>
     </tr>
   ))
   
@@ -35,7 +32,6 @@ const Table = (props) => {
             <th>ID</th>
             <th>Nombre</th>
             <th>Output</th>
-            <th>Accion</th>
           </tr>
         </thead>
         <tbody>
