@@ -50,3 +50,6 @@ Route::get('/sensor/{id}', 'SensorController@edit');
 Route::put('/sensor/{id}', 'SensorController@update');
 Route::post('/sensor', 'SensorController@store');
 Route::delete('/sensor/{id}', 'SensorController@destroy');
+
+
+Route::post('/monitor', 'MonitorController@store');

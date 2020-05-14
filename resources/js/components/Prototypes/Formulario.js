@@ -23,6 +23,7 @@ const {
    cambioPrototypeGenetica,
    cambioPrototypeAmbiente,
    cambioPrototypeSensor,
+   cambioPrototypeFechaA,
 
    borrar,
    agregar,
@@ -49,16 +50,17 @@ const Formulario = (props) => {
       editar,
       cancelar
    } = props;
-   console.log(props)
+   
    const handleCambioPrototypeName = (event) => props.cambioPrototypeName(event.target.value);
 
    const handleCambioPrototypeGenetica = (event) => props.cambioPrototypeGenetica(event.target.value);
 
-   const handleCambioPrototypeAmbiente = (event) => {
+   const handleCambioPrototypeAmbiente = (event) => {      
       props.cambioPrototypeAmbiente(event.target.value);
       if (event.target.value) ambientesTraerUno(event.target.value)
-
    }
+
+   const handleCambioPrototypeFechaA = (event) => props.cambioPrototypeFechaA(event.target.value)   
 
    const handleCambioPrototypeSensor = (event) => props.cambioPrototypeSensor(event.target.value);
 
@@ -69,7 +71,8 @@ const Formulario = (props) => {
          name: name,
          genetica_id: genetica_id,
          ambiente_id: ambiente_id,
-         sensor_id: sensor_id
+         sensor_id: sensor_id,
+         fecha_etapa_a: fecha_etapa_a
       };
 
       if (state_form === 'crear') agregar(nuevo_prototype);
@@ -204,11 +207,13 @@ const Formulario = (props) => {
                   id="date"
                   label="Fecha Implante"
                   type="date"
-                  defaultValue={fecha_etapa_a}
+                  onChange={handleCambioPrototypeFechaA}
+                  value={fecha_etapa_a || ''}
                   className={classes.textField || ''}
                   InputLabelProps={{
                      shrink: true,
                   }}
+                  disabled={state_form === 'borrar' || state_form === 'editar'? true : false}
                />
             </FormControl>
 
@@ -271,6 +276,7 @@ const mapDispatchToProps = {
    cambioPrototypeGenetica,
    cambioPrototypeAmbiente,
    cambioPrototypeSensor,
+   cambioPrototypeFechaA,
 
    borrar,
    agregar,

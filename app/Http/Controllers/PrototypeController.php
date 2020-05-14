@@ -37,6 +37,7 @@ class PrototypeController extends Controller
         $data->genetica_id = $request->get('genetica_id');
         $data->ambiente_id = $request->get('ambiente_id');
         $data->sensor_id = $request->get('sensor_id');
+        $data->fecha_etapa_a = $request->get('fecha_etapa_a');
         $data->save();
 
         return response()->json($data, 200);

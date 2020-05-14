@@ -108,7 +108,7 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         prototype: {
           ...state.prototype,
-          fecha_estapa_a: action.payload
+          fecha_etapa_a: action.payload
         }
       };
 
@@ -117,7 +117,7 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         prototype: {
           ...state.prototype,
-          fecha_estapa_b: action.payload
+          fecha_etapa_b: action.payload
         }
       };
 
@@ -126,7 +126,7 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         prototype: {
           ...state.prototype,
-          fecha_estapa_c: action.payload
+          fecha_etapa_c: action.payload
         }
       };
 
@@ -135,7 +135,7 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         prototype: {
           ...state.prototype,
-          fecha_estapa_d: action.payload
+          fecha_etapa_d: action.payload
         }
       };
 
@@ -144,7 +144,7 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         prototype: {
           ...state.prototype,
-          fecha_estapa_e: action.payload
+          fecha_etapa_e: action.payload
         }
       };
 
@@ -177,11 +177,11 @@ export default (state = INITIAL_STATE, action) => {
           genetica_id: '',
           ambiente_id: '',
           sensor_id: '',
-          fecha_estapa_a: '',
-          fecha_estapa_b: '',
-          fecha_estapa_c: '',
-          fecha_estapa_d: '',
-          fecha_estapa_e: '',
+          fecha_etapa_a: '',
+          fecha_etapa_b: '',
+          fecha_etapa_c: '',
+          fecha_etapa_d: '',
+          fecha_etapa_e: '',
           cantidad: '',
           sensor: ''
         },
@@ -202,11 +202,11 @@ export default (state = INITIAL_STATE, action) => {
           genetica_id: '',
           ambiente_id: '',
           sensor_id: '',
-          fecha_estapa_a: '',
-          fecha_estapa_b: '',
-          fecha_estapa_c: '',
-          fecha_estapa_d: '',
-          fecha_estapa_e: '',
+          fecha_etapa_a: '',
+          fecha_etapa_b: '',
+          fecha_etapa_c: '',
+          fecha_etapa_d: '',
+          fecha_etapa_e: '',
           cantidad: '',
           sensor: ''
         },

@@ -57,7 +57,6 @@ const Table = (props) => {
       }
       </td>
       <td>{prototype.genetica.name}</td>
-      <td>{prototype.genetica.marca.name}</td>
       <td className="center">{prototype.ambiente.monitors.length ? prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1].temp + 'C°' : ''} </td>
       <td className="center">{prototype.ambiente.monitors.length ? prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1].hume + '%' : ''} </td>
       <td className="center">{prototype.ambiente.monitors.length && prototype.sensor ? traerValorSensor(prototype) + '%' : ''}</td>
@@ -73,17 +72,13 @@ const Table = (props) => {
             <th>ID</th>
             <th>Nombre</th>
             <th>Genetica</th>
-            <th>Marca</th>
-            {/* <th>Ambiente</th> */}
             <th className="center">Temp</th>
             <th className="center">Hume</th>
-            {/* <th>Sensor</th> */}
             <th className="center">Hume T.</th>
             <th className="center">Total dias.</th>
           </tr>
         </thead>
         <tbody>
-
           {addRow()}
         </tbody>
       </table>

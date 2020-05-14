@@ -251,7 +251,7 @@ export const traerDetalle = (id) => async (dispatch) => {
     try {
         const response = await axios.get(URL + 'prototype/' + id)
         const { 0: prototype } = response.data
-        console.log(prototype)
+        
         dispatch({
             type: TRAER_UNO,
             payload: prototype

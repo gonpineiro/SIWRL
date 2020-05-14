@@ -100805,25 +100805,24 @@ var traerDetalle = function traerDetalle(id) {
             case 4:
               response = _context7.sent;
               prototype = response.data[0];
-              console.log(prototype);
               dispatch({
                 type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_UNO"],
                 payload: prototype
               });
-              _context7.next = 13;
+              _context7.next = 12;
               break;
 
-            case 10:
-              _context7.prev = 10;
+            case 9:
+              _context7.prev = 9;
               _context7.t0 = _context7["catch"](1);
               console.log(_context7.t0);
 
-            case 13:
+            case 12:
             case "end":
               return _context7.stop();
           }
         }
-      }, _callee7, null, [[1, 10]]);
+      }, _callee7, null, [[1, 9]]);
     }));
 
     return function (_x7) {
@@ -103383,6 +103382,7 @@ var cambioPrototypeName = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11_
     cambioPrototypeGenetica = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["cambioPrototypeGenetica"],
     cambioPrototypeAmbiente = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["cambioPrototypeAmbiente"],
     cambioPrototypeSensor = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["cambioPrototypeSensor"],
+    cambioPrototypeFechaA = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["cambioPrototypeFechaA"],
     borrar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["borrar"],
     agregar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["agregar"],
     editar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["editar"],
@@ -103412,7 +103412,6 @@ var Formulario = function Formulario(props) {
       agregar = props.agregar,
       editar = props.editar,
       cancelar = props.cancelar;
-  console.log(props);
 
   var handleCambioPrototypeName = function handleCambioPrototypeName(event) {
     return props.cambioPrototypeName(event.target.value);
@@ -103427,6 +103426,10 @@ var Formulario = function Formulario(props) {
     if (event.target.value) ambientesTraerUno(event.target.value);
   };
 
+  var handleCambioPrototypeFechaA = function handleCambioPrototypeFechaA(event) {
+    return props.cambioPrototypeFechaA(event.target.value);
+  };
+
   var handleCambioPrototypeSensor = function handleCambioPrototypeSensor(event) {
     return props.cambioPrototypeSensor(event.target.value);
   };
@@ -103437,7 +103440,8 @@ var Formulario = function Formulario(props) {
       name: name,
       genetica_id: genetica_id,
       ambiente_id: ambiente_id,
-      sensor_id: sensor_id
+      sensor_id: sensor_id,
+      fecha_etapa_a: fecha_etapa_a
     };
     if (state_form === 'crear') agregar(nuevo_prototype);
     if (state_form === 'editar') editar(nuevo_prototype, id);
@@ -103571,11 +103575,13 @@ var Formulario = function Formulario(props) {
     id: "date",
     label: "Fecha Implante",
     type: "date",
-    defaultValue: fecha_etapa_a,
+    onChange: handleCambioPrototypeFechaA,
+    value: fecha_etapa_a || '',
     className: classes.textField || '',
     InputLabelProps: {
       shrink: true
-    }
+    },
+    disabled: state_form === 'borrar' || state_form === 'editar' ? true : false
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-row margin-button"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -103623,6 +103629,7 @@ var mapDispatchToProps = {
   cambioPrototypeGenetica: cambioPrototypeGenetica,
   cambioPrototypeAmbiente: cambioPrototypeAmbiente,
   cambioPrototypeSensor: cambioPrototypeSensor,
+  cambioPrototypeFechaA: cambioPrototypeFechaA,
   borrar: borrar,
   agregar: agregar,
   editar: editar,
@@ -103790,7 +103797,7 @@ var Table = function Table(props) {
         traerUnoDetalle: traerUnoDetalle,
         traerUnoEditar: traerUnoEditar,
         traerUnoEliminar: traerUnoEliminar
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, prototype.genetica.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, prototype.genetica.marca.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, prototype.genetica.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         className: "center"
       }, prototype.ambiente.monitors.length ? prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1].temp + 'C°' : '', " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         className: "center"
@@ -103804,7 +103811,7 @@ var Table = function Table(props) {
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
     className: "table table-hover"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "ID"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Nombre"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Genetica"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Marca"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "ID"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Nombre"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Genetica"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
     className: "center"
   }, "Temp"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
     className: "center"
@@ -105670,35 +105677,35 @@ var INITIAL_STATE = {
     case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_PROTOTYPE_FECHA_ESTADO_A"]:
       return _objectSpread(_objectSpread({}, state), {}, {
         prototype: _objectSpread(_objectSpread({}, state.prototype), {}, {
-          fecha_estapa_a: action.payload
+          fecha_etapa_a: action.payload
         })
       });
 
     case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_PROTOTYPE_FECHA_ESTADO_B"]:
       return _objectSpread(_objectSpread({}, state), {}, {
         prototype: _objectSpread(_objectSpread({}, state.prototype), {}, {
-          fecha_estapa_b: action.payload
+          fecha_etapa_b: action.payload
         })
       });
 
     case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_PROTOTYPE_FECHA_ESTADO_C"]:
       return _objectSpread(_objectSpread({}, state), {}, {
         prototype: _objectSpread(_objectSpread({}, state.prototype), {}, {
-          fecha_estapa_c: action.payload
+          fecha_etapa_c: action.payload
         })
       });
 
     case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_PROTOTYPE_FECHA_ESTADO_D"]:
       return _objectSpread(_objectSpread({}, state), {}, {
         prototype: _objectSpread(_objectSpread({}, state.prototype), {}, {
-          fecha_estapa_d: action.payload
+          fecha_etapa_d: action.payload
         })
       });
 
     case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_PROTOTYPE_FECHA_ESTADO_E"]:
       return _objectSpread(_objectSpread({}, state), {}, {
         prototype: _objectSpread(_objectSpread({}, state.prototype), {}, {
-          fecha_estapa_e: action.payload
+          fecha_etapa_e: action.payload
         })
       });
 
@@ -105726,11 +105733,11 @@ var INITIAL_STATE = {
           genetica_id: '',
           ambiente_id: '',
           sensor_id: '',
-          fecha_estapa_a: '',
-          fecha_estapa_b: '',
-          fecha_estapa_c: '',
-          fecha_estapa_d: '',
-          fecha_estapa_e: '',
+          fecha_etapa_a: '',
+          fecha_etapa_b: '',
+          fecha_etapa_c: '',
+          fecha_etapa_d: '',
+          fecha_etapa_e: '',
           cantidad: '',
           sensor: ''
         }),
@@ -105749,11 +105756,11 @@ var INITIAL_STATE = {
           genetica_id: '',
           ambiente_id: '',
           sensor_id: '',
-          fecha_estapa_a: '',
-          fecha_estapa_b: '',
-          fecha_estapa_c: '',
-          fecha_estapa_d: '',
-          fecha_estapa_e: '',
+          fecha_etapa_a: '',
+          fecha_etapa_b: '',
+          fecha_etapa_c: '',
+          fecha_etapa_d: '',
+          fecha_etapa_e: '',
           cantidad: '',
           sensor: ''
         }),

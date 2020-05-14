@@ -25,7 +25,7 @@ class AmbientesRequest extends FormRequest
     {
         return [
             'name' => 'required|min:3|max:15',
-            'codigo' => 'required|min:6|max:6',
+            'codigo' => 'required|min:7|max:7',
             'inputs' => 'required'
         ];
     }
@@ -38,8 +38,8 @@ class AmbientesRequest extends FormRequest
             'name.max' => 'El maximo es 15 caracteres.',
 
             'codigo.required' => 'Requerido.',
-            'codigo.min' => 'El minimo es 6 digitos.',
-            'codigo.max' => 'El maximo es 6 digitos.',
+            'codigo.min' => 'El minimo es 7 digitos.',
+            'codigo.max' => 'El maximo es 7 digitos.',
 
             'inputs.required' => 'Requerido.',
         ];
