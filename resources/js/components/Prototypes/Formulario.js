@@ -39,7 +39,7 @@ const Formulario = (props) => {
       geneticasReducer: { geneticas },
       ambientesReducer: { ambientes, ambiente },
       prototypesReducer: {
-         prototype: { id, name, genetica_id, ambiente_id, sensor_id, sensor },
+         prototype: { id, name, genetica_id, ambiente_id, sensor_id, fecha_etapa_a },
          state_form,
          error_form,
          loading
@@ -49,7 +49,7 @@ const Formulario = (props) => {
       editar,
       cancelar
    } = props;
-
+   console.log(props)
    const handleCambioPrototypeName = (event) => props.cambioPrototypeName(event.target.value);
 
    const handleCambioPrototypeGenetica = (event) => props.cambioPrototypeGenetica(event.target.value);
@@ -199,6 +199,19 @@ const Formulario = (props) => {
                <FormHelperText error={!error_form.sensor_id ? false : true}>{error_form.sensor_id}</FormHelperText>
             </FormControl>
 
+            <FormControl className={classes.formControl}>
+               <TextField
+                  id="date"
+                  label="Fecha Implante"
+                  type="date"
+                  defaultValue={fecha_etapa_a}
+                  className={classes.textField || ''}
+                  InputLabelProps={{
+                     shrink: true,
+                  }}
+               />
+            </FormControl>
+
             <div className="form-row margin-button">
                <div className="form-group col-md-6">
                   {state_form === 'crear' || state_form === 'editar'
@@ -222,7 +235,7 @@ const Formulario = (props) => {
                         </Button>
                      </div>
                      : ''}
-                     {error_form && <small className="text-danger">Existe un registro vinculado.</small>}
+                  {error_form && <small className="text-danger">Existe un registro vinculado.</small>}
 
                </div >
 

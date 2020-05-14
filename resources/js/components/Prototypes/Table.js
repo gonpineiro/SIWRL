@@ -9,13 +9,13 @@ const { traerUno: ambientesTraerUno } = ambientesActions;
 const { traerUno: prototypesTraerUno, traerUnoBorrar, traerDetalle } = protoypesActions;
 
 const Table = (props) => {
-  const { 
+  const {
     traerDetalle,
     ambientesTraerUno,
-    prototypesReducer: { 
-      prototypes: { ambiente }, 
-      prototypes 
-    }, 
+    prototypesReducer: {
+      prototypes: { ambiente },
+      prototypes
+    },
     traerUnoBorrar,
     prototypesTraerUno
   } = props
@@ -40,7 +40,11 @@ const Table = (props) => {
     return monitor['s' + output_sensor]
   }
 
-  const addRow = () => prototypes.map((prototype, key) => (    
+  const calcularDiasTotales = (fechaFinal, fechaInicial) => {
+    return Math.floor((fechaFinal - fechaInicial) / (1000 * 60 * 60 * 24))
+  }   
+
+  const addRow = () => prototypes.map((prototype, key) => (
     <tr key={key} >
       <td>{prototype.id}</td>
       <td>{
@@ -54,11 +58,10 @@ const Table = (props) => {
       </td>
       <td>{prototype.genetica.name}</td>
       <td>{prototype.genetica.marca.name}</td>
-      {/* <td>{prototype.ambiente ? prototype.ambiente.codigo : ''}</td> */}
-      <td>{prototype.ambiente.monitors.length ? prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1].temp + 'C°': ''} </td>
-      <td>{prototype.ambiente.monitors.length ? prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1].hume + '%': ''} </td>
-      {/* <td>{prototype.sensor ? prototype.sensor.name : ''}</td> */}
-      <td>{prototype.ambiente.monitors.length && prototype.sensor ? traerValorSensor(prototype) + '%': ''}</td>
+      <td className="center">{prototype.ambiente.monitors.length ? prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1].temp + 'C°' : ''} </td>
+      <td className="center">{prototype.ambiente.monitors.length ? prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1].hume + '%' : ''} </td>
+      <td className="center">{prototype.ambiente.monitors.length && prototype.sensor ? traerValorSensor(prototype) + '%' : ''}</td>
+      <td className="center">{calcularDiasTotales(Date.now('YYYY-MM-DD'),  Date.parse(prototype.fecha_etapa_a))}</td>
     </tr>
   ))
 
@@ -72,14 +75,15 @@ const Table = (props) => {
             <th>Genetica</th>
             <th>Marca</th>
             {/* <th>Ambiente</th> */}
-            <th>Temp</th>
-            <th>Hume</th>
+            <th className="center">Temp</th>
+            <th className="center">Hume</th>
             {/* <th>Sensor</th> */}
-            <th>Hume T.</th>
+            <th className="center">Hume T.</th>
+            <th className="center">Total dias.</th>
           </tr>
         </thead>
         <tbody>
-          
+
           {addRow()}
         </tbody>
       </table>
@@ -89,12 +93,12 @@ const Table = (props) => {
 
 
 const mapStateToProps = ({ prototypesReducer, ambientesReducer }) => {
-	return { prototypesReducer, ambientesReducer };
+  return { prototypesReducer, ambientesReducer };
 };
 
 const mapDispatchToProps = {
   traerDetalle,
-	ambientesTraerUno,
+  ambientesTraerUno,
   prototypesTraerUno,
   traerUnoBorrar
 };

@@ -17,7 +17,7 @@ class PrototypeSeeder extends Seeder
                 'genetica_id' => rand(1,5),
                 'ambiente_id' => 1,
                 'sensor_id' => $i,
-                'fecha_etapa_a' => date_create('now')->format('Y-m-d H:i:s'),
+                'fecha_etapa_a' => date_create('2020-02-15')->format('Y-m-d H:i:s'),
             ]);
         }
         
