@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import MenuRow from './General/MenuRow';
 
-import { calcularDiasTotales } from '../../js/funciones'
+import { calcularDiasTotales, traerValorSensor } from '../../js/funciones'
 
 import * as protoypesActions from '../../actions/protoypesActions'
 import * as ambientesActions from '../../actions/ambientesActions'
@@ -34,13 +34,7 @@ const Table = (props) => {
   const traerUnoEliminar = (prototype) => {
     ambientesTraerUno(prototype.ambiente.id)
     traerUnoBorrar(prototype.id)
-  }
-
-  const traerValorSensor = (prototype) => {
-    const output_sensor = prototype.sensor.output
-    const monitor = prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1]
-    return monitor['s' + output_sensor]
-  }
+  }  
 
   const addRow = () => prototypes.map((prototype, key) => (
     <tr key={key} >

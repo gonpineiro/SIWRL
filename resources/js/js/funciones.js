@@ -7,3 +7,9 @@ export const calcularPorcentaje = (NumeroA, NumeroB) => {
     if (porcentaje > 100) return 100    
     if (porcentaje <= 100) return porcentaje    
 }
+
+export const traerValorSensor = (prototype) => {
+    const output_sensor = prototype.sensor.output
+    const monitor = prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1]
+    return monitor['s' + output_sensor]
+  }

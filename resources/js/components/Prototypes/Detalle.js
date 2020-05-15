@@ -5,10 +5,11 @@ import "react-sweet-progress/lib/style.css";
 import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
 import { makeStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
+import Avatar from '@material-ui/core/Avatar';
+import { red, indigo, brown } from '@material-ui/core/colors';
 import Spinner from '../General/Spinner';
 
-import { calcularDiasTotales, calcularPorcentaje, calcularDiasTotalesParse } from '../../js/funciones'
+import { calcularDiasTotales, calcularPorcentaje, calcularDiasTotalesParse, traerValorSensor } from '../../js/funciones'
 
 import * as protoypesActions from '../../actions/protoypesActions'
 
@@ -28,14 +29,16 @@ const Detalle = (props) => {
                     tiempo_flora,
                     sabores,
                 },
-                cantidad,
+                sensor,
                 ambiente,
                 fecha_etapa_a,
                 fecha_etapa_b,
                 fecha_etapa_c,
                 fecha_etapa_d,
-                fecha_etapa_e
+                fecha_etapa_e,
+                cantidad,
             },
+            prototype
         }
     } = props
 
@@ -43,10 +46,39 @@ const Detalle = (props) => {
 
     const useStyles = makeStyles((theme) => ({
 
+        avatars: {
+            display: 'flex',
+            '& > *': {
+                margin: theme.spacing(1),
+            },
+            justifyContent: "center"
+        },
+
+        temp: {
+            color: theme.palette.getContrastText(red[900]),
+            backgroundColor: red[900],
+            width: theme.spacing(20),
+            height: theme.spacing(20), brown
+        },
+
+        hume: {
+            color: theme.palette.getContrastText(indigo[500]),
+            backgroundColor: indigo[500],
+            width: theme.spacing(20),
+            height: theme.spacing(20),
+        },
+
+        tierra: {
+            color: theme.palette.getContrastText(brown[500]),
+            backgroundColor: brown[500],
+            width: theme.spacing(20),
+            height: theme.spacing(20),
+        },
+
         formControl: {
             margin: theme.spacing(1),
             marginBottom: 35,
-            width: "90%",
+            width: "90%"
         },
     }));
 
@@ -176,7 +208,7 @@ const Detalle = (props) => {
                                                 calcularDiasTotales(Date.now('YYYY-MM-DD'), Date.parse(fecha_etapa_a)), tiempo_flora) === 100 ?
                                                 "sucess" : ""
                                         }
-                                        />
+                                    />
                                 </FormControl>
                             </div>
                         </div>
@@ -187,8 +219,24 @@ const Detalle = (props) => {
             <div className="row mt-2">
                 <div className="col col-md-6">
                     <div className="card">
-                    //
-                    </div>
+                        <div className={classes.avatars}>
+                            <Avatar alt="Remy Sharp" className={classes.temp} >
+                                <div className="avatar">
+                                    {ambiente.monitors.length ? ambiente.monitors[ambiente.monitors.length - 1].temp + 'C°' : ''}
+                                </div>
+                            </Avatar>
+                            <Avatar alt="Travis Howard" className={classes.hume} >
+                                <div className="avatar">
+                                    {ambiente.monitors.length ? ambiente.monitors[ambiente.monitors.length - 1].hume + 'C°' : ''}
+                                </div>
+                            </Avatar>
+                            <Avatar alt="Cindy Baker" className={classes.tierra} >
+                                <div className="avatar">
+                                    {ambiente.monitors.length && sensor ? traerValorSensor(prototype) + 'C°' : ''}
+                                </div>
+                            </Avatar>
+                        </div>
+                    </div> 
                 </div>
                 <div className="col col-md-6">
                     <div className="card">
