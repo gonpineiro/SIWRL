@@ -103940,6 +103940,316 @@ var mapStateToProps = function mapStateToProps(reducers) {
 
 /***/ }),
 
+/***/ "./resources/js/components/Prototypes/Componentes/Basico.js":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/Prototypes/Componentes/Basico.js ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
+/* harmony import */ var _material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/icons/KeyboardReturn */ "./node_modules/@material-ui/icons/KeyboardReturn.js");
+/* harmony import */ var _material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
+
+
+
+
+
+
+
+var Basico = function Basico(props) {
+  var traerTabla = props.traerTabla,
+      _props$prototypesRedu = props.prototypesReducer.prototype,
+      name = _props$prototypesRedu.name,
+      _props$prototypesRedu2 = _props$prototypesRedu.genetica,
+      genetica_name = _props$prototypesRedu2.name,
+      thc = _props$prototypesRedu2.thc,
+      cbd = _props$prototypesRedu2.cbd,
+      tiempo_flora = _props$prototypesRedu2.tiempo_flora,
+      sabores = _props$prototypesRedu2.sabores,
+      marca_name = _props$prototypesRedu2.marca.name;
+
+  var volver = function volver() {
+    return traerTabla();
+  };
+
+  var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__["makeStyles"])(function (theme) {
+    return {
+      formControl: {
+        margin: theme.spacing(1),
+        marginBottom: 35,
+        width: "90%"
+      }
+    };
+  });
+  var classes = useStyles();
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    className: classes.formControl
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row mt-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col col-md-8"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "B\xE1sica")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col col-md-4 text-derecha"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    fontSize: "large",
+    onClick: volver
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+    className: "table"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Nombre:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Gen\xE9tica:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, genetica_name, " ", marca_name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "THC/CBD:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, thc, "% / ", cbd, "%")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Sabones:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, sabores)))));
+};
+
+var mapStateToProps = function mapStateToProps(prototypesReducer) {
+  return prototypesReducer;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_5__)(Basico));
+
+/***/ }),
+
+/***/ "./resources/js/components/Prototypes/Componentes/Complementaria.js":
+/*!**************************************************************************!*\
+  !*** ./resources/js/components/Prototypes/Componentes/Complementaria.js ***!
+  \**************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
+/* harmony import */ var _js_funciones__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../js/funciones */ "./resources/js/js/funciones.js");
+
+
+
+
+
+
+var Complementaria = function Complementaria(props) {
+  var _props$prototypesRedu = props.prototypesReducer.prototype,
+      fecha_etapa_a = _props$prototypesRedu.fecha_etapa_a,
+      fecha_etapa_b = _props$prototypesRedu.fecha_etapa_b,
+      fecha_etapa_c = _props$prototypesRedu.fecha_etapa_c,
+      fecha_etapa_d = _props$prototypesRedu.fecha_etapa_d;
+  var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__["makeStyles"])(function (theme) {
+    return {
+      formControl: {
+        margin: theme.spacing(1),
+        marginBottom: 35,
+        width: "90%"
+      }
+    };
+  });
+  var classes = useStyles();
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    className: classes.formControl
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row mt-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col col-md-8"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Complementaria"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+    className: "table"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Implante"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_a), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "--")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Germi"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_b), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_b ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_4__["calcularDiasTotalesParse"])(fecha_etapa_b, fecha_etapa_a) + 'Dias' : '')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Flori"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_c), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_c ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_4__["calcularDiasTotalesParse"])(fecha_etapa_c, fecha_etapa_b) + 'Dias' : '')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Corte"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_d), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_d ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_4__["calcularDiasTotalesParse"])(fecha_etapa_d, fecha_etapa_c) + 'Dias' : '')))));
+};
+
+var mapStateToProps = function mapStateToProps(prototypesReducer) {
+  return prototypesReducer;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps)(Complementaria));
+
+/***/ }),
+
+/***/ "./resources/js/components/Prototypes/Componentes/Final.js":
+/*!*****************************************************************!*\
+  !*** ./resources/js/components/Prototypes/Componentes/Final.js ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
+/* harmony import */ var react_sweet_progress__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-sweet-progress */ "./node_modules/react-sweet-progress/lib/index.js");
+/* harmony import */ var react_sweet_progress__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_sweet_progress__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_sweet_progress_lib_style_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-sweet-progress/lib/style.css */ "./node_modules/react-sweet-progress/lib/style.css");
+/* harmony import */ var react_sweet_progress_lib_style_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_sweet_progress_lib_style_css__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _js_funciones__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../js/funciones */ "./resources/js/js/funciones.js");
+
+
+
+
+
+
+
+
+var Final = function Final(props) {
+  var _props$prototypesRedu = props.prototypesReducer.prototype,
+      tiempo_flora = _props$prototypesRedu.genetica.tiempo_flora,
+      fecha_etapa_a = _props$prototypesRedu.fecha_etapa_a,
+      fecha_etapa_e = _props$prototypesRedu.fecha_etapa_e,
+      cantidad = _props$prototypesRedu.cantidad;
+  var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__["makeStyles"])(function (theme) {
+    return {
+      formControl: {
+        margin: theme.spacing(1),
+        marginBottom: 35,
+        width: "90%"
+      }
+    };
+  });
+  var classes = useStyles();
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    className: classes.formControl
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row mt-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col col-md-8"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Final"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+    className: "table"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Etapa"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_a || '-')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Cantidad"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, cantidad)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Dias totales"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_e ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_6__["calcularDiasTotalesParse"])(fecha_etapa_e, fecha_etapa_a) + ' Dias' : Object(_js_funciones__WEBPACK_IMPORTED_MODULE_6__["calcularDiasTotales"])(Date.now('YYYY-MM-DD'), Date.parse(fecha_etapa_a)) + ' Dias')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Dias Estipulados:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, tiempo_flora)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_sweet_progress__WEBPACK_IMPORTED_MODULE_4__["Progress"], {
+    percent: Object(_js_funciones__WEBPACK_IMPORTED_MODULE_6__["calcularPorcentaje"])(Object(_js_funciones__WEBPACK_IMPORTED_MODULE_6__["calcularDiasTotales"])(Date.now('YYYY-MM-DD'), Date.parse(fecha_etapa_a)), tiempo_flora),
+    status: Object(_js_funciones__WEBPACK_IMPORTED_MODULE_6__["calcularPorcentaje"])(Object(_js_funciones__WEBPACK_IMPORTED_MODULE_6__["calcularDiasTotales"])(Date.now('YYYY-MM-DD'), Date.parse(fecha_etapa_a)), tiempo_flora) === 100 ? "success" : ""
+  }));
+};
+
+var mapStateToProps = function mapStateToProps(prototypesReducer) {
+  return prototypesReducer;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps)(Final));
+
+/***/ }),
+
+/***/ "./resources/js/components/Prototypes/Componentes/Informacion.js":
+/*!***********************************************************************!*\
+  !*** ./resources/js/components/Prototypes/Componentes/Informacion.js ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/Avatar */ "./node_modules/@material-ui/core/esm/Avatar/index.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
+/* harmony import */ var _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/colors */ "./node_modules/@material-ui/core/esm/colors/index.js");
+/* harmony import */ var _js_funciones__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../js/funciones */ "./resources/js/js/funciones.js");
+
+
+
+
+
+
+
+var Informacion = function Informacion(props) {
+  var _props$prototypesRedu = props.prototypesReducer,
+      _props$prototypesRedu2 = _props$prototypesRedu.prototype,
+      sensor = _props$prototypesRedu2.sensor,
+      ambiente = _props$prototypesRedu2.ambiente,
+      prototype = _props$prototypesRedu.prototype;
+  var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__["makeStyles"])(function (theme) {
+    return {
+      avatars: {
+        display: 'flex',
+        '& > *': {
+          margin: theme.spacing(1)
+        },
+        justifyContent: "center"
+      },
+      temp: {
+        color: theme.palette.getContrastText(_material_ui_core_colors__WEBPACK_IMPORTED_MODULE_4__["red"][900]),
+        backgroundColor: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_4__["red"][900],
+        width: theme.spacing(15),
+        height: theme.spacing(15),
+        brown: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_4__["brown"]
+      },
+      hume: {
+        color: theme.palette.getContrastText(_material_ui_core_colors__WEBPACK_IMPORTED_MODULE_4__["indigo"][500]),
+        backgroundColor: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_4__["indigo"][500],
+        width: theme.spacing(15),
+        height: theme.spacing(15)
+      },
+      tierra: {
+        color: theme.palette.getContrastText(_material_ui_core_colors__WEBPACK_IMPORTED_MODULE_4__["brown"][500]),
+        backgroundColor: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_4__["brown"][500],
+        width: theme.spacing(15),
+        height: theme.spacing(15)
+      }
+    };
+  });
+  var classes = useStyles();
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row mt-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col col-md-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: classes.avatars
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    alt: "Remy Sharp",
+    className: classes.temp
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "avatar"
+  }, ambiente.monitors.length ? ambiente.monitors[ambiente.monitors.length - 1].temp + 'C°' : '')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    alt: "Travis Howard",
+    className: classes.hume
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "avatar"
+  }, ambiente.monitors.length ? ambiente.monitors[ambiente.monitors.length - 1].hume + 'C°' : '')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    alt: "Cindy Baker",
+    className: classes.tierra
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "avatar"
+  }, ambiente.monitors.length && sensor ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_5__["traerValorSensor"])(prototype) + 'C°' : ''))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col col-md-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: classes.avatars
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    alt: "Remy Sharp",
+    className: classes.temp
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "avatar"
+  }, ambiente.monitors.length ? ambiente.monitors[ambiente.monitors.length - 1].estado === 0 || ambiente.monitors[ambiente.monitors.length - 1].estado === 2 ? 'P' : 'A' : '')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    alt: "Travis Howard",
+    className: classes.hume
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "avatar"
+  }, ambiente.monitors.length ? ambiente.monitors[ambiente.monitors.length - 1].horas_luz : '')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    alt: "Cindy Baker",
+    className: classes.tierra
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "avatar"
+  }, ambiente.monitors.length ? ambiente.monitors[ambiente.monitors.length - 1].estado === 1 || ambiente.monitors[ambiente.monitors.length - 1].estado === 3 ? 'C' : 'F' : ''))))));
+};
+
+var mapStateToProps = function mapStateToProps(prototypesReducer) {
+  return prototypesReducer;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps)(Informacion));
+
+/***/ }),
+
 /***/ "./resources/js/components/Prototypes/Detalle.js":
 /*!*******************************************************!*\
   !*** ./resources/js/components/Prototypes/Detalle.js ***!
@@ -103952,22 +104262,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react_sweet_progress__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-sweet-progress */ "./node_modules/react-sweet-progress/lib/index.js");
-/* harmony import */ var react_sweet_progress__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_sweet_progress__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_sweet_progress_lib_style_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-sweet-progress/lib/style.css */ "./node_modules/react-sweet-progress/lib/style.css");
-/* harmony import */ var react_sweet_progress_lib_style_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_sweet_progress_lib_style_css__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/icons/KeyboardReturn */ "./node_modules/@material-ui/icons/KeyboardReturn.js");
-/* harmony import */ var _material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
-/* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
-/* harmony import */ var _material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/Avatar */ "./node_modules/@material-ui/core/esm/Avatar/index.js");
-/* harmony import */ var _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/colors */ "./node_modules/@material-ui/core/esm/colors/index.js");
-/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
-/* harmony import */ var _js_funciones__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../js/funciones */ "./resources/js/js/funciones.js");
-/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
-
-
-
+/* harmony import */ var react_sweet_progress_lib_style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-sweet-progress/lib/style.css */ "./node_modules/react-sweet-progress/lib/style.css");
+/* harmony import */ var react_sweet_progress_lib_style_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_sweet_progress_lib_style_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
+/* harmony import */ var _Componentes_Basico__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Componentes/Basico */ "./resources/js/components/Prototypes/Componentes/Basico.js");
+/* harmony import */ var _Componentes_Complementaria__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Componentes/Complementaria */ "./resources/js/components/Prototypes/Componentes/Complementaria.js");
+/* harmony import */ var _Componentes_Final__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Componentes/Final */ "./resources/js/components/Prototypes/Componentes/Final.js");
+/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
+/* harmony import */ var _Componentes_Informacion__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Componentes/Informacion */ "./resources/js/components/Prototypes/Componentes/Informacion.js");
 
 
 
@@ -103979,68 +104281,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Detalle = function Detalle(props) {
-  if (props.prototypesReducer.loading && !props.prototypesReducer.prototype.length) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_9__["default"], null);
-  var traerTabla = props.traerTabla,
-      _props$prototypesRedu = props.prototypesReducer,
-      _props$prototypesRedu2 = _props$prototypesRedu.prototype,
-      name = _props$prototypesRedu2.name,
-      _props$prototypesRedu3 = _props$prototypesRedu2.genetica,
-      genetica_name = _props$prototypesRedu3.name,
-      marca_name = _props$prototypesRedu3.marca.name,
-      thc = _props$prototypesRedu3.thc,
-      cbd = _props$prototypesRedu3.cbd,
-      tiempo_flora = _props$prototypesRedu3.tiempo_flora,
-      sabores = _props$prototypesRedu3.sabores,
-      sensor = _props$prototypesRedu2.sensor,
-      ambiente = _props$prototypesRedu2.ambiente,
-      fecha_etapa_a = _props$prototypesRedu2.fecha_etapa_a,
-      fecha_etapa_b = _props$prototypesRedu2.fecha_etapa_b,
-      fecha_etapa_c = _props$prototypesRedu2.fecha_etapa_c,
-      fecha_etapa_d = _props$prototypesRedu2.fecha_etapa_d,
-      fecha_etapa_e = _props$prototypesRedu2.fecha_etapa_e,
-      cantidad = _props$prototypesRedu2.cantidad,
-      prototype = _props$prototypesRedu.prototype;
-
-  var volver = function volver() {
-    return traerTabla();
-  };
-
-  var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__["makeStyles"])(function (theme) {
-    return {
-      avatars: {
-        display: 'flex',
-        '& > *': {
-          margin: theme.spacing(1)
-        },
-        justifyContent: "center"
-      },
-      temp: {
-        color: theme.palette.getContrastText(_material_ui_core_colors__WEBPACK_IMPORTED_MODULE_8__["red"][900]),
-        backgroundColor: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_8__["red"][900],
-        width: theme.spacing(15),
-        height: theme.spacing(15),
-        brown: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_8__["brown"]
-      },
-      hume: {
-        color: theme.palette.getContrastText(_material_ui_core_colors__WEBPACK_IMPORTED_MODULE_8__["indigo"][500]),
-        backgroundColor: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_8__["indigo"][500],
-        width: theme.spacing(15),
-        height: theme.spacing(15)
-      },
-      tierra: {
-        color: theme.palette.getContrastText(_material_ui_core_colors__WEBPACK_IMPORTED_MODULE_8__["brown"][500]),
-        backgroundColor: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_8__["brown"][500],
-        width: theme.spacing(15),
-        height: theme.spacing(15)
-      },
-      formControl: {
-        margin: theme.spacing(1),
-        marginBottom: 35,
-        width: "90%"
-      }
-    };
-  });
-  var classes = useStyles();
+  var _props$prototypesRedu = props.prototypesReducer,
+      prototype = _props$prototypesRedu.prototype,
+      loading = _props$prototypesRedu.loading;
+  if (loading && !prototype.length) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_3__["default"], null);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "container col-md-9"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -104049,22 +104293,7 @@ var Detalle = function Detalle(props) {
     className: "col col-md-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    className: classes.formControl
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "row mt-2"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col col-md-8"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "B\xE1sica")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col col-md-4 text-derecha"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_4___default.a, {
-    fontSize: "large",
-    onClick: function onClick() {
-      return volver();
-    }
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
-    className: "table"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Nombre:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Gen\xE9tica:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, genetica_name, " ", marca_name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "THC/CBD:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, thc, "% / ", cbd, "%")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Tiempo:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, tiempo_flora)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Sabones:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, sabores))))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Componentes_Basico__WEBPACK_IMPORTED_MODULE_4__["default"], null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col col-md-8"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card"
@@ -104072,55 +104301,9 @@ var Detalle = function Detalle(props) {
     className: "row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col col-md-7"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    className: classes.formControl
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "row mt-2"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col col-md-8"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Complementaria"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
-    className: "table"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Implante"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_a), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "--")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Germi"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_b), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_b ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_10__["calcularDiasTotalesParse"])(fecha_etapa_b, fecha_etapa_a) + 'Dias' : '')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Flori"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_c), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_c ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_10__["calcularDiasTotalesParse"])(fecha_etapa_c, fecha_etapa_b) + 'Dias' : '')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Corte"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_d), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_d ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_10__["calcularDiasTotalesParse"])(fecha_etapa_d, fecha_etapa_c) + 'Dias' : '')))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Componentes_Complementaria__WEBPACK_IMPORTED_MODULE_5__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col col-md-5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    className: classes.formControl
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "row mt-2"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col col-md-8"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Final"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
-    className: "table"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Etapa"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_a || '-')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Cantidad"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, cantidad)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Dias totales"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_e ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_10__["calcularDiasTotalesParse"])(fecha_etapa_e, fecha_etapa_a) + ' Dias' : Object(_js_funciones__WEBPACK_IMPORTED_MODULE_10__["calcularDiasTotales"])(Date.now('YYYY-MM-DD'), Date.parse(fecha_etapa_a)) + ' Dias')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Dias Estipulados:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, tiempo_flora)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_sweet_progress__WEBPACK_IMPORTED_MODULE_2__["Progress"], {
-    percent: Object(_js_funciones__WEBPACK_IMPORTED_MODULE_10__["calcularPorcentaje"])(Object(_js_funciones__WEBPACK_IMPORTED_MODULE_10__["calcularDiasTotales"])(Date.now('YYYY-MM-DD'), Date.parse(fecha_etapa_a)), tiempo_flora),
-    status: Object(_js_funciones__WEBPACK_IMPORTED_MODULE_10__["calcularPorcentaje"])(Object(_js_funciones__WEBPACK_IMPORTED_MODULE_10__["calcularDiasTotales"])(Date.now('YYYY-MM-DD'), Date.parse(fecha_etapa_a)), tiempo_flora) === 100 ? "success" : ""
-  }))))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "row mt-2"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col col-md-6"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "card"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: classes.avatars
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    alt: "Remy Sharp",
-    className: classes.temp
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "avatar"
-  }, ambiente.monitors.length ? ambiente.monitors[ambiente.monitors.length - 1].temp + 'C°' : '')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    alt: "Travis Howard",
-    className: classes.hume
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "avatar"
-  }, ambiente.monitors.length ? ambiente.monitors[ambiente.monitors.length - 1].hume + 'C°' : '')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    alt: "Cindy Baker",
-    className: classes.tierra
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "avatar"
-  }, ambiente.monitors.length && sensor ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_10__["traerValorSensor"])(prototype) + 'C°' : ''))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col col-md-6"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "card"
-  }, "//"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Componentes_Final__WEBPACK_IMPORTED_MODULE_6__["default"], null)))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Componentes_Informacion__WEBPACK_IMPORTED_MODULE_8__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "row mt-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col col-md-12"
@@ -104139,57 +104322,7 @@ var mapStateToProps = function mapStateToProps(prototypesReducer) {
   return prototypesReducer;
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__)(Detalle));
-{
-  /* <FormControl className={classes.formControl}>
-  <FormControl className={classes.formControl}>
-     <TextField
-         id="standard-basic"
-         label="Nombre"
-         type="text"
-         className="form-control"
-         value={name || ''}
-     />
-  </FormControl>
-  <FormControl className={classes.formControl}>
-     <TextField
-         id="standard-basic"
-         label="Genética"
-         type="text"
-         className="form-control"
-         value={genetica_name || ''}
-     />
-  </FormControl>
-  <FormControl className={classes.formControl}>
-     <TextField
-         id="standard-basic"
-         label="Marca"
-         type="text"
-         className="form-control"
-         value={marca_name || ''}
-     />
-  </FormControl>
-  <FormControl className={classes.formControl}>
-     <TextField
-         id="standard-basic"
-         label="THC"
-         type="text"
-         className="form-control"
-         value={thc || ''}
-     />
-  </FormControl>
-  <FormControl className={classes.formControl}>
-     <TextField
-         id="standard-basic"
-         label="CBD"
-         type="text"
-         className="form-control"
-         value={cbd || ''}
-     />
-  </FormControl>
-  </FormControl>
-  */
-}
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_7__)(Detalle));
 
 /***/ }),
 

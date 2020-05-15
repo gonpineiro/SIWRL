@@ -14,10 +14,10 @@ class MonitorController extends Controller
             'hume' => $request->get('hume'),
             'estado' => $request->get('estado'),
             'horas_luz' => $request->get('horas_luz'),
-            's1' => $request->get('s1'),
-            's2' => $request->get('s2'),
-            's3' => $request->get('s3'),
-            's4' => $request->get('s4'),
+            's1' => rand(0,100),
+            's2' => rand(0,100),
+            's3' => rand(0,100),
+            's4' => rand(0,100)
         ]);    
         return response()->json($data, 200);
     }
