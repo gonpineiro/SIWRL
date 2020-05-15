@@ -260,8 +260,34 @@ export const traerDetalle = (id) => async (dispatch) => {
     } catch (error) {
         console.log(error)
     }
-
 }
 
+export const traerDetalleInterval = (id) => async (dispatch) => {
+    
+    try {
+        const response = await axios.get(URL + 'prototype/' + id)
+        const { 0: prototype } = response.data
 
+        dispatch({
+            type: TRAER_UNO,
+            payload: prototype
+        })
 
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const traerTodosInterval = () => async (dispatch) => {
+
+    try {
+        const response = await axios.get(URL + 'prototype')
+        dispatch({
+            type: TRAER_TODOS,
+            payload: response.data
+        })
+
+    } catch (error) {
+        console.log(error)
+    }
+}

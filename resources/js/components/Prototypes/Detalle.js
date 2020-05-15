@@ -1,24 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux'
 import "react-sweet-progress/lib/style.css";
 import Spinner from '../General/Spinner';
 import Basico from './Componentes/Basico';
 import Complementaria from './Componentes/Complementaria';
 import Final from './Componentes/Final';
-
-import * as protoypesActions from '../../actions/protoypesActions'
 import Informacion from './Componentes/Informacion';
 
+import * as protoypesActions from '../../actions/protoypesActions'
+
+const { traerDetalleInterval } = protoypesActions
+
 const Detalle = (props) => {
-    
+
     const {
+        traerDetalleInterval,
         prototypesReducer: {
             prototype,
             loading,
         }
     } = props
-    
+
     if (loading && !prototype.length) return <Spinner />
+
+    useEffect(() => {
+        const intervalPrototype = setInterval(() => traerDetalleInterval(prototype.id), 5000)
+        return () => clearInterval(intervalPrototype)
+    }, []);
 
     return (
         <div className="container col-md-9">
@@ -26,7 +34,7 @@ const Detalle = (props) => {
             <div className="row mt-2">
                 <div className="col col-md-4">
                     <div className="card">
-                        <Basico/>
+                        <Basico />
                     </div>
                 </div>
 
@@ -71,4 +79,8 @@ const Detalle = (props) => {
 
 const mapStateToProps = (prototypesReducer) => prototypesReducer
 
-export default connect(mapStateToProps, protoypesActions)(Detalle);
+const mapDispatchToProps = {
+    traerDetalleInterval,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Detalle);

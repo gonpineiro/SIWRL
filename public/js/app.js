@@ -27129,7 +27129,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Mon
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap);", ""]);
 
 // module
-exports.push([module.i, ".center {\r\n    text-align: center;\r\n}\r\n\r\ntable {\r\n    font-size: 0.785rem;\r\n}\r\n\r\n.table td {\r\n    padding: 0.30rem;\r\n    justify-content: center;\r\n}\r\n\r\n.material-icons {\r\n    width: 0.30rem;\r\n    height: 0.30rem;\r\n}\r\n\r\n.alert {\r\n    font-size: 10px;\r\n}\r\n\r\n.btn {\r\n    margin-right: 15px;\r\n}\r\n\r\n.btn-cancelar {\r\n    background-color: #5e2129;\r\n    border-color: #5e2129;\r\n}\r\n\r\n.material-icons {\r\n    font-family: 'Material Icons';\r\n    font-weight: normal;\r\n    font-style: normal;\r\n    font-size: 20px;\r\n    /* Preferred icon size */\r\n    display: inline-block;\r\n    line-height: 1;\r\n    text-transform: none;\r\n    letter-spacing: normal;\r\n    word-wrap: normal;\r\n    white-space: nowrap;\r\n    direction: ltr;\r\n\r\n    /* Agregador por gon.pineiro */\r\n    margin-left: 10px;\r\n    margin-right: 10px;\r\n\r\n    /* Support for all WebKit browsers. */\r\n    -webkit-font-smoothing: antialiased;\r\n    /* Support for Safari and Chrome. */\r\n    text-rendering: optimizeLegibility;\r\n\r\n    /* Support for Firefox. */\r\n    -moz-osx-font-smoothing: grayscale;\r\n\r\n    /* Support for IE. */\r\n    font-feature-settings: 'liga';\r\n}\r\n\r\n.link {\r\n    cursor: pointer;\r\n}\r\n\r\n.link-string {\r\n    color: #3e5f8a;\r\n    font-weight: bold;\r\n}\r\n\r\n.card-agregar {\r\n    color: black;\r\n    font-weight: bold;\r\n    text-align: left;\r\n}\r\n\r\n.card-eliminar {\r\n    color: #5e2129;\r\n    font-weight: bold;\r\n    text-align: left;\r\n}\r\n\r\n\r\n.margin-button {\r\n    margin-top: 15px;\r\n    margin-left: 15px;\r\n    margin-right: 15px;\r\n}\r\n\r\n.container {\r\n    margin-top: 25px;\r\n}\r\n\r\n.text-derecha {\r\n    text-align: right;\r\n}\r\n\r\n.color-alert {\r\n    color: #5e2129;\r\n}\r\n\r\n.box {\r\n    margin: 10px;\r\n}\r\n\r\n.avatar {\r\n    font-size: 50px;\r\n    font-family: 'Roboto Mono', monospace;\r\n}", ""]);
+exports.push([module.i, ".center {\r\n    text-align: center;\r\n}\r\n\r\ntable {\r\n    font-size: 0.785rem;\r\n}\r\n\r\n.table td {\r\n    padding: 0.30rem;\r\n    justify-content: center;\r\n}\r\n\r\n.material-icons {\r\n    width: 0.30rem;\r\n    height: 0.30rem;\r\n}\r\n\r\n.alert {\r\n    font-size: 10px;\r\n}\r\n\r\n.btn {\r\n    margin-right: 15px;\r\n}\r\n\r\n.btn-cancelar {\r\n    background-color: #5e2129;\r\n    border-color: #5e2129;\r\n}\r\n\r\n.material-icons {\r\n    font-family: 'Material Icons';\r\n    font-weight: normal;\r\n    font-style: normal;\r\n    font-size: 20px;\r\n    /* Preferred icon size */\r\n    display: inline-block;\r\n    line-height: 1;\r\n    text-transform: none;\r\n    letter-spacing: normal;\r\n    word-wrap: normal;\r\n    white-space: nowrap;\r\n    direction: ltr;\r\n\r\n    /* Agregador por gon.pineiro */\r\n    margin-left: 10px;\r\n    margin-right: 10px;\r\n\r\n    /* Support for all WebKit browsers. */\r\n    -webkit-font-smoothing: antialiased;\r\n    /* Support for Safari and Chrome. */\r\n    text-rendering: optimizeLegibility;\r\n\r\n    /* Support for Firefox. */\r\n    -moz-osx-font-smoothing: grayscale;\r\n\r\n    /* Support for IE. */\r\n    font-feature-settings: 'liga';\r\n}\r\n\r\n.link {\r\n    cursor: pointer;\r\n}\r\n\r\n.link-string {\r\n    color: #3e5f8a;\r\n    font-weight: bold;\r\n}\r\n\r\n.card-agregar {\r\n    color: black;\r\n    font-weight: bold;\r\n    text-align: left;\r\n}\r\n\r\n.card-eliminar {\r\n    color: #5e2129;\r\n    font-weight: bold;\r\n    text-align: left;\r\n}\r\n\r\n\r\n.margin-button {\r\n    margin-top: 15px;\r\n    margin-left: 15px;\r\n    margin-right: 15px;\r\n}\r\n\r\n.container {\r\n    margin-top: 25px;\r\n}\r\n\r\n.text-derecha {\r\n    text-align: right;\r\n}\r\n\r\n.color-alert {\r\n    color: #5e2129;\r\n}\r\n\r\n.box {\r\n    margin: 10px;\r\n}\r\n\r\n.avatar {\r\n    font-size: 40px;\r\n    font-family: 'Roboto Mono', monospace;\r\n}", ""]);
 
 // exports
 
@@ -101171,7 +101171,7 @@ var cancelar = function cancelar() {
 /*!**************************************************!*\
   !*** ./resources/js/actions/protoypesActions.js ***!
   \**************************************************/
-/*! exports provided: traerTodos, traerUno, cambioPrototypeName, cambioPrototypeGenetica, cambioPrototypeAmbiente, cambioPrototypeSensor, cambioPrototypeFechaA, cambioPrototypeFechaB, cambioPrototypeFechaC, cambioPrototypeFechaD, cambioPrototypeFechaE, agregar, editar, traerUnoBorrar, borrar, cancelar, traerTabla, traerDetalle */
+/*! exports provided: traerTodos, traerUno, cambioPrototypeName, cambioPrototypeGenetica, cambioPrototypeAmbiente, cambioPrototypeSensor, cambioPrototypeFechaA, cambioPrototypeFechaB, cambioPrototypeFechaC, cambioPrototypeFechaD, cambioPrototypeFechaE, agregar, editar, traerUnoBorrar, borrar, cancelar, traerTabla, traerDetalle, traerDetalleInterval, traerTodosInterval */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -101194,6 +101194,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cancelar", function() { return cancelar; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traerTabla", function() { return traerTabla; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traerDetalle", function() { return traerDetalle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traerDetalleInterval", function() { return traerDetalleInterval; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traerTodosInterval", function() { return traerTodosInterval; });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
@@ -101605,6 +101607,85 @@ var traerDetalle = function traerDetalle(id) {
 
     return function (_x7) {
       return _ref7.apply(this, arguments);
+    };
+  }();
+};
+var traerDetalleInterval = function traerDetalleInterval(id) {
+  return /*#__PURE__*/function () {
+    var _ref8 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee8(dispatch) {
+      var response, prototype;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee8$(_context8) {
+        while (1) {
+          switch (_context8.prev = _context8.next) {
+            case 0:
+              _context8.prev = 0;
+              _context8.next = 3;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL + 'prototype/' + id);
+
+            case 3:
+              response = _context8.sent;
+              prototype = response.data[0];
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_UNO"],
+                payload: prototype
+              });
+              _context8.next = 11;
+              break;
+
+            case 8:
+              _context8.prev = 8;
+              _context8.t0 = _context8["catch"](0);
+              console.log(_context8.t0);
+
+            case 11:
+            case "end":
+              return _context8.stop();
+          }
+        }
+      }, _callee8, null, [[0, 8]]);
+    }));
+
+    return function (_x8) {
+      return _ref8.apply(this, arguments);
+    };
+  }();
+};
+var traerTodosInterval = function traerTodosInterval() {
+  return /*#__PURE__*/function () {
+    var _ref9 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee9(dispatch) {
+      var response;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee9$(_context9) {
+        while (1) {
+          switch (_context9.prev = _context9.next) {
+            case 0:
+              _context9.prev = 0;
+              _context9.next = 3;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL + 'prototype');
+
+            case 3:
+              response = _context9.sent;
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_TODOS"],
+                payload: response.data
+              });
+              _context9.next = 10;
+              break;
+
+            case 7:
+              _context9.prev = 7;
+              _context9.t0 = _context9["catch"](0);
+              console.log(_context9.t0);
+
+            case 10:
+            case "end":
+              return _context9.stop();
+          }
+        }
+      }, _callee9, null, [[0, 7]]);
+    }));
+
+    return function (_x9) {
+      return _ref9.apply(this, arguments);
     };
   }();
 };
@@ -104213,12 +104294,12 @@ var Informacion = function Informacion(props) {
     className: classes.hume
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "avatar"
-  }, ambiente.monitors.length ? ambiente.monitors[ambiente.monitors.length - 1].hume + 'C°' : '')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, ambiente.monitors.length ? ambiente.monitors[ambiente.monitors.length - 1].hume + '%' : '')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_2__["default"], {
     alt: "Cindy Baker",
     className: classes.tierra
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "avatar"
-  }, ambiente.monitors.length && sensor ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_5__["traerValorSensor"])(prototype) + 'C°' : ''))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, ambiente.monitors.length && sensor ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_5__["traerValorSensor"])(prototype) + '%' : ''))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col col-md-6"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card"
@@ -104268,8 +104349,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Componentes_Basico__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Componentes/Basico */ "./resources/js/components/Prototypes/Componentes/Basico.js");
 /* harmony import */ var _Componentes_Complementaria__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Componentes/Complementaria */ "./resources/js/components/Prototypes/Componentes/Complementaria.js");
 /* harmony import */ var _Componentes_Final__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Componentes/Final */ "./resources/js/components/Prototypes/Componentes/Final.js");
-/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
-/* harmony import */ var _Componentes_Informacion__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Componentes/Informacion */ "./resources/js/components/Prototypes/Componentes/Informacion.js");
+/* harmony import */ var _Componentes_Informacion__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Componentes/Informacion */ "./resources/js/components/Prototypes/Componentes/Informacion.js");
+/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
 
 
 
@@ -104279,12 +104360,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var traerDetalleInterval = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_8__["traerDetalleInterval"];
 
 var Detalle = function Detalle(props) {
-  var _props$prototypesRedu = props.prototypesReducer,
+  var traerDetalleInterval = props.traerDetalleInterval,
+      _props$prototypesRedu = props.prototypesReducer,
       prototype = _props$prototypesRedu.prototype,
       loading = _props$prototypesRedu.loading;
   if (loading && !prototype.length) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_3__["default"], null);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    var intervalPrototype = setInterval(function () {
+      return traerDetalleInterval(prototype.id);
+    }, 5000);
+    return function () {
+      return clearInterval(intervalPrototype);
+    };
+  }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "container col-md-9"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -104303,7 +104394,7 @@ var Detalle = function Detalle(props) {
     className: "col col-md-7"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Componentes_Complementaria__WEBPACK_IMPORTED_MODULE_5__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col col-md-5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Componentes_Final__WEBPACK_IMPORTED_MODULE_6__["default"], null)))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Componentes_Informacion__WEBPACK_IMPORTED_MODULE_8__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Componentes_Final__WEBPACK_IMPORTED_MODULE_6__["default"], null)))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Componentes_Informacion__WEBPACK_IMPORTED_MODULE_7__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "row mt-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col col-md-12"
@@ -104322,7 +104413,10 @@ var mapStateToProps = function mapStateToProps(prototypesReducer) {
   return prototypesReducer;
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_7__)(Detalle));
+var mapDispatchToProps = {
+  traerDetalleInterval: traerDetalleInterval
+};
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(Detalle));
 
 /***/ }),
 
@@ -104745,10 +104839,12 @@ __webpack_require__.r(__webpack_exports__);
 var ambientesTraerUno = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_5__["traerUno"];
 var prototypesTraerUno = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_4__["traerUno"],
     traerUnoBorrar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_4__["traerUnoBorrar"],
-    traerDetalle = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_4__["traerDetalle"];
+    traerDetalle = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_4__["traerDetalle"],
+    traerTodosInterval = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_4__["traerTodosInterval"];
 
 var Table = function Table(props) {
-  var traerDetalle = props.traerDetalle,
+  var traerTodosInterval = props.traerTodosInterval,
+      traerDetalle = props.traerDetalle,
       ambientesTraerUno = props.ambientesTraerUno,
       _props$prototypesRedu = props.prototypesReducer,
       ambiente = _props$prototypesRedu.prototypes.ambiente,
@@ -104769,6 +104865,15 @@ var Table = function Table(props) {
     ambientesTraerUno(prototype.ambiente.id);
     traerUnoBorrar(prototype.id);
   };
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    var intervalPrototypes = setInterval(function () {
+      return traerTodosInterval();
+    }, 5000);
+    return function () {
+      return clearInterval(intervalPrototypes);
+    };
+  }, []);
 
   var addRow = function addRow() {
     return prototypes.map(function (prototype, key) {
@@ -104814,6 +104919,7 @@ var mapStateToProps = function mapStateToProps(_ref) {
 };
 
 var mapDispatchToProps = {
+  traerTodosInterval: traerTodosInterval,
   traerDetalle: traerDetalle,
   ambientesTraerUno: ambientesTraerUno,
   prototypesTraerUno: prototypesTraerUno,

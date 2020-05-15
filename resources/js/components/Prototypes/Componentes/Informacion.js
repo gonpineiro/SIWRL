@@ -65,12 +65,12 @@ const Informacion = (props) => {
                         </Avatar>
                         <Avatar alt="Travis Howard" className={classes.hume} >
                             <div className="avatar">
-                                {ambiente.monitors.length ? ambiente.monitors[ambiente.monitors.length - 1].hume + 'C°' : ''}
+                                {ambiente.monitors.length ? ambiente.monitors[ambiente.monitors.length - 1].hume + '%' : ''}
                             </div>
                         </Avatar>
                         <Avatar alt="Cindy Baker" className={classes.tierra} >
                             <div className="avatar">
-                                {ambiente.monitors.length && sensor ? traerValorSensor(prototype) + 'C°' : ''}
+                                {ambiente.monitors.length && sensor ? traerValorSensor(prototype) + '%' : ''}
                             </div>
                         </Avatar>
                     </div>

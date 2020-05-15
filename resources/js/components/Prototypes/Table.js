@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux'
 import MenuRow from './General/MenuRow';
 
@@ -8,10 +8,11 @@ import * as protoypesActions from '../../actions/protoypesActions'
 import * as ambientesActions from '../../actions/ambientesActions'
 
 const { traerUno: ambientesTraerUno } = ambientesActions;
-const { traerUno: prototypesTraerUno, traerUnoBorrar, traerDetalle } = protoypesActions;
+const { traerUno: prototypesTraerUno, traerUnoBorrar, traerDetalle, traerTodosInterval } = protoypesActions;
 
 const Table = (props) => {
   const {
+    traerTodosInterval,
     traerDetalle,
     ambientesTraerUno,
     prototypesReducer: {
@@ -34,7 +35,12 @@ const Table = (props) => {
   const traerUnoEliminar = (prototype) => {
     ambientesTraerUno(prototype.ambiente.id)
     traerUnoBorrar(prototype.id)
-  }  
+  }
+
+  useEffect(() => {
+    const intervalPrototypes = setInterval(() => traerTodosInterval(), 5000)
+    return () => clearInterval(intervalPrototypes)
+  }, []);
 
   const addRow = () => prototypes.map((prototype, key) => (
     <tr key={key} >
@@ -52,7 +58,7 @@ const Table = (props) => {
       <td className="center">{prototype.ambiente.monitors.length ? prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1].temp + ' C°' : ''} </td>
       <td className="center">{prototype.ambiente.monitors.length ? prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1].hume + ' %' : ''} </td>
       <td className="center">{prototype.ambiente.monitors.length && prototype.sensor ? traerValorSensor(prototype) + ' %' : ''}</td>
-      <td className="center">{calcularDiasTotales(Date.now('YYYY-MM-DD'),  Date.parse(prototype.fecha_etapa_a))}</td>
+      <td className="center">{calcularDiasTotales(Date.now('YYYY-MM-DD'), Date.parse(prototype.fecha_etapa_a))}</td>
     </tr>
   ))
 
@@ -83,6 +89,7 @@ const mapStateToProps = ({ prototypesReducer, ambientesReducer }) => {
 };
 
 const mapDispatchToProps = {
+  traerTodosInterval,
   traerDetalle,
   ambientesTraerUno,
   prototypesTraerUno,
