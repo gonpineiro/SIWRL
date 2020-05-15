@@ -1,10 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import { Progress } from 'react-sweet-progress';
+import "react-sweet-progress/lib/style.css";
 import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
 import { makeStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Spinner from '../General/Spinner';
+
+import { calcularDiasTotales, calcularPorcentaje, calcularDiasTotalesParse } from '../../js/funciones'
 
 import * as protoypesActions from '../../actions/protoypesActions'
 
@@ -23,16 +27,15 @@ const Detalle = (props) => {
                     cbd,
                     tiempo_flora,
                     sabores,
-                    cantidad
                 },
+                cantidad,
                 ambiente,
-                fecha_estado_a,
-                fecha_estado_b,
-                fecha_estado_c,
-                fecha_estado_d,
-                fecha_estado_e
+                fecha_etapa_a,
+                fecha_etapa_b,
+                fecha_etapa_c,
+                fecha_etapa_d,
+                fecha_etapa_e
             },
-            loading
         }
     } = props
 
@@ -91,9 +94,92 @@ const Detalle = (props) => {
                         </FormControl>
                     </div>
                 </div>
+
                 <div className="col col-md-8">
                     <div className="card">
-                    //
+                        <div className="row">
+
+                            <div className="col col-md-8">
+                                <FormControl className={classes.formControl}>
+                                    <div className="row mt-2">
+                                        <div className="col col-md-8">
+                                            <h4>Informacion Complementaria</h4>
+                                        </div>
+                                    </div>
+                                    <table className="table">
+                                        <tbody>
+                                            <tr>
+                                                <td>Implante</td>
+                                                <td>{fecha_etapa_a}</td>
+                                                <td>--</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Germi</td>
+                                                <td>{fecha_etapa_b}</td>
+                                                <td>{fecha_etapa_b ? calcularDiasTotalesParse(fecha_etapa_b, fecha_etapa_a) + 'Dias' : ''}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Flori</td>
+                                                <td>{fecha_etapa_c}</td>
+                                                <td>{fecha_etapa_c ? calcularDiasTotalesParse(fecha_etapa_c, fecha_etapa_b) + 'Dias' : ''}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Corte</td>
+                                                <td>{fecha_etapa_d}</td>
+                                                <td>{fecha_etapa_d ? calcularDiasTotalesParse(fecha_etapa_d, fecha_etapa_c) + 'Dias' : ''}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+
+                                </FormControl>
+                            </div>
+
+                            <div className="col col-md-4">
+                                <FormControl className={classes.formControl}>
+                                    <div className="row mt-2">
+                                        <div className="col col-md-8">
+                                            <h4>Final</h4>
+                                        </div>
+                                    </div>
+                                    <table className="table">
+                                        <tbody>
+                                            <tr>
+                                                <td>Etapa</td>
+                                                <td>{fecha_etapa_a || '-'}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Cantidad</td>
+                                                <td>{cantidad}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Dias totales</td>
+                                                <td>{fecha_etapa_e ?
+                                                    calcularDiasTotalesParse(fecha_etapa_e, fecha_etapa_a) + ' Dias' :
+                                                    calcularDiasTotales(Date.now('YYYY-MM-DD'), Date.parse(fecha_etapa_a)) + ' Dias'
+                                                }
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Dias Estitpulados:</td>
+                                                <td>{tiempo_flora}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <Progress
+                                        percent={
+                                            calcularPorcentaje(
+                                                calcularDiasTotales(Date.now('YYYY-MM-DD'), Date.parse(fecha_etapa_a)), tiempo_flora)
+                                        }
+                                        status={
+                                            calcularPorcentaje(
+                                                calcularDiasTotales(Date.now('YYYY-MM-DD'), Date.parse(fecha_etapa_a)), tiempo_flora) === 100 ?
+                                                "sucess" : ""
+                                        }
+                                        />
+                                </FormControl>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -139,7 +225,7 @@ const mapStateToProps = (prototypesReducer) => {
     return prototypesReducer;
 };
 
-export default connect(mapStateToProps,protoypesActions)(Detalle);
+export default connect(mapStateToProps, protoypesActions)(Detalle);
 
 
 

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
 .center {
     text-align: center;
 }
@@ -99,3 +101,6 @@ table {
     color: #5e2129;
 }
 
+.box {
+    margin: 10px;
+}

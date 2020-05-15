@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux'
 import MenuRow from './General/MenuRow';
 
+import { calcularDiasTotales } from '../../js/funciones'
+
 import * as protoypesActions from '../../actions/protoypesActions'
 import * as ambientesActions from '../../actions/ambientesActions'
 
@@ -40,10 +42,6 @@ const Table = (props) => {
     return monitor['s' + output_sensor]
   }
 
-  const calcularDiasTotales = (fechaFinal, fechaInicial) => {
-    return Math.floor((fechaFinal - fechaInicial) / (1000 * 60 * 60 * 24))
-  }   
-
   const addRow = () => prototypes.map((prototype, key) => (
     <tr key={key} >
       <td>{prototype.id}</td>
@@ -57,9 +55,9 @@ const Table = (props) => {
       }
       </td>
       <td>{prototype.genetica.name}</td>
-      <td className="center">{prototype.ambiente.monitors.length ? prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1].temp + 'C°' : ''} </td>
-      <td className="center">{prototype.ambiente.monitors.length ? prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1].hume + '%' : ''} </td>
-      <td className="center">{prototype.ambiente.monitors.length && prototype.sensor ? traerValorSensor(prototype) + '%' : ''}</td>
+      <td className="center">{prototype.ambiente.monitors.length ? prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1].temp + ' C°' : ''} </td>
+      <td className="center">{prototype.ambiente.monitors.length ? prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1].hume + ' %' : ''} </td>
+      <td className="center">{prototype.ambiente.monitors.length && prototype.sensor ? traerValorSensor(prototype) + ' %' : ''}</td>
       <td className="center">{calcularDiasTotales(Date.now('YYYY-MM-DD'),  Date.parse(prototype.fecha_etapa_a))}</td>
     </tr>
   ))
@@ -85,7 +83,6 @@ const Table = (props) => {
     </div>
   );
 }
-
 
 const mapStateToProps = ({ prototypesReducer, ambientesReducer }) => {
   return { prototypesReducer, ambientesReducer };

@@ -26360,6 +26360,25 @@ function toVal(mix) {
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/react-sweet-progress/lib/style.css":
+/*!*****************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/react-sweet-progress/lib/style.css ***!
+  \*****************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".react-sweet-progress {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 100%; }\n\n.react-sweet-progress-symbol {\n  display: flex;\n  align-items: center;\n  justify-content: flex-start;\n  width: 35px;\n  height: 20px;\n  padding-left: 10px;\n  color: rgba(0, 0, 0, 0.7);\n  font-weight: 200; }\n\n.react-sweet-progress-symbol-absolute {\n  display: flex;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  align-items: center;\n  justify-content: center;\n  transform: translate3d(-50%, -50%, 0); }\n  .react-sweet-progress-symbol-absolute .react-sweet-progress-symbol {\n    padding: 0;\n    width: 100%; }\n\n.react-sweet-progress-circle-outer {\n  position: relative;\n  display: inline-block;\n  vertical-align: middle; }\n.react-sweet-progress-line {\n  width: 100%;\n  border-radius: 100px;\n  background-color: #efefef;\n  vertical-align: middle; }\n  .react-sweet-progress-line-inner {\n    position: relative;\n    min-height: 10px;\n    border-radius: 100px;\n    transition: width 0.3s ease; }\n\n.react-sweet-progress-line-inner-status-active:before {\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  border-radius: 10px;\n  background: #fff;\n  -webkit-animation: active-anim 2s cubic-bezier(0.25, 1, 0.6, 1) infinite;\n          animation: active-anim 2s cubic-bezier(0.25, 1, 0.6, 1) infinite;\n  content: \"\";\n  opacity: 0; }\n\n@-webkit-keyframes active-anim {\n  0% {\n    width: 0;\n    opacity: .1; }\n  20% {\n    width: 0;\n    opacity: .5; }\n  to {\n    width: 100%;\n    opacity: 0; } }\n\n@keyframes active-anim {\n  0% {\n    width: 0;\n    opacity: .1; }\n  20% {\n    width: 0;\n    opacity: .5; }\n  to {\n    width: 100%;\n    opacity: 0; } }\n.react-sweet-progress-circle path {\n  stroke-linecap: round; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./resources/js/css/Layout.css":
 /*!*********************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./resources/js/css/Layout.css ***!
@@ -26389,10 +26408,10 @@ exports.push([module.i, ".fa-2x {\r\nfont-size: 2em;\r\n}\r\n.fa {\r\nposition: 
 
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
-
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Montserrat&display=swap);", ""]);
 
 // module
-exports.push([module.i, ".center {\r\n    text-align: center;\r\n}\r\n\r\ntable {\r\n    font-size: 0.785rem;\r\n}\r\n\r\n.table td {\r\n    padding: 0.30rem;\r\n    justify-content: center;\r\n}\r\n\r\n.material-icons {\r\n    width: 0.30rem;\r\n    height: 0.30rem;\r\n}\r\n\r\n.alert {\r\n    font-size: 10px;\r\n}\r\n\r\n.btn {\r\n    margin-right: 15px;\r\n}\r\n\r\n.btn-cancelar {\r\n    background-color: #5e2129;\r\n    border-color: #5e2129;\r\n}\r\n\r\n.material-icons {\r\n    font-family: 'Material Icons';\r\n    font-weight: normal;\r\n    font-style: normal;\r\n    font-size: 20px;\r\n    /* Preferred icon size */\r\n    display: inline-block;\r\n    line-height: 1;\r\n    text-transform: none;\r\n    letter-spacing: normal;\r\n    word-wrap: normal;\r\n    white-space: nowrap;\r\n    direction: ltr;\r\n\r\n    /* Agregador por gon.pineiro */\r\n    margin-left: 10px;\r\n    margin-right: 10px;\r\n\r\n    /* Support for all WebKit browsers. */\r\n    -webkit-font-smoothing: antialiased;\r\n    /* Support for Safari and Chrome. */\r\n    text-rendering: optimizeLegibility;\r\n\r\n    /* Support for Firefox. */\r\n    -moz-osx-font-smoothing: grayscale;\r\n\r\n    /* Support for IE. */\r\n    font-feature-settings: 'liga';\r\n}\r\n\r\n.link {\r\n    cursor: pointer;\r\n}\r\n\r\n.link-string {\r\n    color: #3e5f8a;\r\n    font-weight: bold;\r\n}\r\n\r\n.card-agregar {\r\n    color: black;\r\n    font-weight: bold;\r\n    text-align: left;\r\n}\r\n\r\n.card-eliminar {\r\n    color: #5e2129;\r\n    font-weight: bold;\r\n    text-align: left;\r\n}\r\n\r\n\r\n.margin-button {\r\n    margin-top: 15px;\r\n    margin-left: 15px;\r\n    margin-right: 15px;\r\n}\r\n\r\n.container {\r\n    margin-top: 25px;\r\n}\r\n\r\n.text-derecha {\r\n    text-align: right;\r\n}\r\n\r\n.color-alert {\r\n    color: #5e2129;\r\n}\r\n\r\n", ""]);
+exports.push([module.i, ".center {\r\n    text-align: center;\r\n}\r\n\r\ntable {\r\n    font-size: 0.785rem;\r\n}\r\n\r\n.table td {\r\n    padding: 0.30rem;\r\n    justify-content: center;\r\n}\r\n\r\n.material-icons {\r\n    width: 0.30rem;\r\n    height: 0.30rem;\r\n}\r\n\r\n.alert {\r\n    font-size: 10px;\r\n}\r\n\r\n.btn {\r\n    margin-right: 15px;\r\n}\r\n\r\n.btn-cancelar {\r\n    background-color: #5e2129;\r\n    border-color: #5e2129;\r\n}\r\n\r\n.material-icons {\r\n    font-family: 'Material Icons';\r\n    font-weight: normal;\r\n    font-style: normal;\r\n    font-size: 20px;\r\n    /* Preferred icon size */\r\n    display: inline-block;\r\n    line-height: 1;\r\n    text-transform: none;\r\n    letter-spacing: normal;\r\n    word-wrap: normal;\r\n    white-space: nowrap;\r\n    direction: ltr;\r\n\r\n    /* Agregador por gon.pineiro */\r\n    margin-left: 10px;\r\n    margin-right: 10px;\r\n\r\n    /* Support for all WebKit browsers. */\r\n    -webkit-font-smoothing: antialiased;\r\n    /* Support for Safari and Chrome. */\r\n    text-rendering: optimizeLegibility;\r\n\r\n    /* Support for Firefox. */\r\n    -moz-osx-font-smoothing: grayscale;\r\n\r\n    /* Support for IE. */\r\n    font-feature-settings: 'liga';\r\n}\r\n\r\n.link {\r\n    cursor: pointer;\r\n}\r\n\r\n.link-string {\r\n    color: #3e5f8a;\r\n    font-weight: bold;\r\n}\r\n\r\n.card-agregar {\r\n    color: black;\r\n    font-weight: bold;\r\n    text-align: left;\r\n}\r\n\r\n.card-eliminar {\r\n    color: #5e2129;\r\n    font-weight: bold;\r\n    text-align: left;\r\n}\r\n\r\n\r\n.margin-button {\r\n    margin-top: 15px;\r\n    margin-left: 15px;\r\n    margin-right: 15px;\r\n}\r\n\r\n.container {\r\n    margin-top: 25px;\r\n}\r\n\r\n.text-derecha {\r\n    text-align: right;\r\n}\r\n\r\n.color-alert {\r\n    color: #5e2129;\r\n}\r\n\r\n.box {\r\n    margin: 10px;\r\n}", ""]);
 
 // exports
 
@@ -91807,6 +91826,47 @@ function pathToRegexp (path, keys, options) {
 
 /***/ }),
 
+/***/ "./node_modules/react-sweet-progress/lib/index.js":
+/*!********************************************************!*\
+  !*** ./node_modules/react-sweet-progress/lib/index.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+!function(e,t){ true?module.exports=t(__webpack_require__(/*! react */ "./node_modules/react/index.js")):undefined}(this,function(e){return function(e){function t(o){if(r[o])return r[o].exports;var n=r[o]={i:o,l:!1,exports:{}};return e[o].call(n.exports,n,n.exports,t),n.l=!0,n.exports}var r={};return t.m=e,t.c=r,t.i=function(e){return e},t.d=function(e,r,o){t.o(e,r)||Object.defineProperty(e,r,{configurable:!1,enumerable:!0,get:o})},t.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(r,"a",r),r},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="",t(t.s=11)}([function(e,t,r){var o,n;!function(){"use strict";function r(){for(var e=[],t=0;t<arguments.length;t++){var o=arguments[t];if(o){var n=typeof o;if("string"===n||"number"===n)e.push(o);else if(Array.isArray(o)&&o.length){var i=r.apply(null,o);i&&e.push(i)}else if("object"===n)for(var a in o)s.call(o,a)&&o[a]&&e.push(a)}}return e.join(" ")}var s={}.hasOwnProperty;void 0!==e&&e.exports?(r.default=r,e.exports=r):(o=[],void 0!==(n=function(){return r}.apply(t,o))&&(e.exports=n))}()},function(t,r){t.exports=e},function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.Progress=void 0;var o=r(8),n=function(e){return e&&e.__esModule?e:{default:e}}(o);t.Progress=n.default},function(e,t,r){"use strict";function o(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}Object.defineProperty(t,"__esModule",{value:!0});var n,s=(t.prefixClass="react-sweet-progress",t.DEFAULT_TRAIL_COLOR="#efefef",t.STATUSES={ACTIVE:"active",SUCCESS:"success",ERROR:"error",DEFAULT:"default"});t.COLOR_MAP=(n={},o(n,s.ACTIVE,"#138ce4"),o(n,s.SUCCESS,"#049e51"),o(n,s.ERROR,"#e23f33"),n)},function(e,t){e.exports={"react-sweet-progress-line":"react-sweet-progress-line","react-sweet-progress-line-inner":"react-sweet-progress-line-inner","react-sweet-progress-line-inner-status-active":"react-sweet-progress-line-inner-status-active","active-anim":"active-anim"}},function(e,t,r){"use strict";function o(e){return e&&e.__esModule?e:{default:e}}function n(e,t){var r={};for(var o in e)t.indexOf(o)>=0||Object.prototype.hasOwnProperty.call(e,o)&&(r[o]=e[o]);return r}function s(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var l=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var o in r)Object.prototype.hasOwnProperty.call(r,o)&&(e[o]=r[o])}return e},c=function(){var e="function"==typeof Symbol&&Symbol.for&&Symbol.for("react.element")||60103;return function(t,r,o,n){var s=t&&t.defaultProps,i=arguments.length-3;if(r||0===i||(r={}),r&&s)for(var a in s)void 0===r[a]&&(r[a]=s[a]);else r||(r=s||{});if(1===i)r.children=n;else if(i>1){for(var l=Array(i),c=0;c<i;c++)l[c]=arguments[c+3];r.children=l}return{$$typeof:e,type:t,key:void 0===o?null:""+o,ref:null,props:r,_owner:null}}}(),u=function(){function e(e,t){for(var r=0;r<t.length;r++){var o=t[r];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,r,o){return r&&e(t.prototype,r),o&&e(t,o),t}}(),f=r(1),p=o(f),y=r(0),d=o(y),h=r(9),v=o(h),b=function(e){function t(){return s(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),u(t,[{key:"getPathStyles",value:function(){var e=this.props,t=(e.prefixClass,e.percent),r=e.strokeWidth,o=e.gapDegree,n=void 0===o?0:o,s=(e.gapPosition,50-r/2),i=-s,a=-2*s,l="M 50,50 m 0,"+i+"\n     a "+s+","+s+" 0 1 1 0,"+-a+"\n     a "+s+","+s+" 0 1 1 "+-0+","+a,c=2*Math.PI*s;return{pathString:l,trailPathStyle:{strokeDasharray:c-n+"px "+c+"px",strokeDashoffset:"-"+n/2+"px",transition:"stroke-dashoffset .3s ease 0s, stroke-dasharray .3s ease 0s, stroke .3s"},strokePathStyle:{strokeDasharray:t/100*(c-n)+"px "+c+"px",strokeDashoffset:"-"+n/2+"px",transition:"stroke-dashoffset .3s ease 0s, stroke-dasharray .3s ease 0s, stroke .3s"}}}},{key:"render",value:function(){var e=this,t=this.props,r=t.prefixClass,o=t.strokeWidth,s=t.strokeColor,i=t.trailColor,a=t.style,u=t.className,f=n(t,["prefixClass","strokeWidth","strokeColor","trailColor","style","className"]),y=(0,d.default)(v.default[r+"-circle"],u),h=this.getPathStyles(),b=h.pathString,m=h.trailPathStyle,g=h.strokePathStyle;return delete f.percent,delete f.gapDegree,delete f.gapPosition,p.default.createElement("svg",l({className:y,viewBox:"0 0 100 100",style:a},f),c("path",{d:b,stroke:i,strokeWidth:o,fillOpacity:"0",style:m}),p.default.createElement("path",{d:b,stroke:s,strokeWidth:o,fillOpacity:"0",ref:function(t){e.path=t},style:g}))}}]),t}(f.Component);t.default=b},function(e,t,r){"use strict";function o(e){return e&&e.__esModule?e:{default:e}}function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function s(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function i(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var a=function(){var e="function"==typeof Symbol&&Symbol.for&&Symbol.for("react.element")||60103;return function(t,r,o,n){var s=t&&t.defaultProps,i=arguments.length-3;if(r||0===i||(r={}),r&&s)for(var a in s)void 0===r[a]&&(r[a]=s[a]);else r||(r=s||{});if(1===i)r.children=n;else if(i>1){for(var l=Array(i),c=0;c<i;c++)l[c]=arguments[c+3];r.children=l}return{$$typeof:e,type:t,key:void 0===o?null:""+o,ref:null,props:r,_owner:null}}}(),l=function(){function e(e,t){for(var r=0;r<t.length;r++){var o=t[r];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,r,o){return r&&e(t.prototype,r),o&&e(t,o),t}}(),c=r(1),u=(o(c),r(0)),f=(o(u),r(4)),p=(o(f),function(e){function t(){return n(this,t),s(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return i(t,e),l(t,[{key:"render",value:function(){var e=this.props.size?{width:this.props.size,height:this.props.size}:{width:"20px",height:"20px"};switch(this.props.name){case"success":return a("svg",{version:"1.1",viewBox:"0 0 512 512",style:e},void 0,a("path",{fill:"#049e51",d:"M489,255.9c0-0.2,0-0.5,0-0.7c0-1.6,0-3.2-0.1-4.7c0-0.9-0.1-1.8-0.1-2.8c0-0.9-0.1-1.8-0.1-2.7  c-0.1-1.1-0.1-2.2-0.2-3.3c0-0.7-0.1-1.4-0.1-2.1c-0.1-1.2-0.2-2.4-0.3-3.6c0-0.5-0.1-1.1-0.1-1.6c-0.1-1.3-0.3-2.6-0.4-4  c0-0.3-0.1-0.7-0.1-1C474.3,113.2,375.7,22.9,256,22.9S37.7,113.2,24.5,229.5c0,0.3-0.1,0.7-0.1,1c-0.1,1.3-0.3,2.6-0.4,4  c-0.1,0.5-0.1,1.1-0.1,1.6c-0.1,1.2-0.2,2.4-0.3,3.6c0,0.7-0.1,1.4-0.1,2.1c-0.1,1.1-0.1,2.2-0.2,3.3c0,0.9-0.1,1.8-0.1,2.7  c0,0.9-0.1,1.8-0.1,2.8c0,1.6-0.1,3.2-0.1,4.7c0,0.2,0,0.5,0,0.7c0,0,0,0,0,0.1s0,0,0,0.1c0,0.2,0,0.5,0,0.7c0,1.6,0,3.2,0.1,4.7  c0,0.9,0.1,1.8,0.1,2.8c0,0.9,0.1,1.8,0.1,2.7c0.1,1.1,0.1,2.2,0.2,3.3c0,0.7,0.1,1.4,0.1,2.1c0.1,1.2,0.2,2.4,0.3,3.6  c0,0.5,0.1,1.1,0.1,1.6c0.1,1.3,0.3,2.6,0.4,4c0,0.3,0.1,0.7,0.1,1C37.7,398.8,136.3,489.1,256,489.1s218.3-90.3,231.5-206.5  c0-0.3,0.1-0.7,0.1-1c0.1-1.3,0.3-2.6,0.4-4c0.1-0.5,0.1-1.1,0.1-1.6c0.1-1.2,0.2-2.4,0.3-3.6c0-0.7,0.1-1.4,0.1-2.1  c0.1-1.1,0.1-2.2,0.2-3.3c0-0.9,0.1-1.8,0.1-2.7c0-0.9,0.1-1.8,0.1-2.8c0-1.6,0.1-3.2,0.1-4.7c0-0.2,0-0.5,0-0.7  C489,256,489,256,489,255.9C489,256,489,256,489,255.9z",id:"XMLID_3_"}),a("g",{fill:"none",stroke:"#FFFFFF",strokeWidth:30,strokeMiterlimit:10},void 0,a("line",{x1:"213.6",x2:"369.7",y1:"344.2",y2:"188.2"}),a("line",{x1:"233.8",x2:"154.7",y1:"345.2",y2:"266.1"})));case"error":return a("svg",{version:"1.1",viewBox:"0 0 50 50",style:e},void 0,a("circle",{fill:"#e23f33",cx:"25",cy:"25",r:"25"}),a("polyline",{fill:"none",stroke:"#FFFFFF",strokeWidth:3,strokeLinecap:"round",strokeMiterlimit:10,points:"16,34 25,25 34,16"}),a("polyline",{fill:"none",stroke:"#FFFFFF",strokeWidth:3,strokeLinecap:"round",strokeMiterlimit:10,points:"16,16 25,25 34,34"}));default:return null}}}]),t}(c.Component));t.default=p},function(e,t,r){"use strict";function o(e){return e&&e.__esModule?e:{default:e}}function n(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}function s(e){var t=e.prefixClass,r=e.percent,o=e.className,s=e.status,a=e.background,l=e.trailColor,u=(0,c.default)(f.default[t+"-line"],o),p=(0,c.default)(f.default[t+"-line-inner"],n({},f.default[t+"-line-inner-status-"+s],!!s));return i("div",{className:u,style:{backgroundColor:l}},void 0,i("div",{className:p,style:{width:r+"%",backgroundColor:a}}))}Object.defineProperty(t,"__esModule",{value:!0});var i=function(){var e="function"==typeof Symbol&&Symbol.for&&Symbol.for("react.element")||60103;return function(t,r,o,n){var s=t&&t.defaultProps,i=arguments.length-3;if(r||0===i||(r={}),r&&s)for(var a in s)void 0===r[a]&&(r[a]=s[a]);else r||(r=s||{});if(1===i)r.children=n;else if(i>1){for(var l=Array(i),c=0;c<i;c++)l[c]=arguments[c+3];r.children=l}return{$$typeof:e,type:t,key:void 0===o?null:""+o,ref:null,props:r,_owner:null}}}(),a=r(1),l=(o(a),r(0)),c=o(l),u=(r(3),r(4)),f=o(u);t.default=s},function(e,t,r){"use strict";function o(e){return e&&e.__esModule?e:{default:e}}function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function s(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function i(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var a=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var o in r)Object.prototype.hasOwnProperty.call(r,o)&&(e[o]=r[o])}return e},l=function(){var e="function"==typeof Symbol&&Symbol.for&&Symbol.for("react.element")||60103;return function(t,r,o,n){var s=t&&t.defaultProps,i=arguments.length-3;if(r||0===i||(r={}),r&&s)for(var a in s)void 0===r[a]&&(r[a]=s[a]);else r||(r=s||{});if(1===i)r.children=n;else if(i>1){for(var l=Array(i),c=0;c<i;c++)l[c]=arguments[c+3];r.children=l}return{$$typeof:e,type:t,key:void 0===o?null:""+o,ref:null,props:r,_owner:null}}}(),c=function(){function e(e,t){for(var r=0;r<t.length;r++){var o=t[r];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,r,o){return r&&e(t.prototype,r),o&&e(t,o),t}}(),u=r(1),f=(o(u),r(0)),p=o(f),y=r(3),d=r(10),h=o(d),v=r(7),b=o(v),m=r(5),g=o(m),w=r(6),S=o(w),_=function(e){function t(e){n(this,t);var r=s(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e));return r.state={status:e.status||y.STATUSES.ACTIVE},r}return i(t,e),c(t,[{key:"getSymbolByStatus",value:function(e,t){switch(e){case y.STATUSES.SUCCESS:return l(S.default,{name:"success",size:t});case y.STATUSES.ERROR:return l(S.default,{name:"error",size:t});default:return this.props.percent+"%"}}},{key:"render",value:function(){var e=this.props,t=e.percent,r=e.status,o=e.theme,n=e.style,s=e.className,i=e.symbolClassName,c=e.type,u=e.width,f=e.strokeWidth,d=null;d=0===t?y.STATUSES.DEFAULT:t>=100&&!r?y.STATUSES.SUCCESS:r||y.STATUSES.ACTIVE;var v=o&&o[d],m=v?v.color:y.COLOR_MAP[d],w=v?v.trailColor:y.DEFAULT_TRAIL_COLOR;if("circle"===c){var S=u||132,_=.16*S+6,O=1.25*_,C=v&&v.symbol||this.getSymbolByStatus(d,O),k=a({width:S,height:S,fontSize:_},n),x=f||6;return l("div",{className:y.prefixClass+"-circle-outer",style:k},void 0,l(g.default,{percent:t,strokeWidth:x,strokeColor:m,trailColor:w,prefixClass:y.prefixClass,gapDegree:0,gapPosition:"top"}),l("div",{className:h.default[y.prefixClass+"-symbol-absolute"]},void 0,l("div",{className:(0,p.default)(h.default[y.prefixClass+"-symbol"],i)},void 0,C)))}var P=v&&v.symbol||this.getSymbolByStatus(d);return l("div",{className:(0,p.default)(h.default[""+y.prefixClass],s),style:n},void 0,l(b.default,{prefixClass:y.prefixClass,percent:t,status:d,background:m,trailColor:w}),l("div",{className:(0,p.default)(h.default[y.prefixClass+"-symbol"],i)},void 0,P))}}]),t}(u.Component);_.defaultProps={percent:0},t.default=_},function(e,t){e.exports={"react-sweet-progress-circle":"react-sweet-progress-circle"}},function(e,t){e.exports={"react-sweet-progress":"react-sweet-progress","react-sweet-progress-symbol":"react-sweet-progress-symbol","react-sweet-progress-symbol-absolute":"react-sweet-progress-symbol-absolute","react-sweet-progress-circle-outer":"react-sweet-progress-circle-outer"}},function(e,t,r){r(2),e.exports=r(2)}])});
+
+/***/ }),
+
+/***/ "./node_modules/react-sweet-progress/lib/style.css":
+/*!*********************************************************!*\
+  !*** ./node_modules/react-sweet-progress/lib/style.css ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../css-loader??ref--6-1!../../postcss-loader/src??ref--6-2!./style.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/react-sweet-progress/lib/style.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/react-transition-group/esm/CSSTransition.js":
 /*!******************************************************************!*\
   !*** ./node_modules/react-transition-group/esm/CSSTransition.js ***!
@@ -103174,13 +103234,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/icons/KeyboardReturn */ "./node_modules/@material-ui/icons/KeyboardReturn.js");
-/* harmony import */ var _material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
-/* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
-/* harmony import */ var _material_ui_core_Select__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Select */ "./node_modules/@material-ui/core/esm/Select/index.js");
-/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
-/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
+/* harmony import */ var react_sweet_progress__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-sweet-progress */ "./node_modules/react-sweet-progress/lib/index.js");
+/* harmony import */ var react_sweet_progress__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_sweet_progress__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_sweet_progress_lib_style_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-sweet-progress/lib/style.css */ "./node_modules/react-sweet-progress/lib/style.css");
+/* harmony import */ var react_sweet_progress_lib_style_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_sweet_progress_lib_style_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/icons/KeyboardReturn */ "./node_modules/@material-ui/icons/KeyboardReturn.js");
+/* harmony import */ var _material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
+/* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
+/* harmony import */ var _material_ui_core_Select__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/Select */ "./node_modules/@material-ui/core/esm/Select/index.js");
+/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
+/* harmony import */ var _js_funciones__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../js/funciones */ "./resources/js/js/funciones.js");
+/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
+
+
+
 
 
 
@@ -103191,32 +103259,30 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Detalle = function Detalle(props) {
-  if (props.prototypesReducer.loading && !props.prototypesReducer.prototype.length) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null);
+  if (props.prototypesReducer.loading && !props.prototypesReducer.prototype.length) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_8__["default"], null);
   var traerTabla = props.traerTabla,
-      _props$prototypesRedu = props.prototypesReducer,
-      _props$prototypesRedu2 = _props$prototypesRedu.prototype,
-      name = _props$prototypesRedu2.name,
-      _props$prototypesRedu3 = _props$prototypesRedu2.genetica,
-      genetica_name = _props$prototypesRedu3.name,
-      marca_name = _props$prototypesRedu3.marca.name,
-      thc = _props$prototypesRedu3.thc,
-      cbd = _props$prototypesRedu3.cbd,
-      tiempo_flora = _props$prototypesRedu3.tiempo_flora,
-      sabores = _props$prototypesRedu3.sabores,
-      cantidad = _props$prototypesRedu3.cantidad,
-      ambiente = _props$prototypesRedu2.ambiente,
-      fecha_estado_a = _props$prototypesRedu2.fecha_estado_a,
-      fecha_estado_b = _props$prototypesRedu2.fecha_estado_b,
-      fecha_estado_c = _props$prototypesRedu2.fecha_estado_c,
-      fecha_estado_d = _props$prototypesRedu2.fecha_estado_d,
-      fecha_estado_e = _props$prototypesRedu2.fecha_estado_e,
-      loading = _props$prototypesRedu.loading;
+      _props$prototypesRedu = props.prototypesReducer.prototype,
+      name = _props$prototypesRedu.name,
+      _props$prototypesRedu2 = _props$prototypesRedu.genetica,
+      genetica_name = _props$prototypesRedu2.name,
+      marca_name = _props$prototypesRedu2.marca.name,
+      thc = _props$prototypesRedu2.thc,
+      cbd = _props$prototypesRedu2.cbd,
+      tiempo_flora = _props$prototypesRedu2.tiempo_flora,
+      sabores = _props$prototypesRedu2.sabores,
+      cantidad = _props$prototypesRedu.cantidad,
+      ambiente = _props$prototypesRedu.ambiente,
+      fecha_etapa_a = _props$prototypesRedu.fecha_etapa_a,
+      fecha_etapa_b = _props$prototypesRedu.fecha_etapa_b,
+      fecha_etapa_c = _props$prototypesRedu.fecha_etapa_c,
+      fecha_etapa_d = _props$prototypesRedu.fecha_etapa_d,
+      fecha_etapa_e = _props$prototypesRedu.fecha_etapa_e;
 
   var volver = function volver() {
     return traerTabla();
   };
 
-  var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__["makeStyles"])(function (theme) {
+  var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__["makeStyles"])(function (theme) {
     return {
       formControl: {
         margin: theme.spacing(1),
@@ -103234,7 +103300,7 @@ var Detalle = function Detalle(props) {
     className: "col col-md-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_6__["default"], {
     className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "row mt-2"
@@ -103242,7 +103308,7 @@ var Detalle = function Detalle(props) {
     className: "col col-md-8"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Informacion B\xE1sica")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col col-md-4 text-derecha"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_2___default.a, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_4___default.a, {
     fontSize: "large",
     onClick: function onClick() {
       return volver();
@@ -103253,7 +103319,32 @@ var Detalle = function Detalle(props) {
     className: "col col-md-8"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card"
-  }, "//"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col col-md-8"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    className: classes.formControl
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row mt-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col col-md-8"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Informacion Complementaria"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+    className: "table"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Implante"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_a), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "--")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Germi"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_b), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_b ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_9__["calcularDiasTotalesParse"])(fecha_etapa_b, fecha_etapa_a) + 'Dias' : '')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Flori"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_c), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_c ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_9__["calcularDiasTotalesParse"])(fecha_etapa_c, fecha_etapa_b) + 'Dias' : '')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Corte"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_d), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_d ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_9__["calcularDiasTotalesParse"])(fecha_etapa_d, fecha_etapa_c) + 'Dias' : '')))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col col-md-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    className: classes.formControl
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row mt-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col col-md-8"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Final"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+    className: "table"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Etapa"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_a || '-')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Cantidad"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, cantidad)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Dias totales"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_e ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_9__["calcularDiasTotalesParse"])(fecha_etapa_e, fecha_etapa_a) + ' Dias' : Object(_js_funciones__WEBPACK_IMPORTED_MODULE_9__["calcularDiasTotales"])(Date.now('YYYY-MM-DD'), Date.parse(fecha_etapa_a)) + ' Dias')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Dias Estitpulados:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, tiempo_flora)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_sweet_progress__WEBPACK_IMPORTED_MODULE_2__["Progress"], {
+    percent: Object(_js_funciones__WEBPACK_IMPORTED_MODULE_9__["calcularPorcentaje"])(Object(_js_funciones__WEBPACK_IMPORTED_MODULE_9__["calcularDiasTotales"])(Date.now('YYYY-MM-DD'), Date.parse(fecha_etapa_a)), tiempo_flora),
+    status: Object(_js_funciones__WEBPACK_IMPORTED_MODULE_9__["calcularPorcentaje"])(Object(_js_funciones__WEBPACK_IMPORTED_MODULE_9__["calcularDiasTotales"])(Date.now('YYYY-MM-DD'), Date.parse(fecha_etapa_a)), tiempo_flora) === 100 ? "sucess" : ""
+  }))))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "row mt-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col col-md-6"
@@ -103282,7 +103373,7 @@ var mapStateToProps = function mapStateToProps(prototypesReducer) {
   return prototypesReducer;
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_7__)(Detalle));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_10__)(Detalle));
 {
   /* <FormControl className={classes.formControl}>
   <FormControl className={classes.formControl}>
@@ -103743,17 +103834,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _General_MenuRow__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./General/MenuRow */ "./resources/js/components/Prototypes/General/MenuRow.js");
-/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
-/* harmony import */ var _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/ambientesActions */ "./resources/js/actions/ambientesActions.js");
+/* harmony import */ var _js_funciones__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../js/funciones */ "./resources/js/js/funciones.js");
+/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
+/* harmony import */ var _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/ambientesActions */ "./resources/js/actions/ambientesActions.js");
 
 
 
 
 
-var ambientesTraerUno = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_4__["traerUno"];
-var prototypesTraerUno = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_3__["traerUno"],
-    traerUnoBorrar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_3__["traerUnoBorrar"],
-    traerDetalle = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_3__["traerDetalle"];
+
+var ambientesTraerUno = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_5__["traerUno"];
+var prototypesTraerUno = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_4__["traerUno"],
+    traerUnoBorrar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_4__["traerUnoBorrar"],
+    traerDetalle = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_4__["traerDetalle"];
 
 var Table = function Table(props) {
   var traerDetalle = props.traerDetalle,
@@ -103784,10 +103877,6 @@ var Table = function Table(props) {
     return monitor['s' + output_sensor];
   };
 
-  var calcularDiasTotales = function calcularDiasTotales(fechaFinal, fechaInicial) {
-    return Math.floor((fechaFinal - fechaInicial) / (1000 * 60 * 60 * 24));
-  };
-
   var addRow = function addRow() {
     return prototypes.map(function (prototype, key) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
@@ -103799,13 +103888,13 @@ var Table = function Table(props) {
         traerUnoEliminar: traerUnoEliminar
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, prototype.genetica.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         className: "center"
-      }, prototype.ambiente.monitors.length ? prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1].temp + 'C°' : '', " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+      }, prototype.ambiente.monitors.length ? prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1].temp + ' C°' : '', " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         className: "center"
-      }, prototype.ambiente.monitors.length ? prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1].hume + '%' : '', " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+      }, prototype.ambiente.monitors.length ? prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1].hume + ' %' : '', " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         className: "center"
-      }, prototype.ambiente.monitors.length && prototype.sensor ? traerValorSensor(prototype) + '%' : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+      }, prototype.ambiente.monitors.length && prototype.sensor ? traerValorSensor(prototype) + ' %' : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         className: "center"
-      }, calcularDiasTotales(Date.now('YYYY-MM-DD'), Date.parse(prototype.fecha_etapa_a))));
+      }, Object(_js_funciones__WEBPACK_IMPORTED_MODULE_3__["calcularDiasTotales"])(Date.now('YYYY-MM-DD'), Date.parse(prototype.fecha_etapa_a))));
     });
   };
 
@@ -105095,6 +105184,32 @@ var store = Object(redux__WEBPACK_IMPORTED_MODULE_5__["createStore"])(_reducers_
 react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_4__["Provider"], {
   store: store
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_App__WEBPACK_IMPORTED_MODULE_2__["default"], null)), document.getElementById('app'));
+
+/***/ }),
+
+/***/ "./resources/js/js/funciones.js":
+/*!**************************************!*\
+  !*** ./resources/js/js/funciones.js ***!
+  \**************************************/
+/*! exports provided: calcularDiasTotales, calcularDiasTotalesParse, calcularPorcentaje */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "calcularDiasTotales", function() { return calcularDiasTotales; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "calcularDiasTotalesParse", function() { return calcularDiasTotalesParse; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "calcularPorcentaje", function() { return calcularPorcentaje; });
+var calcularDiasTotales = function calcularDiasTotales(fechaA, fechaB) {
+  return Math.floor((fechaA - fechaB) / (1000 * 60 * 60 * 24));
+};
+var calcularDiasTotalesParse = function calcularDiasTotalesParse(fechaA, fechaB) {
+  return Math.floor((Date.parse(fechaA) - Date.parse(fechaB)) / (1000 * 60 * 60 * 24));
+};
+var calcularPorcentaje = function calcularPorcentaje(NumeroA, NumeroB) {
+  var porcentaje = Math.floor(NumeroA / NumeroB * 100);
+  if (porcentaje > 100) return 100;
+  if (porcentaje <= 100) return porcentaje;
+};
 
 /***/ }),
 
