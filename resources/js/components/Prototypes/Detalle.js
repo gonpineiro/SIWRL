@@ -57,22 +57,22 @@ const Detalle = (props) => {
         temp: {
             color: theme.palette.getContrastText(red[900]),
             backgroundColor: red[900],
-            width: theme.spacing(20),
-            height: theme.spacing(20), brown
+            width: theme.spacing(15),
+            height: theme.spacing(15), brown
         },
 
         hume: {
             color: theme.palette.getContrastText(indigo[500]),
             backgroundColor: indigo[500],
-            width: theme.spacing(20),
-            height: theme.spacing(20),
+            width: theme.spacing(15),
+            height: theme.spacing(15),
         },
 
         tierra: {
             color: theme.palette.getContrastText(brown[500]),
             backgroundColor: brown[500],
-            width: theme.spacing(20),
-            height: theme.spacing(20),
+            width: theme.spacing(15),
+            height: theme.spacing(15),
         },
 
         formControl: {
@@ -93,7 +93,7 @@ const Detalle = (props) => {
                         <FormControl className={classes.formControl}>
                             <div className="row mt-2">
                                 <div className="col col-md-8">
-                                    <h4>Informacion Básica</h4>
+                                    <h4>Básica</h4>
                                 </div>
                                 <div className="col col-md-4 text-derecha">
                                     <KeyboardReturnIcon fontSize="large" onClick={() => volver()} />
@@ -131,11 +131,11 @@ const Detalle = (props) => {
                     <div className="card">
                         <div className="row">
 
-                            <div className="col col-md-8">
+                            <div className="col col-md-7">
                                 <FormControl className={classes.formControl}>
                                     <div className="row mt-2">
                                         <div className="col col-md-8">
-                                            <h4>Informacion Complementaria</h4>
+                                            <h4>Complementaria</h4>
                                         </div>
                                     </div>
                                     <table className="table">
@@ -167,7 +167,7 @@ const Detalle = (props) => {
                                 </FormControl>
                             </div>
 
-                            <div className="col col-md-4">
+                            <div className="col col-md-5">
                                 <FormControl className={classes.formControl}>
                                     <div className="row mt-2">
                                         <div className="col col-md-8">
@@ -193,7 +193,7 @@ const Detalle = (props) => {
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>Dias Estitpulados:</td>
+                                                <td>Dias Estipulados:</td>
                                                 <td>{tiempo_flora}</td>
                                             </tr>
                                         </tbody>
@@ -206,9 +206,9 @@ const Detalle = (props) => {
                                         status={
                                             calcularPorcentaje(
                                                 calcularDiasTotales(Date.now('YYYY-MM-DD'), Date.parse(fecha_etapa_a)), tiempo_flora) === 100 ?
-                                                "sucess" : ""
+                                                "success" : ""
                                         }
-                                    />
+                                    />                                    
                                 </FormControl>
                             </div>
                         </div>
@@ -236,7 +236,7 @@ const Detalle = (props) => {
                                 </div>
                             </Avatar>
                         </div>
-                    </div> 
+                    </div>
                 </div>
                 <div className="col col-md-6">
                     <div className="card">
@@ -262,7 +262,6 @@ const Detalle = (props) => {
                     </div>
                 </div>
             </div>
-
 
         </div>
 

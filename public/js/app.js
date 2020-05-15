@@ -104017,21 +104017,21 @@ var Detalle = function Detalle(props) {
       temp: {
         color: theme.palette.getContrastText(_material_ui_core_colors__WEBPACK_IMPORTED_MODULE_8__["red"][900]),
         backgroundColor: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_8__["red"][900],
-        width: theme.spacing(20),
-        height: theme.spacing(20),
+        width: theme.spacing(15),
+        height: theme.spacing(15),
         brown: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_8__["brown"]
       },
       hume: {
         color: theme.palette.getContrastText(_material_ui_core_colors__WEBPACK_IMPORTED_MODULE_8__["indigo"][500]),
         backgroundColor: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_8__["indigo"][500],
-        width: theme.spacing(20),
-        height: theme.spacing(20)
+        width: theme.spacing(15),
+        height: theme.spacing(15)
       },
       tierra: {
         color: theme.palette.getContrastText(_material_ui_core_colors__WEBPACK_IMPORTED_MODULE_8__["brown"][500]),
         backgroundColor: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_8__["brown"][500],
-        width: theme.spacing(20),
-        height: theme.spacing(20)
+        width: theme.spacing(15),
+        height: theme.spacing(15)
       },
       formControl: {
         margin: theme.spacing(1),
@@ -104055,7 +104055,7 @@ var Detalle = function Detalle(props) {
     className: "row mt-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col col-md-8"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Informacion B\xE1sica")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "B\xE1sica")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col col-md-4 text-derecha"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_4___default.a, {
     fontSize: "large",
@@ -104071,17 +104071,17 @@ var Detalle = function Detalle(props) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col col-md-8"
+    className: "col col-md-7"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_6__["default"], {
     className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "row mt-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col col-md-8"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Informacion Complementaria"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Complementaria"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
     className: "table"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Implante"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_a), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "--")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Germi"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_b), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_b ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_10__["calcularDiasTotalesParse"])(fecha_etapa_b, fecha_etapa_a) + 'Dias' : '')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Flori"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_c), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_c ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_10__["calcularDiasTotalesParse"])(fecha_etapa_c, fecha_etapa_b) + 'Dias' : '')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Corte"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_d), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_d ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_10__["calcularDiasTotalesParse"])(fecha_etapa_d, fecha_etapa_c) + 'Dias' : '')))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col col-md-4"
+    className: "col col-md-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_6__["default"], {
     className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -104090,9 +104090,9 @@ var Detalle = function Detalle(props) {
     className: "col col-md-8"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Final"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
     className: "table"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Etapa"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_a || '-')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Cantidad"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, cantidad)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Dias totales"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_e ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_10__["calcularDiasTotalesParse"])(fecha_etapa_e, fecha_etapa_a) + ' Dias' : Object(_js_funciones__WEBPACK_IMPORTED_MODULE_10__["calcularDiasTotales"])(Date.now('YYYY-MM-DD'), Date.parse(fecha_etapa_a)) + ' Dias')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Dias Estitpulados:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, tiempo_flora)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_sweet_progress__WEBPACK_IMPORTED_MODULE_2__["Progress"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Etapa"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_a || '-')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Cantidad"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, cantidad)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Dias totales"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_e ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_10__["calcularDiasTotalesParse"])(fecha_etapa_e, fecha_etapa_a) + ' Dias' : Object(_js_funciones__WEBPACK_IMPORTED_MODULE_10__["calcularDiasTotales"])(Date.now('YYYY-MM-DD'), Date.parse(fecha_etapa_a)) + ' Dias')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Dias Estipulados:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, tiempo_flora)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_sweet_progress__WEBPACK_IMPORTED_MODULE_2__["Progress"], {
     percent: Object(_js_funciones__WEBPACK_IMPORTED_MODULE_10__["calcularPorcentaje"])(Object(_js_funciones__WEBPACK_IMPORTED_MODULE_10__["calcularDiasTotales"])(Date.now('YYYY-MM-DD'), Date.parse(fecha_etapa_a)), tiempo_flora),
-    status: Object(_js_funciones__WEBPACK_IMPORTED_MODULE_10__["calcularPorcentaje"])(Object(_js_funciones__WEBPACK_IMPORTED_MODULE_10__["calcularDiasTotales"])(Date.now('YYYY-MM-DD'), Date.parse(fecha_etapa_a)), tiempo_flora) === 100 ? "sucess" : ""
+    status: Object(_js_funciones__WEBPACK_IMPORTED_MODULE_10__["calcularPorcentaje"])(Object(_js_funciones__WEBPACK_IMPORTED_MODULE_10__["calcularDiasTotales"])(Date.now('YYYY-MM-DD'), Date.parse(fecha_etapa_a)), tiempo_flora) === 100 ? "success" : ""
   }))))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "row mt-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

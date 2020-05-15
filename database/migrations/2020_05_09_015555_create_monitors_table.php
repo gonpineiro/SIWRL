@@ -18,6 +18,8 @@ class CreateMonitorsTable extends Migration
             $table->integer('codigo_id')->unsigned();
             $table->integer('temp')->nullable();
             $table->integer('hume')->nullable();
+            $table->integer('estado')->nullable();
+            $table->integer('horas_luz')->nullable();
             $table->integer('s1')->nullable();
             $table->integer('s2')->nullable();
             $table->integer('s3')->nullable();
