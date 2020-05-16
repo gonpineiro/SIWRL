@@ -1,6 +1,7 @@
 export const TRAER_TODOS = 'prototypes_traer_todos'
 export const TRAER_UNO = 'prototypes_traer_uno'
 export const LOADING = 'prototypes_cargando'
+export const STEPPER_DETALLE_LOADING = 'prototypes_stepper_detalle_loading'
 export const ERROR = 'prototypes_error'
 export const ERROR_FORM = 'prototypes_error_form'
 export const CAMBIO_ESTADO_FORM = 'prototypes_cambio_estado_form'

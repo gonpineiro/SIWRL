@@ -23,7 +23,9 @@ class CreatePrototypesTable extends Migration
             $table->date('fecha_etapa_b')->nullable();      //germi
             $table->date('fecha_etapa_c')->nullable();      //flori
             $table->date('fecha_etapa_d')->nullable();      //corte
-            $table->date('fecha_etapa_e')->nullable();      //final
+            $table->date('fecha_etapa_e')->nullable();      //seca
+            $table->date('fecha_etapa_f')->nullable();      //final
+            $table->integer('estado')->nullable();          //0 - 1 - 2 - 3 - 4 
             $table->integer('cantidad')->nullable();
             $table->timestamps();
         });

@@ -29,6 +29,8 @@ class Prototype extends Model
         'fecha_etapa_b',
         'fecha_etapa_c',
         'fecha_etapa_d',
+        'fecha_etapa_f',
+        'estado',
         'cantidad'
     ];
 }

@@ -16,7 +16,15 @@ const Informacion = (props) => {
             },
             prototype
         }
-    } = props
+    } = props    
+
+    const printTemp = () => (ambiente.monitors.length ? ambiente.monitors[ambiente.monitors.length - 1].temp : false)
+
+    const printHume = () =>  (ambiente.monitors.length ? ambiente.monitors[ambiente.monitors.length - 1].hume : false)
+
+    const tamanoAvatars = 10
+
+    const tamanoFuente = 27
 
     const useStyles = makeStyles((theme) => ({
 
@@ -29,24 +37,30 @@ const Informacion = (props) => {
         },
 
         temp: {
-            color: theme.palette.getContrastText(red[900]),
+            color: theme.palette.getContrastText(red[400]),
             backgroundColor: red[900],
-            width: theme.spacing(15),
-            height: theme.spacing(15), brown
+            width: theme.spacing(tamanoAvatars),
+            height: theme.spacing(tamanoAvatars),
+            margin: theme.spacing(2),
+            fontSize: tamanoFuente
         },
 
         hume: {
             color: theme.palette.getContrastText(indigo[500]),
             backgroundColor: indigo[500],
-            width: theme.spacing(15),
-            height: theme.spacing(15),
+            width: theme.spacing(tamanoAvatars),
+            height: theme.spacing(tamanoAvatars),
+            margin: theme.spacing(2),
+            fontSize: tamanoFuente
         },
 
         tierra: {
             color: theme.palette.getContrastText(brown[500]),
-            backgroundColor: brown[500],
-            width: theme.spacing(15),
-            height: theme.spacing(15),
+            backgroundColor: brown[900],
+            width: theme.spacing(tamanoAvatars),
+            height: theme.spacing(tamanoAvatars),
+            margin: theme.spacing(2),
+            fontSize: tamanoFuente
         },
 
     }));
@@ -60,12 +74,12 @@ const Informacion = (props) => {
                     <div className={classes.avatars}>
                         <Avatar alt="Remy Sharp" className={classes.temp} >
                             <div className="avatar">
-                                {ambiente.monitors.length ? ambiente.monitors[ambiente.monitors.length - 1].temp + 'C°' : ''}
+                                {printTemp() ? printTemp() + 'C°' : ''}
                             </div>
                         </Avatar>
                         <Avatar alt="Travis Howard" className={classes.hume} >
                             <div className="avatar">
-                                {ambiente.monitors.length ? ambiente.monitors[ambiente.monitors.length - 1].hume + '%' : ''}
+                                {printHume() ? printHume() + '%' : ''}
                             </div>
                         </Avatar>
                         <Avatar alt="Cindy Baker" className={classes.tierra} >
@@ -97,7 +111,7 @@ const Informacion = (props) => {
                             <div className="avatar">
                                 {
                                     ambiente.monitors.length ?
-                                        (ambiente.monitors[ambiente.monitors.length - 1].estado === 1 || ambiente.monitors[ambiente.monitors.length - 1].estado === 3 ? 'C' : 'F')
+                                        (ambiente.monitors[ambiente.monitors.length - 1].estado === 0 || ambiente.monitors[ambiente.monitors.length - 1].estado === 1 ? 'C' : 'F')
                                         : ''
                                 }
                             </div>

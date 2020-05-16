@@ -4,12 +4,22 @@ export const calcularDiasTotalesParse = (fechaA, fechaB) => Math.floor((Date.par
 
 export const calcularPorcentaje = (NumeroA, NumeroB) => {
     const porcentaje = Math.floor((NumeroA / NumeroB) * 100)
-    if (porcentaje > 100) return 100    
-    if (porcentaje <= 100) return porcentaje    
+    if (porcentaje > 100) return 100
+    if (porcentaje <= 100) return porcentaje
 }
 
 export const traerValorSensor = (prototype) => {
     const output_sensor = prototype.sensor.output
     const monitor = prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1]
     return monitor['s' + output_sensor]
-  }
+}
+
+export const obtenerFechaHoy = () => {
+    const date = new Date()
+    const year = date.getFullYear() 
+    const month = date.getMonth() + 1
+    const day = date.getDate()
+    const fecha_hoy =  year + '-' + month + '-' + day
+    console.log(fecha_hoy)
+    return fecha_hoy
+}

@@ -6,6 +6,9 @@ import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Spinner from '../../General/Spinner';
+
+import { obtenerFechaHoy } from '../../../js/funciones'
 
 import * as protoypesActions from '../../../actions/protoypesActions'
 
@@ -16,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     avanzarButton: {
         marginRight: theme.spacing(1),
         marginLeft: theme.spacing(2),
-        textAlign: 'center',
+        marginBottom: theme.spacing(2),
     },
     instructions: {
         marginTop: theme.spacing(1),
@@ -24,83 +27,107 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function getSteps() {
-    return ['Implantación', 'Germinación', 'Floración', 'Corte', 'Secado'];
-}
+const getSteps = () => ['Implantación', 'Germinación', 'Floración', 'Corte', 'Secado'];
 
-/* function getStepContent(stepIndex) {
-  switch (stepIndex) {
-    case 0:
-      return 'Select campaign settings...';
-    case 1:
-      return 'What is an ad group anyways?';
-    case 2:
-      return 'This is the bit I really care about!';
-    default:
-      return 'Unknown stepIndex';
-  }
-} */
+const StepperPrototype = (props) => {
+    const {
+        prototypesReducer: {
+            prototype: {
+                id,
+                estado,
+            },
+            prototype,
+            loading_stepper,
+        },
+        traerDetalleInterval,
+        sumarEstadoStepper
+    } = props
 
-const StepperPrototype = () => {
     const classes = useStyles();
-    const [activeStep, setActiveStep] = React.useState(0);
     const steps = getSteps();
 
     const handleNext = () => {
-        setActiveStep((prevActiveStep) => prevActiveStep + 1);
+
+        const enviarUpdateEstado = (estado) => {
+
+            switch (estado) {
+                case 0:
+                    return {
+                        ...prototype,
+                        fecha_etapa_b: obtenerFechaHoy(),
+                        estado: estado + 1
+                    };
+                    break;
+
+                case 1:
+                    return {
+                        ...prototype,
+                        fecha_etapa_c: obtenerFechaHoy(),
+                        estado: estado + 1
+                    };
+                    break;
+
+                case 2:
+                    return {
+                        ...prototype,
+                        fecha_etapa_d: obtenerFechaHoy(),
+                        estado: estado + 1
+                    };
+                    break;
+
+                case 3:
+                    return {
+                        ...prototype,
+                        fecha_etapa_e: obtenerFechaHoy(),
+                        estado: estado + 1
+                    };
+                    break;
+                case 4:
+                    return {
+                        ...prototype,
+                        fecha_etapa_f: obtenerFechaHoy(),
+                        estado: estado + 1
+                    };
+                    break;
+
+                default:
+                    break;
+            }
+        }
+        console.log(enviarUpdateEstado(estado))
+        sumarEstadoStepper(enviarUpdateEstado(estado), id)
+        traerDetalleInterval(id)
+
     };
-
-    /*  const handleBack = () => {
-       setActiveStep((prevActiveStep) => prevActiveStep - 1);
-     }; */
-
-    /*   const handleReset = () => {
-        setActiveStep(0);
-      }; */
 
     return (
         <div className={classes.root}>
-            <Stepper activeStep={3} alternativeLabel>
+            <Stepper activeStep={estado} alternativeLabel>
                 {steps.map((label) => (
                     <Step key={label}>
                         <StepLabel>{label}</StepLabel>
                     </Step>
                 ))}
             </Stepper>
-            <div>
-                {activeStep === steps.length ? (
-                    <div>
-                        <Typography className={classes.instructions}>All steps completed</Typography>
-                        {/* <Button onClick={handleReset}>Reset</Button> */}
-                    </div>
-                ) : (
+            <div className="center">
+                {loading_stepper ? <Spinner /> :
+                    estado === steps.length ? (
                         <div>
-                            <Typography className={classes.instructions}>{/* {getStepContent(activeStep)} */}</Typography>
+                            <Typography className={classes.instructions}>Prototipo Completado!</Typography>
+                        </div>
+                    ) : (
                             <div>
-                                {/* <Button
-                disabled={activeStep === 0}
-                onClick={handleBack}
-                className={classes.backButton}
-              >
-                Back
-              </Button> */}
                                 <Button variant="contained" className={classes.avanzarButton} color="primary" onClick={handleNext}>
-                                    {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                                    {estado === steps.length - 1 ? 'Terminar' : 'Pasar a ' + steps[estado + 1]}
                                 </Button>
                             </div>
-                        </div>
-                    )}
+                        )
+                }
             </div>
         </div>
     );
 }
 
-
 const mapStateToProps = (prototypesReducer) => prototypesReducer
-
-/* const mapDispatchToProps = {
-    cancelar,
-    traerDetalleInterval,
-}; */
 
 export default connect(mapStateToProps, protoypesActions)(StepperPrototype);

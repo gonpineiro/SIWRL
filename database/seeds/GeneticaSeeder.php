@@ -21,7 +21,7 @@ class GeneticaSeeder extends Seeder
                 'cbd' => rand(0, 100),
                 'prod_int' => rand(100, 800),
                 'prod_ext' => rand(300, 1900),
-                'tiempo_flora' => rand(7, 15),
+                'tiempo_flora' => rand(90, 120),
                 'sabores' => 'Limon'
                 ]);    
         }              

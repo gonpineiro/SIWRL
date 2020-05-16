@@ -28335,7 +28335,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Mon
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap);", ""]);
 
 // module
-exports.push([module.i, ".center {\r\n    text-align: center;\r\n}\r\n\r\ntable {\r\n    font-size: 0.785rem;\r\n}\r\n\r\n.table td {\r\n    padding: 0.30rem;\r\n    justify-content: center;\r\n    vertical-align: inherit;\r\n}\r\n\r\n.material-icons {\r\n    width: 0.30rem;\r\n    height: 0.30rem;\r\n}\r\n\r\n.alert {\r\n    font-size: 10px;\r\n}\r\n\r\n.btn {\r\n    margin-right: 15px;\r\n}\r\n\r\n.btn-cancelar {\r\n    background-color: #5e2129;\r\n    border-color: #5e2129;\r\n}\r\n\r\n.material-icons {\r\n    font-family: 'Material Icons';\r\n    font-weight: normal;\r\n    font-style: normal;\r\n    font-size: 20px;\r\n    /* Preferred icon size */\r\n    display: inline-block;\r\n    line-height: 1;\r\n    text-transform: none;\r\n    letter-spacing: normal;\r\n    word-wrap: normal;\r\n    white-space: nowrap;\r\n    direction: ltr;\r\n\r\n    /* Agregador por gon.pineiro */\r\n    margin-left: 10px;\r\n    margin-right: 10px;\r\n\r\n    /* Support for all WebKit browsers. */\r\n    -webkit-font-smoothing: antialiased;\r\n    /* Support for Safari and Chrome. */\r\n    text-rendering: optimizeLegibility;\r\n\r\n    /* Support for Firefox. */\r\n    -moz-osx-font-smoothing: grayscale;\r\n\r\n    /* Support for IE. */\r\n    font-feature-settings: 'liga';\r\n}\r\n\r\n.link {\r\n    cursor: pointer;\r\n}\r\n\r\n.link-string {\r\n    color: #3e5f8a;\r\n    font-weight: bold;\r\n}\r\n\r\n.card-agregar {\r\n    color: black;\r\n    font-weight: bold;\r\n    text-align: left;\r\n}\r\n\r\n.card-eliminar {\r\n    color: #5e2129;\r\n    font-weight: bold;\r\n    text-align: left;\r\n}\r\n\r\n\r\n.margin-button {\r\n    margin-top: 15px;\r\n    margin-left: 15px;\r\n    margin-right: 15px;\r\n}\r\n\r\n.container {\r\n    margin-top: 25px;\r\n}\r\n\r\n.text-derecha {\r\n    text-align: right;\r\n}\r\n\r\n.color-alert {\r\n    color: #5e2129;\r\n}\r\n\r\n.box {\r\n    margin: 10px;\r\n}\r\n\r\n.avatar {\r\n    font-size: 40px;\r\n    font-family: 'Roboto Mono', monospace;\r\n}", ""]);
+exports.push([module.i, ".center {\r\n    text-align: center;\r\n}\r\n\r\ntable {\r\n    font-size: 0.785rem;\r\n}\r\n\r\n.table td {\r\n    padding: 0.30rem;\r\n    justify-content: center;\r\n    vertical-align: inherit;\r\n}\r\n\r\n.material-icons {\r\n    width: 0.30rem;\r\n    height: 0.30rem;\r\n}\r\n\r\n.alert {\r\n    font-size: 10px;\r\n}\r\n\r\n.btn {\r\n    margin-right: 15px;\r\n}\r\n\r\n.btn-cancelar {\r\n    background-color: #5e2129;\r\n    border-color: #5e2129;\r\n}\r\n\r\n.material-icons {\r\n    font-family: 'Material Icons';\r\n    font-weight: normal;\r\n    font-style: normal;\r\n    font-size: 20px;\r\n    /* Preferred icon size */\r\n    display: inline-block;\r\n    line-height: 1;\r\n    text-transform: none;\r\n    letter-spacing: normal;\r\n    word-wrap: normal;\r\n    white-space: nowrap;\r\n    direction: ltr;\r\n\r\n    /* Agregador por gon.pineiro */\r\n    margin-left: 10px;\r\n    margin-right: 10px;\r\n\r\n    /* Support for all WebKit browsers. */\r\n    -webkit-font-smoothing: antialiased;\r\n    /* Support for Safari and Chrome. */\r\n    text-rendering: optimizeLegibility;\r\n\r\n    /* Support for Firefox. */\r\n    -moz-osx-font-smoothing: grayscale;\r\n\r\n    /* Support for IE. */\r\n    font-feature-settings: 'liga';\r\n}\r\n\r\n.link {\r\n    cursor: pointer;\r\n}\r\n\r\n.link-string {\r\n    color: #3e5f8a;\r\n    font-weight: bold;\r\n}\r\n\r\n.card-agregar {\r\n    color: black;\r\n    font-weight: bold;\r\n    text-align: left;\r\n}\r\n\r\n.card-eliminar {\r\n    color: #5e2129;\r\n    font-weight: bold;\r\n    text-align: left;\r\n}\r\n\r\n\r\n.margin-button {\r\n    margin-top: 15px;\r\n    margin-left: 15px;\r\n    margin-right: 15px;\r\n}\r\n\r\n.container {\r\n    margin-top: 25px;\r\n}\r\n\r\n.text-derecha {\r\n    text-align: right;\r\n}\r\n\r\n.color-alert {\r\n    color: #5e2129;\r\n}\r\n\r\n.box {\r\n    margin: 10px;\r\n}\r\n\r\n.avatar {\r\n    font-family: 'Roboto Mono', monospace;\r\n}\r\n", ""]);
 
 // exports
 
@@ -102377,7 +102377,7 @@ var cancelar = function cancelar() {
 /*!**************************************************!*\
   !*** ./resources/js/actions/protoypesActions.js ***!
   \**************************************************/
-/*! exports provided: traerTodos, traerUno, cambioPrototypeName, cambioPrototypeGenetica, cambioPrototypeAmbiente, cambioPrototypeSensor, cambioPrototypeFechaA, cambioPrototypeFechaB, cambioPrototypeFechaC, cambioPrototypeFechaD, cambioPrototypeFechaE, agregar, editar, traerUnoBorrar, borrar, cancelar, traerTabla, traerDetalle, traerDetalleInterval, traerTodosInterval */
+/*! exports provided: traerTodos, traerUno, cambioPrototypeName, cambioPrototypeGenetica, cambioPrototypeAmbiente, cambioPrototypeSensor, cambioPrototypeFechaA, cambioPrototypeFechaB, cambioPrototypeFechaC, cambioPrototypeFechaD, cambioPrototypeFechaE, agregar, editar, traerUnoBorrar, borrar, cancelar, traerTabla, traerDetalle, traerDetalleInterval, traerTodosInterval, sumarEstadoStepper */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -102402,6 +102402,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traerDetalle", function() { return traerDetalle; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traerDetalleInterval", function() { return traerDetalleInterval; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traerTodosInterval", function() { return traerTodosInterval; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sumarEstadoStepper", function() { return sumarEstadoStepper; });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
@@ -102892,6 +102893,53 @@ var traerTodosInterval = function traerTodosInterval() {
 
     return function (_x9) {
       return _ref9.apply(this, arguments);
+    };
+  }();
+};
+var sumarEstadoStepper = function sumarEstadoStepper(nuevo_prototype, id) {
+  return /*#__PURE__*/function () {
+    var _ref10 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee10(dispatch) {
+      var errors;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee10$(_context10) {
+        while (1) {
+          switch (_context10.prev = _context10.next) {
+            case 0:
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["STEPPER_DETALLE_LOADING"],
+                payload: true
+              });
+              _context10.prev = 1;
+              _context10.next = 4;
+              return axios__WEBPACK_IMPORTED_MODULE_1___default.a.put(URL + 'prototype/' + id, nuevo_prototype);
+
+            case 4:
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["STEPPER_DETALLE_LOADING"],
+                payload: false
+              });
+              _context10.next = 12;
+              break;
+
+            case 7:
+              _context10.prev = 7;
+              _context10.t0 = _context10["catch"](1);
+              errors = _context10.t0.response.data.errors;
+              console.log(_context10.t0.response);
+              dispatch({
+                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["ERROR_FORM"],
+                payload: errors
+              });
+
+            case 12:
+            case "end":
+              return _context10.stop();
+          }
+        }
+      }, _callee10, null, [[1, 7]]);
+    }));
+
+    return function (_x10) {
+      return _ref10.apply(this, arguments);
     };
   }();
 };
@@ -105327,7 +105375,8 @@ var Complementaria = function Complementaria(props) {
       fecha_etapa_a = _props$prototypesRedu.fecha_etapa_a,
       fecha_etapa_b = _props$prototypesRedu.fecha_etapa_b,
       fecha_etapa_c = _props$prototypesRedu.fecha_etapa_c,
-      fecha_etapa_d = _props$prototypesRedu.fecha_etapa_d;
+      fecha_etapa_d = _props$prototypesRedu.fecha_etapa_d,
+      fecha_etapa_e = _props$prototypesRedu.fecha_etapa_e;
   var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__["makeStyles"])(function (theme) {
     return {
       formControl: {
@@ -105346,7 +105395,7 @@ var Complementaria = function Complementaria(props) {
     className: "col col-md-8"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Complementaria"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
     className: "table"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Implante"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_a), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "--")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Germi"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_b), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_b ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_4__["calcularDiasTotalesParse"])(fecha_etapa_b, fecha_etapa_a) + 'Dias' : '')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Flori"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_c), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_c ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_4__["calcularDiasTotalesParse"])(fecha_etapa_c, fecha_etapa_b) + 'Dias' : '')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Corte"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_d), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_d ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_4__["calcularDiasTotalesParse"])(fecha_etapa_d, fecha_etapa_c) + 'Dias' : '')))));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Implante"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_a), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "--")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Germi"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_b), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_b ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_4__["calcularDiasTotalesParse"])(fecha_etapa_b, fecha_etapa_a) + ' Dias' : '')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Flori"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_c), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_c ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_4__["calcularDiasTotalesParse"])(fecha_etapa_c, fecha_etapa_b) + ' Dias' : '')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Corte"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_d), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_d ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_4__["calcularDiasTotalesParse"])(fecha_etapa_d, fecha_etapa_c) + ' Dias' : '')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Frasco"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_e), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, fecha_etapa_e ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_4__["calcularDiasTotalesParse"])(fecha_etapa_e, fecha_etapa_d) + ' Dias' : '')))));
 };
 
 var mapStateToProps = function mapStateToProps(prototypesReducer) {
@@ -105451,6 +105500,17 @@ var Informacion = function Informacion(props) {
       sensor = _props$prototypesRedu2.sensor,
       ambiente = _props$prototypesRedu2.ambiente,
       prototype = _props$prototypesRedu.prototype;
+
+  var printTemp = function printTemp() {
+    return ambiente.monitors.length ? ambiente.monitors[ambiente.monitors.length - 1].temp : false;
+  };
+
+  var printHume = function printHume() {
+    return ambiente.monitors.length ? ambiente.monitors[ambiente.monitors.length - 1].hume : false;
+  };
+
+  var tamanoAvatars = 10;
+  var tamanoFuente = 27;
   var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__["makeStyles"])(function (theme) {
     return {
       avatars: {
@@ -105461,23 +105521,28 @@ var Informacion = function Informacion(props) {
         justifyContent: "center"
       },
       temp: {
-        color: theme.palette.getContrastText(_material_ui_core_colors__WEBPACK_IMPORTED_MODULE_4__["red"][900]),
+        color: theme.palette.getContrastText(_material_ui_core_colors__WEBPACK_IMPORTED_MODULE_4__["red"][400]),
         backgroundColor: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_4__["red"][900],
-        width: theme.spacing(15),
-        height: theme.spacing(15),
-        brown: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_4__["brown"]
+        width: theme.spacing(tamanoAvatars),
+        height: theme.spacing(tamanoAvatars),
+        margin: theme.spacing(2),
+        fontSize: tamanoFuente
       },
       hume: {
         color: theme.palette.getContrastText(_material_ui_core_colors__WEBPACK_IMPORTED_MODULE_4__["indigo"][500]),
         backgroundColor: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_4__["indigo"][500],
-        width: theme.spacing(15),
-        height: theme.spacing(15)
+        width: theme.spacing(tamanoAvatars),
+        height: theme.spacing(tamanoAvatars),
+        margin: theme.spacing(2),
+        fontSize: tamanoFuente
       },
       tierra: {
         color: theme.palette.getContrastText(_material_ui_core_colors__WEBPACK_IMPORTED_MODULE_4__["brown"][500]),
-        backgroundColor: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_4__["brown"][500],
-        width: theme.spacing(15),
-        height: theme.spacing(15)
+        backgroundColor: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_4__["brown"][900],
+        width: theme.spacing(tamanoAvatars),
+        height: theme.spacing(tamanoAvatars),
+        margin: theme.spacing(2),
+        fontSize: tamanoFuente
       }
     };
   });
@@ -105495,12 +105560,12 @@ var Informacion = function Informacion(props) {
     className: classes.temp
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "avatar"
-  }, ambiente.monitors.length ? ambiente.monitors[ambiente.monitors.length - 1].temp + 'C°' : '')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, printTemp() ? printTemp() + 'C°' : '')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_2__["default"], {
     alt: "Travis Howard",
     className: classes.hume
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "avatar"
-  }, ambiente.monitors.length ? ambiente.monitors[ambiente.monitors.length - 1].hume + '%' : '')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, printHume() ? printHume() + '%' : '')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_2__["default"], {
     alt: "Cindy Baker",
     className: classes.tierra
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -105526,7 +105591,7 @@ var Informacion = function Informacion(props) {
     className: classes.tierra
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "avatar"
-  }, ambiente.monitors.length ? ambiente.monitors[ambiente.monitors.length - 1].estado === 1 || ambiente.monitors[ambiente.monitors.length - 1].estado === 3 ? 'C' : 'F' : ''))))));
+  }, ambiente.monitors.length ? ambiente.monitors[ambiente.monitors.length - 1].estado === 0 || ambiente.monitors[ambiente.monitors.length - 1].estado === 1 ? 'C' : 'F' : ''))))));
 };
 
 var mapStateToProps = function mapStateToProps(prototypesReducer) {
@@ -106042,18 +106107,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_StepLabel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/StepLabel */ "./node_modules/@material-ui/core/esm/StepLabel/index.js");
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
 /* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js");
-/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../General/Spinner */ "./resources/js/components/General/Spinner.js");
+/* harmony import */ var _js_funciones__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../js/funciones */ "./resources/js/js/funciones.js");
+/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
@@ -106072,7 +106135,7 @@ var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["ma
     avanzarButton: {
       marginRight: theme.spacing(1),
       marginLeft: theme.spacing(2),
-      textAlign: 'center'
+      marginBottom: theme.spacing(2)
     },
     instructions: {
       marginTop: theme.spacing(1),
@@ -106081,78 +106144,96 @@ var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["ma
   };
 });
 
-function getSteps() {
+var getSteps = function getSteps() {
   return ['Implantación', 'Germinación', 'Floración', 'Corte', 'Secado'];
-}
-/* function getStepContent(stepIndex) {
-  switch (stepIndex) {
-    case 0:
-      return 'Select campaign settings...';
-    case 1:
-      return 'What is an ad group anyways?';
-    case 2:
-      return 'This is the bit I really care about!';
-    default:
-      return 'Unknown stepIndex';
-  }
-} */
+};
 
-
-var StepperPrototype = function StepperPrototype() {
+var StepperPrototype = function StepperPrototype(props) {
+  var _props$prototypesRedu = props.prototypesReducer,
+      _props$prototypesRedu2 = _props$prototypesRedu.prototype,
+      id = _props$prototypesRedu2.id,
+      estado = _props$prototypesRedu2.estado,
+      prototype = _props$prototypesRedu.prototype,
+      loading_stepper = _props$prototypesRedu.loading_stepper,
+      traerDetalleInterval = props.traerDetalleInterval,
+      sumarEstadoStepper = props.sumarEstadoStepper;
   var classes = useStyles();
-
-  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(0),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      activeStep = _React$useState2[0],
-      setActiveStep = _React$useState2[1];
-
   var steps = getSteps();
 
   var handleNext = function handleNext() {
-    setActiveStep(function (prevActiveStep) {
-      return prevActiveStep + 1;
-    });
+    var enviarUpdateEstado = function enviarUpdateEstado(estado) {
+      switch (estado) {
+        case 0:
+          return _objectSpread(_objectSpread({}, prototype), {}, {
+            fecha_etapa_b: Object(_js_funciones__WEBPACK_IMPORTED_MODULE_9__["obtenerFechaHoy"])(),
+            estado: estado + 1
+          });
+          break;
+
+        case 1:
+          return _objectSpread(_objectSpread({}, prototype), {}, {
+            fecha_etapa_c: Object(_js_funciones__WEBPACK_IMPORTED_MODULE_9__["obtenerFechaHoy"])(),
+            estado: estado + 1
+          });
+          break;
+
+        case 2:
+          return _objectSpread(_objectSpread({}, prototype), {}, {
+            fecha_etapa_d: Object(_js_funciones__WEBPACK_IMPORTED_MODULE_9__["obtenerFechaHoy"])(),
+            estado: estado + 1
+          });
+          break;
+
+        case 3:
+          return _objectSpread(_objectSpread({}, prototype), {}, {
+            fecha_etapa_e: Object(_js_funciones__WEBPACK_IMPORTED_MODULE_9__["obtenerFechaHoy"])(),
+            estado: estado + 1
+          });
+          break;
+
+        case 4:
+          return _objectSpread(_objectSpread({}, prototype), {}, {
+            fecha_etapa_f: Object(_js_funciones__WEBPACK_IMPORTED_MODULE_9__["obtenerFechaHoy"])(),
+            estado: estado + 1
+          });
+          break;
+
+        default:
+          break;
+      }
+    };
+
+    console.log(enviarUpdateEstado(estado));
+    sumarEstadoStepper(enviarUpdateEstado(estado), id);
+    traerDetalleInterval(id);
   };
-  /*  const handleBack = () => {
-     setActiveStep((prevActiveStep) => prevActiveStep - 1);
-   }; */
-
-  /*   const handleReset = () => {
-      setActiveStep(0);
-    }; */
-
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: classes.root
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Stepper__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    activeStep: 3,
+    activeStep: estado,
     alternativeLabel: true
   }, steps.map(function (label) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Step__WEBPACK_IMPORTED_MODULE_4__["default"], {
       key: label
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_StepLabel__WEBPACK_IMPORTED_MODULE_5__["default"], null, label));
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, activeStep === steps.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "center"
+  }, loading_stepper ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_8__["default"], null) : estado === steps.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_7__["default"], {
     className: classes.instructions
-  }, "All steps completed")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    className: classes.instructions
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, "Prototipo Completado!")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_6__["default"], {
     variant: "contained",
     className: classes.avanzarButton,
     color: "primary",
     onClick: handleNext
-  }, activeStep === steps.length - 1 ? 'Finish' : 'Next')))));
+  }, estado === steps.length - 1 ? 'Terminar' : 'Pasar a ' + steps[estado + 1]))));
 };
 
 var mapStateToProps = function mapStateToProps(prototypesReducer) {
   return prototypesReducer;
 };
-/* const mapDispatchToProps = {
-    cancelar,
-    traerDetalleInterval,
-}; */
 
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_8__)(StepperPrototype));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_10__)(StepperPrototype));
 
 /***/ }),
 
@@ -107532,7 +107613,7 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEB
 /*!**************************************!*\
   !*** ./resources/js/js/funciones.js ***!
   \**************************************/
-/*! exports provided: calcularDiasTotales, calcularDiasTotalesParse, calcularPorcentaje, traerValorSensor */
+/*! exports provided: calcularDiasTotales, calcularDiasTotalesParse, calcularPorcentaje, traerValorSensor, obtenerFechaHoy */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -107541,6 +107622,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "calcularDiasTotalesParse", function() { return calcularDiasTotalesParse; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "calcularPorcentaje", function() { return calcularPorcentaje; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traerValorSensor", function() { return traerValorSensor; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "obtenerFechaHoy", function() { return obtenerFechaHoy; });
 var calcularDiasTotales = function calcularDiasTotales(fechaA, fechaB) {
   return Math.floor((fechaA - fechaB) / (1000 * 60 * 60 * 24));
 };
@@ -107556,6 +107638,15 @@ var traerValorSensor = function traerValorSensor(prototype) {
   var output_sensor = prototype.sensor.output;
   var monitor = prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1];
   return monitor['s' + output_sensor];
+};
+var obtenerFechaHoy = function obtenerFechaHoy() {
+  var date = new Date();
+  var year = date.getFullYear();
+  var month = date.getMonth() + 1;
+  var day = date.getDate();
+  var fecha_hoy = year + '-' + month + '-' + day;
+  console.log(fecha_hoy);
+  return fecha_hoy;
 };
 
 /***/ }),
@@ -108058,6 +108149,7 @@ var INITIAL_STATE = {
   prototypes: [],
   prototype: [],
   loading: false,
+  loading_stepper: false,
   error: '',
   error_form: '',
   recargar_table: false,
@@ -108087,6 +108179,11 @@ var INITIAL_STATE = {
     case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["LOADING"]:
       return _objectSpread(_objectSpread({}, state), {}, {
         loading: true
+      });
+
+    case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["STEPPER_DETALLE_LOADING"]:
+      return _objectSpread(_objectSpread({}, state), {}, {
+        loading_stepper: action.payload
       });
 
     case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["ERROR"]:
@@ -108192,6 +108289,7 @@ var INITIAL_STATE = {
         prototype: _objectSpread(_objectSpread({}, state.form), {}, {
           id: '',
           name: '',
+          estado: '',
           genetica_id: '',
           ambiente_id: '',
           sensor_id: '',
@@ -108200,6 +108298,7 @@ var INITIAL_STATE = {
           fecha_etapa_c: '',
           fecha_etapa_d: '',
           fecha_etapa_e: '',
+          fecha_etapa_f: '',
           cantidad: '',
           sensor: ''
         }),
@@ -108215,6 +108314,7 @@ var INITIAL_STATE = {
         prototype: _objectSpread(_objectSpread({}, state.form), {}, {
           id: '',
           name: '',
+          estado: '',
           genetica_id: '',
           ambiente_id: '',
           sensor_id: '',
@@ -108223,6 +108323,7 @@ var INITIAL_STATE = {
           fecha_etapa_c: '',
           fecha_etapa_d: '',
           fecha_etapa_e: '',
+          fecha_etapa_f: '',
           cantidad: '',
           sensor: ''
         }),
@@ -108658,7 +108759,7 @@ var GUARDAR = 'marcas_guardar_marca';
 /*!**********************************************!*\
   !*** ./resources/js/types/prototypeTypes.js ***!
   \**********************************************/
-/*! exports provided: TRAER_TODOS, TRAER_UNO, LOADING, ERROR, ERROR_FORM, CAMBIO_ESTADO_FORM, CAMBIAR_ESTADO_DETALLE, CAMBIO_PROTOTYPE_ID, CAMBIO_PROTOTYPE_NAME, CAMBIO_PROTOTYPE_GENETICA_ID, CAMBIO_PROTOTYPE_AMBIENTE_ID, CAMBIO_PROTOTYPE_SENSOR_ID, CAMBIO_PROTOTYPE_FECHA_ESTADO_A, CAMBIO_PROTOTYPE_FECHA_ESTADO_B, CAMBIO_PROTOTYPE_FECHA_ESTADO_C, CAMBIO_PROTOTYPE_FECHA_ESTADO_D, CAMBIO_PROTOTYPE_FECHA_ESTADO_E, CAMBIO_PROTOTYPE_CANTIDAD, RECARGA, CANCELAR, GUARDAR */
+/*! exports provided: TRAER_TODOS, TRAER_UNO, LOADING, STEPPER_DETALLE_LOADING, ERROR, ERROR_FORM, CAMBIO_ESTADO_FORM, CAMBIAR_ESTADO_DETALLE, CAMBIO_PROTOTYPE_ID, CAMBIO_PROTOTYPE_NAME, CAMBIO_PROTOTYPE_GENETICA_ID, CAMBIO_PROTOTYPE_AMBIENTE_ID, CAMBIO_PROTOTYPE_SENSOR_ID, CAMBIO_PROTOTYPE_FECHA_ESTADO_A, CAMBIO_PROTOTYPE_FECHA_ESTADO_B, CAMBIO_PROTOTYPE_FECHA_ESTADO_C, CAMBIO_PROTOTYPE_FECHA_ESTADO_D, CAMBIO_PROTOTYPE_FECHA_ESTADO_E, CAMBIO_PROTOTYPE_CANTIDAD, RECARGA, CANCELAR, GUARDAR */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -108666,6 +108767,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TRAER_TODOS", function() { return TRAER_TODOS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TRAER_UNO", function() { return TRAER_UNO; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOADING", function() { return LOADING; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "STEPPER_DETALLE_LOADING", function() { return STEPPER_DETALLE_LOADING; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ERROR", function() { return ERROR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ERROR_FORM", function() { return ERROR_FORM; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CAMBIO_ESTADO_FORM", function() { return CAMBIO_ESTADO_FORM; });
@@ -108687,6 +108789,7 @@ __webpack_require__.r(__webpack_exports__);
 var TRAER_TODOS = 'prototypes_traer_todos';
 var TRAER_UNO = 'prototypes_traer_uno';
 var LOADING = 'prototypes_cargando';
+var STEPPER_DETALLE_LOADING = 'prototypes_stepper_detalle_loading';
 var ERROR = 'prototypes_error';
 var ERROR_FORM = 'prototypes_error_form';
 var CAMBIO_ESTADO_FORM = 'prototypes_cambio_estado_form';

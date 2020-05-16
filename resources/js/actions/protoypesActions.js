@@ -3,7 +3,7 @@ import {
     TRAER_TODOS,
     TRAER_UNO,
     LOADING,
-    ERROR,
+    STEPPER_DETALLE_LOADING,
     ERROR_FORM,
     CAMBIO_ESTADO_FORM,
     CAMBIAR_ESTADO_DETALLE,
@@ -161,6 +161,7 @@ export const agregar = (nuevo_prototype) => async (dispatch) => {
 };
 
 export const editar = (nuevo_prototype, id) => async (dispatch) => {
+
     dispatch({
         type: LOADING
     })
@@ -251,7 +252,7 @@ export const traerDetalle = (id) => async (dispatch) => {
     try {
         const response = await axios.get(URL + 'prototype/' + id)
         const { 0: prototype } = response.data
-        
+
         dispatch({
             type: TRAER_UNO,
             payload: prototype
@@ -263,7 +264,7 @@ export const traerDetalle = (id) => async (dispatch) => {
 }
 
 export const traerDetalleInterval = (id) => async (dispatch) => {
-    
+
     try {
         const response = await axios.get(URL + 'prototype/' + id)
         const { 0: prototype } = response.data
@@ -289,5 +290,31 @@ export const traerTodosInterval = () => async (dispatch) => {
 
     } catch (error) {
         console.log(error)
+    }
+}
+
+export const sumarEstadoStepper = (nuevo_prototype, id) => async (dispatch) => {
+
+    dispatch({
+        type: STEPPER_DETALLE_LOADING,
+        payload: true
+    })
+
+    try {
+
+        await axios.put(URL + 'prototype/' + id, nuevo_prototype)
+
+        dispatch({
+            type: STEPPER_DETALLE_LOADING,
+            payload: false
+        })
+
+    } catch (error) {
+        const errors = error.response.data.errors
+        console.log(error.response)
+        dispatch({
+            type: ERROR_FORM,
+            payload: errors
+        });
     }
 }

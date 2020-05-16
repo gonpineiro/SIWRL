@@ -2,6 +2,7 @@ import {
   TRAER_TODOS,
   TRAER_UNO,
   LOADING,
+  STEPPER_DETALLE_LOADING,
   ERROR,
   ERROR_FORM,
   CAMBIO_ESTADO_FORM,
@@ -28,6 +29,7 @@ const INITIAL_STATE = {
   prototypes: [],
   prototype: [],
   loading: false,
+  loading_stepper: false,
   error: '',
   error_form: '',
   recargar_table: false,
@@ -53,6 +55,8 @@ export default (state = INITIAL_STATE, action) => {
       }
     case LOADING:
       return { ...state, loading: true }
+    case STEPPER_DETALLE_LOADING:
+      return { ...state, loading_stepper: action.payload }
     case ERROR:
       return { ...state, error: action.payload, loading: false }
     case ERROR_FORM:
@@ -174,6 +178,7 @@ export default (state = INITIAL_STATE, action) => {
           ...state.form,
           id: '',
           name: '',
+          estado: '',
           genetica_id: '',
           ambiente_id: '',
           sensor_id: '',
@@ -182,6 +187,7 @@ export default (state = INITIAL_STATE, action) => {
           fecha_etapa_c: '',
           fecha_etapa_d: '',
           fecha_etapa_e: '',
+          fecha_etapa_f: '',
           cantidad: '',
           sensor: ''
         },
@@ -199,6 +205,7 @@ export default (state = INITIAL_STATE, action) => {
           ...state.form,
           id: '',
           name: '',
+          estado: '',
           genetica_id: '',
           ambiente_id: '',
           sensor_id: '',
@@ -207,6 +214,7 @@ export default (state = INITIAL_STATE, action) => {
           fecha_etapa_c: '',
           fecha_etapa_d: '',
           fecha_etapa_e: '',
+          fecha_etapa_f: '',
           cantidad: '',
           sensor: ''
         },

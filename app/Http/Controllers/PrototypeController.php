@@ -38,6 +38,12 @@ class PrototypeController extends Controller
         $data->ambiente_id = $request->get('ambiente_id');
         $data->sensor_id = $request->get('sensor_id');
         $data->fecha_etapa_a = $request->get('fecha_etapa_a');
+        $data->fecha_etapa_b = $request->get('fecha_etapa_b');
+        $data->fecha_etapa_c = $request->get('fecha_etapa_c');
+        $data->fecha_etapa_d = $request->get('fecha_etapa_d');
+        $data->fecha_etapa_e = $request->get('fecha_etapa_e');
+        $data->fecha_etapa_f = $request->get('fecha_etapa_f');
+        $data->estado = $request->get('estado');
         $data->save();
 
         return response()->json($data, 200);
@@ -45,11 +51,12 @@ class PrototypeController extends Controller
 
     public function store(PrototypesRequest $request){        
         $data = Prototype::create([
-            'name' => $request->input('name'),
+            'name' => $request->get('name'),
             'genetica_id' => $request->get('genetica_id'),
             'ambiente_id' => $request->get('ambiente_id'),
             'sensor_id' => $request->get('sensor_id'),
             'fecha_etapa_a' => $request->get('fecha_etapa_a'),
+            'estado' => 0,
         ]);    
         return response()->json($data, 200);
     }

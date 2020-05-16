@@ -14,6 +14,7 @@ const Complementaria = (props) => {
                 fecha_etapa_b,
                 fecha_etapa_c,
                 fecha_etapa_d,
+                fecha_etapa_e,
             },
         }
     } = props
@@ -46,17 +47,22 @@ const Complementaria = (props) => {
                     <tr>
                         <td>Germi</td>
                         <td>{fecha_etapa_b}</td>
-                        <td>{fecha_etapa_b ? calcularDiasTotalesParse(fecha_etapa_b, fecha_etapa_a) + 'Dias' : ''}</td>
+                        <td>{fecha_etapa_b ? calcularDiasTotalesParse(fecha_etapa_b, fecha_etapa_a) + ' Dias' : ''}</td>
                     </tr>
                     <tr>
                         <td>Flori</td>
                         <td>{fecha_etapa_c}</td>
-                        <td>{fecha_etapa_c ? calcularDiasTotalesParse(fecha_etapa_c, fecha_etapa_b) + 'Dias' : ''}</td>
+                        <td>{fecha_etapa_c ? calcularDiasTotalesParse(fecha_etapa_c, fecha_etapa_b) + ' Dias' : ''}</td>
                     </tr>
                     <tr>
                         <td>Corte</td>
                         <td>{fecha_etapa_d}</td>
-                        <td>{fecha_etapa_d ? calcularDiasTotalesParse(fecha_etapa_d, fecha_etapa_c) + 'Dias' : ''}</td>
+                        <td>{fecha_etapa_d ? calcularDiasTotalesParse(fecha_etapa_d, fecha_etapa_c) + ' Dias' : ''}</td>
+                    </tr>
+                    <tr>
+                        <td>Frasco</td>
+                        <td>{fecha_etapa_e}</td>
+                        <td>{fecha_etapa_e ? calcularDiasTotalesParse(fecha_etapa_e, fecha_etapa_d) + ' Dias' : ''}</td>
                     </tr>
                 </tbody>
             </table>
