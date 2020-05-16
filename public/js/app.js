@@ -11013,6 +11013,874 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/@material-ui/core/esm/Step/Step.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/Step/Step.js ***!
+  \*********************************************************/
+/*! exports provided: styles, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "styles", function() { return styles; });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_is__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-is */ "./node_modules/react-is/index.js");
+/* harmony import */ var react_is__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_is__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
+/* harmony import */ var _styles_withStyles__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../styles/withStyles */ "./node_modules/@material-ui/core/esm/styles/withStyles.js");
+
+
+
+
+
+
+
+var styles = {
+  /* Styles applied to the root element. */
+  root: {},
+
+  /* Styles applied to the root element if `orientation="horizontal"`. */
+  horizontal: {
+    paddingLeft: 8,
+    paddingRight: 8
+  },
+
+  /* Styles applied to the root element if `orientation="vertical"`. */
+  vertical: {},
+
+  /* Styles applied to the root element if `alternativeLabel={true}`. */
+  alternativeLabel: {
+    flex: 1,
+    position: 'relative'
+  },
+
+  /* Pseudo-class applied to the root element if `completed={true}`. */
+  completed: {}
+};
+var Step = react__WEBPACK_IMPORTED_MODULE_2__["forwardRef"](function Step(props, ref) {
+  var _props$active = props.active,
+      active = _props$active === void 0 ? false : _props$active,
+      alternativeLabel = props.alternativeLabel,
+      children = props.children,
+      classes = props.classes,
+      className = props.className,
+      _props$completed = props.completed,
+      completed = _props$completed === void 0 ? false : _props$completed,
+      connector = props.connector,
+      _props$disabled = props.disabled,
+      disabled = _props$disabled === void 0 ? false : _props$disabled,
+      _props$expanded = props.expanded,
+      expanded = _props$expanded === void 0 ? false : _props$expanded,
+      index = props.index,
+      last = props.last,
+      orientation = props.orientation,
+      other = Object(_babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__["default"])(props, ["active", "alternativeLabel", "children", "classes", "className", "completed", "connector", "disabled", "expanded", "index", "last", "orientation"]);
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("div", Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    className: Object(clsx__WEBPACK_IMPORTED_MODULE_5__["default"])(classes.root, classes[orientation], className, alternativeLabel && classes.alternativeLabel, completed && classes.completed),
+    ref: ref
+  }, other), connector && alternativeLabel && index !== 0 && react__WEBPACK_IMPORTED_MODULE_2__["cloneElement"](connector, {
+    orientation: orientation,
+    alternativeLabel: alternativeLabel,
+    index: index,
+    active: active,
+    completed: completed,
+    disabled: disabled
+  }), react__WEBPACK_IMPORTED_MODULE_2__["Children"].map(children, function (child) {
+    if (!react__WEBPACK_IMPORTED_MODULE_2__["isValidElement"](child)) {
+      return null;
+    }
+
+    if (true) {
+      if (Object(react_is__WEBPACK_IMPORTED_MODULE_3__["isFragment"])(child)) {
+        console.error(["Material-UI: The Step component doesn't accept a Fragment as a child.", 'Consider providing an array instead.'].join('\n'));
+      }
+    }
+
+    return react__WEBPACK_IMPORTED_MODULE_2__["cloneElement"](child, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      active: active,
+      alternativeLabel: alternativeLabel,
+      completed: completed,
+      disabled: disabled,
+      expanded: expanded,
+      last: last,
+      icon: index + 1,
+      orientation: orientation
+    }, child.props));
+  }));
+});
+ true ? Step.propTypes = {
+  // ----------------------------- Warning --------------------------------
+  // | These PropTypes are generated from the TypeScript type definitions |
+  // |     To update them edit the d.ts file and run "yarn proptypes"     |
+  // ----------------------------------------------------------------------
+
+  /**
+   * Sets the step as active. Is passed to child components.
+   */
+  active: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.bool,
+
+  /**
+   * Should be `Step` sub-components such as `StepLabel`, `StepContent`.
+   */
+  children: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.node,
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.object,
+
+  /**
+   * @ignore
+   */
+  className: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.string,
+
+  /**
+   * Mark the step as completed. Is passed to child components.
+   */
+  completed: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.bool,
+
+  /**
+   * Mark the step as disabled, will also disable the button if
+   * `StepButton` is a child of `Step`. Is passed to child components.
+   */
+  disabled: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.bool,
+
+  /**
+   * Expand the step.
+   */
+  expanded: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.bool
+} : undefined;
+/* harmony default export */ __webpack_exports__["default"] = (Object(_styles_withStyles__WEBPACK_IMPORTED_MODULE_6__["default"])(styles, {
+  name: 'MuiStep'
+})(Step));
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/core/esm/Step/index.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/Step/index.js ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Step__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Step */ "./node_modules/@material-ui/core/esm/Step/Step.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _Step__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/core/esm/StepConnector/StepConnector.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/StepConnector/StepConnector.js ***!
+  \***************************************************************************/
+/*! exports provided: styles, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "styles", function() { return styles; });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
+/* harmony import */ var _styles_withStyles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../styles/withStyles */ "./node_modules/@material-ui/core/esm/styles/withStyles.js");
+
+
+
+
+
+
+var styles = function styles(theme) {
+  return {
+    /* Styles applied to the root element. */
+    root: {
+      flex: '1 1 auto'
+    },
+
+    /* Styles applied to the root element if `orientation="horizontal"`. */
+    horizontal: {},
+
+    /* Styles applied to the root element if `orientation="vertical"`. */
+    vertical: {
+      marginLeft: 12,
+      // half icon
+      padding: '0 0 8px'
+    },
+
+    /* Styles applied to the root element if `alternativeLabel={true}`. */
+    alternativeLabel: {
+      position: 'absolute',
+      top: 8 + 4,
+      left: 'calc(-50% + 20px)',
+      right: 'calc(50% + 20px)'
+    },
+
+    /* Pseudo-class applied to the root element if `active={true}`. */
+    active: {},
+
+    /* Pseudo-class applied to the root element if `completed={true}`. */
+    completed: {},
+
+    /* Pseudo-class applied to the root element if `disabled={true}`. */
+    disabled: {},
+
+    /* Styles applied to the line element. */
+    line: {
+      display: 'block',
+      borderColor: theme.palette.type === 'light' ? theme.palette.grey[400] : theme.palette.grey[600]
+    },
+
+    /* Styles applied to the root element if `orientation="horizontal"`. */
+    lineHorizontal: {
+      borderTopStyle: 'solid',
+      borderTopWidth: 1
+    },
+
+    /* Styles applied to the root element if `orientation="vertical"`. */
+    lineVertical: {
+      borderLeftStyle: 'solid',
+      borderLeftWidth: 1,
+      minHeight: 24
+    }
+  };
+};
+var StepConnector = react__WEBPACK_IMPORTED_MODULE_2__["forwardRef"](function StepConnector(props, ref) {
+  var active = props.active,
+      _props$alternativeLab = props.alternativeLabel,
+      alternativeLabel = _props$alternativeLab === void 0 ? false : _props$alternativeLab,
+      classes = props.classes,
+      className = props.className,
+      completed = props.completed,
+      disabled = props.disabled,
+      index = props.index,
+      _props$orientation = props.orientation,
+      orientation = _props$orientation === void 0 ? 'horizontal' : _props$orientation,
+      other = Object(_babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__["default"])(props, ["active", "alternativeLabel", "classes", "className", "completed", "disabled", "index", "orientation"]);
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("div", Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    className: Object(clsx__WEBPACK_IMPORTED_MODULE_4__["default"])(classes.root, classes[orientation], className, alternativeLabel && classes.alternativeLabel, active && classes.active, completed && classes.completed, disabled && classes.disabled),
+    ref: ref
+  }, other), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("span", {
+    className: Object(clsx__WEBPACK_IMPORTED_MODULE_4__["default"])(classes.line, {
+      'horizontal': classes.lineHorizontal,
+      'vertical': classes.lineVertical
+    }[orientation])
+  }));
+});
+ true ? StepConnector.propTypes = {
+  // ----------------------------- Warning --------------------------------
+  // | These PropTypes are generated from the TypeScript type definitions |
+  // |     To update them edit the d.ts file and run "yarn proptypes"     |
+  // ----------------------------------------------------------------------
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.object,
+
+  /**
+   * @ignore
+   */
+  className: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string
+} : undefined;
+/* harmony default export */ __webpack_exports__["default"] = (Object(_styles_withStyles__WEBPACK_IMPORTED_MODULE_5__["default"])(styles, {
+  name: 'MuiStepConnector'
+})(StepConnector));
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/core/esm/StepConnector/index.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/StepConnector/index.js ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _StepConnector__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./StepConnector */ "./node_modules/@material-ui/core/esm/StepConnector/StepConnector.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _StepConnector__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/core/esm/StepIcon/StepIcon.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/StepIcon/StepIcon.js ***!
+  \*****************************************************************/
+/*! exports provided: styles, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "styles", function() { return styles; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
+/* harmony import */ var _internal_svg_icons_CheckCircle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../internal/svg-icons/CheckCircle */ "./node_modules/@material-ui/core/esm/internal/svg-icons/CheckCircle.js");
+/* harmony import */ var _internal_svg_icons_Warning__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../internal/svg-icons/Warning */ "./node_modules/@material-ui/core/esm/internal/svg-icons/Warning.js");
+/* harmony import */ var _styles_withStyles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../styles/withStyles */ "./node_modules/@material-ui/core/esm/styles/withStyles.js");
+/* harmony import */ var _SvgIcon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../SvgIcon */ "./node_modules/@material-ui/core/esm/SvgIcon/index.js");
+
+
+
+
+
+
+
+var styles = function styles(theme) {
+  return {
+    /* Styles applied to the root element. */
+    root: {
+      display: 'block',
+      color: theme.palette.text.disabled,
+      '&$completed': {
+        color: theme.palette.primary.main
+      },
+      '&$active': {
+        color: theme.palette.primary.main
+      },
+      '&$error': {
+        color: theme.palette.error.main
+      }
+    },
+
+    /* Styles applied to the SVG text element. */
+    text: {
+      fill: theme.palette.primary.contrastText,
+      fontSize: theme.typography.caption.fontSize,
+      fontFamily: theme.typography.fontFamily
+    },
+
+    /* Pseudo-class applied to the root element if `active={true}`. */
+    active: {},
+
+    /* Pseudo-class applied to the root element if `completed={true}`. */
+    completed: {},
+
+    /* Pseudo-class applied to the root element if `error={true}`. */
+    error: {}
+  };
+};
+
+var _ref = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("circle", {
+  cx: "12",
+  cy: "12",
+  r: "12"
+});
+
+var StepIcon = react__WEBPACK_IMPORTED_MODULE_0__["forwardRef"](function StepIcon(props, ref) {
+  var _props$completed = props.completed,
+      completed = _props$completed === void 0 ? false : _props$completed,
+      icon = props.icon,
+      _props$active = props.active,
+      active = _props$active === void 0 ? false : _props$active,
+      _props$error = props.error,
+      error = _props$error === void 0 ? false : _props$error,
+      classes = props.classes;
+
+  if (typeof icon === 'number' || typeof icon === 'string') {
+    var className = Object(clsx__WEBPACK_IMPORTED_MODULE_2__["default"])(classes.root, active && classes.active, error && classes.error, completed && classes.completed);
+
+    if (error) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_internal_svg_icons_Warning__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        className: className,
+        ref: ref
+      });
+    }
+
+    if (completed) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_internal_svg_icons_CheckCircle__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        className: className,
+        ref: ref
+      });
+    }
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"](_SvgIcon__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      className: className,
+      ref: ref
+    }, _ref, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("text", {
+      className: classes.text,
+      x: "12",
+      y: "16",
+      textAnchor: "middle"
+    }, icon));
+  }
+
+  return icon;
+});
+ true ? StepIcon.propTypes = {
+  // ----------------------------- Warning --------------------------------
+  // | These PropTypes are generated from the TypeScript type definitions |
+  // |     To update them edit the d.ts file and run "yarn proptypes"     |
+  // ----------------------------------------------------------------------
+
+  /**
+   * Whether this step is active.
+   */
+  active: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.object,
+
+  /**
+   * Mark the step as completed. Is passed to child components.
+   */
+  completed: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
+
+  /**
+   * Mark the step as failed.
+   */
+  error: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.bool,
+
+  /**
+   * The label displayed in the step icon.
+   */
+  icon: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node
+} : undefined;
+/* harmony default export */ __webpack_exports__["default"] = (Object(_styles_withStyles__WEBPACK_IMPORTED_MODULE_5__["default"])(styles, {
+  name: 'MuiStepIcon'
+})(StepIcon));
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/core/esm/StepIcon/index.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/StepIcon/index.js ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _StepIcon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./StepIcon */ "./node_modules/@material-ui/core/esm/StepIcon/StepIcon.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _StepIcon__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/core/esm/StepLabel/StepLabel.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/StepLabel/StepLabel.js ***!
+  \*******************************************************************/
+/*! exports provided: styles, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "styles", function() { return styles; });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
+/* harmony import */ var _styles_withStyles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../styles/withStyles */ "./node_modules/@material-ui/core/esm/styles/withStyles.js");
+/* harmony import */ var _Typography__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js");
+/* harmony import */ var _StepIcon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../StepIcon */ "./node_modules/@material-ui/core/esm/StepIcon/index.js");
+
+
+
+
+
+
+
+
+var styles = function styles(theme) {
+  return {
+    /* Styles applied to the root element. */
+    root: {
+      display: 'flex',
+      alignItems: 'center',
+      '&$alternativeLabel': {
+        flexDirection: 'column'
+      },
+      '&$disabled': {
+        cursor: 'default'
+      }
+    },
+
+    /* Styles applied to the root element if `orientation="horizontal"`. */
+    horizontal: {},
+
+    /* Styles applied to the root element if `orientation="vertical"`. */
+    vertical: {},
+
+    /* Styles applied to the `Typography` component which wraps `children`. */
+    label: {
+      color: theme.palette.text.secondary,
+      '&$active': {
+        color: theme.palette.text.primary,
+        fontWeight: 500
+      },
+      '&$completed': {
+        color: theme.palette.text.primary,
+        fontWeight: 500
+      },
+      '&$alternativeLabel': {
+        textAlign: 'center',
+        marginTop: 16
+      },
+      '&$error': {
+        color: theme.palette.error.main
+      }
+    },
+
+    /* Pseudo-class applied to the `Typography` component if `active={true}`. */
+    active: {},
+
+    /* Pseudo-class applied to the `Typography` component if `completed={true}`. */
+    completed: {},
+
+    /* Pseudo-class applied to the root element and `Typography` component if `error={true}`. */
+    error: {},
+
+    /* Pseudo-class applied to the root element and `Typography` component if `disabled={true}`. */
+    disabled: {},
+
+    /* Styles applied to the `icon` container element. */
+    iconContainer: {
+      flexShrink: 0,
+      // Fix IE 11 issue
+      display: 'flex',
+      paddingRight: 8,
+      '&$alternativeLabel': {
+        paddingRight: 0
+      }
+    },
+
+    /* Pseudo-class applied to the root and icon container and `Typography` if `alternativeLabel={true}`. */
+    alternativeLabel: {},
+
+    /* Styles applied to the container element which wraps `Typography` and `optional`. */
+    labelContainer: {
+      width: '100%'
+    }
+  };
+};
+var StepLabel = react__WEBPACK_IMPORTED_MODULE_2__["forwardRef"](function StepLabel(props, ref) {
+  var _props$active = props.active,
+      active = _props$active === void 0 ? false : _props$active,
+      _props$alternativeLab = props.alternativeLabel,
+      alternativeLabel = _props$alternativeLab === void 0 ? false : _props$alternativeLab,
+      children = props.children,
+      classes = props.classes,
+      className = props.className,
+      _props$completed = props.completed,
+      completed = _props$completed === void 0 ? false : _props$completed,
+      _props$disabled = props.disabled,
+      disabled = _props$disabled === void 0 ? false : _props$disabled,
+      _props$error = props.error,
+      error = _props$error === void 0 ? false : _props$error,
+      expanded = props.expanded,
+      icon = props.icon,
+      last = props.last,
+      optional = props.optional,
+      _props$orientation = props.orientation,
+      orientation = _props$orientation === void 0 ? 'horizontal' : _props$orientation,
+      StepIconComponentProp = props.StepIconComponent,
+      StepIconProps = props.StepIconProps,
+      other = Object(_babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__["default"])(props, ["active", "alternativeLabel", "children", "classes", "className", "completed", "disabled", "error", "expanded", "icon", "last", "optional", "orientation", "StepIconComponent", "StepIconProps"]);
+
+  var StepIconComponent = StepIconComponentProp;
+
+  if (icon && !StepIconComponent) {
+    StepIconComponent = _StepIcon__WEBPACK_IMPORTED_MODULE_7__["default"];
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("span", Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    className: Object(clsx__WEBPACK_IMPORTED_MODULE_4__["default"])(classes.root, classes[orientation], className, disabled && classes.disabled, alternativeLabel && classes.alternativeLabel, error && classes.error),
+    ref: ref
+  }, other), icon || StepIconComponent ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("span", {
+    className: Object(clsx__WEBPACK_IMPORTED_MODULE_4__["default"])(classes.iconContainer, alternativeLabel && classes.alternativeLabel)
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](StepIconComponent, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    completed: completed,
+    active: active,
+    error: error,
+    icon: icon
+  }, StepIconProps))) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("span", {
+    className: classes.labelContainer
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_Typography__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    variant: "body2",
+    component: "span",
+    className: Object(clsx__WEBPACK_IMPORTED_MODULE_4__["default"])(classes.label, alternativeLabel && classes.alternativeLabel, completed && classes.completed, active && classes.active, error && classes.error),
+    display: "block"
+  }, children), optional));
+});
+ true ? StepLabel.propTypes = {
+  // ----------------------------- Warning --------------------------------
+  // | These PropTypes are generated from the TypeScript type definitions |
+  // |     To update them edit the d.ts file and run "yarn proptypes"     |
+  // ----------------------------------------------------------------------
+
+  /**
+   * In most cases will simply be a string containing a title for the label.
+   */
+  children: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.node,
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.object,
+
+  /**
+   * @ignore
+   */
+  className: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string,
+
+  /**
+   * Mark the step as disabled, will also disable the button if
+   * `StepLabelButton` is a child of `StepLabel`. Is passed to child components.
+   */
+  disabled: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.bool,
+
+  /**
+   * Mark the step as failed.
+   */
+  error: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.bool,
+
+  /**
+   * Override the default label of the step icon.
+   */
+  icon: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.node,
+
+  /**
+   * The optional node to display.
+   */
+  optional: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.node,
+
+  /**
+   * The component to render in place of the [`StepIcon`](/api/step-icon/).
+   */
+  StepIconComponent: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.elementType,
+
+  /**
+   * Props applied to the [`StepIcon`](/api/step-icon/) element.
+   */
+  StepIconProps: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.object
+} : undefined;
+StepLabel.muiName = 'StepLabel';
+/* harmony default export */ __webpack_exports__["default"] = (Object(_styles_withStyles__WEBPACK_IMPORTED_MODULE_5__["default"])(styles, {
+  name: 'MuiStepLabel'
+})(StepLabel));
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/core/esm/StepLabel/index.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/StepLabel/index.js ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _StepLabel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./StepLabel */ "./node_modules/@material-ui/core/esm/StepLabel/StepLabel.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _StepLabel__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/core/esm/Stepper/Stepper.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/Stepper/Stepper.js ***!
+  \***************************************************************/
+/*! exports provided: styles, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "styles", function() { return styles; });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
+/* harmony import */ var _styles_withStyles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../styles/withStyles */ "./node_modules/@material-ui/core/esm/styles/withStyles.js");
+/* harmony import */ var _Paper__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Paper */ "./node_modules/@material-ui/core/esm/Paper/index.js");
+/* harmony import */ var _StepConnector__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../StepConnector */ "./node_modules/@material-ui/core/esm/StepConnector/index.js");
+
+
+
+
+
+
+
+
+var styles = {
+  /* Styles applied to the root element. */
+  root: {
+    display: 'flex',
+    padding: 24
+  },
+
+  /* Styles applied to the root element if `orientation="horizontal"`. */
+  horizontal: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+
+  /* Styles applied to the root element if `orientation="vertical"`. */
+  vertical: {
+    flexDirection: 'column'
+  },
+
+  /* Styles applied to the root element if `alternativeLabel={true}`. */
+  alternativeLabel: {
+    alignItems: 'flex-start'
+  }
+};
+var defaultConnector = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_StepConnector__WEBPACK_IMPORTED_MODULE_7__["default"], null);
+var Stepper = react__WEBPACK_IMPORTED_MODULE_2__["forwardRef"](function Stepper(props, ref) {
+  var _props$activeStep = props.activeStep,
+      activeStep = _props$activeStep === void 0 ? 0 : _props$activeStep,
+      _props$alternativeLab = props.alternativeLabel,
+      alternativeLabel = _props$alternativeLab === void 0 ? false : _props$alternativeLab,
+      children = props.children,
+      classes = props.classes,
+      className = props.className,
+      _props$connector = props.connector,
+      connectorProp = _props$connector === void 0 ? defaultConnector : _props$connector,
+      _props$nonLinear = props.nonLinear,
+      nonLinear = _props$nonLinear === void 0 ? false : _props$nonLinear,
+      _props$orientation = props.orientation,
+      orientation = _props$orientation === void 0 ? 'horizontal' : _props$orientation,
+      other = Object(_babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__["default"])(props, ["activeStep", "alternativeLabel", "children", "classes", "className", "connector", "nonLinear", "orientation"]);
+
+  var connector = react__WEBPACK_IMPORTED_MODULE_2__["isValidElement"](connectorProp) ? react__WEBPACK_IMPORTED_MODULE_2__["cloneElement"](connectorProp, {
+    orientation: orientation
+  }) : null;
+  var childrenArray = react__WEBPACK_IMPORTED_MODULE_2__["Children"].toArray(children);
+  var steps = childrenArray.map(function (step, index) {
+    var controlProps = {
+      alternativeLabel: alternativeLabel,
+      connector: connectorProp,
+      last: index + 1 === childrenArray.length,
+      orientation: orientation
+    };
+    var state = {
+      index: index,
+      active: false,
+      completed: false,
+      disabled: false
+    };
+
+    if (activeStep === index) {
+      state.active = true;
+    } else if (!nonLinear && activeStep > index) {
+      state.completed = true;
+    } else if (!nonLinear && activeStep < index) {
+      state.disabled = true;
+    }
+
+    return [!alternativeLabel && connector && index !== 0 && react__WEBPACK_IMPORTED_MODULE_2__["cloneElement"](connector, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      key: index
+    }, state)), react__WEBPACK_IMPORTED_MODULE_2__["cloneElement"](step, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])(Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])(Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, controlProps), state), step.props))];
+  });
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](_Paper__WEBPACK_IMPORTED_MODULE_6__["default"], Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    square: true,
+    elevation: 0,
+    className: Object(clsx__WEBPACK_IMPORTED_MODULE_4__["default"])(classes.root, classes[orientation], className, alternativeLabel && classes.alternativeLabel),
+    ref: ref
+  }, other), steps);
+});
+ true ? Stepper.propTypes = {
+  // ----------------------------- Warning --------------------------------
+  // | These PropTypes are generated from the TypeScript type definitions |
+  // |     To update them edit the d.ts file and run "yarn proptypes"     |
+  // ----------------------------------------------------------------------
+
+  /**
+   * Set the active step (zero based index).
+   * Set to -1 to disable all the steps.
+   */
+  activeStep: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.number,
+
+  /**
+   * If set to 'true' and orientation is horizontal,
+   * then the step label will be positioned under the icon.
+   */
+  alternativeLabel: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.bool,
+
+  /**
+   * Two or more `<Step />` components.
+   */
+  children: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.node,
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.object,
+
+  /**
+   * @ignore
+   */
+  className: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string,
+
+  /**
+   * An element to be placed between each step.
+   */
+  connector: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.element,
+
+  /**
+   * If set the `Stepper` will not assist in controlling steps for linear flow.
+   */
+  nonLinear: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.bool,
+
+  /**
+   * The stepper orientation (layout flow direction).
+   */
+  orientation: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.oneOf(['horizontal', 'vertical'])
+} : undefined;
+/* harmony default export */ __webpack_exports__["default"] = (Object(_styles_withStyles__WEBPACK_IMPORTED_MODULE_5__["default"])(styles, {
+  name: 'MuiStepper'
+})(Stepper));
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/core/esm/Stepper/index.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/Stepper/index.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Stepper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Stepper */ "./node_modules/@material-ui/core/esm/Stepper/Stepper.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _Stepper__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+
+
+/***/ }),
+
 /***/ "./node_modules/@material-ui/core/esm/SvgIcon/SvgIcon.js":
 /*!***************************************************************!*\
   !*** ./node_modules/@material-ui/core/esm/SvgIcon/SvgIcon.js ***!
@@ -11868,6 +12736,296 @@ var TextareaAutosize = react__WEBPACK_IMPORTED_MODULE_2__["forwardRef"](function
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _TextareaAutosize__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TextareaAutosize */ "./node_modules/@material-ui/core/esm/TextareaAutosize/TextareaAutosize.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _TextareaAutosize__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/core/esm/Typography/Typography.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/Typography/Typography.js ***!
+  \*********************************************************************/
+/*! exports provided: styles, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "styles", function() { return styles; });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
+/* harmony import */ var _styles_withStyles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../styles/withStyles */ "./node_modules/@material-ui/core/esm/styles/withStyles.js");
+/* harmony import */ var _utils_capitalize__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/capitalize */ "./node_modules/@material-ui/core/esm/utils/capitalize.js");
+
+
+
+
+
+
+
+var styles = function styles(theme) {
+  return {
+    /* Styles applied to the root element. */
+    root: {
+      margin: 0
+    },
+
+    /* Styles applied to the root element if `variant="body2"`. */
+    body2: theme.typography.body2,
+
+    /* Styles applied to the root element if `variant="body1"`. */
+    body1: theme.typography.body1,
+
+    /* Styles applied to the root element if `variant="caption"`. */
+    caption: theme.typography.caption,
+
+    /* Styles applied to the root element if `variant="button"`. */
+    button: theme.typography.button,
+
+    /* Styles applied to the root element if `variant="h1"`. */
+    h1: theme.typography.h1,
+
+    /* Styles applied to the root element if `variant="h2"`. */
+    h2: theme.typography.h2,
+
+    /* Styles applied to the root element if `variant="h3"`. */
+    h3: theme.typography.h3,
+
+    /* Styles applied to the root element if `variant="h4"`. */
+    h4: theme.typography.h4,
+
+    /* Styles applied to the root element if `variant="h5"`. */
+    h5: theme.typography.h5,
+
+    /* Styles applied to the root element if `variant="h6"`. */
+    h6: theme.typography.h6,
+
+    /* Styles applied to the root element if `variant="subtitle1"`. */
+    subtitle1: theme.typography.subtitle1,
+
+    /* Styles applied to the root element if `variant="subtitle2"`. */
+    subtitle2: theme.typography.subtitle2,
+
+    /* Styles applied to the root element if `variant="overline"`. */
+    overline: theme.typography.overline,
+
+    /* Styles applied to the root element if `variant="srOnly"`. Only accessible to screen readers. */
+    srOnly: {
+      position: 'absolute',
+      height: 1,
+      width: 1,
+      overflow: 'hidden'
+    },
+
+    /* Styles applied to the root element if `align="left"`. */
+    alignLeft: {
+      textAlign: 'left'
+    },
+
+    /* Styles applied to the root element if `align="center"`. */
+    alignCenter: {
+      textAlign: 'center'
+    },
+
+    /* Styles applied to the root element if `align="right"`. */
+    alignRight: {
+      textAlign: 'right'
+    },
+
+    /* Styles applied to the root element if `align="justify"`. */
+    alignJustify: {
+      textAlign: 'justify'
+    },
+
+    /* Styles applied to the root element if `nowrap={true}`. */
+    noWrap: {
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap'
+    },
+
+    /* Styles applied to the root element if `gutterBottom={true}`. */
+    gutterBottom: {
+      marginBottom: '0.35em'
+    },
+
+    /* Styles applied to the root element if `paragraph={true}`. */
+    paragraph: {
+      marginBottom: 16
+    },
+
+    /* Styles applied to the root element if `color="inherit"`. */
+    colorInherit: {
+      color: 'inherit'
+    },
+
+    /* Styles applied to the root element if `color="primary"`. */
+    colorPrimary: {
+      color: theme.palette.primary.main
+    },
+
+    /* Styles applied to the root element if `color="secondary"`. */
+    colorSecondary: {
+      color: theme.palette.secondary.main
+    },
+
+    /* Styles applied to the root element if `color="textPrimary"`. */
+    colorTextPrimary: {
+      color: theme.palette.text.primary
+    },
+
+    /* Styles applied to the root element if `color="textSecondary"`. */
+    colorTextSecondary: {
+      color: theme.palette.text.secondary
+    },
+
+    /* Styles applied to the root element if `color="error"`. */
+    colorError: {
+      color: theme.palette.error.main
+    },
+
+    /* Styles applied to the root element if `display="inline"`. */
+    displayInline: {
+      display: 'inline'
+    },
+
+    /* Styles applied to the root element if `display="block"`. */
+    displayBlock: {
+      display: 'block'
+    }
+  };
+};
+var defaultVariantMapping = {
+  h1: 'h1',
+  h2: 'h2',
+  h3: 'h3',
+  h4: 'h4',
+  h5: 'h5',
+  h6: 'h6',
+  subtitle1: 'h6',
+  subtitle2: 'h6',
+  body1: 'p',
+  body2: 'p'
+};
+var Typography = react__WEBPACK_IMPORTED_MODULE_2__["forwardRef"](function Typography(props, ref) {
+  var _props$align = props.align,
+      align = _props$align === void 0 ? 'inherit' : _props$align,
+      classes = props.classes,
+      className = props.className,
+      _props$color = props.color,
+      color = _props$color === void 0 ? 'initial' : _props$color,
+      component = props.component,
+      _props$display = props.display,
+      display = _props$display === void 0 ? 'initial' : _props$display,
+      _props$gutterBottom = props.gutterBottom,
+      gutterBottom = _props$gutterBottom === void 0 ? false : _props$gutterBottom,
+      _props$noWrap = props.noWrap,
+      noWrap = _props$noWrap === void 0 ? false : _props$noWrap,
+      _props$paragraph = props.paragraph,
+      paragraph = _props$paragraph === void 0 ? false : _props$paragraph,
+      _props$variant = props.variant,
+      variant = _props$variant === void 0 ? 'body1' : _props$variant,
+      _props$variantMapping = props.variantMapping,
+      variantMapping = _props$variantMapping === void 0 ? defaultVariantMapping : _props$variantMapping,
+      other = Object(_babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__["default"])(props, ["align", "classes", "className", "color", "component", "display", "gutterBottom", "noWrap", "paragraph", "variant", "variantMapping"]);
+
+  var Component = component || (paragraph ? 'p' : variantMapping[variant] || defaultVariantMapping[variant]) || 'span';
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"](Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    className: Object(clsx__WEBPACK_IMPORTED_MODULE_4__["default"])(classes.root, className, variant !== 'inherit' && classes[variant], color !== 'initial' && classes["color".concat(Object(_utils_capitalize__WEBPACK_IMPORTED_MODULE_6__["default"])(color))], noWrap && classes.noWrap, gutterBottom && classes.gutterBottom, paragraph && classes.paragraph, align !== 'inherit' && classes["align".concat(Object(_utils_capitalize__WEBPACK_IMPORTED_MODULE_6__["default"])(align))], display !== 'initial' && classes["display".concat(Object(_utils_capitalize__WEBPACK_IMPORTED_MODULE_6__["default"])(display))]),
+    ref: ref
+  }, other));
+});
+ true ? Typography.propTypes = {
+  /**
+   * Set the text-align on the component.
+   */
+  align: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.oneOf(['inherit', 'left', 'center', 'right', 'justify']),
+
+  /**
+   * The content of the component.
+   */
+  children: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.node,
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.object.isRequired,
+
+  /**
+   * @ignore
+   */
+  className: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string,
+
+  /**
+   * The color of the component. It supports those theme colors that make sense for this component.
+   */
+  color: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.oneOf(['initial', 'inherit', 'primary', 'secondary', 'textPrimary', 'textSecondary', 'error']),
+
+  /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   * Overrides the behavior of the `variantMapping` prop.
+   */
+  component: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.elementType,
+
+  /**
+   * Controls the display type
+   */
+  display: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.oneOf(['initial', 'block', 'inline']),
+
+  /**
+   * If `true`, the text will have a bottom margin.
+   */
+  gutterBottom: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.bool,
+
+  /**
+   * If `true`, the text will not wrap, but instead will truncate with a text overflow ellipsis.
+   *
+   * Note that text overflow can only happen with block or inline-block level elements
+   * (the element needs to have a width in order to overflow).
+   */
+  noWrap: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.bool,
+
+  /**
+   * If `true`, the text will have a bottom margin.
+   */
+  paragraph: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.bool,
+
+  /**
+   * Applies the theme typography styles.
+   */
+  variant: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'subtitle1', 'subtitle2', 'body1', 'body2', 'caption', 'button', 'overline', 'srOnly', 'inherit']),
+
+  /**
+   * The component maps the variant prop to a range of different HTML element types.
+   * For instance, subtitle1 to `<h6>`.
+   * If you wish to change that mapping, you can provide your own.
+   * Alternatively, you can use the `component` prop.
+   */
+  variantMapping: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.object
+} : undefined;
+/* harmony default export */ __webpack_exports__["default"] = (Object(_styles_withStyles__WEBPACK_IMPORTED_MODULE_5__["default"])(styles, {
+  name: 'MuiTypography'
+})(Typography));
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/core/esm/Typography/index.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/Typography/index.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Typography__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Typography */ "./node_modules/@material-ui/core/esm/Typography/Typography.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _Typography__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
 
 
@@ -12772,6 +13930,30 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/@material-ui/core/esm/internal/svg-icons/CheckCircle.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/internal/svg-icons/CheckCircle.js ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_createSvgIcon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/createSvgIcon */ "./node_modules/@material-ui/core/esm/utils/createSvgIcon.js");
+
+
+/**
+ * @ignore - internal component.
+ */
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(_utils_createSvgIcon__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
+  d: "M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm-2 17l-5-5 1.4-1.4 3.6 3.6 7.6-7.6L19 8l-9 9z"
+}), 'CheckCircle'));
+
+/***/ }),
+
 /***/ "./node_modules/@material-ui/core/esm/internal/svg-icons/Person.js":
 /*!*************************************************************************!*\
   !*** ./node_modules/@material-ui/core/esm/internal/svg-icons/Person.js ***!
@@ -12793,6 +13975,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (Object(_utils_createSvgIcon__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
   d: "M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
 }), 'Person'));
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/core/esm/internal/svg-icons/Warning.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/internal/svg-icons/Warning.js ***!
+  \**************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_createSvgIcon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/createSvgIcon */ "./node_modules/@material-ui/core/esm/utils/createSvgIcon.js");
+
+
+/**
+ * @ignore - internal component.
+ */
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(_utils_createSvgIcon__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
+  d: "M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+}), 'Warning'));
 
 /***/ }),
 
@@ -27129,7 +28335,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Mon
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap);", ""]);
 
 // module
-exports.push([module.i, ".center {\r\n    text-align: center;\r\n}\r\n\r\ntable {\r\n    font-size: 0.785rem;\r\n}\r\n\r\n.table td {\r\n    padding: 0.30rem;\r\n    justify-content: center;\r\n}\r\n\r\n.material-icons {\r\n    width: 0.30rem;\r\n    height: 0.30rem;\r\n}\r\n\r\n.alert {\r\n    font-size: 10px;\r\n}\r\n\r\n.btn {\r\n    margin-right: 15px;\r\n}\r\n\r\n.btn-cancelar {\r\n    background-color: #5e2129;\r\n    border-color: #5e2129;\r\n}\r\n\r\n.material-icons {\r\n    font-family: 'Material Icons';\r\n    font-weight: normal;\r\n    font-style: normal;\r\n    font-size: 20px;\r\n    /* Preferred icon size */\r\n    display: inline-block;\r\n    line-height: 1;\r\n    text-transform: none;\r\n    letter-spacing: normal;\r\n    word-wrap: normal;\r\n    white-space: nowrap;\r\n    direction: ltr;\r\n\r\n    /* Agregador por gon.pineiro */\r\n    margin-left: 10px;\r\n    margin-right: 10px;\r\n\r\n    /* Support for all WebKit browsers. */\r\n    -webkit-font-smoothing: antialiased;\r\n    /* Support for Safari and Chrome. */\r\n    text-rendering: optimizeLegibility;\r\n\r\n    /* Support for Firefox. */\r\n    -moz-osx-font-smoothing: grayscale;\r\n\r\n    /* Support for IE. */\r\n    font-feature-settings: 'liga';\r\n}\r\n\r\n.link {\r\n    cursor: pointer;\r\n}\r\n\r\n.link-string {\r\n    color: #3e5f8a;\r\n    font-weight: bold;\r\n}\r\n\r\n.card-agregar {\r\n    color: black;\r\n    font-weight: bold;\r\n    text-align: left;\r\n}\r\n\r\n.card-eliminar {\r\n    color: #5e2129;\r\n    font-weight: bold;\r\n    text-align: left;\r\n}\r\n\r\n\r\n.margin-button {\r\n    margin-top: 15px;\r\n    margin-left: 15px;\r\n    margin-right: 15px;\r\n}\r\n\r\n.container {\r\n    margin-top: 25px;\r\n}\r\n\r\n.text-derecha {\r\n    text-align: right;\r\n}\r\n\r\n.color-alert {\r\n    color: #5e2129;\r\n}\r\n\r\n.box {\r\n    margin: 10px;\r\n}\r\n\r\n.avatar {\r\n    font-size: 40px;\r\n    font-family: 'Roboto Mono', monospace;\r\n}", ""]);
+exports.push([module.i, ".center {\r\n    text-align: center;\r\n}\r\n\r\ntable {\r\n    font-size: 0.785rem;\r\n}\r\n\r\n.table td {\r\n    padding: 0.30rem;\r\n    justify-content: center;\r\n    vertical-align: inherit;\r\n}\r\n\r\n.material-icons {\r\n    width: 0.30rem;\r\n    height: 0.30rem;\r\n}\r\n\r\n.alert {\r\n    font-size: 10px;\r\n}\r\n\r\n.btn {\r\n    margin-right: 15px;\r\n}\r\n\r\n.btn-cancelar {\r\n    background-color: #5e2129;\r\n    border-color: #5e2129;\r\n}\r\n\r\n.material-icons {\r\n    font-family: 'Material Icons';\r\n    font-weight: normal;\r\n    font-style: normal;\r\n    font-size: 20px;\r\n    /* Preferred icon size */\r\n    display: inline-block;\r\n    line-height: 1;\r\n    text-transform: none;\r\n    letter-spacing: normal;\r\n    word-wrap: normal;\r\n    white-space: nowrap;\r\n    direction: ltr;\r\n\r\n    /* Agregador por gon.pineiro */\r\n    margin-left: 10px;\r\n    margin-right: 10px;\r\n\r\n    /* Support for all WebKit browsers. */\r\n    -webkit-font-smoothing: antialiased;\r\n    /* Support for Safari and Chrome. */\r\n    text-rendering: optimizeLegibility;\r\n\r\n    /* Support for Firefox. */\r\n    -moz-osx-font-smoothing: grayscale;\r\n\r\n    /* Support for IE. */\r\n    font-feature-settings: 'liga';\r\n}\r\n\r\n.link {\r\n    cursor: pointer;\r\n}\r\n\r\n.link-string {\r\n    color: #3e5f8a;\r\n    font-weight: bold;\r\n}\r\n\r\n.card-agregar {\r\n    color: black;\r\n    font-weight: bold;\r\n    text-align: left;\r\n}\r\n\r\n.card-eliminar {\r\n    color: #5e2129;\r\n    font-weight: bold;\r\n    text-align: left;\r\n}\r\n\r\n\r\n.margin-button {\r\n    margin-top: 15px;\r\n    margin-left: 15px;\r\n    margin-right: 15px;\r\n}\r\n\r\n.container {\r\n    margin-top: 25px;\r\n}\r\n\r\n.text-derecha {\r\n    text-align: right;\r\n}\r\n\r\n.color-alert {\r\n    color: #5e2129;\r\n}\r\n\r\n.box {\r\n    margin: 10px;\r\n}\r\n\r\n.avatar {\r\n    font-size: 40px;\r\n    font-family: 'Roboto Mono', monospace;\r\n}", ""]);
 
 // exports
 
@@ -104350,7 +105556,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Componentes_Complementaria__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Componentes/Complementaria */ "./resources/js/components/Prototypes/Componentes/Complementaria.js");
 /* harmony import */ var _Componentes_Final__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Componentes/Final */ "./resources/js/components/Prototypes/Componentes/Final.js");
 /* harmony import */ var _Componentes_Informacion__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Componentes/Informacion */ "./resources/js/components/Prototypes/Componentes/Informacion.js");
-/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
+/* harmony import */ var _General_StepperPrototype__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./General/StepperPrototype */ "./resources/js/components/Prototypes/General/StepperPrototype.js");
+/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
 
 
 
@@ -104360,10 +105567,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var traerDetalleInterval = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_8__["traerDetalleInterval"];
+
+var traerDetalleInterval = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_9__["traerDetalleInterval"],
+    cancelar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_9__["cancelar"];
 
 var Detalle = function Detalle(props) {
-  var traerDetalleInterval = props.traerDetalleInterval,
+  var cancelar = props.cancelar,
+      traerDetalleInterval = props.traerDetalleInterval,
       _props$prototypesRedu = props.prototypesReducer,
       prototype = _props$prototypesRedu.prototype,
       loading = _props$prototypesRedu.loading;
@@ -104373,7 +105583,8 @@ var Detalle = function Detalle(props) {
       return traerDetalleInterval(prototype.id);
     }, 5000);
     return function () {
-      return clearInterval(intervalPrototype);
+      clearInterval(intervalPrototype);
+      cancelar();
     };
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -104400,7 +105611,7 @@ var Detalle = function Detalle(props) {
     className: "col col-md-12"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card"
-  }, "//"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_StepperPrototype__WEBPACK_IMPORTED_MODULE_8__["default"], null)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "row mt-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col col-md-12"
@@ -104414,6 +105625,7 @@ var mapStateToProps = function mapStateToProps(prototypesReducer) {
 };
 
 var mapDispatchToProps = {
+  cancelar: cancelar,
   traerDetalleInterval: traerDetalleInterval
 };
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(Detalle));
@@ -104680,9 +105892,7 @@ var Formulario = function Formulario(props) {
     onClick: function onClick() {
       return borrar(id);
     }
-  }, "Borrar")) : '', error_form && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
-    className: "text-danger"
-  }, "Existe un registro vinculado.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "Borrar")) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-group col-md-6"
   }, state_form === 'editar' || state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     variant: "contained",
@@ -104811,6 +106021,138 @@ function MenuRow(props) {
     onClick: handleTraerUnoDetalle
   }, "Detalle")));
 }
+
+/***/ }),
+
+/***/ "./resources/js/components/Prototypes/General/StepperPrototype.js":
+/*!************************************************************************!*\
+  !*** ./resources/js/components/Prototypes/General/StepperPrototype.js ***!
+  \************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
+/* harmony import */ var _material_ui_core_Stepper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Stepper */ "./node_modules/@material-ui/core/esm/Stepper/index.js");
+/* harmony import */ var _material_ui_core_Step__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Step */ "./node_modules/@material-ui/core/esm/Step/index.js");
+/* harmony import */ var _material_ui_core_StepLabel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/StepLabel */ "./node_modules/@material-ui/core/esm/StepLabel/index.js");
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js");
+/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["makeStyles"])(function (theme) {
+  return {
+    root: {
+      width: '100%'
+    },
+    avanzarButton: {
+      marginRight: theme.spacing(1),
+      marginLeft: theme.spacing(2),
+      textAlign: 'center'
+    },
+    instructions: {
+      marginTop: theme.spacing(1),
+      marginBottom: theme.spacing(1)
+    }
+  };
+});
+
+function getSteps() {
+  return ['Implantación', 'Germinación', 'Floración', 'Corte', 'Secado'];
+}
+/* function getStepContent(stepIndex) {
+  switch (stepIndex) {
+    case 0:
+      return 'Select campaign settings...';
+    case 1:
+      return 'What is an ad group anyways?';
+    case 2:
+      return 'This is the bit I really care about!';
+    default:
+      return 'Unknown stepIndex';
+  }
+} */
+
+
+var StepperPrototype = function StepperPrototype() {
+  var classes = useStyles();
+
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(0),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      activeStep = _React$useState2[0],
+      setActiveStep = _React$useState2[1];
+
+  var steps = getSteps();
+
+  var handleNext = function handleNext() {
+    setActiveStep(function (prevActiveStep) {
+      return prevActiveStep + 1;
+    });
+  };
+  /*  const handleBack = () => {
+     setActiveStep((prevActiveStep) => prevActiveStep - 1);
+   }; */
+
+  /*   const handleReset = () => {
+      setActiveStep(0);
+    }; */
+
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: classes.root
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Stepper__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    activeStep: 3,
+    alternativeLabel: true
+  }, steps.map(function (label) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Step__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      key: label
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_StepLabel__WEBPACK_IMPORTED_MODULE_5__["default"], null, label));
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, activeStep === steps.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    className: classes.instructions
+  }, "All steps completed")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    className: classes.instructions
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    variant: "contained",
+    className: classes.avanzarButton,
+    color: "primary",
+    onClick: handleNext
+  }, activeStep === steps.length - 1 ? 'Finish' : 'Next')))));
+};
+
+var mapStateToProps = function mapStateToProps(prototypesReducer) {
+  return prototypesReducer;
+};
+/* const mapDispatchToProps = {
+    cancelar,
+    traerDetalleInterval,
+}; */
+
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_8__)(StepperPrototype));
 
 /***/ }),
 

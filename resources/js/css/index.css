@@ -12,6 +12,7 @@ table {
 .table td {
     padding: 0.30rem;
     justify-content: center;
+    vertical-align: inherit;
 }
 
 .material-icons {

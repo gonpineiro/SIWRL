@@ -14,7 +14,7 @@ class Ambiente extends Model
 
     public function monitors()
     {
-        return $this->hasMany('App\Monitor', 'codigo_id', 'codigo');
+        return $this->hasMany('App\Monitor', 'codigo_id', 'codigo')->orderBy('id','desc')->take(1);
     }
     
 

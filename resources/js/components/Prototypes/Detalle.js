@@ -6,14 +6,16 @@ import Basico from './Componentes/Basico';
 import Complementaria from './Componentes/Complementaria';
 import Final from './Componentes/Final';
 import Informacion from './Componentes/Informacion';
+import StepperPrototype from './General/StepperPrototype'
 
 import * as protoypesActions from '../../actions/protoypesActions'
 
-const { traerDetalleInterval } = protoypesActions
+const { traerDetalleInterval, cancelar } = protoypesActions
 
 const Detalle = (props) => {
 
     const {
+        cancelar,
         traerDetalleInterval,
         prototypesReducer: {
             prototype,
@@ -25,7 +27,10 @@ const Detalle = (props) => {
 
     useEffect(() => {
         const intervalPrototype = setInterval(() => traerDetalleInterval(prototype.id), 5000)
-        return () => clearInterval(intervalPrototype)
+        return () => {
+            clearInterval(intervalPrototype)
+            cancelar()
+        }
     }, []);
 
     return (
@@ -58,7 +63,7 @@ const Detalle = (props) => {
             <div className="row mt-2">
                 <div className="col col-md-12">
                     <div className="card">
-                    //
+                    <StepperPrototype />
                     </div>
                 </div>
             </div>
@@ -80,6 +85,7 @@ const Detalle = (props) => {
 const mapStateToProps = (prototypesReducer) => prototypesReducer
 
 const mapDispatchToProps = {
+    cancelar,
     traerDetalleInterval,
 };
 

@@ -240,7 +240,6 @@ const Formulario = (props) => {
                         </Button>
                      </div>
                      : ''}
-                  {error_form && <small className="text-danger">Existe un registro vinculado.</small>}
 
                </div >
 
