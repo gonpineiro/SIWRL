@@ -165,6 +165,7 @@ export const editar = (nuevo_prototype, id) => async (dispatch) => {
     dispatch({
         type: LOADING
     })
+    console.log(nuevo_prototype)
 
     try {
 
@@ -303,11 +304,7 @@ export const sumarEstadoStepper = (nuevo_prototype, id) => async (dispatch) => {
     try {
 
         await axios.put(URL + 'prototype/' + id, nuevo_prototype)
-
-        dispatch({
-            type: STEPPER_DETALLE_LOADING,
-            payload: false
-        })
+        //EL LOADING LO TERMINA EL CASO 'TRAER_UNO'
 
     } catch (error) {
         const errors = error.response.data.errors

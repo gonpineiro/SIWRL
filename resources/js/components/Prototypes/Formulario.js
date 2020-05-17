@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 import TextField from '@material-ui/core/TextField';
@@ -40,7 +40,7 @@ const Formulario = (props) => {
       geneticasReducer: { geneticas },
       ambientesReducer: { ambientes, ambiente },
       prototypesReducer: {
-         prototype: { id, name, genetica_id, ambiente_id, sensor_id, fecha_etapa_a },
+         prototype: { id, name, genetica_id, ambiente_id, sensor_id, fecha_etapa_a, estado },
          state_form,
          error_form,
          loading
@@ -50,17 +50,17 @@ const Formulario = (props) => {
       editar,
       cancelar
    } = props;
-   
+
    const handleCambioPrototypeName = (event) => props.cambioPrototypeName(event.target.value);
 
    const handleCambioPrototypeGenetica = (event) => props.cambioPrototypeGenetica(event.target.value);
 
-   const handleCambioPrototypeAmbiente = (event) => {      
+   const handleCambioPrototypeAmbiente = (event) => {
       props.cambioPrototypeAmbiente(event.target.value);
       if (event.target.value) ambientesTraerUno(event.target.value)
    }
 
-   const handleCambioPrototypeFechaA = (event) => props.cambioPrototypeFechaA(event.target.value)   
+   const handleCambioPrototypeFechaA = (event) => props.cambioPrototypeFechaA(event.target.value)
 
    const handleCambioPrototypeSensor = (event) => props.cambioPrototypeSensor(event.target.value);
 
@@ -72,7 +72,8 @@ const Formulario = (props) => {
          genetica_id: genetica_id,
          ambiente_id: ambiente_id,
          sensor_id: sensor_id,
-         fecha_etapa_a: fecha_etapa_a
+         fecha_etapa_a: fecha_etapa_a,
+         estado: estado
       };
 
       if (state_form === 'crear') agregar(nuevo_prototype);
@@ -81,15 +82,18 @@ const Formulario = (props) => {
 
    };
 
-   const cancelarAmbientes = () => {
-      ambientesCancelar()
-   }
+   const cancelarAmbientes = () => ambientesCancelar()
 
    const cancelarSensors = () => {
       traerTodosPorAmbienteSensor(ambiente_id)
       sensorsCancelar()
    }
 
+   useEffect(() => {
+      if (ambiente_id) ambientesTraerUno(ambiente_id)
+
+   }, []);
+   
    const useStyles = makeStyles((theme) => ({
 
       formControl: {
@@ -213,7 +217,7 @@ const Formulario = (props) => {
                   InputLabelProps={{
                      shrink: true,
                   }}
-                  disabled={state_form === 'borrar' || state_form === 'editar'? true : false}
+                  disabled={state_form === 'borrar' || state_form === 'editar' ? true : false}
                />
             </FormControl>
 

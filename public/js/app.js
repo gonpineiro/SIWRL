@@ -102634,20 +102634,21 @@ var editar = function editar(nuevo_prototype, id) {
               dispatch({
                 type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
               });
-              _context4.prev = 1;
-              _context4.next = 4;
+              console.log(nuevo_prototype);
+              _context4.prev = 2;
+              _context4.next = 5;
               return axios__WEBPACK_IMPORTED_MODULE_1___default.a.put(URL + 'prototype/' + id, nuevo_prototype);
 
-            case 4:
+            case 5:
               dispatch({
                 type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["GUARDAR"]
               });
-              _context4.next = 12;
+              _context4.next = 13;
               break;
 
-            case 7:
-              _context4.prev = 7;
-              _context4.t0 = _context4["catch"](1);
+            case 8:
+              _context4.prev = 8;
+              _context4.t0 = _context4["catch"](2);
               errors = _context4.t0.response.data.errors;
               console.log(_context4.t0.response);
               dispatch({
@@ -102655,12 +102656,12 @@ var editar = function editar(nuevo_prototype, id) {
                 payload: errors
               });
 
-            case 12:
+            case 13:
             case "end":
               return _context4.stop();
           }
         }
-      }, _callee4, null, [[1, 7]]);
+      }, _callee4, null, [[2, 8]]);
     }));
 
     return function (_x4) {
@@ -102913,15 +102914,11 @@ var sumarEstadoStepper = function sumarEstadoStepper(nuevo_prototype, id) {
               return axios__WEBPACK_IMPORTED_MODULE_1___default.a.put(URL + 'prototype/' + id, nuevo_prototype);
 
             case 4:
-              dispatch({
-                type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["STEPPER_DETALLE_LOADING"],
-                payload: false
-              });
-              _context10.next = 12;
+              _context10.next = 11;
               break;
 
-            case 7:
-              _context10.prev = 7;
+            case 6:
+              _context10.prev = 6;
               _context10.t0 = _context10["catch"](1);
               errors = _context10.t0.response.data.errors;
               console.log(_context10.t0.response);
@@ -102930,12 +102927,12 @@ var sumarEstadoStepper = function sumarEstadoStepper(nuevo_prototype, id) {
                 payload: errors
               });
 
-            case 12:
+            case 11:
             case "end":
               return _context10.stop();
           }
         }
-      }, _callee10, null, [[1, 7]]);
+      }, _callee10, null, [[1, 6]]);
     }));
 
     return function (_x10) {
@@ -105766,6 +105763,7 @@ var Formulario = function Formulario(props) {
       ambiente_id = _props$prototypesRedu2.ambiente_id,
       sensor_id = _props$prototypesRedu2.sensor_id,
       fecha_etapa_a = _props$prototypesRedu2.fecha_etapa_a,
+      estado = _props$prototypesRedu2.estado,
       state_form = _props$prototypesRedu.state_form,
       error_form = _props$prototypesRedu.error_form,
       loading = _props$prototypesRedu.loading,
@@ -105802,14 +105800,15 @@ var Formulario = function Formulario(props) {
       genetica_id: genetica_id,
       ambiente_id: ambiente_id,
       sensor_id: sensor_id,
-      fecha_etapa_a: fecha_etapa_a
+      fecha_etapa_a: fecha_etapa_a,
+      estado: estado
     };
     if (state_form === 'crear') agregar(nuevo_prototype);
     if (state_form === 'editar') editar(nuevo_prototype, id);
   };
 
   var cancelarAmbientes = function cancelarAmbientes() {
-    ambientesCancelar();
+    return ambientesCancelar();
   };
 
   var cancelarSensors = function cancelarSensors() {
@@ -105817,6 +105816,9 @@ var Formulario = function Formulario(props) {
     sensorsCancelar();
   };
 
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (ambiente_id) ambientesTraerUno(ambiente_id);
+  }, []);
   var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__["makeStyles"])(function (theme) {
     return {
       formControl: {
@@ -108173,6 +108175,7 @@ var INITIAL_STATE = {
       return _objectSpread(_objectSpread({}, state), {}, {
         prototype: action.payload,
         loading: false,
+        loading_stepper: false,
         error: ''
       });
 

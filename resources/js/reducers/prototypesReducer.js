@@ -51,6 +51,7 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         prototype: action.payload,
         loading: false,
+        loading_stepper: false,
         error: ''
       }
     case LOADING:
