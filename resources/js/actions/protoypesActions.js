@@ -137,6 +137,14 @@ export const cambioPrototypeFechaE = (valor) => (dispatch) => {
     })
 };
 
+export const cambioPrototypeCantidad = (valor) => (dispatch) => {
+
+    dispatch({
+        type: CAMBIO_PROTOTYPE_CANTIDAD,
+        payload: valor
+    })
+};
+
 export const agregar = (nuevo_prototype) => async (dispatch) => {
 
     dispatch({

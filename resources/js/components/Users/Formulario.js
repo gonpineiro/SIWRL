@@ -49,7 +49,7 @@ const Formulario = (props) => {
          flexGrow: 1,
          width: "100%",
       },
-      
+
       formButton: {
          marginTop: 20,
       },
@@ -90,7 +90,7 @@ const Formulario = (props) => {
                      </Grid>
 
                      {/* EMAIL */}
-                     <Grid item xs={12} sm={6}>
+                     <Grid item xs={12} sm={12}>
                         <TextField
                            label="Email"
                            type="email"
@@ -104,7 +104,7 @@ const Formulario = (props) => {
                      </Grid>
 
                      {/* PASSWORD */}
-                     <Grid item xs={12} sm={6}>
+                     <Grid item xs={12} sm={12}>
                         <TextField
                            id="standard-basic"
                            label="Password"

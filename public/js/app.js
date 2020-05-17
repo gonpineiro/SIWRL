@@ -28820,7 +28820,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Mon
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap);", ""]);
 
 // module
-exports.push([module.i, ".center {\r\n    text-align: center;\r\n    justify-content: center;\r\n}\r\n\r\ntable {\r\n    font-size: 0.785rem;\r\n}\r\n\r\n.table td {\r\n    padding: 0.30rem;\r\n    justify-content: center;\r\n    vertical-align: inherit;\r\n}\r\n\r\n.material-icons {\r\n    width: 0.30rem;\r\n    height: 0.30rem;\r\n}\r\n\r\n.alert {\r\n    font-size: 10px;\r\n}\r\n\r\n.btn {\r\n    margin-right: 15px;\r\n}\r\n\r\n.btn-cancelar {\r\n    background-color: #5e2129;\r\n    border-color: #5e2129;\r\n}\r\n\r\n.material-icons {\r\n    font-family: 'Material Icons';\r\n    font-weight: normal;\r\n    font-style: normal;\r\n    font-size: 20px;\r\n    /* Preferred icon size */\r\n    display: inline-block;\r\n    line-height: 1;\r\n    text-transform: none;\r\n    letter-spacing: normal;\r\n    word-wrap: normal;\r\n    white-space: nowrap;\r\n    direction: ltr;\r\n\r\n    /* Agregador por gon.pineiro */\r\n    margin-left: 10px;\r\n    margin-right: 10px;\r\n\r\n    /* Support for all WebKit browsers. */\r\n    -webkit-font-smoothing: antialiased;\r\n    /* Support for Safari and Chrome. */\r\n    text-rendering: optimizeLegibility;\r\n\r\n    /* Support for Firefox. */\r\n    -moz-osx-font-smoothing: grayscale;\r\n\r\n    /* Support for IE. */\r\n    font-feature-settings: 'liga';\r\n}\r\n\r\n.link {\r\n    cursor: pointer;\r\n}\r\n\r\n.link-string {\r\n    color: #3e5f8a;\r\n    font-weight: bold;\r\n}\r\n\r\n.card-agregar {\r\n    color: black;\r\n    font-weight: bold;\r\n    text-align: left;\r\n}\r\n\r\n.card-eliminar {\r\n    color: #5e2129;\r\n    font-weight: bold;\r\n    text-align: left;\r\n}\r\n\r\n\r\n.margin-button {\r\n    margin-top: 15px;\r\n    margin-left: 15px;\r\n    margin-right: 15px;\r\n}\r\n\r\n.container {\r\n    margin-top: 25px;\r\n}\r\n\r\n.text-derecha {\r\n    text-align: right;\r\n}\r\n\r\n.text-izquierda {\r\n    text-align: left;\r\n}\r\n\r\n.color-alert {\r\n    color: #5e2129;\r\n}\r\n\r\n.box {\r\n    margin: 10px;\r\n}\r\n\r\n.avatar {\r\n    font-family: 'Roboto Mono', monospace;\r\n}\r\n\r\n.transparent {\r\n    background-color:transparent;\r\n}\r\n\r\n.card-margin{\r\n    margin: 10px;\r\n}\r\n", ""]);
+exports.push([module.i, ".center {\r\n    text-align: center;\r\n    justify-content: center;\r\n}\r\n\r\ntable {\r\n    font-size: 0.785rem;\r\n}\r\n\r\n.table td {\r\n    padding: 0.30rem;\r\n    justify-content: center;\r\n    vertical-align: inherit;\r\n}\r\n\r\n.material-icons {\r\n    width: 0.30rem;\r\n    height: 0.30rem;\r\n}\r\n\r\n.alert {\r\n    font-size: 10px;\r\n}\r\n\r\n.btn {\r\n    margin-right: 15px;\r\n}\r\n\r\n.btn-cancelar {\r\n    background-color: #5e2129;\r\n    border-color: #5e2129;\r\n}\r\n\r\n.material-icons {\r\n    font-family: 'Material Icons';\r\n    font-weight: normal;\r\n    font-style: normal;\r\n    font-size: 20px;\r\n    /* Preferred icon size */\r\n    display: inline-block;\r\n    line-height: 1;\r\n    text-transform: none;\r\n    letter-spacing: normal;\r\n    word-wrap: normal;\r\n    white-space: nowrap;\r\n    direction: ltr;\r\n\r\n    /* Agregador por gon.pineiro */\r\n    margin-left: 10px;\r\n    margin-right: 10px;\r\n\r\n    /* Support for all WebKit browsers. */\r\n    -webkit-font-smoothing: antialiased;\r\n    /* Support for Safari and Chrome. */\r\n    text-rendering: optimizeLegibility;\r\n\r\n    /* Support for Firefox. */\r\n    -moz-osx-font-smoothing: grayscale;\r\n\r\n    /* Support for IE. */\r\n    font-feature-settings: 'liga';\r\n}\r\n\r\n.link {\r\n    cursor: pointer;\r\n}\r\n\r\n.link-string {\r\n    color: #3e5f8a;\r\n    font-weight: bold;\r\n}\r\n\r\n.card-agregar {\r\n    color: black;\r\n    font-weight: bold;\r\n    text-align: left;\r\n}\r\n\r\n.card-eliminar {\r\n    color: #5e2129;\r\n    font-weight: bold;\r\n    text-align: left;\r\n}\r\n\r\n\r\n.margin-button {\r\n    margin-top: 15px;\r\n    margin-left: 15px;\r\n    margin-right: 15px;\r\n}\r\n\r\n.container {\r\n    margin-top: 25px;\r\n}\r\n\r\n.text-derecha {\r\n    text-align: right;\r\n}\r\n\r\n.text-izquierda {\r\n    text-align: left;\r\n}\r\n\r\n.color-alert {\r\n    color: #5e2129;\r\n}\r\n\r\n.box {\r\n    margin: 10px;\r\n}\r\n\r\n.avatar {\r\n    font-family: 'Roboto Mono', monospace;\r\n}\r\n\r\n.transparent {\r\n    background-color:transparent;\r\n}\r\n\r\n.card-margin{\r\n    margin: 10px;\r\n}\r\n\r\n.input-stepper{\r\n    width: 50%;\r\n}\r\n", ""]);
 
 // exports
 
@@ -101871,35 +101871,36 @@ var traerUno = function traerUno(id) {
               dispatch({
                 type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["LOADING"]
               });
+              console.log('asd');
               dispatch({
                 type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_ESTADO_FORM"],
                 payload: 'editar'
               });
-              _context2.prev = 2;
-              _context2.next = 5;
+              _context2.prev = 3;
+              _context2.next = 6;
               return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(URL + 'ambiente/' + id);
 
-            case 5:
+            case 6:
               response = _context2.sent;
               ambiente = response.data[0];
               dispatch({
                 type: _types_ambienteTypes__WEBPACK_IMPORTED_MODULE_2__["TRAER_UNO"],
                 payload: ambiente
               });
-              _context2.next = 13;
+              _context2.next = 14;
               break;
 
-            case 10:
-              _context2.prev = 10;
-              _context2.t0 = _context2["catch"](2);
+            case 11:
+              _context2.prev = 11;
+              _context2.t0 = _context2["catch"](3);
               console.log(_context2.t0);
 
-            case 13:
+            case 14:
             case "end":
               return _context2.stop();
           }
         }
-      }, _callee2, null, [[2, 10]]);
+      }, _callee2, null, [[3, 11]]);
     }));
 
     return function (_x2) {
@@ -102880,7 +102881,7 @@ var cancelar = function cancelar() {
 /*!**************************************************!*\
   !*** ./resources/js/actions/protoypesActions.js ***!
   \**************************************************/
-/*! exports provided: traerTodos, traerUno, cambioPrototypeName, cambioPrototypeGenetica, cambioPrototypeAmbiente, cambioPrototypeSensor, cambioPrototypeFechaA, cambioPrototypeFechaB, cambioPrototypeFechaC, cambioPrototypeFechaD, cambioPrototypeFechaE, agregar, editar, traerUnoBorrar, borrar, cancelar, traerTabla, traerFormulario, traerDetalle, traerDetalleInterval, traerTodosInterval, sumarEstadoStepper */
+/*! exports provided: traerTodos, traerUno, cambioPrototypeName, cambioPrototypeGenetica, cambioPrototypeAmbiente, cambioPrototypeSensor, cambioPrototypeFechaA, cambioPrototypeFechaB, cambioPrototypeFechaC, cambioPrototypeFechaD, cambioPrototypeFechaE, cambioPrototypeCantidad, agregar, editar, traerUnoBorrar, borrar, cancelar, traerTabla, traerFormulario, traerDetalle, traerDetalleInterval, traerTodosInterval, sumarEstadoStepper */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -102896,6 +102897,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cambioPrototypeFechaC", function() { return cambioPrototypeFechaC; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cambioPrototypeFechaD", function() { return cambioPrototypeFechaD; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cambioPrototypeFechaE", function() { return cambioPrototypeFechaE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cambioPrototypeCantidad", function() { return cambioPrototypeCantidad; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "agregar", function() { return agregar; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "editar", function() { return editar; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traerUnoBorrar", function() { return traerUnoBorrar; });
@@ -103078,6 +103080,14 @@ var cambioPrototypeFechaE = function cambioPrototypeFechaE(valor) {
   return function (dispatch) {
     dispatch({
       type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_FECHA_ESTADO_E"],
+      payload: valor
+    });
+  };
+};
+var cambioPrototypeCantidad = function cambioPrototypeCantidad(valor) {
+  return function (dispatch) {
+    dispatch({
+      type: _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_PROTOTYPE_CANTIDAD"],
       payload: valor
     });
   };
@@ -104270,7 +104280,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
 /* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/index.js");
-/* harmony import */ var _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/ambientesActions */ "./resources/js/actions/ambientesActions.js");
+/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
+/* harmony import */ var _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../actions/ambientesActions */ "./resources/js/actions/ambientesActions.js");
 
 
 
@@ -104278,13 +104289,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var agregar = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_6__["agregar"],
-    editar = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_6__["editar"],
-    borrar = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_6__["borrar"],
-    cambioAmbienteName = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_6__["cambioAmbienteName"],
-    cambioAmbienteCodigo = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_6__["cambioAmbienteCodigo"],
-    cambioAmbienteInputs = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_6__["cambioAmbienteInputs"],
-    cancelar = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_6__["cancelar"];
+
+var agregar = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_7__["agregar"],
+    editar = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_7__["editar"],
+    borrar = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_7__["borrar"],
+    cambioAmbienteName = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_7__["cambioAmbienteName"],
+    cambioAmbienteCodigo = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_7__["cambioAmbienteCodigo"],
+    cambioAmbienteInputs = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_7__["cambioAmbienteInputs"],
+    cancelar = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_7__["cancelar"];
 
 var Formulario = function Formulario(props) {
   var _props$ambientesReduc = props.ambientesReducer,
@@ -104295,10 +104307,10 @@ var Formulario = function Formulario(props) {
       inputs = _props$ambientesReduc2.inputs,
       state_form = _props$ambientesReduc.state_form,
       error_form = _props$ambientesReduc.error_form,
+      loading = _props$ambientesReduc.loading,
       cambioAmbienteName = props.cambioAmbienteName,
       cambioAmbienteCodigo = props.cambioAmbienteCodigo,
       cambioAmbienteInputs = props.cambioAmbienteInputs,
-      loading = props.loading,
       borrar = props.borrar,
       agregar = props.agregar,
       editar = props.editar,
@@ -104340,7 +104352,7 @@ var Formulario = function Formulario(props) {
   var classes = useStyles();
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card transparent"
-  }, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Spinner, null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card-header"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "row mt-2"
@@ -106625,7 +106637,7 @@ var Formulario = function Formulario(props) {
       shrink: true
     },
     disabled: state_form === 'borrar' || state_form === 'editar' ? true : false
-  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
     item: true,
     xs: 6,
     sm: 6
@@ -106652,7 +106664,7 @@ var Formulario = function Formulario(props) {
     className: classes.formButton
   }, "Cancelar") : ''), error_form && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
     className: "text-danger"
-  }, "Existe un registro vinculado.")))));
+  }, "Existe un registro vinculado."))))));
 };
 
 var mapStateToProps = function mapStateToProps(_ref) {
@@ -106798,13 +106810,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
 /* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js");
 /* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../General/Spinner */ "./resources/js/components/General/Spinner.js");
-/* harmony import */ var _js_funciones__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../js/funciones */ "./resources/js/js/funciones.js");
-/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
+/* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/esm/TextField/index.js");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/index.js");
+/* harmony import */ var _js_funciones__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../js/funciones */ "./resources/js/js/funciones.js");
+/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 
 
@@ -106830,6 +106846,9 @@ var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["ma
     instructions: {
       marginTop: theme.spacing(1),
       marginBottom: theme.spacing(1)
+    },
+    input: {
+      width: '50%'
     }
   };
 });
@@ -106843,48 +106862,56 @@ var StepperPrototype = function StepperPrototype(props) {
       _props$prototypesRedu2 = _props$prototypesRedu.prototype,
       id = _props$prototypesRedu2.id,
       estado = _props$prototypesRedu2.estado,
+      cantidad_stepper = _props$prototypesRedu.cantidad_stepper,
       prototype = _props$prototypesRedu.prototype,
       loading_stepper = _props$prototypesRedu.loading_stepper,
+      cambioPrototypeCantidad = props.cambioPrototypeCantidad,
+      traerTodosInterval = props.traerTodosInterval,
       traerDetalleInterval = props.traerDetalleInterval,
       sumarEstadoStepper = props.sumarEstadoStepper;
   var classes = useStyles();
   var steps = getSteps();
+
+  var handlecambioPrototypeCantidad = function handlecambioPrototypeCantidad(event) {
+    return cambioPrototypeCantidad(event.target.value);
+  };
 
   var handleNext = function handleNext() {
     var enviarUpdateEstado = function enviarUpdateEstado(estado) {
       switch (estado) {
         case 0:
           return _objectSpread(_objectSpread({}, prototype), {}, {
-            fecha_etapa_b: Object(_js_funciones__WEBPACK_IMPORTED_MODULE_9__["obtenerFechaHoy"])(),
+            fecha_etapa_b: Object(_js_funciones__WEBPACK_IMPORTED_MODULE_11__["obtenerFechaHoy"])(),
             estado: estado + 1
           });
           break;
 
         case 1:
           return _objectSpread(_objectSpread({}, prototype), {}, {
-            fecha_etapa_c: Object(_js_funciones__WEBPACK_IMPORTED_MODULE_9__["obtenerFechaHoy"])(),
+            fecha_etapa_c: Object(_js_funciones__WEBPACK_IMPORTED_MODULE_11__["obtenerFechaHoy"])(),
             estado: estado + 1
           });
           break;
 
         case 2:
           return _objectSpread(_objectSpread({}, prototype), {}, {
-            fecha_etapa_d: Object(_js_funciones__WEBPACK_IMPORTED_MODULE_9__["obtenerFechaHoy"])(),
+            fecha_etapa_d: Object(_js_funciones__WEBPACK_IMPORTED_MODULE_11__["obtenerFechaHoy"])(),
             estado: estado + 1
           });
           break;
 
         case 3:
           return _objectSpread(_objectSpread({}, prototype), {}, {
-            fecha_etapa_e: Object(_js_funciones__WEBPACK_IMPORTED_MODULE_9__["obtenerFechaHoy"])(),
+            fecha_etapa_e: Object(_js_funciones__WEBPACK_IMPORTED_MODULE_11__["obtenerFechaHoy"])(),
             estado: estado + 1
           });
           break;
 
         case 4:
           return _objectSpread(_objectSpread({}, prototype), {}, {
-            fecha_etapa_f: Object(_js_funciones__WEBPACK_IMPORTED_MODULE_9__["obtenerFechaHoy"])(),
-            estado: estado + 1
+            fecha_etapa_f: Object(_js_funciones__WEBPACK_IMPORTED_MODULE_11__["obtenerFechaHoy"])(),
+            estado: estado + 1,
+            cantidad: cantidad_stepper
           });
           break;
 
@@ -106895,6 +106922,7 @@ var StepperPrototype = function StepperPrototype(props) {
 
     sumarEstadoStepper(enviarUpdateEstado(estado), id);
     traerDetalleInterval(id);
+    traerTodosInterval();
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -106911,19 +106939,42 @@ var StepperPrototype = function StepperPrototype(props) {
     className: "center"
   }, loading_stepper ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_8__["default"], null) : estado === steps.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_7__["default"], {
     className: classes.instructions
-  }, "Prototipo Completado!")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, "Prototipo Completado!")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: classes.root
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    container: true,
+    spacing: 3,
+    direction: "row",
+    justify: "center",
+    alignItems: "center"
+  }, estado === steps.length - 1 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    item: true,
+    xs: 2,
+    sm: 6
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    id: "standard-basic",
+    label: "Cantidad",
+    type: "number",
+    className: "form-control transparent input-stepper",
+    value: cantidad_stepper || '',
+    onChange: handlecambioPrototypeCantidad
+  })) : '', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    item: true,
+    xs: 12
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_6__["default"], {
     variant: "contained",
     className: classes.avanzarButton,
     color: "primary",
-    onClick: handleNext
-  }, estado === steps.length - 1 ? 'Terminar' : 'Pasar a ' + steps[estado + 1]))));
+    onClick: handleNext,
+    disabled: estado < 4 || cantidad_stepper ? false : true
+  }, estado === steps.length - 1 ? 'Terminar' : 'Pasar a ' + steps[estado + 1]))))));
 };
 
 var mapStateToProps = function mapStateToProps(prototypesReducer) {
   return prototypesReducer;
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_10__)(StepperPrototype));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_12__)(StepperPrototype));
 
 /***/ }),
 
@@ -107419,11 +107470,6 @@ var Formulario = function Formulario(props) {
     };
     if (state_form === 'crear') agregar(nuevo_sensor);
     if (state_form === 'editar') editar(nuevo_sensor, id);
-    ambientesTraerTodos();
-  };
-
-  var eliminar = function eliminar() {
-    borrar(id);
     ambientesTraerTodos();
   };
 
@@ -107929,7 +107975,7 @@ var Formulario = function Formulario(props) {
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
     item: true,
     xs: 12,
-    sm: 6
+    sm: 12
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
     label: "Email",
     type: "email",
@@ -107942,7 +107988,7 @@ var Formulario = function Formulario(props) {
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
     item: true,
     xs: 12,
-    sm: 6
+    sm: 12
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
     id: "standard-basic",
     label: "Password",
@@ -108871,6 +108917,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var INITIAL_STATE = {
   prototypes: [],
   prototype: [],
+  cantidad_stepper: '',
   loading: false,
   loading_stepper: false,
   error: '',
@@ -108993,11 +109040,9 @@ var INITIAL_STATE = {
       });
 
     case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_PROTOTYPE_CANTIDAD"]:
-      return _objectSpread(_objectSpread({}, state), {}, {
-        prototype: _objectSpread(_objectSpread({}, state.prototype), {}, {
-          cantidad: action.payload
-        })
-      });
+      return _objectSpread(_objectSpread({}, state), {}, _defineProperty({
+        cantidad_stepper: ''
+      }, "cantidad_stepper", action.payload));
 
     case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["CAMBIO_ESTADO_FORM"]:
       return _objectSpread(_objectSpread({}, state), {}, {
@@ -109008,6 +109053,7 @@ var INITIAL_STATE = {
     case _types_prototypeTypes__WEBPACK_IMPORTED_MODULE_0__["GUARDAR"]:
       return _objectSpread(_objectSpread({}, state), {}, {
         loading: false,
+        cantidad_stepper: '',
         error: '',
         error_form: '',
         prototype: _objectSpread(_objectSpread({}, state.form), {}, {
@@ -109035,6 +109081,7 @@ var INITIAL_STATE = {
         loading: false,
         error: '',
         error_form: '',
+        cantidad_stepper: '',
         prototype: _objectSpread(_objectSpread({}, state.form), {}, {
           id: '',
           name: '',

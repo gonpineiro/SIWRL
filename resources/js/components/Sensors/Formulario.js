@@ -65,12 +65,7 @@ const Formulario = (props) => {
       if (state_form === 'editar') editar(nuevo_sensor, id)
 
       ambientesTraerTodos()
-   };
-
-   const eliminar = () => {
-      borrar(id)
-      ambientesTraerTodos()
-   }
+   }; 
 
    const useStyles = makeStyles((theme) => ({
       root: {

@@ -43,6 +43,7 @@ class PrototypeController extends Controller
         $data->fecha_etapa_d = $request->get('fecha_etapa_d');
         $data->fecha_etapa_e = $request->get('fecha_etapa_e');
         $data->fecha_etapa_f = $request->get('fecha_etapa_f');
+        $data->cantidad = $request->get('cantidad');
         $data->estado = $request->get('estado');
         $data->save();
 

@@ -264,48 +264,49 @@ const Formulario = (props) => {
                               />
                            </FormControl>
                         </Grid>
-                     </Grid>
-
-                     {/* BUTTOMS */}
-                     <Grid item xs={6} sm={6} >
-                        {state_form === 'crear' || state_form === 'editar'
-                           ?
-                           <Button
-                              variant="contained"
-                              color="primary"
-                              onClick={guardar}
-                              className={classes.formButton}
-                           >
-                              Guardar
-                                    </Button> : ''}
-                        {state_form === 'borrar'
-                           ?
-                           <div>
+                        
+                        {/* BUTTOMS */}
+                        <Grid item xs={6} sm={6} >
+                           {state_form === 'crear' || state_form === 'editar'
+                              ?
                               <Button
                                  variant="contained"
                                  color="primary"
-                                 onClick={() => borrar(id)}
+                                 onClick={guardar}
                                  className={classes.formButton}
                               >
-                                 Borrar
+                                 Guardar
+                                    </Button> : ''}
+                           {state_form === 'borrar'
+                              ?
+                              <div>
+                                 <Button
+                                    variant="contained"
+                                    color="primary"
+                                    onClick={() => borrar(id)}
+                                    className={classes.formButton}
+                                 >
+                                    Borrar
                                        </Button>
-                           </div>
-                           : ''}
+                              </div>
+                              : ''}
+                        </Grid>
+
+                        <Grid item xs={6} sm={6}>
+                           {state_form === 'editar' || state_form === 'borrar'
+                              ?
+                              <Button
+                                 variant="contained"
+                                 color="inherit"
+                                 onClick={cancelar}
+                                 className={classes.formButton}
+                              >
+                                 Cancelar
+                                    </Button> : ''}
+                        </Grid>
+                        {error_form && <small className="text-danger">Existe un registro vinculado.</small>}
                      </Grid>
 
-                     <Grid item xs={6} sm={6}>
-                        {state_form === 'editar' || state_form === 'borrar'
-                           ?
-                           <Button
-                              variant="contained"
-                              color="inherit"
-                              onClick={cancelar}
-                              className={classes.formButton}
-                           >
-                              Cancelar
-                                    </Button> : ''}
-                     </Grid>
-                     {error_form && <small className="text-danger">Existe un registro vinculado.</small>}
                   </div>
                </div>
             </div>}

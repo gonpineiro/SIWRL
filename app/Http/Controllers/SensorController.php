@@ -30,7 +30,7 @@ class SensorController extends Controller
         return response()->json($data, 200);
     }
 
-    public function store(Request $request){        
+    public function store(SensorRequest $request){        
         $data = Sensor::create([
             'name' => $request->input('name'),
             'ambiente_id' => $request->input('ambiente_id'),

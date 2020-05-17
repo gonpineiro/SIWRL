@@ -123,3 +123,7 @@ table {
 .card-margin{
     margin: 10px;
 }
+
+.input-stepper{
+    width: 50%;
+}

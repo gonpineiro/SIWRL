@@ -4,6 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
+import Spinner from '../General/Spinner';
 
 import * as ambientesActions from '../../actions/ambientesActions'
 
@@ -16,11 +17,11 @@ const Formulario = (props) => {
          ambiente: { id, name, codigo, inputs },
          state_form,
          error_form,
+         loading,
       },
       cambioAmbienteName,
       cambioAmbienteCodigo,
       cambioAmbienteInputs,
-      loading,
       borrar,
       agregar,
       editar,

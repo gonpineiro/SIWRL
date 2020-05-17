@@ -28,6 +28,7 @@ import {
 const INITIAL_STATE = {
   prototypes: [],
   prototype: [],
+  cantidad_stepper: '',
   loading: false,
   loading_stepper: false,
   error: '',
@@ -156,10 +157,8 @@ export default (state = INITIAL_STATE, action) => {
     case CAMBIO_PROTOTYPE_CANTIDAD:
       return {
         ...state,
-        prototype: {
-          ...state.prototype,
-          cantidad: action.payload
-        }
+        cantidad_stepper: '',
+        cantidad_stepper: action.payload
       };
 
     case CAMBIO_ESTADO_FORM:
@@ -173,6 +172,7 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         loading: false,
+        cantidad_stepper: '',
         error: '',
         error_form: '',
         prototype: {
@@ -202,6 +202,7 @@ export default (state = INITIAL_STATE, action) => {
         loading: false,
         error: '',
         error_form: '',
+        cantidad_stepper: '',
         prototype: {
           ...state.form,
           id: '',

@@ -7,6 +7,8 @@ import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Spinner from '../../General/Spinner';
+import TextField from '@material-ui/core/TextField';
+import Grid from '@material-ui/core/Grid';
 
 import { obtenerFechaHoy } from '../../../js/funciones'
 
@@ -25,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
         marginTop: theme.spacing(1),
         marginBottom: theme.spacing(1),
     },
+    input: {
+        width: '50%',
+    },
 }));
 
 const getSteps = () => ['Implantación', 'Germinación', 'Floración', 'Corte', 'Secado'];
@@ -36,15 +41,21 @@ const StepperPrototype = (props) => {
                 id,
                 estado,
             },
+            cantidad_stepper,
             prototype,
             loading_stepper,
         },
+        cambioPrototypeCantidad,
+        traerTodosInterval,
         traerDetalleInterval,
         sumarEstadoStepper
     } = props
 
     const classes = useStyles();
+
     const steps = getSteps();
+
+    const handlecambioPrototypeCantidad = (event) => cambioPrototypeCantidad(event.target.value);
 
     const handleNext = () => {
 
@@ -86,7 +97,8 @@ const StepperPrototype = (props) => {
                     return {
                         ...prototype,
                         fecha_etapa_f: obtenerFechaHoy(),
-                        estado: estado + 1
+                        estado: estado + 1,
+                        cantidad: cantidad_stepper
                     };
                     break;
 
@@ -96,8 +108,10 @@ const StepperPrototype = (props) => {
         }
         sumarEstadoStepper(enviarUpdateEstado(estado), id)
         traerDetalleInterval(id)
+        traerTodosInterval()
 
     };
+    
 
     return (
         <div className={classes.root}>
@@ -115,10 +129,41 @@ const StepperPrototype = (props) => {
                             <Typography className={classes.instructions}>Prototipo Completado!</Typography>
                         </div>
                     ) : (
-                            <div>
-                                <Button variant="contained" className={classes.avanzarButton} color="primary" onClick={handleNext}>
-                                    {estado === steps.length - 1 ? 'Terminar' : 'Pasar a ' + steps[estado + 1]}
-                                </Button>
+                            <div className={classes.root}>
+                                <Grid
+                                    container
+                                    spacing={3}
+                                    direction="row"
+                                    justify="center"
+                                    alignItems="center">
+
+                                    {estado === steps.length - 1 ?
+                                        <Grid item xs={2} sm={6} >
+                                            <TextField
+                                                id="standard-basic"
+                                                label="Cantidad"
+                                                type="number"
+                                                className="form-control transparent input-stepper"
+                                                value={cantidad_stepper || ''}
+                                                onChange={handlecambioPrototypeCantidad}
+                                            />
+                                        </Grid> : ''}
+
+                                    <Grid item xs={12}>
+                                        <Button
+                                            variant="contained"
+                                            className={classes.avanzarButton}
+                                            color="primary"
+                                            onClick={handleNext}
+                                            disabled={estado < 4 || cantidad_stepper ? false : true}
+                                        >
+                                            {estado === steps.length - 1 ? 'Terminar' : 'Pasar a ' + steps[estado + 1]}
+                                        </Button>
+                                    </Grid>
+
+                                </Grid>
+
+
                             </div>
                         )
                 }
