@@ -115,3 +115,11 @@ table {
 .avatar {
     font-family: 'Roboto Mono', monospace;
 }
+
+.transparent {
+    background-color:transparent;
+}
+
+.card-margin{
+    margin: 10px;
+}

@@ -10,6 +10,7 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Spinner from '../General/Spinner';
+import TocIcon from '@material-ui/icons/Toc';
 
 import * as protoypesActions from '../../actions/protoypesActions'
 
@@ -26,6 +27,7 @@ const {
    cambioPrototypeSensor,
    cambioPrototypeFechaA,
 
+   traerTabla,
    borrar,
    agregar,
    editar,
@@ -46,6 +48,8 @@ const Formulario = (props) => {
          error_form,
          loading
       },
+      goBack,
+      traerTabla,
       borrar,
       agregar,
       editar,
@@ -107,7 +111,7 @@ const Formulario = (props) => {
    const classes = useStyles();
 
    return (
-      <div className="card">
+      <div className="card transparent">
          {loading ? <Spinner /> :
             <div>
                <div className="card-header">
@@ -117,8 +121,8 @@ const Formulario = (props) => {
                         {state_form === 'editar' ? 'MODIFICAR PROTOTIPO' : ''}
                         {state_form === 'borrar' ? 'ELIMINAR PROTOTIPO' : ''}
                      </div>
-                     <div className="col col-md-6 center">
-
+                     <div className="col col-md-6 text-derecha" >
+                        <TocIcon fontSize="large" className="link" onClick={traerTabla}/>                        
                      </div>
                   </div>
                </div>
@@ -131,7 +135,7 @@ const Formulario = (props) => {
                               id="standard-basic"
                               label="Nombre"
                               type="text"
-                              className="form-control"
+                              className="form-control transparent"
                               value={name || ''}
                               onChange={handleCambioPrototypeName}
                               helperText={error_form.name}
@@ -149,6 +153,7 @@ const Formulario = (props) => {
                               onChange={handleCambioPrototypeGenetica}
                               error={!error_form.genetica_id ? false : true}
                               disabled={state_form === 'borrar' ? true : false}
+                              className="transparent"
                            >
                               <Link to="/geneticas">
                                  <MenuItem value="">
@@ -176,6 +181,7 @@ const Formulario = (props) => {
                               onChange={handleCambioPrototypeAmbiente}
                               error={!error_form.ambiente_id ? false : true}
                               disabled={state_form === 'borrar' ? true : false}
+                              className="transparent"
                            >
                               <Link to="/ambientes">
                                  <MenuItem value="" onClick={() => cancelarAmbientes()}>
@@ -204,6 +210,7 @@ const Formulario = (props) => {
                               onChange={handleCambioPrototypeSensor}
                               error={!error_form.sensor_id ? false : true}
                               disabled={!ambiente_id || state_form === 'borrar'}
+                              className="transparent"
                            >
                               <Link to={`/ambientes/sensor/${ambiente_id}`}>
                                  <MenuItem value="" onClick={() => cancelarSensors()}>
@@ -230,7 +237,7 @@ const Formulario = (props) => {
                               type="date"
                               onChange={handleCambioPrototypeFechaA}
                               value={fecha_etapa_a || ''}
-                              className={classes.textField || ''}
+                              className="transparent"
                               InputLabelProps={{
                                  shrink: true,
                               }}
@@ -302,6 +309,7 @@ const mapDispatchToProps = {
    cambioPrototypeSensor,
    cambioPrototypeFechaA,
 
+   traerTabla,
    borrar,
    agregar,
    editar,

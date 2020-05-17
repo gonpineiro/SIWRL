@@ -234,7 +234,7 @@ export const traerTabla = () => (dispatch) => {
 }
 
 export const traerFormulario = () => (dispatch) => {
-    console.log('asd')
+    
     dispatch({
         type: CAMBIO_ESTADO_FORM,
         payload: 'crear'

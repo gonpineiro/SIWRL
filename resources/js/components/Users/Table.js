@@ -22,28 +22,30 @@ const Table = (props) => {
     </tr>
   ))
 
-  return (    
-    <div>
-      <div className="row mt-2">
-        <div className="col col-md-6">
-          <h4 className="title-table">Lista de usuarios</h4>
+  return (
+    <div className="card transparent">
+      <div className="card-margin">
+        <div className="row mt-2">
+          <div className="col col-md-6">
+            <h4 className="title-table">Lista de usuarios</h4>
+          </div>
+          <div className="col col-md-6 text-derecha">
+            <KeyboardReturnIcon fontSize="large" onClick={goBack} className="link" />
+          </div>
         </div>
-        <div className="col col-md-6 text-derecha">
-          <KeyboardReturnIcon fontSize="large" onClick={goBack} className="link"/>
-        </div>
+        <table className="table table-hover">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            {addRow()}
+          </tbody>
+        </table>
       </div>
-      <table className="table table-hover">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Email</th>
-          </tr>
-        </thead>
-        <tbody>
-          {addRow()}
-        </tbody>
-      </table>
     </div>
   );
 }

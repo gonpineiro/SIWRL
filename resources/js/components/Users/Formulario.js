@@ -56,7 +56,7 @@ const Formulario = (props) => {
 
    return (
 
-      <div className="card">
+      <div className="card transparent">
          <div className="card-header">
             <div className="row mt-2">
                <div className="col col-md-6 card-agregar" >
@@ -76,7 +76,7 @@ const Formulario = (props) => {
                            id="standard-basic"
                            label="Nombre"
                            type="text"
-                           className="form-control"
+                           className="form-control transparent"
                            value={name || ''}
                            onChange={handleCambioUsuarioName}
                            helperText={error_form.name}
@@ -89,7 +89,7 @@ const Formulario = (props) => {
                         <TextField
                            label="Email"
                            type="email"
-                           className="form-control"
+                           className="form-control transparent"
                            value={email || ''}
                            onChange={handleCambioUsuarioEmail}
                            helperText={error_form.email}
@@ -103,7 +103,7 @@ const Formulario = (props) => {
                            id="standard-basic"
                            label="Password"
                            type="text"
-                           className="form-control"
+                           className="form-control transparent"
                            value={password || ''}
                            onChange={handleCambioUsuarioPassword}
                            helperText={error_form.password}

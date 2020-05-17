@@ -70,7 +70,7 @@ const Informacion = (props) => {
     return (
         <div className="row mt-2">
             <div className="col col-md-6">
-                <div className="card">
+                <div className="card transparent">
                     <div className={classes.avatars}>
                         <Avatar alt="Remy Sharp" className={classes.temp} >
                             <div className="avatar">
@@ -91,7 +91,7 @@ const Informacion = (props) => {
                 </div>
             </div>
             <div className="col col-md-6">
-                <div className="card">
+                <div className="card transparent">
                     <div className={classes.avatars}>
                         <Avatar alt="Remy Sharp" className={classes.temp} >
                             <div className="avatar">

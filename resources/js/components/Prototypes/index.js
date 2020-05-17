@@ -55,11 +55,12 @@ class Prototypes extends Component {
 
 		return <Table goBack={goBack} />
 	}
-	ponerFormulario = () => <Formulario />
+	ponerFormulario = () => <Formulario goBack={this.props.history.goBack} />
 
 	detallePrototype = () => <Detalle />
 
 	render() {
+		
 		const { prototypesReducer: { state_form } } = this.props
 
 		if (state_form != 'detalle') return this.index()
@@ -68,16 +69,34 @@ class Prototypes extends Component {
 	}
 
 	index = () => {
+		const { prototypesReducer: { state_form } } = this.props
 		return (
-			<div className="container col-md-9">
-				<div className="row mt-2">
-					<div className="col col-md-8">
-						{this.ponerContenido()}
+			<div>
+				{state_form === 'tabla' ?
+					<div className="container col-md-9">
+						<div className="row mt-2 center">
+							<div className="col col-md-12">
+								{this.ponerContenido()}
+							</div>
+						</div>
 					</div>
-					<div className="col col-md-4">
-						{this.ponerFormulario()}
-					</div>
-				</div>
+					: ''}
+
+				{state_form === 'crear' || state_form === 'editar' || state_form === 'borrar' ?
+
+					<div className="container col-md-9">
+						<div className="row mt-2">
+							<div className="col col-md-8">
+								{this.ponerContenido()}
+							</div>
+							<div className="col col-md-4">
+								{this.ponerFormulario()}
+							</div>
+						</div>
+					</div> : ''}
+
+
+
 			</div>
 		)
 	}

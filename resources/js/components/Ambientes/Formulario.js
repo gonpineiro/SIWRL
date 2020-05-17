@@ -61,7 +61,7 @@ const Formulario = (props) => {
 
 
    return (
-      <div className="card">
+      <div className="card transparent">
          {loading ? <Spinner /> :
             <div>
                <div className="card-header">
@@ -82,7 +82,7 @@ const Formulario = (props) => {
                               id="standard-basic"
                               label="Nombre"
                               type="text"
-                              className="form-control"
+                              className="form-control transparent"
                               value={name || ''}
                               onChange={handleCambioAmbienteName}
                               helperText={error_form.name}
@@ -96,7 +96,7 @@ const Formulario = (props) => {
                               id="standard-basic"
                               label="Código"
                               type="number"
-                              className="form-control"
+                              className="form-control transparent"
                               value={codigo || ''}
                               onChange={handleCambioAmbienteCodigo}
                               helperText={error_form.codigo}
@@ -110,7 +110,7 @@ const Formulario = (props) => {
                               id="standard-basic"
                               label="Inputs"
                               type="number"
-                              className="form-control"
+                              className="form-control transparent"
                               value={inputs || ''}
                               onChange={handleCambioAmbienteInputs}
                               helperText={error_form.inputs}

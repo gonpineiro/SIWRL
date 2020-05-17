@@ -11,7 +11,7 @@ const { traerUno, traerUnoBorrar } = ambientesActions;
 const { traerTodosPorAmbiente } = sensorsActions;
 
 const Table = (props) => {
-  
+
   const {
     ambientesReducer: { ambientes },
     traerTodosPorAmbiente,
@@ -41,29 +41,30 @@ const Table = (props) => {
   ))
 
   return (
-
-    <div>
-      <div className="row mt-2">
-        <div className="col col-md-6">
-          <h4>Lista de ambientes</h4>
+    <div className="card transparent">
+      <div className="card-margin">
+        <div className="row mt-2">
+          <div className="col col-md-6">
+            <h4>Lista de ambientes</h4>
+          </div>
+          <div className="col col-md-6 text-derecha">
+            <KeyboardReturnIcon fontSize="large" onClick={goBack} className="link" />
+          </div>
         </div>
-        <div className="col col-md-6 text-derecha">
-          <KeyboardReturnIcon fontSize="large" onClick={goBack} className="link"/>
-        </div>
+        <table className="table table-hover">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Código</th>
+              <th>Sensores</th>
+            </tr>
+          </thead>
+          <tbody>
+            {addRow()}
+          </tbody>
+        </table>
       </div>
-      <table className="table table-hover">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Código</th>
-            <th>Sensores</th>
-          </tr>
-        </thead>
-        <tbody>
-          {addRow()}
-        </tbody>
-      </table>
     </div>
   );
 }

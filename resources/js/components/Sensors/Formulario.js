@@ -84,7 +84,7 @@ const Formulario = (props) => {
 
    return (
 
-      <div className="card">
+      <div className="card transparent">
          {loading || !ambiente.inputs ? <Spinner /> :
             <div>
                <div className="card-header">
@@ -115,6 +115,7 @@ const Formulario = (props) => {
                               onChange={handleCambioAmbiente}
                               error={!error_form.ambiente_id ? false : true}
                               disabled={state_form === 'borrar' ? true : false}
+                              className="transparent"
                            >
                               {ambientes.map((ambiente) => (
                                  <MenuItem key={ambiente.id} value={ambiente.id}>{ambiente.name}</MenuItem>
@@ -128,7 +129,7 @@ const Formulario = (props) => {
                               id="standard-basic"
                               label="Nombre"
                               type="text"
-                              className="form-control"
+                              className="form-control transparent"
                               value={name || ''}
                               onChange={handleCambioSensorName}
                               helperText={error_form.name}
@@ -142,7 +143,7 @@ const Formulario = (props) => {
                               id="standard-basic"
                               label="Input"
                               type="number"
-                              className="form-control"
+                              className="form-control transparent"
                               value={output || ''}
                               onChange={handleCambioSensorOutput}
                               helperText={error_form.output}

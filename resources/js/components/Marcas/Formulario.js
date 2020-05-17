@@ -53,7 +53,7 @@ const Formulario = (props) => {
    const classes = useStyles();
 
    return (
-      <div className="card">
+      <div className="card transparent">
          {loading ? <Spinner /> :
             <div>
                <div className="card-header">
@@ -77,7 +77,7 @@ const Formulario = (props) => {
                               id="standard-basic"
                               label="Nombre"
                               type="text"
-                              className="form-control"
+                              className="form-control transparent"
                               value={name || ''}
                               onChange={handleCambioMarcaName}
                               helperText={error_form.name}
@@ -96,7 +96,7 @@ const Formulario = (props) => {
                                     onClick={guardar}
                                  >
                                     Guardar
-                  </Button> : ''}
+                                 </Button> : ''}
                               {state_form === 'borrar'
                                  ?
                                  <div>
@@ -106,7 +106,7 @@ const Formulario = (props) => {
                                        onClick={() => borrar(id)}
                                     >
                                        Borrar
-                  </Button>
+                                    </Button>
                                  </div>
                                  : ''}
                               {error_form && <small className="text-danger">Existe un registro vinculado.</small>}

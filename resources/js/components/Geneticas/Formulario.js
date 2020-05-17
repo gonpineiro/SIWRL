@@ -33,7 +33,7 @@ const {
 } = geneticasActions;
 
 const Formulario = (props) => {
-   console.log(props)
+   
    const {
       marcasReducer: { marcas },
       geneticasReducer: {
@@ -115,7 +115,7 @@ const Formulario = (props) => {
    const classes = useStyles();
 
    return (
-      <div className="card">
+      <div className="card transparent">
          {loading ? <Spinner /> :
             <div>
                <div className="card-header">
@@ -142,7 +142,7 @@ const Formulario = (props) => {
                               id="standard-basic"
                               label="Nombre"
                               type="text"
-                              className="form-control"
+                              className="form-control transparent"
                               value={name || ''}
                               onChange={handleCambioGeneticaName}
                               helperText={error_form.name}
@@ -160,6 +160,7 @@ const Formulario = (props) => {
                               onChange={handleCambioGeneticaMarca}
                               error={!error_form.marca_id ? false : true}
                               disabled={state_form === 'borrar' ? true : false}
+                              className="transparent"
                            >
                               <Link to="/marcas">
                                  <MenuItem value="">
@@ -183,7 +184,7 @@ const Formulario = (props) => {
                               id="standard-basic"
                               label="THC"
                               type="number"
-                              className="form-control"
+                              className="form-control transparent"
                               value={thc || ''}
                               onChange={handleCambioGeneticaThc}
                               disabled={state_form === 'borrar' ? true : false}
@@ -195,7 +196,7 @@ const Formulario = (props) => {
                               id="standard-basic"
                               label="CBD"
                               type="number"
-                              className="form-control"
+                              className="form-control transparent"
                               value={cbd || ''}
                               onChange={handleCambioGeneticaCbd}
                               disabled={state_form === 'borrar' ? true : false}
@@ -207,10 +208,11 @@ const Formulario = (props) => {
                               id="standard-basic"
                               label="Sabores"
                               type="text"
-                              className="form-control"
+                              className="form-control transparent"
                               value={sabores || ''}
                               onChange={handleCambioGeneticaSabores}
                               disabled={state_form === 'borrar' ? true : false}
+                              className="transparent"
                            />
                         </FormControl>
 
@@ -219,7 +221,7 @@ const Formulario = (props) => {
                               id="standard-basic"
                               label="Interna"
                               type="number"
-                              className="form-control"
+                              className="form-control transparent"
                               value={prod_int || ''}
                               onChange={handleCambioGeneticaProdInt}
                               disabled={state_form === 'borrar' ? true : false}
@@ -231,7 +233,7 @@ const Formulario = (props) => {
                               id="standard-basic"
                               label="Externa"
                               type="number"
-                              className="form-control"
+                              className="form-control transparent"
                               value={prod_ext || ''}
                               onChange={handleCambioGeneticaProdExt}
                               disabled={state_form === 'borrar' ? true : false}
@@ -243,7 +245,7 @@ const Formulario = (props) => {
                               id="standard-basic"
                               label="Tiempo"
                               type="number"
-                              className="form-control"
+                              className="form-control transparent"
                               value={tiempo_flora || ''}
                               onChange={handleCambioGeneticaTiempoFlora}
                               helperText={error_form.tiempo_flora}

@@ -94,7 +94,6 @@ const StepperPrototype = (props) => {
                     break;
             }
         }
-        console.log(enviarUpdateEstado(estado))
         sumarEstadoStepper(enviarUpdateEstado(estado), id)
         traerDetalleInterval(id)
 
@@ -102,7 +101,7 @@ const StepperPrototype = (props) => {
 
     return (
         <div className={classes.root}>
-            <Stepper activeStep={estado} alternativeLabel>
+            <Stepper activeStep={estado} alternativeLabel className="transparent">
                 {steps.map((label) => (
                     <Step key={label}>
                         <StepLabel>{label}</StepLabel>

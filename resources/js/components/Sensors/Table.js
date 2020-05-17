@@ -35,27 +35,29 @@ const Table = (props) => {
   if (loading) return <Spinner />
 
   return (
-    <div>
-      <div className="row mt-2">
-        <div className="col col-md-6">
-          <h4 className="title-table">Lista de sensores en: {ambiente.name}</h4>
+    <div className="card transparent">
+      <div className="card-margin">
+        <div className="row mt-2">
+          <div className="col col-md-6">
+            <h4 className="title-table">Lista de sensores en: {ambiente.name}</h4>
+          </div>
+          <div className="col col-md-6 text-derecha">
+            <KeyboardReturnIcon fontSize="large" onClick={goBack} className="link" />
+          </div>
         </div>
-        <div className="col col-md-6 text-derecha">
-          <KeyboardReturnIcon fontSize="large" onClick={goBack} className="link"/>
-        </div>
+        <table className="table table-hover">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Output</th>
+            </tr>
+          </thead>
+          <tbody>
+            {addRow()}
+          </tbody>
+        </table>
       </div>
-      <table className="table table-hover">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Output</th>
-          </tr>
-        </thead>
-        <tbody>
-          {addRow()}
-        </tbody>
-      </table>
     </div>
   );
 }

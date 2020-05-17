@@ -38,13 +38,13 @@ const Detalle = (props) => {
 
             <div className="row mt-2">
                 <div className="col col-md-4">
-                    <div className="card">
+                    <div className="card transparent">
                         <Basico />
                     </div>
                 </div>
 
                 <div className="col col-md-8">
-                    <div className="card">
+                    <div className="card transparent">
                         <div className="row">
                             <div className="col col-md-7">
                                 <Complementaria />
@@ -62,7 +62,7 @@ const Detalle = (props) => {
 
             <div className="row mt-2">
                 <div className="col col-md-12">
-                    <div className="card">
+                    <div className="card transparent">
                     <StepperPrototype />
                     </div>
                 </div>
@@ -71,7 +71,7 @@ const Detalle = (props) => {
 
             <div className="row mt-2">
                 <div className="col col-md-12">
-                    <div className="card">
+                    <div className="card transparent">
                     //
                     </div>
                 </div>
