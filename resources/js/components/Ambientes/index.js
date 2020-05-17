@@ -17,7 +17,10 @@ class Ambientes extends Component {
 	}
 
 	ponerContenido = () => {
-		const { traerTodos, recargar_table, loading, ambientes, error, history: { goBack } } = this.props
+		const { 
+			traerTodos, recargar_table, loading, ambientes, error, 
+			history: { goBack } 
+		} = this.props
 
 		if (recargar_table) traerTodos()
 
@@ -30,7 +33,6 @@ class Ambientes extends Component {
 	ponerFormulario = () => <Formulario />
 
 	render() {
-		const { } = this.props
 		return (
 			<div className="container col-md-9">
 				<div className="row mt-2">

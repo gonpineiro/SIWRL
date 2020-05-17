@@ -48,7 +48,7 @@ const Table = (props) => {
           <h4>Lista de ambientes</h4>
         </div>
         <div className="col col-md-6 text-derecha">
-          <KeyboardReturnIcon fontSize="large" onClick={goBack} />
+          <KeyboardReturnIcon fontSize="large" onClick={goBack} className="link"/>
         </div>
       </div>
       <table className="table table-hover">

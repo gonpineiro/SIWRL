@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import MenuRow from '../General/MenuRow';
+import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
 
 import * as usersActions from '../../actions/usersActions'
 
 const Table = (props) => {
-  const { users } = props
+  const { users, goBack } = props
 
   const addRow = () => users.map((user, key) => (
     <tr key={key}>
@@ -21,8 +22,16 @@ const Table = (props) => {
     </tr>
   ))
 
-  return (
+  return (    
     <div>
+      <div className="row mt-2">
+        <div className="col col-md-6">
+          <h4 className="title-table">Lista de usuarios</h4>
+        </div>
+        <div className="col col-md-6 text-derecha">
+          <KeyboardReturnIcon fontSize="large" onClick={goBack} className="link"/>
+        </div>
+      </div>
       <table className="table table-hover">
         <thead>
           <tr>

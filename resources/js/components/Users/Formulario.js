@@ -4,6 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
+import Spinner from '../General/Spinner';
 
 import * as usersActions from '../../actions/usersActions'
 
@@ -20,6 +21,7 @@ const Formulario = (props) => {
       cambioUsuarioName,
       cambioUsuarioEmail,
       cambioUsuarioPassword,
+      loading,
    } = props
 
    const handleCambioUsuarioName = (event) => cambioUsuarioName(event.target.value);
@@ -53,91 +55,106 @@ const Formulario = (props) => {
    const classes = useStyles();
 
    return (
-      <FormControl >
-         <div className="form-row">
 
-            <FormControl className={classes.formControl}>
-               <TextField
-                  id="standard-basic"
-                  label="Nombre"
-                  type="text"
-                  className="form-control"
-                  value={name || ''}
-                  onChange={handleCambioUsuarioName}
-                  helperText={error_form.name}
-                  error={!error_form.name ? false : true}
-                  disabled={state_form === 'borrar' ? true : false}
-               />
-            </FormControl>
-
-            <FormControl className={classes.formControl}>
-               <TextField
-                  label="Email"
-                  type="email"
-                  className="form-control"
-                  value={email || ''}
-                  onChange={handleCambioUsuarioEmail}
-                  helperText={error_form.email}
-                  error={!error_form.email ? false : true}
-                  disabled={state_form === 'borrar' ? true : false}
-               />
-            </FormControl>
-
-            <FormControl className={classes.formControl}>
-               <TextField
-                  id="standard-basic"
-                  label="Password"
-                  type="text"
-                  className="form-control"
-                  value={password || ''}
-                  onChange={handleCambioUsuarioPassword}
-                  helperText={error_form.password}
-                  error={!error_form.password ? false : true}
-                  disabled={state_form === 'borrar' ? true : false}
-               />
-            </FormControl>
-
-            <div className="form-row margin-button">
-               <div className="form-group col-md-6">
-                  {state_form === 'crear' || state_form === 'editar'
-                     ?
-                     <Button
-                        variant="contained"
-                        color="primary"
-                        onClick={guardar}
-                     >
-                        Guardar
-                     </Button> : ''}
-                  {state_form === 'borrar'
-                     ?
-                     <div>
-                        <Button
-                           variant="contained"
-                           color="primary"
-                           onClick={() => borrar(id)}
-                        >
-                           Borrar
-                        </Button>
-                        {error_form && <small className="text-danger">Existe un registro vinculado.</small>}
-                     </div>
-                     : ''}
-               </div >
-
-               <div className="form-group col-md-6">
-                  {state_form === 'editar' || state_form === 'borrar'
-                     ?
-                     <Button
-                        variant="contained"
-                        color="inherit"
-                        onClick={cancelar}
-                     >
-                        Cancelar
-                     </Button> : ''}
-               </div >
+      <div className="card">
+         <div className="card-header">
+            <div className="row mt-2">
+               <div className="col col-md-6 card-agregar" >
+                  {state_form === 'crear' ? 'AGREGAR USUARIO' : ''}
+                  {state_form === 'editar' ? 'MODIFICAR USUARIO' : ''}
+                  {state_form === 'borrar' ? 'ELIMINAR USUARIO' : ''}
+               </div>
             </div>
-
          </div>
-      </FormControl>
+         {loading ? <Spinner /> :
+            <div className="card-body">
+               <FormControl >
+                  <div className="form-row">
+
+                     <FormControl className={classes.formControl}>
+                        <TextField
+                           id="standard-basic"
+                           label="Nombre"
+                           type="text"
+                           className="form-control"
+                           value={name || ''}
+                           onChange={handleCambioUsuarioName}
+                           helperText={error_form.name}
+                           error={!error_form.name ? false : true}
+                           disabled={state_form === 'borrar' ? true : false}
+                        />
+                     </FormControl>
+
+                     <FormControl className={classes.formControl}>
+                        <TextField
+                           label="Email"
+                           type="email"
+                           className="form-control"
+                           value={email || ''}
+                           onChange={handleCambioUsuarioEmail}
+                           helperText={error_form.email}
+                           error={!error_form.email ? false : true}
+                           disabled={state_form === 'borrar' ? true : false}
+                        />
+                     </FormControl>
+
+                     <FormControl className={classes.formControl}>
+                        <TextField
+                           id="standard-basic"
+                           label="Password"
+                           type="text"
+                           className="form-control"
+                           value={password || ''}
+                           onChange={handleCambioUsuarioPassword}
+                           helperText={error_form.password}
+                           error={!error_form.password ? false : true}
+                           disabled={state_form === 'borrar' ? true : false}
+                        />
+                     </FormControl>
+
+                     <div className="form-row margin-button">
+                        <div className="form-group col-md-6">
+                           {state_form === 'crear' || state_form === 'editar'
+                              ?
+                              <Button
+                                 variant="contained"
+                                 color="primary"
+                                 onClick={guardar}
+                              >
+                                 Guardar
+                                 </Button> : ''}
+                           {state_form === 'borrar'
+                              ?
+                              <div>
+                                 <Button
+                                    variant="contained"
+                                    color="primary"
+                                    onClick={() => borrar(id)}
+                                 >
+                                    Borrar
+                                    </Button>
+                                 {error_form && <small className="text-danger">Existe un registro vinculado.</small>}
+                              </div>
+                              : ''}
+                        </div >
+
+                        <div className="form-group col-md-6">
+                           {state_form === 'editar' || state_form === 'borrar'
+                              ?
+                              <Button
+                                 variant="contained"
+                                 color="inherit"
+                                 onClick={cancelar}
+                              >
+                                 Cancelar
+                                 </Button> : ''}
+                        </div >
+                     </div>
+
+                  </div>
+               </FormControl>
+            </div>}
+      </div>
    );
 }
 

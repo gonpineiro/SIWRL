@@ -17,7 +17,10 @@ class Users extends Component {
 	}
 
 	ponerContenido = () => {
-		const { traerTodos, recargar_table, loading, users, error } = this.props
+		const { 
+			traerTodos, recargar_table, loading, users, error, 
+			history: { goBack } 
+		} = this.props
 
 		if (recargar_table) traerTodos()
 
@@ -25,54 +28,21 @@ class Users extends Component {
 
 		if (error) return 'Error'
 
-		return <Table />
+		return <Table goBack={goBack} />
 	}
 	ponerFormulario = () => <Formulario />
 
 	render() {
-		const { state_form, loading, user, history: { goBack } } = this.props
 
 		return (
 			<div className="container col-md-9">
 				<div className="row mt-2">
 					<div className="col col-md-8">
-						<div>
-							<div className="row mt-2">
-								<div className="col col-md-6">
-									<h4 className="title-table">Lista de usuarios</h4>
-								</div>
-								<div className="col col-md-6 text-derecha">
-									<KeyboardReturnIcon fontSize="large" onClick={goBack} />
-								</div>
-							</div>
-							{this.ponerContenido()}
-						</div>
+						{this.ponerContenido()}
 					</div>
-
 					<div className="col col-md-4">
-						<div className="card">
-							<div>
-								<div className="card-header">
-									<div className="row mt-2">
-										<div className="col col-md-6 card-agregar" >
-											{state_form === 'crear' ? 'AGREGAR USUARIO' : ''}
-											{state_form === 'editar' ? 'MODIFICAR USUARIO' : ''}
-											{state_form === 'borrar' ? 'ELIMINAR USUARIO' : ''}
-										</div>
-										<div className="col col-md-6 center">
-
-										</div>
-									</div>
-								</div>
-								{loading ? <Spinner /> :
-									<div className="card-body">
-										{this.ponerFormulario()}
-									</div>}
-							</div>
-
-						</div>
+						{this.ponerFormulario()}
 					</div>
-
 				</div>
 			</div>
 		);
