@@ -1,12 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import MenuRow from '../General/MenuRow';
+import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
 
 import * as geneticasActions from '../../actions/geneticasActions'
 
 const Table = (props) => {
-  const { geneticas } = props
-  
+  console.log(props)
+  const { geneticas, goBack } = props
+
   const addRow = () => geneticas.map((genetica, key) => (
     <tr key={key}>
       <td>{genetica.id}</td>
@@ -29,6 +31,14 @@ const Table = (props) => {
 
   return (
     <div>
+      <div className="row mt-2">
+        <div className="col col-md-6">
+          <h4>Lista de genéticas</h4>
+        </div>
+        <div className="col col-md-6 text-derecha">
+          <KeyboardReturnIcon fontSize="large" onClick={goBack} />
+        </div>
+      </div>
       <table className="table table-hover">
         <thead>
           <tr>

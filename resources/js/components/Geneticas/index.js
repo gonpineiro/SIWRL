@@ -15,7 +15,7 @@ class Geneticas extends Component {
 
 	async componentDidMount() {
 		const {
-			geneticasReducer: { geneticas, recargar_table },
+			geneticasReducer: { geneticas },
 			marcasReducer: { marcas },
 			genericasTraerTodos,
 			marcasTraerTodos,
@@ -33,7 +33,8 @@ class Geneticas extends Component {
 				loading,
 				geneticas,
 				error
-			}
+			},
+			history: { goBack }
 		} = this.props
 
 		if (recargar_table) genericasTraerTodos()
@@ -42,40 +43,21 @@ class Geneticas extends Component {
 
 		if (error) return 'Error'
 
-		return <Table />
+		return <Table goBack={ goBack }/>
 	}
 
 	ponerFormulario = () => <Formulario />
 
 	render() {
-		const {
-			geneticasReducer: {
-				loading,
-				state_form,
-			},
-			history: { goBack }
-		} = this.props
-
 		return (
 			<div className="container col-md-9">
 				<div className="row mt-2">
-					<div className="col col-md-12">
-						<div>
-							<div className="row mt-2">
-								<div className="col col-md-6">
-									<h4>Lista de genéticas</h4>
-								</div>
-								<div className="col col-md-6 text-derecha">
-									<KeyboardReturnIcon fontSize="large" onClick={goBack} />
-								</div>
-							</div>
-							{this.ponerContenido()}
-						</div>
+					<div className="col col-md-8">
+						{this.ponerContenido()}
 					</div>
 					<div className="col col-md-4">
 						{this.ponerFormulario()}
 					</div>
-
 				</div>
 			</div>
 		);

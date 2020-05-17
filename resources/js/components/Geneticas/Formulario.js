@@ -110,184 +110,180 @@ const Formulario = (props) => {
 
    return (
       <div className="card">
-         <div>
-            {loading ? <Spinner /> :
-               <div>
-                  <div className="card-header">
-                     <div className="row mt-2">
-                        <div className="col col-md-6 card-agregar" >
-                           {state_form === 'crear' ? 'AGREGAR GENÉTICA' : ''}
-                           {state_form === 'editar' ? 'MODIFICAR GENÉTICA' : ''}
-                           {state_form === 'borrar' ? 'ELIMINAR GENÉTICA' : ''}
-                        </div>
-                        <div className="col col-md-6 center">
-
-                        </div>
+         {loading ? <Spinner /> :
+            <div>
+               <div className="card-header">
+                  <div className="row mt-2">
+                     <div className="col col-md-6 card-agregar" >
+                        {state_form === 'crear' ? 'AGREGAR GENÉTICA' : ''}
+                        {state_form === 'editar' ? 'MODIFICAR GENÉTICA' : ''}
+                        {state_form === 'borrar' ? 'ELIMINAR GENÉTICA' : ''}
                      </div>
                   </div>
-                  <div className="card-body">
-                     <form noValidate autoComplete="on">
-                        <div className="form-row">
+               </div>
+               <div className="card-body">
+                  <form noValidate autoComplete="on">
+                     <div className="form-row">
 
-                           <FormControl className={classes.formControl}>
-                              <TextField
-                                 id="standard-basic"
-                                 label="Nombre"
-                                 type="text"
-                                 className="form-control"
-                                 value={name || ''}
-                                 onChange={handleCambioGeneticaName}
-                                 helperText={error_form.name}
-                                 error={!error_form.name ? false : true}
-                                 disabled={state_form === 'borrar' ? true : false}
-                              />
-                           </FormControl>
+                        <FormControl className={classes.formControl}>
+                           <TextField
+                              id="standard-basic"
+                              label="Nombre"
+                              type="text"
+                              className="form-control"
+                              value={name || ''}
+                              onChange={handleCambioGeneticaName}
+                              helperText={error_form.name}
+                              error={!error_form.name ? false : true}
+                              disabled={state_form === 'borrar' ? true : false}
+                           />
+                        </FormControl>
 
-                           <FormControl className={classes.formControl}>
-                              <InputLabel id="demo-simple-select-helper-label" error={!error_form.marca_id ? false : true}>Marcas</InputLabel>
-                              <Select
-                                 labelId="demo-simple-select-helper-label"
-                                 id="demo-simple-select-helper"
-                                 value={marca_id || ''}
-                                 onChange={handleCambioGeneticaMarca}
-                                 error={!error_form.marca_id ? false : true}
-                                 disabled={state_form === 'borrar' ? true : false}
-                              >
-                                 <Link to="/marcas">
-                                    <MenuItem value="">
-                                       <em
-                                          className="link link-string"
-                                       >
-                                          Agregar
-                        </em>
-                                    </MenuItem>
-                                 </Link>
+                        <FormControl className={classes.formControl}>
+                           <InputLabel id="demo-simple-select-helper-label" error={!error_form.marca_id ? false : true}>Marcas</InputLabel>
+                           <Select
+                              labelId="demo-simple-select-helper-label"
+                              id="demo-simple-select-helper"
+                              value={marca_id || ''}
+                              onChange={handleCambioGeneticaMarca}
+                              error={!error_form.marca_id ? false : true}
+                              disabled={state_form === 'borrar' ? true : false}
+                           >
+                              <Link to="/marcas">
+                                 <MenuItem value="">
+                                    <em
+                                       className="link link-string"
+                                    >
+                                       Agregar
+                                       </em>
+                                 </MenuItem>
+                              </Link>
 
-                                 {marcas.map((marca) => (
-                                    <MenuItem key={marca.id} value={marca.id}>{marca.name}</MenuItem>
-                                 ))}
-                              </Select>
-                              <FormHelperText error={!error_form.marca_id ? false : true}>{error_form.marca_id}</FormHelperText>
-                           </FormControl>
+                              {marcas.map((marca) => (
+                                 <MenuItem key={marca.id} value={marca.id}>{marca.name}</MenuItem>
+                              ))}
+                           </Select>
+                           <FormHelperText error={!error_form.marca_id ? false : true}>{error_form.marca_id}</FormHelperText>
+                        </FormControl>
 
-                           <FormControl className={classes.formControl}>
-                              <TextField
-                                 id="standard-basic"
-                                 label="THC"
-                                 type="number"
-                                 className="form-control"
-                                 value={thc || ''}
-                                 onChange={handleCambioGeneticaThc}
-                                 disabled={state_form === 'borrar' ? true : false}
-                              />
-                           </FormControl>
-                           <FormControl className={classes.formControl}>
-                              <TextField
-                                 id="standard-basic"
-                                 label="CBD"
-                                 type="number"
-                                 className="form-control"
-                                 value={cbd || ''}
-                                 onChange={handleCambioGeneticaCbd}
-                                 disabled={state_form === 'borrar' ? true : false}
-                              />
-                           </FormControl>
+                        <FormControl className={classes.formControl}>
+                           <TextField
+                              id="standard-basic"
+                              label="THC"
+                              type="number"
+                              className="form-control"
+                              value={thc || ''}
+                              onChange={handleCambioGeneticaThc}
+                              disabled={state_form === 'borrar' ? true : false}
+                           />
+                        </FormControl>
 
-                           <FormControl className={classes.formControl}>
-                              <TextField
-                                 id="standard-basic"
-                                 label="Sabores"
-                                 type="text"
-                                 className="form-control"
-                                 value={sabores || ''}
-                                 onChange={handleCambioGeneticaSabores}
-                                 disabled={state_form === 'borrar' ? true : false}
-                              />
-                           </FormControl>
+                        <FormControl className={classes.formControl}>
+                           <TextField
+                              id="standard-basic"
+                              label="CBD"
+                              type="number"
+                              className="form-control"
+                              value={cbd || ''}
+                              onChange={handleCambioGeneticaCbd}
+                              disabled={state_form === 'borrar' ? true : false}
+                           />
+                        </FormControl>
 
-                           <FormControl className={classes.formControl}>
-                              <TextField
-                                 id="standard-basic"
-                                 label="Interna"
-                                 type="number"
-                                 className="form-control"
-                                 value={prod_int || ''}
-                                 onChange={handleCambioGeneticaProdInt}
-                                 disabled={state_form === 'borrar' ? true : false}
-                              />
-                           </FormControl>
+                        <FormControl className={classes.formControl}>
+                           <TextField
+                              id="standard-basic"
+                              label="Sabores"
+                              type="text"
+                              className="form-control"
+                              value={sabores || ''}
+                              onChange={handleCambioGeneticaSabores}
+                              disabled={state_form === 'borrar' ? true : false}
+                           />
+                        </FormControl>
 
-                           <FormControl className={classes.formControl}>
-                              <TextField
-                                 id="standard-basic"
-                                 label="Externa"
-                                 type="number"
-                                 className="form-control"
-                                 value={prod_ext || ''}
-                                 onChange={handleCambioGeneticaProdExt}
-                                 disabled={state_form === 'borrar' ? true : false}
-                              />
-                           </FormControl>
+                        <FormControl className={classes.formControl}>
+                           <TextField
+                              id="standard-basic"
+                              label="Interna"
+                              type="number"
+                              className="form-control"
+                              value={prod_int || ''}
+                              onChange={handleCambioGeneticaProdInt}
+                              disabled={state_form === 'borrar' ? true : false}
+                           />
+                        </FormControl>
 
-                           <FormControl className={classes.formControl}>
-                              <TextField
-                                 id="standard-basic"
-                                 label="Tiempo"
-                                 type="number"
-                                 className="form-control"
-                                 value={tiempo_flora || ''}
-                                 onChange={handleCambioGeneticaTiempoFlora}
-                                 helperText={error_form.tiempo_flora}
-                                 error={!error_form.tiempo_flora ? false : true}
-                                 disabled={state_form === 'borrar' ? true : false}
-                              />
-                           </FormControl>
+                        <FormControl className={classes.formControl}>
+                           <TextField
+                              id="standard-basic"
+                              label="Externa"
+                              type="number"
+                              className="form-control"
+                              value={prod_ext || ''}
+                              onChange={handleCambioGeneticaProdExt}
+                              disabled={state_form === 'borrar' ? true : false}
+                           />
+                        </FormControl>
 
-                           <div className="form-row margin-button">
-                              <div className="form-group col-md-6">
-                                 {state_form === 'crear' || state_form === 'editar'
-                                    ?
+                        <FormControl className={classes.formControl}>
+                           <TextField
+                              id="standard-basic"
+                              label="Tiempo"
+                              type="number"
+                              className="form-control"
+                              value={tiempo_flora || ''}
+                              onChange={handleCambioGeneticaTiempoFlora}
+                              helperText={error_form.tiempo_flora}
+                              error={!error_form.tiempo_flora ? false : true}
+                              disabled={state_form === 'borrar' ? true : false}
+                           />
+                        </FormControl>
+
+                        <div className="form-row margin-button">
+                           <div className="form-group col-md-6">
+                              {state_form === 'crear' || state_form === 'editar'
+                                 ?
+                                 <Button
+                                    variant="contained"
+                                    color="primary"
+                                    onClick={guardar}
+                                 >
+                                    Guardar
+                                    </Button> : ''}
+                              {state_form === 'borrar'
+                                 ?
+                                 <div>
                                     <Button
                                        variant="contained"
                                        color="primary"
-                                       onClick={guardar}
+                                       onClick={() => borrar(id)}
                                     >
-                                       Guardar
-                  </Button> : ''}
-                                 {state_form === 'borrar'
-                                    ?
-                                    <div>
-                                       <Button
-                                          variant="contained"
-                                          color="primary"
-                                          onClick={() => borrar(id)}
-                                       >
-                                          Borrar
-                  </Button>
-                                    </div>
-                                    : ''}
-                                 {error_form && <small className="text-danger">Existe un registro vinculado.</small>}
+                                       Borrar
+                                       </Button>
+                                 </div>
+                                 : ''}
+                              {error_form && <small className="text-danger">Existe un registro vinculado.</small>}
 
-                              </div >
+                           </div >
 
-                              <div className="form-group col-md-6">
-                                 {state_form === 'editar' || state_form === 'borrar'
-                                    ?
-                                    <Button
-                                       variant="contained"
-                                       color="inherit"
-                                       onClick={cancelar}
-                                    >
-                                       Cancelar
-                     </Button> : ''}
-                              </div >
-                           </div>
-
+                           <div className="form-group col-md-6">
+                              {state_form === 'editar' || state_form === 'borrar'
+                                 ?
+                                 <Button
+                                    variant="contained"
+                                    color="inherit"
+                                    onClick={cancelar}
+                                 >
+                                    Cancelar
+                                    </Button> : ''}
+                           </div >
                         </div>
-                     </form>
-                  </div>
-               </div>}
-         </div>
+
+                     </div>
+                  </form>
+               </div>
+            </div>}
       </div>
 
 
