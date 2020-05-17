@@ -17,7 +17,6 @@ const Basico = (props) => {
                     name: genetica_name,
                     thc,
                     cbd,
-                    tiempo_flora,
                     sabores,
                     marca: {
                         name: marca_name
@@ -48,7 +47,7 @@ const Basico = (props) => {
                     <h4>Básica</h4>
                 </div>
                 <div className="col col-md-4 text-derecha">
-                    <KeyboardReturnIcon fontSize="large" onClick={volver} />
+                    <KeyboardReturnIcon fontSize="large" onClick={volver} className="link"/>
                 </div>
             </div>
             <table className="table">

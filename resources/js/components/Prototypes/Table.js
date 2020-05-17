@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux'
 import MenuRow from './General/MenuRow';
+import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
 
 import { calcularDiasTotales, traerValorSensor } from '../../js/funciones'
 
@@ -19,6 +20,7 @@ const Table = (props) => {
       prototypes: { ambiente },
       prototypes
     },
+    goBack,
     traerUnoBorrar,
     prototypesTraerUno
   } = props
@@ -64,6 +66,14 @@ const Table = (props) => {
 
   return (
     <div>
+      <div className="row mt-2">
+        <div className="col col-md-6">
+          <h4>Lista de prototipos</h4>
+        </div>
+        <div className="col col-md-6 text-derecha">
+          <KeyboardReturnIcon fontSize="large" onClick={goBack} className="link" />
+        </div>
+      </div>
       <table className="table table-hover">
         <thead>
           <tr>

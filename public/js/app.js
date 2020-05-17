@@ -105426,7 +105426,6 @@ var Basico = function Basico(props) {
       genetica_name = _props$prototypesRedu2.name,
       thc = _props$prototypesRedu2.thc,
       cbd = _props$prototypesRedu2.cbd,
-      tiempo_flora = _props$prototypesRedu2.tiempo_flora,
       sabores = _props$prototypesRedu2.sabores,
       marca_name = _props$prototypesRedu2.marca.name;
 
@@ -105454,7 +105453,8 @@ var Basico = function Basico(props) {
     className: "col col-md-4 text-derecha"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_4___default.a, {
     fontSize: "large",
-    onClick: volver
+    onClick: volver,
+    className: "link"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
     className: "table"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Nombre:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Gen\xE9tica:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, genetica_name, " ", marca_name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "THC/CBD:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, thc, "% / ", cbd, "%")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, "Sabones:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, sabores)))));
@@ -105837,9 +105837,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_FormHelperText__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/FormHelperText */ "./node_modules/@material-ui/core/esm/FormHelperText/index.js");
 /* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
 /* harmony import */ var _material_ui_core_Select__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Select */ "./node_modules/@material-ui/core/esm/Select/index.js");
-/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
-/* harmony import */ var _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../actions/ambientesActions */ "./resources/js/actions/ambientesActions.js");
-/* harmony import */ var _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../actions/sensorsActions */ "./resources/js/actions/sensorsActions.js");
+/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
+/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
+/* harmony import */ var _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../actions/ambientesActions */ "./resources/js/actions/ambientesActions.js");
+/* harmony import */ var _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../actions/sensorsActions */ "./resources/js/actions/sensorsActions.js");
 
 
 
@@ -105854,19 +105855,20 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var ambientesTraerUno = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_12__["traerUno"],
-    ambientesCancelar = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_12__["cancelar"];
-var traerTodosPorAmbienteSensor = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_13__["traerTodosPorAmbiente"],
-    sensorsCancelar = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_13__["cancelar"];
-var cambioPrototypeName = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["cambioPrototypeName"],
-    cambioPrototypeGenetica = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["cambioPrototypeGenetica"],
-    cambioPrototypeAmbiente = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["cambioPrototypeAmbiente"],
-    cambioPrototypeSensor = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["cambioPrototypeSensor"],
-    cambioPrototypeFechaA = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["cambioPrototypeFechaA"],
-    borrar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["borrar"],
-    agregar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["agregar"],
-    editar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["editar"],
-    cancelar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_11__["cancelar"];
+
+var ambientesTraerUno = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_13__["traerUno"],
+    ambientesCancelar = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_13__["cancelar"];
+var traerTodosPorAmbienteSensor = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_14__["traerTodosPorAmbiente"],
+    sensorsCancelar = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_14__["cancelar"];
+var cambioPrototypeName = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_12__["cambioPrototypeName"],
+    cambioPrototypeGenetica = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_12__["cambioPrototypeGenetica"],
+    cambioPrototypeAmbiente = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_12__["cambioPrototypeAmbiente"],
+    cambioPrototypeSensor = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_12__["cambioPrototypeSensor"],
+    cambioPrototypeFechaA = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_12__["cambioPrototypeFechaA"],
+    borrar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_12__["borrar"],
+    agregar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_12__["agregar"],
+    editar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_12__["editar"],
+    cancelar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_12__["cancelar"];
 
 var Formulario = function Formulario(props) {
   var ambientesTraerUno = props.ambientesTraerUno,
@@ -105951,7 +105953,19 @@ var Formulario = function Formulario(props) {
     };
   });
   var classes = useStyles();
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card"
+  }, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_11__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card-header"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row mt-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col col-md-6 card-agregar"
+  }, state_form === 'crear' ? 'AGREGAR PROTOTIPO' : '', state_form === 'editar' ? 'MODIFICAR PROTOTIPO' : '', state_form === 'borrar' ? 'ELIMINAR PROTOTIPO' : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col col-md-6 center"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card-body"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
     className: classes.formControl
@@ -106087,7 +106101,7 @@ var Formulario = function Formulario(props) {
     variant: "contained",
     color: "inherit",
     onClick: cancelar
-  }, "Cancelar") : ''))));
+  }, "Cancelar") : '')))))));
 };
 
 var mapStateToProps = function mapStateToProps(_ref) {
@@ -106374,20 +106388,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _General_MenuRow__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./General/MenuRow */ "./resources/js/components/Prototypes/General/MenuRow.js");
-/* harmony import */ var _js_funciones__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../js/funciones */ "./resources/js/js/funciones.js");
-/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
-/* harmony import */ var _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/ambientesActions */ "./resources/js/actions/ambientesActions.js");
+/* harmony import */ var _material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/icons/KeyboardReturn */ "./node_modules/@material-ui/icons/KeyboardReturn.js");
+/* harmony import */ var _material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _js_funciones__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../js/funciones */ "./resources/js/js/funciones.js");
+/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
+/* harmony import */ var _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/ambientesActions */ "./resources/js/actions/ambientesActions.js");
 
 
 
 
 
 
-var ambientesTraerUno = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_5__["traerUno"];
-var prototypesTraerUno = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_4__["traerUno"],
-    traerUnoBorrar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_4__["traerUnoBorrar"],
-    traerDetalle = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_4__["traerDetalle"],
-    traerTodosInterval = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_4__["traerTodosInterval"];
+
+var ambientesTraerUno = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_6__["traerUno"];
+var prototypesTraerUno = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_5__["traerUno"],
+    traerUnoBorrar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_5__["traerUnoBorrar"],
+    traerDetalle = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_5__["traerDetalle"],
+    traerTodosInterval = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_5__["traerTodosInterval"];
 
 var Table = function Table(props) {
   var traerTodosInterval = props.traerTodosInterval,
@@ -106396,6 +106413,7 @@ var Table = function Table(props) {
       _props$prototypesRedu = props.prototypesReducer,
       ambiente = _props$prototypesRedu.prototypes.ambiente,
       prototypes = _props$prototypesRedu.prototypes,
+      goBack = props.goBack,
       traerUnoBorrar = props.traerUnoBorrar,
       prototypesTraerUno = props.prototypesTraerUno;
 
@@ -106437,13 +106455,23 @@ var Table = function Table(props) {
         className: "center"
       }, prototype.ambiente.monitors.length ? prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1].hume + ' %' : '', " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         className: "center"
-      }, prototype.ambiente.monitors.length && prototype.sensor ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_3__["traerValorSensor"])(prototype) + ' %' : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+      }, prototype.ambiente.monitors.length && prototype.sensor ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_4__["traerValorSensor"])(prototype) + ' %' : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         className: "center"
-      }, Object(_js_funciones__WEBPACK_IMPORTED_MODULE_3__["calcularDiasTotales"])(Date.now('YYYY-MM-DD'), Date.parse(prototype.fecha_etapa_a))));
+      }, Object(_js_funciones__WEBPACK_IMPORTED_MODULE_4__["calcularDiasTotales"])(Date.now('YYYY-MM-DD'), Date.parse(prototype.fecha_etapa_a))));
     });
   };
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row mt-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col col-md-6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Lista de prototipos")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col col-md-6 text-derecha"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    fontSize: "large",
+    onClick: goBack,
+    className: "link"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
     className: "table table-hover"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "ID"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Nombre"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Genetica"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
     className: "center"
@@ -106566,11 +106594,14 @@ var Prototypes = /*#__PURE__*/function (_Component) {
           recargar_table = _this$props$prototype.recargar_table,
           loading = _this$props$prototype.loading,
           prototypes = _this$props$prototype.prototypes,
-          error = _this$props$prototype.error;
+          error = _this$props$prototype.error,
+          goBack = _this$props.history.goBack;
       if (recargar_table) prototypesTraerTodos();
       if (loading && !prototypes.length) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null);
       if (error) return 'Error';
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Table__WEBPACK_IMPORTED_MODULE_4__["default"], null);
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Table__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        goBack: goBack
+      });
     });
 
     _defineProperty(_assertThisInitialized(_this), "ponerFormulario", function () {
@@ -106582,42 +106613,15 @@ var Prototypes = /*#__PURE__*/function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_this), "index", function () {
-      var _this$props2 = _this.props,
-          _this$props2$prototyp = _this$props2.prototypesReducer,
-          state_form = _this$props2$prototyp.state_form,
-          loading = _this$props2$prototyp.loading,
-          prototype = _this$props2$prototyp.prototype,
-          goBack = _this$props2.history.goBack;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "container col-md-9"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "row mt-2"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col col-md-8"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "row mt-2"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "col col-md-6"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Lista de prototipos")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "col col-md-6 text-derecha"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
-        fontSize: "large",
-        onClick: goBack
-      }))), _this.ponerContenido())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, _this.ponerContenido()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col col-md-4"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_7__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-header"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "row mt-2"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "col col-md-6 card-agregar"
-      }, state_form === 'crear' ? 'AGREGAR PROTOTIPO' : '', state_form === 'editar' ? 'MODIFICAR PROTOTIPO' : '', state_form === 'borrar' ? 'ELIMINAR PROTOTIPO' : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "col col-md-6 center"
-      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-body"
-      }, _this.ponerFormulario())))))));
+      }, _this.ponerFormulario())));
     });
 
     return _this;
@@ -106627,13 +106631,13 @@ var Prototypes = /*#__PURE__*/function (_Component) {
     key: "componentDidMount",
     value: function () {
       var _componentDidMount = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var _this$props3, geneticas, prototypes, ambientes, geneticasTraerTodos, prototypesTraerTodos, ambientesTraerTodos;
+        var _this$props2, geneticas, prototypes, ambientes, geneticasTraerTodos, prototypesTraerTodos, ambientesTraerTodos;
 
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _this$props3 = this.props, geneticas = _this$props3.geneticasReducer.geneticas, prototypes = _this$props3.prototypesReducer.prototypes, ambientes = _this$props3.ambientesReducer.ambientes, geneticasTraerTodos = _this$props3.geneticasTraerTodos, prototypesTraerTodos = _this$props3.prototypesTraerTodos, ambientesTraerTodos = _this$props3.ambientesTraerTodos;
+                _this$props2 = this.props, geneticas = _this$props2.geneticasReducer.geneticas, prototypes = _this$props2.prototypesReducer.prototypes, ambientes = _this$props2.ambientesReducer.ambientes, geneticasTraerTodos = _this$props2.geneticasTraerTodos, prototypesTraerTodos = _this$props2.prototypesTraerTodos, ambientesTraerTodos = _this$props2.ambientesTraerTodos;
                 if (!prototypes.length) prototypesTraerTodos();
                 if (!geneticas.length) geneticasTraerTodos();
                 if (!ambientes.length) ambientesTraerTodos();
@@ -106655,12 +106659,7 @@ var Prototypes = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this$props4 = this.props,
-          _this$props4$prototyp = _this$props4.prototypesReducer,
-          state_form = _this$props4$prototyp.state_form,
-          loading = _this$props4$prototyp.loading,
-          prototype = _this$props4$prototyp.prototype,
-          goBack = _this$props4.history.goBack;
+      var state_form = this.props.prototypesReducer.state_form;
       if (state_form != 'detalle') return this.index();
       if (state_form == 'detalle') return this.detallePrototype();
     }
