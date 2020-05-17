@@ -10,6 +10,8 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Spinner from '../General/Spinner';
+import TocIcon from '@material-ui/icons/Toc';
+import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
 
 import * as geneticasActions from '../../actions/geneticasActions'
 
@@ -23,6 +25,7 @@ const {
    cambioGeneticaTiempoFlora,
    cambioGeneticaSabores,
 
+   traerTabla,
    borrar,
    cancelar,
    agregar,
@@ -30,6 +33,7 @@ const {
 } = geneticasActions;
 
 const Formulario = (props) => {
+   console.log(props)
    const {
       marcasReducer: { marcas },
       geneticasReducer: {
@@ -39,6 +43,8 @@ const Formulario = (props) => {
          loading,
 
       },
+      goBack,
+      traerTabla,
       borrar,
       cancelar
    } = props
@@ -118,6 +124,12 @@ const Formulario = (props) => {
                         {state_form === 'crear' ? 'AGREGAR GENÉTICA' : ''}
                         {state_form === 'editar' ? 'MODIFICAR GENÉTICA' : ''}
                         {state_form === 'borrar' ? 'ELIMINAR GENÉTICA' : ''}
+                     </div>
+                     <div className="col col-md-3 text-derecha" >
+                        <TocIcon fontSize="large" className="link" onClick={traerTabla}/>                        
+                     </div>
+                     <div className="col col-md-3 text-derecha" >
+                        <KeyboardReturnIcon fontSize="large" className="link"  onClick={goBack}/>
                      </div>
                   </div>
                </div>
@@ -285,11 +297,6 @@ const Formulario = (props) => {
                </div>
             </div>}
       </div>
-
-
-
-
-
    );
 }
 
@@ -307,6 +314,7 @@ const mapDispatchToProps = {
    cambioGeneticaTiempoFlora,
    cambioGeneticaSabores,
 
+   traerTabla,
    borrar,
    agregar,
    editar,

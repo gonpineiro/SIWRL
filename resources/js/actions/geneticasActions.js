@@ -224,3 +224,19 @@ export const cancelar = () => (dispatch) => {
         type: CANCELAR
     })
 }
+
+export const traerTabla = () => (dispatch) => {
+
+    dispatch({
+        type: CAMBIO_ESTADO_FORM,
+        payload: 'tabla'
+    })
+}
+
+export const traerFormulario = () => (dispatch) => {
+    console.log('asd')
+    dispatch({
+        type: CAMBIO_ESTADO_FORM,
+        payload: 'crear'
+    })
+}

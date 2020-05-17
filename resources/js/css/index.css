@@ -3,6 +3,7 @@
 
 .center {
     text-align: center;
+    justify-content: center;
 }
 
 table {
@@ -97,6 +98,10 @@ table {
 
 .text-derecha {
     text-align: right;
+}
+
+.text-izquierda {
+    text-align: left;
 }
 
 .color-alert {

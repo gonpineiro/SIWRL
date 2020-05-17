@@ -16517,6 +16517,35 @@ function useIsFocusVisible() {
 
 /***/ }),
 
+/***/ "./node_modules/@material-ui/icons/Add.js":
+/*!************************************************!*\
+  !*** ./node_modules/@material-ui/icons/Add.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
+
+var _default = (0, _createSvgIcon.default)(_react.default.createElement("path", {
+  d: "M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+}), 'Add');
+
+exports.default = _default;
+
+/***/ }),
+
 /***/ "./node_modules/@material-ui/icons/KeyboardReturn.js":
 /*!***********************************************************!*\
   !*** ./node_modules/@material-ui/icons/KeyboardReturn.js ***!
@@ -16541,6 +16570,35 @@ var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/crea
 var _default = (0, _createSvgIcon.default)(_react.default.createElement("path", {
   d: "M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.41L5.83 13H21V7z"
 }), 'KeyboardReturn');
+
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/icons/Toc.js":
+/*!************************************************!*\
+  !*** ./node_modules/@material-ui/icons/Toc.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
+
+var _default = (0, _createSvgIcon.default)(_react.default.createElement("path", {
+  d: "M3 9h14V7H3v2zm0 4h14v-2H3v2zm0 4h14v-2H3v2zm16 0h2v-2h-2v2zm0-10v2h2V7h-2zm0 6h2v-2h-2v2z"
+}), 'Toc');
 
 exports.default = _default;
 
@@ -28335,7 +28393,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Mon
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap);", ""]);
 
 // module
-exports.push([module.i, ".center {\r\n    text-align: center;\r\n}\r\n\r\ntable {\r\n    font-size: 0.785rem;\r\n}\r\n\r\n.table td {\r\n    padding: 0.30rem;\r\n    justify-content: center;\r\n    vertical-align: inherit;\r\n}\r\n\r\n.material-icons {\r\n    width: 0.30rem;\r\n    height: 0.30rem;\r\n}\r\n\r\n.alert {\r\n    font-size: 10px;\r\n}\r\n\r\n.btn {\r\n    margin-right: 15px;\r\n}\r\n\r\n.btn-cancelar {\r\n    background-color: #5e2129;\r\n    border-color: #5e2129;\r\n}\r\n\r\n.material-icons {\r\n    font-family: 'Material Icons';\r\n    font-weight: normal;\r\n    font-style: normal;\r\n    font-size: 20px;\r\n    /* Preferred icon size */\r\n    display: inline-block;\r\n    line-height: 1;\r\n    text-transform: none;\r\n    letter-spacing: normal;\r\n    word-wrap: normal;\r\n    white-space: nowrap;\r\n    direction: ltr;\r\n\r\n    /* Agregador por gon.pineiro */\r\n    margin-left: 10px;\r\n    margin-right: 10px;\r\n\r\n    /* Support for all WebKit browsers. */\r\n    -webkit-font-smoothing: antialiased;\r\n    /* Support for Safari and Chrome. */\r\n    text-rendering: optimizeLegibility;\r\n\r\n    /* Support for Firefox. */\r\n    -moz-osx-font-smoothing: grayscale;\r\n\r\n    /* Support for IE. */\r\n    font-feature-settings: 'liga';\r\n}\r\n\r\n.link {\r\n    cursor: pointer;\r\n}\r\n\r\n.link-string {\r\n    color: #3e5f8a;\r\n    font-weight: bold;\r\n}\r\n\r\n.card-agregar {\r\n    color: black;\r\n    font-weight: bold;\r\n    text-align: left;\r\n}\r\n\r\n.card-eliminar {\r\n    color: #5e2129;\r\n    font-weight: bold;\r\n    text-align: left;\r\n}\r\n\r\n\r\n.margin-button {\r\n    margin-top: 15px;\r\n    margin-left: 15px;\r\n    margin-right: 15px;\r\n}\r\n\r\n.container {\r\n    margin-top: 25px;\r\n}\r\n\r\n.text-derecha {\r\n    text-align: right;\r\n}\r\n\r\n.color-alert {\r\n    color: #5e2129;\r\n}\r\n\r\n.box {\r\n    margin: 10px;\r\n}\r\n\r\n.avatar {\r\n    font-family: 'Roboto Mono', monospace;\r\n}\r\n", ""]);
+exports.push([module.i, ".center {\r\n    text-align: center;\r\n    justify-content: center;\r\n}\r\n\r\ntable {\r\n    font-size: 0.785rem;\r\n}\r\n\r\n.table td {\r\n    padding: 0.30rem;\r\n    justify-content: center;\r\n    vertical-align: inherit;\r\n}\r\n\r\n.material-icons {\r\n    width: 0.30rem;\r\n    height: 0.30rem;\r\n}\r\n\r\n.alert {\r\n    font-size: 10px;\r\n}\r\n\r\n.btn {\r\n    margin-right: 15px;\r\n}\r\n\r\n.btn-cancelar {\r\n    background-color: #5e2129;\r\n    border-color: #5e2129;\r\n}\r\n\r\n.material-icons {\r\n    font-family: 'Material Icons';\r\n    font-weight: normal;\r\n    font-style: normal;\r\n    font-size: 20px;\r\n    /* Preferred icon size */\r\n    display: inline-block;\r\n    line-height: 1;\r\n    text-transform: none;\r\n    letter-spacing: normal;\r\n    word-wrap: normal;\r\n    white-space: nowrap;\r\n    direction: ltr;\r\n\r\n    /* Agregador por gon.pineiro */\r\n    margin-left: 10px;\r\n    margin-right: 10px;\r\n\r\n    /* Support for all WebKit browsers. */\r\n    -webkit-font-smoothing: antialiased;\r\n    /* Support for Safari and Chrome. */\r\n    text-rendering: optimizeLegibility;\r\n\r\n    /* Support for Firefox. */\r\n    -moz-osx-font-smoothing: grayscale;\r\n\r\n    /* Support for IE. */\r\n    font-feature-settings: 'liga';\r\n}\r\n\r\n.link {\r\n    cursor: pointer;\r\n}\r\n\r\n.link-string {\r\n    color: #3e5f8a;\r\n    font-weight: bold;\r\n}\r\n\r\n.card-agregar {\r\n    color: black;\r\n    font-weight: bold;\r\n    text-align: left;\r\n}\r\n\r\n.card-eliminar {\r\n    color: #5e2129;\r\n    font-weight: bold;\r\n    text-align: left;\r\n}\r\n\r\n\r\n.margin-button {\r\n    margin-top: 15px;\r\n    margin-left: 15px;\r\n    margin-right: 15px;\r\n}\r\n\r\n.container {\r\n    margin-top: 25px;\r\n}\r\n\r\n.text-derecha {\r\n    text-align: right;\r\n}\r\n\r\n.text-izquierda {\r\n    text-align: left;\r\n}\r\n\r\n.color-alert {\r\n    color: #5e2129;\r\n}\r\n\r\n.box {\r\n    margin: 10px;\r\n}\r\n\r\n.avatar {\r\n    font-family: 'Roboto Mono', monospace;\r\n}\r\n", ""]);
 
 // exports
 
@@ -101682,7 +101740,7 @@ var cancelar = function cancelar() {
 /*!**************************************************!*\
   !*** ./resources/js/actions/geneticasActions.js ***!
   \**************************************************/
-/*! exports provided: traerTodos, traerUno, cambioGeneticaName, cambioGeneticaMarca, cambioGeneticaThc, cambioGeneticaCbd, cambioGeneticaProdInt, cambioGeneticaProdExt, cambioGeneticaTiempoFlora, cambioGeneticaSabores, agregar, editar, traerUnoBorrar, borrar, cancelar */
+/*! exports provided: traerTodos, traerUno, cambioGeneticaName, cambioGeneticaMarca, cambioGeneticaThc, cambioGeneticaCbd, cambioGeneticaProdInt, cambioGeneticaProdExt, cambioGeneticaTiempoFlora, cambioGeneticaSabores, agregar, editar, traerUnoBorrar, borrar, cancelar, traerTabla, traerFormulario */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -101702,6 +101760,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traerUnoBorrar", function() { return traerUnoBorrar; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "borrar", function() { return borrar; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cancelar", function() { return cancelar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traerTabla", function() { return traerTabla; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "traerFormulario", function() { return traerFormulario; });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
@@ -102052,6 +102112,23 @@ var cancelar = function cancelar() {
   return function (dispatch) {
     dispatch({
       type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CANCELAR"]
+    });
+  };
+};
+var traerTabla = function traerTabla() {
+  return function (dispatch) {
+    dispatch({
+      type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_ESTADO_FORM"],
+      payload: 'tabla'
+    });
+  };
+};
+var traerFormulario = function traerFormulario() {
+  return function (dispatch) {
+    console.log('asd');
+    dispatch({
+      type: _types_geneticaTypes__WEBPACK_IMPORTED_MODULE_2__["CAMBIO_ESTADO_FORM"],
+      payload: 'crear'
     });
   };
 };
@@ -104344,7 +104421,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
 /* harmony import */ var _material_ui_core_Select__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Select */ "./node_modules/@material-ui/core/esm/Select/index.js");
 /* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
-/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
+/* harmony import */ var _material_ui_icons_Toc__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/icons/Toc */ "./node_modules/@material-ui/icons/Toc.js");
+/* harmony import */ var _material_ui_icons_Toc__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Toc__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @material-ui/icons/KeyboardReturn */ "./node_modules/@material-ui/icons/KeyboardReturn.js");
+/* harmony import */ var _material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
 
 
 
@@ -104358,20 +104439,24 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var cambioGeneticaName = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["cambioGeneticaName"],
-    cambioGeneticaMarca = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["cambioGeneticaMarca"],
-    cambioGeneticaThc = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["cambioGeneticaThc"],
-    cambioGeneticaCbd = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["cambioGeneticaCbd"],
-    cambioGeneticaProdInt = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["cambioGeneticaProdInt"],
-    cambioGeneticaProdExt = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["cambioGeneticaProdExt"],
-    cambioGeneticaTiempoFlora = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["cambioGeneticaTiempoFlora"],
-    cambioGeneticaSabores = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["cambioGeneticaSabores"],
-    borrar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["borrar"],
-    cancelar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["cancelar"],
-    agregar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["agregar"],
-    editar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["editar"];
+
+
+var cambioGeneticaName = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_14__["cambioGeneticaName"],
+    cambioGeneticaMarca = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_14__["cambioGeneticaMarca"],
+    cambioGeneticaThc = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_14__["cambioGeneticaThc"],
+    cambioGeneticaCbd = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_14__["cambioGeneticaCbd"],
+    cambioGeneticaProdInt = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_14__["cambioGeneticaProdInt"],
+    cambioGeneticaProdExt = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_14__["cambioGeneticaProdExt"],
+    cambioGeneticaTiempoFlora = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_14__["cambioGeneticaTiempoFlora"],
+    cambioGeneticaSabores = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_14__["cambioGeneticaSabores"],
+    traerTabla = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_14__["traerTabla"],
+    borrar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_14__["borrar"],
+    cancelar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_14__["cancelar"],
+    agregar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_14__["agregar"],
+    editar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_14__["editar"];
 
 var Formulario = function Formulario(props) {
+  console.log(props);
   var marcas = props.marcasReducer.marcas,
       _props$geneticasReduc = props.geneticasReducer,
       _props$geneticasReduc2 = _props$geneticasReduc.genetica,
@@ -104387,6 +104472,8 @@ var Formulario = function Formulario(props) {
       error_form = _props$geneticasReduc.error_form,
       state_form = _props$geneticasReduc.state_form,
       loading = _props$geneticasReduc.loading,
+      goBack = props.goBack,
+      traerTabla = props.traerTabla,
       borrar = props.borrar,
       cancelar = props.cancelar;
 
@@ -104470,7 +104557,19 @@ var Formulario = function Formulario(props) {
     className: "row mt-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col col-md-6 card-agregar"
-  }, state_form === 'crear' ? 'AGREGAR GENÉTICA' : '', state_form === 'editar' ? 'MODIFICAR GENÉTICA' : '', state_form === 'borrar' ? 'ELIMINAR GENÉTICA' : ''))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, state_form === 'crear' ? 'AGREGAR GENÉTICA' : '', state_form === 'editar' ? 'MODIFICAR GENÉTICA' : '', state_form === 'borrar' ? 'ELIMINAR GENÉTICA' : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col col-md-3 text-derecha"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Toc__WEBPACK_IMPORTED_MODULE_12___default.a, {
+    fontSize: "large",
+    className: "link",
+    onClick: traerTabla
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col col-md-3 text-derecha"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_13___default.a, {
+    fontSize: "large",
+    className: "link",
+    onClick: goBack
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card-body"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
     noValidate: true,
@@ -104619,6 +104718,7 @@ var mapDispatchToProps = {
   cambioGeneticaProdExt: cambioGeneticaProdExt,
   cambioGeneticaTiempoFlora: cambioGeneticaTiempoFlora,
   cambioGeneticaSabores: cambioGeneticaSabores,
+  traerTabla: traerTabla,
   borrar: borrar,
   agregar: agregar,
   editar: editar,
@@ -104643,7 +104743,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _General_MenuRow__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../General/MenuRow */ "./resources/js/components/General/MenuRow.js");
 /* harmony import */ var _material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/icons/KeyboardReturn */ "./node_modules/@material-ui/icons/KeyboardReturn.js");
 /* harmony import */ var _material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
+/* harmony import */ var _material_ui_icons_Add__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/icons/Add */ "./node_modules/@material-ui/icons/Add.js");
+/* harmony import */ var _material_ui_icons_Add__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Add__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
+
 
 
 
@@ -104651,9 +104754,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Table = function Table(props) {
-  console.log(props);
   var geneticas = props.geneticas,
-      goBack = props.goBack;
+      goBack = props.goBack,
+      traerFormulario = props.traerFormulario;
 
   var addRow = function addRow() {
     return geneticas.map(function (genetica, key) {
@@ -104669,12 +104772,17 @@ var Table = function Table(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "row mt-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col col-md-6"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Lista de gen\xE9ticas")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col col-md-6 text-izquierda"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Lista de gen\xE9ticas ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Add__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    fontSize: "large",
+    className: "link",
+    onClick: traerFormulario
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col col-md-6 text-derecha"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default.a, {
     fontSize: "large",
-    onClick: goBack
+    onClick: goBack,
+    className: "link"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
     className: "table table-hover"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "ID"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Nombre"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Marca"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "THC"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "CBD"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "P.Int"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "P.Ext"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "T.Flora"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Sabor"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, addRow())));
@@ -104684,7 +104792,7 @@ var mapStateToProps = function mapStateToProps(reducers) {
   return reducers.geneticasReducer;
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_4__)(Table));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_5__)(Table));
 
 /***/ }),
 
@@ -104702,13 +104810,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/icons/KeyboardReturn */ "./node_modules/@material-ui/icons/KeyboardReturn.js");
-/* harmony import */ var _material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_KeyboardReturn__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _Table__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Table */ "./resources/js/components/Geneticas/Table.js");
-/* harmony import */ var _Formulario__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Formulario */ "./resources/js/components/Geneticas/Formulario.js");
-/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
-/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
-/* harmony import */ var _actions_marcasActions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../actions/marcasActions */ "./resources/js/actions/marcasActions.js");
+/* harmony import */ var _Table__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Table */ "./resources/js/components/Geneticas/Table.js");
+/* harmony import */ var _Formulario__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Formulario */ "./resources/js/components/Geneticas/Formulario.js");
+/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
+/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
+/* harmony import */ var _actions_marcasActions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../actions/marcasActions */ "./resources/js/actions/marcasActions.js");
 
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -104746,9 +104852,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-
-var marcasTraerTodos = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_8__["traerTodos"];
-var genericasTraerTodos = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_7__["traerTodos"];
+var marcasTraerTodos = _actions_marcasActions__WEBPACK_IMPORTED_MODULE_7__["traerTodos"];
+var genericasTraerTodos = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_6__["traerTodos"];
 
 var Geneticas = /*#__PURE__*/function (_Component) {
   _inherits(Geneticas, _Component);
@@ -104776,15 +104881,17 @@ var Geneticas = /*#__PURE__*/function (_Component) {
           error = _this$props$geneticas.error,
           goBack = _this$props.history.goBack;
       if (recargar_table) genericasTraerTodos();
-      if (loading && !geneticas.length) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null);
+      if (loading && !geneticas.length) return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_5__["default"], null);
       if (error) return 'Error';
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Table__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Table__WEBPACK_IMPORTED_MODULE_3__["default"], {
         goBack: goBack
       });
     });
 
     _defineProperty(_assertThisInitialized(_this), "ponerFormulario", function () {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Formulario__WEBPACK_IMPORTED_MODULE_5__["default"], null);
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Formulario__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        goBack: _this.props.history.goBack
+      });
     });
 
     return _this;
@@ -104821,15 +104928,16 @@ var Geneticas = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var state_form = this.props.geneticasReducer.state_form;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "container col-md-9"
+        className: "container col-md-12"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "row mt-2"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "col col-md-8"
-      }, this.ponerContenido()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "col col-md-4"
-      }, this.ponerFormulario())));
+        className: "row mt-2 center"
+      }, state_form === 'tabla' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col col-md-10"
+      }, this.ponerContenido()) : '', state_form === 'crear' || state_form === 'editar' || state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col col-md-6"
+      }, this.ponerFormulario()) : ''));
     }
   }]);
 
@@ -104846,7 +104954,7 @@ var mapStateToProps = function mapStateToProps(_ref) {
 };
 
 var mapDispatchToProps = {
-  geneticasActions: _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_7__,
+  geneticasActions: _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_6__,
   marcasTraerTodos: marcasTraerTodos,
   genericasTraerTodos: genericasTraerTodos
 };
@@ -107821,7 +107929,7 @@ var INITIAL_STATE = {
   error: '',
   error_form: '',
   recargar_table: false,
-  state_form: 'crear' //MODO GUARDAR 
+  state_form: 'tabla' //MODO GUARDAR 
 
 };
 /* harmony default export */ __webpack_exports__["default"] = (function () {

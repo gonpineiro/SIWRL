@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
 import Table from './Table'
 import Formulario from './Formulario'
 import Spinner from '../General/Spinner';
@@ -43,21 +42,32 @@ class Geneticas extends Component {
 
 		if (error) return 'Error'
 
-		return <Table goBack={ goBack }/>
+		return <Table goBack={goBack} />
 	}
 
-	ponerFormulario = () => <Formulario />
+	ponerFormulario = () => <Formulario goBack={this.props.history.goBack} />
 
 	render() {
+		const {
+			geneticasReducer: {
+				state_form,
+			},
+		} = this.props
+
 		return (
-			<div className="container col-md-9">
-				<div className="row mt-2">
-					<div className="col col-md-8">
-						{this.ponerContenido()}
-					</div>
-					<div className="col col-md-4">
-						{this.ponerFormulario()}
-					</div>
+			<div className="container col-md-12">
+				<div className="row mt-2 center">
+
+					{state_form === 'tabla' ?
+						<div className="col col-md-10">
+							{this.ponerContenido()}
+						</div> : ''}
+
+					{state_form === 'crear' || state_form === 'editar' || state_form === 'borrar' ?
+						<div className="col col-md-6">
+							{this.ponerFormulario()}
+						</div> : ''}
+
 				</div>
 			</div>
 		);

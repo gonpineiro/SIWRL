@@ -2,15 +2,15 @@ import React from 'react';
 import { connect } from 'react-redux'
 import MenuRow from '../General/MenuRow';
 import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
+import AddIcon from '@material-ui/icons/Add';
 
 import * as geneticasActions from '../../actions/geneticasActions'
 
-const Table = (props) => {
-  console.log(props)
-  const { geneticas, goBack } = props
+const Table = (props) => {  
+  const { geneticas, goBack, traerFormulario } = props
 
   const addRow = () => geneticas.map((genetica, key) => (
-    <tr key={key}>
+    <tr key={key} >
       <td>{genetica.id}</td>
       <td>{
         <MenuRow
@@ -32,11 +32,12 @@ const Table = (props) => {
   return (
     <div>
       <div className="row mt-2">
-        <div className="col col-md-6">
-          <h4>Lista de genéticas</h4>
+        <div className="col col-md-6 text-izquierda">
+          <h4 >Lista de genéticas <AddIcon fontSize="large" className="link" onClick={traerFormulario} /></h4>
+          
         </div>
         <div className="col col-md-6 text-derecha">
-          <KeyboardReturnIcon fontSize="large" onClick={goBack} />
+          <KeyboardReturnIcon fontSize="large" onClick={goBack} className="link" />
         </div>
       </div>
       <table className="table table-hover">
@@ -61,8 +62,6 @@ const Table = (props) => {
   );
 }
 
-const mapStateToProps = (reducers) => {
-  return reducers.geneticasReducer
-}
+const mapStateToProps = (reducers) => reducers.geneticasReducer
 
 export default connect(mapStateToProps, geneticasActions)(Table);

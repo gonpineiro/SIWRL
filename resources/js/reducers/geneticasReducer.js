@@ -28,7 +28,7 @@ const INITIAL_STATE = {
   error: '',
   error_form: '',
   recargar_table: false,
-  state_form: 'crear' //MODO GUARDAR 
+  state_form: 'tabla' //MODO GUARDAR 
 }
 
 export default (state = INITIAL_STATE, action) => {
