@@ -59,7 +59,7 @@ class Geneticas extends Component {
 		return (
 			<div className="container col-md-9">
 				<div className="row mt-2">
-				<div className="col col-md-8">
+					<div className="col col-md-12">
 						<div>
 							<div className="row mt-2">
 								<div className="col col-md-6">
@@ -73,30 +73,7 @@ class Geneticas extends Component {
 						</div>
 					</div>
 					<div className="col col-md-4">
-						<div className="card">
-							<div>
-								{loading ? <Spinner /> :
-									<div>
-										<div className="card-header">
-											<div className="row mt-2">
-												<div className="col col-md-6 card-agregar" >
-													{state_form === 'crear' ? 'AGREGAR GENÉTICA' : ''}
-													{state_form === 'editar' ? 'MODIFICAR GENÉTICA' : ''}
-													{state_form === 'borrar' ? 'ELIMINAR GENÉTICA' : ''}
-												</div>
-												<div className="col col-md-6 center">
-
-												</div>
-											</div>
-										</div>
-										<div className="card-body">
-											{this.ponerFormulario()}
-										</div>
-									</div>}
-
-							</div>
-
-						</div>
+						{this.ponerFormulario()}
 					</div>
 
 				</div>

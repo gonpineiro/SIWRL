@@ -104343,7 +104343,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_FormHelperText__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/FormHelperText */ "./node_modules/@material-ui/core/esm/FormHelperText/index.js");
 /* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
 /* harmony import */ var _material_ui_core_Select__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Select */ "./node_modules/@material-ui/core/esm/Select/index.js");
-/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
+/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
+/* harmony import */ var _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../actions/geneticasActions */ "./resources/js/actions/geneticasActions.js");
 
 
 
@@ -104356,18 +104357,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var cambioGeneticaName = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_11__["cambioGeneticaName"],
-    cambioGeneticaMarca = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_11__["cambioGeneticaMarca"],
-    cambioGeneticaThc = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_11__["cambioGeneticaThc"],
-    cambioGeneticaCbd = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_11__["cambioGeneticaCbd"],
-    cambioGeneticaProdInt = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_11__["cambioGeneticaProdInt"],
-    cambioGeneticaProdExt = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_11__["cambioGeneticaProdExt"],
-    cambioGeneticaTiempoFlora = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_11__["cambioGeneticaTiempoFlora"],
-    cambioGeneticaSabores = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_11__["cambioGeneticaSabores"],
-    borrar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_11__["borrar"],
-    cancelar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_11__["cancelar"],
-    agregar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_11__["agregar"],
-    editar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_11__["editar"];
+
+var cambioGeneticaName = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["cambioGeneticaName"],
+    cambioGeneticaMarca = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["cambioGeneticaMarca"],
+    cambioGeneticaThc = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["cambioGeneticaThc"],
+    cambioGeneticaCbd = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["cambioGeneticaCbd"],
+    cambioGeneticaProdInt = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["cambioGeneticaProdInt"],
+    cambioGeneticaProdExt = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["cambioGeneticaProdExt"],
+    cambioGeneticaTiempoFlora = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["cambioGeneticaTiempoFlora"],
+    cambioGeneticaSabores = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["cambioGeneticaSabores"],
+    borrar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["borrar"],
+    cancelar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["cancelar"],
+    agregar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["agregar"],
+    editar = _actions_geneticasActions__WEBPACK_IMPORTED_MODULE_12__["editar"];
 
 var Formulario = function Formulario(props) {
   var marcas = props.marcasReducer.marcas,
@@ -104384,6 +104386,7 @@ var Formulario = function Formulario(props) {
       sabores = _props$geneticasReduc2.sabores,
       error_form = _props$geneticasReduc.error_form,
       state_form = _props$geneticasReduc.state_form,
+      loading = _props$geneticasReduc.loading,
       borrar = props.borrar,
       cancelar = props.cancelar;
 
@@ -104459,7 +104462,19 @@ var Formulario = function Formulario(props) {
     };
   });
   var classes = useStyles();
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_11__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card-header"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row mt-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col col-md-6 card-agregar"
+  }, state_form === 'crear' ? 'AGREGAR GENÉTICA' : '', state_form === 'editar' ? 'MODIFICAR GENÉTICA' : '', state_form === 'borrar' ? 'ELIMINAR GENÉTICA' : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col col-md-6 center"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card-body"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
     noValidate: true,
     autoComplete: "on"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -104585,7 +104600,7 @@ var Formulario = function Formulario(props) {
     variant: "contained",
     color: "inherit",
     onClick: cancelar
-  }, "Cancelar") : ''))));
+  }, "Cancelar") : ''))))))));
 };
 
 var mapStateToProps = function mapStateToProps(_ref) {
@@ -104801,7 +104816,7 @@ var Geneticas = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "row mt-2"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "col col-md-8"
+        className: "col col-md-12"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "row mt-2"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -104813,19 +104828,7 @@ var Geneticas = /*#__PURE__*/function (_Component) {
         onClick: goBack
       }))), this.ponerContenido())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col col-md-4"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-header"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "row mt-2"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "col col-md-6 card-agregar"
-      }, state_form === 'crear' ? 'AGREGAR GENÉTICA' : '', state_form === 'editar' ? 'MODIFICAR GENÉTICA' : '', state_form === 'borrar' ? 'ELIMINAR GENÉTICA' : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "col col-md-6 center"
-      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "card-body"
-      }, this.ponerFormulario())))))));
+      }, this.ponerFormulario())));
     }
   }]);
 
