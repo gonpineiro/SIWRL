@@ -94,9 +94,6 @@ class Prototypes extends Component {
 							</div>
 						</div>
 					</div> : ''}
-
-
-
 			</div>
 		)
 	}

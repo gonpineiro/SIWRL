@@ -55,20 +55,29 @@ class Geneticas extends Component {
 		} = this.props
 
 		return (
-			<div className="container col-md-12">
-				<div className="row mt-2 center">
+			<div>
+				{state_form === 'tabla' ?
+					<div className="container col-md-9">
+						<div className="row mt-2 center">
+							<div className="col col-md-12">
+								{this.ponerContenido()}
+							</div>
+						</div>
+					</div>
+					: ''}
 
-					{state_form === 'tabla' ?
-						<div className="col col-md-10">
-							{this.ponerContenido()}
-						</div> : ''}
+				{state_form === 'crear' || state_form === 'editar' || state_form === 'borrar' ?
 
-					{state_form === 'crear' || state_form === 'editar' || state_form === 'borrar' ?
-						<div className="col col-md-6">
-							{this.ponerFormulario()}
-						</div> : ''}
-
-				</div>
+					<div className="container col-md-9">
+						<div className="row mt-2">
+							<div className="col col-md-8">
+								{this.ponerContenido()}
+							</div>
+							<div className="col col-md-4">
+								{this.ponerFormulario()}
+							</div>
+						</div>
+					</div> : ''}
 			</div>
 		);
 	}

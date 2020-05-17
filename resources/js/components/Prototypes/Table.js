@@ -4,7 +4,7 @@ import MenuRow from './General/MenuRow';
 import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
 import AddIcon from '@material-ui/icons/Add';
 
-import { calcularDiasTotales, traerValorSensor } from '../../js/funciones'
+import { calcularDiasTotales, traerValorSensor, calcularDiasTotalesParse } from '../../js/funciones'
 
 import * as protoypesActions from '../../actions/protoypesActions'
 import * as ambientesActions from '../../actions/ambientesActions'
@@ -49,6 +49,7 @@ const Table = (props) => {
 
   const addRowTable = () => prototypes.map((prototype, key) => (
     <tr key={key} >
+      {console.log(prototype)}
       <td>{prototype.id}</td>
       <td>{
         <MenuRow
@@ -63,7 +64,16 @@ const Table = (props) => {
       <td className="center">{prototype.ambiente.monitors.length ? prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1].temp + ' C°' : ''} </td>
       <td className="center">{prototype.ambiente.monitors.length ? prototype.ambiente.monitors[prototype.ambiente.monitors.length - 1].hume + ' %' : ''} </td>
       <td className="center">{prototype.ambiente.monitors.length && prototype.sensor ? traerValorSensor(prototype) + ' %' : ''}</td>
-      <td className="center">{calcularDiasTotales(Date.now('YYYY-MM-DD'), Date.parse(prototype.fecha_etapa_a))}</td>
+      <td className="center">{prototype.fecha_etapa_b ? calcularDiasTotalesParse(prototype.fecha_etapa_b, prototype.fecha_etapa_a) : ''}</td>
+      <td className="center">{prototype.fecha_etapa_c ? calcularDiasTotalesParse(prototype.fecha_etapa_c, prototype.fecha_etapa_b) : ''}</td>
+      <td className="center">{prototype.fecha_etapa_d ? calcularDiasTotalesParse(prototype.fecha_etapa_d, prototype.fecha_etapa_c) : ''}</td>
+      <td className="center">{prototype.fecha_etapa_e ? calcularDiasTotalesParse(prototype.fecha_etapa_e, prototype.fecha_etapa_d) : ''}</td>
+      <td className="center">
+        {
+          prototype.fecha_etapa_e ? calcularDiasTotalesParse(prototype.fecha_etapa_e, prototype.fecha_etapa_a) :
+            calcularDiasTotales(Date.now('YYYY-MM-DD'), Date.parse(prototype.fecha_etapa_a))
+        }
+      </td>
     </tr>
   ))
 
@@ -77,6 +87,10 @@ const Table = (props) => {
           <th className="center">Temp</th>
           <th className="center">Hume</th>
           <th className="center">Hume T.</th>
+          <th className="center">Germi</th>
+          <th className="center">Flori</th>
+          <th className="center">Corte</th>
+          <th className="center">Frasco</th>
           <th className="center">Total dias.</th>
         </tr>
       </thead>

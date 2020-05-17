@@ -104950,15 +104950,21 @@ var Geneticas = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       var state_form = this.props.geneticasReducer.state_form;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "container col-md-12"
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, state_form === 'tabla' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "container col-md-9"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "row mt-2 center"
-      }, state_form === 'tabla' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "col col-md-10"
-      }, this.ponerContenido()) : '', state_form === 'crear' || state_form === 'editar' || state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "col col-md-6"
-      }, this.ponerFormulario()) : ''));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col col-md-12"
+      }, this.ponerContenido()))) : '', state_form === 'crear' || state_form === 'editar' || state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "container col-md-9"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "row mt-2"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col col-md-8"
+      }, this.ponerContenido()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        className: "col col-md-4"
+      }, this.ponerFormulario()))) : '');
     }
   }]);
 
@@ -106485,7 +106491,7 @@ var Table = function Table(props) {
     return prototypes.map(function (prototype, key) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
         key: key
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, prototype.id), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_MenuRow__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, console.log(prototype), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, prototype.id), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_MenuRow__WEBPACK_IMPORTED_MODULE_2__["default"], {
         data: prototype,
         traerUnoDetalle: traerUnoDetalle,
         traerUnoEditar: traerUnoEditar,
@@ -106498,7 +106504,15 @@ var Table = function Table(props) {
         className: "center"
       }, prototype.ambiente.monitors.length && prototype.sensor ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_5__["traerValorSensor"])(prototype) + ' %' : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         className: "center"
-      }, Object(_js_funciones__WEBPACK_IMPORTED_MODULE_5__["calcularDiasTotales"])(Date.now('YYYY-MM-DD'), Date.parse(prototype.fecha_etapa_a))));
+      }, prototype.fecha_etapa_b ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_5__["calcularDiasTotalesParse"])(prototype.fecha_etapa_b, prototype.fecha_etapa_a) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        className: "center"
+      }, prototype.fecha_etapa_c ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_5__["calcularDiasTotalesParse"])(prototype.fecha_etapa_c, prototype.fecha_etapa_b) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        className: "center"
+      }, prototype.fecha_etapa_d ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_5__["calcularDiasTotalesParse"])(prototype.fecha_etapa_d, prototype.fecha_etapa_c) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        className: "center"
+      }, prototype.fecha_etapa_e ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_5__["calcularDiasTotalesParse"])(prototype.fecha_etapa_e, prototype.fecha_etapa_d) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        className: "center"
+      }, prototype.fecha_etapa_e ? Object(_js_funciones__WEBPACK_IMPORTED_MODULE_5__["calcularDiasTotalesParse"])(prototype.fecha_etapa_e, prototype.fecha_etapa_a) : Object(_js_funciones__WEBPACK_IMPORTED_MODULE_5__["calcularDiasTotales"])(Date.now('YYYY-MM-DD'), Date.parse(prototype.fecha_etapa_a))));
     });
   };
 
@@ -106512,6 +106526,14 @@ var Table = function Table(props) {
     }, "Hume"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
       className: "center"
     }, "Hume T."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+      className: "center"
+    }, "Germi"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+      className: "center"
+    }, "Flori"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+      className: "center"
+    }, "Corte"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+      className: "center"
+    }, "Frasco"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
       className: "center"
     }, "Total dias."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, addRowTable()));
   };
