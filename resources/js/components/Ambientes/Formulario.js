@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
-import FormControl from '@material-ui/core/FormControl';
+import Grid from '@material-ui/core/Grid';
 
 import * as ambientesActions from '../../actions/ambientesActions'
 
@@ -50,10 +50,12 @@ const Formulario = (props) => {
 
    const useStyles = makeStyles((theme) => ({
 
-      formControl: {
-         margin: theme.spacing(0),
-         marginBottom: 35,
-         width: "100%",
+      root: {
+         flexGrow: 1,
+      },
+
+      formButton: {
+         marginTop: 20,
       },
    }));
 
@@ -74,10 +76,10 @@ const Formulario = (props) => {
                   </div>
                </div>
                <div className="card-body">
-                  <FormControl >
-                     <div className="form-row">
-
-                        <FormControl className={classes.formControl}>
+                  <div className={classes.root}>
+                     <Grid container spacing={3}>
+                        {/* NAME */}
+                        <Grid item xs={12}>
                            <TextField
                               id="standard-basic"
                               label="Nombre"
@@ -89,9 +91,10 @@ const Formulario = (props) => {
                               error={!error_form.name ? false : true}
                               disabled={state_form === 'borrar' ? true : false}
                            />
-                        </FormControl>
+                        </Grid>
 
-                        <FormControl className={classes.formControl}>
+                        {/* CÓDIGO */}
+                        <Grid item xs={12} sm={6}>
                            <TextField
                               id="standard-basic"
                               label="Código"
@@ -103,9 +106,10 @@ const Formulario = (props) => {
                               error={!error_form.codigo ? false : true}
                               disabled={state_form === 'borrar' ? true : false}
                            />
-                        </FormControl>
+                        </Grid>
 
-                        <FormControl className={classes.formControl}>
+                        {/* INPUTS */}
+                        <Grid item xs={12} sm={6}>
                            <TextField
                               id="standard-basic"
                               label="Inputs"
@@ -117,51 +121,50 @@ const Formulario = (props) => {
                               error={!error_form.inputs ? false : true}
                               disabled={state_form === 'borrar' ? true : false}
                            />
-                        </FormControl>
+                        </Grid>
 
-                        <div className="form-row margin-button">
-                           <div className="form-group col-md-6">
-                              {state_form === 'crear' || state_form === 'editar'
-                                 ?
+                        {/* BUTTOMS */}
+                        <Grid item xs={6} sm={6} >
+                           {state_form === 'crear' || state_form === 'editar'
+                              ?
+                              <Button
+                                 variant="contained"
+                                 color="primary"
+                                 onClick={guardar}
+                                 className={classes.formButton}
+                              >
+                                 Guardar
+                                    </Button> : ''}
+                           {state_form === 'borrar'
+                              ?
+                              <div>
                                  <Button
                                     variant="contained"
                                     color="primary"
-                                    onClick={guardar}
+                                    onClick={() => borrar(id)}
+                                    className={classes.formButton}
                                  >
-                                    Guardar
-                                    </Button> : ''}
-                              {state_form === 'borrar'
-                                 ?
-                                 <div>
-                                    <Button
-                                       variant="contained"
-                                       color="primary"
-                                       onClick={() => borrar(id)}
-                                    >
-                                       Borrar
+                                    Borrar
                                        </Button>
-                                 </div>
-                                 : ''}
-                              {error_form && <small className="text-danger">Existe un registro vinculado.</small>}
+                              </div>
+                              : ''}
+                        </Grid>
 
-                           </div >
-
-                           <div className="form-group col-md-6">
-                              {state_form === 'editar' || state_form === 'borrar'
-                                 ?
-                                 <Button
-                                    variant="contained"
-                                    color="inherit"
-                                    onClick={cancelar}
-                                 >
-                                    Cancelar
+                        <Grid item xs={6} sm={6}>
+                           {state_form === 'editar' || state_form === 'borrar'
+                              ?
+                              <Button
+                                 variant="contained"
+                                 color="inherit"
+                                 onClick={cancelar}
+                                 className={classes.formButton}
+                              >
+                                 Cancelar
                                     </Button> : ''}
-                           </div >
-                        </div>
-
-                     </div>
-                  </FormControl>
-
+                        </Grid>
+                        {error_form && <small className="text-danger">Existe un registro vinculado.</small>}
+                     </Grid>
+                  </div>
                </div>
             </div>}
       </div>

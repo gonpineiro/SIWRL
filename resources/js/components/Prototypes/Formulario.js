@@ -8,6 +8,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
+import Grid from '@material-ui/core/Grid';
 import Select from '@material-ui/core/Select';
 import Spinner from '../General/Spinner';
 import TocIcon from '@material-ui/icons/Toc';
@@ -100,11 +101,16 @@ const Formulario = (props) => {
    }, []);
 
    const useStyles = makeStyles((theme) => ({
+      root: {
+         flexGrow: 1,
+         width: "100%",
+      },
 
       formControl: {
-         margin: theme.spacing(0),
-         marginBottom: 35,
          width: "100%",
+      },
+      formButton: {
+         marginTop: 20,
       },
    }));
 
@@ -122,15 +128,17 @@ const Formulario = (props) => {
                         {state_form === 'borrar' ? 'ELIMINAR PROTOTIPO' : ''}
                      </div>
                      <div className="col col-md-6 text-derecha" >
-                        <TocIcon fontSize="large" className="link" onClick={traerTabla}/>                        
+                        <TocIcon fontSize="large" className="link" onClick={traerTabla} />
                      </div>
                   </div>
                </div>
                <div className="card-body">
-                  <FormControl >
-                     <div className="form-row">
+                  <div className={classes.root}>
 
-                        <FormControl className={classes.formControl}>
+
+                     <Grid container spacing={3}>
+                        {/* NAME */}
+                        <Grid item xs={12}>
                            <TextField
                               id="standard-basic"
                               label="Nombre"
@@ -142,150 +150,163 @@ const Formulario = (props) => {
                               error={!error_form.name ? false : true}
                               disabled={state_form === 'borrar' ? true : false}
                            />
-                        </FormControl>
+                        </Grid>
 
-                        <FormControl className={classes.formControl}>
-                           <InputLabel id="demo-simple-select-helper-label" error={!error_form.genetica_id ? false : true}>Genetica</InputLabel>
-                           <Select
-                              labelId="demo-simple-select-helper-label"
-                              id="demo-simple-select-helper"
-                              value={genetica_id || ''}
-                              onChange={handleCambioPrototypeGenetica}
-                              error={!error_form.genetica_id ? false : true}
-                              disabled={state_form === 'borrar' ? true : false}
-                              className="transparent"
-                           >
-                              <Link to="/geneticas">
-                                 <MenuItem value="">
-                                    <em
-                                       className="link link-string"
-                                    >
-                                       Agregar
+                        {/* GENETICA */}
+                        <Grid item xs={12} sm={12}>
+                           <FormControl className={classes.formControl}>
+                              <InputLabel id="demo-simple-select-helper-label" error={!error_form.genetica_id ? false : true}>Genetica</InputLabel>
+                              <Select
+                                 labelId="demo-simple-select-helper-label"
+                                 id="demo-simple-select-helper"
+                                 value={genetica_id || ''}
+                                 onChange={handleCambioPrototypeGenetica}
+                                 error={!error_form.genetica_id ? false : true}
+                                 disabled={state_form === 'borrar' ? true : false}
+                                 className="transparent"
+                              >
+                                 <Link to="/geneticas">
+                                    <MenuItem value="">
+                                       <em
+                                          className="link link-string"
+                                       >
+                                          Agregar
                                        </em>
-                                 </MenuItem>
-                              </Link>
+                                    </MenuItem>
+                                 </Link>
 
-                              {geneticas.map((genetica) => (
-                                 <MenuItem key={genetica.id} value={genetica.id}>{genetica.name}</MenuItem>
-                              ))}
-                           </Select>
-                           <FormHelperText error={!error_form.genetica_id ? false : true}>{error_form.genetica_id}</FormHelperText>
-                        </FormControl>
+                                 {geneticas.map((genetica) => (
+                                    <MenuItem key={genetica.id} value={genetica.id}>{genetica.name}</MenuItem>
+                                 ))}
+                              </Select>
+                              <FormHelperText error={!error_form.genetica_id ? false : true}>{error_form.genetica_id}</FormHelperText>
+                           </FormControl>
+                        </Grid>
 
-                        <FormControl className={classes.formControl}>
-                           <InputLabel id="demo-simple-select-helper-label" error={!error_form.ambiente_id ? false : true}>Ambientes</InputLabel>
-                           <Select
-                              labelId="demo-simple-select-helper-label"
-                              id="demo-simple-select-helper"
-                              value={ambiente_id || ''}
-                              onChange={handleCambioPrototypeAmbiente}
-                              error={!error_form.ambiente_id ? false : true}
-                              disabled={state_form === 'borrar' ? true : false}
-                              className="transparent"
-                           >
-                              <Link to="/ambientes">
-                                 <MenuItem value="" onClick={() => cancelarAmbientes()}>
-                                    <em
-                                       className="link link-string"
-                                    >
-                                       Agregar
+                        {/* AMBIENTE */}
+                        <Grid item xs={12} sm={12}>
+                           <FormControl className={classes.formControl}>
+                              <InputLabel id="demo-simple-select-helper-label" error={!error_form.ambiente_id ? false : true}>Ambientes</InputLabel>
+                              <Select
+                                 labelId="demo-simple-select-helper-label"
+                                 id="demo-simple-select-helper"
+                                 value={ambiente_id || ''}
+                                 onChange={handleCambioPrototypeAmbiente}
+                                 error={!error_form.ambiente_id ? false : true}
+                                 disabled={state_form === 'borrar' ? true : false}
+                                 className="transparent"
+                              >
+                                 <Link to="/ambientes">
+                                    <MenuItem value="" onClick={() => cancelarAmbientes()}>
+                                       <em
+                                          className="link link-string"
+                                       >
+                                          Agregar
                                        </em>
-                                 </MenuItem>
-                              </Link>
-                              <MenuItem value={null}><em className="link link-string" > Vacio </em> </MenuItem>
+                                    </MenuItem>
+                                 </Link>
+                                 <MenuItem value={null}><em className="link link-string" > Vacio </em> </MenuItem>
 
-                              {ambientes.map((ambiente) => (
-                                 <MenuItem key={ambiente.id} value={ambiente.id}>{ambiente.name}</MenuItem>
-                              ))}
-                           </Select>
-                           <FormHelperText error={!error_form.ambiente_id ? false : true}>{error_form.ambiente_id}</FormHelperText>
-                        </FormControl>
+                                 {ambientes.map((ambiente) => (
+                                    <MenuItem key={ambiente.id} value={ambiente.id}>{ambiente.name}</MenuItem>
+                                 ))}
+                              </Select>
+                              <FormHelperText error={!error_form.ambiente_id ? false : true}>{error_form.ambiente_id}</FormHelperText>
+                           </FormControl>
+                        </Grid>
 
-                        <FormControl className={classes.formControl}>
-                           <InputLabel id="demo-simple-select-helper-label" error={!error_form.sensor_id ? false : true}>Sensor</InputLabel>
-                           <Select
-                              labelId="demo-simple-select-helper-label"
-                              id="demo-simple-select-helper"
-                              value={ambiente.sensors ? sensor_id || '' : ''}
-                              onChange={handleCambioPrototypeSensor}
-                              error={!error_form.sensor_id ? false : true}
-                              disabled={!ambiente_id || state_form === 'borrar'}
-                              className="transparent"
-                           >
-                              <Link to={`/ambientes/sensor/${ambiente_id}`}>
-                                 <MenuItem value="" onClick={() => cancelarSensors()}>
-                                    <em
-                                       className="link link-string"
-                                    >
-                                       Agregar
+                        {/* SENSOR */}
+                        <Grid item xs={12} sm={12}>
+                           <FormControl className={classes.formControl}>
+                              <InputLabel id="demo-simple-select-helper-label" error={!error_form.sensor_id ? false : true}>Sensor</InputLabel>
+                              <Select
+                                 labelId="demo-simple-select-helper-label"
+                                 id="demo-simple-select-helper"
+                                 value={ambiente.sensors ? sensor_id || '' : ''}
+                                 onChange={handleCambioPrototypeSensor}
+                                 error={!error_form.sensor_id ? false : true}
+                                 disabled={!ambiente_id || state_form === 'borrar'}
+                                 className="transparent"
+                              >
+                                 <Link to={`/ambientes/sensor/${ambiente_id}`}>
+                                    <MenuItem value="" onClick={() => cancelarSensors()}>
+                                       <em
+                                          className="link link-string"
+                                       >
+                                          Agregar
                                        </em>
-                                 </MenuItem>
-                              </Link>
-                              <MenuItem value=""><em className="link link-string" > Vacio </em> </MenuItem>
+                                    </MenuItem>
+                                 </Link>
+                                 <MenuItem value=""><em className="link link-string" > Vacio </em> </MenuItem>
 
-                              {ambiente && ambiente.sensors ? ambiente.sensors.map((sensor) => (
-                                 <MenuItem key={sensor.id} value={sensor.id}>{sensor.name}</MenuItem>
-                              )) : ''}
-                           </Select>
-                           <FormHelperText error={!error_form.sensor_id ? false : true}>{error_form.sensor_id}</FormHelperText>
-                        </FormControl>
+                                 {ambiente && ambiente.sensors ? ambiente.sensors.map((sensor) => (
+                                    <MenuItem key={sensor.id} value={sensor.id}>{sensor.name}</MenuItem>
+                                 )) : ''}
+                              </Select>
+                              <FormHelperText error={!error_form.sensor_id ? false : true}>{error_form.sensor_id}</FormHelperText>
+                           </FormControl>
+                        </Grid>
 
-                        <FormControl className={classes.formControl}>
-                           <TextField
-                              id="date"
-                              label="Fecha Implante"
-                              type="date"
-                              onChange={handleCambioPrototypeFechaA}
-                              value={fecha_etapa_a || ''}
-                              className="transparent"
-                              InputLabelProps={{
-                                 shrink: true,
-                              }}
-                              disabled={state_form === 'borrar' || state_form === 'editar' ? true : false}
-                           />
-                        </FormControl>
+                        {/* FECHA */}
+                        <Grid item xs={12} sm={12}>
+                           <FormControl className={classes.formControl}>
+                              <TextField
+                                 id="date"
+                                 label="Fecha Implante"
+                                 type="date"
+                                 onChange={handleCambioPrototypeFechaA}
+                                 value={fecha_etapa_a || ''}
+                                 className="transparent"
+                                 InputLabelProps={{
+                                    shrink: true,
+                                 }}
+                                 disabled={state_form === 'borrar' || state_form === 'editar' ? true : false}
+                              />
+                           </FormControl>
+                        </Grid>
+                     </Grid>
 
-                        <div className="form-row margin-button">
-                           <div className="form-group col-md-6">
-                              {state_form === 'crear' || state_form === 'editar'
-                                 ?
-                                 <Button
-                                    variant="contained"
-                                    color="primary"
-                                    onClick={guardar}
-                                 >
-                                    Guardar
+                     {/* BUTTOMS */}
+                     <Grid item xs={6} sm={6} >
+                        {state_form === 'crear' || state_form === 'editar'
+                           ?
+                           <Button
+                              variant="contained"
+                              color="primary"
+                              onClick={guardar}
+                              className={classes.formButton}
+                           >
+                              Guardar
                                     </Button> : ''}
-                              {state_form === 'borrar'
-                                 ?
-                                 <div>
-                                    <Button
-                                       variant="contained"
-                                       color="primary"
-                                       onClick={() => borrar(id)}
-                                    >
-                                       Borrar
+                        {state_form === 'borrar'
+                           ?
+                           <div>
+                              <Button
+                                 variant="contained"
+                                 color="primary"
+                                 onClick={() => borrar(id)}
+                                 className={classes.formButton}
+                              >
+                                 Borrar
                                        </Button>
-                                 </div>
-                                 : ''}
+                           </div>
+                           : ''}
+                     </Grid>
 
-                           </div >
-
-                           <div className="form-group col-md-6">
-                              {state_form === 'editar' || state_form === 'borrar'
-                                 ?
-                                 <Button
-                                    variant="contained"
-                                    color="inherit"
-                                    onClick={cancelar}
-                                 >
-                                    Cancelar
+                     <Grid item xs={6} sm={6}>
+                        {state_form === 'editar' || state_form === 'borrar'
+                           ?
+                           <Button
+                              variant="contained"
+                              color="inherit"
+                              onClick={cancelar}
+                              className={classes.formButton}
+                           >
+                              Cancelar
                                     </Button> : ''}
-                           </div >
-                        </div>
-
-                     </div>
-                  </FormControl>
+                     </Grid>
+                     {error_form && <small className="text-danger">Existe un registro vinculado.</small>}
+                  </div>
                </div>
             </div>}
       </div>

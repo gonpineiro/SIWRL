@@ -36,13 +36,13 @@ class UsersRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'El nombre el requerido.',
+            'name.required' => 'Requerido.',
             'name.min' => 'El minimo es 3 caracteres.',
             'name.max' => 'El maximo es 20 caracteres.',
 
-            'password.required' => 'El password el requerido.',
+            'password.required' => 'Requerido.',
 
-            'email.required' => 'El email es requerido.',
+            'email.required' => 'Requerido.',
             'email.unique' => 'Ya existe un correo. ',
             'email.email' => 'No corresponde el formato.',
             'email.max' => 'El maximo es 20 caracteres.'

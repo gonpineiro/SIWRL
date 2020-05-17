@@ -7,6 +7,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
+import Grid from '@material-ui/core/Grid';
 import Select from '@material-ui/core/Select';
 import Spinner from '../General/Spinner';
 
@@ -37,7 +38,7 @@ const Formulario = (props) => {
       borrar,
       agregar,
       editar,
-      cancelar     
+      cancelar
    } = props;
 
    const handleCambioSensorName = (event) => cambioSensorName(event.target.value);
@@ -72,11 +73,16 @@ const Formulario = (props) => {
    }
 
    const useStyles = makeStyles((theme) => ({
+      root: {
+         flexGrow: 1,
+         width: "100%",
+      },
 
       formControl: {
-         margin: theme.spacing(0),
-         marginBottom: 35,
          width: "100%",
+      },
+      formButton: {
+         marginTop: 20,
       },
    }));
 
@@ -103,28 +109,31 @@ const Formulario = (props) => {
                   </div>
                </div>
                <div className="card-body">
-                  <FormControl >
-                     <div className="form-row">
-
-                        <FormControl className={classes.formControl}>
-                           <InputLabel id="demo-simple-select-helper-label" error={!error_form.ambiente_id ? false : true}>Ambientes</InputLabel>
-                           <Select
-                              labelId="demo-simple-select-helper-label"
-                              id="demo-simple-select-helper"
-                              value={ambiente ? (ambiente.id || '') : getId || (ambiente_id || getId)}
-                              onChange={handleCambioAmbiente}
-                              error={!error_form.ambiente_id ? false : true}
-                              disabled={state_form === 'borrar' ? true : false}
-                              className="transparent"
-                           >
-                              {ambientes.map((ambiente) => (
-                                 <MenuItem key={ambiente.id} value={ambiente.id}>{ambiente.name}</MenuItem>
-                              ))}
-                           </Select>
-                           <FormHelperText error={!error_form.ambiente_id ? false : true}>{error_form.ambiente_id}</FormHelperText>
-                        </FormControl>
-
-                        <FormControl className={classes.formControl}>
+                  <div className={classes.root}>
+                     <Grid container spacing={3}>
+                        {/* AMBIENTE */}
+                        <Grid item xs={12}>
+                           <FormControl className={classes.formControl}>
+                              <InputLabel id="demo-simple-select-helper-label" error={!error_form.ambiente_id ? false : true}>Ambientes</InputLabel>
+                              <Select
+                                 labelId="demo-simple-select-helper-label"
+                                 id="demo-simple-select-helper"
+                                 value={ambiente ? (ambiente.id || '') : getId || (ambiente_id || getId)}
+                                 onChange={handleCambioAmbiente}
+                                 error={!error_form.ambiente_id ? false : true}
+                                 disabled={state_form === 'borrar' ? true : false}
+                                 className="transparent"
+                              >
+                                 {ambientes.map((ambiente) => (
+                                    <MenuItem key={ambiente.id} value={ambiente.id}>{ambiente.name}</MenuItem>
+                                 ))}
+                              </Select>
+                              <FormHelperText error={!error_form.ambiente_id ? false : true}>{error_form.ambiente_id}</FormHelperText>
+                           </FormControl>
+                        </Grid>
+                        
+                        {/* NAME */}
+                        <Grid item xs={12} sm={12}>
                            <TextField
                               id="standard-basic"
                               label="Nombre"
@@ -136,9 +145,10 @@ const Formulario = (props) => {
                               error={!error_form.name ? false : true}
                               disabled={state_form === 'borrar' ? true : false}
                            />
-                        </FormControl>
-
-                        <FormControl className={classes.formControl}>
+                        </Grid>
+                        
+                        {/* INPUT */}
+                        <Grid item xs={12} sm={12}>
                            <TextField
                               id="standard-basic"
                               label="Input"
@@ -150,50 +160,50 @@ const Formulario = (props) => {
                               error={!error_form.name ? false : true}
                               disabled={state_form === 'borrar' ? true : false}
                            />
-                        </FormControl>
-
-                        <div className="form-row margin-button">
-                           <div className="form-group col-md-6">
-                              {state_form === 'crear' || state_form === 'editar'
-                                 ?
+                        </Grid>
+                        
+                        {/* BUTTOMS */}
+                        <Grid item xs={6} sm={6} >
+                           {state_form === 'crear' || state_form === 'editar'
+                              ?
+                              <Button
+                                 variant="contained"
+                                 color="primary"
+                                 onClick={guardar}
+                                 className={classes.formButton}
+                              >
+                                 Guardar
+                                    </Button> : ''}
+                           {state_form === 'borrar'
+                              ?
+                              <div>
                                  <Button
                                     variant="contained"
                                     color="primary"
-                                    onClick={guardar}
-                                    disabled={(sensors_ambiente.length >= ambiente.inputs) && state_form == 'crear' ? true : false}
+                                    onClick={() => borrar(id)}
+                                    className={classes.formButton}
                                  >
-                                    Guardar
-                                    </Button> : ''}
-                              {state_form === 'borrar'
-                                 ?
-                                 <div>
-                                    <Button
-                                       variant="contained"
-                                       color="primary"
-                                       onClick={eliminar}
-                                    >
-                                       Borrar
+                                    Borrar
                                        </Button>
-                                 </div>
-                                 : ''}
-                              {error_form && <small className="text-danger">Existe un registro vinculado.</small>}
-                           </div >
+                              </div>
+                              : ''}
+                        </Grid>
 
-                           <div className="form-group col-md-6">
-                              {state_form === 'editar' || state_form === 'borrar'
-                                 ?
-                                 <Button
-                                    variant="contained"
-                                    color="inherit"
-                                    onClick={cancelar}
-                                 >
-                                    Cancelar
+                        <Grid item xs={6} sm={6}>
+                           {state_form === 'editar' || state_form === 'borrar'
+                              ?
+                              <Button
+                                 variant="contained"
+                                 color="inherit"
+                                 onClick={cancelar}
+                                 className={classes.formButton}
+                              >
+                                 Cancelar
                                     </Button> : ''}
-                           </div >
-                        </div>
-
-                     </div>
-                  </FormControl>
+                        </Grid>
+                        {error_form && <small className="text-danger">Existe un registro vinculado.</small>}
+                     </Grid>
+                  </div>
                </div>
             </div>}
       </div>

@@ -104269,7 +104269,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/esm/TextField/index.js");
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
-/* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/index.js");
 /* harmony import */ var _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/ambientesActions */ "./resources/js/actions/ambientesActions.js");
 
 
@@ -104329,10 +104329,11 @@ var Formulario = function Formulario(props) {
 
   var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__["makeStyles"])(function (theme) {
     return {
-      formControl: {
-        margin: theme.spacing(0),
-        marginBottom: 35,
-        width: "100%"
+      root: {
+        flexGrow: 1
+      },
+      formButton: {
+        marginTop: 20
       }
     };
   });
@@ -104347,10 +104348,14 @@ var Formulario = function Formulario(props) {
     className: "col col-md-6 card-agregar"
   }, state_form === 'crear' ? 'AGREGAR AMBIENTE' : '', state_form === 'editar' ? 'MODIFICAR AMBIENTE' : '', state_form === 'borrar' ? 'ELIMINAR AMBIENTE' : ''))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card-body"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_5__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-row"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    className: classes.formControl
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: classes.root
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    container: true,
+    spacing: 3
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    item: true,
+    xs: 12
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
     id: "standard-basic",
     label: "Nombre",
@@ -104361,8 +104366,10 @@ var Formulario = function Formulario(props) {
     helperText: error_form.name,
     error: !error_form.name ? false : true,
     disabled: state_form === 'borrar' ? true : false
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    className: classes.formControl
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    item: true,
+    xs: 12,
+    sm: 6
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
     id: "standard-basic",
     label: "C\xF3digo",
@@ -104373,8 +104380,10 @@ var Formulario = function Formulario(props) {
     helperText: error_form.codigo,
     error: !error_form.codigo ? false : true,
     disabled: state_form === 'borrar' ? true : false
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    className: classes.formControl
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    item: true,
+    xs: 12,
+    sm: 6
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
     id: "standard-basic",
     label: "Inputs",
@@ -104385,29 +104394,34 @@ var Formulario = function Formulario(props) {
     helperText: error_form.inputs,
     error: !error_form.inputs ? false : true,
     disabled: state_form === 'borrar' ? true : false
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-row margin-button"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-6"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    item: true,
+    xs: 6,
+    sm: 6
   }, state_form === 'crear' || state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     variant: "contained",
     color: "primary",
-    onClick: guardar
+    onClick: guardar,
+    className: classes.formButton
   }, "Guardar") : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     variant: "contained",
     color: "primary",
     onClick: function onClick() {
       return borrar(id);
-    }
-  }, "Borrar")) : '', error_form && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
-    className: "text-danger"
-  }, "Existe un registro vinculado.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-6"
+    },
+    className: classes.formButton
+  }, "Borrar")) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    item: true,
+    xs: 6,
+    sm: 6
   }, state_form === 'editar' || state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     variant: "contained",
     color: "inherit",
-    onClick: cancelar
-  }, "Cancelar") : '')))))));
+    onClick: cancelar,
+    className: classes.formButton
+  }, "Cancelar") : ''), error_form && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+    className: "text-danger"
+  }, "Existe un registro vinculado."))))));
 };
 
 var mapStateToProps = function mapStateToProps(_ref) {
@@ -105533,8 +105547,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/esm/TextField/index.js");
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
-/* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/index.js");
 /* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
 /* harmony import */ var _actions_marcasActions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../actions/marcasActions */ "./resources/js/actions/marcasActions.js");
 
@@ -105579,12 +105593,13 @@ var Formulario = function Formulario(props) {
     if (state_form === 'editar') editar(nueva_marca, id);
   };
 
-  var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__["makeStyles"])(function (theme) {
+  var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__["makeStyles"])(function (theme) {
     return {
-      formControl: {
-        margin: theme.spacing(0),
-        marginBottom: 35,
-        width: "100%"
+      root: {
+        flexGrow: 1
+      },
+      formButton: {
+        marginTop: 20
       }
     };
   });
@@ -105601,10 +105616,14 @@ var Formulario = function Formulario(props) {
     className: "col col-md-6 center"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card-body"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-row"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    className: classes.formControl
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: classes.root
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    container: true,
+    spacing: 3
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    item: true,
+    xs: 12
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
     id: "standard-basic",
     label: "Nombre",
@@ -105615,29 +105634,34 @@ var Formulario = function Formulario(props) {
     helperText: error_form.name,
     error: !error_form.name ? false : true,
     disabled: state_form === 'borrar' ? true : false
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-row margin-button"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-6"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    item: true,
+    xs: 6,
+    sm: 6
   }, state_form === 'crear' || state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     variant: "contained",
     color: "primary",
-    onClick: guardar
+    onClick: guardar,
+    className: classes.formButton
   }, "Guardar") : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     variant: "contained",
     color: "primary",
     onClick: function onClick() {
       return borrar(id);
-    }
-  }, "Borrar")) : '', error_form && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
-    className: "text-danger"
-  }, "Existe un registro vinculado.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-6"
+    },
+    className: classes.formButton
+  }, "Borrar")) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    item: true,
+    xs: 6,
+    sm: 6
   }, state_form === 'editar' || state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     variant: "contained",
     color: "inherit",
-    onClick: cancelar
-  }, "Cancelar") : '')))))));
+    onClick: cancelar,
+    className: classes.formButton
+  }, "Cancelar") : ''), error_form && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+    className: "text-danger"
+  }, "Existe un registro vinculado."))))));
 };
 
 var mapStateToProps = function mapStateToProps(_ref) {
@@ -106316,13 +106340,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/MenuItem */ "./node_modules/@material-ui/core/esm/MenuItem/index.js");
 /* harmony import */ var _material_ui_core_FormHelperText__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/FormHelperText */ "./node_modules/@material-ui/core/esm/FormHelperText/index.js");
 /* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
-/* harmony import */ var _material_ui_core_Select__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Select */ "./node_modules/@material-ui/core/esm/Select/index.js");
-/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
-/* harmony import */ var _material_ui_icons_Toc__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/icons/Toc */ "./node_modules/@material-ui/icons/Toc.js");
-/* harmony import */ var _material_ui_icons_Toc__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Toc__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
-/* harmony import */ var _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../actions/ambientesActions */ "./resources/js/actions/ambientesActions.js");
-/* harmony import */ var _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../actions/sensorsActions */ "./resources/js/actions/sensorsActions.js");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/index.js");
+/* harmony import */ var _material_ui_core_Select__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core/Select */ "./node_modules/@material-ui/core/esm/Select/index.js");
+/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
+/* harmony import */ var _material_ui_icons_Toc__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @material-ui/icons/Toc */ "./node_modules/@material-ui/icons/Toc.js");
+/* harmony import */ var _material_ui_icons_Toc__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Toc__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../actions/protoypesActions */ "./resources/js/actions/protoypesActions.js");
+/* harmony import */ var _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../actions/ambientesActions */ "./resources/js/actions/ambientesActions.js");
+/* harmony import */ var _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../actions/sensorsActions */ "./resources/js/actions/sensorsActions.js");
 
 
 
@@ -106339,20 +106364,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var ambientesTraerUno = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_14__["traerUno"],
-    ambientesCancelar = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_14__["cancelar"];
-var traerTodosPorAmbienteSensor = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_15__["traerTodosPorAmbiente"],
-    sensorsCancelar = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_15__["cancelar"];
-var cambioPrototypeName = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_13__["cambioPrototypeName"],
-    cambioPrototypeGenetica = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_13__["cambioPrototypeGenetica"],
-    cambioPrototypeAmbiente = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_13__["cambioPrototypeAmbiente"],
-    cambioPrototypeSensor = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_13__["cambioPrototypeSensor"],
-    cambioPrototypeFechaA = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_13__["cambioPrototypeFechaA"],
-    traerTabla = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_13__["traerTabla"],
-    borrar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_13__["borrar"],
-    agregar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_13__["agregar"],
-    editar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_13__["editar"],
-    cancelar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_13__["cancelar"];
+
+var ambientesTraerUno = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_15__["traerUno"],
+    ambientesCancelar = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_15__["cancelar"];
+var traerTodosPorAmbienteSensor = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_16__["traerTodosPorAmbiente"],
+    sensorsCancelar = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_16__["cancelar"];
+var cambioPrototypeName = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_14__["cambioPrototypeName"],
+    cambioPrototypeGenetica = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_14__["cambioPrototypeGenetica"],
+    cambioPrototypeAmbiente = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_14__["cambioPrototypeAmbiente"],
+    cambioPrototypeSensor = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_14__["cambioPrototypeSensor"],
+    cambioPrototypeFechaA = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_14__["cambioPrototypeFechaA"],
+    traerTabla = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_14__["traerTabla"],
+    borrar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_14__["borrar"],
+    agregar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_14__["agregar"],
+    editar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_14__["editar"],
+    cancelar = _actions_protoypesActions__WEBPACK_IMPORTED_MODULE_14__["cancelar"];
 
 var Formulario = function Formulario(props) {
   var ambientesTraerUno = props.ambientesTraerUno,
@@ -106431,17 +106457,22 @@ var Formulario = function Formulario(props) {
   }, []);
   var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_5__["makeStyles"])(function (theme) {
     return {
-      formControl: {
-        margin: theme.spacing(0),
-        marginBottom: 35,
+      root: {
+        flexGrow: 1,
         width: "100%"
+      },
+      formControl: {
+        width: "100%"
+      },
+      formButton: {
+        marginTop: 20
       }
     };
   });
   var classes = useStyles();
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card transparent"
-  }, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_11__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_12__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card-header"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "row mt-2"
@@ -106449,16 +106480,20 @@ var Formulario = function Formulario(props) {
     className: "col col-md-6 card-agregar"
   }, state_form === 'crear' ? 'AGREGAR PROTOTIPO' : '', state_form === 'editar' ? 'MODIFICAR PROTOTIPO' : '', state_form === 'borrar' ? 'ELIMINAR PROTOTIPO' : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col col-md-6 text-derecha"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Toc__WEBPACK_IMPORTED_MODULE_12___default.a, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_icons_Toc__WEBPACK_IMPORTED_MODULE_13___default.a, {
     fontSize: "large",
     className: "link",
     onClick: traerTabla
   })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card-body"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-row"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    className: classes.formControl
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: classes.root
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    container: true,
+    spacing: 3
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    item: true,
+    xs: 12
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3__["default"], {
     id: "standard-basic",
     label: "Nombre",
@@ -106469,12 +106504,16 @@ var Formulario = function Formulario(props) {
     helperText: error_form.name,
     error: !error_form.name ? false : true,
     disabled: state_form === 'borrar' ? true : false
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    item: true,
+    xs: 12,
+    sm: 12
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
     className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_InputLabel__WEBPACK_IMPORTED_MODULE_6__["default"], {
     id: "demo-simple-select-helper-label",
     error: !error_form.genetica_id ? false : true
-  }, "Genetica"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Select__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, "Genetica"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Select__WEBPACK_IMPORTED_MODULE_11__["default"], {
     labelId: "demo-simple-select-helper-label",
     id: "demo-simple-select-helper",
     value: genetica_id || '',
@@ -106495,12 +106534,16 @@ var Formulario = function Formulario(props) {
     }, genetica.name);
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormHelperText__WEBPACK_IMPORTED_MODULE_8__["default"], {
     error: !error_form.genetica_id ? false : true
-  }, error_form.genetica_id)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }, error_form.genetica_id))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    item: true,
+    xs: 12,
+    sm: 12
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
     className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_InputLabel__WEBPACK_IMPORTED_MODULE_6__["default"], {
     id: "demo-simple-select-helper-label",
     error: !error_form.ambiente_id ? false : true
-  }, "Ambientes"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Select__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, "Ambientes"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Select__WEBPACK_IMPORTED_MODULE_11__["default"], {
     labelId: "demo-simple-select-helper-label",
     id: "demo-simple-select-helper",
     value: ambiente_id || '',
@@ -106528,12 +106571,16 @@ var Formulario = function Formulario(props) {
     }, ambiente.name);
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormHelperText__WEBPACK_IMPORTED_MODULE_8__["default"], {
     error: !error_form.ambiente_id ? false : true
-  }, error_form.ambiente_id)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }, error_form.ambiente_id))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    item: true,
+    xs: 12,
+    sm: 12
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
     className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_InputLabel__WEBPACK_IMPORTED_MODULE_6__["default"], {
     id: "demo-simple-select-helper-label",
     error: !error_form.sensor_id ? false : true
-  }, "Sensor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Select__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, "Sensor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Select__WEBPACK_IMPORTED_MODULE_11__["default"], {
     labelId: "demo-simple-select-helper-label",
     id: "demo-simple-select-helper",
     value: ambiente.sensors ? sensor_id || '' : '',
@@ -106561,7 +106608,11 @@ var Formulario = function Formulario(props) {
     }, sensor.name);
   }) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormHelperText__WEBPACK_IMPORTED_MODULE_8__["default"], {
     error: !error_form.sensor_id ? false : true
-  }, error_form.sensor_id)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }, error_form.sensor_id))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    item: true,
+    xs: 12,
+    sm: 12
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
     className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_3__["default"], {
     id: "date",
@@ -106574,27 +106625,34 @@ var Formulario = function Formulario(props) {
       shrink: true
     },
     disabled: state_form === 'borrar' || state_form === 'editar' ? true : false
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-row margin-button"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-6"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    item: true,
+    xs: 6,
+    sm: 6
   }, state_form === 'crear' || state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     variant: "contained",
     color: "primary",
-    onClick: guardar
+    onClick: guardar,
+    className: classes.formButton
   }, "Guardar") : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     variant: "contained",
     color: "primary",
     onClick: function onClick() {
       return borrar(id);
-    }
-  }, "Borrar")) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-6"
+    },
+    className: classes.formButton
+  }, "Borrar")) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    item: true,
+    xs: 6,
+    sm: 6
   }, state_form === 'editar' || state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     variant: "contained",
     color: "inherit",
-    onClick: cancelar
-  }, "Cancelar") : '')))))));
+    onClick: cancelar,
+    className: classes.formButton
+  }, "Cancelar") : ''), error_form && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+    className: "text-danger"
+  }, "Existe un registro vinculado.")))));
 };
 
 var mapStateToProps = function mapStateToProps(_ref) {
@@ -107282,10 +107340,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_MenuItem__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/MenuItem */ "./node_modules/@material-ui/core/esm/MenuItem/index.js");
 /* harmony import */ var _material_ui_core_FormHelperText__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/FormHelperText */ "./node_modules/@material-ui/core/esm/FormHelperText/index.js");
 /* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
-/* harmony import */ var _material_ui_core_Select__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/Select */ "./node_modules/@material-ui/core/esm/Select/index.js");
-/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
-/* harmony import */ var _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../actions/sensorsActions */ "./resources/js/actions/sensorsActions.js");
-/* harmony import */ var _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../actions/ambientesActions */ "./resources/js/actions/ambientesActions.js");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/index.js");
+/* harmony import */ var _material_ui_core_Select__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Select */ "./node_modules/@material-ui/core/esm/Select/index.js");
+/* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
+/* harmony import */ var _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../actions/sensorsActions */ "./resources/js/actions/sensorsActions.js");
+/* harmony import */ var _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../actions/ambientesActions */ "./resources/js/actions/ambientesActions.js");
 
 
 
@@ -107299,16 +107358,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var agregar = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_11__["agregar"],
-    editar = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_11__["editar"],
-    borrar = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_11__["borrar"],
-    cambioSensorName = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_11__["cambioSensorName"],
-    cambioSensorOutput = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_11__["cambioSensorOutput"],
-    cambioSensorAmbiente = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_11__["cambioSensorAmbiente"],
-    traerTodosPorAmbiente = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_11__["traerTodosPorAmbiente"],
-    cancelar = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_11__["cancelar"];
-var ambienteTraerUno = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_12__["traerUno"],
-    ambientesTraerTodos = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_12__["traerTodos"];
+
+var agregar = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_12__["agregar"],
+    editar = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_12__["editar"],
+    borrar = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_12__["borrar"],
+    cambioSensorName = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_12__["cambioSensorName"],
+    cambioSensorOutput = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_12__["cambioSensorOutput"],
+    cambioSensorAmbiente = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_12__["cambioSensorAmbiente"],
+    traerTodosPorAmbiente = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_12__["traerTodosPorAmbiente"],
+    cancelar = _actions_sensorsActions__WEBPACK_IMPORTED_MODULE_12__["cancelar"];
+var ambienteTraerUno = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_13__["traerUno"],
+    ambientesTraerTodos = _actions_ambientesActions__WEBPACK_IMPORTED_MODULE_13__["traerTodos"];
 
 var Formulario = function Formulario(props) {
   var _props$ambientesReduc = props.ambientesReducer,
@@ -107369,17 +107429,22 @@ var Formulario = function Formulario(props) {
 
   var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__["makeStyles"])(function (theme) {
     return {
-      formControl: {
-        margin: theme.spacing(0),
-        marginBottom: 35,
+      root: {
+        flexGrow: 1,
         width: "100%"
+      },
+      formControl: {
+        width: "100%"
+      },
+      formButton: {
+        marginTop: 20
       }
     };
   });
   var classes = useStyles();
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card transparent"
-  }, loading || !ambiente.inputs ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_10__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, loading || !ambiente.inputs ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_11__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card-header"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "row mt-2"
@@ -107389,14 +107454,20 @@ var Formulario = function Formulario(props) {
     className: ambiente.sensors.length >= ambiente.inputs ? "col col-md-6 center color-alert" : "col col-md-6 center"
   }, sensors_ambiente ? sensors_ambiente.length + " / " + ambiente.inputs : ''))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card-body"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_8__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-row"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: classes.root
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    container: true,
+    spacing: 3
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    item: true,
+    xs: 12
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
     className: classes.formControl
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_InputLabel__WEBPACK_IMPORTED_MODULE_5__["default"], {
     id: "demo-simple-select-helper-label",
     error: !error_form.ambiente_id ? false : true
-  }, "Ambientes"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Select__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }, "Ambientes"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Select__WEBPACK_IMPORTED_MODULE_10__["default"], {
     labelId: "demo-simple-select-helper-label",
     id: "demo-simple-select-helper",
     value: ambiente ? ambiente.id || '' : getId || ambiente_id || getId,
@@ -107411,8 +107482,10 @@ var Formulario = function Formulario(props) {
     }, ambiente.name);
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormHelperText__WEBPACK_IMPORTED_MODULE_7__["default"], {
     error: !error_form.ambiente_id ? false : true
-  }, error_form.ambiente_id)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    className: classes.formControl
+  }, error_form.ambiente_id))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    item: true,
+    xs: 12,
+    sm: 12
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
     id: "standard-basic",
     label: "Nombre",
@@ -107423,8 +107496,10 @@ var Formulario = function Formulario(props) {
     helperText: error_form.name,
     error: !error_form.name ? false : true,
     disabled: state_form === 'borrar' ? true : false
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    className: classes.formControl
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    item: true,
+    xs: 12,
+    sm: 12
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
     id: "standard-basic",
     label: "Input",
@@ -107435,28 +107510,34 @@ var Formulario = function Formulario(props) {
     helperText: error_form.output,
     error: !error_form.name ? false : true,
     disabled: state_form === 'borrar' ? true : false
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-row margin-button"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-6"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    item: true,
+    xs: 6,
+    sm: 6
   }, state_form === 'crear' || state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     variant: "contained",
     color: "primary",
     onClick: guardar,
-    disabled: sensors_ambiente.length >= ambiente.inputs && state_form == 'crear' ? true : false
+    className: classes.formButton
   }, "Guardar") : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     variant: "contained",
     color: "primary",
-    onClick: eliminar
-  }, "Borrar")) : '', error_form && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
-    className: "text-danger"
-  }, "Existe un registro vinculado.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-6"
+    onClick: function onClick() {
+      return borrar(id);
+    },
+    className: classes.formButton
+  }, "Borrar")) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    item: true,
+    xs: 6,
+    sm: 6
   }, state_form === 'editar' || state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     variant: "contained",
     color: "inherit",
-    onClick: cancelar
-  }, "Cancelar") : '')))))));
+    onClick: cancelar,
+    className: classes.formButton
+  }, "Cancelar") : ''), error_form && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+    className: "text-danger"
+  }, "Existe un registro vinculado."))))));
 };
 
 var mapStateToProps = function mapStateToProps(_ref) {
@@ -107753,7 +107834,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/TextField */ "./node_modules/@material-ui/core/esm/TextField/index.js");
 /* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js");
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/index.js");
-/* harmony import */ var _material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/index.js");
 /* harmony import */ var _General_Spinner__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../General/Spinner */ "./resources/js/components/General/Spinner.js");
 /* harmony import */ var _actions_usersActions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../actions/usersActions */ "./resources/js/actions/usersActions.js");
 
@@ -107807,10 +107888,12 @@ var Formulario = function Formulario(props) {
 
   var useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__["makeStyles"])(function (theme) {
     return {
-      formControl: {
-        margin: theme.spacing(0),
-        marginBottom: 35,
+      root: {
+        flexGrow: 1,
         width: "100%"
+      },
+      formButton: {
+        marginTop: 20
       }
     };
   });
@@ -107825,10 +107908,14 @@ var Formulario = function Formulario(props) {
     className: "col col-md-6 card-agregar"
   }, state_form === 'crear' ? 'AGREGAR USUARIO' : '', state_form === 'editar' ? 'MODIFICAR USUARIO' : '', state_form === 'borrar' ? 'ELIMINAR USUARIO' : ''))), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_General_Spinner__WEBPACK_IMPORTED_MODULE_6__["default"], null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card-body"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_5__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-row"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    className: classes.formControl
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: classes.root
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    container: true,
+    spacing: 3
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    item: true,
+    xs: 12
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
     id: "standard-basic",
     label: "Nombre",
@@ -107839,8 +107926,10 @@ var Formulario = function Formulario(props) {
     helperText: error_form.name,
     error: !error_form.name ? false : true,
     disabled: state_form === 'borrar' ? true : false
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    className: classes.formControl
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    item: true,
+    xs: 12,
+    sm: 6
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
     label: "Email",
     type: "email",
@@ -107850,8 +107939,10 @@ var Formulario = function Formulario(props) {
     helperText: error_form.email,
     error: !error_form.email ? false : true,
     disabled: state_form === 'borrar' ? true : false
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_FormControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    className: classes.formControl
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    item: true,
+    xs: 12,
+    sm: 6
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_TextField__WEBPACK_IMPORTED_MODULE_2__["default"], {
     id: "standard-basic",
     label: "Password",
@@ -107862,29 +107953,34 @@ var Formulario = function Formulario(props) {
     helperText: error_form.password,
     error: !error_form.password ? false : true,
     disabled: state_form === 'borrar' ? true : false
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-row margin-button"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-6"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    item: true,
+    xs: 6,
+    sm: 6
   }, state_form === 'crear' || state_form === 'editar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     variant: "contained",
     color: "primary",
-    onClick: guardar
+    onClick: guardar,
+    className: classes.formButton
   }, "Guardar") : '', state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     variant: "contained",
     color: "primary",
     onClick: function onClick() {
       return borrar(id);
-    }
-  }, "Borrar"), error_form && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
-    className: "text-danger"
-  }, "Existe un registro vinculado.")) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "form-group col-md-6"
+    },
+    className: classes.formButton
+  }, "Borrar")) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    item: true,
+    xs: 6,
+    sm: 6
   }, state_form === 'editar' || state_form === 'borrar' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     variant: "contained",
     color: "inherit",
-    onClick: cancelar
-  }, "Cancelar") : ''))))));
+    onClick: cancelar,
+    className: classes.formButton
+  }, "Cancelar") : ''), error_form && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+    className: "text-danger"
+  }, "Existe un registro vinculado.")))));
 };
 
 var mapStateToProps = function mapStateToProps(reducers) {
