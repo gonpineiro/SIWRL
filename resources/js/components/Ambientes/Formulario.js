@@ -20,6 +20,7 @@ const Formulario = (props) => {
       cambioAmbienteName,
       cambioAmbienteCodigo,
       cambioAmbienteInputs,
+      loading,
       borrar,
       agregar,
       editar,
@@ -60,93 +61,110 @@ const Formulario = (props) => {
 
 
    return (
-      <FormControl >
-         <div className="form-row">
-
-            <FormControl className={classes.formControl}>
-               <TextField
-                  id="standard-basic"
-                  label="Nombre"
-                  type="text"
-                  className="form-control"
-                  value={name || ''}
-                  onChange={handleCambioAmbienteName}
-                  helperText={error_form.name}
-                  error={!error_form.name ? false : true}
-                  disabled={state_form === 'borrar' ? true : false}
-               />
-            </FormControl>
-
-            <FormControl className={classes.formControl}>
-               <TextField
-                  id="standard-basic"
-                  label="Código"
-                  type="number"
-                  className="form-control"
-                  value={codigo || ''}
-                  onChange={handleCambioAmbienteCodigo}
-                  helperText={error_form.codigo}
-                  error={!error_form.codigo ? false : true}
-                  disabled={state_form === 'borrar' ? true : false}
-               />
-            </FormControl>
-
-            <FormControl className={classes.formControl}>
-               <TextField
-                  id="standard-basic"
-                  label="Inputs"
-                  type="number"
-                  className="form-control"
-                  value={inputs || ''}
-                  onChange={handleCambioAmbienteInputs}
-                  helperText={error_form.inputs}
-                  error={!error_form.inputs ? false : true}
-                  disabled={state_form === 'borrar' ? true : false}
-               />
-            </FormControl>
-
-            <div className="form-row margin-button">
-               <div className="form-group col-md-6">
-                  {state_form === 'crear' || state_form === 'editar'
-                     ?
-                     <Button
-                        variant="contained"
-                        color="primary"
-                        onClick={guardar}
-                     >
-                        Guardar
-                     </Button> : ''}
-                  {state_form === 'borrar'
-                     ?
-                     <div>
-                        <Button
-                           variant="contained"
-                           color="primary"
-                           onClick={() => borrar(id)}
-                        >
-                           Borrar
-                        </Button>
+      <div className="card">
+         {loading ? <Spinner /> :
+            <div>
+               <div className="card-header">
+                  <div className="row mt-2">
+                     <div className="col col-md-6 card-agregar" >
+                        {state_form === 'crear' ? 'AGREGAR AMBIENTE' : ''}
+                        {state_form === 'editar' ? 'MODIFICAR AMBIENTE' : ''}
+                        {state_form === 'borrar' ? 'ELIMINAR AMBIENTE' : ''}
                      </div>
-                     : ''}
-                  {error_form && <small className="text-danger">Existe un registro vinculado.</small>}
+                  </div>
+               </div>
+               <div className="card-body">
+                  <FormControl >
+                     <div className="form-row">
 
-               </div >
+                        <FormControl className={classes.formControl}>
+                           <TextField
+                              id="standard-basic"
+                              label="Nombre"
+                              type="text"
+                              className="form-control"
+                              value={name || ''}
+                              onChange={handleCambioAmbienteName}
+                              helperText={error_form.name}
+                              error={!error_form.name ? false : true}
+                              disabled={state_form === 'borrar' ? true : false}
+                           />
+                        </FormControl>
 
-               <div className="form-group col-md-6">
-                  {state_form === 'editar' || state_form === 'borrar'
-                     ?
-                     <Button
-                        variant="contained"
-                        color="inherit"
-                        onClick={cancelar}
-                     >
-                        Cancelar
-                     </Button> : ''}
-               </div >
-            </div>
+                        <FormControl className={classes.formControl}>
+                           <TextField
+                              id="standard-basic"
+                              label="Código"
+                              type="number"
+                              className="form-control"
+                              value={codigo || ''}
+                              onChange={handleCambioAmbienteCodigo}
+                              helperText={error_form.codigo}
+                              error={!error_form.codigo ? false : true}
+                              disabled={state_form === 'borrar' ? true : false}
+                           />
+                        </FormControl>
 
-         </div>
-      </FormControl>
+                        <FormControl className={classes.formControl}>
+                           <TextField
+                              id="standard-basic"
+                              label="Inputs"
+                              type="number"
+                              className="form-control"
+                              value={inputs || ''}
+                              onChange={handleCambioAmbienteInputs}
+                              helperText={error_form.inputs}
+                              error={!error_form.inputs ? false : true}
+                              disabled={state_form === 'borrar' ? true : false}
+                           />
+                        </FormControl>
+
+                        <div className="form-row margin-button">
+                           <div className="form-group col-md-6">
+                              {state_form === 'crear' || state_form === 'editar'
+                                 ?
+                                 <Button
+                                    variant="contained"
+                                    color="primary"
+                                    onClick={guardar}
+                                 >
+                                    Guardar
+                                    </Button> : ''}
+                              {state_form === 'borrar'
+                                 ?
+                                 <div>
+                                    <Button
+                                       variant="contained"
+                                       color="primary"
+                                       onClick={() => borrar(id)}
+                                    >
+                                       Borrar
+                                       </Button>
+                                 </div>
+                                 : ''}
+                              {error_form && <small className="text-danger">Existe un registro vinculado.</small>}
+
+                           </div >
+
+                           <div className="form-group col-md-6">
+                              {state_form === 'editar' || state_form === 'borrar'
+                                 ?
+                                 <Button
+                                    variant="contained"
+                                    color="inherit"
+                                    onClick={cancelar}
+                                 >
+                                    Cancelar
+                                    </Button> : ''}
+                           </div >
+                        </div>
+
+                     </div>
+                  </FormControl>
+
+               </div>
+            </div>}
+      </div>
    );
 }
 

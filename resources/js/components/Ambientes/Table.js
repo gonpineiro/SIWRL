@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 import MenuRow from '../General/MenuRow';
+import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
 
 import * as ambientesActions from '../../actions/ambientesActions'
 import * as sensorsActions from '../../actions/sensorsActions'
@@ -10,9 +11,11 @@ const { traerUno, traerUnoBorrar } = ambientesActions;
 const { traerTodosPorAmbiente } = sensorsActions;
 
 const Table = (props) => {
-  const { 
-    ambientesReducer: { ambientes }, 
-    traerTodosPorAmbiente
+  
+  const {
+    ambientesReducer: { ambientes },
+    traerTodosPorAmbiente,
+    goBack,
   } = props
 
   const addRow = () => ambientes.map((ambiente, key) => (
@@ -38,7 +41,16 @@ const Table = (props) => {
   ))
 
   return (
+
     <div>
+      <div className="row mt-2">
+        <div className="col col-md-6">
+          <h4>Lista de ambientes</h4>
+        </div>
+        <div className="col col-md-6 text-derecha">
+          <KeyboardReturnIcon fontSize="large" onClick={goBack} />
+        </div>
+      </div>
       <table className="table table-hover">
         <thead>
           <tr>
@@ -62,8 +74,8 @@ const mapStateToProps = ({ sensorsReducer, ambientesReducer }) => {
 
 const mapDispatchToProps = {
   traerTodosPorAmbiente,
-  traerUno, 
-  traerUnoBorrar 
+  traerUno,
+  traerUnoBorrar
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Table);
