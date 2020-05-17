@@ -1,11 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import MenuRow from '../General/MenuRow';
+import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
 
 import * as marcasActions from '../../actions/marcasActions'
 
 const Table = (props) => {
-  const { marcas } = props
+  console.log(props)
+  const { marcas, goBack } = props
 
   const addRow = () => marcas.map((marca, key) => (
     <tr key={key}>
@@ -22,6 +24,14 @@ const Table = (props) => {
 
   return (
     <div>
+      <div className="row mt-2">
+        <div className="col col-md-6">
+          <h4>Lista de marcas</h4>
+        </div>
+        <div className="col col-md-6 text-derecha">
+          <KeyboardReturnIcon fontSize="large" onClick={goBack} className="link"/>
+        </div>
+      </div>
       <table className="table table-hover">
         <thead>
           <tr>
@@ -37,8 +47,6 @@ const Table = (props) => {
   );
 }
 
-const mapStateToProps = (reducers) => {
-  return reducers.marcasReducer
-}
+const mapStateToProps = (reducers) => reducers.marcasReducer
 
 export default connect(mapStateToProps, marcasActions)(Table);
