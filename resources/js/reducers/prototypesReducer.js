@@ -7,6 +7,7 @@ import {
   ERROR_FORM,
   CAMBIO_ESTADO_FORM,
   CAMBIAR_ESTADO_DETALLE,
+  TRAER_TODOS_MONITORS,
 
   CAMBIO_PROTOTYPE_ID,
   CAMBIO_PROTOTYPE_NAME,
@@ -28,6 +29,7 @@ import {
 const INITIAL_STATE = {
   prototypes: [],
   prototype: [],
+  monitors: [],
   cantidad_stepper: '',
   loading: false,
   loading_stepper: false,
@@ -235,6 +237,12 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         loading: true,
         state_form: 'detalle',
+      };
+
+      case TRAER_TODOS_MONITORS:
+      return {
+        ...state,
+        monitors: action.payload,
       };
 
     default: return state

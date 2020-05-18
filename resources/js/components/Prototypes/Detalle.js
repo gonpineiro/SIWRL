@@ -7,31 +7,58 @@ import Complementaria from './Componentes/Complementaria';
 import Final from './Componentes/Final';
 import Informacion from './Componentes/Informacion';
 import StepperPrototype from './General/StepperPrototype'
+import ChartJs from './General/ChartJs';
 
 import * as protoypesActions from '../../actions/protoypesActions'
 
-const { traerDetalleInterval, cancelar } = protoypesActions
+const { traerDetalleInterval, cancelar, traerTodosMonitors } = protoypesActions
 
 const Detalle = (props) => {
 
     const {
         cancelar,
         traerDetalleInterval,
+        traerTodosMonitors,
         prototypesReducer: {
+            prototype: { id },
             prototype,
             loading,
+            monitors,
         }
     } = props
 
     if (loading && !prototype.length) return <Spinner />
 
     useEffect(() => {
-        const intervalPrototype = setInterval(() => traerDetalleInterval(prototype.id), 5000)
+        traerTodosMonitors(id, 'temp')
+        const intervalPrototype = setInterval(() => traerDetalleInterval(id), 5000)
         return () => {
             clearInterval(intervalPrototype)
             cancelar()
         }
     }, []);
+
+    const getDataToChart = () => {
+        const arrayTemp = []
+
+        Object.keys(monitors).map((monitorKey, key) => {
+            arrayTemp.push({
+                x: key,
+                y: monitors[monitorKey].temp,
+            })
+        })
+        return arrayTemp
+    }
+
+
+    const arrayHume = []
+
+    Object.keys(monitors).map((monitorKey, key) => {
+        arrayHume.push({
+            x: key,
+            y: monitors[monitorKey].hume,
+        })
+    })
 
     return (
         <div className="container col-md-9">
@@ -63,7 +90,7 @@ const Detalle = (props) => {
             <div className="row mt-2">
                 <div className="col col-md-12">
                     <div className="card transparent">
-                    <StepperPrototype />
+                        <StepperPrototype />
                     </div>
                 </div>
             </div>
@@ -72,7 +99,12 @@ const Detalle = (props) => {
             <div className="row mt-2">
                 <div className="col col-md-12">
                     <div className="card transparent">
-                    //
+                        <ChartJs
+                            title='Temperatura'
+                            axisY='Temperatura (C°)'
+                            xValueFormatString="Hace ## Horas"
+                            array={getDataToChart()}
+                        />
                     </div>
                 </div>
             </div>
@@ -87,6 +119,7 @@ const mapStateToProps = (prototypesReducer) => prototypesReducer
 const mapDispatchToProps = {
     cancelar,
     traerDetalleInterval,
+    traerTodosMonitors
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Detalle);

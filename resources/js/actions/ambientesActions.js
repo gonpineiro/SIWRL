@@ -43,7 +43,6 @@ export const traerUno = (id) => async (dispatch) => {
     dispatch({
         type: LOADING
     })
-    console.log('asd')
 
     dispatch({
         type: CAMBIO_ESTADO_FORM,

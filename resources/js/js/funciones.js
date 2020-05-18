@@ -20,6 +20,5 @@ export const obtenerFechaHoy = () => {
     const month = date.getMonth() + 1
     const day = date.getDate()
     const fecha_hoy =  year + '-' + month + '-' + day
-    console.log(fecha_hoy)
     return fecha_hoy
 }

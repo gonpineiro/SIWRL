@@ -49,7 +49,7 @@ const Table = (props) => {
 
   const addRowTable = () => prototypes.map((prototype, key) => (
     <tr key={key} >
-      {console.log(prototype)}
+      
       <td>{prototype.id}</td>
       <td>{
         <MenuRow

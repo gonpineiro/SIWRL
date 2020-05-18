@@ -7,6 +7,7 @@ import {
     ERROR_FORM,
     CAMBIO_ESTADO_FORM,
     CAMBIAR_ESTADO_DETALLE,
+    TRAER_TODOS_MONITORS,
 
     CAMBIO_PROTOTYPE_ID,
     CAMBIO_PROTOTYPE_NAME,
@@ -173,7 +174,6 @@ export const editar = (nuevo_prototype, id) => async (dispatch) => {
     dispatch({
         type: LOADING
     })
-    console.log(nuevo_prototype)
 
     try {
 
@@ -254,7 +254,7 @@ export const traerTabla = () => (dispatch) => {
 }
 
 export const traerFormulario = () => (dispatch) => {
-    
+
     dispatch({
         type: CAMBIO_ESTADO_FORM,
         payload: 'crear'
@@ -330,5 +330,42 @@ export const sumarEstadoStepper = (nuevo_prototype, id) => async (dispatch) => {
             type: ERROR_FORM,
             payload: errors
         });
+    }
+}
+
+export const traerTodosMonitors = (id, caso) => async (dispatch) => {
+
+    try {
+        const response = await axios.get(URL + 'monitor/prototype/' + id)
+        const monitors = response.data
+
+        const horas = Object.keys(monitors)
+
+        var monitor_temp = {}
+
+        horas.map((hora) => {
+            var temp = 0, hume = 0.
+            monitors[hora].map((monitor) => {
+                temp = (temp + monitor.temp)
+                hume = (hume + monitor.hume)
+            })
+
+            monitor_temp[hora] = {
+                temp: Math.floor(temp / monitors[hora].length),
+                hume: Math.floor(hume / monitors[hora].length),
+                time: hora
+            }
+
+        })
+        console.log(monitors)
+
+
+        dispatch({
+            type: TRAER_TODOS_MONITORS,
+            payload: monitor_temp
+        })
+
+    } catch (error) {
+        console.log(error)
     }
 }

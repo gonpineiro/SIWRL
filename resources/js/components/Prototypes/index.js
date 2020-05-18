@@ -55,6 +55,7 @@ class Prototypes extends Component {
 
 		return <Table goBack={goBack} />
 	}
+	
 	ponerFormulario = () => <Formulario goBack={this.props.history.goBack} />
 
 	detallePrototype = () => <Detalle />
