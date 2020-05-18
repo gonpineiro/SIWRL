@@ -7,6 +7,7 @@ import {
     ERROR_FORM,
     CAMBIO_ESTADO_FORM,
     CAMBIAR_ESTADO_DETALLE,
+    CAMBIAR_STATE_CHART,
     TRAER_TODOS_MONITORS,
 
     CAMBIO_PROTOTYPE_ID,
@@ -333,7 +334,7 @@ export const sumarEstadoStepper = (nuevo_prototype, id) => async (dispatch) => {
     }
 }
 
-export const traerTodosMonitors = (id, caso) => async (dispatch) => {
+export const traerTodosMonitors = (id) => async (dispatch) => {
 
     try {
         const response = await axios.get(URL + 'monitor/prototype/' + id)
@@ -357,9 +358,8 @@ export const traerTodosMonitors = (id, caso) => async (dispatch) => {
             }
 
         })
-        console.log(monitors)
-
-
+        //console.log(monitors)
+        
         dispatch({
             type: TRAER_TODOS_MONITORS,
             payload: monitor_temp
@@ -368,4 +368,12 @@ export const traerTodosMonitors = (id, caso) => async (dispatch) => {
     } catch (error) {
         console.log(error)
     }
+}
+
+export const cambiarChartTemp = (state_chart) => async (dispatch) => {
+
+    dispatch({
+        type: CAMBIAR_STATE_CHART,
+        payload: state_chart
+    })
 }

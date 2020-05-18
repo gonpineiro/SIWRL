@@ -7,6 +7,7 @@ import {
   ERROR_FORM,
   CAMBIO_ESTADO_FORM,
   CAMBIAR_ESTADO_DETALLE,
+  CAMBIAR_STATE_CHART,
   TRAER_TODOS_MONITORS,
 
   CAMBIO_PROTOTYPE_ID,
@@ -20,6 +21,7 @@ import {
   CAMBIO_PROTOTYPE_FECHA_ESTADO_D,
   CAMBIO_PROTOTYPE_FECHA_ESTADO_E,
   CAMBIO_PROTOTYPE_CANTIDAD,
+  
 
   RECARGA,
   CANCELAR,
@@ -36,7 +38,8 @@ const INITIAL_STATE = {
   error: '',
   error_form: '',
   recargar_table: false,
-  state_form: 'tabla' //MODO GUARDAR 
+  state_form: 'tabla', //MODO GUARDAR 
+  state_chart: 'hume'
 }
 
 export default (state = INITIAL_STATE, action) => {
@@ -239,10 +242,16 @@ export default (state = INITIAL_STATE, action) => {
         state_form: 'detalle',
       };
 
-      case TRAER_TODOS_MONITORS:
+    case TRAER_TODOS_MONITORS:
       return {
         ...state,
         monitors: action.payload,
+      };
+
+    case CAMBIAR_STATE_CHART:
+      return {
+        ...state,
+        state_chart: action.payload,
       };
 
     default: return state

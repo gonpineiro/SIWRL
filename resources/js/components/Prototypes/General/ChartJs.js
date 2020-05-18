@@ -8,6 +8,8 @@ const ChartJs = (props) => {
         axisY,
         xValueFormatString,
         array,
+        min,
+        max
     } = props
 
     const options = {
@@ -20,8 +22,8 @@ const ChartJs = (props) => {
         axisY: {
             title: axisY,
             includeZero: false,
-            minimum: 10,
-            maximum: 50,
+            minimum: min,
+            maximum: max,
         },
         axisX: {
             includeZero: false,
@@ -40,9 +42,7 @@ const ChartJs = (props) => {
 
     return (
         <div>
-            <CanvasJSChart options={options}
-            /* onRef={ref => this.chart = ref} */
-            />
+            <CanvasJSChart options={options} />
         </div>
     );
 

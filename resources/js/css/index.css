@@ -108,9 +108,6 @@ table {
     color: #5e2129;
 }
 
-.box {
-    margin: 10px;
-}
 
 .avatar {
     font-family: 'Roboto Mono', monospace;
@@ -126,4 +123,13 @@ table {
 
 .input-stepper{
     width: 50%;
+}
+
+.box {
+    display: flex;
+}
+
+.chart-title {    
+    margin-left: 10px;
+    margin-right: 10px;
 }

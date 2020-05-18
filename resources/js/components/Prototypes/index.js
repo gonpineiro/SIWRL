@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
 import Table from './Table'
 import Formulario from './Formulario'
 import Detalle from './Detalle'
@@ -55,7 +54,7 @@ class Prototypes extends Component {
 
 		return <Table goBack={goBack} />
 	}
-	
+
 	ponerFormulario = () => <Formulario goBack={this.props.history.goBack} />
 
 	detallePrototype = () => <Detalle />
