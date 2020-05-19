@@ -8,17 +8,17 @@ import Complementaria from './Componentes/Complementaria';
 import Final from './Componentes/Final';
 import Informacion from './Componentes/Informacion';
 import StepperPrototype from './General/StepperPrototype'
-import ChartJs from './General/ChartJs';
+import AreaChart from './General/AreaChart';
 import Button from '@material-ui/core/Button';
 
 import * as protoypesActions from '../../actions/protoypesActions'
 
-const { 
-    traerDetalleInterval, 
-    cancelar, 
-    traerTodosMonitors, 
-    cambiarChartTemp, 
-    traerTodosMonitorsInterval 
+const {
+    traerDetalleInterval,
+    cancelar,
+    traerTodosMonitors,
+    cambiarChart,
+    cambiarChartFormat,
 } = protoypesActions
 
 const Detalle = (props) => {
@@ -26,9 +26,9 @@ const Detalle = (props) => {
     const {
         cancelar,
         traerDetalleInterval,
-        traerTodosMonitorsInterval,
         traerTodosMonitors,
-        cambiarChartTemp,
+        cambiarChart,
+        cambiarChartFormat,
         prototypesReducer: {
             prototype: {
                 id,
@@ -39,15 +39,16 @@ const Detalle = (props) => {
             loading_chart,
             monitors,
             state_chart,
+            format_chart
         }
     } = props
 
     if (loading && !prototype.length) return <Spinner />
-    
+
     useEffect(() => {
-        traerTodosMonitors(id, sensor.output)
+        traerTodosMonitors(id, sensor.output, true)
         const intervalPrototype = setInterval(() => traerDetalleInterval(id), 5000)
-        const intervalMonitor = setInterval(() => traerTodosMonitorsInterval(id, sensor.output), 20000)
+        const intervalMonitor = setInterval(() => traerTodosMonitors(id, sensor.output), 20000)
         return () => {
             clearInterval(intervalPrototype)
             clearInterval(intervalMonitor)
@@ -97,7 +98,12 @@ const Detalle = (props) => {
 
     }
 
-    const handleCambiarChart = (state_chart) => cambiarChartTemp(state_chart)
+    const handleCambiarChart = (state_chart) => cambiarChart(state_chart)
+
+    const handleCambiarFormatChart = (format_chart) => {
+        cambiarChartFormat(format_chart)
+        traerTodosMonitors(id, sensor.output, true)
+    }
 
     const useStyles = makeStyles((theme) => ({
         root: {
@@ -147,42 +153,71 @@ const Detalle = (props) => {
 
             <div className="row mt-2">
                 <div className="col col-md-12">
-                    {loading_chart ? <Spinner /> : 
-                    <div className="card transparent center">
-                        <div className={classes.root}>
-                            <Button
-                                variant="contained"
-                                onClick={() => handleCambiarChart('temp')}
-                                disabled={state_chart === 'temp'}
-                            >
-                                Temperatura
-                            </Button>
-                            <Button
-                                variant="contained"
-                                onClick={() => handleCambiarChart('hume')}
-                                disabled={state_chart === 'hume'}
-                            >
-                                Humedad
+                    {loading_chart ? <Spinner /> :
+                        <div className="card transparent center">
+                            <div className={classes.root}>
+                                <Button
+                                    variant="contained"
+                                    onClick={() => handleCambiarChart('temp')}
+                                    disabled={state_chart === 'temp'}
+                                >
+                                    Temperatura
                                 </Button>
-                            <Button
-                                variant="contained"
-                                onClick={() => handleCambiarChart('tierra')}
-                                disabled={state_chart === 'tierra'}
-                            >
-                                Tierra
+                                <Button
+                                    variant="contained"
+                                    onClick={() => handleCambiarChart('hume')}
+                                    disabled={state_chart === 'hume'}
+                                >
+                                    Humedad
                                 </Button>
-                        </div>
-                        <ChartJs
-                            title={state_chart === 'temp' ? 
-                            'Temperatura' : state_chart === 'hume' ? 
-                            'Humedad' : 'Humedad Tierra'}                            
-                            min={0}
-                            max={state_chart === 'temp' ? 50 : 100}
-                            axisY={state_chart === 'temp' ? 'Temperatura (C°)' : 'Humedad (%)'}
-                            xValueFormatString="Hace ## Horas"
-                            array={getDataToChart(state_chart)}
-                        />
-                    </div>}
+                                <Button
+                                    variant="contained"
+                                    onClick={() => handleCambiarChart('tierra')}
+                                    disabled={state_chart === 'tierra'}
+                                >
+                                    Tierra
+                                </Button>
+
+                                <Button
+                                    variant="contained"
+                                    onClick={() => handleCambiarFormatChart('h')}
+                                    disabled={format_chart === 'h'}
+                                >
+                                    Hora
+                                </Button>
+                                <Button
+                                    variant="contained"
+                                    onClick={() => handleCambiarFormatChart('d')}
+                                    disabled={format_chart === 'd'}
+                                >
+                                    Dia
+                                </Button>
+                                <Button
+                                    variant="contained"
+                                    onClick={() => handleCambiarFormatChart('m')}
+                                    disabled={format_chart === 'm'}
+                                >
+                                    Mes
+                                </Button>
+                            </div>
+                            <AreaChart
+                                title={state_chart === 'temp' ?
+                                    'Temperatura' : state_chart === 'hume' ?
+                                        'Humedad' : 'Humedad Tierra'}
+                                minY={0}
+                                maxY={state_chart === 'temp' ? 50 : 100}
+
+                                minX={0}
+                                maxX={format_chart === 'h' ?
+                                    24 : format_chart === 'd' ?
+                                        30 : format_chart === 'm' ? 12 : ''}
+
+                                axisY={state_chart === 'temp'
+                                    ? 'Temperatura (C°)' : 'Humedad (%)'}
+                                xValueFormatString="Hace ## Horas"
+                                array={getDataToChart(state_chart)}
+                            />
+                        </div>}
                 </div>
             </div>
 
@@ -193,8 +228,8 @@ const Detalle = (props) => {
 const mapStateToProps = (prototypesReducer) => prototypesReducer
 
 const mapDispatchToProps = {
-    traerTodosMonitorsInterval,
-    cambiarChartTemp,
+    cambiarChart,
+    cambiarChartFormat,
     cancelar,
     traerDetalleInterval,
     traerTodosMonitors

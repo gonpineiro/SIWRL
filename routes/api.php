@@ -52,5 +52,8 @@ Route::post('/sensor', 'SensorController@store');
 Route::delete('/sensor/{id}', 'SensorController@destroy');
 
 
-Route::get('/monitor/prototype/{id}', 'MonitorController@indexPrototypeHora');
+Route::get('/monitor/prototype/hora/{id}', 'MonitorController@indexPrototypeHora');
+Route::get('/monitor/prototype/dia/{id}', 'MonitorController@indexPrototypeDay');
+Route::get('/monitor/prototype/mes/{id}', 'MonitorController@indexPrototypeMes');
+
 Route::post('/monitor', 'MonitorController@store');

@@ -8,8 +8,8 @@ export const ERROR_FORM = 'prototypes_error_form'
 export const CAMBIO_ESTADO_FORM = 'prototypes_cambio_estado_form'
 export const CAMBIAR_ESTADO_DETALLE = 'prototypes_cambio_estado_detalle'
 export const CAMBIAR_STATE_CHART = 'prototypes_cambio_state_chart'
+export const CAMBIAR_FORMAT_CHART = 'prototypes_cambio_format_chart'
 export const TRAER_TODOS_MONITORS = 'prototypes_traer_todos_monitors'
-
 
 export const CAMBIO_PROTOTYPE_ID = 'prototypes_cambio_prototype_id'
 export const CAMBIO_PROTOTYPE_NAME = 'prototypes_cambio_prototype_name'

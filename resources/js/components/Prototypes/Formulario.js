@@ -70,6 +70,16 @@ const Formulario = (props) => {
 
    const handleCambioPrototypeSensor = (event) => props.cambioPrototypeSensor(event.target.value);
 
+   const handleCancelar = () => {
+      ambientesCancelar() 
+      cancelar()
+   }  
+
+   const handleCancelarSensors = () => {
+      traerTodosPorAmbienteSensor(ambiente_id)
+      sensorsCancelar()
+   }
+
    const guardar = () => {
 
       const nuevo_prototype = {
@@ -88,16 +98,8 @@ const Formulario = (props) => {
 
    };
 
-   const cancelarAmbientes = () => ambientesCancelar()
-
-   const cancelarSensors = () => {
-      traerTodosPorAmbienteSensor(ambiente_id)
-      sensorsCancelar()
-   }
-
-   useEffect(() => {
-      if (ambiente_id) ambientesTraerUno(ambiente_id)
-
+   useEffect(() => { 
+      if (ambiente_id) ambientesTraerUno(ambiente_id) 
    }, []);
 
    const useStyles = makeStyles((theme) => ({
@@ -197,7 +199,7 @@ const Formulario = (props) => {
                                  className="transparent"
                               >
                                  <Link to="/ambientes">
-                                    <MenuItem value="" onClick={() => cancelarAmbientes()}>
+                                    <MenuItem value="" onClick={() => handleCancelar()}>
                                        <em
                                           className="link link-string"
                                        >
@@ -229,7 +231,7 @@ const Formulario = (props) => {
                                  className="transparent"
                               >
                                  <Link to={`/ambientes/sensor/${ambiente_id}`}>
-                                    <MenuItem value="" onClick={() => cancelarSensors()}>
+                                    <MenuItem value="" onClick={() => handleCancelarSensors()}>
                                        <em
                                           className="link link-string"
                                        >
@@ -298,7 +300,7 @@ const Formulario = (props) => {
                               <Button
                                  variant="contained"
                                  color="inherit"
-                                 onClick={cancelar}
+                                 onClick={() => handleCancelar()}
                                  className={classes.formButton}
                               >
                                  Cancelar

@@ -2,14 +2,16 @@ import React from 'react';
 import CanvasJSReact from '../../../js/canvasjs-2.3.2/canvasjs.react';
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
-const ChartJs = (props) => {
+const AreaChart = (props) => {
     const {
         title,
         axisY,
         xValueFormatString,
         array,
-        min,
-        max
+        minY,
+        maxY,
+        minX,
+        maxX
     } = props
 
     const options = {
@@ -22,13 +24,13 @@ const ChartJs = (props) => {
         axisY: {
             title: axisY,
             includeZero: false,
-            minimum: min,
-            maximum: max,
+            minimum: minY,
+            maximum: maxY,
         },
         axisX: {
             includeZero: false,
-            minimum: 0,
-            maximum: 23,
+            minimum: minX,
+            maximum: maxX,
         },
         data: [
             {
@@ -49,4 +51,4 @@ const ChartJs = (props) => {
 }
 
 
-export default ChartJs;
+export default AreaChart;

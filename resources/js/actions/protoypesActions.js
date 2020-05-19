@@ -9,6 +9,7 @@ import {
     CAMBIO_ESTADO_FORM,
     CAMBIAR_ESTADO_DETALLE,
     CAMBIAR_STATE_CHART,
+    CAMBIAR_FORMAT_CHART,
     TRAER_TODOS_MONITORS,
 
     CAMBIO_PROTOTYPE_ID,
@@ -335,36 +336,43 @@ export const sumarEstadoStepper = (nuevo_prototype, id) => async (dispatch) => {
     }
 }
 
-export const traerTodosMonitors = (id, output) => async (dispatch) => {
+export const traerTodosMonitors = (id, output, loading) => async (dispatch, getState) => {
+    const estado = getState()
+    const { prototypesReducer: { format_chart } } = estado
 
-    dispatch({
-        type: CHART_LOADING,
-        payload: true
-    })
+    if (loading) {
+        dispatch({
+            type: CHART_LOADING,
+            payload: true
+        })
+    }
 
     try {
-        const response = await axios.get(URL + 'monitor/prototype/' + id)
-        const monitors = response.data
+        const getStringUrl = (format_chart) => {
+            if (format_chart === 'h') return 'monitor/prototype/hora/'
+            if (format_chart === 'd') return 'monitor/prototype/dia/'
+            if (format_chart === 'm') return 'monitor/prototype/mes/'
+        }
 
-        const horas = Object.keys(monitors)
+        const response = await axios.get(URL + getStringUrl(format_chart) + id)
+        const monitors = response.data
 
         var monitorFinal = {}
 
-        horas.map((hora) => {
+        Object.keys(monitors).map((tiempo) => {
             var temp = 0, hume = 0, tierra = 0
-            monitors[hora].map((monitor) => {
+            monitors[tiempo].map((monitor) => {
                 temp = (temp + monitor.temp)
                 hume = (hume + monitor.hume)
-                tierra = (tierra + monitor['s'+output])
+                tierra = (tierra + monitor['s' + output])
             })
 
-            monitorFinal[hora] = {
-                temp: Math.floor(temp / monitors[hora].length),
-                hume: Math.floor(hume / monitors[hora].length),
-                tierra:  Math.floor(tierra / monitors[hora].length),
-                time: hora
+            monitorFinal[tiempo] = {
+                temp: Math.floor(temp / monitors[tiempo].length),
+                hume: Math.floor(hume / monitors[tiempo].length),
+                tierra: Math.floor(tierra / monitors[tiempo].length),
+                time: tiempo
             }
-
         })
 
         dispatch({
@@ -377,47 +385,18 @@ export const traerTodosMonitors = (id, output) => async (dispatch) => {
     }
 }
 
-export const traerTodosMonitorsInterval = (id, output) => async (dispatch) => {    
-
-    try {
-        const response = await axios.get(URL + 'monitor/prototype/' + id)
-        const monitors = response.data
-
-        const horas = Object.keys(monitors)
-
-        var monitorFinal = {}
-
-        horas.map((hora) => {
-            var temp = 0, hume = 0, tierra = 0
-            monitors[hora].map((monitor) => {
-                temp = (temp + monitor.temp)
-                hume = (hume + monitor.hume)
-                tierra = (tierra + monitor['s'+output])
-            })
-
-            monitorFinal[hora] = {
-                temp: Math.floor(temp / monitors[hora].length),
-                hume: Math.floor(hume / monitors[hora].length),
-                tierra:  Math.floor(tierra / monitors[hora].length),
-                time: hora
-            }
-
-        })
-
-        dispatch({
-            type: TRAER_TODOS_MONITORS,
-            payload: monitorFinal
-        })
-
-    } catch (error) {
-        console.log(error)
-    }
-}
-
-export const cambiarChartTemp = (state_chart) => async (dispatch) => {
+export const cambiarChart = (state_chart) => async (dispatch) => {
 
     dispatch({
         type: CAMBIAR_STATE_CHART,
         payload: state_chart
+    })
+}
+
+export const cambiarChartFormat = (format_chart) => async (dispatch) => {
+
+    dispatch({
+        type: CAMBIAR_FORMAT_CHART,
+        payload: format_chart
     })
 }

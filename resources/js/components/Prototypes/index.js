@@ -11,7 +11,7 @@ import * as ambientesActions from '../../actions/ambientesActions'
 import * as geneticasActions from '../../actions/geneticasActions'
 
 const { traerTodos: geneticasTraerTodos } = geneticasActions;
-const { traerTodos: ambientesTraerTodos } = ambientesActions;
+const { traerTodos: ambientesTraerTodos, cancelar: ambientesCancelar } = ambientesActions;
 const { traerTodos: prototypesTraerTodos } = prototypesActions
 
 class Prototypes extends Component {
@@ -19,12 +19,11 @@ class Prototypes extends Component {
 	async componentDidMount() {
 		const {
 			geneticasReducer: { geneticas },
-			prototypesReducer: { prototypes },
+			prototypesReducer: { prototypes, prototype },
 			ambientesReducer: { ambientes },
 			geneticasTraerTodos,
 			prototypesTraerTodos,
 			ambientesTraerTodos,
-
 		} = this.props
 
 		if (!prototypes.length) prototypesTraerTodos()
@@ -32,6 +31,11 @@ class Prototypes extends Component {
 		if (!geneticas.length) geneticasTraerTodos()
 
 		if (!ambientes.length) ambientesTraerTodos()
+	}
+
+	componentWillUnmount(){
+		const { ambientesCancelar } = this.props
+		ambientesCancelar()
 	}
 
 	ponerContenido = () => {
@@ -104,6 +108,7 @@ const mapStateToProps = ({ prototypesReducer, geneticasReducer, ambientesReducer
 };
 
 const mapDispatchToProps = {
+	ambientesCancelar,
 	geneticasTraerTodos,
 	ambientesTraerTodos,
 	prototypesTraerTodos

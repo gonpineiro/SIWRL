@@ -5,11 +5,18 @@ import Formulario from './Formulario'
 import Spinner from '../General/Spinner';
 
 import * as sensorsActions from '../../actions/sensorsActions'
-
 import * as ambientesActions from '../../actions/ambientesActions'
 
-const { traerTodos: ambientesTraerTodos, traerUno: ambientesTraerUno } = ambientesActions;
-const { traerTodosPorAmbiente: sensorstraerTodosPorAmbiente } = sensorsActions;
+const { 
+	traerTodos: ambientesTraerTodos, 
+	traerUno: ambientesTraerUno,
+	cancelar: ambientesCancelar 
+} = ambientesActions;
+
+const { 
+	traerTodosPorAmbiente: sensorstraerTodosPorAmbiente,
+	cancelar: sensorsCancelar
+} = sensorsActions;
 
 class Sensors extends Component {
 
@@ -30,6 +37,12 @@ class Sensors extends Component {
 		if (!ambiente.length) ambientesTraerUno(ambiente_id)
 	}
 
+	componentWillUnmount(){
+		const { ambientesCancelar, sensorsCancelar } = this.props
+		sensorsCancelar()
+		ambientesCancelar()
+	}
+
 	ponerContenido = () => {
 		const {
 			sensorstraerTodosPorAmbiente,
@@ -44,13 +57,7 @@ class Sensors extends Component {
 			match: { params: { id: getId } }
 		} = this.props
 
-		if (recargar_table) {
-			if (ambiente_id) {
-				sensorstraerTodosPorAmbiente(ambiente_id)
-			} else {
-				sensorstraerTodosPorAmbiente(getId)
-			}
-		}
+		if (recargar_table) (ambiente_id ? sensorstraerTodosPorAmbiente(ambiente_id) : sensorstraerTodosPorAmbiente(getId))	
 
 		if (loading && !sensors_ambiente.length) return <Spinner />
 
@@ -81,6 +88,8 @@ const mapStateToProps = ({ sensorsReducer, ambientesReducer }) => {
 }
 
 const mapDispatchToProps = {
+	sensorsCancelar,
+	ambientesCancelar,
 	ambientesTraerUno,
 	ambientesTraerTodos,
 	sensorstraerTodosPorAmbiente
