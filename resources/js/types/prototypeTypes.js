@@ -1,6 +1,7 @@
 export const TRAER_TODOS = 'prototypes_traer_todos'
 export const TRAER_UNO = 'prototypes_traer_uno'
 export const LOADING = 'prototypes_cargando'
+export const CHART_LOADING = 'prototypes_chart_loading'
 export const STEPPER_DETALLE_LOADING = 'prototypes_stepper_detalle_loading'
 export const ERROR = 'prototypes_error'
 export const ERROR_FORM = 'prototypes_error_form'
@@ -25,4 +26,3 @@ export const CAMBIO_PROTOTYPE_CANTIDAD = 'prototypes_cambio_prototype_cantidad'
 export const RECARGA = 'prototypes_recarga_prototypes'
 export const CANCELAR = 'prototypes_cancelar_prototypes'
 export const GUARDAR = 'prototypes_guardar_prototype'
-

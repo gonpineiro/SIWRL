@@ -13,31 +13,44 @@ import Button from '@material-ui/core/Button';
 
 import * as protoypesActions from '../../actions/protoypesActions'
 
-const { traerDetalleInterval, cancelar, traerTodosMonitors, cambiarChartTemp } = protoypesActions
+const { 
+    traerDetalleInterval, 
+    cancelar, 
+    traerTodosMonitors, 
+    cambiarChartTemp, 
+    traerTodosMonitorsInterval 
+} = protoypesActions
 
 const Detalle = (props) => {
 
     const {
         cancelar,
         traerDetalleInterval,
+        traerTodosMonitorsInterval,
         traerTodosMonitors,
         cambiarChartTemp,
         prototypesReducer: {
-            prototype: { id },
+            prototype: {
+                id,
+                sensor,
+            },
             prototype,
             loading,
+            loading_chart,
             monitors,
             state_chart,
         }
     } = props
 
     if (loading && !prototype.length) return <Spinner />
-
+    
     useEffect(() => {
-        traerTodosMonitors(id, 'temp')
+        traerTodosMonitors(id, sensor.output)
         const intervalPrototype = setInterval(() => traerDetalleInterval(id), 5000)
+        const intervalMonitor = setInterval(() => traerTodosMonitorsInterval(id, sensor.output), 20000)
         return () => {
             clearInterval(intervalPrototype)
+            clearInterval(intervalMonitor)
             cancelar()
         }
     }, []);
@@ -65,6 +78,17 @@ const Detalle = (props) => {
                 })
 
                 return arrayHume
+
+            case 'tierra':
+                const arrayTierra = []
+                Object.keys(monitors).map((monitorKey, key) => {
+                    arrayTierra.push({
+                        x: key,
+                        y: monitors[monitorKey].tierra,
+                    })
+                })
+
+                return arrayTierra
 
             default:
                 break;
@@ -123,6 +147,7 @@ const Detalle = (props) => {
 
             <div className="row mt-2">
                 <div className="col col-md-12">
+                    {loading_chart ? <Spinner /> : 
                     <div className="card transparent center">
                         <div className={classes.root}>
                             <Button
@@ -139,17 +164,25 @@ const Detalle = (props) => {
                             >
                                 Humedad
                                 </Button>
-                            <Button variant="contained" onClick={() => handleCambiarChart('hume')}>Tierra</Button>
+                            <Button
+                                variant="contained"
+                                onClick={() => handleCambiarChart('tierra')}
+                                disabled={state_chart === 'tierra'}
+                            >
+                                Tierra
+                                </Button>
                         </div>
                         <ChartJs
-                            title='Temperatura'
+                            title={state_chart === 'temp' ? 
+                            'Temperatura' : state_chart === 'hume' ? 
+                            'Humedad' : 'Humedad Tierra'}                            
                             min={0}
                             max={state_chart === 'temp' ? 50 : 100}
                             axisY={state_chart === 'temp' ? 'Temperatura (C°)' : 'Humedad (%)'}
                             xValueFormatString="Hace ## Horas"
                             array={getDataToChart(state_chart)}
                         />
-                    </div>
+                    </div>}
                 </div>
             </div>
 
@@ -160,6 +193,7 @@ const Detalle = (props) => {
 const mapStateToProps = (prototypesReducer) => prototypesReducer
 
 const mapDispatchToProps = {
+    traerTodosMonitorsInterval,
     cambiarChartTemp,
     cancelar,
     traerDetalleInterval,

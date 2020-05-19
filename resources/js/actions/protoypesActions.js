@@ -4,6 +4,7 @@ import {
     TRAER_UNO,
     LOADING,
     STEPPER_DETALLE_LOADING,
+    CHART_LOADING,
     ERROR_FORM,
     CAMBIO_ESTADO_FORM,
     CAMBIAR_ESTADO_DETALLE,
@@ -334,7 +335,12 @@ export const sumarEstadoStepper = (nuevo_prototype, id) => async (dispatch) => {
     }
 }
 
-export const traerTodosMonitors = (id) => async (dispatch) => {
+export const traerTodosMonitors = (id, output) => async (dispatch) => {
+
+    dispatch({
+        type: CHART_LOADING,
+        payload: true
+    })
 
     try {
         const response = await axios.get(URL + 'monitor/prototype/' + id)
@@ -342,27 +348,65 @@ export const traerTodosMonitors = (id) => async (dispatch) => {
 
         const horas = Object.keys(monitors)
 
-        var monitor_temp = {}
+        var monitorFinal = {}
 
         horas.map((hora) => {
-            var temp = 0, hume = 0.
+            var temp = 0, hume = 0, tierra = 0
             monitors[hora].map((monitor) => {
                 temp = (temp + monitor.temp)
                 hume = (hume + monitor.hume)
+                tierra = (tierra + monitor['s'+output])
             })
 
-            monitor_temp[hora] = {
+            monitorFinal[hora] = {
                 temp: Math.floor(temp / monitors[hora].length),
                 hume: Math.floor(hume / monitors[hora].length),
+                tierra:  Math.floor(tierra / monitors[hora].length),
                 time: hora
             }
 
         })
-        //console.log(monitors)
-        
+
         dispatch({
             type: TRAER_TODOS_MONITORS,
-            payload: monitor_temp
+            payload: monitorFinal
+        })
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const traerTodosMonitorsInterval = (id, output) => async (dispatch) => {    
+
+    try {
+        const response = await axios.get(URL + 'monitor/prototype/' + id)
+        const monitors = response.data
+
+        const horas = Object.keys(monitors)
+
+        var monitorFinal = {}
+
+        horas.map((hora) => {
+            var temp = 0, hume = 0, tierra = 0
+            monitors[hora].map((monitor) => {
+                temp = (temp + monitor.temp)
+                hume = (hume + monitor.hume)
+                tierra = (tierra + monitor['s'+output])
+            })
+
+            monitorFinal[hora] = {
+                temp: Math.floor(temp / monitors[hora].length),
+                hume: Math.floor(hume / monitors[hora].length),
+                tierra:  Math.floor(tierra / monitors[hora].length),
+                time: hora
+            }
+
+        })
+
+        dispatch({
+            type: TRAER_TODOS_MONITORS,
+            payload: monitorFinal
         })
 
     } catch (error) {

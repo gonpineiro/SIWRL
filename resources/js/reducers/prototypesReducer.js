@@ -3,6 +3,7 @@ import {
   TRAER_UNO,
   LOADING,
   STEPPER_DETALLE_LOADING,
+  CHART_LOADING,
   ERROR,
   ERROR_FORM,
   CAMBIO_ESTADO_FORM,
@@ -21,7 +22,7 @@ import {
   CAMBIO_PROTOTYPE_FECHA_ESTADO_D,
   CAMBIO_PROTOTYPE_FECHA_ESTADO_E,
   CAMBIO_PROTOTYPE_CANTIDAD,
-  
+
 
   RECARGA,
   CANCELAR,
@@ -35,6 +36,7 @@ const INITIAL_STATE = {
   cantidad_stepper: '',
   loading: false,
   loading_stepper: false,
+  loading_chart: false,
   error: '',
   error_form: '',
   recargar_table: false,
@@ -64,6 +66,8 @@ export default (state = INITIAL_STATE, action) => {
       return { ...state, loading: true }
     case STEPPER_DETALLE_LOADING:
       return { ...state, loading_stepper: action.payload }
+    case CHART_LOADING:
+      return { ...state, loading_chart: action.payload }
     case ERROR:
       return { ...state, error: action.payload, loading: false }
     case ERROR_FORM:
@@ -245,13 +249,14 @@ export default (state = INITIAL_STATE, action) => {
     case TRAER_TODOS_MONITORS:
       return {
         ...state,
+        loading_chart: false,
         monitors: action.payload,
       };
 
     case CAMBIAR_STATE_CHART:
       return {
         ...state,
-        state_chart: action.payload,
+        state_chart: action.payload
       };
 
     default: return state
