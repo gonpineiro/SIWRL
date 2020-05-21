@@ -7,10 +7,8 @@
     "scripts": {
         "reset-sd": "php artisan migrate:reset && php artisan migrate && php artisan db:seed",
         "reset": "php artisan migrate:reset && php artisan migrate",
-        "m": "php artisan migrate",
-        "s": "php artisan db:seed",
-        "ms": "php artisan migrate && php artisan db:seed",
-        "start": "php artisan serve --host=192.168.0.238 --port=901",
+        "bk": "php backup.php",
+        "start": "php artisan serve --host=192.168.0.146 --port=901",
         "dev": "npm run development",
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "watch": "npm run development -- --watch",
