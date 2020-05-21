@@ -18,7 +18,7 @@ import {
     GUARDAR
 } from '../types/sensorTypes'
 
-const URL = 'http://192.168.0.238:901/api/'
+const URL = 'http://192.168.0.146:901/api/'
 
 export const traerTodos = () => async (dispatch) => {
 
